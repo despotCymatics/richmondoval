@@ -1,0 +1,806 @@
+* { margin:0; padding:0;}
+html, body { min-height:100%}
+
+body{margin:0; padding:0; font-family: 'NeoSansStdRegular'; color:#000; background-color:#FFF; font-size: 12px;}
+
+
+h1{ font-size:38px}
+h2{ font-size:26px}
+h3{ font-size:22px}
+h4{ font-size:20px}
+h5{ font-size:16px}
+h6{ font-size:14px}
+
+p { font-size:14px;}
+
+.within.table {
+    display: table;
+}
+
+.fix:after {
+    clear: both;
+    content: "[.]";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+*:focus {
+    outline: none;
+    border: none;
+}
+
+.fix { display: inline-block;}
+
+a, a:visited {color: #246db1;}
+a, a img{ border:none;}
+a:hover{ text-decoration:none !important;}
+
+/* -----LAYOUT ELEMENTS -----*/
+
+.within {
+	width: 1220px;
+	margin: 0 auto;
+	padding: 0 10px;
+	clear: both;
+}
+
+.no-padd { padding:0 !important}
+.no-padd-left { padding-left:0 !important}
+.no-padd-right { padding-right:0 !important}
+
+.t-table { display:table}
+.t-row { display: table-row}
+.t-cell { display: table-cell}
+
+/* ----- TOP-BAR BOX -----*/
+
+.topBar { background-color:#F29711; height:36px;}
+
+.topBar .userInfo {display:inline-block;}
+.topBar .userInfo .userMessage{ color:#FFF;  font-size:13px; margin-left:10px;}
+
+.topBar .combinedMenu { color:#FFF; display:inline-block; float:right}
+.topBar .combinedMenu a{ float: left; line-height:36px; padding:0 10px; color:#FFF;}
+.topBar .combinedMenu a.login{ background-color:#F28011; padding:0 20px;}
+.topBar .combinedMenu a.soc{line-height:100%; padding:0;}
+.topBar .combinedMenu a:hover{color:#000;}
+
+.topBar .combinedMenu a.mob { display:none; line-height:36px; font-size:22px;}
+.topBar .combinedMenu a.no-mob { display:block}
+
+
+/* -----HEADER ELEMENTS -----*/
+
+.logoHolder {
+    float: left;
+    height: auto;
+    margin: 18px 0;
+    vertical-align: middle;
+}
+
+.menuHeader { display:inline-block; margin:49px 0 0 56px;}
+.menuHeader ul { list-style:none; margin:0;}
+.menuHeader ul li{ float:left; margin-right:50px;}
+.menuHeader ul li a{ font-family: 'NeoSansStdRegular'; color:#E04915; font-size:21px; display:block; line-height:30px;}
+.menuHeader ul li a i{ font-size:30px; color:#9D9D9D; float:left; margin-right:5px;}
+.menuHeader ul li a span{ line-height:30px; text-transform:uppercase;}
+.menuHeader ul li a:hover span{ color:#000;}
+
+/* -----NAV ELEMENTS -----*/
+
+.navBox { background-color:#D9D9D9; height:62px;}
+
+.navBox ul{ list-style:none; margin:0}
+.navBox ul li{ margin-right:50px; line-height:62px; height:62px; display: table-cell; vertical-align: middle;}
+.navBox ul li a{ font-family: 'NeoSansStdLight'; color:#000; font-size:20px; display:block; line-height:30px; line-height:20px; padding:0 15px; margin:15px 0; border-right:1px solid #B8B8B8;}
+.navBox ul li a:hover{ color:#E04915;}
+.navBox ul li span{}
+.navBox  ul li:last-child a{ border:none;}
+
+.navBox .thruMenu { float:left}
+
+.navBox .otherMenu { float:right; padding:0 25px; border-right:1px solid #B9B7B7; border-left:1px solid #B9B7B7; display:inline-block; height:62px;}
+
+.navBox .otherMenu span {font-family: 'NeoSansStdRegular'; font-size:11px; display:block; float:left; margin-top:25px; text-transform:uppercase;}
+.navBox .otherMenu ul { display:inline-block;}
+
+/* ----- DL MENU  -----*/
+
+#dl-menu.dl-menuwrapper {
+	display: none;
+	/*position: static;*/
+}
+
+.dl-menu .otherMenu{ border-top:1px solid #555; background-color:#777}
+.dl-menu .otherMenu span{ padding:15px; display:block; color:#333;}
+
+.inner #dl-menu.dl-menuwrapper {
+    margin: 15px;
+    float: none;
+    max-width: 340px;
+    position: absolute;
+    top: 40px;
+    left: auto;
+    width: auto;
+    z-index: 10;
+}
+
+.inner #dl-menu.dl-menuwrapper .dl-menu {
+    width: 280px;
+}
+
+/* ----- CONTENT -----*/
+
+/* ----- photoBox -----*/
+
+.photoBox {
+	background-image: url(../images/basic/photo-home-bgrd.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+    height: 624px;
+    width: 100%;
+	position:relative;
+}
+.photoBox .within{  
+    left: 10%;
+    position: absolute;
+    top: 10%;
+}
+
+.photoBox img {
+    display: block;
+    width: 100%;
+}
+
+/* ----- photoBox pimaryMenu -----*/
+
+.photoBox #pimaryMenu { position:absolute; left:0; top:120px;}
+#pimaryMenu ul.primHolder { border-radius:5px; /*background-color:rgba(62,62,62,0.96);*/ background-color:rgba(48,48,48,0.98);  list-style:none; margin:0; padding:10px; min-width:285px;}
+#pimaryMenu ul.primHolder li a{ padding: 10px 20px 10px 0; color:#fff; font-family: 'NeoSansStdRegular'; font-size:22px; line-height:1.4; display:block; text-decoration:none;}
+#pimaryMenu ul.primHolder li a:hover{color:#FAC500;}
+#pimaryMenu ul.primHolder ul{ list-style:none; margin:0; display:none;}
+#pimaryMenu ul.primHolder ul li a{font-family: 'NeoSansStdLight'; font-size:15px; color:#A4A4A4; padding: 4px 10px 4px 0;}
+#pimaryMenu ul.primHolder .fa {
+    line-height:1;
+    display: block;
+    float: right;
+    margin: 4px -20px 0 0;
+}
+
+#pimaryMenu .has-sub.open i{transform: rotate(-180deg);}
+#pimaryMenu ul.primHolder li.has-sub.open ul a i{
+    transform:none;
+    margin: 0 -8px 0 0;
+}
+
+.sideBar #pimaryMenu ul.primHolder li a {
+    font-size: 18px;
+}
+
+.sideBar #pimaryMenu ul.primHolder ul li a {
+    font-size: 15px;
+}
+
+.photoBox .topSearch {position:absolute; right:90px; top:280px;}
+
+/* ----- photoBox topSearch -----*/
+
+.photoBox  .topSearch span {
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.photoBox .topSearch .search input[type="text"] {
+    width: 704px;
+}
+.photoBox .topSearch input[type="text"] {
+    background-color: #FFF;
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #888;
+    color: #858585;
+    display: block;
+    float: left;
+	font-family: 'NeoSansStdLight';
+    font-size: 26px;
+    font-weight: 300;
+    height: 66px;
+    margin: 0;
+    padding: 5px 10px 5px 55px;
+}
+.photoBox .topSearch .search {
+    float: right;
+    position: relative;
+}
+
+.photoBox .topSearch button[type="submit"] {
+    background-color: #FFF;
+    cursor: pointer;
+    display: block;
+    height: 66px;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    width: 26px;
+	border:none;
+}
+.photoBox. topSearch button[type="submit"] {
+    background-color: #FFF;
+    border: medium none;
+    border-radius: 5px;
+    transition: all 200ms linear 0s;
+}
+.photoBox .topSearch button[type="submit"]::after {
+    color: #C7C7C7;
+    content: "\f002";
+    display: block;
+    font-family: "FontAwesome";
+    font-size: 22px;
+    height: 22px;
+    margin-right: 0px;
+    margin-top: 0px;
+    width: 22px;
+}
+.photoBox .topSearch button[type="submit"]:hover {
+    opacity: 0.7;
+    transition: all 200ms linear 0s;
+}
+
+/* ----- photoBox galley -----*/
+
+.photoBox .galley { height:40px; text-align:center; background-color:rgba(166,59,26,0.75); bottom:0; position: absolute; bottom:1px; width:100%;}
+.photoBox .galley p{ margin:0; line-height:40px; color:#FFF; font-family: 'NeoSansStdRegular'; font-size:12px; text-transform:uppercase;}
+.photoBox .galley p span{ color:#F9BB00;}
+
+/* ----- NEWS BOX -----*/
+
+.newsBox { padding:65px 0 65px 0; background:url(../images/basic/hockey.png) no-repeat 5% 50%;}
+.sectionTitle{ color:#E04915; font-family: 'NeoSansStdMedium'; padding-bottom:10px; border-bottom:3px solid #E6E6E6;}
+.content .sectionTitle {
+    font-size: 22px;
+}
+
+
+.newsBox .newsHolder { float:left;}
+.newsHolder.w-4 { width:224px; margin-right:20px;}
+.newsHolder.w-6 { width:468px; }
+.newsHolder a{ display:block; margin-top:15px; height:334px;  background-color:#F9BB00;}
+.newsHolder a .titleHolder { padding:10px;}
+.newsHolder .title { color:#000; font-family: 'NeoSansStdLight'; line-height:150%;}
+.newsHolder a p {color:#000; margin:0; line-height:120%; font-size:11px;}
+.newsHolder a:hover{ background-color:#E14915;}
+.newsHolder a:hover .title { color:#FFF;}
+
+.newsHolder .download { color:#E04915 !important; font-family: 'NeoSansStdBold' !important;}
+.newsHolder  a:hover .download {color:#000 !important;}
+
+.newsBox .bannerHolder a{ display:block; margin-top:15px; }
+
+.content .newsHolder h3 {
+    margin: 0 0 10px;
+}
+
+.content .newsHolder a {
+    height: auto;
+}
+
+/* ----- WALL BOX -----*/
+
+.wallBox {  padding:60px 0 60px 0; color:#999999; background: #EFEFEF url(../images/basic/climbing.png) no-repeat 85% 50%;}
+.wallBox .sectionTitle { margin-bottom:15px;}
+.wallBox .wallCont { width:100%; font-size:20px;}
+.wallBox .wallCont { width:100%}
+
+/* ----- EVENT BOX -----*/
+
+.eventBox { background-color:#F9BB00; height:65px; text-align:center;}
+.eventBox p a{ margin:0; line-height:65px; color:#FFF; font-family: 'NeoSansStdBold'; font-size:24px; text-transform:uppercase;}
+
+
+/* ----- FOOTER -----*/
+
+footer {
+	background-color:#FFF;
+	padding-top:30px;
+}
+
+.footerTop {
+	height:130px;
+	width:100%;
+	display:table;
+	padding-bottom:10px;
+}
+.footerMenu {
+    float: left;
+}
+.footerMenu .navHolder {
+    display: inline-block;
+    float: left;
+	margin: 0 2px 0 0;
+}
+.footerMenu .navHolder:last-child {
+	margin:0;
+}
+
+.footerMenu .navHolder ul#navSec {
+    list-style: none;
+    width: 170px;
+	margin:0;
+}
+.footerMenu .navHolder ul#navSec h3 {
+    color: #000;
+    font-family: 'NeoSansStdMedium';
+    font-size: 16px;
+    font-weight: normal;
+    padding: 5px 0;
+	margin-bottom:10px;
+}
+.footerMenu .navHolder ul#navSec li {
+    color: #595959;
+    float: none;
+    line-height: 150%;
+    margin-bottom: 5px;
+    position: relative;
+    transition: all 200ms linear 0s;
+	
+}
+.footerMenu .navHolder ul#navSec li:hover {
+    color: #999  ;
+    transition: all 200ms linear 0s;
+}
+
+.footerMenu .navHolder ul#navSec li a {
+    color: inherit;
+    font-size: 12px;
+    text-decoration: underline;
+    text-transform: none;
+    transition: all 200ms linear 0s;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.footerSponsors { float:right;}
+
+.footerBottom { background-color:rgba(153,153,153,0.50);}
+.footerBottom  .within{ }
+.copyrightHolder { height:36px;}
+.copyrightHolder p{ margin:0; line-height:36px; font-size:12px; color:#9E9E9E;}
+
+.innerphotoBox {
+    position: relative;
+}
+
+.innerphotoBox img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.within.inner {
+    padding: 100px 0 120px;
+}
+
+.inner h1 {
+    font-size: 60px;
+    font-family: NeoSansStdLight, arial, helvetica, sans-serif;
+    line-height: 1.2;
+    margin: 0 0 50px;
+    padding: 0 0 40px;
+    border-bottom: 1px solid #a6a6a6;
+}
+
+.sideBar {
+    float: left;
+    width: 23.2%;
+    padding: 0 60px 20px 0;
+}
+
+.sideBar  #pimaryMenu ul.primHolder {
+    min-width: 0;
+}
+
+.content {
+    float: left;
+    width: 76.8%;
+    color: #656565;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.content p {
+    font-size: 16px;
+    margin: 0 0 26px;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-family: NeoSansStdBold, arial, helvetica, sans-serif;
+    line-height: 1.25;
+    margin: 0 0 26px;
+}
+
+.content h1 {
+    font-size: 36px;
+    padding: 0;
+    border-bottom: none;
+}
+
+.content h2 {
+    font-size: 32px;
+}
+
+.content h3 {
+    font-size: 28px;
+}
+
+.content h4 {
+    font-size: 24px;
+}
+
+.content h5 {
+    font-size: 18px;
+}
+
+.content h6 {
+    font-size: 14px;
+}
+
+/* Editor styles */
+
+.content ul {
+    list-style: none;
+    display: block;
+    margin: 0 0 30px;
+}
+
+.content ul ul, .content ul ol, .content ol ul, .content ol ol {
+    margin: 14px 0 20px 30px;
+}
+
+.content ul li {
+    display: block;
+    margin: 0 0 6px;
+    padding: 0 0 0 15px;
+}
+
+.content ol {
+    padding: 0 0 0 15px;
+}
+
+.content ol li {
+    margin: 0 0 6px;
+}
+
+.content ul li:before,  .content ol ul li:before, .content ul ol ul li:before {
+    content: '\f105';
+    font: normal 16px/1 FontAwesome;
+    color: #666;
+    display: block;
+    float: left;
+    margin: 5px 0 0 -16px;
+}
+
+.content ol, .content ul ol, .content ol ul ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin: 0 0 30px;
+}
+
+.content ol li:before, .content ul ol li:before  {
+    display: none;
+}
+
+.content ul ol {
+    counter-reset: li;
+}
+
+.content ul ol li {
+    counter-increment: li;
+}
+
+.content ul ol li:before {
+    content: counter(li) '. ';
+    display: block;
+    float: left;
+    margin: 4px 0 0 -16px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.content img, .content figure {
+    max-width: 100%;
+    height: auto;
+}
+
+.content .alignnone {
+    width: auto !important;
+}
+
+.content .alignright {
+    float: right;
+    margin: 0 0 0 22px;
+}
+
+.content .alignleft {
+    float: left;
+    margin: 0 22px 0 0;
+}
+
+.content .aligncenter, .content .alignnone {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content figure.aligncenter, .content figure.alignnone {
+    margin: 0 auto 38px;
+}
+
+.content code {
+    background-color: #f2f2f2;
+    display: inline-block;
+    padding: 1px 4px;
+    margin: 0;
+    font-family: monospace, courier, serif;
+}
+
+.content pre code {
+    display: block;
+    padding: 12px;
+}
+
+.content pre {
+    margin: 0 0 30px;
+    white-space: pre-wrap;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.content address {
+    display: block;
+    margin: 0 0 30px;
+    font-family: Montserrat, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.65;
+    font-style: normal;
+}
+
+.wp-caption-text {
+    font-size: 11px;
+    line-height: 1.1;
+    padding: 5px;
+    text-align: center;
+}
+
+.content table {
+    width: 100%;
+    margin: 0 0 30px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.content table caption {
+    background-color: #ada15c;
+    border-bottom: 1px solid #ada15c;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.15;
+    padding: 12px 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content table th {
+    background-color: #999;
+    border-bottom: 1px solid #666;
+    border-left: 1px solid #666;
+    font-weight: 700;
+    padding: 12px 10px;
+    color: #fff;
+}
+
+.content table tr th:first-child {
+    border-left: none;
+}
+
+.content table td {
+    padding: 10px;
+}
+
+.content table tr:nth-child(even) td {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.content table td a {
+    font-weight: 700;
+}
+
+.content table td a:hover {
+    text-decoration: underline;
+}
+
+.content dl {
+    display: block;
+    margin: 0 0 30px;
+    overflow: hidden;
+}
+
+.content dt {
+    font-weight: 600;
+    display: block;
+    margin: 0 0 5px;
+}
+
+.content dd {
+    display: block;
+    margin: 0 0 10px 10px;
+    padding: 0 0 0 15px;
+}
+
+.content dd:before {
+    content: '-';
+    display: block;
+    float: left;
+    margin: 0 0 0 -15px;
+}
+
+hr {
+    clear: both;
+    margin: 85px 0 55px;
+}
+
+.aligncenter {
+    margin: 0 auto 30px;
+}
+
+/* /Editor styles */
+
+
+.content .bannerHolder, .content .newsHolder {
+    float: right;
+    margin: 0 0 20px 30px;
+}
+
+.contactData {
+    width: 50%;
+    float: left;
+    padding: 0 70px 0 0;
+}
+
+.contactMap {
+    float: left;
+    width: 50%;
+}
+
+.mapHolder {
+    position: relative;
+}
+
+span.mapAspect {
+    display: block;
+    width: 100%;
+    height: 710px;
+    visibility: hidden;
+}
+
+#gmap_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.contactMeta {
+    margin: 0 0 10px;
+}
+
+.contactMeta {
+    clear: left;
+    margin: 0 0 30px;
+}
+
+.contactMeta p {
+    margin: 0 0 20px;
+    line-height: 1.7;
+    font-size: 16px;
+    padding: 0 0 0 36px;
+}
+
+.contactMeta p:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    color: #aeaeae;
+    line-height: 1;
+    display: block;
+    float: left;
+    margin: 2px 0 0 -36px;
+}
+
+.contactMeta p.cmLocation:before {
+    content: '\f041';
+    font-size: 24px;
+}
+
+.contactMeta p.cmPhone:before {
+    content: '\f10b';
+    font-size: 31px;
+    margin: -2px 0 0 -36px;
+}
+
+.contactMeta p.cmMail:before {
+    content: '\f0e0';
+    font-size: 18px;
+    margin: 4px 0 0 -36px;
+}
+
+.contactMeta p.cmWorkingHours:before {
+    content: '\f017';
+    font-size: 22px;
+    margin: 3px 0 0 -36px;
+}
+
+.contactMeta p a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.contactMeta p a:hover {
+    text-decoration: none;
+
+}
+
+.contactMeta p strong {
+    display: inline-block;
+    min-width: 128px;
+}
+
+.contactForm p {
+    margin: 0 0 20px;
+    clear: left;
+}
+
+input[type="text"], input[type="email"], textarea {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ddd;
+    color: #000;
+    font-size: 14px;
+    padding: 0 20px;
+    transition: all 320ms ease;
+}
+
+textarea {
+    height: 140px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border: 1px solid #e04915;
+    box-shadow: 0 0 2px #e04915;
+    transition: all 320ms ease;
+}
+
+.btn {
+    font-family: NeoSansStdBold, arial, helvetica, sans-serif;
+    background-color: #e14916;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    padding: 19px 34px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #B23409;
+}
