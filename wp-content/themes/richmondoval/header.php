@@ -20,7 +20,7 @@ ini_set('display_errors', 1);
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 <div class="pageWrap">
 <header>
@@ -74,8 +74,6 @@ ini_set('display_errors', 1);
                 </div>
             </div>
         </div>
-
-
 
 
     </div>
@@ -148,7 +146,6 @@ ini_set('display_errors', 1);
             </div>
         </div>
     </div>
-<?php //require("/menu.html"); ?>
 </header>
 <!-- /header -->
 

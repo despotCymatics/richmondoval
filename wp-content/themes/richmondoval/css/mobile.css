@@ -130,6 +130,9 @@ body.menuOpen {
 }
 
 @media (max-width: 780px) {
+    .post-box .date {
+        text-align: left;
+    }
 
     .inner h1 {
         font-size: 48px;
@@ -198,7 +201,7 @@ body.menuOpen {
     .photoBox .topSearch {
         width: 80%;
     }
-	.footerSponsors { float: none; display:table; margin:0 auto;}
+	/*.footerSponsors { float: none; display:table; margin:0 auto;}*/
 }
 
 
@@ -223,6 +226,19 @@ body.menuOpen {
 
     .content .bannerHolder img, .content .newsHolder img  {
         display: inline-block;
+    }
+
+    .post-box .read-more {
+        margin: 10px;
+        text-align: center;
+
+    }
+
+    .post-box .read-more a {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        display: block;
     }
 
 }

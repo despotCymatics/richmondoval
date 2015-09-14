@@ -1,8 +1,21 @@
 <?php
 require("shortcodes.php");
-//show_admin_bar( true );
+
+// hide admin bar for non-user
+if (!current_user_can('edit_posts')) {
+    show_admin_bar(false);
+}
+
+function richmondoval_setup_theme() {
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'blog-post-list', 1024, 380, array( 'center', 'center' ) ); // Hard crop left top
+}
+
+add_action( 'after_setup_theme', 'richmondoval_setup_theme' );
+
 
 //add_theme_support( 'html5', array( 'searchform' ) );
+
 
 /**
  * Enqueue scripts and styles for front-end.
@@ -45,6 +58,16 @@ add_action( 'wp_enqueue_scripts', 'richmondoval_scripts_styles' );
  *
  */
 function richmondoval_widgets_init() {
+
+    register_sidebar( array(
+        'name' => __( 'Blog Sidebar', 'richmondoval' ),
+        'id' => 'blog-sidebar',
+        'description' => __( 'Widgets in this area will be shown in footer area.', 'richmondoval' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h3 class="label">',
+        'after_title'   => '</h3>',
+    ) );
 
 
     register_sidebar( array(
@@ -390,9 +413,4 @@ function add_fb_open_graph_tags() {
 <?php 	}
 }*/
 
-add_theme_support( 'post-thumbnails' );
 
-// hide admin bar for non-user
-if (!current_user_can('edit_posts')) {
-    show_admin_bar(false);
-}
