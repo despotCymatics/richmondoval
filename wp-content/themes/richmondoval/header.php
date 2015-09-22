@@ -62,10 +62,10 @@ ini_set('display_errors', 1);
                 <div class="combinedMenu">
                     <a href="/hours-location" class="no-mob">HOURS & LOCATION</a>
                     <a href="#" class="mob"><i class="fa fa-clock-o"></i></a>
-                    <a href="#" class="no-mob">BOOK AN EVENT</a>
+                    <a href="/event-calendar/book-an-event/" class="no-mob">BOOK AN EVENT</a>
                     <a href="#" class="mob"><i class="fa fa-calendar-o"></i></a>
                     <!--a href="https://www.ovalwebreg.com/MyAccount/MyAccountUserLogin.asp" class="login">LOGIN</a-->
-                    <a href="#" class="login">LOGIN</a>
+                    <a href="https://richmondoval.perfectmind.com/SocialSite/MemberRegistration/MemberSignIn" class="login">LOGIN</a>
                     <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/fb.png"></a>
                     <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/tw.png"></a>
                     <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/in.png"></a>
