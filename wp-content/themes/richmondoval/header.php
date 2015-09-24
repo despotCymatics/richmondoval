@@ -80,7 +80,7 @@ ini_set('display_errors', 1);
     <div class="headerBox">
         <div class="within">
             <div class="logoHolder">
-                <a href="<?php echo get_home_url(); ?>"><img src="<?=get_template_directory_uri()?>/images/basic/logo.png" alt="Site name"></a>
+                <a title="Richmond Olympic Oval" href="<?php echo get_home_url(); ?>"><img src="<?=get_template_directory_uri()?>/images/basic/logo.png" alt="Site name"></a>
             </div>
             <div class="menuHeader">
 

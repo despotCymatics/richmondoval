@@ -136,6 +136,11 @@ a:hover{ text-decoration:none !important;}
     vertical-align: middle;
 }
 
+.logoHolder img {
+    max-height: 91px;
+
+}
+
 .mainMenu .logoHolder {
     display: none;
     margin: 5px 10px 5px 0;
@@ -146,8 +151,9 @@ a:hover{ text-decoration:none !important;}
 }
 
 .mainMenu .logoHolder a img {
-    width: 80px;
+    /*width: 80px;*/
     height: inherit;
+    max-height: 54px;
 }
 
 .menuHeader { display:inline-block; margin:49px 0 0 56px; float: right;}
@@ -680,7 +686,7 @@ footer {
 }
 
 .inner h1 {
-    font-size: 50px;
+    font-size: 40px;
     font-family: NeoSansStdLight, arial, helvetica, sans-serif;
     line-height: 1.2;
     margin: 0 0 20px;
@@ -1081,9 +1087,22 @@ footer {
     margin: 0 0 0 -15px;
 }
 
-.content .allProgramsList {
-
+.content .allProgramsList li {
+    font-weight: 600;
+    font-size: 120%;
+    transform: rotate(0.01deg);
 }
+.content .allProgramsList ul {
+    margin-left: 10px;
+}
+
+
+.content .allProgramsList ul li  {
+    font-weight: 200;
+    font-size: 80%;
+}
+
+
 
 .content .head-img {
     max-height: 345px;
@@ -1560,8 +1579,8 @@ span.wpcf7-list-item {
 
 /* Alerts */
 .alerts {
-    display: inline-block;
-    padding: 6px 10px 6px 30px;
+    /*display: inline-block;*/
+    padding: 8px 10px 8px 30px;
     position: relative;
     max-height: 72px;
     overflow: hidden;
@@ -1572,7 +1591,7 @@ span.wpcf7-list-item {
     font-family: "FontAwesome";
     left: 7px;
     position: absolute;
-    top: 7px;
+    top: 8px;
     font-size: 1.5em;
     content: '\f071';
     color: #4e4e4e;
@@ -1593,7 +1612,16 @@ img.not-full {
 
 #bookMe4Widget object {
     width: 100%;
-    height: 700px;
+    height: 700px !important;
+    box-shadow: none !important;
+}
+
+#bookMe4Widget.long object {
+    height: 1450px !important;
+}
+
+#bookMe4Widget.short object {
+    height: 400px !important;
 }
 
 /* Blog */
@@ -1792,4 +1820,8 @@ h3#comments {
     line-height: 36px;
     color: #e04915;
 
+}
+
+.pagination {
+    margin-top: 20px;
 }

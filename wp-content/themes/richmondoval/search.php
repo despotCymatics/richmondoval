@@ -25,11 +25,14 @@
         }
 
         // Previous/next page navigation.
-        the_posts_pagination(array(
-            'prev_text' => __('Previous', 'richmondoval'),
-            'next_text' => __('Next', 'richmondoval'),
-            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('', 'richmondoval') . ' </span>',
-        ));
+        the_posts_pagination( array(
+            'screen_reader_text' => ' ',
+            'mid_size'           => 2,
+            'prev_text'          => __( '<i class="fa fa-chevron-left"></i>', 'richmondoval' ),
+            'next_text'          => __( '<i class="fa fa-chevron-right"></i>', 'richmondoval' ),
+            //'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'richmondoval' ) . ' </span>',
+        ) );
+
 
     } else {
         get_template_part( 'no-results', 'search' );
