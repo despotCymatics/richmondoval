@@ -1,5 +1,13 @@
 ( function( $ ) {
+
+    $(window).load(function() {
+
+        $('#loading-wrap').fadeOut(600);
+    });
+
+
 $( document ).ready(function() {
+
    /* $('#pimaryMenu li.has-sub>a').on('click', function(){
 		//$(this).removeAttr('href');
 		var element = $(this).parent('li');
@@ -61,6 +69,12 @@ $( document ).ready(function() {
 
     $('.mainMenu ul ul ul').parent().prepend('<span class="subToggler"></span>');
     $('.mainMenu').addClass('original').clone().insertAfter('.mainMenu').addClass('cloned').removeClass('original').hide();
+    $('.mainMenu ul#menu-programs-menu').prepend('<li class="close"><a href="#"><i class="fa fa-times"></i></a></li>');
+    $('.mainMenu ul#menu-programs-menu .close').click(function () {
+        $('body').toggleClass('menuOpen');
+        $('.menuToggler').toggleClass('on');
+    });
+
 
     if($('.alerts').length){
         ticker();

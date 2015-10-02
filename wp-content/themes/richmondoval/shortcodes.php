@@ -53,7 +53,7 @@ function col_shortcode( $atts, $content ){
         'width' => '12',
     ), $atts, 'col' ) );
 
-    $result = '<div class="col col-md-'.$width.'">'.do_shortcode($content).'</div>';
+    $result = '<div class="col col-sm-'.$width.'">'.do_shortcode($content).'</div>';
 
 
     return $result;

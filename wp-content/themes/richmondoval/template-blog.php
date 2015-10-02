@@ -39,11 +39,11 @@ get_header(); ?>
                             <div class="date"><i class="fa fa-calendar"></i> <?php echo get_the_date('j M Y') ?></div>
                         </div>
                     </div>
-
+                    <?php if ( has_post_thumbnail() ) { ?>
                     <div class="post-image">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'blog-post-list' ); ?></a>
                     </div>
-
+                    <?php }  ?>
                     <div class="content"><?php the_excerpt(); ?></div>
                     <div class="post-meta">
                         <div class="row">
@@ -52,6 +52,8 @@ get_header(); ?>
                                 <div class="post-categories"><?php the_category(', ');?></div>
                                 <i class="fa fa-comment-o"></i>
                                 <div class="count-post-comments"><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></div>
+                                <i class="fa fa-user"></i>
+                                <div class="author"><?php echo get_the_author(); ?></div>
                             </div>
                             <div class="col-sm-2">
                                 <div class="read-more">

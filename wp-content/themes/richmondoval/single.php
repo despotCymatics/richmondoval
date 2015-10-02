@@ -28,6 +28,8 @@ get_header(); ?>
                                 <div class="post-categories"><?php the_category(', ');?></div>
                                 <i class="fa fa-comment-o"></i>
                                 <div class="count-post-comments"><?php comments_number( 'No Comments', '1 Comment', '% Comments' ); ?></div>
+                                <i class="fa fa-user"></i>
+                                <div class="author"><?php echo get_the_author(); ?></div>
                             </div>
                         </div>
                     </article>

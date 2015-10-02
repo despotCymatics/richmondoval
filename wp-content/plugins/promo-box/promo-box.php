@@ -62,7 +62,7 @@ class promobox_widget extends WP_Widget
      **/
     public function widget( $args, $instance )
     {
-        echo '<div>
+        echo '<div class="promoBox">
                 <a class="side-box" title="'.$instance['title'].'" href="'.$instance['link'].'">
                     <img src="'.$instance['image'].'">
                     <div class="titleHolder">

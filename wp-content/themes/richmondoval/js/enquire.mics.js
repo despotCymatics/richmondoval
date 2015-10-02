@@ -12,6 +12,7 @@
             $('.menuToggler').click(function (){
                 $('body').toggleClass('menuOpen');
                 $(this).toggleClass('on');
+
             });
 
             $('.subToggler').remove();
@@ -20,6 +21,7 @@
             $('.subToggler').click(function (){
                 $(this).toggleClass('on').next().next().slideToggle(250);
             });
+
 
         },
         unmatch: function () {

@@ -8,7 +8,7 @@ body.menuOpen {
 .bannerHolder { text-align:center}
 
 .within.inner {
-    padding: 80px 20px 100px;
+    padding: 5px 20px 50px;
 }
 
 .sideBar {
@@ -23,8 +23,14 @@ body.menuOpen {
 
 @media screen and (max-width: 1180px) {
     .photoBox {height: 624px;}
-    .photoBox #pimaryMenu {right:0; left:0; width: 300px; margin: 0 auto;}
-	.photoBox .topSearch { right:0; left:0; top:15px}
+    .photoBox #pimaryMenu {
+        top: 170px;
+        right:0;
+        left:0;
+        width: 300px;
+        margin: 0 auto;
+    }
+	.photoBox .topSearch { right:0; left:0; top:45px}
 	.within {
 		width: auto !important;
 	}
@@ -95,6 +101,10 @@ body.menuOpen {
 
 
 @media screen and (max-width: 992px) {
+    #loading-wrap img {
+        width: 280px;
+        margin-top: 30%;
+    }
     .alerts {
         height: 72px;
         display: none;
@@ -127,6 +137,33 @@ body.menuOpen {
         background-image: none;
     }
 
+    .sideBar {
+        padding-right:15px !important;
+    }
+
+    .sideBanner {
+        padding-left: 15px !important;
+    }
+
+    .sideBanner .promoBox img {
+        width: 150px;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .sideBar.promo {
+        padding-right: 0 !important;
+    }
+
+    .newsHolder a.side-box {
+        min-height: auto;
+        display: inline-block;
+        width: 100%;
+    }
+    .newsHolder a.side-box p.download {
+        right: 20px;
+    }
+
 }
 
 @media (max-width: 780px) {
@@ -140,15 +177,10 @@ body.menuOpen {
         padding: 0 0 20px;
     }
 
-
-    .within.inner {
-        padding: 55px 20px 40px;
-    }
-
     .sideBar {
         width: auto;
         float: none;
-        padding: 0 0 25px;
+        /*padding: 0 0 25px;*/
     }
 
     .content {
@@ -206,7 +238,14 @@ body.menuOpen {
 
 
 @media screen and (max-width: 480px) {
-	.menuHeader ul li {margin-right:7px;}
+    .menuHeader ul li::before{
+        float: none;
+        margin: 0;
+        text-align: center;
+        font-size: 28px;
+    }
+
+	.menuHeader ul li {margin-right:7px; padding: 0; text-align: center}
 	.menuHeader ul li a i{ display:none;}
 	.topBar .combinedMenu a.no-mob { display:none}
 	.topBar .combinedMenu a.mob { display:block}
@@ -262,6 +301,11 @@ body.menuOpen {
 
     .mainMenu {
         background-color: rgb(48,48,48);
+        border-top: none;
+    }
+
+    .mainMenu .close {
+        display: block;
     }
 
     .mainMenu .within {
@@ -371,6 +415,7 @@ body.menuOpen {
     .mainMenu ul ul {
         display: none;
         background-color: #292929;
+        z-index: 1;
     }
 
     .mainMenu ul ul {

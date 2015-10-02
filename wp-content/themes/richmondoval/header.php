@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
 <head>
-
+    <meta content="noindex, nofollow" name="robots">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,6 +21,10 @@ ini_set('display_errors', 1);
 </head>
 
 <body <?php body_class(); ?>>
+<div id="loading-wrap">
+    <img title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/logo-animate.gif">
+    <!--p>Loading, please wait.</p-->
+</div>
 
 <div class="pageWrap">
 <header>
@@ -61,15 +65,24 @@ ini_set('display_errors', 1);
                 </div-->
                 <div class="combinedMenu">
                     <a href="/hours-location" class="no-mob">HOURS & LOCATION</a>
-                    <a href="#" class="mob"><i class="fa fa-clock-o"></i></a>
+                    <a href="/hours-location" class="mob"><i class="fa fa-clock-o"></i></a>
                     <a href="/event-calendar/book-an-event/" class="no-mob">BOOK AN EVENT</a>
-                    <a href="#" class="mob"><i class="fa fa-calendar-o"></i></a>
-                    <!--a href="https://www.ovalwebreg.com/MyAccount/MyAccountUserLogin.asp" class="login">LOGIN</a-->
+                    <a href="/event-calendar/book-an-event/" class="mob"><i class="fa fa-calendar-o"></i></a>
+
                     <a href="https://richmondoval.perfectmind.com/SocialSite/MemberRegistration/MemberSignIn" class="login">LOGIN</a>
-                    <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/fb.png"></a>
-                    <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/tw.png"></a>
-                    <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/in.png"></a>
-                    <a href="#" class="soc"><img src="<?=get_template_directory_uri()?>/images/basic/gp.png"></a>
+
+                    <a title="facebook" href="https://www.facebook.com/richmondoval" class="soc" target="_blank">
+                        <img src="<?=get_template_directory_uri()?>/images/basic/fb.png">
+                    </a>
+                    <a title="Twitter" href="https://twitter.com/RichmondOval" class="soc" target="_blank">
+                        <img src="<?=get_template_directory_uri()?>/images/basic/tw.png">
+                    </a>
+                    <a title="Instagram" href="#" class="soc" target="_blank">
+                        <img src="<?=get_template_directory_uri()?>/images/basic/in.png">
+                    </a>
+                    <a title="Google Plus" href="#" class="soc" target="_blank">
+                        <img src="<?=get_template_directory_uri()?>/images/basic/gp.png">
+                    </a>
 
                 </div>
             </div>
@@ -148,8 +161,3 @@ ini_set('display_errors', 1);
     </div>
 </header>
 <!-- /header -->
-
-
-
-
-

@@ -42,7 +42,7 @@ p { font-size:14px;}
 
 /*a, a:visited {color: #246db1;}*/
 a, a img{ border:none;}
-a:hover{ text-decoration:none !important;}
+a:hover{ text-decoration:none;}
 
 /* -----LAYOUT ELEMENTS -----*/
 
@@ -192,9 +192,7 @@ a:hover{ text-decoration:none !important;}
     display: block;
     float: left;
     line-height: 62px;
-
     vertical-align: middle;
-
 
 }
 
@@ -550,7 +548,7 @@ a:hover{ text-decoration:none !important;}
 .newsHolder a .titleHolder { padding:10px 10px 30px;}
 .newsHolder .title { color:#000; font-family: 'NeoSansStdLight'; line-height:150%;}
 .newsHolder a p {color:#000; margin:0; line-height:120%; font-size:11px;}
-.newsHolder a:hover{ background-color:#E14915;}
+.newsHolder a:hover{ background-color:#E14915; text-decoration: none}
 .newsHolder a:hover .title { color:#FFF;}
 .newsHolder .download {
     color:#E04915 !important;
@@ -594,7 +592,7 @@ a:hover{ text-decoration:none !important;}
 /* ----- FOOTER -----*/
 
 footer {
-    background-color:#FFF;
+    background-color:#fefefe;
     padding-top:30px;
     border-top: 1px solid #eee;
 }
@@ -603,7 +601,7 @@ footer {
 
     display: table;
     height: 130px;
-    padding: 0 10px 10px;
+    padding: 0 10px 30px;
     width: 100%;
 }
 .footerMenu {
@@ -648,7 +646,7 @@ footer {
 .footerMenu .navHolder ul#navSec li a {
     color: inherit;
     font-size: 12px;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     text-transform: none;
     transition: all 200ms linear 0s;
     font-family:Arial, Helvetica, sans-serif;
@@ -701,6 +699,10 @@ footer {
 
 .sideBanner {
     padding-left: 5px !important;
+}
+
+.sideBanner .promoBox {
+
 }
 
 .sideBar.promo {
@@ -756,6 +758,7 @@ footer {
 .quick-links ul li a:hover {
     background-color: #e14915;
     color:#fff;
+    text-decoration: none;
 }
 
 .quick-links ul li a:before {
@@ -823,6 +826,9 @@ footer {
 
 .content h5 {
     font-size: 18px;
+    min-height: 45px;
+    margin-bottom: 10px;
+
 }
 
 .content h6 {
@@ -875,6 +881,10 @@ footer {
 }
 
 /* Editor styles */
+
+.content  a:hover {
+    text-decoration: underline;
+}
 
 .content ul {
     list-style: none;
@@ -956,16 +966,17 @@ footer {
 }
 .content .alignnone {
   /*  width: auto !important;*/
+    margin-bottom: 20px;
 }
 
 .content .alignright {
     float: right;
-    margin: 0 0 0 22px;
+    margin: 0 0 20px 22px;
 }
 
 .content .alignleft {
     float: left;
-    margin: 0 22px 0 0;
+    margin: 0 22px 20px 0;
 }
 
 .content .aligncenter, .content .alignnone {
@@ -1359,6 +1370,16 @@ h4.questionNtoggler.on:before {
 .menuToggler {
     display: none;
 }
+.mainMenu .close {
+    display: none;
+    text-align: right;
+}
+
+.mainMenu .close a {
+    line-height: 1;
+    font-size: 32px;
+    padding-right: 12px;
+}
 
 .mainMenu {
     /*background-color: #D9D9D9;*/
@@ -1367,6 +1388,11 @@ h4.questionNtoggler.on:before {
     z-index: 5;
     border-top: 1px solid #ccc;
 }
+
+.mainMenu a:hover {
+    text-decoration: none;
+}
+
 
 
 .mainMenu ul li {
@@ -1426,7 +1452,7 @@ h4.questionNtoggler.on:before {
 .mainMenu ul ul {
     position: absolute;
     width: 250px;
-    left: 0;
+    left: -9000px;
     top: auto;
     margin: -1px 0 0;
     background-color: #ccc;
@@ -1439,6 +1465,7 @@ h4.questionNtoggler.on:before {
 .mainMenu ul li:hover ul {
     pointer-events: auto;
     opacity: 1;
+    left: 0;
     /*transform: translateY(0);
     transition: all 100ms cubic-bezier(0.895,0.03,0.685,0.22);*/
 }
@@ -1610,6 +1637,11 @@ img.not-full {
 
 /* PM widgets */
 
+#bookMe4Widget {
+    margin: 10px 0;
+}
+
+
 #bookMe4Widget object {
     width: 100%;
     height: 700px !important;
@@ -1655,7 +1687,17 @@ img.not-full {
 
 .post-box .post-image {
     margin-bottom: 10px;
+    height: 320px;
+    overflow-y: hidden;
 }
+
+.single .post-box .post-image {
+    height: auto;
+}
+.post-box .post-image img {
+    width: 100%;
+}
+
 
 .post-meta {
     /*background: #eee none repeat scroll 0 0;*/
@@ -1691,6 +1733,11 @@ img.not-full {
 }
 
 .post-meta .count-post-comments {
+    float: left;
+    margin-right: 30px;
+}
+
+.post-meta .author {
     float: left;
 }
 
@@ -1819,9 +1866,37 @@ h3#comments {
     font-size: 16px;
     line-height: 36px;
     color: #e04915;
+}
 
+.blog-sidebar .tagcloud {
+    padding: 10px 0;
+}
+
+.blog-sidebar .tagcloud a {
+    color: #e04915;
 }
 
 .pagination {
     margin-top: 20px;
+}
+
+/* Loading */
+
+#loading-wrap {
+    background: #fff none repeat scroll 0 0;
+    display: table;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+#loading-wrap img {
+    width: 320px;
+    margin-top: 10%;
 }

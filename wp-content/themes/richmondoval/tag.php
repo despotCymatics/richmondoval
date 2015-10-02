@@ -10,18 +10,18 @@ get_header(); ?>
 
     <div class="within inner">
         <?php the_breadcrumb(); ?>
-        <h1>Category: <?php single_cat_title();?></h1>
+        <h1>Tag: <?php single_tag_title();?></h1>
         <div class="clear"></div>
 
         <?php
 
         $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-        $cat  = ( get_query_var( 'category_name' ) ) ? get_query_var( 'category_name' ) : 1;
+        $tag  = ( get_query_var( 'tag' ) ) ? get_query_var( 'tag' ) : 1;
 
         $args = array(
             'posts_per_page' => 5,
             'paged' => $paged,
-            'category_name' => $cat,
+            'tag' => $tag,
 
         );
 

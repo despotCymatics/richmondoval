@@ -39,7 +39,7 @@ get_header(); ?>
                     <?php get_search_form( true ); ?>
                     <?php $allProgramsLink = get_field('all_programs_page');
                     if($allProgramsLink){ ?>
-                        <p class="all"><a href="<?php echo $allProgramsLink; ?>"><i class="fa fa-search"></i> Search all programs</a></p>
+                        <p class="all"><a href="<?php echo $allProgramsLink; ?>"><i class="fa fa-search"></i> Review all programs</a></p>
                     <?php } ?>
                 </div>
             </div>
