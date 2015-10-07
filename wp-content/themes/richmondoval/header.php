@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <meta content="noindex, nofollow" name="robots">
+
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
