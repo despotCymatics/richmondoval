@@ -4,7 +4,7 @@
     <div class="footerTop">
         <div class="within">
             <div class="row">
-                <div class="footerMenu col-md-9">
+                <div class="footerMenu col-md-8">
                     <div class="navHolder">
                         <?php
                         $args = array(
@@ -101,7 +101,7 @@
                 </div>
 
                 <?php if ( is_active_sidebar( 'footer-right' ) ){ ?>
-                    <div class="footerSponsors col-md-3">
+                    <div class="footerSponsors col-md-4">
                         <?php dynamic_sidebar('footer-right' ); ?>
                     </div>
                 <?php }?>
