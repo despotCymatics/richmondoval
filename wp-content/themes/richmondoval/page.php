@@ -118,7 +118,7 @@ if ( has_post_thumbnail() ) : ?>
         ?>
             <div class="sideBar promo">
                 <div class="newsHolder w-4">
-                    <?php echo $sideText; ?>
+                    <?php echo str_replace("><br />", ">", $sideText); ?>
                 </div>
             </div><!-- /sideBar right -->
 

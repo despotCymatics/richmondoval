@@ -540,16 +540,20 @@ a:hover{ text-decoration:none;}
     font-size: 22px;
 }
 
-
 .newsBox .newsHolder { float:left;}
 .newsHolder.w-4 { /*width:224px; margin-right:20px;*/}
 .newsHolder.w-6 { width:468px; }
-.newsHolder a{ display:block; margin-bottom:15px;  background-color:#F9BB00;}
+.newsHolder a{
+    display:block;
+    margin-bottom: 3px;
+    transform: rotate(0.001deg);
+}
+
 .newsHolder a .titleHolder { padding:10px 10px 30px;}
 .newsHolder .title { color:#000; font-family: 'NeoSansStdLight'; line-height:150%;}
 .newsHolder a p {color:#000; margin:0; line-height:120%; font-size:11px;}
-.newsHolder a:hover{ background-color:#E14915; text-decoration: none}
-.newsHolder a:hover .title { color:#FFF;}
+.newsHolder a:hover{ }
+
 .newsHolder .download {
     color:#E04915 !important;
     font-family: 'NeoSansStdBold' !important;
@@ -559,7 +563,6 @@ a:hover{ text-decoration:none;}
 }
 .newsHolder  a:hover .download {color:#000 !important;}
 .newsHolder p.additionalText { margin-bottom: 10px;}
-
 
 .newsBox .bannerHolder a{ display:block; margin-top:15px; }
 
@@ -573,7 +576,6 @@ a:hover{ text-decoration:none;}
 }
 
 /* ----- WALL BOX -----*/
-
 .wallBox {  padding:60px 0 60px 0; color:#999999; background: #EFEFEF url(../images/basic/climbing.png) no-repeat 85% 50%;}
 .wallBox .sectionTitle { margin-bottom:15px;}
 .wallBox .wallCont {
@@ -598,7 +600,6 @@ footer {
 }
 
 .footerTop {
-
     display: table;
     height: 130px;
     padding: 0 10px 30px;
@@ -706,17 +707,16 @@ footer {
 }
 
 .sideBanner .promoBox {
-
+    display:block;
+    margin-bottom:15px;
+    background-color:#F9BB00;
 }
 
-.sideBar.promo {
-    /*display: block;
-    float: right;
-    margin: 0 -244px 0 0;
-    padding: 0 0 20px;
-    width: 244px;*/
+.sideBanner .promoBox a.side-box:hover {
+    background-color:#E14915; text-decoration: none
 }
 
+.sideBanner .promoBox a.side-box:hover .title { color:#FFF;}
 
 .sideBar  #pimaryMenu ul.primHolder {
     min-width: 0;
