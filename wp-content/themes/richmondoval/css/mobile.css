@@ -476,10 +476,23 @@ body.menuOpen {
         bottom: 0;
         background-color: transparent;
         width: 34px;
+        height: 40px;
         text-align: center;
         font: 20px/1 FontAwesome;
         color: #fff;
         padding: 12px 0 0;
+    }
+
+    .mainMenu ul li > span.subToggler {
+        z-index: 1;
+
+    }
+
+    .mainMenu ul ul li > span.subToggler {
+        z-index: 2;
+    }
+    .mainMenu ul ul ul li > span.subToggler {
+        z-index: 3;
     }
 
     span.subToggler:before {
