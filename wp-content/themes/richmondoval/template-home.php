@@ -52,7 +52,33 @@ get_header(); ?>
         </div>
     </section>
 
+<?php if ( is_active_sidebar( 'homepage-news' ) || is_active_sidebar( 'homepage-alerts' ) ){ ?>
+    <section class="newsBox">
+        <div class="within">
+            <div class="row">
+                <?php if ( is_active_sidebar( 'homepage-news' ) ){ ?>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <h3 class="sectionTitle">What's new</h3>
+                            <?php dynamic_sidebar('homepage-news' ); ?>
+                        </div>
+                    </div>
+                <?php }?>
+                <?php if ( is_active_sidebar( 'homepage-alerts' ) ){ ?>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <h3 class="sectionTitle">Alerts</h3>
+                            <?php dynamic_sidebar('homepage-alerts' ); ?>
+                        </div>
+                    </div>
+                <?php }?>
+            </div>
 
+        </div>
+    </section>
+<?php } ?>
+
+    <?php if ( is_active_sidebar( 'footer-homepage-left' ) || is_active_sidebar( 'footer-homepage-right' ) ){ ?>
     <section class="wallBox">
         <div class="within">
             <?php if ( is_active_sidebar( 'footer-homepage-left' ) ){ ?>
@@ -67,5 +93,6 @@ get_header(); ?>
             <?php } ?>
         </div>
     </section>
+    <?php } ?>
 
 <?php get_footer(); ?>

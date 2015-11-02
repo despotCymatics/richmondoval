@@ -70,6 +70,28 @@ function richmondoval_widgets_init() {
     ) );
 
 
+    register_sidebar(array(
+        'name' => __( 'Hompage News', 'richmondoval' ),
+        'id' => 'homepage-news',
+        'description' => __('Appears on homepage below slider', 'richmondoval'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title'  => '<h2 class="sectionTitle">',
+        'after_title'   => '</h2>',
+    ));
+
+
+    register_sidebar(array(
+        'name' => __( 'Hompage Alerts', 'richmondoval' ),
+        'id' => 'homepage-alerts',
+        'description' => __('Appears on homepage below slider', 'richmondoval'),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title'  => '<h2 class="sectionTitle">',
+        'after_title'   => '</h2>',
+    ));
+
+
     register_sidebar( array(
         'name' => __( 'Footer Right Logos', 'richmondoval' ),
         'id' => 'footer-right',
@@ -181,8 +203,8 @@ function the_breadcrumb () {
         if ( is_single() ) {
 
             // Single post (Only display the first category)
-            echo '<li class="item-cat item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><a class="bread-cat bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '" href="' . get_category_link($category[0]->term_id ) . '" title="' . $category[0]->cat_name . '">' . $category[0]->cat_name . '</a></li>';
-            echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
+            //echo '<li class="item-cat item-cat-' . $category[0]->term_id . ' item-cat-' . $category[0]->category_nicename . '"><a class="bread-cat bread-cat-' . $category[0]->term_id . ' bread-cat-' . $category[0]->category_nicename . '" href="' . get_category_link($category[0]->term_id ) . '" title="' . $category[0]->cat_name . '">' . $category[0]->cat_name . '</a></li>';
+            //echo '<li class="separator separator-' . $category[0]->term_id . '"> ' . $separator . ' </li>';
             echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
         } else if ( is_category() ) {
@@ -300,9 +322,9 @@ function the_breadcrumb () {
 
 
 
-class description_walker extends Walker_Nav_Menu
+/*class description_walker extends Walker_Nav_Menu
 {
-      function start_el(&$output, $item, $depth, $args)
+      function start_el(&$output, $item, $depth = 0, $args)
       {
            global $wp_query;
            $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -341,10 +363,10 @@ class description_walker extends Walker_Nav_Menu
 
             $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
             }
-}
+}*/
 
 class sub_class_menu extends Walker_Nav_Menu {
-    function start_lvl(&$output, $depth) {
+    function start_lvl(&$output, $depth = 0, $args = Array()) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"dl-submenu\">\n";
     }

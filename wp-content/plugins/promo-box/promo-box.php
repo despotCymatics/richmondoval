@@ -10,6 +10,8 @@
  */
 add_action( 'widgets_init', create_function( '', 'register_widget("promobox_widget");' ) );
 
+require_once("img_resizer.php");
+
 class promobox_widget extends WP_Widget
 {
     /**
@@ -61,18 +63,44 @@ class promobox_widget extends WP_Widget
      * @return void Echoes it's output
      **/
     public function widget( $args, $instance )
+
     {
-        echo '<div class="promoBox">
+        if(isset($instance['class'])) {
+            $class = $instance['class'];
+        }else {
+            $class = "";
+        }
+
+        if($class != '' && $class != ' ') {
+
+            if(strpos($instance['class'],'6') > 0){
+                $image = aq_resize($instance['image'], 800, 400, true);
+            }elseif(strpos($instance['class'],'3') > 0) {
+                $image = aq_resize($instance['image'], 400, 500, true);
+            }else {
+                $image = aq_resize($instance['image'], 400, 500, true);
+            }
+
+        }else {
+            //$instance['class'] = 'col-sm-3';
+            $image =$instance['image'];
+        }
+
+
+
+        echo '
+        <div class="newsHolder '.$class.'">
+            <div class="promoBox">
                 <a class="side-box" title="'.$instance['title'].'" href="'.$instance['link'].'">
-                    <img src="'.$instance['image'].'">
+                    <div class="promo-img-wrap"><img src="'.$image.'"></div>
                     <div class="titleHolder">
                         <h3 class="title">'.$instance['title'].'</h3>
                         <p class="additionalText">'.$instance['text'].'</p>
                         <p class="download">'.$instance['linkTitle'].'</p>
                     </div>
                 </a>
-            </div>';
-
+            </div>
+        </div>';
     }
 
     /**
@@ -127,6 +155,12 @@ class promobox_widget extends WP_Widget
         {
             $text = $instance['text'];
         }
+
+        $class = __('');
+        if(isset($instance['class']))
+        {
+            $class = $instance['class'];
+        }
         ?>
         <p>
             <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
@@ -150,6 +184,11 @@ class promobox_widget extends WP_Widget
         <p>
             <label for="<?php echo $this->get_field_name( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_name( 'class' ); ?>"><?php _e( 'Class:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'class' ); ?>" name="<?php echo $this->get_field_name( 'class' ); ?>" type="text" value="<?php echo esc_attr( $class ); ?>"/>
         </p>
     <?php
     }

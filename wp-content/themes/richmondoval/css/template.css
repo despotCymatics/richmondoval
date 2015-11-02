@@ -282,6 +282,7 @@ a:hover{ text-decoration:none;}
 
 /* ----- photoBox -----*/
 
+
 .photoBox {
     background-image: url(../images/basic/photo-home-bgrd.png);
     background-position: 50% 50%;
@@ -535,12 +536,18 @@ a:hover{ text-decoration:none;}
 /* ----- NEWS BOX -----*/
 
 .newsBox { padding:65px 0 65px 0; background:url(../images/basic/hockey.png) no-repeat 5% 50%;}
-.sectionTitle{ color:#E04915; font-family: 'NeoSansStdMedium'; padding-bottom:10px; border-bottom:3px solid #E6E6E6;}
+.sectionTitle{
+    color:#E04915;
+    font-family: 'NeoSansStdMedium';
+    padding-bottom:10px;
+    border-bottom:3px solid #E6E6E6;
+    margin-bottom: 20px;
+}
 .content .sectionTitle {
     font-size: 22px;
 }
 
-.newsBox .newsHolder { float:left;}
+.newsBox .newsHolder { /*float:left;*/}
 .newsHolder.w-4 { /*width:224px; margin-right:20px;*/}
 .newsHolder.w-6 { width:468px; }
 .newsHolder a{
@@ -566,6 +573,11 @@ a:hover{ text-decoration:none;}
 
 .newsBox .bannerHolder a{ display:block; margin-top:15px; }
 
+.newsBox h3.sectionTitle {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .newsHolder h3 {
     margin: 0 0 10px;
 }
@@ -573,6 +585,15 @@ a:hover{ text-decoration:none;}
 .newsHolder a.side-box {
     min-height: 345px ;
     position: relative;
+}
+
+.newsBox .promoBox .promo-img-wrap {
+    height: 200px;
+    overflow: hidden;
+}
+
+.newsBox .promoBox a.side-box {
+    min-height: 340px;
 }
 
 /* ----- WALL BOX -----*/
@@ -706,17 +727,17 @@ footer {
     padding-left: 5px !important;
 }
 
-.sideBanner .promoBox {
+.sideBanner .promoBox, .newsBox .promoBox{
     display:block;
     margin-bottom:15px;
     background-color:#F9BB00;
 }
 
-.sideBanner .promoBox a.side-box:hover {
+.sideBanner .promoBox a.side-box:hover, .newsBox .promoBox a.side-box:hover {
     background-color:#E14915; text-decoration: none
 }
 
-.sideBanner .promoBox a.side-box:hover .title { color:#FFF;}
+.sideBanner .promoBox a.side-box:hover .title, .newsBox .promoBox a.side-box:hover .title{ color:#FFF;}
 
 .sideBar  #pimaryMenu ul.primHolder {
     min-width: 0;
@@ -849,7 +870,7 @@ footer {
     cursor: pointer;
     color: #337ab7;
     font-size: 20px;
-    padding: 10px;
+    padding:10px 45px 10px 10px;
     background-color: #eaeaea;
     transition: all 400ms ease;
 
@@ -954,6 +975,7 @@ footer {
 .content figure, .newsHolder img {
     width: 100%;
     height: auto;
+
 }
 
 .content > *:first-child img {
@@ -1075,6 +1097,10 @@ footer {
 
 .content table td a:hover {
     text-decoration: underline;
+}
+
+.content .table-wrap {
+    overflow-x: scroll;
 }
 
 .content dl {
@@ -1646,19 +1672,26 @@ img.not-full {
 }
 
 
-#bookMe4Widget object {
+#bookMe4Widget object, #bookMe4Widget iframe {
+    display: block;
+    overflow-y: scroll;
     width: 100%;
-    height: 700px !important;
     box-shadow: none !important;
+    min-height: 800px;
 }
 
-#bookMe4Widget.long object {
-    height: 1450px !important;
+/*
+#bookMe4Widget.long object, #bookMe4Widget.long iframe {
+   height: 1450px !important;
 }
 
-#bookMe4Widget.short object {
-    height: 400px !important;
+#bookMe4Widget.short object, #bookMe4Widget.short iframe {
+   height: 400px !important;
 }
+
+#bookMe4Widget.medium object, #bookMe4Widget.medium iframe {
+    height: 900px !important;
+}*/
 
 /* Blog */
 

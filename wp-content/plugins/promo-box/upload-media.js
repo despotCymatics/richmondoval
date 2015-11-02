@@ -8,12 +8,19 @@ jQuery(document).ready(function($) {
         jQuery.data(document.body, 'prevElement', $(this).prev());
 
         window.send_to_editor = function(html) {
-            var imgurl = jQuery('img',html).attr('src');
+            console.log(html);
+
+            //var imgurl = jQuery('img').attr('src');
+            var imgurl = jQuery("<div>"+html+"</div>").find('img').attr('src');
+
             var inputText = jQuery.data(document.body, 'prevElement');
+
+            console.log(imgurl);
 
             if(inputText != undefined && inputText != '')
             {
                 inputText.val(imgurl);
+                //inputText.val("aaa");
             }
 
             tb_remove();

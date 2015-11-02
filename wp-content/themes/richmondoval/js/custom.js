@@ -1,12 +1,16 @@
 ( function( $ ) {
 
+
     $(window).load(function() {
 
         $('#loading-wrap').fadeOut(600);
+        $('body').css('overflow','auto');
     });
 
 
 $( document ).ready(function() {
+
+    $('body').css('overflow','hidden');
 
    /* $('#pimaryMenu li.has-sub>a').on('click', function(){
 		//$(this).removeAttr('href');
@@ -84,6 +88,11 @@ $( document ).ready(function() {
     $('.content > *:first-child img').wrap('<div class="head-img"></div>');
 
 	//$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
+
+    $('table').wrap("<div class='table-wrap'></div>");
+
+
+
 //
 //	(function getColor() {
 //		var r, g, b;
