@@ -284,7 +284,7 @@ a:hover{ text-decoration:none;}
 
 
 .photoBox {
-    background-image: url(../images/basic/photo-home-bgrd.png);
+    background-image: url(../images/basic/photo-home-bgrd.jpg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -594,6 +594,29 @@ a:hover{ text-decoration:none;}
 
 .newsBox .promoBox a.side-box {
     min-height: 340px;
+}
+
+/* Homepage Alerts */
+
+.homepage-alerts .titleHolder {
+    display: none;
+}
+
+.homepage-alerts .promoBox .promo-img-wrap {
+    height: auto;
+}
+
+.homepage-alerts .newsHolder img {
+    max-height: 340px;
+    width: auto;
+}
+
+.newsBox .homepage-alerts .promoBox {
+    background-color: transparent;
+}
+
+.newsBox .homepage-alerts .promoBox a.side-box:hover {
+    background-color: transparent;
 }
 
 /* ----- WALL BOX -----*/
@@ -1100,7 +1123,7 @@ footer {
 }
 
 .content .table-wrap {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .content dl {

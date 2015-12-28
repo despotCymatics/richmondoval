@@ -90,7 +90,7 @@ ini_set('display_errors', 1);
                     <a title="Instagram" href="#" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/in.png">
                     </a>
-                    <a title="Google Plus" href="#" class="soc" target="_blank">
+                    <a title="Google Plus" href="https://plus.google.com/113479180870162920339/about" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/gp.png">
                     </a>
 

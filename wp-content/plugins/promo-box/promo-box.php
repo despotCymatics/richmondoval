@@ -78,15 +78,15 @@ class promobox_widget extends WP_Widget
             }elseif(strpos($instance['class'],'3') > 0) {
                 $image = aq_resize($instance['image'], 400, 500, true);
             }else {
-                $image = aq_resize($instance['image'], 400, 500, true);
+                $image =$instance['image'];
+               // $image = aq_resize($instance['image'], 400, 500, true);
+                $class = "col-sm-12";
             }
 
         }else {
             //$instance['class'] = 'col-sm-3';
             $image =$instance['image'];
         }
-
-
 
         echo '
         <div class="newsHolder '.$class.'">

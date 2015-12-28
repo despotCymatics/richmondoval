@@ -92,4 +92,18 @@ function qlink_shortcode( $atts, $content ){
 add_shortcode( 'qlink', 'qlink_shortcode' );
 
 
+//REDIRECT
+function redirect_shortcode( $atts, $content ){
+
+    extract( shortcode_atts( array(
+        'link' => '#',
+    ), $atts, 'redirect' ) );
+
+    $result = '<script type="text/javascript">
+	            window.location.replace("'.$link.'");
+                </script>';
+
+    return $result;
+}
+add_shortcode( 'redirect', 'redirect_shortcode' );
 

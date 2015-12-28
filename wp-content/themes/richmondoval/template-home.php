@@ -65,10 +65,38 @@ get_header(); ?>
                     </div>
                 <?php }?>
                 <?php if ( is_active_sidebar( 'homepage-alerts' ) ){ ?>
-                    <div class="col-md-3">
+                    <div class="col-md-3 homepage-alerts">
                         <div class="row">
-                            <h3 class="sectionTitle">Alerts</h3>
-                            <?php dynamic_sidebar('homepage-alerts' ); ?>
+                            <h3 class="sectionTitle">Legacy Partners</h3>
+                            <div id="shuffle">
+                            <?php
+                            $the_sidebars = wp_get_sidebars_widgets();
+                            $alert_sidebar = $the_sidebars['homepage-alerts'];
+                            $widget_count = count($alert_sidebar);
+
+                            dynamic_sidebar('homepage-alerts');
+
+                            ?>
+                            <script type="text/javascript">
+                                $( document ).ready(function() {
+                                    var maxdivs = <?php echo $widget_count-1; ?>;
+                                    var currentIndex = Math.floor(Math.random() * (maxdivs - 0 + 1) + 0);
+                                    console.log(currentIndex);
+                                    $(".homepage-alerts .row .newsHolder.ad:not(:eq(" + currentIndex + "))").hide();
+
+                                    var totalDiv = $(".homepage-alerts .row .newsHolder.ad").length;
+
+                                    setInterval(function () {
+                                        currentIndex = (currentIndex + 1) % totalDiv;
+
+                                        $(".homepage-alerts .row .newsHolder.ad").hide();
+                                        $(".homepage-alerts .row .newsHolder.ad").eq(currentIndex).fadeIn(600);
+
+                                    }, 10000);
+                                });
+                            </script>
+
+                            </div>
                         </div>
                     </div>
                 <?php }?>

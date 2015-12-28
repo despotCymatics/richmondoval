@@ -31,7 +31,7 @@ function richmondoval_scripts_styles() {
 	
 	//wp_enqueue_script('richmondoval-jquery');
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.11.2.min.js', array(), false, false );
-    wp_enqueue_script('richmondoval-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
+    //wp_enqueue_script('richmondoval-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'richmondoval-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
 	wp_enqueue_script( 'richmondoval-jquery.dlmenu', get_template_directory_uri() . '/js/jquery.dlmenu.js', array(), false, false );
 	wp_enqueue_script( 'richmondoval-custom', get_template_directory_uri() . '/js/custom.js', array(), false, false );
@@ -71,7 +71,7 @@ function richmondoval_widgets_init() {
 
 
     register_sidebar(array(
-        'name' => __( 'Hompage News', 'richmondoval' ),
+        'name' => __( 'Homepage News', 'richmondoval' ),
         'id' => 'homepage-news',
         'description' => __('Appears on homepage below slider', 'richmondoval'),
         'before_widget' => '',
@@ -82,11 +82,13 @@ function richmondoval_widgets_init() {
 
 
     register_sidebar(array(
-        'name' => __( 'Hompage Alerts', 'richmondoval' ),
+        'name' => __( 'Homepage Alerts', 'richmondoval' ),
         'id' => 'homepage-alerts',
+        'description'   => '',
+        'class'         => '',
         'description' => __('Appears on homepage below slider', 'richmondoval'),
-        'before_widget' => '',
-        'after_widget' => '',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
         'before_title'  => '<h2 class="sectionTitle">',
         'after_title'   => '</h2>',
     ));
