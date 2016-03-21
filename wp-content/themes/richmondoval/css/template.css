@@ -443,9 +443,10 @@ a:hover{ text-decoration:none;}
 .photoBox .topSearch {
     position:absolute;
     /*right:90px;*/
-    top:200px;
-    right: 25%;
-    /*left: 0;*/
+    /*top:200px;*/
+    right: 0;
+    left: 0;
+    bottom: 70px;
     margin: 0 auto;
     width: 35%;
 
@@ -1654,7 +1655,10 @@ span.wpcf7-list-item {
 
 /* Home slider */
 .amazingslider-nav-1 {
-    top: 92% !important;
+    top: 89% !important;
+}
+.amazingslider-title-1 {
+    color: #fff;
 }
 
 /* Alerts */

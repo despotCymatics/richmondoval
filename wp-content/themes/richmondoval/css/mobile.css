@@ -338,9 +338,6 @@ body.menuOpen {
         margin: 0 auto;
     }
     .photoBox .topSearch {
-        right:0;
-        left:0;
-        top:45px;
         width: 300px;
 
     }

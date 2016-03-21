@@ -9,7 +9,7 @@ get_header(); ?>
         <div class="photoBox">
             <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
             <div class="within">
-                <div id="pimaryMenu">
+                <!--div id="pimaryMenu">
 
                     <?php
 
@@ -34,7 +34,7 @@ get_header(); ?>
 
                     wp_nav_menu( $args );
                     ?>
-                </div>
+                </div-->
                 <div class="topSearch">
                     <?php get_search_form( true ); ?>
                     <?php $allProgramsLink = get_field('all_programs_page');

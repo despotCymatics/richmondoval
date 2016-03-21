@@ -74,11 +74,11 @@ ini_set('display_errors', 1);
                     <span class="userMessage">Welcome back <strong>JOHN</strong></span>
                 </div-->
                 <div class="combinedMenu">
-                    <a href="/hours-location" class="no-mob">HOURS & LOCATION</a>
-                    <a href="/hours-location" class="mob"><i class="fa fa-clock-o"></i></a>
-                    <a href="/event-calendar/book-an-event/" class="no-mob">BOOK AN EVENT</a>
-                    <a href="/event-calendar/book-an-event/" class="mob"><i class="fa fa-calendar-o"></i></a>
-
+                    <!--a href="/hours-location" class="no-mob">HOURS & LOCATION</a>
+                    <a href="/hours-location" class="mob"><i class="fa fa-clock-o"></i></a-->
+                    <a href="http://ovalhp.ca/">OvalHP.ca</a>
+                    <a href="http://therox.ca/">theROX.ca</a>
+                    <a href="http://yyoga.ca/">YYoga.ca</a>
                     <a href="https://richmondoval.perfectmind.com/SocialSite/MemberRegistration/MemberSignIn" class="login">LOGIN</a>
 
                     <a title="facebook" href="https://www.facebook.com/richmondoval" class="soc" target="_blank">
@@ -90,9 +90,9 @@ ini_set('display_errors', 1);
                     <a title="Instagram" href="#" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/in.png">
                     </a>
-                    <a title="Google Plus" href="https://plus.google.com/113479180870162920339/about" class="soc" target="_blank">
+                    <!--a title="Google Plus" href="https://plus.google.com/113479180870162920339/about" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/gp.png">
-                    </a>
+                    </a-->
 
                 </div>
             </div>

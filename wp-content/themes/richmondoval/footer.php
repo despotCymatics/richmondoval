@@ -5,11 +5,11 @@
         <div class="within">
             <div class="row">
                 <div class="footerMenu col-md-8">
-                    <div class="navHolder">
+                     <div class="navHolder">
                         <?php
                         $args = array(
                             'theme_location'  => '',
-                            'menu'            => 'The Facility',
+                            'menu'            => 'The CITY',
                             'container'       => '',
                             'container_class' => '',
                             'container_id'    => '',
@@ -21,18 +21,18 @@
                             'after'           => '',
                             'link_before'     => '',
                             'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">The Facility</h3>%3$s</ul>',
+                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">The City</h3>%3$s</ul>',
                             'depth'           => 0,
                             'walker'          => ''
                         );
                         wp_nav_menu( $args );
                         ?>
                     </div>
-                    <div class="navHolder">
+			<div class="navHolder">
                         <?php
                         $args = array(
                             'theme_location'  => '',
-                            'menu'            => 'Activities',
+                            'menu'            => 'The Facility',
                             'container'       => '',
                             'container_class' => '',
                             'container_id'    => '',
