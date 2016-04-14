@@ -30,7 +30,7 @@ ini_set('display_errors', 1);
     </script>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> style="overflow: hidden;">
 <div id="loading-wrap">
     <img title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/logo-animate.gif">
     <!--p>Loading, please wait.</p-->

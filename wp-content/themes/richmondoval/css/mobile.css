@@ -39,6 +39,9 @@ body.menuOpen {
     .topBar .triggerTop {
         display: block;
     }
+    .menuHeader ul li {
+        padding-right: 15px;
+    }
 
 }
 
@@ -475,7 +478,7 @@ body.menuOpen {
 
 @media screen and (max-width: 600px) {
 	.userMessage { display:none}
-	.menuHeader ul li a{font-size: 14px;}
+	.menuHeader ul li a{font-size: 12px;}
 	.eventBox p a { font-size:16px;}
 
 	/*.footerSponsors { float: none; display:table; margin:0 auto;}*/
@@ -544,7 +547,7 @@ body.menuOpen {
     }
 
     .menuHeader ul li a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .sideBanner .promoBox .title {

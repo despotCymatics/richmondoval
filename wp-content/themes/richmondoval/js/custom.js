@@ -3,14 +3,14 @@
 
     $(window).load(function() {
 
-        $('#loading-wrap').fadeOut(600);
-        $('body').css('overflow','auto');
+        $('#loading-wrap').fadeOut(400);
+        setTimeout($('body').css('overflow','auto'), 400);
     });
 
 
 $( document ).ready(function() {
 
-    $('body').css('overflow','hidden');
+    //$('body').css('overflow','hidden');
 
    /* $('#pimaryMenu li.has-sub>a').on('click', function(){
 		//$(this).removeAttr('href');

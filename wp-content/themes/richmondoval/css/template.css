@@ -2000,3 +2000,12 @@ select:focus {
 label {
     line-height: 25px;
 }
+
+.runner:before {
+    background: url("../images/basic/runner.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    content: " ";
+    background-size: cover;
+}
