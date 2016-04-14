@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="AzureRO">
+  <component name="PublishConfigData" serverName="siberRO">
     <serverData>
-      <paths name="AzureRO">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="RichmondOval">
+      <paths name="siberRO">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -19,4 +12,3 @@
     </serverData>
   </component>
 </project>
-

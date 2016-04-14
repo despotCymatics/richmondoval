@@ -12,6 +12,18 @@ $( document ).ready(function() {
 
     //$('body').css('overflow','hidden');
 
+    /* if(document.getElementsByTagName('object').length > 0){
+       window.onbeforeunload = function() {
+
+          window.location.href = 'http://google.com';
+           console.log('aaa');
+       };
+       //history.replaceState({},document.referrer, document.referrer);
+       //console.log(document.referrer);
+
+
+   }*/
+
    /* $('#pimaryMenu li.has-sub>a').on('click', function(){
 		//$(this).removeAttr('href');
 		var element = $(this).parent('li');
