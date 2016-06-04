@@ -271,6 +271,9 @@ body.menuOpen {
     .newsBox .promoBox .promo-img-wrap {
         height: 170px;
     }
+    .newsBox .homepage-alerts .promoBox .promo-img-wrap {
+        height: auto;
+    }
 
     .photoBox #pimaryMenu {
         left: 40px;
@@ -280,7 +283,7 @@ body.menuOpen {
         display: none;
     }
 
-    .photoBox {height: 600px;}
+    .photoBox {height: 320px;}
 
     .pageWrap {
         transform: translate3d(0px, 0px, 0px);
@@ -436,6 +439,13 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 768px) {
+    .topBar .combinedMenu a {
+        padding: 0 5px;
+        font-size: 10px;
+    }
+    .topBar .combinedMenu a.login {
+        padding: 0 10px;
+    }
     .topBar .combinedMenu a.no-mob { display:none}
     .topBar .combinedMenu a.mob { display:block}
 	.photoBox .topSearch .search input[type="text"] {}

@@ -44,7 +44,30 @@
                             'after'           => '',
                             'link_before'     => '',
                             'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">Activities</h3>%3$s</ul>',
+                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">The Facility</h3>%3$s</ul>',
+                            'depth'           => 0,
+                            'walker'          => ''
+                        );
+                        wp_nav_menu( $args );
+                        ?>
+                    </div>
+                    <div class="navHolder">
+                        <?php
+                        $args = array(
+                            'theme_location'  => '',
+                            'menu'            => 'The Corporation',
+                            'container'       => '',
+                            'container_class' => '',
+                            'container_id'    => '',
+                            'menu_class'      => '',
+                            'menu_id'         => 'navSec',
+                            'echo'            => true,
+                            'fallback_cb'     => 'wp_page_menu',
+                            'before'          => '',
+                            'after'           => '',
+                            'link_before'     => '',
+                            'link_after'      => '',
+                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">The Corporation</h3>%3$s</ul>',
                             'depth'           => 0,
                             'walker'          => ''
                         );
@@ -74,30 +97,7 @@
                         wp_nav_menu( $args );
                         ?>
                     </div>
-                    <div class="navHolder">
-                        <?php
-                        $args = array(
-                            'theme_location'  => '',
-                            'menu'            => 'The CITY',
-                            'container'       => '',
-                            'container_class' => '',
-                            'container_id'    => '',
-                            'menu_class'      => '',
-                            'menu_id'         => 'navSec',
-                            'echo'            => true,
-                            'fallback_cb'     => 'wp_page_menu',
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s" class="%2$s"><h3 class="label">The CITY</h3>%3$s</ul>',
-                            'depth'           => 0,
-                            'walker'          => ''
-                        );
-                        wp_nav_menu( $args );
-                        ?>
-                    </div>
-                    <div class="clearfix"></div>
+                   <div class="clearfix"></div>
                 </div>
 
                 <?php if ( is_active_sidebar( 'footer-right' ) ){ ?>

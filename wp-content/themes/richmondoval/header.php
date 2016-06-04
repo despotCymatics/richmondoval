@@ -76,12 +76,12 @@ ini_set('display_errors', 1);
                 <div class="combinedMenu">
                     <!--a href="/hours-location" class="no-mob">HOURS & LOCATION</a>
                     <a href="/hours-location" class="mob"><i class="fa fa-clock-o"></i></a-->
-                    <a href="http://ovalhp.ca/">OvalHP.ca</a>
-                    <a href="http://therox.ca/">theROX.ca</a>
-                    <a href="http://yyoga.ca/">YYoga.ca</a>
-                    <a href="https://richmondoval.perfectmind.com/SocialSite/MemberRegistration/MemberSignIn" class="login">LOGIN</a>
+                    <a title="High Performance" href="http://ovalhp.ca/">OvalHP.ca</a>
+                    <a title="Richmond Oval Experience" href="http://therox.ca/">theROX.ca</a>
+                    <a title="Yyoga" href="http://yyoga.ca/">YYoga.ca</a>
+                    <a title="Login into your RO account" href="https://richmondoval.perfectmind.com/SocialSite/MemberRegistration/MemberSignIn" class="login">LOGIN</a>
 
-                    <a title="facebook" href="https://www.facebook.com/richmondoval" class="soc" target="_blank">
+                    <a title="Facebook" href="https://www.facebook.com/richmondoval" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/fb.png">
                     </a>
                     <a title="Twitter" href="https://twitter.com/RichmondOval" class="soc" target="_blank">
