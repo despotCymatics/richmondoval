@@ -85,6 +85,9 @@ $( document ).ready(function() {
 
     $('.mainMenu ul ul ul').parent().prepend('<span class="subToggler"></span>');
     $('.mainMenu').addClass('original').clone().insertAfter('.mainMenu').addClass('cloned').removeClass('original').hide();
+    $('.mainMenu.original').find('.logoHolder img').attr('src', '/wp-content/themes/richmondoval/images/basic/logo-org.png');
+
+
     $('.mainMenu ul#menu-programs-menu').prepend('<li class="close"><a href="#"><i class="fa fa-times"></i></a></li>');
     $('.mainMenu ul#menu-programs-menu .close').click(function () {
         $('body').toggleClass('menuOpen');

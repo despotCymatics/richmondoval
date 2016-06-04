@@ -25,7 +25,6 @@ body.menuOpen {
     top: 80px;
 }
 
-
 @media screen and (max-width: 1180px) {
 
     .within {
@@ -40,12 +39,9 @@ body.menuOpen {
         display: block;
     }
     .menuHeader ul li {
-        padding-right: 15px;
+
     }
-
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -65,7 +61,7 @@ body.menuOpen {
     }
 
     .menuWrap {
-        background-color: #D9D9D9;
+        background-color: rgba(233, 233, 233, 0.96);;
         padding: 12px 15px;
     }
 
@@ -149,7 +145,6 @@ body.menuOpen {
     }
 
 
-
     /* Sub Menus */
 
     .mainMenu ul, .mainMenu ul ul {
@@ -217,8 +212,6 @@ body.menuOpen {
     .mainMenu ul ul ul ul {
         background-color: #151515;
     }
-
-
     span.subToggler {
         position: absolute;
         cursor: pointer;
@@ -226,7 +219,7 @@ body.menuOpen {
         top: 0;
         bottom: 0;
         background-color: transparent;
-        width: 34px;
+        width: 42px;
         height: 40px;
         text-align: center;
         font: 20px/1 FontAwesome;
@@ -236,7 +229,6 @@ body.menuOpen {
 
     .mainMenu ul li > span.subToggler {
         z-index: 1;
-
     }
 
     .mainMenu ul ul li > span.subToggler {
@@ -285,19 +277,6 @@ body.menuOpen {
 
     .photoBox {height: 320px;}
 
-    .pageWrap {
-        transform: translate3d(0px, 0px, 0px);
-        transition: transform 320ms ease 0s;
-    }
-
-    .menuOpen .pageWrap {
-
-        transform: translate3d(260px,0,0);
-        transition: transform 320ms ease;
-        /*-webkit-transform:translate3d(260px,0,0);
-        -webkit-transition:-webkit-transform 320ms ease;*/
-
-    }
 	.navBox { height: auto;}
     .navBox li a { margin: 0; border: none; font-size: 150% !important;}
     .navBox li {float: none; display: block; margin-right: 0;}
@@ -362,19 +341,74 @@ body.menuOpen {
         width: auto\9; /* ie8 */
     }
 
-    .logoHolder { margin:10px auto; float:none; display:table;}
-    .menuHeader { display:table; margin:10px auto; float: none}
-    .menuHeader ul li { margin-right:15px;}
+    .logoHolder {
+        margin: 10px auto;
+        float: none;
+        display: table;
+    }
 
-    .newsBox .newsHolder.w-4 {float:none; display:inline-block; width:100%;}
-    .newsBox .newsHolder.w-4 img{ width:100%;}
-    .newsBox .newsHolder.w-4 a { height:auto;}
+    .mainMenu.fixed .logoHolder {
+        float: left;
+    }
 
-    .newsBox .newsHolder.w-6 { float:none; display:inline-block; width:100%;}
-    .newsBox .newsHolder.w-6 img{ width:100%;}
-    .newsBox .newsHolder.w-6 a { height:auto;}
+    .menuHeader {
+        display: table;
+        margin: 10px auto;
+        float: none
+    }
 
-    .wallBox .sectionTitle { margin-top:20px;}
+    .menuHeader ul li {
+        padding-right: 8px;
+        margin-right: 10px;
+    }
+    .menuHeader ul li:before {
+        margin-right: -32px;
+    }
+    .menuHeader ul li:last-child {
+        padding-right: 0;
+    }
+
+    .mainMenu.fixed ul li a {
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+    .mainMenu:not(.fixed) ul {
+        margin: 0 auto;
+        display: table;
+    }
+
+    .newsBox .newsHolder.w-4 {
+        float: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .newsBox .newsHolder.w-4 img {
+        width: 100%;
+    }
+
+    .newsBox .newsHolder.w-4 a {
+        height: auto;
+    }
+
+    .newsBox .newsHolder.w-6 {
+        float: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .newsBox .newsHolder.w-6 img {
+        width: 100%;
+    }
+
+    .newsBox .newsHolder.w-6 a {
+        height: auto;
+    }
+
+    .wallBox .sectionTitle {
+        margin-top: 20px;
+    }
 
     /*.no-padd { padding:0 !important}
     .no-padd-left { padding:0 !important}
@@ -439,6 +473,24 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 768px) {
+
+    .mainMenu:not(.fixed) ul {
+        margin: inherit;
+        display: block;
+    }
+    .pageWrap {
+        transform: translate3d(0px, 0px, 0px);
+        transition: transform 320ms ease 0s;
+    }
+
+    .menuOpen .pageWrap {
+
+        transform: translate3d(260px,0,0);
+        transition: transform 320ms ease;
+        /*-webkit-transform:translate3d(260px,0,0);
+        -webkit-transition:-webkit-transform 320ms ease;*/
+
+    }
     .topBar .combinedMenu a {
         padding: 0 5px;
         font-size: 10px;
@@ -449,8 +501,8 @@ body.menuOpen {
     .topBar .combinedMenu a.no-mob { display:none}
     .topBar .combinedMenu a.mob { display:block}
 	.photoBox .topSearch .search input[type="text"] {}
-	.menuHeader ul li { margin-right:5px; }
-	.menuHeader ul li a{font-size: 16px;}
+	.menuHeader ul li { margin-right:0px; }
+	.menuHeader ul li a{font-size: 14px;}
 
     .newsBox .promoBox .promo-img-wrap {
         height: auto;

@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'NeoSansStdRegular';
-    color: #000;
+    color: #161616;
     background-color: #FFF;
     font-size: 12px;
 }
@@ -232,13 +232,12 @@ a:hover {
 }
 
 .logoHolder img {
-    max-height: 91px;
-
+    max-height: 82px;
 }
 
 .mainMenu .logoHolder {
     display: none;
-    margin: 5px 10px 5px 0;
+    margin: 5px 20px 5px 10px;
 }
 
 .mainMenu.fixed .logoHolder {
@@ -332,7 +331,7 @@ a:hover {
 
 .navBox li a {
     font-family: 'NeoSansStdLight';
-    color: #000;
+    color: #161616;
     font-size: 20px;
     display: block;
     padding: 0 15px;
@@ -484,7 +483,7 @@ a:hover {
 }
 
 #pimaryMenu ul.primHolder {
-    border-radius: 5px;
+    border-radius: 4px;
     /*background-color:rgba(62,62,62,0.96);*/
     background-color: rgba(48, 48, 48, 0.98);
     list-style: none;
@@ -599,6 +598,8 @@ a:hover {
     padding: 10px 18px 10px 40px;
     position: relative;
     margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .sideBar #pimaryMenu h4:before {
@@ -791,13 +792,13 @@ a:hover {
 }
 
 .newsHolder .title {
-    color: #000;
+    color: #161616;
     font-family: 'NeoSansStdLight';
     line-height: 120%;
 }
 
 .newsHolder a p {
-    color: #000;
+    color: #161616;
     margin: 0;
     line-height: 120%;
     font-size: 11px;
@@ -911,8 +912,9 @@ a:hover {
 
 footer {
     background-color: #fefefe;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
+    padding-top: 40px;
+    border-top: 1px solid #dadada;
+    box-shadow: inset 0px 1px 200px 0px rgba(0,0,0,0.1)
 }
 
 .footerTop {
@@ -943,7 +945,7 @@ footer {
 }
 
 .footerMenu .navHolder ul#navSec h3 {
-    color: #000;
+    color: #161616;
     font-family: 'NeoSansStdMedium';
     font-size: 16px;
     font-weight: normal;
@@ -979,7 +981,7 @@ footer {
 }
 
 .footerSponsors h3 {
-    color: #000;
+    color: #161616;
     font-family: 'NeoSansStdMedium';
     font-size: 16px;
     font-weight: normal;
@@ -1006,7 +1008,7 @@ footer {
     margin: 0;
     line-height: 36px;
     font-size: 12px;
-    color: #9E9E9E;
+    color: #7d7d7d;
 }
 
 .innerphotoBox {
@@ -1021,7 +1023,7 @@ footer {
 
 .within.inner {
     /*padding: 100px 0 120px;*/
-    padding: 20px 10px 120px;
+    padding: 15px 10px 120px;
 }
 
 .inner h1 {
@@ -1034,12 +1036,11 @@ footer {
 }
 
 .sideBar {
-    padding-right: 5px !important;
-
+    padding-right: 0px !important;
 }
 
 .sideBanner {
-    padding-left: 5px !important;
+    padding-left: 0px !important;
 }
 
 .sideBanner .promoBox, .newsBox .promoBox {
@@ -1064,7 +1065,7 @@ footer {
 .quick-links {
     /*background: #f9bb00 none repeat scroll 0 0;*/
     background-color: rgba(48, 48, 48, 0.98);
-    border-radius: 5px;
+    border-radius: 4px;
     margin-bottom: 15px;
 }
 
@@ -1074,6 +1075,8 @@ footer {
     color: #fff;
     padding: 10px 18px 10px;
     margin-bottom: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .quick-links ul {
@@ -1589,7 +1592,7 @@ input[type="text"], input[type="email"], input[type="date"], textarea {
     width: 100%;
     height: 50px;
     border: 1px solid #ddd;
-    color: #000;
+    color: #161616;
     font-size: 14px;
     padding: 0 20px;
     transition: all 320ms ease;
@@ -1626,7 +1629,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
 
 #breadcrumbs {
     list-style: none;
-    margin: 10px 0;
+    margin: 8px 0;
     overflow: hidden;
 }
 
@@ -1727,11 +1730,15 @@ h4.questionNtoggler.on:before {
 }
 
 .mainMenu {
-    /*background-color: #D9D9D9;*/
-    background-color: #e3e3e3;
+    /*background-color: #D9D9D9;
+    background-color: #e3e3e3;*/
+    background-color: rgba(233, 233, 233, 0.96);
     position: relative;
     z-index: 5;
     border-top: 1px solid #ccc;
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.24);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.24);
 }
 
 .mainMenu a:hover {
@@ -2096,7 +2103,7 @@ img.not-full {
 
 .post-meta .read-more a {
     background-color: #ccc;
-    color: #000;
+    color: #161616;
     padding: 8px 20px;
 }
 

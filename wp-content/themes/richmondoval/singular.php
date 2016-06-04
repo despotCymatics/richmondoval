@@ -133,6 +133,26 @@ if ( has_post_thumbnail() ) : ?>
                 </div><!-- /sideBar right -->
             <?php } ?>
 
+			<?php
+				$sideBoxTitle = get_field("sidebox_title");
+				if($sideBoxTitle){
+			?>
+		        <div class="newsHolder">
+			        <div class="promoBox">
+				        <a class="side-box" target="_blank" title="<?php echo $sideBoxTitle; ?>" href="<?php echo get_field("sidebox_link"); ?>">
+					        <?php if(get_field("sidebox_image")){ ?>
+					        <div class="promo-img-wrap"><img src="<?php echo get_field("sidebox_image"); ?>"></div>
+					        <?php } ?>
+					        <div class="titleHolder">
+						        <h3 class="title"><?php echo $sideBoxTitle; ?></h3>
+						        <p class="additionalText"><?php echo get_field("sidebox_text"); ?></p>
+						        <p class="download">See More</p>
+					        </div>
+				        </a>
+			        </div>
+		        </div>
+			<?php } ?>
+
             <?php
             $sideText = get_field('side_text');
             if($sideText) {
