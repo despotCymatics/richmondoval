@@ -878,7 +878,7 @@ a:hover {
 .wallBox {
     padding: 60px 0 60px 0;
     color: #999999;
-    background: #EFEFEF url(../images/basic/climbing.png) no-repeat 85% 50%;
+    background: #f9f9f9 url(../images/basic/climbing.png) no-repeat 85% 50%;
 }
 
 .wallBox .sectionTitle {
