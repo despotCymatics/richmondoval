@@ -4,11 +4,16 @@
     $(window).load(function() {
 
         $('#loading-wrap').fadeOut(400);
-        setTimeout($('body').css('overflow','auto'), 400);
+        setTimeout(function(){$('body').css('overflow','auto')}, 400);
     });
 
 
 $( document ).ready(function() {
+
+    setTimeout(function(){
+        $('#loading-wrap').fadeOut(400);
+        setTimeout(function(){$('body').css('overflow','auto')}, 400);
+    }, 7000);
 
     //$('body').css('overflow','hidden');
 

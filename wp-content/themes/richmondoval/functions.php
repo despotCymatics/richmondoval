@@ -24,12 +24,13 @@ add_action( 'after_setup_theme', 'richmondoval_setup_theme' );
 function richmondoval_scripts_styles() {
 	global $wp_styles;
 	wp_deregister_script('jquery');
-	//wp_deregister_style('open-sans');
-	wp_register_script('richmondoval-jquery', (get_template_directory_uri() . '/js/jquery-1.11.2.min.js'), false, '1.11.2');
+    wp_deregister_script('jquery-core');
+    //wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+	wp_register_script('jquery', (get_template_directory_uri() . '/js/jquery-1.11.2.min.js'), false, '1.11.2');
 
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	
-	//wp_enqueue_script('richmondoval-jquery');
+	//wp_enqueue_script('jquery');
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.11.2.min.js', array(), false, false );
     wp_enqueue_script('richmondoval-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'richmondoval-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
