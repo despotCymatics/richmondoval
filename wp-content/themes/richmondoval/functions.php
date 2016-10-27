@@ -48,6 +48,7 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_style( 'richmondoval-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), false, "screen, projection" );
 	wp_enqueue_style( 'richmondoval-mobile', get_template_directory_uri() . '/css/mobile.css', array(), false, "only screen and (max-width: 1200px)" );
 	wp_enqueue_style( 'richmondoval-component', get_template_directory_uri() . '/css/component.css', array(), false, "only screen and (max-width: 1024px)" );
+	wp_enqueue_style( 'richmondoval-custom-style', get_template_directory_uri() . '/custom-style.css', array(), false, "screen, projection)" );
 
 }
 add_action( 'wp_enqueue_scripts', 'richmondoval_scripts_styles' );

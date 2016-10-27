@@ -272,10 +272,10 @@ body.menuOpen {
     }
 
     .wonderpluginslider-container {
-        display: none;
+        /*display: none;*/
     }
 
-    .photoBox {height: 320px;}
+    /*.photoBox {height: 320px;}*/
 
 	.navBox { height: auto;}
     .navBox li a { margin: 0; border: none; font-size: 150% !important;}
@@ -315,6 +315,13 @@ body.menuOpen {
 
 @media screen and (max-width: 992px) {
 
+    .photoBox {height: 370px;}
+
+    .amazingslider-nav-1 {
+        display: none !important;
+        /*bottom: 80% !important;*/
+    }
+
     .photoBox #pimaryMenu {
         top: 170px;
         right:0;
@@ -324,6 +331,7 @@ body.menuOpen {
     }
     .photoBox .topSearch {
         width: 300px;
+        bottom: 5px;
 
     }
 
@@ -449,12 +457,17 @@ body.menuOpen {
 }
 
 @media (max-width: 780px) {
+
+    .photoBox {
+        height: 325px;
+    }
+
     .post-box .date {
         text-align: left;
     }
 
     .inner h1 {
-        font-size: 48px;
+        font-size: 36px;
         margin: 0 0 30px;
         padding: 0 0 20px;
     }
@@ -470,8 +483,11 @@ body.menuOpen {
         float: none;
     }
 
+    #breadcrumbs {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
 }
-
 @media screen and (max-width: 768px) {
 
     .mainMenu:not(.fixed) ul {
@@ -543,6 +559,9 @@ body.menuOpen {
 	.menuHeader ul li a{font-size: 12px;}
 	.eventBox p a { font-size:16px;}
 
+    .photoBox {
+        height: 275px;
+    }
 	/*.footerSponsors { float: none; display:table; margin:0 auto;}*/
 }
 
@@ -567,9 +586,19 @@ body.menuOpen {
     .content h4.showMoreToggler {
         font-size: 16px;
     }
+
+    .photoBox {
+        height: 240px;
+    }
+    .amazingslider-text-wrapper-1 {
+        margin: 0 !important;
+    }
 }
 
 @media (max-width: 400px) {
+    .photoBox {
+        height: 220px;
+    }
 
     .content .bannerHolder, .content .newsHolder {
         float: none;

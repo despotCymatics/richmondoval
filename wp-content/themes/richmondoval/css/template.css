@@ -449,10 +449,11 @@ a:hover {
 /* ----- photoBox -----*/
 
 .photoBox {
-    background-image: url(../images/basic/photo-home-bgrd.jpg);
+    /*background-image: url(../images/basic/photo-home-bgrd.jpg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
+    background-color: #E04915;
     display: table;
     /*height: 624px;*/
     width: 100%;
@@ -1946,7 +1947,7 @@ span.wpcf7-list-item {
 
 /* Home slider */
 .amazingslider-nav-1 {
-    top: 89% !important;
+    top: 87% !important;
 }
 
 .amazingslider-title-1 {
@@ -1989,12 +1990,13 @@ img.not-full {
     margin: 10px 0;
 }
 
-#bookMe4Widget object, #bookMe4Widget iframe {
+#bookMe4Widget object, #bookMe4Widget iframe, object, iframe {
     display: block;
     overflow-y: scroll;
     width: 100%;
     box-shadow: none !important;
     min-height: 800px;
+    border: 1px solid #eee;
 }
 
 /*
