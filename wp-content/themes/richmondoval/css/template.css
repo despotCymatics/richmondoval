@@ -2310,3 +2310,9 @@ label {
     content: " ";
     background-size: cover;
 }
+
+/*events*/
+
+#tribe-events-pg-template {
+    margin: 40px auto;
+}

@@ -1,34 +1,46 @@
 <?php
+
+
+
+
+
+
+
+
 /**
- * The base configurations of the WordPress.
+ * The base configuration for WordPress
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, and ABSPATH. You can find more information by visiting
- * {@link https://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
- * Codex page. You can get the MySQL settings from your web host.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'richmondoval-wp');
+define('DB_NAME', 'richmondoval');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'richmond');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'cym4t1ka');
+define('DB_PASSWORD', 'kgVpeKz1cG!@Zm15$L%z');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
@@ -42,22 +54,22 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '+A^U-9nW$y=eu=U3i/>+_ml`ota-8yNN&f|W%s+%;o+`&^&hW?NY_ep_m9OL%^H;');
-define('SECURE_AUTH_KEY',  'TqJ4_~KW%IO32gx!a$n!!6SuO.4a7:wZSN2-|^!(RBb(LyUGc@#+2c%pjlpHC%*|');
-define('LOGGED_IN_KEY',    '(;nmVTuiT&Xh|O.z[2F`GoKsj(=4sYawhy/p5{r-:9q=T3NyC<gd/530ghax.75a');
-define('NONCE_KEY',        '##nk]=YL8]e6>ZH9%Z+uX *]wX/ffud6n=Id|~hop>bHQqEaC+b+w}*<[liwzCg[');
-define('AUTH_SALT',        'UE]NI]/]cx7]M)HbeMx-. )g!3*TqL<;a)T3vQs~Ez$s9_rXzD8/Shq-77KFU~t6');
-define('SECURE_AUTH_SALT', '#bgzg;,WBM/BifQGW;2;^w!|[.(VgElE`0x?ulP^Cu=z2}#-}sS XOBE:Z;+1].H');
-define('LOGGED_IN_SALT',   'Ks0(3+vREtJLYS&daq+4jK<ct_bS7?NaPN5_Nv|d@9q{Pw<8{*/X.1LmxU2d?@h7');
-define('NONCE_SALT',       '`8dFQX5*:,d}!Xe&ppDE$|^)+e+(P1s(o8|/HmrKNRY2-6dv*|L-$;-!JroLoGd1');
+define('AUTH_KEY',         'O+&8EW <P~d,PT`7MF_%(6[+&6-!No2DBX-,J4OFs_9k9<EdL+4X&Zc?ol,p2{c#');
+define('SECURE_AUTH_KEY',  '3`2b)^x?q+zT-w3v.-%u?~9,5kaoBJLZ58v_;gb&sN|(u{QL+r#]frnzQ1}&:+*{');
+define('LOGGED_IN_KEY',    '-2*kA+&-~_H>~o.=riAOmXF`W>*9&A(88k4~#_0Y#8t&nx4uH#=pdRuzu7g^lOoB');
+define('NONCE_KEY',        'Y{5n1x+(l+`Opk&5*R&-RV+ #l7)&i Be0Q2[#^<@(u. Qa;{V-|I<B=5vfYRt23');
+define('AUTH_SALT',        'mQ_KMOK,[,{4SX<EPwz_ot0k|H<xJXj1>Jt@s:ke#Z|SC@K_Ne6]6K&R3uz`[*Rk');
+define('SECURE_AUTH_SALT', '^k9O|- M0G0q@(|{84x,,wg+b-Rk@Tw*nC)sHQW,M[V=,Fu,-tBpwj!zFU,8cb0Z');
+define('LOGGED_IN_SALT',   '4vQk7*[XTDUp<JZ6j9H|5vlHa&I|yKCg`Sp-)<pLh|Z%Gr1:%913AJrHXK[@O[}S');
+define('NONCE_SALT',       '.6k5ooNO39@wXz8q)W&&ZT!1P&-#o&v:cZkQ.7j}J{-V|h&r_5MrN;jiDm#FOuz<');
 
 /**#@-*/
 
 /**
  * WordPress Database Table prefix.
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
 
@@ -67,8 +79,15 @@ $table_prefix  = 'wp_';
  * Change this to true to enable the display of notices during development.
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the Codex.
+ *
+ * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', true); 
+define('WP_DEBUG_DISPLAY', false); 
 
 /* That's all, stop editing! Happy blogging. */
 

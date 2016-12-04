@@ -1,7 +1,8 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 ?>
+
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
@@ -15,6 +16,65 @@ ini_set('display_errors', 1);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+
+    <?php
+    //lock events forr non logged in users
+    if (tribe_is_event() || tribe_is_event_category() || tribe_is_in_main_loop() || tribe_is_view() || 'tribe_events' == get_post_type() || is_singular( 'tribe_events' )) {
+
+        session_start();
+        session_name('eventsLogSession');
+
+        $usr = 'roevents';
+        $pass = 'events2016';
+
+        if(isset($_POST['username']) && isset($_POST['password'])) {
+
+            $_SESSION['usr'] = $_POST['username'];
+            $_SESSION['pass'] = $_POST['password'];
+        }
+
+        if(isset($_SESSION['usr']) && isset($_SESSION['pass'])) {
+
+            if($_SESSION['usr'] == $usr && $_SESSION['pass'] == $pass) {
+
+            }else {
+                echo displayForm();
+                exit();
+            }
+
+        } else {
+
+            echo displayForm();
+            exit;
+        }
+        /*if(!is_user_logged_in()) {
+			wp_redirect( "/no-permission/" );
+			exit;
+		}*/
+    }
+
+    function displayForm() {
+        return '
+    <div style="margin: 40px auto;
+    display: block;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    background: #eee;">
+        <img width="100px" src="/wp-content/themes/richmondoval/images/basic/logo.png" alt="Site name">
+        <h1>This is restricted page, please login:</h1>
+        <form action="" method="post">
+            <p><input name="username" type="text" placeholder="Username"/></p>
+            <p></p><input name="password" type="password" placeholder="Password"/><br></p>
+            <button>Login</button>
+        </form>
+       </div>';
+
+    }
+
+    ?>
+
 
 	<?php wp_head();?>
 
@@ -87,7 +147,7 @@ ini_set('display_errors', 1);
                     <a title="Twitter" href="https://twitter.com/RichmondOval" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/tw.png">
                     </a>
-                    <a title="Instagram" href="#" class="soc" target="_blank">
+                    <a title="Instagram" href="https://www.instagram.com/richmondoval/" class="soc" target="_blank">
                         <img src="<?=get_template_directory_uri()?>/images/basic/in.png">
                     </a>
                     <!--a title="Google Plus" href="https://plus.google.com/113479180870162920339/about" class="soc" target="_blank">
@@ -171,3 +231,4 @@ ini_set('display_errors', 1);
     </div>
 </header>
 <!-- /header -->
+
