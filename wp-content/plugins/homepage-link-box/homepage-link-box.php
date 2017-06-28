@@ -1,18 +1,18 @@
 <?php
 /*
-* Plugin Name: Promo Box Widget
-* Description: Widget that uses the built in Media library.
+* Plugin Name: Link Box Widget
+* Description: Widget for homepage link boxes.
 * Version: 1.0
 * Author: despot
 */
 /**
  * Register the Widget
  */
-add_action( 'widgets_init', create_function( '', 'register_widget("promobox_widget");' ) );
+add_action( 'widgets_init', create_function( '', 'register_widget("linkbox_widget");' ) );
 
 require_once("img_resizer.php");
 
-class promobox_widget extends WP_Widget
+class linkbox_widget extends WP_Widget
 {
     /**
      * Constructor
@@ -20,11 +20,11 @@ class promobox_widget extends WP_Widget
     public function __construct()
     {
         $widget_ops = array(
-            'classname' => 'promobox',
-            'description' => 'Promo Box Widget that uses the built in Media library.'
+            'classname' => 'linkbox_widget',
+            'description' => 'Link Box Widget displayed on homepage.'
         );
 
-        parent::__construct( 'promobox', 'Promo Box Widget', $widget_ops );
+        parent::__construct( 'linkbox_widget', 'Link Box', $widget_ops );
 
         add_action('admin_enqueue_scripts', array($this, 'upload_scripts'));
         add_action('admin_enqueue_styles', array($this, 'upload_styles'));
@@ -74,13 +74,9 @@ class promobox_widget extends WP_Widget
         if($class != '' && $class != ' ') {
 
             if(strpos($instance['class'],'6') > 0){
-                $class = "col-sm-6";
-                $image =$instance['image'];
-                //$image = aq_resize($instance['image'], 800, 400, true);
+                $image = aq_resize($instance['image'], 800, 400, true);
             }elseif(strpos($instance['class'],'3') > 0) {
-                $class = "col-sm-3";
-                $image =$instance['image'];
-                //$image = aq_resize($instance['image'], 400, 500, true);
+                $image = aq_resize($instance['image'], 400, 500, true);
             }else {
                 $image =$instance['image'];
                // $image = aq_resize($instance['image'], 400, 500, true);
@@ -93,18 +89,13 @@ class promobox_widget extends WP_Widget
         }
 
         echo '
-        <div class="newsHolder '.$class.'">
-            <div class="promoBox">
-                <a class="side-box" title="'.$instance['title'].'" href="'.$instance['link'].'">
-                    <div class="promo-img-wrap"><img src="'.$image.'"></div>
-                    <div class="titleHolder">
-                        <h3 class="title">'.$instance['title'].'</h3>
-                        <p class="additionalText">'.$instance['text'].'</p>
-                        <p class="download">'.$instance['linkTitle'].'</p>
-                    </div>
-                </a>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            <div class="homepageLinkBox" style="background-image:url('.$image.')">
+                <h3 class="">'.$instance['title'].'</h3>
+                <div class="linksHolder">'.$instance['text'].'</div>
             </div>
-        </div>';
+        </div>
+        ';
     }
 
     /**
@@ -130,7 +121,7 @@ class promobox_widget extends WP_Widget
      **/
     public function form( $instance )
     {
-        $title = __('Promo Title');
+        $title = __('Box Title');
         if(isset($instance['title']))
         {
             $title = $instance['title'];
@@ -142,58 +133,38 @@ class promobox_widget extends WP_Widget
             $image = $instance['image'];
         }
 
-        $link = __('#');
-        if(isset($instance['link']))
-        {
-            $link = $instance['link'];
-        }
-
-        $linkTitle = __('See More');
-        if(isset($instance['linkTitle']))
-        {
-            $linkTitle = $instance['linkTitle'];
-        }
-
         $text = __('');
         if(isset($instance['text']))
         {
             $text = $instance['text'];
         }
 
-        $class = __('');
+/*        $class = __('');
         if(isset($instance['class']))
         {
             $class = $instance['class'];
-        }
+        }*/
         ?>
         <p>
-            <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Box Title:' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_name( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
+            <label for="<?php echo $this->get_field_name( 'image' ); ?>"><?php _e( 'Background Image:' ); ?></label>
             <input name="<?php echo $this->get_field_name( 'image' ); ?>" id="<?php echo $this->get_field_id( 'image' ); ?>" class="widefat" type="text" size="36"  value="<?php echo esc_url( $image ); ?>" />
             <input class="upload_image_button button-secondary" type="button" value="Upload Image" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_name( 'link' ); ?>"><?php _e( 'Link:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_name( 'linkTitle' ); ?>"><?php _e( 'Link title:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'linkTitle' ); ?>" name="<?php echo $this->get_field_name( 'linkTitle' ); ?>" type="text" value="<?php echo esc_attr( $linkTitle ); ?>" />
-        </p>
-        <p>
             <label for="<?php echo $this->get_field_name( 'text' ); ?>"><?php _e( 'Text:' ); ?></label>
             <textarea class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>"><?php echo esc_attr( $text ); ?></textarea>
         </p>
 
-        <p>
-            <label for="<?php echo $this->get_field_name( 'class' ); ?>"><?php _e( 'Class:' ); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id( 'class' ); ?>" name="<?php echo $this->get_field_name( 'class' ); ?>" type="text" value="<?php echo esc_attr( $class ); ?>"/>
-        </p>
+<!--        <p>
+            <label for="<?php /*echo $this->get_field_name( 'class' ); */?>"><?php /*_e( 'Class:' ); */?></label>
+            <input class="widefat" id="<?php /*echo $this->get_field_id( 'class' ); */?>" name="<?php /*echo $this->get_field_name( 'class' ); */?>" type="text" value="<?php /*echo esc_attr( $class ); */?>"/>
+        </p>-->
     <?php
     }
 }
