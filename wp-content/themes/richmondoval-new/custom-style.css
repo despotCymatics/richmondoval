@@ -1,0 +1,76 @@
+/*
+Here you can add some custom styles
+Note: You are overriding the default style
+*/
+
+.content a img:hover {opacity:0.8;}
+
+
+
+.content ul,.content ol {margin: 0 0 20px 10px;}
+
+blockquote { margin:20px; padding: 0 20px; color:#666; border-left: 3px solid #ddd;}
+
+.content h2 {margin: 0 0 16px;}
+.content h3 {font-size: 24px;line-height:25px;margin: 0 0 16px;}
+.content h4 {font-size: 20px;line-height:21px;margin: 0 0 16px;}
+.content h5 {font-size: 16px;line-height:17px;margin: 0 0 16px; min-height:0;}
+.content h6 {font-size: 14px;line-height:15px;margin: 0 0 16px;}
+
+.content h4.showMoreToggler {margin:0 0 5px;}
+
+#pimaryMenu ul.primHolder li a {padding: 2px 0px;}
+
+
+.newsBox {
+    padding: 25px 0 25px 0;
+}
+
+
+
+a.btn {background-color:#337ab7;}
+.green {color:#99ca3c;}
+span.new {background:red;color:#ffffff;padding:5px;display:inline-block;font-size:70%;margin-right:5px;line-height:1;}
+
+.content table.nutrition{border:1px solid #99ca3c;}
+.content table.nutrition td{padding:15px;}
+.content table.nutrition tr:nth-child(2n) td {background:#e2f2d2;}
+
+.content table.orange{border:1px solid #faa61a;}
+.content table.orange td{padding:5px;border-right:1px solid #faa61a;}
+.content table.orange th{padding:5px; background:#faa61a; color:#ffffff;border:0;}
+.content table.orange tr:nth-child(2n) td {background:#f8e1bb;}
+
+.content table.blue{border:1px solid #1d6cb5;}
+.content table.blue td{padding:15px;}
+.content table.blue tr:nth-child(2n) td {background:#b1d5f9;}
+
+
+.content .indexpage h3 {background:#008cd3;padding:10px; font-size:16px;}
+.content .indexpage h3#col8 {top:59px;}
+.content .indexpage h3 a{color:#fff;}
+.content .indexpage .col p {
+    margin-bottom: 0;
+}
+.content .indexpage  img:hover {opacity:0.8;}
+.content .indexpage .row {padding-bottom:0;}
+
+.content .row .col img.noresize {width: auto;}
+
+
+@media screen and (max-width: 1200px) {
+.content .indexpage h3 {top:90px;}
+}
+
+@media screen and (max-width: 480px) {
+
+.inner h1 {font-size: 34px;}
+
+.content h1 {font-size: 24px;line-height:25px;}
+.content h2 {font-size: 20px;line-height:23px;}
+.content h3 {font-size: 18px;line-height:20px;}
+.content h4 {font-size: 16px;line-height:18px;}
+.content h5 {font-size: 14px;line-height:16px;}
+
+a.btn {display:block;text-align:center;}
+}
