@@ -1,7 +1,7 @@
 
 
-	// Enquire
-
+// Enquire
+( function( $ ) {
     enquire.register("screen and (min-width: 0px) and (max-width: 768px)", {
 
        /* match: function () {
@@ -65,4 +65,6 @@
         }
 
     });
+
+})( jQuery );
 

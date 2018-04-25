@@ -432,7 +432,6 @@ function remove_width_attribute( $html ) {
    return $html;
 }
 
-
 // Facebook Open Graph
 /*add_action('wp_head', 'add_fb_open_graph_tags');
 function add_fb_open_graph_tags() {

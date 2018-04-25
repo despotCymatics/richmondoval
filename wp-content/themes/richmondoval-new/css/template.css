@@ -177,7 +177,7 @@ header {
 }
 
 .topBar .combinedMenu .textwidget p {
-    display: inherit;
+    display: flex;
     margin: 0;
 }
 .topBar .combinedMenu .textwidget br {
@@ -467,11 +467,11 @@ header {
     border-top: 1px solid #ccc;
     position: fixed;
     top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     transform: translate3d(0,-110%,0);
     transition: transform 320ms ease;
-    /*height: 600px;*/
     padding: 35px 0;
 
 }
@@ -1012,7 +1012,7 @@ section.photo {
 
 #pimaryMenu ul a.parent {
     padding: 10px 20px 10px 10px;
-    color: #fff;
+    color: #b7b7b7;;
     font-family: 'NeoSansStdRegular';
     font-size: 14px;
     line-height: 1.4;
@@ -1021,11 +1021,11 @@ section.photo {
 }
 
 #pimaryMenu ul a.parent span {
-    color: #f29711;
+    color: #0088ce;
 }
 
 #pimaryMenu ul a.parent:hover {
-    color: #fac500;
+    color: #0088ce;
 }
 
 #pimaryMenu .has-sub.open i {
@@ -1457,6 +1457,10 @@ a.parkingMaps-btn:hover {
     background: #b51227;
 }
 
+a.parkingMaps-btn i.fa{
+    display: inline;
+}
+
 a.contactUs-btn {
     display: block;
     text-align: center;
@@ -1656,7 +1660,7 @@ footer {
 
 .within.inner {
     /*padding: 100px 0 120px;*/
-    padding: 45px 15px 45px;
+    padding: 30px 15px 45px;
 }
 .pageWrap .within.inner {
     min-height: 550px;
@@ -1669,6 +1673,10 @@ footer {
     margin: 0 0 30px;
     padding: 0 0 10px;
     border-bottom: 1px solid #a6a6a6;
+}
+
+.inner .mainCol {
+    padding: 0 20px;
 }
 
 .sideBar {
@@ -1938,6 +1946,8 @@ footer {
 .content > *:first-child img {
     height: auto;
     width: 100%;
+    float: none;
+    margin: 0;
 }
 
 .content .row {
@@ -2102,8 +2112,8 @@ footer {
 }
 
 .content .head-img {
-    max-height: 345px;
-    overflow-y: hidden;
+    /*max-height: 345px;
+    overflow-y: hidden;*/
 }
 
 hr {
@@ -2257,6 +2267,49 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     cursor: pointer;
     display: inline-block;
     transform: rotate(0.01deg);
+    margin-bottom: 10px;
+}
+div.wpcf7 img.ajax-loader {
+    width: auto;
+}
+
+.wpcf7-form-control-wrap {
+    margin: 5px 0;
+}
+
+select {
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555 !important;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+option {
+    font-size: 14px;
+    padding: 4px;
+}
+
+select:focus {
+    border: 1px solid #ccc;
+}
+
+label {
+    line-height: 25px;
+}
+.wpcf7-form input, .wpcf7-form select, .wpcf7-form textarea{
+    margin: 8px 0;
 }
 
 .btn:hover, .btn:focus, input[type="submit"]:focus, input[type="submit"]:hover {
@@ -2390,6 +2443,9 @@ span.wpcf7-list-item {
 }
 
 /* Home slider */
+#wonderpluginslider-container-1 {
+    overflow: hidden;
+}
 #wonderpluginslider-container-1 .amazingslider-nav-1 {
     top: 87% !important;
 }
@@ -2419,6 +2475,8 @@ span.wpcf7-list-item {
 #wonderpluginslider-container-1 .amazingslider-text-wrapper-1 {
     margin: 0 !important;
     top: 37% !important;
+    z-index: 1;
+
 }
 #wonderpluginslider-container-1 .as-btn-blue-medium {
     font-family: NeoSansStdLight, arial, helvetica, sans-serif;
@@ -2434,6 +2492,21 @@ span.wpcf7-list-item {
     margin-top: 0;
 }
 
+#wonderpluginslider-container-1 .html5boxVideoControlsBg {
+    display: none !important;
+}
+#wonderpluginslider-container-1 video {
+    height: auto !important;
+    /*margin-top: -100px;*/
+    margin-top: -5%;
+}
+
+#wonderpluginslider-container-1 .html5boxVideoControls {
+    /*display: none !important;*/
+}
+.amazingslider-video-wrapper-1 {
+    background: url("/wp-content/uploads/2017/07/FIVB.jpg") no-repeat center / cover ;
+}
 
     /* Alerts */
 .alerts {
@@ -2737,46 +2810,6 @@ h3#comments {
     margin-top: 10%;
 }
 
-div.wpcf7 img.ajax-loader {
-    width: auto;
-}
-
-.wpcf7-form-control-wrap {
-    margin: 5px 0;
-}
-
-select {
-    display: block;
-    width: 100%;
-    height: 50px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555 !important;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
-
-option {
-    font-size: 14px;
-    padding: 4px;
-}
-
-select:focus {
-    border: 1px solid #ccc;
-}
-
-label {
-    line-height: 25px;
-}
-
 .runner:before {
     background: url("../images/basic/runner.png") no-repeat scroll 0 0;
     display: inline-block;
@@ -2801,12 +2834,12 @@ label {
     position: relative;
     margin-bottom: 15px;
 }
-.programBox > *:first-child {
+.programBox > img:first-child {
     display: table-cell;
     width: 40%;
 }
 .programBox p {
-    display: none;
+    /*display: none;*/
 }
 
 .programBox img {
@@ -2881,4 +2914,8 @@ label {
 
 .tablepress th h2, .tablepress th h3, .tablepress th h4 {
     color: #fff;
+}
+
+.hideOnDesk {
+    display: none;
 }

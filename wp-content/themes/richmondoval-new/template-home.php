@@ -136,7 +136,7 @@ get_header(); ?>
 
                             ?>
                             <script type="text/javascript">
-                                $( document ).ready(function() {
+                                jQuery(document).ready(function($) {
 
                                     $('.homepage-alerts .row .newsHolder').each(function(index, value){
                                         $(this).addClass('ad '+ 'num_'+index);

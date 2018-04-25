@@ -93,7 +93,7 @@ if ( has_post_thumbnail() ) : ?>
         $sidebar = get_field('select_sidebar');
         if(!$sidebar) $sidebar = 'inner-promo-right';
         ?>
-        <div class="col-md-<?php echo $cols; ?>">
+        <div class="mainCol col-md-<?php echo $cols; ?>">
             <div class="content">
                 <?php if ( have_posts() ) : while( have_posts() ) : the_post();
                     the_content();

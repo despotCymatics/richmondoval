@@ -10,6 +10,25 @@
 
 $( document ).ready(function() {
 
+    $( window ).load(function() {
+        Modernizr.load([
+            //first test need for polyfill
+            {
+                test: window.matchMedia,
+                nope: "/wp-content/themes/richmondoval-new/js/media.match.min.js"
+            },
+
+            //and then load enquire
+            "/wp-content/themes/richmondoval-new/js/enquire.min.js",
+            "/wp-content/themes/richmondoval-new/js/enquire.mics.js"
+        ]);
+        setTimeout(function() {
+            $('.loader').fadeOut(600);
+        }, 300);
+
+
+    });
+
     setTimeout(function(){
         $('#loading-wrap').fadeOut(400);
         setTimeout(function(){$('body').css('overflow','auto')}, 400);
@@ -126,21 +145,19 @@ $( document ).ready(function() {
         console.log('aaaa');
     });
 
+    if($('.alerts').length){
+    ticker();
+    setInterval(ticker,5000);
+    }
     //$('.mainMenu ul ul ul').parent().prepend('<span class="subToggler"></span>');
     /*$('.mainMenu').addClass('original').clone().insertAfter('.mainMenu').addClass('cloned').removeClass('original').hide();
     $('.mainMenu.original').find('.logoHolder img').attr('src', '/wp-content/themes/richmondoval/images/basic/logo-org.png');*/
 
     //$('.mainMenu ul#menu-programs-menu').prepend('<li class="close"><a href="#"><i class="fa fa-times"></i></a></li>');
 
+    //$('.content > *:first-child img').wrap('<div class="head-img"></div>');
 
-    if($('.alerts').length){
-        ticker();
-        setInterval(ticker,5000);
-    }
-
-    $('.content > *:first-child img').wrap('<div class="head-img"></div>');
-
-	//$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
+	  //$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
 
     $('table').wrap("<div class='table-wrap'></div>");
 

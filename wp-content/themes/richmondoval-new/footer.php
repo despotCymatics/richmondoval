@@ -109,7 +109,7 @@
                     <a title="Instagram" href="https://www.instagram.com/richmondoval/" class="soc" target="_blank">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
-                    <a title="Blog" href="#" class="soc" target="_blank">
+                    <a title="Blog" href="http://blog.richmondoval.ca/" class="soc" target="_blank">
                         <i class="fa fa-rss-square" aria-hidden="true"></i>
                     </a>
                 <?php if ( is_active_sidebar( 'footer-right' ) ){ ?>
@@ -134,27 +134,5 @@
 
 <?php wp_footer(); ?>
 
-<script>
-
-    $( window ).load(function() {
-        Modernizr.load([
-            //first test need for polyfill
-            {
-                test: window.matchMedia,
-                nope: "<?php echo get_template_directory_uri(); ?>/js/media.match.min.js"
-            },
-
-            //and then load enquire
-            "<?php echo get_template_directory_uri(); ?>/js/enquire.min.js",
-            "<?php echo get_template_directory_uri(); ?>/js/enquire.mics.js"
-        ]);
-        setTimeout(function() {
-            $('.loader').fadeOut(600);
-        }, 300);
-
-
-    });
-
-</script>
 </body>
 </html>

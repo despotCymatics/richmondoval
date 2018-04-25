@@ -122,7 +122,7 @@ function program_box_shortcode( $atts, $content ){
                 '.do_shortcode($content).
 	          '
 	          <div class="expandToggler"><i class="fa fa-plus" aria-hidden="true"></i></div>
-	          <div class="expand">'.substr($expand_text,0,250).'</div>
+	          <div class="expand">'.$expand_text.'</div>
 	          </div>
 	          
 	          </div>';

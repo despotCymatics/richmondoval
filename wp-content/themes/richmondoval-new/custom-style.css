@@ -5,12 +5,13 @@ Note: You are overriding the default style
 
 .content a img:hover {opacity:0.8;}
 
-
+a.btn:visited {color:#ffffff;}
 
 .content ul,.content ol {margin: 0 0 20px 10px;}
 
 blockquote { margin:20px; padding: 0 20px; color:#666; border-left: 3px solid #ddd;}
 
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {color:#005087;}
 .content h2 {margin: 0 0 16px;}
 .content h3 {font-size: 24px;line-height:25px;margin: 0 0 16px;}
 .content h4 {font-size: 20px;line-height:21px;margin: 0 0 16px;}
@@ -28,7 +29,13 @@ blockquote { margin:20px; padding: 0 20px; color:#666; border-left: 3px solid #d
 
 
 
-a.btn {background-color:#337ab7;}
+a.btn {background-color:#337ab7; color: #ffffff;}
+
+a.btn {
+    color: #ffffff;
+}
+
+
 .green {color:#99ca3c;}
 span.new {background:red;color:#ffffff;padding:5px;display:inline-block;font-size:70%;margin-right:5px;line-height:1;}
 
@@ -66,11 +73,26 @@ span.new {background:red;color:#ffffff;padding:5px;display:inline-block;font-siz
 
 .inner h1 {font-size: 34px;}
 
-.content h1 {font-size: 24px;line-height:25px;}
-.content h2 {font-size: 20px;line-height:23px;}
-.content h3 {font-size: 18px;line-height:20px;}
-.content h4 {font-size: 16px;line-height:18px;}
-.content h5 {font-size: 14px;line-height:16px;}
+.content h1 {font-size: 28px;line-height:36px;}
+.content h2 {font-size: 20px;line-height:30px;}
+.content h3 {font-size: 18px;line-height:24px;}
+.content h4 {font-size: 16px;line-height:20px;}
+.content h5 {font-size: 14px;line-height:18px;}
 
 a.btn {display:block;text-align:center;}
+}
+
+.post-box .post-image img {
+
+}
+
+.post-box .post-image img {
+    width:auto !important;
+   /* max-width: 600px;*/
+}
+
+.tribe-events-event-image img {/*max-width: 600px;*/}
+
+div.wpcf7 .wpcf7-recaptcha iframe {
+    border: none;
 }

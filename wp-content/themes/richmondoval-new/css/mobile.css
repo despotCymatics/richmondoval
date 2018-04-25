@@ -82,6 +82,9 @@ body.menuOpen {
     #wonderpluginslider-container-1 .amazingslider-text-wrapper-1 {
         top: 26% !important;
     }
+    .amazingslider-video-wrapper-1 .amazingslider-video-container-1 {
+        display: none !important;
+    }
 
     .navBox { height: auto;}
     .navBox li a { margin: 0; border: none; font-size: 150% !important;}
@@ -394,8 +397,19 @@ body.menuOpen {
 	/*.footerSponsors { float: none; display:table; margin:0 auto;}*/
 }
 
-
 @media screen and (max-width: 480px) {
+
+    .inner .mainCol {
+        padding: 0 15px;
+    }
+    .hideOnMob {
+        display: none;
+    }
+
+    .hideOnDesk {
+        display: block;
+    }
+
     .expand {
         font-size: 10px;
     }
