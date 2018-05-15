@@ -125,12 +125,10 @@ get_header(); ?>
                                     var maxdivs = <?php echo $widget_count; ?>;
 
                                     var currentIndex = Math.floor(Math.random() * (maxdivs - 1 + 1));
-                                    console.log(currentIndex);
 
                                     $(".homepage-alerts .row .newsHolder.ad:not(:eq(" + currentIndex + "))").hide();
                                     //$(".homepage-alerts .row .newsHolder.ad").hide();
                                     //$(".homepage-alerts .row .newsHolder.ad:first-child").show(10);
-
 
                                     var totalDiv = $(".homepage-alerts .row .newsHolder.ad").length;
 
@@ -139,7 +137,6 @@ get_header(); ?>
 
                                         $(".homepage-alerts .row .newsHolder.ad:not(:eq(" + currentIndex + "))").hide();
                                         $(".homepage-alerts .row .newsHolder.ad").eq(currentIndex).fadeIn(600);
-
 
                                     }, 6000);
                                 });

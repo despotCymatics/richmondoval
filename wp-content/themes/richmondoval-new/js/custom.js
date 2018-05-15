@@ -142,7 +142,6 @@ $( document ).ready(function() {
 
     $('.subToggler').click(function (){
         $(this).toggleClass('on').next().next().slideToggle(300);
-        console.log('aaaa');
     });
 
     if($('.alerts').length){
@@ -179,7 +178,6 @@ $( document ).ready(function() {
          //allowPageScroll: false,
          //disableFadeOut: false
          });
-        console.log("aaa");
     };
     console.log(document.documentElement.clientWidth);
 
