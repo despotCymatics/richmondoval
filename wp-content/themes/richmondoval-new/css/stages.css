@@ -1,0 +1,94 @@
+.page-template-template-stages .pageWrap .within .title{
+    background:  linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,0.91) 29%,rgba(0,0,0,0) 100%),url("../images/basic/stages-bg.jpg") no-repeat center / 100%;
+    padding: 60px 32px;
+
+}
+
+.page-template-template-stages .title {
+    margin: 30px 0;
+}
+
+.page-template-template-stages .title img.stages-logo {
+    width: 380px;
+}
+
+.page-template-template-stages h4.showMoreToggler {
+    /*margin-bottom: 0;*/
+}
+
+.page-template-template-stages .moreText {
+    padding: 20px;
+    background-color: #eaeaea;
+}
+
+.page-template-template-stages h4.showMoreToggler span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.page-template-template-stages .bike {
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.page-template-template-stages .bike.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-template-template-stages .bike p {
+    margin-bottom: 10px;
+}
+
+.page-template-template-stages .bike .bike-img {
+    background: #fff;
+    margin: 0 auto;
+    border: 2px solid #0088ce;
+    display: block;
+    box-sizing: content-box;
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.page-template-template-stages .bike .bike-img img {
+    width: 60px;
+}
+
+.page-template-template-stages .bike:hover .btn {
+    opacity: 1;
+}
+
+.page-template-template-stages .bike .btn {
+    opacity: 0;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    margin-top: 8px;
+
+}
+
+.page-template-template-stages .bike.disabled .btn {
+    display: none;
+}
+
+.page-template-template-stages .bike .is-power {
+    position: absolute;
+    top: 82px;
+    right: 50px;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+
+}
+
+.page-template-template-stages .bike .is-power.yes {
+    background-color: green;
+}
+
+.page-template-template-stages .bike .is-power.no {
+    background-color: red;
+}

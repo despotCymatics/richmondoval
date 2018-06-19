@@ -38,7 +38,6 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_script('richmondoval-slimscroll', (get_template_directory_uri() . '/js/jquery.slimscroll.min.js'), array(), false, true );
 	wp_enqueue_script( 'richmondoval-custom', get_template_directory_uri() . '/js/custom.js', array(), false, true );
 
-
 	// Loads our main stylesheet.
     //wp_enqueue_style( 'richmondoval-default', get_template_directory_uri() . '/css/default.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-fonts', get_template_directory_uri() . '/css/fonts.css', array(), false, "screen, projection" );
@@ -51,6 +50,12 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_style( 'richmondoval-mobile', get_template_directory_uri() . '/css/mobile.css', array(), false, "only screen and (max-width: 1200px)" );
 	wp_enqueue_style( 'richmondoval-component', get_template_directory_uri() . '/css/component.css', array(), false, "only screen and (max-width: 1024px)" );
 	wp_enqueue_style( 'richmondoval-custom-style', get_template_directory_uri() . '/custom-style.css', array(), false, "screen, projection)" );
+
+	//STAGES
+	if(get_page_template_slug() == 'template-stages.php') {
+		wp_enqueue_script( 'richmondoval-stages', get_template_directory_uri() . '/js/stages.js', array(), false, true );
+		wp_enqueue_style( 'richmondoval-stages', get_template_directory_uri() . '/css/stages.css', array(), false, "screen, projection)" );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'richmondoval_scripts_styles' );

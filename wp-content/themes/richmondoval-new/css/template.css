@@ -2257,7 +2257,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
 
 .btn, input[type="submit"] {
     font-family: NeoSansStdBold, arial, helvetica, sans-serif;
-    background-color: #e14916;
+    /*background-color: #e14916;*/
+    background-color: #005088;
     border: none;
     border-radius: 3px;
     text-transform: uppercase;
