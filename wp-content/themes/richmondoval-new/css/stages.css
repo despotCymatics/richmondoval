@@ -1,3 +1,6 @@
+body {
+    font-size: 16px;
+}
 .page-template-template-stages .pageWrap .within .title{
     background:  linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,0.91) 29%,rgba(0,0,0,0) 100%),url("../images/basic/stages-bg.jpg") no-repeat center / 100%;
     padding: 60px 32px;
@@ -9,7 +12,7 @@
 }
 
 .page-template-template-stages .title img.stages-logo {
-    width: 380px;
+    width: 280px;
 }
 .page-template-template-stages h4.showMoreToggler {
     margin-bottom: 10px;
@@ -88,8 +91,9 @@
 
 .page-template-template-stages .bike .is-power {
     position: absolute;
-    top: 82px;
-    right: 50px;
+    top: 91px;
+    right: 50%;
+    margin-right: -8px;
     border-radius: 50%;
     width: 16px;
     height: 16px;

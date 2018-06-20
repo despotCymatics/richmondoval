@@ -12,9 +12,9 @@ get_header();
         <div class="content">
             <div class="title">
                 <br>
-                <img class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/stages-logo.png">
+                <img class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
                 <br>
-                <h5>Richmond Oval Booking</h5>
+                <h5>Booking</h5>
             </div>
 
 <?php
@@ -29,27 +29,50 @@ get_header();
 //$authCode = authorize();
 if ( ! isset( $authCode->Message ) ) {
 
-
     $userId = 52601;
 
     //Bikes
-    //Bikes
     $bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
 
-    //Sessions
     //Sessions
     $today = date('Y-m-d');
 	$toDate = strtotime ('+1 year') ;
     $toDate = date('Y-m-d', $toDate);
     $sessions = getCurl($authCode, 'http://stagesflight.com/locapi/v1/sessions?dateTimeFrom='.$today.'.&dateTimeTo='.$toDate );
 
+    //USER
     $user = getCurl($authCode, 'http://stagesflight.com/locapi/v1/users/'.$userId);
+
     ?>
+
     <h2>Welcome. <?=$user->FirstName." ".$user->LastName?></h2>
     <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
+    <div class="row">
+        <div class="col-md-9">
     <?php
+    //User Bookings
+    $userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
-    if ( count( $sessions ) > 0 ) {?>
+    if ( count( $userBookings ) > 0 ) { ?>
+        <br>
+        <h2>Your Bookings</h2>
+        <?php foreach ( $userBookings as $userBooking ) { ?>
+            <h4 class="showMoreToggler">
+                <?=$userBooking->Session->Name;?>
+                <br>
+                <span>Bike: <?=$userBooking->Bike->Number;?> | Row: <?=$userBooking->Bike->Row;?> | Column: <?=$userBooking->Bike->Column;?> </span>
+            </h4>
+            <div class="moreText">
+                <button class="btn">Cancel Booking</button>
+            </div>
+
+            <?php
+        }
+    }
+
+    //User Sessions
+    if ( count( $sessions ) > 0 ) { ?>
+        <br>
         <h2>Available Sessions</h2>
         <?php foreach ( $sessions as $session ) {
             $instructor = getCurl($authCode,'http://stagesflight.com/locapi/v1/instructors/'.$session->InstructorId);
@@ -84,7 +107,7 @@ if ( ! isset( $authCode->Message ) ) {
 
                             <div class="col-sm-2">
                                 <div class="bike <?=$disabledBike;?>">
-                                    <p>Bike ID: <?= $bike->Id; ?></p>
+                                    <p>Bike#: <?= $bike->Number; ?></p>
                                     <?php
                                     $isPower = 'yes';
                                     if ( ! $bike->IsPower ) {
@@ -112,15 +135,20 @@ if ( ! isset( $authCode->Message ) ) {
             <?php
 
         }
+    } ?>
+        </div>
+        <div class="col-md-3">
+            <br>
+            <h2>Your Stats</h2>
+        </div>
+    </div>
+    <?php
+    } else {
+
+        echo "Error! API Offline or Invalid Credentials";
     }
 
-
-} else {
-
-    echo "Error! API Offline or Invalid Credentials";
-}
-
-?>
+    ?>
 
         </div><!-- content -->
     </div><!-- within inner -->

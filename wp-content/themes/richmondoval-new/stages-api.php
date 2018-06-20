@@ -11,14 +11,18 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 
 	$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
-/*	$postFields = '{
-	  "UserId": '.$userId.',
-	  "SessionId": '.$sessionId.',
-	  "BikeId": '.$bikeId.'
-	}';*/
+	$booking = postCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings', $postFields);
 
-	var_dump(postCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings', $postFields));
-	var_dump($postFields);
+	//var_dump($booking->ModelState->{'booking.UserId'});
+	//var_dump($booking->ModelState->{'booking.SessionId'});
+
+	if($booking->Message) {
+		echo "<p>".$booking->ModelState->{'booking.UserId'}[0]."<br>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
+	}else if($booking->Id) {
+		echo "<p>Thank You for booking!<br> Bike Id:". $booking->BikeId."</p>";
+	}else  {
+		echo "<h4>Error!</h4>";
+	}
 
 }
 
