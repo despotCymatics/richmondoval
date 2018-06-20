@@ -11,14 +11,25 @@
 .page-template-template-stages .title img.stages-logo {
     width: 380px;
 }
-
 .page-template-template-stages h4.showMoreToggler {
-    /*margin-bottom: 0;*/
+    margin-bottom: 10px;
+}
+
+.page-template-template-stages h4.showMoreToggler span.type {
+    color: #fff;
+    display: block;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    position: absolute;
 }
 
 .page-template-template-stages .moreText {
     padding: 20px;
-    background-color: #eaeaea;
+    background-color: #f8f8f8;
+    border: 1px solid #e9eaea;
+    margin-top: -10px;
 }
 
 .page-template-template-stages h4.showMoreToggler span {

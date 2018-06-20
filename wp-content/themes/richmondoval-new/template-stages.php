@@ -17,7 +17,6 @@ get_header();
                 <h5>Richmond Oval Booking</h5>
             </div>
 
-
 <?php
 //Users
 //Users
@@ -30,6 +29,7 @@ get_header();
 //$authCode = authorize();
 if ( ! isset( $authCode->Message ) ) {
 
+
     $userId = 52601;
 
     //Bikes
@@ -38,24 +38,31 @@ if ( ! isset( $authCode->Message ) ) {
 
     //Sessions
     //Sessions
-    $sessions = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions' );
+    $today = date('Y-m-d');
+	$toDate = strtotime ('+1 year') ;
+    $toDate = date('Y-m-d', $toDate);
+    $sessions = getCurl($authCode, 'http://stagesflight.com/locapi/v1/sessions?dateTimeFrom='.$today.'.&dateTimeTo='.$toDate );
 
     $user = getCurl($authCode, 'http://stagesflight.com/locapi/v1/users/'.$userId);
     ?>
-    <h2>Welcome <?=$user->FirstName." ".$user->LastName?></h2>
+    <h2>Welcome. <?=$user->FirstName." ".$user->LastName?></h2>
     <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
     <?php
 
     if ( count( $sessions ) > 0 ) {?>
         <h2>Available Sessions</h2>
-        <?php foreach ( $sessions as $session ) { ?>
+        <?php foreach ( $sessions as $session ) {
+            $instructor = getCurl($authCode,'http://stagesflight.com/locapi/v1/instructors/'.$session->InstructorId);
+            ?>
 
             <h4 class="showMoreToggler">
+                <span class="type" style="background: <?=$session->Type; ?>"></span>
                 <?= $session->Name ?>
                 <br>
                 <span>Starts: <?=$session->StartDateTime; ?> | </span>
                 <span>Duration: <?=$session->Duration; ?>min | </span>
-                <span>Instructor: <?=$session->InstructorId; ?></span>
+                <span>Instructor: <?=$instructor->FirstName.' '.$instructor->LastName; ?></span>
+
 
             </h4>
             <div class="moreText">
