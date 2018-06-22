@@ -49,11 +49,17 @@ if ( ! isset( $authCode->Message ) ) {
     <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
     <div class="row">
         <div class="col-md-9">
+            <div class="tab-buttons">
+                <h4 class="tablink" onclick="openTab('bookings', this)" id="defaultOpen">Bookings</h4>
+                <h4 class="tablink" onclick="openTab('sessions', this)">Sessions</h4>
+            </div>
+
     <?php
     //User Bookings
     $userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
     if ( count( $userBookings ) > 0 ) { ?>
+        <div id="bookings" class="tabcontent">
         <br>
         <h2>Your Bookings</h2>
         <?php foreach ( $userBookings as $userBooking ) { ?>
@@ -68,10 +74,14 @@ if ( ! isset( $authCode->Message ) ) {
 
             <?php
         }
+        ?>
+        </div>
+        <?php
     }
 
     //User Sessions
     if ( count( $sessions ) > 0 ) { ?>
+        <div id="sessions" class="tabcontent">
         <br>
         <h2>Available Sessions</h2>
         <?php foreach ( $sessions as $session ) {
@@ -133,13 +143,21 @@ if ( ! isset( $authCode->Message ) ) {
                 </div>
             </div>
             <?php
-
         }
+        ?>
+        </div>
+
+        <?php
     } ?>
         </div>
         <div class="col-md-3">
-            <br>
-            <h2>Your Stats</h2>
+            <h4>Your Stats</h4>
+            <div class="stats">
+               <?php
+                $userStats = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
+                var_dump($userStats);
+                ?>
+            </div>
         </div>
     </div>
     <?php

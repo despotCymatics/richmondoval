@@ -1,6 +1,8 @@
 body {
     font-size: 16px;
 }
+
+
 .page-template-template-stages .pageWrap .within .title{
     background:  linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,0.91) 29%,rgba(0,0,0,0) 100%),url("../images/basic/stages-bg.jpg") no-repeat center / 100%;
     padding: 60px 32px;

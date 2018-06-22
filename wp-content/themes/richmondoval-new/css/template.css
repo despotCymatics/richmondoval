@@ -2920,3 +2920,23 @@ h3#comments {
 .hideOnDesk {
     display: none;
 }
+.tab-buttons {
+    border-bottom: 1px solid #EAEAEA;
+}
+.tab-buttons .tablink {
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    background: #eaeaea;
+}
+
+.tab-buttons .tablink:hover {
+    opacity: 0.7;
+}
+
+.tabcontent {
+    display: none;
+}
