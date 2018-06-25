@@ -32,7 +32,7 @@ body {
 
 .page-template-template-stages .moreText {
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #e9eaea;
     border: 1px solid #e9eaea;
     margin-top: -10px;
 }
@@ -108,4 +108,25 @@ body {
 
 .page-template-template-stages .bike .is-power.no {
     background-color: red;
+}
+.page-template-template-stages h4.stats-title {
+    margin-bottom: 30px;
+}
+
+.page-template-template-stages .stats {
+    background: #eaeaea;
+    padding: 15px;
+}
+.page-template-template-stages .stats p {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.page-template-template-stages .stats p span {
+
+}
+
+.page-template-template-stages .stats p span:first-child {
+    opacity: 0.8;
+    margin-right: 10px;
 }

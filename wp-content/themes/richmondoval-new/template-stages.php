@@ -32,7 +32,7 @@ if ( ! isset( $authCode->Message ) ) {
     $userId = 52601;
 
     //Bikes
-    $bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
+    //$bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
 
     //Sessions
     $today = date('Y-m-d');
@@ -45,7 +45,7 @@ if ( ! isset( $authCode->Message ) ) {
 
     ?>
 
-    <h2>Welcome. <?=$user->FirstName." ".$user->LastName?></h2>
+    <h2>Welcome, <?=$user->FirstName." ".$user->LastName?></h2>
     <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
     <div class="row">
         <div class="col-md-9">
@@ -102,21 +102,21 @@ if ( ! isset( $authCode->Message ) ) {
                 <div class="row">
                     <?php
 
-                    $sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
+                    $sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
 
-                    $bikesBooked = array();
+                    /*$bikesBooked = array();
                     foreach ( $sessionBookings as $sessionBooking ) {
                         array_push($bikesBooked, $sessionBooking->Bike->Id);
 
-                    }
-                    if ( count( $bikes ) > 0 ) {
-                        foreach ( $bikes as $bike ) {
-                            $disabledBike = '';
-                            if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';
+                    }*/
+                    if ( count( $sessionBikes ) > 0 ) {
+                        foreach ( $sessionBikes as $bike ) {
+                            /*$disabledBike = '';
+                            if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';*/
                             ?>
 
                             <div class="col-sm-2">
-                                <div class="bike <?=$disabledBike;?>">
+                                <div class="bike <? //$disabledBike;?>">
                                     <p>Bike#: <?= $bike->Number; ?></p>
                                     <?php
                                     $isPower = 'yes';
@@ -151,11 +151,43 @@ if ( ! isset( $authCode->Message ) ) {
     } ?>
         </div>
         <div class="col-md-3">
-            <h4>Your Stats</h4>
+            <h4 class="stats-title">Your Stats</h4>
             <div class="stats">
                <?php
-                $userStats = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
-                var_dump($userStats);
+                $durationInSeconds = 0;
+                $distanceInKm = 0;
+                $kiloCalories = 0;
+                $avgWatt = 0;
+                $avgSpeed = 0;
+                $maxSpeed = 0;
+                $numWorkouts = 0;
+
+                $workouts = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
+                foreach ( $workouts as $workout ) {
+	                $numWorkouts++;
+	                $durationInSeconds += $workout->DurationInSeconds;
+	                $distanceInKm += $workout->DistanceInKm;
+	                $kiloCalories += $workout->KiloCalories;
+	                $avgWatt += $workout->AvgWatt;
+	                $avgSpeed += $workout->AvgSpeed;
+	                $avgHR += $workout->AvgHeartRate;
+	                $maxSpeed = $workout->MaxSpeed;
+
+                }
+                ?>
+                <p><span>Number of workouts: </span><span><?=$numWorkouts;?></span></p>
+                <p><span>Duration: </span><span><?=$durationInSeconds;?> sec</span></p>
+                <p><span>Distance: </span><span><?=$distanceInKm ;?> km</span></p>
+                <p><span>Kilo calories: </span><span><?=$kiloCalories;?></span></p>
+                <p><span>Avg Watt: </span><span><?=$avgWatt / $numWorkouts;?></span></p>
+                <p><span>Avg Speed: </span><span><?=$avgSpeed / $numWorkouts;?></span></p>
+                <p><span>Avg Heart Rate: </span><span><?=$avgHR / $numWorkouts;?></span></p>
+                <p><span>Max Speed: </span><span><?=$maxSpeed;?></span></p>
+
+                <?php
+
+
+                //var_dump($workouts);
                 ?>
             </div>
         </div>

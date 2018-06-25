@@ -33,6 +33,9 @@ function bookBike(authCode, userId, sessionId, bikeId) {
 }
 
 function openTab(tabName,elmnt) {
+    //console.log(elmnt);
+    jQuery('.tablink').removeClass("active-tab");
+    jQuery(elmnt).addClass("active-tab");
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {

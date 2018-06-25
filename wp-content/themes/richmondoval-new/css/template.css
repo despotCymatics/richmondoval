@@ -2931,10 +2931,15 @@ h3#comments {
     padding: 15px;
     border-right: 1px solid #ccc;
     background: #eaeaea;
+    opacity: 0.7;
 }
 
 .tab-buttons .tablink:hover {
-    opacity: 0.7;
+    opacity: 1;
+}
+.tab-buttons .tablink.active-tab {
+    background: #d8d8d8;
+    opacity: 1;
 }
 
 .tabcontent {
