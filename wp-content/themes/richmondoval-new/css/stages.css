@@ -6,7 +6,6 @@ body {
 .page-template-template-stages .pageWrap .within .title{
     background:  linear-gradient(to right, rgba(0,0,0,1) 15%,rgba(0,0,0,0.91) 29%,rgba(0,0,0,0) 100%),url("../images/basic/stages-bg.jpg") no-repeat center / 100%;
     padding: 60px 32px;
-
 }
 
 .page-template-template-stages .title {
@@ -32,20 +31,30 @@ body {
 
 .page-template-template-stages .moreText {
     padding: 20px;
-    background-color: #e9eaea;
+    background-color: #dedede;
     border: 1px solid #e9eaea;
     margin-top: -10px;
+}
+.page-template-template-stages .moreText .btn {
+    font-size: 14px;
+    padding: 12px;
 }
 
 .page-template-template-stages h4.showMoreToggler span {
     font-size: 14px;
     opacity: 0.8;
+    color: #161616;
+}
+
+.page-template-template-stages h4.showMoreToggler:after {
+    content: "\f078";
+
 }
 
 .page-template-template-stages .bike {
     text-align: center;
     position: relative;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .page-template-template-stages .bike.disabled {
@@ -84,7 +93,6 @@ body {
     padding: 8px;
     font-size: 12px;
     margin-top: 8px;
-
 }
 
 .page-template-template-stages .bike.disabled .btn {
@@ -109,6 +117,11 @@ body {
 .page-template-template-stages .bike .is-power.no {
     background-color: red;
 }
+
+.page-template-template-stages h2 img, .page-template-template-stages h4 img {
+    margin-right: 5px;
+    max-height: 18px;
+}
 .page-template-template-stages h4.stats-title {
     margin-bottom: 30px;
 }
@@ -116,11 +129,14 @@ body {
 .page-template-template-stages .stats {
     background: #eaeaea;
     padding: 15px;
+    border-top: 5px solid #d8d8d8;
 }
 .page-template-template-stages .stats p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
 }
 .page-template-template-stages .stats p span {
 

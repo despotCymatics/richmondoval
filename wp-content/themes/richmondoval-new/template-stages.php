@@ -50,8 +50,10 @@ if ( ! isset( $authCode->Message ) ) {
     <div class="row">
         <div class="col-md-9">
             <div class="tab-buttons">
-                <h4 class="tablink" onclick="openTab('bookings', this)" id="defaultOpen">Bookings</h4>
-                <h4 class="tablink" onclick="openTab('sessions', this)">Sessions</h4>
+                <h4 class="tablink" onclick="openTab('bookings', this)" id="defaultOpen">
+                    <img width="15px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/check.svg"> Bookings</h4>
+                <h4 class="tablink" onclick="openTab('sessions', this)">
+                    <img width="15px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/bookmark.svg"> Sessions</h4>
             </div>
 
     <?php
@@ -61,10 +63,10 @@ if ( ! isset( $authCode->Message ) ) {
     if ( count( $userBookings ) > 0 ) { ?>
         <div id="bookings" class="tabcontent">
         <br>
-        <h2>Your Bookings</h2>
+        <h3>Your Bookings</h3>
         <?php foreach ( $userBookings as $userBooking ) { ?>
             <h4 class="showMoreToggler">
-                <?=$userBooking->Session->Name;?>
+                <?=$userBooking->Session->Name;?> on <?=$userBooking->Session->StartDateTime;?>
                 <br>
                 <span>Bike: <?=$userBooking->Bike->Number;?> | Row: <?=$userBooking->Bike->Row;?> | Column: <?=$userBooking->Bike->Column;?> </span>
             </h4>
@@ -83,7 +85,7 @@ if ( ! isset( $authCode->Message ) ) {
     if ( count( $sessions ) > 0 ) { ?>
         <div id="sessions" class="tabcontent">
         <br>
-        <h2>Available Sessions</h2>
+        <h3>Available Sessions</h3>
         <?php foreach ( $sessions as $session ) {
             $instructor = getCurl($authCode,'http://stagesflight.com/locapi/v1/instructors/'.$session->InstructorId);
             ?>
@@ -151,7 +153,7 @@ if ( ! isset( $authCode->Message ) ) {
     } ?>
         </div>
         <div class="col-md-3">
-            <h4 class="stats-title">Your Stats</h4>
+            <h4 class="stats-title"><img width="15px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/stats.svg"> Your Stats</h4>
             <div class="stats">
                <?php
                 $durationInSeconds = 0;
@@ -159,6 +161,7 @@ if ( ! isset( $authCode->Message ) ) {
                 $kiloCalories = 0;
                 $avgWatt = 0;
                 $avgSpeed = 0;
+                $avgHR = 0;
                 $maxSpeed = 0;
                 $numWorkouts = 0;
 

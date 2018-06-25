@@ -2921,7 +2921,7 @@ h3#comments {
     display: none;
 }
 .tab-buttons {
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #d8d8d8;
 }
 .tab-buttons .tablink {
     display: inline-block;
@@ -2944,4 +2944,5 @@ h3#comments {
 
 .tabcontent {
     display: none;
+    margin-bottom: 48px;
 }
