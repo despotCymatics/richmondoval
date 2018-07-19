@@ -57,7 +57,7 @@ function cancelBooking(authCode, bookingId) {
                     html: response
                 });
                 if(response == '<p>Your Booking has been canceled!</p>') {
-                    $("div[data-id='"+bookingId+"']").hide(200).next().hide();
+                    $("div[data-id='"+bookingId+"']").hide(200);
                 }
                 console.log(response);
             }
