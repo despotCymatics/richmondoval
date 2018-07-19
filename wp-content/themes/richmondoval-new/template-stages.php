@@ -3,8 +3,9 @@
  * Template Name: Stages Page
  */
 
-require "stages-api.php";
 get_header();
+
+require "stages-api.php";
 
 ?>
 
@@ -36,7 +37,7 @@ if ( ! isset( $authCode->Message ) ) {
 
     //Sessions
     $today = date('Y-m-d');
-	$toDate = strtotime ('+1 year') ;
+	$toDate = strtotime ('+1 month') ;
     $toDate = date('Y-m-d', $toDate);
     $sessions = getCurl($authCode, 'http://stagesflight.com/locapi/v1/sessions?dateTimeFrom='.$today.'.&dateTimeTo='.$toDate );
 
@@ -57,6 +58,7 @@ if ( ! isset( $authCode->Message ) ) {
             </div>
 
     <?php
+
     //User Bookings
     $userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
