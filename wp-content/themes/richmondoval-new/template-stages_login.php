@@ -4,10 +4,19 @@
  */
 
 require "stages-api.php";
-get_header();
 
-?>
+session_start();
 
+if(isset($_SESSION['logged'])) {
+
+	header('Location: http://richmondoval.ca/oval-fit/');
+	exit;
+
+}else {
+
+	get_header();
+
+	?>
     <div class="within inner">
         <div class="content">
             <div class="title">
@@ -25,21 +34,31 @@ get_header();
                             <legend>Login</legend>
                             <input type='hidden' name='submitted' id='submitted' value='1'/>
 
-                            <label for='username'>Email*:</label>
-                            <input type='email' name='email' id='email' maxlength="50"/>
+                            <label for='email'>Email*:</label>
+                            <input type='email' name='email' id='email' required maxlength="50"/>
 
                             <label for='password'>Password*:</label>
                             <input type='password' name='password' id='password' maxlength="50"/>
 
-                            <input type='submit' name='Submit' value='Submit'/>
+                            <p style="text-align: center">
+                                <input type='submit' name='Submit' value='Submit'/>
+                            </p>
 
                         </fieldset>
                     </form>
+                    <p style="color: darkred; text-align: center; margin-top: 15px;">
+                        <strong>
+	                        <?php
+	                        if(isset($_GET['user']) && $_GET['user'] == 'none'){
+		                        echo "User Does not exist!" ;
+	                        }
+	                        ?>
+                        </strong>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-
-<?php
-
+	<?php
+}
 get_footer();

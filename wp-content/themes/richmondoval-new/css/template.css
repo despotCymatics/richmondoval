@@ -2258,7 +2258,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
 
 .btn, input[type="submit"] {
     font-family: NeoSansStdBold, arial, helvetica, sans-serif;
-    /*background-color: #e14916;*/
     background-color: #005088;
     border: none;
     border-radius: 3px;
@@ -2270,6 +2269,9 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     display: inline-block;
     transform: rotate(0.01deg);
     margin-bottom: 10px;
+}
+.btn-orange {
+    background-color: #e14916;
 }
 div.wpcf7 img.ajax-loader {
     width: auto;

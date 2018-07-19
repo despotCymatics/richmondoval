@@ -26,8 +26,27 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 
 }
 
+//CANCEL BOOKING
+if(isset($_POST['bookingId'])) {
+	$bookingId = $_POST['bookingId'];
 
+	//$authCode = $_POST['authCode'];
 
+	$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
+
+	$booking = deleteCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings/'.$bookingId);
+
+	//var_dump('http://stagesflight.com/locapi/v1/bookings/'.$bookingId);
+	//var_dump($booking->ModelState->{'booking.UserId'});
+	//var_dump($booking);
+
+	if($booking) {
+		echo "<p>Your Booking has been canceled!</p>";
+	}else  {
+		echo "<h4>Error!</h4>";
+	}
+
+}
 
 
 //AUTHORIZATION
@@ -95,6 +114,26 @@ function postCurl($authCode, $url, $request) {
 	return json_decode(curl_exec($ch));
 }
 
+
+//DELETE CURL
+function deleteCurl($authCode, $url) {
+
+	$header = array(
+		'Accept: application/json',
+		'Content-Type: application/json',
+		'Authorization: Bearer '.$authCode
+	);
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,            $url);
+	curl_setopt($ch, CURLOPT_HTTPHEADER,    $header);
+	//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+	//curl_setopt($ch, CURLOPT_POSTFIELDS,    $request );
+
+	return json_decode(curl_exec($ch));
+}
+
 function login() {
 
 	if(empty($_POST['email']))
@@ -117,7 +156,7 @@ function login() {
 		return false;
 	}*/
 
-	session_start();
+	//session_start();
 
 	$_SESSION['logged'] = $username;
 
