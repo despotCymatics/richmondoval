@@ -94,3 +94,32 @@ function postCurl($authCode, $url, $request) {
 
 	return json_decode(curl_exec($ch));
 }
+
+function login() {
+
+	if(empty($_POST['email']))
+	{
+		//$this->HandleError("UserName is empty!");
+		return false;
+	}
+
+	/*if(empty($_POST['password']))
+	{
+		$this->HandleError("Password is empty!");
+		return false;
+	}*/
+
+	$username = trim($_POST['email']);
+	//$password = trim($_POST['password']);
+
+	/*if(!$this->CheckLoginInDB($username,$password))
+	{
+		return false;
+	}*/
+
+	session_start();
+
+	$_SESSION['logged'] = $username;
+
+	return true;
+}
