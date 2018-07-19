@@ -19,7 +19,7 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	if($booking->Message) {
 		echo "<p>".$booking->ModelState->{'booking.UserId'}[0]."<br>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
 	}else if($booking->Id) {
-		echo "<p>Thank You for booking!<br> Bike Id:". $booking->BikeId."</p>";
+		echo "<p>Thank You for booking!</p>";
 	}else  {
 		echo "<h4>Error!</h4>";
 	}
