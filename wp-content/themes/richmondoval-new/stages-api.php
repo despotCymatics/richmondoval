@@ -134,6 +134,77 @@ function deleteCurl($authCode, $url) {
 	return json_decode(curl_exec($ch));
 }
 
+//DB
+
+$connection = '';
+
+function DBLogin()
+{
+
+	$connection = new mysqli('localhost','richmond','kgVpeKz1cG!@Zm15$L%z', 'richmondoval');
+	if ($connection->connect_error) {
+		die("Connection failed: " . $connection->connect_error);
+	}
+
+	return $connection;
+}
+
+
+function InsertIntoDB($formvars) {
+
+	$insert_query = 'insert into ovalfit_user(
+                email,
+                password
+                )
+                values
+                (
+                "' . $formvars['email'] . '",
+                "' . md5($formvars['password']) . '"
+                )';
+
+	$connection = DBLogin();
+
+	if(!$connection->query($insert_query))
+	{
+		echo "Error: " . $insert_query . "<br>" . $connection->error;
+		return false;
+	}
+	return true;
+}
+
+function RegisterUser() {
+
+	if(!isset($_POST['submitted-reg']))
+	{
+		return false;
+	}
+
+	$formvars = array();
+
+	/*if(!$this->ValidateRegistrationSubmission())
+	{
+		return false;
+	}*/
+
+
+	$formvars['email'] = $_POST['email'];
+	$formvars['password'] = $_POST['password'];
+
+	if(!InsertIntoDB($formvars)){
+		return false;
+	}
+
+
+	/*if(!$this->SendUserConfirmationEmail($formvars))
+	{
+		return false;
+	}*/
+
+	//$this->SendAdminIntimationEmail($formvars);
+
+	return true;
+}
+
 function login() {
 
 	if(empty($_POST['email']))
@@ -142,23 +213,45 @@ function login() {
 		return false;
 	}
 
-	/*if(empty($_POST['password']))
+	if(empty($_POST['password']))
 	{
-		$this->HandleError("Password is empty!");
+		//$this->HandleError("Password is empty!");
 		return false;
-	}*/
+	}
 
 	$username = trim($_POST['email']);
-	//$password = trim($_POST['password']);
+	$password = trim($_POST['password']);
 
-	/*if(!$this->CheckLoginInDB($username,$password))
+	if(CheckLoginInDB($username,$password))
 	{
 		return false;
-	}*/
+	}
 
 	//session_start();
 
 	$_SESSION['logged'] = $username;
+
+	return true;
+}
+
+function CheckLoginInDB($username,$password)
+{
+
+	$connection = DBLogin();
+
+	//$username = $this->SanitizeForSQL($username);
+
+	$pwdmd5 = md5($password);
+	$qry = "Select email from ovalfit_useer where email='$username' and password='$pwdmd5'";
+
+	$result = $connection->query($qry);
+
+	if(!$result || mysqli_num_rows($result) <= 0)
+	{
+		echo "Error logging in. The username or password does not match";
+		return false;
+	}
+
 
 	return true;
 }
