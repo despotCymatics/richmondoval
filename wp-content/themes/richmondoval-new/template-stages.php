@@ -123,6 +123,21 @@ if(login() || isset($_SESSION['logged'])) {
                                         <span>Instructor: <?=$instructor->FirstName.' '.$instructor->LastName; ?></span>
                                     </h4>
                                     <div class="moreText">
+                                        <div class="first-row">
+
+                                                <div class="bike coach">
+                                                    <div class="bike-num" style="background-color: ">
+                                                        <h3>C</h3>
+                                                    </div>
+                                                    <h4>Coach</h4>
+                                                </div>
+
+                                                <div class="projector">
+                                                    <h3>Projector</h3>
+                                                </div>
+
+
+                                        </div>
                                         <div class="row seven-cols">
 											<?php
 											//$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );

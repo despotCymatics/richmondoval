@@ -145,6 +145,36 @@ body {
     background-color: red;
 }
 
+.page-template-template-stages .first-row  {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.page-template-template-stages .first-row .coach {
+    margin: 15px 40px 15px 15px ;
+}
+.page-template-template-stages .first-row .coach .bike-num {
+    margin-bottom: 15px;
+}
+
+.page-template-template-stages .first-row .projector {
+    text-align: center;
+    margin: 15px;
+    width: 100%;
+}
+.page-template-template-stages .first-row .projector:before {
+    width: 100%;
+    height: 15px;
+    display: block;
+    content: " ";
+    border-radius: 3px;
+    background: #3379b7;
+    margin-bottom: 15px;
+}
+.page-template-template-stages .bike .bike-num.coach h4 {
+    text-align: left;
+}
+
 .page-template-template-stages h2 img, .page-template-template-stages h4 img {
     margin-right: 5px;
     max-height: 18px;
@@ -173,3 +203,4 @@ body {
     opacity: 0.8;
     margin-right: 10px;
 }
+
