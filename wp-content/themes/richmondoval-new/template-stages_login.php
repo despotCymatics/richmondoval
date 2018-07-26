@@ -41,7 +41,7 @@ if(isset($_SESSION['logged'])) {
                             <input type='password' name='password' id='password' maxlength="50"/>
 
                             <p style="text-align: center">
-                                <input type='submit' name='Submit' value='Submit'/>
+                                <input type='submit' name='Login' value='Login'/>
                             </p>
 
                         </fieldset>
@@ -51,7 +51,9 @@ if(isset($_SESSION['logged'])) {
 	                        <?php
 	                        if(isset($_GET['user']) && $_GET['user'] == 'none'){
 		                        echo "User Does not exist!" ;
-	                        }
+	                        }else if(isset($_GET['user']) && $_GET['login'] == false) {
+		                        echo "Login failed! Username does not match the password!" ;
+                            }
 	                        ?>
                         </strong>
                     </p>

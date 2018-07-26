@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
 /**
  * Template Name: Oval Fit Page
  */
@@ -47,7 +45,7 @@ if(login() || isset($_SESSION['logged'])) {
 				}
 
 				//Bikes
-				//$bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
+				$bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
 
 				//Sessions
 				$today = date('Y-m-d');
@@ -125,32 +123,34 @@ if(login() || isset($_SESSION['logged'])) {
                                         <span>Instructor: <?=$instructor->FirstName.' '.$instructor->LastName; ?></span>
                                     </h4>
                                     <div class="moreText">
-                                        <div class="row">
+                                        <div class="row seven-cols">
 											<?php
-											$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
-											/*$bikesBooked = array();
+											//$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
+											$sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
+											$bikesBooked = array();
 											foreach ( $sessionBookings as $sessionBooking ) {
 												array_push($bikesBooked, $sessionBooking->Bike->Id);
 
-											}*/
-											if ( count( $sessionBikes ) > 0 ) {
-												foreach ( $sessionBikes as $bike ) {
-													/*$disabledBike = '';
-													if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';*/
+											}
+											//if ( count( $sessionBikes ) > 0 ) {
+												//foreach ( $sessionBikes as $bike ) {
+											    foreach ( $bikes as $bike ) {
+													$disabledBike = '';
+													if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';
 													?>
 
-                                                    <div class="col-sm-2">
-                                                        <div class="bike <? //$disabledBike;?>">
-                                                            <p>Bike#: <?= $bike->Number; ?></p>
+                                                    <div class="col-sm-1">
+                                                        <div class="bike <?=$disabledBike;?>">
 															<?php
 															$isPower = 'yes';
 															if ( ! $bike->IsPower ) {
 																$isPower = 'no';
 															} ?>
-                                                            <span class="is-power <?= $isPower ?>"></span>
-                                                            <div class="bike-img">
-                                                                <img width="60"
-                                                                     src="<?= get_stylesheet_directory_uri() ?>/images/basic/bike.jpg">
+                                                           <!-- <span class="is-power <?/*= $isPower */?>"></span>-->
+                                                            <div class="bike-num">
+                                                                <h3><?= $bike->Number; ?></h3>
+                                                                <!--<img width="60"
+                                                                     src="<?/*= get_stylesheet_directory_uri() */?>/images/basic/bike.jpg">-->
                                                             </div>
                                                             <button
                                                                     onclick="bookBike('<?=$authCode;?>', <?=$userId;?>, <?=$session->Id;?>, <?=$bike->Id;?>)"
@@ -160,7 +160,7 @@ if(login() || isset($_SESSION['logged'])) {
                                                     </div>
 													<?php
 												}
-											}
+											//}
 											?>
                                         </div>
                                     </div>
@@ -220,7 +220,7 @@ if(login() || isset($_SESSION['logged'])) {
 <?php
 } //login check
 else {
-    header('Location: http://richmondoval.ca/oval-fit-login/');
+    header('Location: http://richmondoval.ca/oval-fit-login/?login=false');
     exit;
 }
 

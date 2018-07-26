@@ -9,14 +9,19 @@ require "stages-api.php";
 get_header();
 
 $message = '';
+$color = '#ccc';
 
-if(isset($_POST['submitted-reg']))
+if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 {
 	if(RegisterUser())
 	{
         $message = 'User has been registered successfully!';
-		$_POST['submitted-reg'] = NULL;
+        $color = '#85c440';
 	}
+	else {
+		$message = 'Error! User already exists in database!';
+		$color = 'darkred';
+    }
 }
 
 ?>
@@ -26,8 +31,8 @@ if(isset($_POST['submitted-reg']))
             <br>
 
             <?php
-            if($message) {?>
-                <p><?=$message;?></p>
+            if($message) { ?>
+                <p style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></p>
             <?php
             }
             ?>
@@ -52,11 +57,11 @@ if(isset($_POST['submitted-reg']))
 							<label for='email'>Email*:</label>
 							<input type='email' name='email' id='email' required maxlength="50"/>
 
-							<label for='password'>Password*:</label>
-							<input type='password' name='password' id='password' maxlength="50"/>
+							<label for='password'>Password (8 chars minimum) *:</label>
+							<input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50"/>
 
 							<p style="text-align: center">
-								<input type='submit' name='Submit' value='Submit'/>
+								<input type='submit' name='Register' value='Register'/>
 							</p>
 
 						</fieldset>
@@ -70,6 +75,10 @@ if(isset($_POST['submitted-reg']))
 							?>
 						</strong>
 					</p>
+
+                    <div style="text-align: center;">
+                        <a href="/oval-fit-login">User Login</a>
+                    </div>
 				</div>
 			</div>
 		</div>

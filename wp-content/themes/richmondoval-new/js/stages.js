@@ -21,8 +21,10 @@ function bookBike(authCode, userId, sessionId, bikeId) {
             success: function (response) {
                 swal({
                     type: 'info',
-                    html: response
+                    html: response,
+                    allowOutsideClick: false
                 });
+
                 if(response =='<p>Thank You for booking!</p>') {
                     window.location="http://richmondoval.ca/oval-fit/";
                 }

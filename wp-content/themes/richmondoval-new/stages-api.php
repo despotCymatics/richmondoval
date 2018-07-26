@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
 
 $authCode = authorize();
 
@@ -13,12 +15,13 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 
 	$booking = postCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings', $postFields);
 
-	//var_dump($booking->ModelState->{'booking.UserId'});
+	//var_dump($booking);
 	//var_dump($booking->ModelState->{'booking.SessionId'});
 
-	if($booking->Message) {
-		echo "<p>".$booking->ModelState->{'booking.UserId'}[0]."<br>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
-	}else if($booking->Id) {
+	if(isset($booking->Message)) {
+		if(isset($booking->ModelState->{'booking.UserId'}[0])) echo "<p>".$booking->ModelState->{'booking.UserId'}[0];
+		if(isset($booking->ModelState->{'booking.SessionId'}[0])) echo "<p>".$booking->ModelState->{'booking.SessionId'}[0];
+	}else if(isset($booking->Id)) {
 		echo "<p>Thank You for booking!</p>";
 	}else  {
 		echo "<h4>Error!</h4>";
@@ -32,7 +35,7 @@ if(isset($_POST['bookingId'])) {
 
 	//$authCode = $_POST['authCode'];
 
-	$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
+	//$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
 	$booking = deleteCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings/'.$bookingId);
 
@@ -43,7 +46,7 @@ if(isset($_POST['bookingId'])) {
 	if($booking) {
 		echo "<p>Your Booking has been canceled!</p>";
 	}else  {
-		echo "<h4>Error!</h4>";
+		echo "<h4>Error! Something went wrong!</h4>";
 	}
 
 }
@@ -158,7 +161,7 @@ function InsertIntoDB($formvars) {
                 )
                 values
                 (
-                "' . $formvars['email'] . '",
+                "' . SanitizeForSQL($formvars['email']) . '",
                 "' . md5($formvars['password']) . '"
                 )';
 
@@ -187,8 +190,12 @@ function RegisterUser() {
 	}*/
 
 
-	$formvars['email'] = $_POST['email'];
-	$formvars['password'] = $_POST['password'];
+	$formvars['email'] = Sanitize($_POST['email']);
+	$formvars['password'] = Sanitize($_POST['password']);
+
+	if(CheckIfUserExists($formvars['email'])) {
+		return false;
+	}
 
 	if(!InsertIntoDB($formvars)){
 		return false;
@@ -222,7 +229,7 @@ function login() {
 	$username = trim($_POST['email']);
 	$password = trim($_POST['password']);
 
-	if(CheckLoginInDB($username,$password))
+	if(!CheckLoginInDB($username,$password))
 	{
 		return false;
 	}
@@ -239,10 +246,10 @@ function CheckLoginInDB($username,$password)
 
 	$connection = DBLogin();
 
-	//$username = $this->SanitizeForSQL($username);
+	$username = SanitizeForSQL($username);
 
 	$pwdmd5 = md5($password);
-	$qry = "Select email from ovalfit_useer where email='$username' and password='$pwdmd5'";
+	$qry = "Select email from ovalfit_user where email='$username' and password='$pwdmd5'";
 
 	$result = $connection->query($qry);
 
@@ -255,3 +262,60 @@ function CheckLoginInDB($username,$password)
 
 	return true;
 }
+
+function CheckIfUserExists($username) {
+
+	$connection = DBLogin();
+
+	$qry = "Select email from ovalfit_user where email='$username'";
+
+	$result = $connection->query($qry);
+
+	if(!$result || mysqli_num_rows($result) <= 0) {
+		return false;
+	}
+
+	return true;
+
+}
+
+
+//Sanitizer
+function SanitizeForSQL($str) {
+	$ret_str = addslashes( $str );
+	return $ret_str;
+}
+
+/*
+   Sanitize() function removes any potential threat from the
+   data submitted. Prevents email injections or any other hacker attempts.
+   if $remove_nl is true, newline chracters are removed from the input.
+*/
+function Sanitize($str,$remove_nl=true) {
+
+	//$str = StripSlashes($str);
+
+	if($remove_nl)
+	{
+		$injections = array('/(\n+)/i',
+			'/(\r+)/i',
+			'/(\t+)/i',
+			'/(%0A+)/i',
+			'/(%0D+)/i',
+			'/(%08+)/i',
+			'/(%09+)/i'
+		);
+		$str = preg_replace($injections,'',$str);
+	}
+
+	return $str;
+}
+
+/*function StripSlashes($str)
+{
+	if(get_magic_quotes_gpc())
+	{
+		$str = stripslashes($str);
+	}
+	return $str;
+}*/
