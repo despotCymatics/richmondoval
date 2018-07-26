@@ -51,8 +51,8 @@ if(isset($_SESSION['logged'])) {
 	                        <?php
 	                        if(isset($_GET['user']) && $_GET['user'] == 'none'){
 		                        echo "User Does not exist!" ;
-	                        }else if(isset($_GET['user']) && $_GET['login'] == false) {
-		                        echo "Login failed! Username does not match the password!" ;
+	                        }else if(isset($_GET['login']) && $_GET['login'] == false) {
+		                        echo "Login failed! Username/Email does not match the password!" ;
                             }
 	                        ?>
                         </strong>
