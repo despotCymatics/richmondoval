@@ -202,12 +202,9 @@ function RegisterUser() {
 	}
 
 
-	/*if(!$this->SendUserConfirmationEmail($formvars))
-	{
-		return false;
-	}*/
+	SendUserConfirmationEmail($formvars);
 
-	//$this->SendAdminIntimationEmail($formvars);
+	//SendAdminIntimationEmail($formvars);
 
 	return true;
 }
@@ -319,3 +316,34 @@ function Sanitize($str,$remove_nl=true) {
 	}
 	return $str;
 }*/
+
+
+//Mail
+function SendUserConfirmationEmail($formvars) {
+
+	$to = $formvars['email'];
+
+	$subject = "Your registration with Oval Fit";
+
+	$txt = "Thanks for your registration with Oval Fit.\r\n<br>".
+	       "Please find the link below to login into your account:\r\n<br>".
+	       "<a href='http://richmondoval.ca/oval-fit-login/'>Oval Fit Login</a>\r\n<br>".
+	       "Username: ".$formvars['email']."\r\n<br>".
+	       "Password: ".$formvars['password']."\r\n<br>".
+	       "\r\n<br>".
+	       "\r\n<br>".
+	       "Regards,\r\n<br>".
+	       "richmondoval.ca\r\n";
+
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	$headers .= 'From: Oval Fit <no-reply@richmondoval.ca>' . "\r\n";
+	$headers .= 'Cc: despot.cymatics@gmail.com' . "\r\n";
+
+	if(wp_mail($to,$subject,$txt,$headers)){
+		return true;
+	}else {
+		return false;
+	}
+
+}

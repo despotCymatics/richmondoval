@@ -35,10 +35,10 @@ if(isset($_SESSION['logged'])) {
                             <input type='hidden' name='submitted' id='submitted' value='1'/>
 
                             <label for='email'>Email*:</label>
-                            <input type='email' name='email' id='email' required maxlength="50"/>
+                            <input type='email' name='email' id='email' required maxlength="50" autocomplete="on"/>
 
                             <label for='password'>Password*:</label>
-                            <input type='password' name='password' id='password' maxlength="50"/>
+                            <input type='password' name='password' id='password' required maxlength="50"/>
 
                             <p style="text-align: center">
                                 <input type='submit' name='Login' value='Login'/>

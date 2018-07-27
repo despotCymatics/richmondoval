@@ -59,7 +59,11 @@ body {
 
 .page-template-template-stages .bike.disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
+}
+
+.page-template-template-stages .bike.disabled .bike-num {
+    color: #dedede;
 }
 
 .page-template-template-stages .bike p {
@@ -91,7 +95,6 @@ body {
     border-radius: 50%;
     padding: 5px;
     overflow: hidden;
-    cursor: default;
 }
 @media (max-width: 768px){
     .page-template-template-stages .bike .bike-num {
@@ -108,6 +111,11 @@ body {
 
 .page-template-template-stages .bike .bike-img img {
     width: 60px;
+}
+
+.page-template-template-stages .bike:hover .bike-num {
+    background: #68cde9;
+    color: #fff;
 }
 
 .page-template-template-stages .bike:hover .btn {
@@ -152,6 +160,11 @@ body {
 
 .page-template-template-stages .first-row .coach {
     margin: 15px 40px 15px 15px ;
+    cursor: default;
+}
+
+.page-template-template-stages .first-row .coach:hover .bike-num {
+    background-color: #fff;
 }
 .page-template-template-stages .first-row .coach .bike-num {
     margin-bottom: 15px;
