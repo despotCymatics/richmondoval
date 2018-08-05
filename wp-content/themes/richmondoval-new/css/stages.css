@@ -54,12 +54,16 @@ body {
 .page-template-template-stages .bike {
     text-align: center;
     position: relative;
-    /*cursor: pointer;*/
+    cursor: pointer;
 }
 
 .page-template-template-stages .bike.disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
+}
+
+.page-template-template-stages .bike.disabled .bike-num {
+    color: #dedede;
 }
 
 .page-template-template-stages .bike p {
@@ -78,9 +82,40 @@ body {
     padding: 5px;
     overflow: hidden;
 }
+.page-template-template-stages .bike .bike-num {
+    background: #fff;
+    margin: 0 auto;
+    border: 2px solid #0088ce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 5px;
+    overflow: hidden;
+}
+@media (max-width: 768px){
+    .page-template-template-stages .bike .bike-num {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+.page-template-template-stages .bike .bike-num h3 {
+    margin: 0;
+}
+
 
 .page-template-template-stages .bike .bike-img img {
     width: 60px;
+}
+
+.page-template-template-stages .bike:hover .bike-num {
+    background: #68cde9;
+    color: #fff;
 }
 
 .page-template-template-stages .bike:hover .btn {
@@ -118,6 +153,41 @@ body {
     background-color: red;
 }
 
+.page-template-template-stages .first-row  {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.page-template-template-stages .first-row .coach {
+    margin: 15px 40px 15px 15px ;
+    cursor: default;
+}
+
+.page-template-template-stages .first-row .coach:hover .bike-num {
+    background-color: #fff;
+}
+.page-template-template-stages .first-row .coach .bike-num {
+    margin-bottom: 15px;
+}
+
+.page-template-template-stages .first-row .projector {
+    text-align: center;
+    margin: 15px;
+    width: 100%;
+}
+.page-template-template-stages .first-row .projector:before {
+    width: 100%;
+    height: 15px;
+    display: block;
+    content: " ";
+    border-radius: 3px;
+    background: #3379b7;
+    margin-bottom: 15px;
+}
+.page-template-template-stages .bike .bike-num.coach h4 {
+    text-align: left;
+}
+
 .page-template-template-stages h2 img, .page-template-template-stages h4 img {
     margin-right: 5px;
     max-height: 18px;
@@ -146,3 +216,4 @@ body {
     opacity: 0.8;
     margin-right: 10px;
 }
+

@@ -21,10 +21,45 @@ function bookBike(authCode, userId, sessionId, bikeId) {
             success: function (response) {
                 swal({
                     type: 'info',
+                    html: response,
+                    allowOutsideClick: false
+                });
+
+                if(response =='<p>Thank You for booking!</p>') {
+                    window.location="http://richmondoval.ca/oval-fit/";
+                }
+                console.log(response);
+            }
+        });
+    })
+}
+
+
+function cancelBooking(authCode, bookingId) {
+    swal({
+        imageUrl: '/wp-content/themes/richmondoval-new/images/basic/logo-animate.gif',
+        imageWidth: 120,
+        html: '<p>Please wait</p>',
+        allowOutsideClick: false,
+        showConfirmButton: false
+        //timer:2000
+
+    });
+    jQuery(function($) {
+        $.ajax({
+            url: '/wp-content/themes/richmondoval-new/stages-api.php',
+            type: 'post',
+            data: {
+                bookingId: bookingId,
+                authCode: authCode
+            },
+            success: function (response) {
+                swal({
+                    type: 'info',
                     html: response
                 });
-                if(response) {
-
+                if(response == '<p>Your Booking has been canceled!</p>') {
+                    $("div[data-id='"+bookingId+"']").hide(200);
                 }
                 console.log(response);
             }

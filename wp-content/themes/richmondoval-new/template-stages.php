@@ -1,18 +1,17 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
 /**
  * Template Name: Oval Fit Page
  */
 
 require "stages-api.php";
 
+session_start();
+
 if(login() || isset($_SESSION['logged'])) {
 
     get_header();
 
     ?>
-
     <div class="within inner">
         <div class="content">
             <div class="title">
@@ -21,7 +20,6 @@ if(login() || isset($_SESSION['logged'])) {
                 <br>
                 <h5>Booking</h5>
             </div>
-
 			<?php
 			//Users
 			//Users
@@ -40,12 +38,14 @@ if(login() || isset($_SESSION['logged'])) {
 				if(count($userQuery) == 1) {
 					$userId = $userQuery[0]->Id;
 				}else {
-					header('Location: http://richmondoval.ca/oval-fit-login/');
+					session_destroy();
+					echo '<script>window.location="http://richmondoval.ca/oval-fit-login/?user=none"</script>';
+					//header('Location: http://richmondoval.ca/oval-fit-login/?user=none');
 					exit;
 				}
 
 				//Bikes
-				//$bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
+				$bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
 
 				//Sessions
 				$today = date('Y-m-d');
@@ -57,43 +57,55 @@ if(login() || isset($_SESSION['logged'])) {
 				$user = getCurl($authCode, 'http://stagesflight.com/locapi/v1/users/'.$userId);
 
 				?>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2>Welcome, <?=$user->FirstName." ".$user->LastName?></h2>
+                        <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
+                    </div>
+                    <div class="col-md-3 alignRight">
+                        <a class="btn" href="/oval-fit-logout/">Log Out</a>
+                    </div>
+                </div>
 
-                <h2>Welcome, <?=$user->FirstName." ".$user->LastName?></h2>
-                <p><?=$user->Email;?> | <?=$user->Gender;?> | <?=$user->Weight;?>kg</p>
+
                 <div class="row">
                     <div class="col-md-9">
                         <div class="tab-buttons">
                             <h4 class="tablink" onclick="openTab('bookings', this)" id="defaultOpen">
-                                <img width="15px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/check.svg"> Bookings</h4>
+                                <img width="14px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/check.svg"> Bookings</h4>
                             <h4 class="tablink" onclick="openTab('sessions', this)">
-                                <img width="15px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/bookmark.svg"> Sessions</h4>
+                                <img width="12px" src="<?= get_stylesheet_directory_uri() ?>/images/basic/bookmark.svg"> Sessions</h4>
                         </div>
-
 						<?php
 						//User Bookings
-						$userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
-
+						$userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );?>
+						<div id="bookings" class="tabcontent">
+                        <?php
 						if ( count( $userBookings ) > 0 ) { ?>
-                            <div id="bookings" class="tabcontent">
+
                                 <br>
                                 <h3>Your Bookings</h3>
 								<?php foreach ( $userBookings as $userBooking ) { ?>
-                                    <h4 class="showMoreToggler">
-										<?=$userBooking->Session->Name;?> on <?=$userBooking->Session->StartDateTime;?>
-                                        <br>
-                                        <span>Bike: <?=$userBooking->Bike->Number;?> | Row: <?=$userBooking->Bike->Row;?> | Column: <?=$userBooking->Bike->Column;?> </span>
-                                    </h4>
-                                    <div class="moreText">
-                                        <button class="btn">Cancel Booking</button>
+                                    <div class="bookings" data-id="<?=$userBooking->Id;?>">
+                                        <h4 class="showMoreToggler">
+		                                    <?=$userBooking->Session->Name;?> on <?=$userBooking->Session->StartDateTime;?>
+                                            <br>
+                                            <span>Bike: <?=$userBooking->Bike->Number;?> | Row: <?=$userBooking->Bike->Row;?> | Column: <?=$userBooking->Bike->Column;?> </span>
+                                        </h4>
+                                        <div class="moreText">
+                                            <button class="cancel-booking btn" onclick="cancelBooking('<?=$authCode;?>','<?=$userBooking->Id?>')">Cancel Booking</button>
+                                        </div>
                                     </div>
-
 									<?php
 								}
-								?>
-                            </div>
-							<?php
-						}
+						}else {
+						?>
+                        <br>
+						<p>You have no bookings.</p>
+                        <?php } ?>
+                        </div>
 
+                        <?php
 						//User Sessions
 						if ( count( $sessions ) > 0 ) { ?>
                             <div id="sessions" class="tabcontent">
@@ -102,7 +114,6 @@ if(login() || isset($_SESSION['logged'])) {
 								<?php foreach ( $sessions as $session ) {
 									$instructor = getCurl($authCode,'http://stagesflight.com/locapi/v1/instructors/'.$session->InstructorId);
 									?>
-
                                     <h4 class="showMoreToggler">
                                         <span class="type" style="background: <?=$session->Type; ?>"></span>
 										<?= $session->Name ?>
@@ -110,38 +121,51 @@ if(login() || isset($_SESSION['logged'])) {
                                         <span>Starts: <?=$session->StartDateTime; ?> | </span>
                                         <span>Duration: <?=$session->Duration; ?>min | </span>
                                         <span>Instructor: <?=$instructor->FirstName.' '.$instructor->LastName; ?></span>
-
-
                                     </h4>
                                     <div class="moreText">
-                                        <div class="row">
+                                        <div class="first-row">
+
+                                                <div class="bike coach">
+                                                    <div class="bike-num" style="background-color: ">
+                                                        <h3>C</h3>
+                                                    </div>
+                                                    <h4>Coach</h4>
+                                                </div>
+
+                                                <div class="projector">
+                                                    <h3>Projector</h3>
+                                                </div>
+
+
+                                        </div>
+                                        <div class="row seven-cols">
 											<?php
-
-											$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
-
-											/*$bikesBooked = array();
+											//$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
+											$sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
+											$bikesBooked = array();
 											foreach ( $sessionBookings as $sessionBooking ) {
 												array_push($bikesBooked, $sessionBooking->Bike->Id);
 
-											}*/
-											if ( count( $sessionBikes ) > 0 ) {
-												foreach ( $sessionBikes as $bike ) {
-													/*$disabledBike = '';
-													if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';*/
+											}
+											//if ( count( $sessionBikes ) > 0 ) {
+												//foreach ( $sessionBikes as $bike ) {
+											    foreach ( $bikes as $bike ) {
+													$disabledBike = '';
+													if(in_array($bike->Id, $bikesBooked)) $disabledBike = 'disabled';
 													?>
 
-                                                    <div class="col-sm-2">
-                                                        <div class="bike <? //$disabledBike;?>">
-                                                            <p>Bike#: <?= $bike->Number; ?></p>
+                                                    <div class="col-sm-1">
+                                                        <div class="bike <?=$disabledBike;?>">
 															<?php
 															$isPower = 'yes';
 															if ( ! $bike->IsPower ) {
 																$isPower = 'no';
 															} ?>
-                                                            <span class="is-power <?= $isPower ?>"></span>
-                                                            <div class="bike-img">
-                                                                <img width="60"
-                                                                     src="<?= get_stylesheet_directory_uri() ?>/images/basic/bike.jpg">
+                                                           <!-- <span class="is-power <?/*= $isPower */?>"></span>-->
+                                                            <div class="bike-num">
+                                                                <h3><?= $bike->Number; ?></h3>
+                                                                <!--<img width="60"
+                                                                     src="<?/*= get_stylesheet_directory_uri() */?>/images/basic/bike.jpg">-->
                                                             </div>
                                                             <button
                                                                     onclick="bookBike('<?=$authCode;?>', <?=$userId;?>, <?=$session->Id;?>, <?=$bike->Id;?>)"
@@ -149,11 +173,9 @@ if(login() || isset($_SESSION['logged'])) {
                                                         </div>
 
                                                     </div>
-
 													<?php
 												}
-											}
-
+											//}
 											?>
                                         </div>
                                     </div>
@@ -161,7 +183,6 @@ if(login() || isset($_SESSION['logged'])) {
 								}
 								?>
                             </div>
-
 							<?php
 						} ?>
                     </div>
@@ -199,12 +220,6 @@ if(login() || isset($_SESSION['logged'])) {
                             <p><span>Avg Speed: </span><span><?=$avgSpeed / $numWorkouts;?></span></p>
                             <p><span>Avg Heart Rate: </span><span><?=$avgHR / $numWorkouts;?></span></p>
                             <p><span>Max Speed: </span><span><?=$maxSpeed;?></span></p>
-
-							<?php
-
-
-							//var_dump($workouts);
-							?>
                         </div>
                     </div>
                 </div>
@@ -215,14 +230,12 @@ if(login() || isset($_SESSION['logged'])) {
 			}
 
 			?>
-
         </div><!-- content -->
     </div><!-- within inner -->
-
 <?php
 } //login check
 else {
-    header('Location: http://richmondoval.ca/oval-fit-login/');
+    header('Location: http://richmondoval.ca/oval-fit-login/?login=false');
     exit;
 }
 

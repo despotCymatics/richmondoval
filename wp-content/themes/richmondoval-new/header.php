@@ -1,9 +1,3 @@
-<?php 
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
-?>
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 
@@ -16,8 +10,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="shortcut icon" type="image/png" href="<?=get_stylesheet_directory_uri();?>/images/basic/favicon.gif"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
-	<?php //include "events-login-form.php";?>
 
 	<?php wp_head();?>
 
@@ -113,10 +105,10 @@
                 </div>
                 <div class="topLeft">
                      <div class="combinedMenu">
-                            <?php if ( is_active_sidebar( 'top_bar' ) ){ ?>
-                                 <?php dynamic_sidebar('top_bar' ); ?>
-                            <?php }?>
-
+                            <?php if ( is_active_sidebar( 'top_bar' ) ) {
+                                dynamic_sidebar('top_bar' );
+                            }
+                            ?>
                             <a class="ser" title="Search" href="#"></a>
                             <div class="barSearch"><?php get_search_form( true ); ?></div>
                             <!--<a class="rox" title="Richmond Oval Experience" href="http://richmondoval.ca/therox"><span>Olympic Museum</span></a>
@@ -131,16 +123,12 @@
                         <div class="mainMenu">
                             <div class="close"><a href="#"><i class="fa fa-times"></i></a></div>
                             <div class="within">
-                                <!--<div class="logoHolder">
-                                    <a href="<?php /*echo get_home_url(); */?>"><img src="<?/*=get_template_directory_uri()*/?>/images/basic/logo.png" alt="Site name"></a>
-                                </div>-->
                                  <div class="topSearch">
                                     <?php get_search_form( true ); ?>
                                  </div>
                                 <div class="scrollable">
                                 <nav>
                                     <?php
-
                                     $defaults = array(
                                         'theme_location'  => '',
                                         'menu'            => 'Programs Menu',
@@ -170,9 +158,7 @@
                      </div>
                 </div>
                 <div class="blueStripe"></div>
-
             </div>
-
     </header>
     <!-- /header -->
-    <?php } ?>
+    <?php }
