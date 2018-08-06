@@ -2,69 +2,208 @@ body {
     font-size: 16px;
 }
 
+.page-template-template-stages footer {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages header {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages .pageWrap {
+    margin-top: 0;
+}
+
+
+/******** OVAL FIT HEADER *********/
+
 .page-template-template-stages .ovalfit-header {
     background: #0C0D0D;
 }
 
 .page-template-template-stages .ovalfit-header .within {
     min-height: auto;
+    padding: 45px 15px 30px;
+}
+.page-template-template-stages .ovalfit-header .row {
+    padding-bottom: 0;
 }
 
-
 .page-template-template-stages .ovalfit-header p {
+    margin-bottom: 30px;
+}
+
+.page-template-template-stages .ovalfit-header p, .page-template-template-stages .ovalfit-header span {
     color: #fff;
     font-size: 15px;
 }
 
-.page-template-template-stages .ovalfit-header .stats p {
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-.page-template-template-stages .title {
-    margin: 30px 0;
-}
-
-.page-template-template-stages .title img.stages-logo {
-    width: 220px;
-}
-.page-template-template-stages h4.showMoreToggler {
-    margin-bottom: 10px;
-}
-
-.page-template-template-stages h4.showMoreToggler span.type {
-    color: #fff;
+.page-template-template-stages .ovalfit-header a.logout {
+    color: #FF9E18;
     display: block;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    position: absolute;
+    margin-bottom: 30px;
+}
+.page-template-template-stages .ovalfit-header a.logout:hover {
+    color: #FF9E18;
+    opacity: 0.8;
+}
+
+/* stats */
+.page-template-template-stages .ovalfit-header .stats .stat {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    display: flex;
+    align-items: flex-start;
+    max-width: 120px;
+    width: 120px;
+    min-height: 60px;
+    float: left;
+}
+
+.page-template-template-stages .ovalfit-header .stats .stat img {
+    margin-right: 15px;
+}
+.page-template-template-stages .ovalfit-header .stats .stat span {
+    line-height: 1;
+}
+.page-template-template-stages .ovalfit-header .stats .stat span.num {
+    color: #FF9E18;
+    display: block;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.page-template-template-stages .ovalfit-header .stats .stat span.num span {
+    font-size: 12px;
+    color: #FF9E18;
+}
+
+
+.page-template-template-stages .ovalfit-header .title {
+    margin-bottom: 30px;
+}
+
+.page-template-template-stages .ovalfit-header .title img.stages-logo {
+    width: 120px;
+}
+
+
+
+/******** OVAL FIT BODY *********/
+
+.page-template-template-stages .ovalfit-body .within {
+    padding: 8px 15px 30px;
+}
+.page-template-template-stages .ovalfit-body .within .row {
+    padding: 0;
+}
+
+
+.page-template-template-stages .ovalfit-body .tab-buttons .tablink {
+    opacity: 0.4;
+    border-right: 0;
+    background: none;
+    border-bottom: 4px solid transparent;
+    font-size: 14px;
+    font-family: 'NeoSansStdMedium';
+    text-transform: uppercase;
+    color: #0C0C0D;
+    padding: 15px 60px;
+}
+
+.page-template-template-stages .ovalfit-body .tab-buttons .tablink.active-tab {
+    opacity: 1;
+    border-color:  #FF9E18;
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler {
+    font-family: "NeoSansStdMedium";
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+    padding: 30px 60px;
+    background-color: #fff;
+    transition: all 400ms ease;
+    border-bottom: 1px solid #d8d8d8;
+
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler:hover {
+    background-color: #f0f0f0;;
+    /*padding-left: 15px;*/
+}
+
+
+.page-template-template-stages .ovalfit-body .showMoreToggler:after {
+   content: "";
+    display: none;
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler .row {
+    display: flex;
+    align-items: center;
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler h4 {
+    font-size: 14px;
+    font-family: "NeoSansStdMedium";
+    color: #008BD1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler .date {
+    opacity: 0.9;
+    color: #008BD1;
+}
+.page-template-template-stages .ovalfit-body .showMoreToggler .close-toggle {
+    display: none;
+}
+.page-template-template-stages .ovalfit-body .showMoreToggler.on .close-toggle {
+    display: block;
+}
+.page-template-template-stages .ovalfit-body .showMoreToggler.on .btn {
+    display: none;
+}
+
+
+
+.page-template-template-stages .ovalfit-body .btn {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-template-template-stages .ovalfit-body .btn.blue {
+    background-color: #008BD1;
+    color: #fff;
+}
+
+.page-template-template-stages .ovalfit-body .btn.regular {
+    padding: 8px 30px;
+}
+
+.page-template-template-stages .ovalfit-body .btn.big {
+    padding: 8px 60px;
+}
+
+.page-template-template-stages .ovalfit-body .btn.cancel:hover {
+    background-color: #D13200;
 }
 
 .page-template-template-stages .moreText {
-    padding: 20px;
-    background-color: #dedede;
-    border: 1px solid #e9eaea;
-    margin-top: -10px;
-}
-.page-template-template-stages .moreText .btn {
-    font-size: 14px;
-    padding: 12px;
+    padding: 30px 60px;
+    margin: 0;
+    border-bottom: 1px solid #d8d8d8;
 }
 
-.page-template-template-stages h4.showMoreToggler span {
-    font-size: 14px;
-    opacity: 0.8;
-    color: #161616;
-}
 
-.page-template-template-stages h4.showMoreToggler:after {
-    content: "\f078";
+/* Bikes */
 
-}
-
-.page-template-template-stages .bike {
+.page-template-template-stages .ovalfit-body .bike {
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -75,79 +214,35 @@ body {
     cursor: not-allowed !important;
 }
 
-.page-template-template-stages .bike.disabled .bike-num {
-    color: #dedede;
+.page-template-template-stages .ovalfit-body .bike.disabled .bike-num {
+    background-color: #C2C1C0;
+    color: #535453;
 }
 
-.page-template-template-stages .bike p {
-    margin-bottom: 10px;
-}
-
-.page-template-template-stages .bike .bike-img {
-    background: #fff;
-    margin: 0 auto;
-    border: 2px solid #0088ce;
-    display: block;
-    box-sizing: content-box;
-    width: 60px;
-    height: auto;
-    border-radius: 50%;
-    padding: 5px;
-    overflow: hidden;
-}
-.page-template-template-stages .bike .bike-num {
-    background: #fff;
-    margin: 0 auto;
-    border: 2px solid #0088ce;
+.page-template-template-stages .ovalfit-body .bike .bike-num {
+    background-color: #FF9E18;
+    color: #000;
+    margin: 8px auto;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: content-box;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 40%;
     padding: 5px;
     overflow: hidden;
-}
-@media (max-width: 768px){
-    .page-template-template-stages .bike .bike-num {
-        width: 20px;
-        height: 20px;
-    }
+    font-family: 'NeoSansStdMedium';
 }
 
 
-.page-template-template-stages .bike .bike-num h3 {
-    margin: 0;
-}
-
-
-.page-template-template-stages .bike .bike-img img {
-    width: 60px;
-}
-
-.page-template-template-stages .bike:hover .bike-num {
-    background: #68cde9;
+.page-template-template-stages .ovalfit-body .bike:hover .bike-num {
+    background: #008BD1;
     color: #fff;
 }
 
-.page-template-template-stages .bike:hover .btn {
-    opacity: 1;
-}
 
-.page-template-template-stages .bike .btn {
-    opacity: 0;
-    text-align: center;
-    padding: 8px;
-    font-size: 12px;
-    margin-top: 8px;
-}
-
-.page-template-template-stages .bike.disabled .btn {
-    display: none;
-}
-
-.page-template-template-stages .bike .is-power {
+.page-template-template-stages .ovalfit-body .bike .is-power {
     position: absolute;
     top: 91px;
     right: 50%;
@@ -155,38 +250,42 @@ body {
     border-radius: 50%;
     width: 16px;
     height: 16px;
-
 }
 
-.page-template-template-stages .bike .is-power.yes {
+.page-template-template-stages .ovalfit-body .bike .is-power.yes {
     background-color: green;
 }
 
-.page-template-template-stages .bike .is-power.no {
+.page-template-template-stages .ovalfit-body .bike .is-power.no {
     background-color: red;
 }
 
-.page-template-template-stages .first-row  {
+.page-template-template-stages .ovalfit-body .first-row  {
     display: flex;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.page-template-template-stages .first-row .coach {
-    margin: 15px 40px 15px 15px ;
+.page-template-template-stages .ovalfit-body .first-row .coach {
+    margin: 15px 40px 15px 0px ;
+    padding: 15px 20px;
+    border-radius: 15px;
     cursor: default;
+    background-color: #ECECEF;
+    font-family: 'NeoSansStdMedium';
 }
 
 .page-template-template-stages .first-row .coach:hover .bike-num {
-    background-color: #fff;
+    background-color: #FF9E18;
 }
 .page-template-template-stages .first-row .coach .bike-num {
-    margin-bottom: 15px;
+    margin-bottom: 2px;
 }
 
 .page-template-template-stages .first-row .projector {
     text-align: center;
-    margin: 15px;
+    margin: 15px 0;
     width: 100%;
+    font-family: 'NeoSansStdMedium';
 }
 .page-template-template-stages .first-row .projector:before {
     width: 100%;
@@ -194,7 +293,7 @@ body {
     display: block;
     content: " ";
     border-radius: 3px;
-    background: #3379b7;
+    background: #ECECEF;
     margin-bottom: 15px;
 }
 .page-template-template-stages .bike .bike-num.coach h4 {
@@ -206,4 +305,65 @@ body {
     max-height: 18px;
 }
 
+
+/************ LOGIN **************/
+
+.page-template-template-stages_login footer {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages_login header {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages_login .pageWrap {
+    margin-top: 0;
+    background-color: #0C0D0D;
+    height: 100vh;
+}
+
+.page-template-template-stages_login .stages-logo {
+    width: 120px !important;
+}
+
+.page-template-template-stages_login .ride-logo {
+    max-width: 480px;
+    margin: 60px auto;
+    opacity: 0.2;
+    text-align: center;
+}
+
+.page-template-template-stages_login fieldset {
+    border: none;
+    max-width: 360px;
+    margin: 0 auto;
+}
+.page-template-template-stages_login input {
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.page-template-template-stages_login .btn {
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 30px;
+    background: #FF9E18;
+
+
+}
+
+
+/********** MOBILE **********/
+
+@media (max-width: 768px){
+    .page-template-template-stages .ovalfit-body .bike .bike-num {
+        width: 20px;
+        height: 20px;
+    }
+    .page-template-template-stages .alignRight {
+        text-align: left;
+    }
+}
 

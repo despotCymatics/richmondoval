@@ -47,15 +47,15 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 ?>
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-sm-9">
                         <div class="title">
-                            <img class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                            <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
                         </div>
                         <p>Hi <?= $user->FirstName ?>, here's how you've been doing.</p>
                         <!--<p><?/*= $user->Email; */?> | <?/*= $user->Gender; */?> | <?/*= $user->Weight; */?>kg</p>-->
                     </div>
-                    <div class="col-md-3 alignRight">
-                        <a class="btn" href="/oval-fit-logout/">Log Out</a>
+                    <div class="col-sm-3 alignRight">
+                        <a class="logout" href="/oval-fit-logout/">Log Out</a>
                     </div>
                 </div>
 
@@ -71,9 +71,12 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             $avgHR             = 0;
                             $maxSpeed          = 0;
                             $numWorkouts       = 0;
+                            $maxSpeedArray      = array();
 
                             $workouts = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
                             foreach ( $workouts as $workout ) {
+
+                                //var_dump($workout);
                                 $numWorkouts ++;
                                 $durationInSeconds += $workout->DurationInSeconds;
                                 $distanceInKm      += $workout->DistanceInKm;
@@ -81,18 +84,66 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 $avgWatt           += $workout->AvgWatt;
                                 $avgSpeed          += $workout->AvgSpeed;
                                 $avgHR             += $workout->AvgHeartRate;
-                                $maxSpeed          = $workout->MaxSpeed;
+                                array_push($maxSpeedArray, $workout->MaxSpeed);
 
                             }
                             ?>
-                            <p><span>Number of workouts: </span><span><?= $numWorkouts; ?></span></p>
-                            <p><span>Duration: </span><span><?= $durationInSeconds; ?> sec</span></p>
-                            <p><span>Distance: </span><span><?= $distanceInKm; ?> km</span></p>
-                            <p><span>Kilo calories: </span><span><?= $kiloCalories; ?></span></p>
-                            <p><span>Avg Watt: </span><span><?= $avgWatt / $numWorkouts; ?></span></p>
-                            <p><span>Avg Speed: </span><span><?= $avgSpeed / $numWorkouts; ?></span></p>
-                            <p><span>Avg Heart Rate: </span><span><?= $avgHR / $numWorkouts; ?></span></p>
-                            <p><span>Max Speed: </span><span><?= $maxSpeed; ?></span></p>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
+                                <span>
+                                    <span class="num"><?= $numWorkouts; ?></span>
+                                    <span>Number of workouts</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
+                                <span>
+                                    <span class="num"><?= round($durationInSeconds/60); ?> <span>min</span></span>
+                                    <span>Total time</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
+                                <span>
+                                    <span class="num"><?= round($avgWatt / $numWorkouts) ; ?> <span>watt</span></span>
+                                    <span>Power</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
+                                <span>
+                                    <span class="num"><?= $kiloCalories; ?></span>
+                                    <span>Calories burned</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
+                                <span>
+                                    <span class="num"><?= round($distanceInKm,2); ?> <span>km</span></span>
+                                    <span>Total distance</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
+                                <span>
+                                    <span class="num"><?= $avgHR / $numWorkouts; ?></span>
+                                    <span>Average heartrate</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                <span>
+                                    <span class="num"><?= $avgSpeed / $numWorkouts; ?> <span>km/h</span></span>
+                                    <span>Average speed</span>
+                                </span>
+                            </div>
+                            <div class="stat">
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                <span>
+                                    <span class="num"><?= max($maxSpeedArray); ?> <span>km/h</span></span>
+                                    <span>Max.speed</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,23 +166,39 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         <div id="bookings" class="tabcontent">
                             <?php
                             if ( count( $userBookings ) > 0 ) { ?>
-
-                                <br>
-                                <h3>Your Bookings</h3>
                                 <?php foreach ( $userBookings as $userBooking ) { ?>
                                     <div class="bookings" data-id="<?= $userBooking->Id; ?>">
-                                        <h4 class="showMoreToggler">
-                                            <?= $userBooking->Session->Name; ?> on <?= $userBooking->Session->StartDateTime; ?>
-                                            <br>
-                                            <span>Bike: <?= $userBooking->Bike->Number; ?>
-                                                | Row: <?= $userBooking->Bike->Row; ?>
-                                                | Column: <?= $userBooking->Bike->Column; ?> </span>
-                                        </h4>
+                                        <div class="showMoreToggler">
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <h4><?= $userBooking->Session->Name; ?></h4>
+                                                    <span class="date"><?= date("D, M jS", strtotime($userBooking->Session->StartDateTime)); ?></span><br>
+
+                                                    <span><?= date("g:ia", strtotime($userBooking->Session->StartDateTime)); ?>
+                                                        - <?= date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime))); ?></span>
+                                                </div>
+                                                <div class="col-sm-4 alignRight">
+                                                    <button class="btn blue regular">Cancel Booking</button>
+                                                    <h4 class="close-toggle">X Close</h4>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
                                         <div class="moreText">
-                                            <button class="cancel-booking btn"
-                                                    onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>')">
-                                                Cancel Booking
-                                            </button>
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <br>
+                                                    <p>Bike: <?=$userBooking->Bike->Number ?> | Row: <?=$userBooking->Bike->Row ?> | Column: <?=$userBooking->Bike->Column ?></p>
+                                                </div>
+                                                <div class="col-sm-4 alignRight">
+                                                    <button class="btn blue regular cancel"
+                                                       onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>')">
+                                                        Cancel Booking
+                                                    </button>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <?php
@@ -147,78 +214,94 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         //User Sessions
                         if ( count( $sessions ) > 0 ) { ?>
                             <div id="sessions" class="tabcontent">
-                                <br>
-                                <h3>Available Sessions</h3>
                                 <?php foreach ( $sessions as $session ) {
+                                    //var_dump($session);
                                     $instructor = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/instructors/' . $session->InstructorId );
                                     ?>
-                                    <h4 class="showMoreToggler">
-                                        <span class="type" style="background: <?= $session->Type; ?>"></span>
-                                        <?= $session->Name ?>
-                                        <br>
-                                        <span>Starts: <?= $session->StartDateTime; ?> | </span>
-                                        <span>Duration: <?= $session->Duration; ?>min | </span>
-                                        <span>Instructor: <?= $instructor->FirstName . ' ' . $instructor->LastName; ?></span>
-                                    </h4>
-                                    <div class="moreText">
-                                        <div class="first-row">
+                                    <div class="showMoreToggler">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
+                                                <h4><?= $session->Name ?></h4>
+                                                <span class="date"><?= date("D, M jS", strtotime($session->StartDateTime)); ?></span><br>
 
-                                            <div class="bike coach">
-                                                <div class="bike-num" style="background-color: ">
-                                                    <h3>C</h3>
-                                                </div>
-                                                <h4>Coach</h4>
+                                                <span><?= date("g:ia", strtotime($session->StartDateTime)); ?>
+                                                    - <?= date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime))); ?></span>
+
                                             </div>
-
-                                            <div class="projector">
-                                                <h3>Projector</h3>
+                                            <div class="col-sm-4 alignRight">
+                                                <button class="btn blue regular">Book your bike</button>
+                                                <h4 class="close-toggle">X Close</h4>
                                             </div>
-
-
                                         </div>
-                                        <div class="row seven-cols">
-                                            <?php
-                                            //$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
-                                            $sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
-                                            $bikesBooked     = array();
-                                            foreach ( $sessionBookings as $sessionBooking ) {
-                                                array_push( $bikesBooked, $sessionBooking->Bike->Id );
-
-                                            }
-                                            //if ( count( $sessionBikes ) > 0 ) {
-                                            //foreach ( $sessionBikes as $bike ) {
-                                            foreach ( $bikes as $bike ) {
-                                                $disabledBike = '';
-                                                if ( in_array( $bike->Id, $bikesBooked ) ) {
-                                                    $disabledBike = 'disabled';
-                                                }
-                                                ?>
-
-                                                <div class="col-sm-1">
-                                                    <div class="bike <?= $disabledBike; ?>">
-                                                        <?php
-                                                        $isPower = 'yes';
-                                                        if ( ! $bike->IsPower ) {
-                                                            $isPower = 'no';
-                                                        } ?>
-                                                        <!-- <span class="is-power <?/*= $isPower */ ?>"></span>-->
-                                                        <div class="bike-num">
-                                                            <h3><?= $bike->Number; ?></h3>
-                                                            <!--<img width="60"
-                                                                             src="<?/*= get_stylesheet_directory_uri() */ ?>/images/basic/bike.jpg">-->
-                                                        </div>
-                                                        <button
-                                                                onclick="bookBike('<?= $authCode; ?>', <?= $userId; ?>, <?= $session->Id; ?>, <?= $bike->Id; ?>)"
-                                                                class="btn">Book
-                                                        </button>
+                                    </div>
+                                    <div class="moreText">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                 <span>Instructor: <br>
+                                                     <?= $instructor->FirstName . ' ' . $instructor->LastName; ?>
+                                                 </span>
+                                                <br><br>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet velit non dolor finibus euismod aliquam eget metus. Nullam facilisis nisi eget lacus consequat, venenatis lacinia tellus ullamcorper. Mauris vitae enim urna. Curabitur gravida, sem in cursus luctus, nulla sapien blandit nunc, sed efficitur diam mi id dui.
+                                                </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/fans.png">
+                                                <div class="first-row">
+                                                    <div class="bike coach">
+                                                        <div class="bike-num" style="background-color: "></div>
+                                                        <span>Coach</span>
+                                                    </div>
+                                                    <div class="projector">
+                                                        <span>Screen</span>
                                                     </div>
 
                                                 </div>
-                                                <?php
-                                            }
-                                            //}
-                                            ?>
+                                                <div class="row seven-cols">
+		                                            <?php
+		                                            //$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
+		                                            $sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
+		                                            $bikesBooked     = array();
+		                                            foreach ( $sessionBookings as $sessionBooking ) {
+			                                            array_push( $bikesBooked, $sessionBooking->Bike->Id );
+
+		                                            }
+		                                            //if ( count( $sessionBikes ) > 0 ) {
+		                                            //foreach ( $sessionBikes as $bike ) {
+		                                            foreach ( $bikes as $bike ) {
+			                                            $disabledBike = '';
+			                                            if ( in_array( $bike->Id, $bikesBooked ) ) {
+				                                            $disabledBike = 'disabled';
+			                                            }
+			                                            ?>
+
+                                                        <div class="col-sm-1">
+                                                            <div class="bike <?= $disabledBike; ?>">
+					                                            <?php
+					                                            $isPower = 'yes';
+					                                            if ( ! $bike->IsPower ) {
+						                                            $isPower = 'no';
+					                                            } ?>
+                                                                <!-- <span class="is-power <?/*= $isPower */ ?>"></span>-->
+                                                                <div class="bike-num" onclick="bookBike('<?= $authCode; ?>', <?= $userId; ?>, <?= $session->Id; ?>, <?= $bike->Id; ?>)">
+                                                                    <?= $bike->Number; ?>
+                                                                    <!--<img width="60"
+                                                                             src="<?/*= get_stylesheet_directory_uri() */ ?>/images/basic/bike.jpg">-->
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+			                                            <?php
+		                                            }
+		                                            //}
+		                                            ?>
+                                                </div>
+                                                <br>
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/fans.png">
+                                            </div>
                                         </div>
+
                                     </div>
                                     <?php
                                 }

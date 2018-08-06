@@ -21,27 +21,26 @@ if(isset($_SESSION['logged'])) {
         <div class="content">
             <div class="title">
                 <br>
-                <!--<img width="320px" class="stages-logo"
-                     src="/wp-content/uploads/2018/07/oval-fit-logo-black.png">-->
+                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
                 <br>
-                <h3 style="text-align: center">Oval Fit Login</h3>
+                <br>
+                <div class="ride-logo">
+                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg">
+                </div>
             </div>
 
             <div class="row">
                 <div class="col-md-offset-3 col-md-6">
                     <form id='login' action='/oval-fit/' method='post' accept-charset='UTF-8'>
                         <fieldset>
-                            <legend>Login</legend>
                             <input type='hidden' name='submitted' id='submitted' value='1'/>
 
-                            <label for='email'>Email*:</label>
-                            <input type='email' name='email' id='email' required maxlength="50" autocomplete="on"/>
+                            <input type='email' name='email' id='email' required maxlength="50" autocomplete="on" placeholder="Your Email"/>
 
-                            <label for='password'>Password*:</label>
-                            <input type='password' name='password' id='password' required maxlength="50"/>
+                            <input type='password' name='password' id='password' required maxlength="50" placeholder="Your Password"/>
 
                             <p style="text-align: center">
-                                <input type='submit' name='Login' value='Login'/>
+                                <input type='submit' class="btn" name='Login' value='Sign In'/>
                             </p>
 
                         </fieldset>
