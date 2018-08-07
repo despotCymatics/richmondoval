@@ -19,12 +19,12 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	//var_dump($booking->ModelState->{'booking.SessionId'});
 
 	if(isset($booking->Message)) {
-		if(isset($booking->ModelState->{'booking.UserId'}[0])) echo "<p>".$booking->ModelState->{'booking.UserId'}[0];
-		if(isset($booking->ModelState->{'booking.SessionId'}[0])) echo "<p>".$booking->ModelState->{'booking.SessionId'}[0];
+		if(isset($booking->ModelState->{'booking.UserId'}[0])) echo "<p>".$booking->ModelState->{'booking.UserId'}[0]."</p>";
+		if(isset($booking->ModelState->{'booking.SessionId'}[0])) echo "<p>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
 	}else if(isset($booking->Id)) {
-		echo "<p>Thank You for booking!</p>";
+		echo "<p>Thank You for Booking with OvalFit!</p>";
 	}else  {
-		echo "<h4>Error!</h4>";
+		echo "<h2>Error!</h2>";
 	}
 
 }
@@ -44,9 +44,9 @@ if(isset($_POST['bookingId'])) {
 	//var_dump($booking);
 
 	if($booking) {
-		echo "<p>Your Booking has been canceled!</p>";
+		echo "<h2>Your Booking has been canceled!</h2>";
 	}else  {
-		echo "<h4>Error! Something went wrong!</h4>";
+		echo "<h2>Error! Something went wrong!</h2>";
 	}
 
 }
@@ -137,8 +137,13 @@ function deleteCurl($authCode, $url) {
 	return json_decode(curl_exec($ch));
 }
 
-//DB
 
+function getSessions($from, $to) {
+
+}
+
+
+//DB
 $connection = '';
 
 function DBLogin()

@@ -52,11 +52,17 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_style( 'richmondoval-custom-style', get_template_directory_uri() . '/custom-style.css', array(), false, "screen, projection)" );
 
 	//STAGES
+	//Scripts
 	if(get_page_template_slug() == 'template-stages.php' || get_page_template_slug() == 'template-stages_login.php') {
-		wp_enqueue_script( 'richmondoval-stages', get_template_directory_uri() . '/js/stages.js', array(), false, true );
 		wp_enqueue_script( 'richmondoval-sweetalert', get_template_directory_uri() . '/js/sweetalert2.js', array(), false, true );
-		wp_enqueue_style( 'richmondoval-stages', get_template_directory_uri() . '/css/stages.css', array(), false, "screen, projection)" );
+		wp_enqueue_script( 'richmondoval-moment', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', array(), false, true );
+		wp_enqueue_script( 'richmondoval-daterange', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js', array(), false, true );
+		wp_enqueue_script( 'richmondoval-stages', get_template_directory_uri() . '/js/stages.js', array(), false, true );
+
+		//Styles
 		wp_enqueue_style( 'richmondoval-sweetalert2', get_template_directory_uri() . '/css/sweetalert2.css', array(), false, "screen, projection)" );
+		wp_enqueue_style( 'richmondoval-stages', get_template_directory_uri() . '/css/stages.css', array(), false, "screen, projection)" );
+		wp_enqueue_style( 'richmondoval-daterange', 'https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css', array(), false, "screen, projection)" );
 	}
 
 }
