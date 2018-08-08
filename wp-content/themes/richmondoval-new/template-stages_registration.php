@@ -51,7 +51,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 				<!--<img width="320px" class="stages-logo"
 					 src="/wp-content/uploads/2018/07/oval-fit-logo-black.png">-->
 				<br>
-				<h3 style="text-align: center">Oval Fit User Registration</h3>
+				<h3 style="text-align: center; color: #fff">OVAL FIT REGISTER USER</h3>
 			</div>
 
 			<div class="row">
@@ -65,7 +65,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 							<input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="User Password"/>
 
 							<p style="text-align: center">
-								<input type='submit' name='Register' value='Register'/>
+								<input type='submit' class="btn" name='Register' value='Register'/>
 							</p>
 
 						</fieldset>
