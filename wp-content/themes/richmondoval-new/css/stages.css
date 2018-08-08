@@ -106,7 +106,6 @@ body {
     padding: 0;
 }
 
-
 .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
     opacity: 0.4;
     border-right: 0;
@@ -122,6 +121,10 @@ body {
 .page-template-template-stages .ovalfit-body .tab-buttons .tablink.active-tab {
     opacity: 1;
     border-color:  #FF9E18;
+}
+
+.page-template-template-stages .ovalfit-body .tabcontent {
+    position: relative;
 }
 
 .page-template-template-stages .ovalfit-body .showMoreToggler {
@@ -173,29 +176,35 @@ body {
 .page-template-template-stages .ovalfit-body .showMoreToggler.on .btn {
     display: none;
 }
-
-
-
-.page-template-template-stages .ovalfit-body .btn {
+.page-template-template-stages .btn {
     font-size: 14px;
     text-transform: uppercase;
     margin: 0;
 }
 
-.page-template-template-stages .ovalfit-body .btn.blue {
+.page-template-template-stages .btn:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+.page-template-template-stages .btn.blue {
     background-color: #008BD1;
     color: #fff;
 }
 
-.page-template-template-stages .ovalfit-body .btn.regular {
+.page-template-template-stages .btn.orange {
+    background-color: #FF9E18;
+    color: #fff;
+}
+
+.page-template-template-stages .btn.regular {
     padding: 8px 30px;
 }
 
-.page-template-template-stages .ovalfit-body .btn.big {
+.page-template-template-stages .btn.big {
     padding: 8px 60px;
 }
 
-.page-template-template-stages .ovalfit-body .btn.cancel:hover {
+.page-template-template-stages .btn.cancel:hover {
     background-color: #D13200;
 }
 
@@ -315,52 +324,54 @@ body {
     align-items: center;
 }
 
-/************ LOGIN **************/
+/************ LOGIN / REG **************/
 
-.page-template-template-stages_login footer {
+.page-template-template-stages_login footer, .page-template-template-stages_registration footer {
     display: none;
     visibility: hidden;
 }
 
-.page-template-template-stages_login header {
+.page-template-template-stages_login header, .page-template-template-stages_registration header{
     display: none;
     visibility: hidden;
 }
 
-.page-template-template-stages_login .pageWrap {
+.page-template-template-stages_login .pageWrap, .page-template-template-stages_registration .pageWrap {
     margin-top: 0;
     background-color: #0C0D0D;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-.page-template-template-stages_login .stages-logo {
+.page-template-template-stages_login .stages-logo, .page-template-template-stages_registration .stages-logo{
     width: 120px !important;
 }
 
-.page-template-template-stages_login .ride-logo {
+.page-template-template-stages_login .ride-logo, .page-template-template-stages_registration .ride-logo {
     max-width: 480px;
     margin: 60px auto;
     opacity: 0.2;
     text-align: center;
 }
 
-.page-template-template-stages_login fieldset {
+.page-template-template-stages_login fieldset, .page-template-template-stages_registration fieldset  {
     border: none;
     max-width: 360px;
     margin: 0 auto;
 }
-.page-template-template-stages_login input {
+.page-template-template-stages_login input, .page-template-template-stages_registration input {
     border-radius: 6px;
     margin-bottom: 15px;
 }
 
-.page-template-template-stages_login .btn {
+.page-template-template-stages_login .btn, .page-template-template-stages_registration .btn {
     width: 100%;
     padding: 15px 30px;
     margin-top: 30px;
     background: #FF9E18;
+}
 
-
+.page-template-template-stages_registration iframe {
+    border: none!important;
 }
 
 /****** SWEET ALERT ******/
@@ -396,6 +407,43 @@ body {
     margin-bottom: 30px;
 }
 
+/********** Change Dates ***********/
+
+form#changeDates {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: -52px;
+    display: flex;
+    align-items: center;
+
+}
+
+form#changeDates input {
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0 15px;
+    font-family: NeoSansStdMedium;
+
+}
+form#changeDates input:focus {
+    outline: none;
+}
+form#changeDates input:focus {
+    box-shadow: none;
+}
+form#changeDates:before {
+    display: block;
+    content: "\f073";
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+    color: #FF9E18;
+}
+
+
+
 
 /********** MOBILE **********/
 
@@ -414,14 +462,18 @@ body {
         display: block;
         content: "\f078" ;
         font-family: 'FontAwesome';
-        width: 16px;
-        height: 16px;
+        /*width: 16px;
+        height: 16px;*/
         color: #fff;
         font-size: 12px;
+        transition: all 0.3s ease;
     }
 
     .page-template-template-stages .ovalfit-header .stats.expanded {
         max-height: 300px;
+    }
+    .page-template-template-stages .ovalfit-header .stats.expanded:after {
+        transform: rotate(180deg);
     }
     .page-template-template-stages .ovalfit-header .within {
         padding: 20px 15px 15px;
@@ -429,6 +481,18 @@ body {
 }
 
 @media (max-width: 768px){
+    form#changeDates {
+        width: 100%;
+        position: static;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    .drp-calendar {
+        width: 100%;
+    }
+    .daterangepicker .drp-selected {
+        margin-bottom: 10px;
+    }
+
     .page-template-template-stages .ovalfit-body .bike .bike-num {
         width: 20px;
         height: 20px;
@@ -446,13 +510,13 @@ body {
     .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
         padding: 10px 30px;
     }
-    .page-template-template-stages .ovalfit-body .btn.regular {
+    .page-template-template-stages .btn.regular {
         padding: 8px 15px;
         font-size: 12px;
     }
     .page-template-template-stages .ovalfit-header .stats .stat {
-        max-width: 105px;
-        margin-right: 8px;
+        max-width: 90px;
+        margin-right: 6px;
     }
 
     .page-template-template-stages .ovalfit-header .stats .stat img {

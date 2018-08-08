@@ -37,7 +37,7 @@ function bookBike(authCode, userId, sessionId, bikeId) {
                                 response,
                                 allowOutsideClick: false
                             }).then((result) => {
-                                $('#loading-wrap').fadeIn(200);
+                                loaderIn()
                                 window.location="http://richmondoval.ca/oval-fit/";
                             })
                         }else {
@@ -86,7 +86,7 @@ function cancelBooking(authCode, bookingId) {
                         type: 'info',
                         html: response
                     }).then((result) => {
-                        $('#loading-wrap').fadeIn(200);
+                        loaderIn()
                         window.location="http://richmondoval.ca/oval-fit/";
                     });
                 }
@@ -125,15 +125,19 @@ jQuery(document).ready(function($) {
     $(function() {
         $('input[name="daterange"]').daterangepicker({
             opens: 'left',
+            showDropdowns: true,
+            buttonClasses: 'btn regular orange',
             locale: {
-                cancelLabel: 'Cancel',
                 format: 'MMMM D Y',
-                minYear: 2018,
-            }
+                //minYear: 2018,
+                //maxYear:parseInt(moment().add('years', 1).format('YYYY'),1),
+            },
+
+
         }, function(start, end, label) {
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
         }).on('apply.daterangepicker', function(ev, picker) {
-            $('#loading-wrap').fadeIn(200);
+            loaderIn();
             $('input.dateFrom').val(picker.startDate.format('YYYY-MM-DD'));
             $('input.dateTo').val(picker.endDate.format('YYYY-MM-DD'));
             document.getElementById('changeDates').submit();

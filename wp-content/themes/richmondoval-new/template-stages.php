@@ -197,7 +197,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                     <div class="flexed">
                                                         <div>
                                                             <img
-                                                                    style="width: 50px; margin-right: 15px;"
+                                                                    style="width: 45px; margin-right: 15px;"
                                                                     src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
                                                         </div>
                                                         <div>
@@ -232,7 +232,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <form id="changeDates" method="post" action="/oval-fit/">
                                 <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
                                 <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
-                                <input type="text" class="datarange" name="daterange" value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>" />
+                                <input
+                                        type="text"
+                                        class="datarange"
+                                        name="daterange"
+                                        value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
+                                        autocomplete="off"
+                                        readonly="true"
+                                />
 
                             </form>
 

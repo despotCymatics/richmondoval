@@ -29,10 +29,7 @@ $( document ).ready(function() {
 
     });
 
-    setTimeout(function(){
-        $('#loading-wrap').fadeOut(400);
-        setTimeout(function(){$('body').css('overflow','auto')}, 400);
-    }, 7000);
+    loaderOut();
 
     //$('body').css('overflow','hidden');
 
@@ -192,4 +189,18 @@ var ticker = function(){
         $(this).detach().appendTo('.alerts');
     });
 };
+
+function loaderOut() {
+    setTimeout(function(){
+        jQuery('#loading-wrap').fadeOut(400);
+        setTimeout(function(){jQuery('body').css('overflow','auto')}, 400);
+    }, 5000);
+}
+
+function loaderIn() {
+    jQuery('#loading-wrap').show(100);
+    setTimeout(function(){jQuery('body').css('overflow','hidden')}, 100);
+    setTimeout(function(){window.scrollTo(0,0)}, 150);
+
+}
 

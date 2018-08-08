@@ -27,8 +27,15 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 ?>
 	<div class="within inner">
 		<div class="content">
-            <br>
-            <br>
+            <div class="title">
+                <br>
+                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                <br>
+                <br>
+                <div class="ride-logo">
+                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg">
+                </div>
+            </div>
 
             <?php
             if($message) { ?>
@@ -51,14 +58,11 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 				<div class="col-md-offset-3 col-md-6">
 					<form id='ovalfit-registration' action='' method='post' accept-charset='UTF-8'>
 						<fieldset>
-							<legend>Register</legend>
 							<input type='hidden' name='submitted-reg' id='submitted' value='1'/>
 
-							<label for='email'>Email*:</label>
-							<input type='email' name='email' id='email' required maxlength="50"/>
+							<input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="User Email"/>
 
-							<label for='password'>Password (8 chars minimum) *:</label>
-							<input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50"/>
+							<input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="User Password"/>
 
 							<p style="text-align: center">
 								<input type='submit' name='Register' value='Register'/>

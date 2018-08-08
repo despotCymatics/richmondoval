@@ -2798,13 +2798,14 @@ h3#comments {
 
 #loading-wrap {
     background: #fff none repeat scroll 0 0;
-    display: table;
+    display: block;
     height: 100%;
     left: 0;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     text-align: center;
     top: 0;
+    bottom: 0;
     width: 100%;
     z-index: 1000;
 }

@@ -31,6 +31,17 @@ if(isset($_SESSION['logged'])) {
 
             <div class="row">
                 <div class="col-md-offset-3 col-md-6">
+                    <p style="color: darkred; text-align: center; margin-top: 15px;">
+                        <strong>
+			                <?php
+			                if(isset($_GET['user']) && $_GET['user'] == 'none'){
+				                echo "User Does not exist!" ;
+			                }else if(isset($_GET['login']) && $_GET['login'] == 'false') {
+				                echo "Login failed! Username/Email does not match the password!" ;
+			                }
+			                ?>
+                        </strong>
+                    </p>
                     <form id='login' action='/oval-fit/' method='post' accept-charset='UTF-8'>
                         <fieldset>
                             <input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -45,17 +56,7 @@ if(isset($_SESSION['logged'])) {
 
                         </fieldset>
                     </form>
-                    <p style="color: darkred; text-align: center; margin-top: 15px;">
-                        <strong>
-	                        <?php
-	                        if(isset($_GET['user']) && $_GET['user'] == 'none'){
-		                        echo "User Does not exist!" ;
-	                        }else if(isset($_GET['login']) && $_GET['login'] == 'false') {
-		                        echo "Login failed! Username/Email does not match the password!" ;
-                            }
-	                        ?>
-                        </strong>
-                    </p>
+
                 </div>
             </div>
         </div>
