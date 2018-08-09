@@ -125,7 +125,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
                                 <span>
-                                    <span class="num"><?= round($distanceInKm,2); ?> <span>km</span></span>
+                                    <span class="num"><?= round($distanceInKm,0); ?> <span>km</span></span>
                                     <span>Total distance</span>
                                 </span>
                             </div>
