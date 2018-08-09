@@ -35,7 +35,7 @@ if(isset($_SESSION['logged'])) {
                         <strong>
 			                <?php
 			                if(isset($_GET['user']) && $_GET['user'] == 'none'){
-				                echo "User Does not exist!" ;
+				                echo "User does not exist!" ;
 			                }else if(isset($_GET['login']) && $_GET['login'] == 'false') {
 				                echo "Login failed! Username/Email does not match the password!" ;
 			                }

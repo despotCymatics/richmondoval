@@ -517,6 +517,7 @@ form#changeDates:before {
     .page-template-template-stages .ovalfit-header .stats .stat {
         max-width: 90px;
         margin-right: 6px;
+        padding-top: 2px;
     }
 
     .page-template-template-stages .ovalfit-header .stats .stat img {
