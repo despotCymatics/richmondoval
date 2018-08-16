@@ -16,6 +16,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         <div class="within inner">
             <div class="content">
 
+
             <?php
             //AUTHORIZE API
             //$authCode = authorize();
@@ -98,56 +99,56 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
                                 <span>
                                     <span class="num"><?= $numWorkouts; ?></span>
-                                    <span>Number of workouts</span>
+                                    <span class="name">Number of workouts</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
                                 <span>
                                     <span class="num"><?= round($durationInSeconds/60); ?> <span>min</span></span>
-                                    <span>Total time</span>
+                                    <span class="name">Total time</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
                                 <span>
                                     <span class="num"><?= round($avgWatt / $numWorkouts) ; ?> <span>watt</span></span>
-                                    <span>Power</span>
+                                    <span class="name">Power</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
                                 <span>
                                     <span class="num"><?= $kiloCalories; ?></span>
-                                    <span>Calories burned</span>
+                                    <span class="name">Calories burned</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
                                 <span>
                                     <span class="num"><?= round($distanceInKm,0); ?> <span>km</span></span>
-                                    <span>Total distance</span>
+                                    <span class="name">Total distance</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
                                 <span>
                                     <span class="num"><?= $avgHR / $numWorkouts; ?></span>
-                                    <span>Average heartrate</span>
+                                    <span class="name">Average heartrate</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                 <span>
                                     <span class="num"><?= $avgSpeed / $numWorkouts; ?> <span>km/h</span></span>
-                                    <span>Average speed</span>
+                                    <span class="name">Average speed</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                 <span>
                                     <span class="num"><?= max($maxSpeedArray); ?> <span>km/h</span></span>
-                                    <span>Max.speed</span>
+                                    <span class="name">Max.speed</span>
                                 </span>
                             </div>
                         </div>
@@ -179,9 +180,12 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                             <div class="row">
                                                 <div class="col-sm-8 col-xs-6">
                                                     <h4><?= $userBooking->Session->Name; ?></h4>
-                                                    <span class="date"><?= date("D, M jS", strtotime($userBooking->Session->StartDateTime)); ?></span><br>
-                                                    <span><?= date("g:ia", strtotime($userBooking->Session->StartDateTime)); ?>
-                                                        - <?= date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime))); ?></span>
+                                                    <?php
+                                                        $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+                                                        $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+                                                        ?>
+                                                    <span class="date"><?= $sessionDate; ?></span><br>
+                                                    <span><?= $sessionTime; ?></span>
                                                 </div>
                                                 <div class="col-sm-4 col-xs-6 alignRight">
                                                     <button class="btn blue regular">Cancel Booking</button>
@@ -209,7 +213,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                 </div>
                                                 <div class="col-sm-4 col-xs-6 alignRight">
                                                     <button class="btn blue regular cancel"
-                                                       onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>')">
+                                                       onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
                                                         Cancel Booking
                                                     </button>
                                                 </div>
@@ -254,10 +258,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                         <div class="col-sm-8 col-xs-6">
                                             <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
                                             <h4><?= $session->Name ?></h4>
-                                            <span class="date"><?= date("D, M jS", strtotime($session->StartDateTime)); ?></span><br>
 
-                                            <span><?= date("g:ia", strtotime($session->StartDateTime)); ?>
-                                                - <?= date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime))); ?></span>
+                                            <?php
+                                                $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
+                                                $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
+
+                                            ?>
+                                            <span class="date"><?= $sessionDate; ?></span><br>
+                                            <span><?=$sessionTime; ?></span>
 
                                         </div>
                                         <div class="col-sm-4 col-xs-6 alignRight">
@@ -269,10 +277,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <div class="moreText">
                                     <div class="row">
                                         <div class="col-md-6">
-                                             <span>Instructor: <br>
+                                             <p>Instructor: <br>
                                                  <strong><?= $instructor->FirstName . ' ' . $instructor->LastName; ?></strong>
-                                             </span>
-                                            <br><br>
+                                             </p>
+
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet velit non dolor finibus euismod aliquam eget metus. Nullam facilisis nisi eget lacus consequat, venenatis lacinia tellus ullamcorper. Mauris vitae enim urna. Curabitur gravida, sem in cursus luctus, nulla sapien blandit nunc, sed efficitur diam mi id dui.
                                             </p>
                                         </div>
@@ -314,10 +322,18 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                                 $isPower = 'no';
                                                             } ?>
                                                             <!-- <span class="is-power <?/*= $isPower */ ?>"></span>-->
-                                                            <div class="bike-num" onclick="bookBike('<?= $authCode; ?>', <?= $userId; ?>, <?= $session->Id; ?>, <?= $bike->Id; ?>)">
+                                                            <div class="bike-num" onclick="bookBike(
+                                                                '<?= $authCode; ?>',
+                                                                <?= $userId; ?>,
+                                                                <?= $session->Id; ?>,
+                                                                <?= $bike->Id; ?>,
+                                                                <?= $bike->Number; ?>,
+                                                                '<?= $session->Name; ?>',
+                                                                '<?= $sessionDate; ?>',
+                                                                '<?= $sessionTime; ?>')">
+
                                                                 <?= $bike->Number; ?>
-                                                                <!--<img width="60"
-                                                                         src="<?/*= get_stylesheet_directory_uri() */ ?>/images/basic/bike.jpg">-->
+
                                                             </div>
 
                                                         </div>

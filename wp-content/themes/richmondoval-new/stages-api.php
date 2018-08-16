@@ -51,6 +51,18 @@ if(isset($_POST['bookingId'])) {
 
 }
 
+//FORGOT PASSWORD
+if(isset($_GET['lost-password']) && isset($_GET['email'])) {
+	$username = $_GET['email'];
+	forgotPassword($username);
+}
+
+//SET NEW PASSWORD
+if(isset($_POST['new-password']) && isset($_POST['email'])) {
+	$username = $_POST['email'];
+	$password = $_POST['new-password'];
+	setPassword($username, $password);
+}
 
 //AUTHORIZATION
 function authorize() {
@@ -243,6 +255,85 @@ function login() {
 	return true;
 }
 
+function forgotPassword($username) {
+
+	if(CheckIfUserExists($username)) {
+
+		$connection = DBLogin();
+
+		$username = SanitizeForSQL($username);
+
+		$qry = "update ovalfit_user set password=null where email='$username'";
+
+		$result = $connection->query($qry);
+
+		if(!$result)
+		{
+			echo "Password reset error";
+			exit;
+
+		}else {
+
+			$to = $username;
+
+			$subject = "Forgot Password";
+
+			$txt = "It seems that you have forgot you password with Oval Fit.\r\n<br>".
+			       "Your password has been reset, follow the url bellow to set a new one:\r\n<br>\r\n<br>".
+			       "<a href='http://richmondoval.ca/oval-fit-user-registration/?new-password-user=$username'>Oval Fit New Password</a>\r\n<br>".
+			       "\r\n<br>".
+			       "\r\n<br>".
+			       "Regards,\r\n<br>".
+			       "richmondoval.ca\r\n";
+
+			$headers = "MIME-Version: 1.0" . "\r\n";
+			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+			$headers .= 'From: Oval Fit <no-reply@richmondoval.ca>' . "\r\n";
+			$headers .= 'Cc: despot.cymatics@gmail.com' . "\r\n";
+
+			if(wp_mail($to,$subject,$txt,$headers)){
+
+				header('Location: /oval-fit-login/');
+
+			}else {
+				echo "Error sending email! Please try again.";
+			}
+		}
+		return true;
+
+	}else {
+		return "no-user";
+	}
+}
+
+function setPassword($username, $password) {
+	if(CheckIfUserExists($username)) {
+
+		$connection = DBLogin();
+
+		$username = SanitizeForSQL($username);
+
+		$password = md5($password);
+
+		$qry = "update ovalfit_user set password='$password' where email='$username'";
+
+		$result = $connection->query($qry);
+
+		if(!$result)
+		{
+			echo "Password set error";
+			exit;
+
+		}else {
+
+			header('Location: /oval-fit-login/');
+
+		}
+	}
+}
+
+
+
 function CheckLoginInDB($username,$password)
 {
 
@@ -268,6 +359,8 @@ function CheckLoginInDB($username,$password)
 function CheckIfUserExists($username) {
 
 	$connection = DBLogin();
+
+	$username = SanitizeForSQL($username);
 
 	$qry = "Select email from ovalfit_user where email='$username'";
 

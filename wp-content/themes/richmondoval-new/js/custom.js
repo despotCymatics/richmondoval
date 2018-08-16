@@ -100,6 +100,7 @@ $( document ).ready(function() {
         }
         else {
             $('.questionNtoggler').removeClass('on').next().slideUp(250);
+            $('.showMoreToggler').removeClass('on').next().slideUp(250);
             $(this).addClass('on').next().slideDown(250);
         }
     });
@@ -198,7 +199,7 @@ function loaderOut() {
 }
 
 function loaderIn() {
-    jQuery('#loading-wrap').show(100);
+    jQuery('#loading-wrap').fadeIn(100);
     setTimeout(function(){jQuery('body').css('overflow','hidden')}, 100);
     setTimeout(function(){window.scrollTo(0,0)}, 150);
 

@@ -45,6 +45,7 @@ body {
     display: block;
     margin-bottom: 30px;
     float: right;
+    font-family: NeoSansStdMedium;
 }
 .page-template-template-stages .ovalfit-header a.logout:hover {
     color: #FF9E18;
@@ -69,6 +70,7 @@ body {
 
 .page-template-template-stages .ovalfit-header .stats .stat img {
     margin-right: 15px;
+    max-width: 20px;
 }
 .page-template-template-stages .ovalfit-header .stats .stat span {
     line-height: 1;
@@ -104,6 +106,9 @@ body {
 }
 .page-template-template-stages .ovalfit-body .within .row {
     padding: 0;
+}
+.page-template-template-stages p {
+    line-height: 1.5;
 }
 
 .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
@@ -178,6 +183,7 @@ body {
 }
 .page-template-template-stages .btn {
     font-size: 14px;
+    font-family: NeoSansStdMedium;
     text-transform: uppercase;
     margin: 0;
 }
@@ -246,7 +252,7 @@ body {
     border-radius: 40%;
     padding: 5px;
     overflow: hidden;
-    font-family: 'NeoSansStdMedium';
+    font-family: 'NeoSansStdRegular';
 }
 
 
@@ -361,6 +367,7 @@ body {
 .page-template-template-stages_login input, .page-template-template-stages_registration input {
     border-radius: 6px;
     margin-bottom: 15px;
+    background: #fff;
 }
 
 .page-template-template-stages_login .btn, .page-template-template-stages_registration .btn {
@@ -368,6 +375,15 @@ body {
     padding: 15px 30px;
     margin-top: 30px;
     background: #FF9E18;
+    font-family: NeoSansStdMedium;
+}
+
+.page-template-template-stages_login .btn:hover, .page-template-template-stages_registration .btn:hover {
+    background: #B23409;
+}
+
+.page-template-template-stages_login p, .page-template-template-stages_registration p {
+    color: #fff;
 }
 
 .page-template-template-stages_registration iframe {
@@ -395,16 +411,46 @@ body {
     font-size: 16px;
     padding: 10px 30px;
 }
+
+.swal2-popup .swal2-content {
+    color: #161616;
+    line-height: 1.5;
+}
 .swal2-content h2 {
     font-family: 'NeoSansStdMedium';
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+.swal2-content .session-name {
+    font-size: 14px;
+    font-family: "NeoSansStdMedium";
+    color: #008BD1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.swal2-content .session-date {
+    font-size: 14px;
+    opacity: 0.9;
+    color: #008BD1;
+}
+
+.swal2-content .session-time {
+    font-size: 14px;
+    margin-bottom: 30px;
+    font-family: "NeoSansStdMedium";
+    display: block;
+}
+
+.swal2-content .bike-num {
+    font-size: 14px;
+    font-family: "NeoSansStdMedium";
+}
 
 .swal2-content img {
     width: 80px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /********** Change Dates ***********/
@@ -481,11 +527,23 @@ form#changeDates:before {
 }
 
 @media (max-width: 768px){
+    .tab-buttons {
+        text-align: center;
+    }
+
     form#changeDates {
         width: 100%;
         position: static;
         border-bottom: 1px solid #d8d8d8;
+        display: flex;
+        justify-content: center;
     }
+    form#changeDates input {
+        width: auto;
+        min-width: 290px;
+        padding: 0 10px;
+    }
+
     .drp-calendar {
         width: 100%;
     }
@@ -522,6 +580,7 @@ form#changeDates:before {
 
     .page-template-template-stages .ovalfit-header .stats .stat img {
         margin-right: 8px;
+        max-width: 16px ;
     }
     .page-template-template-stages .ovalfit-header .stats .stat span {
         line-height: 1;
@@ -530,6 +589,13 @@ form#changeDates:before {
     .page-template-template-stages .ovalfit-header .stats .stat span.num {
         font-size: 16px;
 
+    }
+
+    .page-template-template-stages .ovalfit-header .stats .stat span.name {
+        margin-left: -22px;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
     }
 }
 @media (max-width: 360px){

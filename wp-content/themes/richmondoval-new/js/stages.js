@@ -1,10 +1,9 @@
-function bookBike(authCode, userId, sessionId, bikeId) {
+function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, sessionDate, sessionTime) {
 
     swal({
         html: "<h2>Are you sure you want to book this bike?</h2>"+
         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'>",
         allowOutsideClick: false,
-        type: 'question',
         showCancelButton: true,
         confirmButtonText: 'Yes, book it',
         cancelButtonText: 'No, cancel'
@@ -13,7 +12,7 @@ function bookBike(authCode, userId, sessionId, bikeId) {
             swal({
                 imageUrl: '/wp-content/themes/richmondoval-new/images/basic/logo-animate.gif',
                 imageWidth: 120,
-                html: '<h2>Please wait</h2>',
+                html: '<p>Please wait</p>',
                 allowOutsideClick: false,
                 showConfirmButton: false
                 //timer:2000
@@ -34,6 +33,10 @@ function bookBike(authCode, userId, sessionId, bikeId) {
                             swal({
                                 html: "<h2>Your bike is reserved</h2>"+
                                 "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'>"+
+                                "<p class='bike-num'>#"+bikeNum+"</p><br>"+
+                                "<h4 class='session-name'>"+sessionName+"</h4>"+
+                                "<span class='session-date'>"+sessionDate+"</span><br>"+
+                                "<span class='session-time'>"+sessionTime+"</span>"+
                                 response,
                                 allowOutsideClick: false
                             }).then((result) => {
@@ -61,7 +64,7 @@ function bookBike(authCode, userId, sessionId, bikeId) {
 }
 
 
-function cancelBooking(authCode, bookingId) {
+function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, sessionTime) {
     swal({
         imageUrl: '/wp-content/themes/richmondoval-new/images/basic/logo-animate.gif',
         imageWidth: 120,
@@ -83,8 +86,13 @@ function cancelBooking(authCode, bookingId) {
                 if(response == '<h2>Your Booking has been canceled!</h2>') {
                     $("div[data-id='"+bookingId+"']").hide(200);
                     swal({
-                        type: 'info',
-                        html: response
+                        html: "<h2>Your Booking has been canceled!</h2>"+
+                        "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br>"+
+                        "<p class='bike-num'>#"+bikeNum+"</p><br>"+
+                            "<h4 class='session-name'>"+sessionName+"</h4>"+
+                            "<span class='session-date'>"+sessionDate+"</span><br>"+
+                            "<span class='session-time'>"+sessionTime+"</span>"
+
                     }).then((result) => {
                         loaderIn()
                         window.location="http://richmondoval.ca/oval-fit/";
