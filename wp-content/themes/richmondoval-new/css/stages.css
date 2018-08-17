@@ -16,6 +16,12 @@ body {
     margin-top: 0;
 }
 
+#loading-wrap img.dots {
+    margin-top: -50px;
+    position: relative;
+    z-index: -1;
+}
+
 
 /******** OVAL FIT HEADER *********/
 

@@ -2,7 +2,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 
     swal({
         html: "<h2>Are you sure you want to book this bike?</h2>"+
-        "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'>",
+        "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
         allowOutsideClick: false,
         showCancelButton: true,
         confirmButtonText: 'Yes, book it',
@@ -10,7 +10,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
     }).then((result) => {
         if (result.value) {
             swal({
-                imageUrl: '/wp-content/themes/richmondoval-new/images/basic/logo-animate.gif',
+                imageUrl: '/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif',
                 imageWidth: 120,
                 html: '<p>Please wait</p>',
                 allowOutsideClick: false,
@@ -65,8 +65,9 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 
 
 function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, sessionTime) {
+
     swal({
-        imageUrl: '/wp-content/themes/richmondoval-new/images/basic/logo-animate.gif',
+        imageUrl: '/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif',
         imageWidth: 120,
         html: '<p>Please wait</p>',
         allowOutsideClick: false,

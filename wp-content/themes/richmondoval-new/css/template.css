@@ -2810,7 +2810,7 @@ h3#comments {
     z-index: 1000;
 }
 
-#loading-wrap img {
+#loading-wrap img.logo-animate {
     width: 200px;
     margin-top: 10%;
 }

@@ -128,7 +128,7 @@ body.menuOpen {
         /*bottom: 80% !important;*/
     }
 
-    #loading-wrap img {
+    #loading-wrap img.logo-animate {
         width: 180px;
         margin-top: 32%;
     }

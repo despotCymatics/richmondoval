@@ -55,8 +55,12 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="loading-wrap">
-        <img title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/logo-animate.gif">
-        <!--p>Loading, please wait.</p-->
+	    <?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php")) { ?>
+            <img class="logo-animate" title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/oval-fit-logo-black.png"><br>
+            <img class="dots" src="<?=get_template_directory_uri()?>/images/basic/oval-fit-loading-dots.gif">
+        <?php }else { ?>
+            <img class="logo-animate" title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/logo-animate.gif">
+        <?php } ?>
     </div>
 
     <div class="pageWrap">
