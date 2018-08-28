@@ -39,7 +39,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 //Sessions
 	            $dateFrom    = date( 'Y-m-d' );
-	            $dateTo   = strtotime( '+1 month' );
+	            $dateTo   = strtotime( '+1 week' );
 	            $dateTo   = date( 'Y-m-d', $dateTo );
 
                 if(isset($_POST['dateFrom']) && isset($_POST['dateTo'])) {
@@ -133,14 +133,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
                                 <span>
-                                    <span class="num"><?= $avgHR / $numWorkouts; ?></span>
+                                    <span class="num"><?= round($avgHR / $numWorkouts, 0); ?></span>
                                     <span class="name">Average heartrate</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                 <span>
-                                    <span class="num"><?= $avgSpeed / $numWorkouts; ?> <span>km/h</span></span>
+                                    <span class="num"><?= round($avgSpeed / $numWorkouts, 1); ?> <span>km/h</span></span>
                                     <span class="name">Average speed</span>
                                 </span>
                             </div>

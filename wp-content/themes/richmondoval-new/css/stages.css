@@ -496,6 +496,52 @@ form#changeDates:before {
 
 
 
+/********** Holding Page **********/
+
+
+.page-template-template-stages_holding_page header, .page-template-template-stages_holding_page footer {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages_holding_page .pageWrap {
+    margin-top: 0;
+    background-color: #0C0D0D;
+    min-height: 100vh;
+}
+.page-template-template-stages_holding_page .pageWrap .within.inner {
+    min-height: auto;
+}
+
+.page-template-template-stages_holding_page .stages-logo {
+    width: 120px !important;
+}
+
+.page-template-template-stages_holding_page .header {
+    margin: 30px 45px;
+    padding-bottom: 0;
+}
+
+.page-template-template-stages_holding_page .header h1 {
+    color: #fff;
+    font-size: 56px;
+    line-height: 60px;
+    font-family: NeoSansStdBold;
+    margin-bottom: 0;
+
+}
+
+.page-template-template-stages_holding_page .header h5 {
+    color: #FF9E18;
+    font-family: NeoSansStdMedium;
+
+}
+.page-template-template-stages_holding_page .header p {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+
 
 /********** MOBILE **********/
 

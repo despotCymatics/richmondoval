@@ -1,0 +1,105 @@
+/*
+ * SmartTab plugin v2.0
+ * jQuery Tab Control Plugin
+ * 
+ * by Dipu Raj
+ * http://techlaboratory.net/smarttab
+ * 
+ * License 
+ * http://creativecommons.org/licenses/by-sa/3.0/  
+ */
+.stMain {
+  display:block;
+  margin:0;
+  padding:0;
+  color: #666666;
+  border: 0px solid #CCC;
+  width:100%;
+}
+.stContainer {
+  display:block;
+  margin:0;
+  padding:0;
+  height:650px;
+  overflow:hidden;  
+  position: relative;
+}
+.stMain div.tabContent { 
+  display:block;
+  position: absolute;
+  margin:0;  
+  padding:10px;
+  background-color: #FFF;
+  text-align:left;
+  width: 100%;
+  min-height: 600px;
+}
+
+.stMain ul.tabAnchor {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style-type: none;
+  position:relative;
+  padding:0;
+  margin:0;
+  clear: both;
+  z-index: 100;
+}
+.stMain ul.tabAnchor li{ 
+  position: relative; 
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  text-align: center;
+}
+.stMain ul.tabAnchor li a { 
+  display:block;
+  margin:0;
+  padding:10px;
+  font-size: 14px;
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline-style:none;
+  border-bottom: 4px solid #ccc;
+}
+.stMain ul.tabAnchor li a span{
+  opacity: 0;
+}
+
+.stMain ul.tabAnchor li a img {
+  width: 48px;
+  display: inline-block;
+  vertical-align: unset;
+  margin-right: 20px;
+}
+.stMain ul.tabAnchor li a:hover {
+  border-color: #6f7479;
+}
+.stMain ul.tabAnchor li a.sel {
+  border-color: #008BD1;
+}
+.stMain ul.tabAnchor li a.sel span {
+  opacity: 1;
+}
+.loader{
+  position: absolute;
+  left:48%;
+  top:40%;
+  display:block;
+  margin:0;
+  padding:5px; 
+  padding-top: 35px;
+  font-size: 10px;
+  color:#666;
+  text-decoration: none;
+  outline-style:none;
+  border: 1px solid #D4D4D4;
+  /*background: #f6f6f6 url(../images/loader.gif) no-repeat 10px 10px ;*/
+}
+
+#tabs-1, #tabs-2, #tabs-3, #tabs-4 {
+  background: url("/wp-content/themes/richmondoval-new/images/basic/stages-bg.jpg") no-repeat center / cover;
+
+}

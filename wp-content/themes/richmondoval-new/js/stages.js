@@ -123,7 +123,7 @@ function openTab(tabName,elmnt) {
 
 }
 // Get the element with id="defaultOpen" and click on it
-document.getElementById("sessionsTab").click();
+if(document.getElementById("sessionsTab")) document.getElementById("sessionsTab").click();
 
 
 jQuery(document).ready(function($) {
@@ -152,6 +152,17 @@ jQuery(document).ready(function($) {
             document.getElementById('changeDates').submit();
         })
     });
+
+
+    // Smart Tab
+    $('#ovalfit-tabs').smartTab({
+        selected: 0,
+        autoProgress: true,
+        progressInterval: 5000,
+        transitionEffect:'fade',
+        transitionSpeed:'600',
+    });
+
 
 
 });
