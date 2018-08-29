@@ -204,9 +204,10 @@
 
             if(curTab.length>0){
                 $(curTab.attr("href"), obj).fadeOut(options.transitionSpeed,options.transitionEasing,function(){
-                    $(selTab.attr("href"), obj).fadeIn(options.transitionSpeed,options.transitionEasing,function(){
-                        setTabAnchor(idx,curTab,selTab);
-                    });
+
+                });
+                $(selTab.attr("href"), obj).fadeIn(options.transitionSpeed,options.transitionEasing,function(){
+                    setTabAnchor(idx,curTab,selTab);
                 });
             }else{
                 $(selTab.attr("href"), obj).fadeOut(options.transitionSpeed,options.transitionEasing,function(){

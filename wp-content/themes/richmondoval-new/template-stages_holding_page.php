@@ -8,6 +8,11 @@ get_header();
 
 
 ?>
+
+    <style>
+        @import url("https://use.typekit.net/jrr5dxu.css");
+    </style>
+
     <div class="within inner">
         <div class="content">
             <div class="title">
@@ -37,26 +42,57 @@ get_header();
         </div>
     </div>
 
-    <div id="ovalfit-tabs">
-        <ul>
-            <li><a href="#tabs-1"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Breathe in. breathe out</a></span></li>
-            <li><a href="#tabs-2"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span></a></li>
-            <li><a href="#tabs-3"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> The science of lift off</span></a></li>
-            <li><a href="#tabs-4"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Keep it moving</span></a></li>
-        </ul>
+    <div class="ovalfit-holding-body">
 
-        <div id="tabs-1">
+        <div class="within inner">
+            <div class="ovalfit-form">
+                <h5>Be the first to know</h5><br>
+                <form>
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <span>Do you have an existing gym membership?</span>
+                    <br><br>
+                    <select>
+                        <option>Gym membership 1</option>
+                        <option>Gym membership 2</option>
+                        <option>Gym membership 3</option>
+                    </select>
+
+                    <input type="checkbox" name="" checked> <span>I want to know what's happening at the Richmond Olympic Oval</span>
+                    <br>
+                    <br>
+
+                    <button class="btn orange">Notify Me</button>
+
+                </form>
+            </div>
         </div>
 
-        <div id="tabs-2">
+        <div id="ovalfit-tabs">
+            <ul>
+                <li><a href="#tabs-1"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Breathe in. breathe out</a></span></li>
+                <li><a href="#tabs-2"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span></a></li>
+                <li><a href="#tabs-3"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> The science of lift off</span></a></li>
+                <li><a href="#tabs-4"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Keep it moving</span></a></li>
+            </ul>
+
+            <div id="tabs-1">
+            </div>
+
+            <div id="tabs-2">
+            </div>
+
+            <div id="tabs-3">
+            </div>
+
+            <div id="tabs-4">
+            </div>
         </div>
 
-        <div id="tabs-3">
-        </div>
-
-        <div id="tabs-4">
-        </div>
     </div>
+
+
 
 
 <?php

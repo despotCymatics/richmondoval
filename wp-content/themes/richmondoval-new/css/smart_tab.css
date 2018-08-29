@@ -37,7 +37,7 @@
 
 .stMain ul.tabAnchor {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-evenly;
   list-style-type: none;
   position:relative;
@@ -65,14 +65,14 @@
   border-bottom: 4px solid #ccc;
 }
 .stMain ul.tabAnchor li a span{
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
 .stMain ul.tabAnchor li a img {
   width: 48px;
   display: inline-block;
   vertical-align: unset;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 .stMain ul.tabAnchor li a:hover {
   border-color: #6f7479;
@@ -99,7 +99,17 @@
   /*background: #f6f6f6 url(../images/loader.gif) no-repeat 10px 10px ;*/
 }
 
-#tabs-1, #tabs-2, #tabs-3, #tabs-4 {
+#tabs-1,#tabs-3 {
   background: url("/wp-content/themes/richmondoval-new/images/basic/stages-bg.jpg") no-repeat center / cover;
+}
+
+#tabs-2,#tabs-4 {
+  background: url("/wp-content/themes/richmondoval-new/images/basic/photo-home-bgrd.jpg") no-repeat center / cover;
+}
+
+@media (max-width: 1024px){
+  .stMain ul.tabAnchor {
+    display: block;
+  }
 
 }

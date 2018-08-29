@@ -159,8 +159,8 @@ jQuery(document).ready(function($) {
         selected: 0,
         autoProgress: true,
         progressInterval: 5000,
-        transitionEffect:'fade',
-        transitionSpeed:'600',
+        transitionEffect: 'fade',
+        transitionSpeed: 1800,
     });
 
 

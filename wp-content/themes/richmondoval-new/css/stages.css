@@ -370,10 +370,11 @@ body {
     max-width: 360px;
     margin: 0 auto;
 }
-.page-template-template-stages_login input, .page-template-template-stages_registration input {
+.page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input, select {
     border-radius: 6px;
     margin-bottom: 15px;
     background: #fff;
+    color: #161616;
 }
 
 .page-template-template-stages_login .btn, .page-template-template-stages_registration .btn {
@@ -518,7 +519,7 @@ form#changeDates:before {
 }
 
 .page-template-template-stages_holding_page .header {
-    margin: 30px 45px;
+    margin: 30px 40px;
     padding-bottom: 0;
 }
 
@@ -541,12 +542,61 @@ form#changeDates:before {
     margin-bottom: 0;
 }
 
+.page-template-template-stages_holding_page .ovalfit-holding-body {
+    position: relative;
+}
+.page-template-template-stages_holding_page .ovalfit-form {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    color: #fff;
+    margin: 60px 40px;
+}
+
+.page-template-template-stages_holding_page .ovalfit-form input, .page-template-template-stages_holding_page .ovalfit-form select {
+    margin-bottom: 20px;
+}
+.page-template-template-stages_holding_page .ovalfit-form input[type=checkbox] {
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.page-template-template-stages_holding_page .ovalfit-form h5 {
+    color: #FF9E18;
+    font-family: NeoSansStdMedium;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.page-template-template-stages_holding_page .ovalfit-form span {
+    font-size: 14px;
+}
+
+
+.page-template-template-stages_holding_page .btn.orange {
+    background-color: #FF9E18;
+    color: #fff;
+}
+.page-template-template-stages_holding_page .btn:hover {
+    background: #B23409;
+}
+
+.page-template-template-stages_holding_page #ovalfit-tabs {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+}
+
 
 
 /********** MOBILE **********/
 
 
 @media (max-width: 1024px){
+
     .page-template-template-stages .ovalfit-header .stats {
         max-height: 52px;
         overflow: hidden;
@@ -576,6 +626,12 @@ form#changeDates:before {
     .page-template-template-stages .ovalfit-header .within {
         padding: 20px 15px 15px;
     }
+
+    .page-template-template-stages_holding_page .ovalfit-form {
+        margin: 180px 40px 0;
+        width: auto;
+    }
+
 }
 
 @media (max-width: 768px){
@@ -648,6 +704,10 @@ form#changeDates:before {
         display: block;
         width: 100%;
         margin-top: 10px;
+    }
+
+    .page-template-template-stages_holding_page .header {
+        margin: 30px 0;
     }
 }
 @media (max-width: 360px){
