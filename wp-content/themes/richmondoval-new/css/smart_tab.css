@@ -20,7 +20,7 @@
   display:block;
   margin:0;
   padding:0;
-  height:650px;
+  height:700px;
   overflow:hidden;  
   position: relative;
 }
@@ -65,7 +65,7 @@
   border-bottom: 4px solid #ccc;
 }
 .stMain ul.tabAnchor li a span{
-  opacity: 0;
+  opacity: 0.2;
 }
 
 .stMain ul.tabAnchor li a img {
