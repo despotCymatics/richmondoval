@@ -22,6 +22,47 @@ body {
     z-index: -1;
 }
 
+select {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    outline: none;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+    -webkit-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -ms-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+
+    background-image:
+            linear-gradient(45deg, transparent 50%, #FF9E18 50%),
+            linear-gradient(135deg, #FF9E18 50%, transparent 50%);
+    background-position:
+            calc(100% - 20px) calc(1em + 6px),
+            calc(100% - 15px) calc(1em + 6px);
+
+    background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+
+}
+select option {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 
 /******** OVAL FIT HEADER *********/
 
@@ -370,7 +411,7 @@ body {
     max-width: 360px;
     margin: 0 auto;
 }
-.page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input, select {
+.page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input {
     border-radius: 6px;
     margin-bottom: 15px;
     background: #fff;

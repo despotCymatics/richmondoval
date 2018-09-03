@@ -155,15 +155,28 @@ jQuery(document).ready(function($) {
 
 
     // Smart Tab
-    $('#ovalfit-tabs').smartTab({
-        selected: 0,
-        saveState:false,
-        autoProgress: false,
-        startOnFocus: true,
-        progressInterval: 2000,
-        transitionEffect: 'fade',
-        transitionSpeed: 1000,
-    });
+    console.log($(window).width());
+    if($(window).width() > 768 ) {
+        $('#ovalfit-tabs').smartTab({
+            selected: 0,
+            saveState:false,
+            autoProgress: false,
+            startOnFocus: true,
+            progressInterval: 2000,
+            transitionEffect: 'fade',
+            transitionSpeed: 1000,
+        });
+    } else {
+        $('#ovalfit-tabs').smartTab({
+            selected: 0,
+            saveState:false,
+            autoProgress: true,
+            progressInterval: 2000,
+            transitionEffect: 'fade',
+            transitionSpeed: 1000,
+        });
+    }
+
 
 
 

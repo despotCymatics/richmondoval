@@ -43,6 +43,27 @@
 .stMain div.tabContent img.tablet {
   display: none;
 }
+.stMain div.tabContent span {
+  display: none;
+  margin:0;
+  padding:15px 30px;
+  text-align: left;
+  font-size: 14px;
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline-style: none;
+
+}
+.stMain div.tabContent span img {
+  max-width: 60px;
+  width: auto;
+  height: 14px;
+  display: inline-block;
+  vertical-align: unset;
+  margin-right: 15px;
+
+}
 
 .stMain ul.tabAnchor {
   display: flex;
@@ -159,4 +180,8 @@
   .stMain div.tabContent img.desktop {
     display: block;
   }
+  .stMain div.tabContent span {
+    display: block;
+  }
+
 }

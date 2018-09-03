@@ -52,21 +52,25 @@ get_header();
             <div id="tabs-1">
                 <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg.jpg">
                 <img  class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg-tablet.jpg">
+                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span>
             </div>
 
             <div id="tabs-2">
                 <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg.jpg">
                 <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg-tablet.jpg">
+                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/FLOW_logo.svg"> Breathe in. breathe out</a></span>
             </div>
 
             <div id="tabs-3">
                 <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg.jpg">
                 <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg-tablet.jpg">
+                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/LIFT_logo.svg"> The science of lift off</span>
             </div>
 
             <div id="tabs-4">
                 <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg.jpg">
                 <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg-tablet.jpg">
+                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/MOVE_logo.svg"> Keep it moving</span>
             </div>
         </div>
 
