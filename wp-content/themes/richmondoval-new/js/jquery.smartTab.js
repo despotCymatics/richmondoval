@@ -92,6 +92,13 @@
           }                
           startAutoProgress();
         }
+
+
+          if(options.startOnFocus){
+              $(obj).bind("mouseover", function(e){startAutoProgress(); console.log(123);return true;});
+              $(obj).bind("mouseleave", function(e){stopAutoProgress();return true;});
+          }
+
       }
       
       function showTab(idx){
@@ -378,7 +385,8 @@
       keyNavigation:true, // Enable/Disable keyboard navigation(left and right keys are used if enabled)
       autoProgress:false, // Auto navigate tabs on interval
       progressInterval: 3500, // Auto navigate Interval (used only if "autoProgress" is set to true)
-      stopOnFocus:false, // Stop auto navigation on focus and resume on outfocus
+      stopOnFocus:false, // Start auto navigation on focus and resume on outfocus
+      startOnFocus:false, // Stop auto navigation on focus and resume on outfocus
       transitionEffect:'none', // Effect on navigation, none/hslide/vslide/slide/fade
       transitionSpeed:'400', // Transion animation speed
       transitionEasing:'easeInOutExpo', // Transition animation easing

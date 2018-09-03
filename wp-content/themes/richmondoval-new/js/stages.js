@@ -157,10 +157,12 @@ jQuery(document).ready(function($) {
     // Smart Tab
     $('#ovalfit-tabs').smartTab({
         selected: 0,
-        autoProgress: true,
-        progressInterval: 5000,
+        saveState:false,
+        autoProgress: false,
+        startOnFocus: true,
+        progressInterval: 2000,
         transitionEffect: 'fade',
-        transitionSpeed: 1800,
+        transitionSpeed: 1000,
     });
 
 

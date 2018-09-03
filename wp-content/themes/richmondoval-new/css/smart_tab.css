@@ -27,12 +27,21 @@
 .stMain div.tabContent { 
   display:block;
   position: absolute;
-  margin:0;  
-  padding:10px;
-  background-color: #FFF;
-  text-align:left;
+  margin:0;
+  text-align: center;
   width: 100%;
   min-height: 600px;
+}
+.stMain div.tabContent img {
+  width: 100%;
+}
+
+.stMain div.tabContent img.desktop {
+  display: block;
+}
+
+.stMain div.tabContent img.tablet {
+  display: none;
 }
 
 .stMain ul.tabAnchor {
@@ -62,14 +71,29 @@
   text-decoration: none;
   text-transform: uppercase;
   outline-style:none;
-  border-bottom: 4px solid #ccc;
+  border-bottom: 8px solid transparent;
 }
+.stMain ul.tabAnchor li a.tab-btn1 {
+  border-color: #2B2B2B;
+}
+.stMain ul.tabAnchor li a.tab-btn2 {
+  border-color: #393939;
+}
+.stMain ul.tabAnchor li a.tab-btn3 {
+  border-color: #8D8D8D;
+}
+.stMain ul.tabAnchor li a.tab-btn4 {
+  border-color: #DADADA;
+}
+
 .stMain ul.tabAnchor li a span{
-  opacity: 0.15;
+  opacity: 0.2;
 }
 
 .stMain ul.tabAnchor li a img {
-  width: 48px;
+  max-width: 60px;
+  width: auto;
+  height: 14px;
   display: inline-block;
   vertical-align: unset;
   margin-right: 15px;
@@ -99,17 +123,40 @@
   /*background: #f6f6f6 url(../images/loader.gif) no-repeat 10px 10px ;*/
 }
 
-#tabs-1,#tabs-3 {
-  background: url("/wp-content/themes/richmondoval-new/images/basic/stages-bg.jpg") no-repeat center / cover;
+/*#tabs-1 {
+  background: url("/wp-content/themes/richmondoval-new/images/stages/ride_bg.jpg") no-repeat right center / cover;
 }
-
-#tabs-2,#tabs-4 {
-  background: url("/wp-content/themes/richmondoval-new/images/basic/photo-home-bgrd.jpg") no-repeat center / cover;
+#tabs-2 {
+  background: url("/wp-content/themes/richmondoval-new/images/stages/flow_bg.jpg") no-repeat right center / cover;
 }
+#tabs-3 {
+  background: url("/wp-content/themes/richmondoval-new/images/stages/trx_bg.jpg") no-repeat right center / cover;
+}
+#tabs-4 {
+  background: url("/wp-content/themes/richmondoval-new/images/stages/move_bg.jpg") no-repeat right center / cover;
+}*/
 
-@media (max-width: 1024px){
-  .stMain ul.tabAnchor {
+@media (max-width: 1360px){
+  .stMain div.tabContent img.tablet {
     display: block;
   }
+  .stMain div.tabContent img.desktop {
+    display: none;
+  }
 
+}
+
+@media (max-width: 768px){
+  .stMain ul.tabAnchor li a span {
+    display: none;
+  }
+  .stMain div.tabContent {
+    min-height: auto;
+  }
+  .stMain div.tabContent img.tablet {
+    display: none;
+  }
+  .stMain div.tabContent img.desktop {
+    display: block;
+  }
 }

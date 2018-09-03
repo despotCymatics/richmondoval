@@ -627,9 +627,12 @@ form#changeDates:before {
         padding: 20px 15px 15px;
     }
 
+    .stMain ul.tabAnchor li a span {
+        font-size: 12px;
+    }
     .page-template-template-stages_holding_page .ovalfit-form {
-        margin: 180px 40px 0;
-        width: auto;
+        margin-top: 100px;
+        width: 50%;
     }
 
 }
@@ -709,7 +712,24 @@ form#changeDates:before {
     .page-template-template-stages_holding_page .header {
         margin: 30px 0;
     }
+
+    .page-template-template-stages_holding_page .header h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .page-template-template-stages_holding_page .ovalfit-form {
+        margin: 0 15px 30px;
+        width: auto;
+    }
+    .page-template-template-stages_holding_page #ovalfit-tabs {
+        position: static;
+    }
+
+    .page-template-template-stages_holding_page .pageWrap .within.inner {
+        padding-bottom: 0;
+    }
 }
+
 @media (max-width: 360px){
     .page-template-template-stages .alignRight {
 

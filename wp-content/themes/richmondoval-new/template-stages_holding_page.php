@@ -28,13 +28,10 @@ get_header();
                     <h5>COMING 2018 FALL</h5>
                     <h1>DISCOVER THE CHAMPION IN YOU</h1>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <h5>FINESS REVAMPED</h5>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent luctus urna ac dictum commodo.
-                        Nullam eleifend odio sed accumsan pellentesque. Morbi pretium cursus ultrices. Sed fermentum
-                        orci sed ex malesuada placerat in quis felis. In hac habitasse platea dictumst. Donec quis
-                        fermentum eros, non luctus erat.
+                        Accelerate your fitness journey at the Richmond Olympic Oval - a world-class, Olympic legacy facility. OVALfit is a complete training experience with inspiring, immersive programs to condition your mind, body, and spirit.
                     </p>
                 </div>
             </div>
@@ -43,6 +40,35 @@ get_header();
     </div>
 
     <div class="ovalfit-holding-body">
+
+        <div id="ovalfit-tabs">
+            <ul>
+                <li><a class="tab-btn1" href="#tabs-1"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span></a></li>
+                <li><a class="tab-btn2" href="#tabs-2"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/FLOW_logo.svg"> Breathe in. breathe out</a></span></li>
+                <li><a class="tab-btn3" href="#tabs-3"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/LIFT_logo.svg"> The science of lift off</span></a></li>
+                <li><a class="tab-btn4" href="#tabs-4"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/MOVE_logo.svg"> Keep it moving</span></a></li>
+            </ul>
+
+            <div id="tabs-1">
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg.jpg">
+                <img  class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg-tablet.jpg">
+            </div>
+
+            <div id="tabs-2">
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg-tablet.jpg">
+            </div>
+
+            <div id="tabs-3">
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg-tablet.jpg">
+            </div>
+
+            <div id="tabs-4">
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg-tablet.jpg">
+            </div>
+        </div>
 
         <div class="within inner">
             <div class="ovalfit-form">
@@ -66,27 +92,6 @@ get_header();
                     <button class="btn orange">Notify Me</button>
 
                 </form>
-            </div>
-        </div>
-
-        <div id="ovalfit-tabs">
-            <ul>
-                <li><a href="#tabs-1"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Breathe in. breathe out</a></span></li>
-                <li><a href="#tabs-2"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span></a></li>
-                <li><a href="#tabs-3"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> The science of lift off</span></a></li>
-                <li><a href="#tabs-4"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Keep it moving</span></a></li>
-            </ul>
-
-            <div id="tabs-1">
-            </div>
-
-            <div id="tabs-2">
-            </div>
-
-            <div id="tabs-3">
-            </div>
-
-            <div id="tabs-4">
             </div>
         </div>
 
