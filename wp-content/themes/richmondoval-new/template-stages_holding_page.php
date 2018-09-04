@@ -76,8 +76,12 @@ get_header();
 
         <div class="within inner">
             <div class="ovalfit-form">
-                <h5>Be the first to know</h5><br>
-                <form>
+
+                <?=do_shortcode('[contact-form-7 id="47266" title="OvalFit - First to know"]'); ?>
+
+                <!--
+                 <h5>Be the first to know</h5><br>
+                 <form>
                     <input type="text" placeholder="First Name" required>
                     <input type="text" placeholder="Last Name" required>
                     <input type="email" placeholder="Email" required>
@@ -95,7 +99,7 @@ get_header();
 
                     <button class="btn orange">Notify Me</button>
 
-                </form>
+                </form>-->
             </div>
         </div>
 
