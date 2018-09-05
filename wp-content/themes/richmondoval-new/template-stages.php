@@ -23,7 +23,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             if ( ! isset( $authCode->Message ) ) {
 
                 $userEmail = $_SESSION['logged'];
-                $userQuery = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users?query=' . $userEmail );
+                $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
                 if ( count( $userQuery ) == 1 ) {
                     $userId = $userQuery[0]->Id;
@@ -35,7 +35,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 }
 
                 //Bikes
-                $bikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/bikes' );
+                $bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 
                 //Sessions
 	            $dateFrom    = date( 'Y-m-d' );
@@ -47,10 +47,16 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $dateTo = $_POST['dateTo'];
                 }
 
-                $sessions = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
+                $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
+                if(count($sessions) > 1) {
+	                usort($sessions,function($a, $b){
+		                return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
+	                });
+                }
+
 
                 //USER
-                $user = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $userId );
+                $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
 
                 ?>
                 <div class="row">
@@ -80,7 +86,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             $numWorkouts       = 0;
                             $maxSpeedArray      = array();
 
-                            $workouts = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
+                            $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
                             foreach ( $workouts as $workout ) {
 
                                 //var_dump($workout);
@@ -169,7 +175,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         </div>
                         <?php
                         //User Bookings
-                        $userBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' ); ?>
+                        $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' ); ?>
                         <!-- Bookings -->
                         <div id="bookings" class="tabcontent">
                             <?php
@@ -238,7 +244,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
                                 <input
                                         type="text"
-                                        class="datarange"
+                                        class="daterange"
                                         name="daterange"
                                         value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
                                         autocomplete="off"
@@ -251,7 +257,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             if ( count( $sessions ) > 0 ) {
                             foreach ( $sessions as $session ) {
                                 //var_dump($session);
-                                $instructor = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/instructors/' . $session->InstructorId );
+                                $instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $session->InstructorId );
                                 ?>
                                 <div class="showMoreToggler">
                                     <div class="row">
@@ -298,9 +304,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                             </div>
                                             <div class="row seven-cols">
                                                 <?php
-                                                //$sessionBikes = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
-                                                $sessionBookings = getCurl( $authCode, 'http://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
-                                                $bikesBooked     = array();
+                                                //$sessionBikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
+                                                $sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
+                                                $bikesBooked = array();
                                                 foreach ( $sessionBookings as $sessionBooking ) {
                                                     array_push( $bikesBooked, $sessionBooking->Bike->Id );
 

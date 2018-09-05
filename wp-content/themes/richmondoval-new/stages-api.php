@@ -13,7 +13,7 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 
 	$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
-	$booking = postCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings', $postFields);
+	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/bookings', $postFields);
 
 	//var_dump($booking);
 	//var_dump($booking->ModelState->{'booking.SessionId'});
@@ -37,9 +37,9 @@ if(isset($_POST['bookingId'])) {
 
 	//$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
-	$booking = deleteCurl($authCode, 'http://stagesflight.com/locapi/v1/bookings/'.$bookingId);
+	$booking = deleteCurl($authCode, 'https://stagesflight.com/locapi/v1/bookings/'.$bookingId);
 
-	//var_dump('http://stagesflight.com/locapi/v1/bookings/'.$bookingId);
+	//var_dump('https://stagesflight.com/locapi/v1/bookings/'.$bookingId);
 	//var_dump($booking->ModelState->{'booking.UserId'});
 	//var_dump($booking);
 
@@ -71,7 +71,7 @@ function authorize() {
 	"ClientId":"RichmondOval",
 	"ClientSecret":"QjE0OEUyN0YtRjEzMS00RUNCLUIzMDEtMzA3QjdGODA2NUM1"
 	}';
-	$url = 'http://stagesflight.com/locapi/v1/auth/1400' ;
+	$url = 'https://stagesflight.com/locapi/v1/auth/1400' ;
 
 
 	$header = array(
@@ -208,15 +208,47 @@ function RegisterUser() {
 
 
 	$formvars['email'] = Sanitize($_POST['email']);
+	$formvars['firstname'] = Sanitize($_POST['firstname']);
+	$formvars['lastname'] = Sanitize($_POST['lastname']);
+	$formvars['birthdate'] = Sanitize($_POST['birthdate']);
+	$formvars['phone'] = Sanitize($_POST['phone']);
+	$formvars['weight'] = Sanitize($_POST['weight']);
+	$formvars['gender'] = Sanitize($_POST['gender']);
 	$formvars['password'] = Sanitize($_POST['password']);
 
+
+	$postFields = json_encode(Array(
+		'FirstName' => $formvars['firstname'],
+		'LastName' => $formvars['lastname'],
+		'Phone' => $formvars['phone'],
+		'Email' => $formvars['email'],
+		'DateOfBirth' => $formvars['birthdate'],
+		'WeightKg' => $formvars['weight'],
+		'Gender' => $formvars['gender'],
+		'Password' => $formvars['password']
+	));
+
+	/*echo "<pre style='color: #FF0000'>";
+	print_r($postFields);
+	echo "</pre>";*/
+
+
+	$authCode = authorize();
+
+	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/users', $postFields);
+
+	return $booking;
+
+
 	if(CheckIfUserExists($formvars['email'])) {
-		return false;
+		return "User exists in ovalfit";
 	}
 
 	if(!InsertIntoDB($formvars)){
 		return false;
 	}
+
+
 
 
 	SendUserConfirmationEmail($formvars);

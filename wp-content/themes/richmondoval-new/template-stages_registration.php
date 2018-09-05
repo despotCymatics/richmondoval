@@ -13,13 +13,28 @@ $color = '#ccc';
 
 if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 {
-	if(RegisterUser())
+
+	/*echo "<pre style='color: #FF0000'>";
+	print_r(RegisterUser());
+	echo "</pre>";*/
+
+	$userReg = RegisterUser();
+
+
+	if($userReg === true)
 	{
         $message = 'User has been registered successfully! <a href="/oval-fit-login/">Sign In</a>';
         $color = '#85c440';
 	}
-	else {
+	elseif($userReg === "User exists in ovalfit") {
 		$message = 'Error! User already exists in Oval Fit database!';
+		$color = 'darkred';
+
+	}elseif($userReg === "User exists in stages"){
+		$message = 'Error! User already exists in Stages database!';
+		$color = 'darkred';
+    }else {
+		$message = 'Error! '. $userReg;
 		$color = 'darkred';
     }
 }
@@ -95,7 +110,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
             <?php
             }else { ?>
 
-                <iframe src="https://stagesflight.com/Account/Register" width="100%" height="1300px" frameborder="0"></iframe>
+                <!--<iframe src="https://stagesflight.com/Account/Register" width="100%" height="1300px" frameborder="0"></iframe>-->
 
 
                 <div class="row">
@@ -106,20 +121,41 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                             <!--<img width="320px" class="stages-logo"
 								 src="/wp-content/uploads/2018/07/oval-fit-logo-black.png">-->
                             <br>
-                            <h3 style="text-align: center; color: #fff">OVAL FIT REGISTER</h3>
+                            <h3 style="text-align: center; color: #fff">REGISTER</h3>
+
                         </div>
 
                         <form id='ovalfit-registration' action='' method='post' accept-charset='UTF-8'>
+
                             <fieldset>
+
+                                <p>Hi, setting up your profile is simple. We’ll need your info for you to see your metrics and track your performance.</p>
                                 <input type='hidden' name='submitted-reg' id='submitted' value='1'/>
 
-                                <input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="User Email"/>
 
-                                <input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="User Password"/>
-                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long</p>
+                                <input type='text' name='firstname' id='firstname' required maxlength="50" placeholder="First Name"/>
 
-                                <p style="text-align: center">
-                                    <input type='submit' class="btn" name='Register' value='Register'/>
+                                <input type='text' name='lastname' id='lastname' required maxlength="50"  placeholder="Last Name"/>
+
+                                <input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="Email"/>
+
+                                <input type='text' name='phone' id='phone' required maxlength="50" autocomplete="off" placeholder="Phone"/>
+
+                                <input type="text" class="birthdate" name="birthdate" value="" required readonly="true" placeholder="Date of birth"/>
+
+                                <input type="number" class="weight" id="weight" name="weight" required placeholder="Weight(Kg)"/>
+
+                                <select name="gender" required>
+                                    <option value="" selected disabled>Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+
+                                <input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="Password"/>
+                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
+
+                                <p style="text-align: center; margin-bottom: 0;">
+                                    <button type='submit' class="btn" name='Register'>Register</button>
                                 </p>
 
                             </fieldset>
@@ -134,7 +170,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                             </strong>
                         </p>
 
-                        <div style="text-align: center;">
+                        <div style="text-align: center; margin-top: 0;">
                             <p>Already have an account? <a href="/oval-fit-login">Sign In</p></a>
                         </div>
                     </div>

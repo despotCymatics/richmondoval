@@ -49,8 +49,8 @@ select {
             linear-gradient(45deg, transparent 50%, #FF9E18 50%),
             linear-gradient(135deg, #FF9E18 50%, transparent 50%);
     background-position:
-            calc(100% - 20px) calc(1em + 8px),
-            calc(100% - 15px) calc(1em + 8px);
+            calc(100% - 20px) calc(50% + 1px),
+            calc(100% - 15px) calc(50% + 1px);
 
     background-size:
             5px 5px,
@@ -459,15 +459,15 @@ select option {
 }
 
 .page-template-template-stages_login .ride-logo, .page-template-template-stages_registration .ride-logo {
-    max-width: 480px;
-    margin: 60px auto;
+    max-width: 320px;
+    margin: 30px auto;
     opacity: 0.2;
     text-align: center;
 }
 
 .page-template-template-stages_login fieldset, .page-template-template-stages_registration fieldset  {
     border: none;
-    max-width: 360px;
+    max-width: 420px;
     margin: 0 auto;
 }
 .page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input {
@@ -563,7 +563,7 @@ select option {
 /********** Change Dates ***********/
 
 form#changeDates {
-    width: 300px;
+    width: 320px;
     position: absolute;
     right: 0;
     top: -52px;

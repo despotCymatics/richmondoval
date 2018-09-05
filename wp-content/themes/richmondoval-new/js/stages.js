@@ -131,11 +131,15 @@ jQuery(document).ready(function($) {
         $(this).toggleClass('expanded');
     });
 
+    //Daterange
     $(function() {
         $('input[name="daterange"]').daterangepicker({
             opens: 'left',
             showDropdowns: true,
             buttonClasses: 'btn regular orange',
+            maxSpan: {
+                "days": 7
+            },
             locale: {
                 format: 'MMMM D Y',
                 //minYear: 2018,
@@ -153,9 +157,30 @@ jQuery(document).ready(function($) {
         })
     });
 
+    //Birthdate
+    $(function() {
+        $('input[name="birthdate"]').daterangepicker({
+            opens: 'center',
+            buttonClasses: 'btn regular orange',
+            singleDatePicker: true,
+            showDropdowns: true,
+            minYear: 1901,
+            autoUpdateInput: false,
+            locale: {
+                format: 'MMMM D Y',
+                //minYear: 2018,
+                //maxYear:parseInt(moment().add('years', 1).format('YYYY'),1),
+            },
+
+        });
+        $('input[name="birthdate"]').on('apply.daterangepicker', function(ev, picker) {
+            console.log(picker);
+            $(this).val(picker.startDate.format('YYYY-MM-DD'));
+        });
+    });
+
 
     // Smart Tab
-    console.log($(window).width());
     if($(window).width() > 768 ) {
         $('#ovalfit-tabs').smartTab({
             selected: 0,

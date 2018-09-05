@@ -83,7 +83,7 @@ if(isset($_SESSION['logged'])) {
                                     <input type='password' name='password' id='password' required maxlength="50" placeholder="Your Password"/>
 
                                     <p style="text-align: center; margin-bottom: 0;">
-                                        <input type='submit' class="btn" name='Login' value='Sign In'/>
+                                        <button type='submit' class="btn">Sign In</button>
                                     </p>
 
                                 </fieldset>
