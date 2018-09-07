@@ -600,7 +600,7 @@ form#changeDates:before {
 /********** Holding Page **********/
 
 
-.page-template-template-stages_holding_page header, .page-template-template-stages_holding_page footer {
+.page-template-template-stages_holding_page header {
     display: none;
     visibility: hidden;
 }
@@ -644,6 +644,7 @@ form#changeDates:before {
 
 .page-template-template-stages_holding_page .ovalfit-holding-body {
     position: relative;
+    overflow: hidden;
 }
 .page-template-template-stages_holding_page .ovalfit-form {
     position: relative;
