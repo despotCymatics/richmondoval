@@ -459,15 +459,15 @@ select option {
 }
 
 .page-template-template-stages_login .ride-logo, .page-template-template-stages_registration .ride-logo {
-    max-width: 480px;
-    margin: 60px auto;
+    max-width: 320px;
+    margin: 60px auto 0;
     opacity: 0.2;
     text-align: center;
 }
 
 .page-template-template-stages_login fieldset, .page-template-template-stages_registration fieldset  {
     border: none;
-    max-width: 360px;
+    max-width: 400px;
     margin: 0 auto;
 }
 .page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input {
