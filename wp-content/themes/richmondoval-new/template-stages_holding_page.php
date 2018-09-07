@@ -10,7 +10,7 @@ get_header();
 ?>
 
     <style>
-        @import url("https://use.typekit.net/jrr5dxu.css");
+        @import url("https://use.typekit.net/zie3som.css");
     </style>
 
     <div class="within inner">
