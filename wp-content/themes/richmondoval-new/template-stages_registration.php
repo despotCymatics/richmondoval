@@ -10,21 +10,18 @@ get_header();
 
 $message = '';
 $color = '#ccc';
+$userReg = false;
 
 if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 {
-
-	/*echo "<pre style='color: #FF0000'>";
-	print_r(RegisterUser());
-	echo "</pre>";*/
 
 	$userReg = RegisterUser();
 
 
 	if($userReg === true)
 	{
-        $message = 'User has been registered successfully! <a href="/oval-fit-login/">Sign In</a>';
-        $color = '#85c440';
+        $message = NULL;
+        //$color = '#85c440';
 	}
 	elseif($userReg === "User exists in ovalfit") {
 		$message = 'Error! User already exists in Oval Fit database!';
@@ -34,8 +31,14 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 		$message = 'Error! User already exists in Stages database!';
 		$color = 'darkred';
     }else {
-		$message = 'Error! '. $userReg;
+		$message = 'Error! Something went wrong, please check your info.<br>'.json_encode($userReg);
+		/*echo "<pre style='color: #FF0000'>";
+		print_r($userReg);
+		echo "</pre>";*/
 		$color = 'darkred';
+		?>
+        <script>console.log(<?=json_encode($userReg);?>);</script>
+        <?php
     }
 }
 
@@ -54,10 +57,13 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
             <?php
             if($message) { ?>
-                <p style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></p>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <p style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></p>
+                    </div>
+                </div>
             <?php
             }
-
 
             if(isset($_GET['new-password-user'])) {
 
@@ -105,21 +111,28 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                     </div>
                 </div>
 
-
-
             <?php
+
             }else { ?>
-
-                <!--<iframe src="https://stagesflight.com/Account/Register" width="100%" height="1300px" frameborder="0"></iframe>-->
-
 
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6">
 
+                        <?php
+                        if($userReg === true) {
+                        ?>
+
+                        <h3 style="text-align: center; color: #fff">YOUR PROFILE HAS BEEN CREATED</h3>
+                        <p style="text-align: center;">Sign up to classes and begin tracking your performance/</p>
+
+                        <p style="text-align: center; margin-bottom: 0;">
+                            <a href="/oval-fit-login"  class="btn" name='letsride'>LET'S RIDE</a>
+                        </p>
+
+                        <?php } else { ?>
+
                         <div class="title">
                             <br>
-                            <!--<img width="320px" class="stages-logo"
-								 src="/wp-content/uploads/2018/07/oval-fit-logo-black.png">-->
                             <br>
                             <h3 style="text-align: center; color: #fff">REGISTER</h3>
 
@@ -160,6 +173,9 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                             </fieldset>
                         </form>
+
+
+
                         <p style="color: darkred; text-align: center; margin-top: 15px;">
                             <strong>
 					            <?php
@@ -173,6 +189,8 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                         <div style="text-align: center; margin-top: 0;">
                             <p>Already have an account? <a href="/oval-fit-login">Sign In</p></a>
                         </div>
+
+                        <?php } ?>
                     </div>
                 </div>
 

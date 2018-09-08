@@ -222,40 +222,39 @@ function RegisterUser() {
 		'LastName' => $formvars['lastname'],
 		'Phone' => $formvars['phone'],
 		'Email' => $formvars['email'],
-		'DateOfBirth' => $formvars['birthdate'],
+		'DateOfBirth' => $formvars['birthdate']."T00:00:00Z",
 		'WeightKg' => $formvars['weight'],
 		'Gender' => $formvars['gender'],
 		'Password' => $formvars['password']
 	));
-
-	/*echo "<pre style='color: #FF0000'>";
-	print_r($postFields);
-	echo "</pre>";*/
 
 
 	$authCode = authorize();
 
 	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/users', $postFields);
 
-	return $booking;
+	$ret = "API Error!";
 
+	if($booking){
 
-	if(CheckIfUserExists($formvars['email'])) {
-		return "User exists in ovalfit";
+		if(isset($booking->Id)) {
+			$ret = true;
+
+			if(!CheckIfUserExists($formvars['email'])) {
+				if(!InsertIntoDB($formvars)) {
+					$ret = false;
+				}else {
+					SendUserConfirmationEmail($formvars);
+					//SendAdminIntimationEmail($formvars);
+				}
+			}
+			else {
+				$ret =  "User exists in ovalfit";
+			}
+		} else $ret = $booking;
 	}
 
-	if(!InsertIntoDB($formvars)){
-		return false;
-	}
-
-
-
-
-	SendUserConfirmationEmail($formvars);
-
-	//SendAdminIntimationEmail($formvars);
-
-	return true;
+	return $ret;
 }
 
 function login() {

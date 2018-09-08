@@ -99,7 +99,11 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 $avgHR             += $workout->AvgHeartRate;
                                 array_push($maxSpeedArray, $workout->MaxSpeed);
 
+
                             }
+
+                            if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
+
                             ?>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
@@ -108,6 +112,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     <span class="name">Number of workouts</span>
                                 </span>
                             </div>
+
+                            <?php if($numWorkouts == 0) $numWorkouts = 1; ?>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
                                 <span>
