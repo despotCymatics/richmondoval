@@ -22,6 +22,30 @@ body {
     z-index: -1;
 }
 
+.btn {
+    font-weight: 500;
+}
+
+/* FONT */
+
+@import url("https://use.typekit.net/svd3qkc.js");
+@import url("https://use.typekit.net/arc0dlo.css");
+
+.page-template-template-stages_holding_page p,
+.page-template-template-stages_holding_page span,
+.page-template-template-stages_holding_page h1,
+.page-template-template-stages_holding_page h3,
+.page-template-template-stages_holding_page h4,
+.page-template-template-stages_holding_page h5,
+.page-template-template-stages_holding_page input,
+.page-template-template-stages_holding_page button
+
+{
+    font-family:"prometo" !important;
+}
+
+
+
 select {
     width: 100%;
     margin-bottom: 15px;
@@ -598,7 +622,6 @@ form#changeDates:before {
 
 
 /********** Holding Page **********/
-
 
 .page-template-template-stages_holding_page header {
     display: none;

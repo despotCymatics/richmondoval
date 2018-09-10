@@ -1,0 +1,127 @@
+/*shared*/
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, p{
+    line-height: .9;
+}
+
+p{
+    line-height: 1.4;
+}
+
+li {
+    list-style: none;
+}
+
+.ov-fit-btn{
+    background: #ff9e18;
+    padding: 12px 70px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.ov-fit-btn-bold{
+    font-weight: bold;
+}
+
+.ov-fit-btn-nav{
+    padding: 10px 50px;
+    font-size: 13px;
+}
+
+.ov-fit-btn-nochange{
+    background: #ff9e18;
+    padding: 12px 70px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.ov-fit-btn-blue{
+    background: #008fcd;
+    padding: 11px 42px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+}
+
+.ov-fit-btn-lg{
+    background: #ff9e18;
+    padding: 14px 100px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+}
+
+@media (max-width: 1024px) {
+    .ov-hide-on-tablet{
+        display: none;
+    }
+
+    .ov-reverse-on-tablet{
+        flex-direction: column-reverse;
+    }
+}
+
+@media (min-width 500px) and (max-width: 800px) {
+    .ov-fit-btn{
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .ov-fit-btn{
+        padding: 8px 25px;
+        border-radius: 3px;
+        font-size: 10px;
+    }
+    .ov-hide-on-mobile{
+        display: none;
+    }
+    .ov-show-on-mobile{
+        display: inline-block !important;
+    }
+
+    .ov-fit-btn-blue{
+        padding: 11px 22px;
+    }
+}
+
+.ov-fit-training-grounds-legend a{
+    color: #FF9E18;
+}
+
+.ov-fit-book-btn{
+    color: #008BD1;
+    display: block;
+    font-weight: bold;
+}
+
+.ov-no-line-height{
+    line-height: 0;
+}
+
+.ov-sectioner{
+    width: 10px !important;
+    margin-left: 30px;
+}
+
+.ov-align-center{
+    text-align: center;
+}
+
+.ov-show-on-mobile{
+    display: none;
+}
+
+.ov-hide{
+    display: none;
+}

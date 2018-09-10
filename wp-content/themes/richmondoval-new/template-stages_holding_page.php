@@ -9,10 +9,6 @@ get_header();
 
 ?>
 
-    <style>
-        @import url("https://use.typekit.net/zie3som.css");
-    </style>
-
     <div class="within inner">
         <div class="content">
             <div class="title">
