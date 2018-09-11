@@ -1,3 +1,6 @@
+@import url("https://use.typekit.net/svd3qkc.js");
+@import url("https://use.typekit.net/arc0dlo.css");
+
 body {
     font-size: 16px;
 }
@@ -28,8 +31,6 @@ body {
 
 /* FONT */
 
-@import url("https://use.typekit.net/svd3qkc.js");
-@import url("https://use.typekit.net/arc0dlo.css");
 
 .page-template-template-stages_holding_page p,
 .page-template-template-stages_holding_page span,
