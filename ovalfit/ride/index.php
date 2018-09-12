@@ -5,22 +5,22 @@
     <title>Oval Fit</title>
     <link rel="stylesheet" href="https://use.typekit.net/arc0dlo.css">
     <link rel="stylesheet" href="https://use.typekit.net/svd3qkc.css">
-    <link href="./css/shared.css" rel="stylesheet">
-    <link href="./css/ride.css" rel="stylesheet">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="../css/shared.css" rel="stylesheet">
+    <link href="../css/ride.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-    <script src="./js/PicCarousel.js"></script>
+    <script src="../js/PicCarousel.js"></script>
 
-    <link href="./js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
-    <script src="./js/thumbnail-slider.js" type="text/javascript"></script>
+    <link href="../js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
+    <script src="../js/thumbnail-slider.js" type="text/javascript"></script>
 
 
      <style>
         @import url("https://use.typekit.net/svd3qkc.css");
     </style>
 
-     <script src="./js/script.js"></script>
+     <script src="../js/script.js"></script>
      <script>
   (function(d) {
     var config = {
@@ -86,7 +86,7 @@
 
                      <div class="ov-fit-training-ground-section">
                         <div>
-                            <img alt="" title="trainingGround" src="./img/image.jpg">
+                            <img alt="" title="trainingGround" src="../img/image.jpg">
                         </div>
                         <div class="ov-fit-training-ground-text-wrapper">
                             <div class="ov-fit-training-ground-text">
@@ -104,7 +104,7 @@
 
                     <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
                         <div>
-                            <img alt="" title="fitnessCenter" src="./img//Mask-Group-2.jpg">
+                            <img alt="" title="fitnessCenter" src="../img//Mask-Group-2.jpg">
                         </div>
                         <div class="ov-fit-training-ground-text-wrapper">
                             <div class="ov-fit-training-ground-text">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                             <div class="ov-ride-machine-container"> 
-                                <img class="ov-ride-machine-bike" src="./img/testRideMachineImage.jpg"/>
+                                <img class="ov-ride-machine-bike" src="../img/testRideMachineImage.jpg"/>
 
                                 <div class="ov-ride-section ov-ride-display-section">
                                     <a href="#asd" class="ov-ride-display pulse-button"><img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22"></a>
@@ -254,7 +254,7 @@
                             <ul>
                                 <li>
                                     <a class="thumb ov-coach-slider ov-results-team-0"
-                                       href="./img/jodiStokes.jpg" data-name="JODI STOKES" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to
+                                       href="../img/jodiStokes.jpg" data-name="JODI STOKES" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to
                                 help you transform your fitness goals into reality. We're focused on building a supportive
                                 culture with an overarching goal of improving your health, wellness, mobility, and strength.
                                 You may be surprised at the new adventures you’ll be able to experience as a result!"></a>
@@ -359,7 +359,6 @@
 
                 <!--<div class="ov-align-center">INSERT OVAL FOOTER HERE</div>-->
 
-            </div>
         </div>
     </div>
 </body>
