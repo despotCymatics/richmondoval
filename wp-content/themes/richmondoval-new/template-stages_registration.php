@@ -31,7 +31,17 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 		$message = 'Error! User already exists in Stages database!';
 		$color = 'darkred';
     }else {
-		$message = 'Error! Something went wrong, please check your info.<br>'.json_encode($userReg);
+		$message = 'Error! Something went wrong, please check your info and try again.<br>';
+		if(isset($userReg->ModelState)) {
+            $message .= '<ul class="reg-errors">';
+			if(isset($userReg->ModelState->{'user.Password'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Password'}[0]."</li>";
+			if(isset($userReg->ModelState->{'User.Email'}[0])) $message .= "<li>".$userReg->ModelState->{'User.Email'}[0]."</li>";
+			if(isset($userReg->ModelState->{'user.Phone'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Phone'}[0]."</li>";
+			$message .= '</ul>';
+		    //var_dump($userReg);
+			//json_encode($userReg);
+		    //$message .= json_encode($userReg->ModelState);
+        }
 		/*echo "<pre style='color: #FF0000'>";
 		print_r($userReg);
 		echo "</pre>";*/
@@ -59,7 +69,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
             if($message) { ?>
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6">
-                        <p style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></p>
+                        <div style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></div>
                     </div>
                 </div>
             <?php
@@ -156,7 +166,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                                 <input type="text" class="birthdate" name="birthdate" value="" required readonly="true" placeholder="Date of birth"/>
 
-                                <input type="number" class="weight" id="weight" name="weight" required placeholder="Weight(Kg)"/>
+                                <input type="number" class="weight" id="weight" name="weight" min="30" required placeholder="Weight(Kg)"/>
 
                                 <select name="gender" required>
                                     <option value="" selected disabled>Gender</option>

@@ -29,22 +29,59 @@ body {
     font-weight: 500;
 }
 
-/* FONT */
-
+/* FONT OVERRIDE */
 
 .page-template-template-stages_holding_page p,
 .page-template-template-stages_holding_page span,
 .page-template-template-stages_holding_page h1,
+.page-template-template-stages_holding_page h2,
 .page-template-template-stages_holding_page h3,
 .page-template-template-stages_holding_page h4,
 .page-template-template-stages_holding_page h5,
 .page-template-template-stages_holding_page input,
-.page-template-template-stages_holding_page button
+.page-template-template-stages_holding_page button,
+
+.page-template-template-stages_login p,
+.page-template-template-stages_login span,
+.page-template-template-stages_login h1,
+.page-template-template-stages_login h2,
+.page-template-template-stages_login h3,
+.page-template-template-stages_login h4,
+.page-template-template-stages_login h5,
+.page-template-template-stages_login input,
+.page-template-template-stages_login button,
+.page-template-template-stages_login a,
+
+.page-template-template-stages p,
+.page-template-template-stages span,
+.page-template-template-stages h1,
+.page-template-template-stages h2,
+.page-template-template-stages h3,
+.page-template-template-stages h4,
+.page-template-template-stages h5,
+.page-template-template-stages input,
+.page-template-template-stages button,
+.page-template-template-stages a,
+
+.page-template-template-stages_registration p,
+.page-template-template-stages_registration span,
+.page-template-template-stages_registration h1,
+.page-template-template-stages_registration h2,
+.page-template-template-stages_registration h3,
+.page-template-template-stages_registration h4,
+.page-template-template-stages_registration h5,
+.page-template-template-stages_registration input,
+.page-template-template-stages_registration button
+.page-template-template-stages_registration a
+
 
 {
     font-family:"prometo" !important;
 }
 
+.content ul.reg-errors li {
+    margin: 10px 0 0;
+}
 
 
 select {
