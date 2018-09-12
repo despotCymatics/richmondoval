@@ -65,6 +65,13 @@ if(isset($_SESSION['logged'])) {
 
                     <?php }else { ?>
                             <form id='login' action='/oval-fit/' method='post' accept-charset='UTF-8'>
+
+                                <?php if(isset($_GET['password-reset']) && $_GET['password-reset'] == true)  { ?>
+
+                                    <p style="text-align: center; margin-bottom: 0;">Your password has been reset. Email with the reset link has been sent to your email address.<br>
+                                        Please check your email and spam/junk folder.</p>
+
+                                <?php } ?>
                                 <fieldset>
                                     <p style="color:#D13200; text-align: center; margin-top: 15px;">
 					                    <?php

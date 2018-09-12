@@ -324,7 +324,7 @@ function forgotPassword($username) {
 
 			if(wp_mail($to,$subject,$txt,$headers)){
 
-				header('Location: /oval-fit-login/');
+				header('Location: /oval-fit-login/?password-reset=true');
 
 			}else {
 				echo "Error sending email! Please try again.";
