@@ -16,10 +16,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         <div class="within inner">
             <div class="content">
 
-
             <?php
-            //AUTHORIZE API
-            //$authCode = authorize();
             if ( ! isset( $authCode->Message ) ) {
 
                 $userEmail = $_SESSION['logged'];

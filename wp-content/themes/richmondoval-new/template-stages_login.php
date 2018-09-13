@@ -78,7 +78,7 @@ if(isset($_SESSION['logged'])) {
 					                    if(isset($_GET['user']) && $_GET['user'] == 'none'){
 						                    echo "User does not exist in Stages database!" ;
 					                    }else if(isset($_GET['login']) && $_GET['login'] == 'false') {
-						                    echo "Login failed! <br> Email does not match the password!" ;
+						                    echo "Please login with correct Email and Password!" ;
 					                    }
 					                    ?>
                                     </p>
