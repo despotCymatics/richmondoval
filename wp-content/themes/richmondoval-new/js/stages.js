@@ -149,10 +149,20 @@ jQuery(document).ready(function($) {
 
         }, function(start, end, label) {
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+
         }).on('apply.daterangepicker', function(ev, picker) {
             loaderIn();
-            $('input.dateFrom').val(picker.startDate.format('YYYY-MM-DD'));
-            $('input.dateTo').val(picker.endDate.format('YYYY-MM-DD'));
+            var start = picker.startDate;
+            var end = picker.endDate;
+            if(start.format('YYYY-MM-DD') === end.format('YYYY-MM-DD')) {
+                console.log("equal");
+                end = end.add(1, 'days');
+            }
+            console.log(start.format('YYYY-MM-DD'));
+            console.log(end.format('YYYY-MM-DD'));
+
+            $('input.dateFrom').val(start.format('YYYY-MM-DD'));
+            $('input.dateTo').val(end.format('YYYY-MM-DD'));
             document.getElementById('changeDates').submit();
         })
     });
