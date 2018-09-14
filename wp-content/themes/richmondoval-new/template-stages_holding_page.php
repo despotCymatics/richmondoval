@@ -22,13 +22,17 @@ get_header();
 
             <div class="row header">
                 <div class="col-md-7">
-                    <h5>COMING 2018 FALL</h5>
-                    <h1>DISCOVER THE CHAMPION IN YOU</h1>
+                    <h5>LAUNCHING 2018 FALL</h5>
+                    <h1>RIDE. PUSH. <br>REPEAT.</h1>
                 </div>
-                <div class="col-md-4">
-                    <h5>FINESS REVAMPED</h5>
+                <div class="col-md-5">
+                    <h5>
+                        <img width="70px" style="display: inline-block; margin-right: 10px; vertical-align: middle;"
+                             src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg">
+                        <span style="vertical-align: sub;">Train with power and precision</span>
+                    </h5>
                     <p>
-                        Accelerate your fitness journey at the Richmond Olympic Oval - a world-class, Olympic legacy facility. OVALfit is a complete training experience with inspiring, immersive programs to condition your mind, body, and spirit.
+                        Achieve your fitness goals with our revolutionary RIDE classes. Train with the power and precision of elite cyclists on the Stages SC3 bikes and Stages Flight™ technology.
                     </p>
                 </div>
             </div>
@@ -40,34 +44,59 @@ get_header();
 
         <div id="ovalfit-tabs">
             <ul>
-                <li><a class="tab-btn1" href="#tabs-1"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span></a></li>
-                <li><a class="tab-btn2" href="#tabs-2"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/FLOW_logo.svg"> Breathe in. breathe out</a></span></li>
-                <li><a class="tab-btn3" href="#tabs-3"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/LIFT_logo.svg"> The science of lift off</span></a></li>
-                <li><a class="tab-btn4" href="#tabs-4"><span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/MOVE_logo.svg"> Keep it moving</span></a></li>
+                <li>
+                    <a class="tab-btn1" href="#tabs-1">
+                        <span>
+                            Results based training
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tab-btn2" href="#tabs-2">
+                        <span>
+                            Immersive studio
+                    </a>
+                    </span>
+                </li>
+                <li>
+                    <a class="tab-btn3" href="#tabs-3">
+                        <span>
+                            Ultimate ride machine
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="tab-btn4" href="#tabs-4">
+                        <span>
+                            <!--<img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/MOVE_logo.svg"> -->
+                            Ovalfit team
+                        </span>
+                    </a>
+                </li>
             </ul>
 
             <div id="tabs-1">
                 <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg.jpg">
                 <img  class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg-tablet.jpg">
-                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg"> Ride. Push. Repeat</span>
+                <span>Results based training</span>
             </div>
 
             <div id="tabs-2">
-                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg.jpg">
-                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/flow_bg-tablet.jpg">
-                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/FLOW_logo.svg"> Breathe in. breathe out</a></span>
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/studio.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/studio-tablet.jpg">
+                <span>Immersive studio</span>
             </div>
 
             <div id="tabs-3">
-                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg.jpg">
-                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/trx_bg-tablet.jpg">
-                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/LIFT_logo.svg"> The science of lift off</span>
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike-tablet.jpg">
+                <span>Ultimate ride machine</span>
             </div>
 
             <div id="tabs-4">
-                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg.jpg">
-                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/move_bg-tablet.jpg">
-                <span><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/MOVE_logo.svg"> Keep it moving</span>
+                <img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/instructor.jpg">
+                <img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/instructor-tablet.jpg">
+                <span>Ovalfit team</span>
             </div>
         </div>
 
@@ -76,34 +105,10 @@ get_header();
 
                 <?=do_shortcode('[contact-form-7 id="47266" title="OvalFit - First to know"]'); ?>
 
-                <!--
-                 <h5>Be the first to know</h5><br>
-                 <form>
-                    <input type="text" placeholder="First Name" required>
-                    <input type="text" placeholder="Last Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <span>Do you have an existing gym membership?</span>
-                    <br><br>
-                    <select>
-                        <option>Gym membership 1</option>
-                        <option>Gym membership 2</option>
-                        <option>Gym membership 3</option>
-                    </select>
-
-                    <input type="checkbox" name="" checked> <span>I want to know what's happening at the Richmond Olympic Oval</span>
-                    <br>
-                    <br>
-
-                    <button class="btn orange">Notify Me</button>
-
-                </form>-->
             </div>
         </div>
 
     </div>
-
-
-
 
 <?php
 

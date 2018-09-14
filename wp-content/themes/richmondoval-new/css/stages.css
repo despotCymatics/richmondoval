@@ -835,6 +835,10 @@ form#changeDates:before {
         width: 50%;
     }
 
+    .page-template-template-stages_holding_page .title {
+        padding: 0 50px;
+    }
+
 }
 
 @media (max-width: 768px){
@@ -927,6 +931,10 @@ form#changeDates:before {
 
     .page-template-template-stages_holding_page .pageWrap .within.inner {
         padding-bottom: 0;
+        /*padding-top: 10px;*/
+    }
+    .page-template-template-stages_holding_page .title {
+        padding: 0 15px;
     }
 }
 

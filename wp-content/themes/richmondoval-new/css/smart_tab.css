@@ -175,10 +175,10 @@
     min-height: auto;
   }
   .stMain div.tabContent img.tablet {
-    display: none;
+    display: block;
   }
   .stMain div.tabContent img.desktop {
-    display: block;
+    display: none;
   }
   .stMain div.tabContent span {
     display: block;
