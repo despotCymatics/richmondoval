@@ -90,6 +90,7 @@ function authorize() {
 	$authCode = json_decode($authCode);
 
 	return $authCode;
+
 }
 
 

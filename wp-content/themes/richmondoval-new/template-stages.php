@@ -262,6 +262,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 //var_dump($session);
                                 $instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $session->InstructorId );
                                 ?>
+                            <script>console.log("<?php echo $authCode;?>")</script>
+
                                 <div class="showMoreToggler">
                                     <div class="row">
                                         <div class="col-sm-8 col-xs-6">
@@ -340,13 +342,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                                 '<?= $session->Name; ?>',
                                                                 '<?= $sessionDate; ?>',
                                                                 '<?= $sessionTime; ?>')">
-
                                                                 <?= $bike->Number; ?>
-
                                                             </div>
-
                                                         </div>
-
                                                     </div>
                                                     <?php
                                                 }
@@ -361,6 +359,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 </div>
                                 <?php
                             }
+
                         } else { ?>
                                 <br>
                                 <p>No Sessions on these dates.</p>
