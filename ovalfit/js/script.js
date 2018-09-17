@@ -128,6 +128,7 @@ $(window).on("load",function() {
 
 		ovName = $(this).attr('data-name');
 		ovLearnLink = $(this).attr('data-learn-link');
+		ovLearnTxt = $(this).attr('data-learn-txt');
 		ovDescriptText = $(this).attr('data-description');
 		ovLogo = $(this).attr('data-logo');
 
@@ -135,6 +136,7 @@ $(window).on("load",function() {
 		$(this).addClass('active');
 
 		$('.ov-program-offerings .ov-fit-btn-lg').attr('href', ovLearnLink);
+		$('.ov-program-offerings .ov-fit-btn-lg').text(ovLearnTxt);
 		$('.ov-program-offerings .ov-ride-logo').attr('src', ovLogo);
 		$('.ov-program-offerings p').text(ovDescriptText);
 	})

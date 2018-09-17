@@ -51,7 +51,7 @@
                                 RESERVE A BIKE
                             </a>
 
-                            <a href="#" class="ov-fit-hamburger-nav"></a>
+                            <!--<a href="#" class="ov-fit-hamburger-nav"></a>-->
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         </h1>
                         <p>Strengthen your ride with greater power.</p>
                         <div class="ov-fit-lets-ride-container">
-                            <a href="/oval-fit-login/" class="ov-fit-btn-lg" draggable="false">LET'S RIDE</a>
+                            <a href="#train" class="ov-fit-btn-lg" draggable="false">LET'S RIDE</a>
                         </div>
                     </div>
                     <div class="ov-chevron-down-container">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="ov-discover-champion ov-align-center">
+                <div class="ov-discover-champion ov-align-center" id="train">
                     <div class="ov-discover-champion-inner">
                         <h1>TRAIN WITH POWER<br />AND PRECISION</h1>
                         <h2>Achieve your fitness goals with our revolutionary RIDE classes. Train with the power and precision of elite cyclists on the Stages SC3 bikes and Stages Flight&#8482; technology. Experience data-driven training, inspiring coaching, and stunning visuals colliding.
@@ -349,12 +349,12 @@
                         GET RESULTS
                         </h2>
                         <p>Getting a membership is easy! Schedule a tour with our member care team. It's time to see your fitness goals come to life.</p>
-                        <a href="#" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
+                        <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
                     </div>
                 </div>
 
                 <div class="ov-align-center">
-                    <a href="#" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
+                    <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
                 </div>
 
                 <!--<div class="ov-align-center">INSERT OVAL FOOTER HERE</div>-->
