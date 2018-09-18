@@ -70,7 +70,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 <div class="row">
                     <div class="col-md-12">
-                        <p>Hi <?= $user->FirstName ?>, here's how you've been doing.</p>
+                        <p>Hi <?= $user->FirstName ?>, check out your performance metrics.</p>
                         <div class="stats">
                             <?php
                             $durationInSeconds = 0;
@@ -122,7 +122,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
                                 <span>
                                     <span class="num"><?= round($avgWatt / $numWorkouts) ; ?> <span>watt</span></span>
-                                    <span class="name">Power</span>
+                                    <span class="name">Average Power</span>
                                 </span>
                             </div>
                             <div class="stat">
@@ -173,8 +173,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tab-buttons">
-                            <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Sessions</h4>
-                            <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Bookings</h4>
+                            <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Schedules</h4>
+                            <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Reservations</h4>
                         </div>
                         <?php
                         //User Bookings
@@ -197,7 +197,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                     <span><?= $sessionTime; ?></span>
                                                 </div>
                                                 <div class="col-sm-4 col-xs-6 alignRight">
-                                                    <button class="btn blue regular">Cancel Booking</button>
+                                                    <button class="btn blue regular">Cancel Reservation</button>
                                                     <h4 class="close-toggle">X Close</h4>
                                                 </div>
                                             </div>
@@ -223,7 +223,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                 <div class="col-sm-4 col-xs-6 alignRight">
                                                     <button class="btn blue regular cancel"
                                                        onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
-                                                        Cancel Booking
+                                                        Cancel Reservation
                                                     </button>
                                                 </div>
                                             </div>
@@ -235,7 +235,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             } else {
                                 ?>
                                 <br>
-                                <p>You have no bookings.</p>
+                                <p>You have no reservations.</p>
                             <?php } ?>
                         </div>
 
@@ -253,9 +253,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                         autocomplete="off"
                                         readonly="true"
                                 />
-
                             </form>
-
                             <?php
                             if ( count( $sessions ) > 0 ) {
                             foreach ( $sessions as $session ) {
@@ -280,7 +278,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                                         </div>
                                         <div class="col-sm-4 col-xs-6 alignRight">
-                                            <button class="btn blue regular">Book your bike</button>
+                                            <button class="btn blue regular">Reserve your bike</button>
                                             <h4 class="close-toggle">X Close</h4>
                                         </div>
                                     </div>

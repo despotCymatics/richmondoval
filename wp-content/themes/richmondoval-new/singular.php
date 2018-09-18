@@ -68,7 +68,8 @@ if ( has_post_thumbnail() ) : ?>
                         <h4>Pages</h4>
                         <?php if ( isset($current_parent[0]) ) { ?>
                             <a class="parent" href="<?php echo get_permalink( $current_parent[0] ); ?>" >
-                                <span>&lt; </span><?php echo get_the_title( $current_parent[0] ); ?>
+                                <span>&lt; </span>
+                                <span><?php echo get_the_title( $current_parent[0] ); ?></span>
                             </a>
                         <?php } ?>
                         <?php echo $pages; ?>

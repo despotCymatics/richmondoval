@@ -144,7 +144,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                         <div class="title">
                             <br>
                             <br>
-                            <h3 style="text-align: center; color: #fff">REGISTER</h3>
+                            <h3 style="text-align: center; color: #fff">CREATE YOUR PROFILE</h3>
 
                         </div>
 
@@ -166,7 +166,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                                 <input type="text" class="birthdate" name="birthdate" value="" required readonly="true" placeholder="Date of birth"/>
 
-                                <input type="number" class="weight" id="weight" name="weight" min="30" required placeholder="Weight(Kg)"/>
+                                <input type="number" class="weight" id="weight" name="weight" min="30" required placeholder="Weight(lbs)"/>
 
                                 <select name="gender" required>
                                     <option value="" selected disabled>Gender</option>
@@ -174,7 +174,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                                     <option value="Female">Female</option>
                                 </select>
 
-                                <input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="Password"/>
+                                <input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="Create a password"/>
                                 <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
 
                                 <p style="text-align: center; margin-bottom: 0;">

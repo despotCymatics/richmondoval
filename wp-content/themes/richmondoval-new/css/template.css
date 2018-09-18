@@ -966,7 +966,7 @@ section.photo {
     line-height: 1.4;
     display: block;
     text-decoration: none;
-    margin-right: 24px;
+    margin-right: 4px;
 
 }
 
@@ -1016,12 +1016,14 @@ section.photo {
     font-family: 'NeoSansStdRegular';
     font-size: 14px;
     line-height: 1.4;
-    display: block;
+    display: flex;
     text-decoration: none;
 }
 
-#pimaryMenu ul a.parent span {
+#pimaryMenu ul a.parent span:first-child {
     color: #0088ce;
+    margin-right: 5px;
+    font-weight: 600;
 }
 
 #pimaryMenu ul a.parent:hover {
@@ -1050,12 +1052,12 @@ section.photo {
 }
 
 .sideBar #pimaryMenu h4 {
-    /*border-bottom: 1px solid #606060;*/
+    border-bottom: 1px solid #606060;
     color: #fff;
     padding: 15px 18px 15px 40px;
     position: relative;
-    /*margin-bottom: 5px;*/
-    margin-right: 10px;
+    /*margin-bottom: 5px;
+    margin-right: 10px;*/
 }
 
 .sideBar #pimaryMenu h4:before {

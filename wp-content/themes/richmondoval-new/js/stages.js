@@ -1,12 +1,13 @@
 function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, sessionDate, sessionTime) {
 
     swal({
-        html: "<h2>Are you sure you want to book this bike?</h2>"+
+        html: "<h2>Your RIDE is waiting</h2>"+
+        "<p>Confirm your bike number</p>"+
         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
         allowOutsideClick: false,
         showCancelButton: true,
-        confirmButtonText: 'Yes, book it',
-        cancelButtonText: 'No, cancel'
+        confirmButtonText: 'Reserve',
+        cancelButtonText: 'Cancel'
     }).then((result) => {
         if (result.value) {
             swal({
@@ -31,13 +32,13 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                     success: function (response) {
                         if(response =='<p>Thank You for Booking with OvalFit!</p>') {
                             swal({
-                                html: "<h2>Your bike is reserved</h2>"+
+                                html: "<h2>Your RIDE is ready</h2>"+
                                 "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'>"+
                                 "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                                 "<h4 class='session-name'>"+sessionName+"</h4>"+
                                 "<span class='session-date'>"+sessionDate+"</span><br>"+
                                 "<span class='session-time'>"+sessionTime+"</span>"+
-                                response,
+                                "<p>Please confirm attendance in the lobby. If you can’t make it, please cancel you reservation online</p>",
                                 allowOutsideClick: false
                             }).then((result) => {
                                 loaderIn()
@@ -87,12 +88,13 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
                 if(response == '<h2>Your Booking has been canceled!</h2>') {
                     $("div[data-id='"+bookingId+"']").hide(200);
                     swal({
-                        html: "<h2>Your Booking has been canceled!</h2>"+
+                        html: "<h2>Your reservation has been cancelled!</h2>"+
+                            "<p>See you on the next RIDE.</p>"+
                         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br>"+
                         "<p class='bike-num'>#"+bikeNum+"</p><br>"+
-                            "<h4 class='session-name'>"+sessionName+"</h4>"+
-                            "<span class='session-date'>"+sessionDate+"</span><br>"+
-                            "<span class='session-time'>"+sessionTime+"</span>"
+                        "<h4 class='session-name'>"+sessionName+"</h4>"+
+                        "<span class='session-date'>"+sessionDate+"</span><br>"+
+                        "<span class='session-time'>"+sessionTime+"</span>"
 
                     }).then((result) => {
                         loaderIn()

@@ -26,7 +26,6 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	}else  {
 		echo "<h2>Error!</h2>";
 	}
-
 }
 
 //CANCEL BOOKING
@@ -224,7 +223,7 @@ function RegisterUser() {
 		'Phone' => $formvars['phone'],
 		'Email' => $formvars['email'],
 		'DateOfBirth' => $formvars['birthdate']."T00:00:00Z",
-		'WeightKg' => $formvars['weight'],
+		'WeightKg' => round($formvars['weight']*0.454, 1),
 		'Gender' => $formvars['gender'],
 		'Password' => $formvars['password']
 	));
