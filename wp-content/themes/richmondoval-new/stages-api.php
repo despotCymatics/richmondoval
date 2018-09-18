@@ -223,11 +223,10 @@ function RegisterUser() {
 		'Phone' => $formvars['phone'],
 		'Email' => $formvars['email'],
 		'DateOfBirth' => $formvars['birthdate']."T00:00:00Z",
-		'WeightKg' => round($formvars['weight']*0.454, 1),
+		'WeightKg' => round($formvars['weight']*0.454, 0),
 		'Gender' => $formvars['gender'],
 		'Password' => $formvars['password']
 	));
-
 
 	$authCode = authorize();
 

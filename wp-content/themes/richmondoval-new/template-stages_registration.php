@@ -37,6 +37,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 			if(isset($userReg->ModelState->{'user.Password'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Password'}[0]."</li>";
 			if(isset($userReg->ModelState->{'User.Email'}[0])) $message .= "<li>".$userReg->ModelState->{'User.Email'}[0]."</li>";
 			if(isset($userReg->ModelState->{'user.Phone'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Phone'}[0]."</li>";
+			if(isset($userReg->ModelState->{'user.Weight'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Weight'}[0]."</li>";
 			$message .= '</ul>';
 		    //var_dump($userReg);
 			//json_encode($userReg);
