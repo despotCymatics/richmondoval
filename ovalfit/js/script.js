@@ -297,10 +297,23 @@ $(window).on("load",function() {
 
 
 
+    // Set menu
+    $('.menuToggler').click(function (e){
+    	e.preventDefault();
+        $('body').toggleClass('menuOpen');
+        $(this).toggleClass('on');
+    });
+    $('.mainMenu .close').click(function (e) {
+        e.preventDefault();
+        $('body').toggleClass('menuOpen');
+        $('.menuToggler').toggleClass('on');
+    });
 
+    $('.mainMenu ul ul').hide().parent().prepend('<span class="subToggler"></span>');
 
-
-
+    $('.subToggler').click(function (){
+        $(this).toggleClass('on').next().next().slideToggle(300);
+    });
 
 
 

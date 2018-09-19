@@ -3,8 +3,11 @@
 
 <head>
     <title>Oval Fit</title>
+    <link rel="shortcut icon" type="image/png" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
     <link rel="stylesheet" href="https://use.typekit.net/arc0dlo.css">
     <link rel="stylesheet" href="https://use.typekit.net/svd3qkc.css">
+
+    <link rel="stylesheet" id="richmondoval-bootstrap-css" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/css/bootstrap.css?ver=4.9.8" type="text/css" media="screen, projection">
     <link href="../css/shared.css" rel="stylesheet">
     <link href="../css/ride.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
@@ -51,7 +54,7 @@
                                 RESERVE A BIKE
                             </a>
 
-                            <!--<a href="#" class="ov-fit-hamburger-nav"></a>-->
+                            <a href="#" class="ov-fit-hamburger-nav"></a>
                         </div>
                     </div>
                 </div>
@@ -361,21 +364,90 @@
 
         </div>
     </div>
+
+
+    <footer>
+        <div class="footerTop">
+            <div class="within">
+                <div class="row">
+                    <div class="footerMenu col-md-7">
+                        <div class="navHolder">
+                            <ul id="navSec" class=""><h3 class="label">OVAL SERVICES</h3><li id="menu-item-44781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44781"><a href="http://richmondoval.ca/membership-admissions/become-a-member/membership-admission-rates/">Membership &amp; Admission Rates</a></li>
+                                <li id="menu-item-44782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44782"><a href="http://richmondoval.ca/membership-admissions/become-a-member/">Become a Member</a></li>
+                                <li id="menu-item-44784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44784"><a href="http://richmondoval.ca/fitness-wellness/">Fitness &amp; Wellness</a></li>
+                                <li id="menu-item-44785" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44785"><a href="http://richmondoval.ca/community-sport/">Community Sports</a></li>
+                                <li id="menu-item-44786" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44786"><a href="http://richmondoval.ca/therox/">Olympic Museum</a></li>
+                                <li id="menu-item-44787" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44787"><a href="http://richmondoval.ca/on-site-services/">On Site Services</a></li>
+                            </ul>                    </div>
+                        <div class="navHolder">
+                            <ul id="navSec" class=""><h3 class="label">The Facility</h3><li id="menu-item-2106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2106"><a href="http://richmondoval.ca/facility/fitness-centre/">Fitness Centre</a></li>
+                                <li id="menu-item-2107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2107"><a href="http://richmondoval.ca/facility/ice-courts-track/">Ice, Courts, Track</a></li>
+                                <li id="menu-item-43546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43546"><a href="http://richmondoval.ca/facility/climbing/">Climbing Wall</a></li>
+                                <li id="menu-item-2109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2109"><a href="http://richmondoval.ca/facility/fitness-studios/">Fitness Studios</a></li>
+                                <li id="menu-item-2110" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2110"><a href="http://richmondoval.ca/facility/riverport-community-paddling-centre/">Riverport Community Paddling Centre</a></li>
+                                <li id="menu-item-2111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2111"><a href="http://richmondoval.ca/facility/ocafe/">O|Cafe</a></li>
+                                <li id="menu-item-42657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42657"><a href="http://richmondoval.ca/drop-in/child-minding/">Child Minding</a></li>
+                                <li id="menu-item-38031" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38031"><a href="http://richmondoval.ca/facility/rox-shop/">ROX SHOP</a></li>
+                                <li id="menu-item-40523" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40523"><a href="http://richmondoval.ca/location-2/driving-instructions/">Driving Instructions</a></li>
+                                <li id="menu-item-40524" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40524"><a href="http://richmondoval.ca/facility/hours-location/">Hours &amp; Location</a></li>
+                            </ul>                    </div>
+                        <div class="navHolder">
+                            <ul id="navSec" class=""><h3 class="label">The Corporation</h3><li id="menu-item-45254" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45254"><a href="http://richmondoval.ca/about-us/">About Us</a></li>
+                                <li id="menu-item-2101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2101"><a href="http://richmondoval.ca/board-of-directors/">Board of Directors</a></li>
+                                <li id="menu-item-4631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4631"><a href="http://richmondoval.ca/annual-report/">Annual Reports</a></li>
+                                <li id="menu-item-40528" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40528"><a href="http://richmondoval.ca/financial-information/">Financial Information</a></li>
+                                <li id="menu-item-5831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5831"><a href="http://richmondoval.ca/games-operating-trust/">Games Operating Trust</a></li>
+                            </ul>                    </div>
+                        <div class="navHolder">
+                            <ul id="navSec" class=""><h3 class="label">CONTACT US</h3><li id="menu-item-44768" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44768"><a href="/contact/">General Inquiries</a></li>
+                                <li id="menu-item-44769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44769"><a href="http://richmondoval.ca/staff-directory2/">Staff Directory by First Name</a></li>
+                                <li id="menu-item-44770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44770"><a href="http://richmondoval.ca/staff-directory3/">Staff Directory by Department</a></li>
+                                <li id="menu-item-44771" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44771"><a href="http://careers.richmondoval.ca">Careers</a></li>
+                                <li id="menu-item-44772" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44772"><a href="http://richmondoval.ca/volunteers/">Volunteers</a></li>
+                            </ul>                    </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="footerSponsors col-md-5">
+                        <a title="Facebook" href="https://www.facebook.com/richmondoval" class="soc" target="_blank">
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+                        <a title="Twitter" href="https://twitter.com/RichmondOval" class="soc" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a title="Instagram" href="https://www.instagram.com/richmondoval/" class="soc" target="_blank">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a title="Blog" href="http://blog.richmondoval.ca/" class="soc" target="_blank">
+                            <i class="fa fa-rss-square" aria-hidden="true"></i>
+                        </a>
+                        <h3 class="label">Proud Partners of</h3>			<div class="textwidget"><a href="#" target="_blank">
+                                <img style="width:175px; height:auto;" src="/wp-content/themes/richmondoval-new/images/basic/ro-logo-legacy.png"></a>
+                            <a href="http://www.telus.com/en/bc/index.jsp" target="_blank">
+                                <img style="width:175px; height:auto;" src="/wp-content/themes/richmondoval-new/images/basic/telus-logo.png"></a>
+                            <a href="http://www.scotiabank.com/ca/en/" target="_blank">
+                                <img src="/wp-content/uploads/2016/02/scotiabank.png">
+                            </a>
+                            <a href="http://www.stuartolson.com/" target="_blank">
+                                <img src="/wp-content/uploads/2016/02/stuartolson.png">
+                            </a>
+                            <a href="http://lehighhansoncanada.com/" target="_blank">
+                                <img src="/wp-content/themes/richmondoval-new/images/basic/lh-logo.png">
+                            </a>
+                        </div>
+                    </div>
+                    <!--div class="footerSponsors">
+						<img src="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/sponsors.jpg">
+					</div-->
+                </div>
+            </div>
+        </div>
+        <div class="footerBottom ">
+            <div class="within">
+                <div class="copyrightHolder">
+                    <p class="copyright">Copyright 2018 Richmond Olympic Oval</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-
-<script>
-
-// $(".A_Demo").PicCarousel(
-//     "init",
-//     {
-//         "width":600,       
-//         "height":300,       
-//         "posterWidth":100,  
-//         "posterHeight":300,
-//         "scale":0.9,        
-//     }
-// );
-
-</script>
-
 </html>

@@ -57,7 +57,7 @@
         .ov-fit-banner{
             min-height: 640px;
             height: 100vh;
-            background-image: url(http://richmondoval.ca/wp-content/uploads/2018/07/ovalFitBanner.png);
+            background-image: url(../img/ovalFitBanner.jpg);
             background-position: right;
             background-size: cover;
 
@@ -275,7 +275,7 @@
         }
 
         .ov-fit-training-ground-text{
-            max-width: 450px;
+            max-width: 500px;
             padding: 120px;
             align-self: center;
             display: flex;
