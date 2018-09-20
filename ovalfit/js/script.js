@@ -122,23 +122,33 @@ $(window).on("load",function() {
 
 	//program offering btns
 	$('.ov-program-btn').hover(function(e) {
-		var ovName, ovLearnLink;
-
 		e.preventDefault();
+		var ovName, ovLearnLink, ovLearnTxt, ovDescriptText, ovLogo, ovSoon;
 
 		ovName = $(this).attr('data-name');
 		ovLearnLink = $(this).attr('data-learn-link');
 		ovLearnTxt = $(this).attr('data-learn-txt');
 		ovDescriptText = $(this).attr('data-description');
 		ovLogo = $(this).attr('data-logo');
+		ovSoon = $(this).attr('data-coming-soon');
 
 		$('.ov-program-btn').removeClass('active');
 		$(this).addClass('active');
+
+		if(ovLearnLink === "") {
+			$('.ov-program-offerings .ov-fit-btn-lg').hide(0);
+            $('.ov-program-offerings span').show(0);
+        }
+		else {
+			$('.ov-program-offerings .ov-fit-btn-lg').show(0);
+            $('.ov-program-offerings span').hide(0);
+		}
 
 		$('.ov-program-offerings .ov-fit-btn-lg').attr('href', ovLearnLink);
 		$('.ov-program-offerings .ov-fit-btn-lg').text(ovLearnTxt);
 		$('.ov-program-offerings .ov-ride-logo').attr('src', ovLogo);
 		$('.ov-program-offerings p').text(ovDescriptText);
+		$('.ov-program-offerings span').text(ovSoon);
 	})
 
 		var displayMobile = $('.ov-ride-display-mobile');
@@ -309,7 +319,7 @@ $(window).on("load",function() {
         $('.menuToggler').toggleClass('on');
     });
 
-    $('.mainMenu ul ul').hide().parent().prepend('<span class="subToggler"></span>');
+    //$('.mainMenu ul ul').hide().parent().prepend('<span class="subToggler"></span>');
 
     $('.subToggler').click(function (){
         $(this).toggleClass('on').next().next().slideToggle(300);

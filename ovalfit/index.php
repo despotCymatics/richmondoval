@@ -265,14 +265,14 @@
 
 			<div class="ov-discover-champion ov-align-center">
 				<h3>WE DON'T MEAN TO BOAST, BUT WE'RE PRETTY
-					PROUD OF OUR OLYMPIC LEGACY FACILITY.
+					PROUD OF OUR OLYMPIC LEGACY.
 				</h3>
 			</div>
 
 			<div class="ov-discover-champion-interactive" >
 				<div class="ov-discover-champion-interactive-inner ov-legacy-section1">
 					<div class="ov-discover-numbers">
-						<a class="ov-discover-number-btn1 ov-discover-numbers-active">12k</a>
+						<a class="ov-discover-number-btn1 ov-discover-numbers-active">26k</a>
 						<a class="ov-discover-number-btn2">5</a>
 						<a class="ov-discover-number-btn3">56</a>
 					</div>
@@ -280,19 +280,19 @@
 					<img alt="" title="legacyBanner" src="//richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png" srcset="http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png 1192w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-300x104.png 300w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-768x267.png 768w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-1024x357.png 1024w" sizes="(max-width: 1192px) 100vw, 1192px">
 
 					<div class="ov-discover-champion-info">
-						<h3>12,000 SQfT FULLY EQUIPPED FITNESS CENTRE</h3>
+						<h3>26,000 SQfT FULLY EQUIPPED FITNESS CENTRE</h3>
 						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
 
 				<div class="ov-discover-champion-interactive-inner ov-hide ov-legacy-section2">
 					<div class="ov-discover-numbers">
-						<a href="#" class="ov-discover-number-btn1">12k</a>
+						<a href="#" class="ov-discover-number-btn1">26k</a>
 						<a href="#" class="ov-discover-number-btn2 ov-discover-numbers-active">5</a>
 						<a href="#" class="ov-discover-number-btn3">56</a>
 					</div>
 
-					<img alt="" title="legacyBanner" src="http://richmondoval.ca/wp-content/uploads/2018/08/legacyBanner3.png">
+					<img alt="" title="legacyBanner" src="./img/5_dedicated_training_studio_desktop.jpg">
 
 					<div class="ov-discover-champion-info">
 						<h3>5 DEDICATED TRAINING STUDIOS</h3>
@@ -302,7 +302,7 @@
 
 				<div class="ov-discover-champion-interactive-inner ov-hide ov-legacy-section3">
 					<div class="ov-discover-numbers">
-						<a href="#" class="ov-discover-number-btn1">12k</a>
+						<a href="#" class="ov-discover-number-btn1">26k</a>
 						<a href="#" class="ov-discover-number-btn2">5</a>
 						<a href="#" class="ov-discover-number-btn3 ov-discover-numbers-active">56</a>
 					</div>
@@ -310,7 +310,7 @@
 					<img alt="" title="legacyBanner" src="http://richmondoval.ca/wp-content/uploads/2018/08/legacyBanner2.png">
 
 					<div class="ov-discover-champion-info">
-						<h3>56 DROP IN FITNESS CLASSES AVAILABLE WEEKLY</h3>
+						<h3>56+ drop in OVALfit classes included in the membership</h3>
 						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
@@ -321,9 +321,7 @@
 				<div class="ov-fit-training-ground-section-header ov-align-center">
 					<div>
 						<h2>YOUR TRAINING GROUND</h2>
-						<p>The Richmond Oval is your best long term training solution. OVALfit team, our fitness centre and dedicated training studios will inspire you to reach your personal podium.
-							Join a group of like minded people to achieve your fitness goals with the support of each other and our team.
-
+						<p>The Richmond Oval is your long term training solution. The OVALfit team, our fitness centre and specialized training studios will inspire you to reach your personal podium. Join a group of like minded people to achieve your fitness goals with the support of each other and our team.
 						</p>
 					</div>
 
@@ -342,12 +340,9 @@
 						<div class="ov-fit-training-ground-text ov-fit-training-ground-ride-studio">
 							<div>
 								<h2>RIDE STUDIO</h2>
-								<p>Get captivated in our newly renovated studio designed to
-									deliver a captivating, boundary-pushing performance based
-									indoor cycling experience.
-								</p>
+								<p>Immerse yourself in our newly renovated studio designed to deliver a boundary-pushing performance based indoor cycling experience.</p>
 								<div class='ov-ride-btn-container'>
-									<a href="/oval-fit-login/" class="ov-fit-btn-nochange">BOOK YOUR BIKE</a>
+									<a href="/oval-fit-login/" class="ov-fit-btn-nochange">LEARN MORE</a>
 								</div>
 							</div>
 							<div class="ov-sectioner-container">
@@ -359,13 +354,13 @@
 
 				<div class="ov-fit-training-ground-section" id="fitness-center">
 					<div>
-						<img alt="" title="fitnessCenter" src="./img/Mask-Group.jpg">
+						<img alt="" title="fitnessCenter" src="./img/new_fitness_center_image_desktop.jpg">
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text">
 							<div>
 								<h2>FITNESS CENTER</h2>
-								<p>Our 20,000 square foot fitness mezzanine is home to individuals aspiring to push the limits of their fitness. The fitness mezzanine was strategically planned in training pods; functional training, strength training, power and Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
+								<p>Our 12,000 SQFT fitness mezzanine is where individuals aspiring to push their limits train. The fitness mezzanine is strategically laid out in pods; functional training, strength training, Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
 								</p>
 							</div>
 							<div class="ov-sectioner-container">
@@ -377,13 +372,13 @@
 
 				<div class="ov-fit-training-ground-section" id="oval-team">
 					<div class="ov-no-line-height">
-						<img alt="" title="trainingGround" src="./img/Mask-Group-1.jpg">
+						<img alt="" title="trainingGround" src="./img/Ovalfit_team_desktop.jpg">
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text">
 							<div>
 								<h2>OVALFIT TEAM</h2>
-								<p>Our OVALfit team consist of trainers, coaches and fitness attendants with a common goal - empowering our members to reach their personal podium. Our team is highly educated on the effective training methods and passionate about providing our guests with the knowledge to succeed.
+								<p>The OVALfit team consist of trainers, coaches and fitness attendants with a common goal - empowering our members to reach their personal podium. Our team is highly educated on effective training methods and passionate about providing our guests with the knowledge to succeed.
 								</p>
 							</div>
 							<div class="ov-sectioner-container">
@@ -400,18 +395,19 @@
 						<h2>PROGRAM OFFERINGS</h2>
 						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"/>
 						<p>Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience.</p>
+                        <span class="ov-coming-soon"></span>
 						<a href="/oval-fit-login/" class="ov-fit-btn-lg">LEARN MORE</a>
 					</div>
 					<div>
 						<a class="ov-program-btn ov-program-ride-btn" data-name="ride" data-learn-link="/oval-fit-login/" data-learn-txt="LEARN MORE" data-description="Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-ride.jpg" class="ov-team-image-program0"></a>
 
-						<a class="ov-program-btn ov-program-lift-btn" data-name="lift" data-learn-link="#" data-learn-txt="COMING SOON" data-description="LIFT improves athletic movement and performance with heart rate monitored training." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/liftLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-lift.jpg" class="ov-team-image-program2 ov-team-image-program"></a>
+						<a class="ov-program-btn ov-program-lift-btn" data-name="lift" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="Find your inner athlete. ATHLETIC delivers heart rate based training concentrating on movement and performance" data-logo="./img/2018_Athletic_Logo_white.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-lift.jpg" class="ov-team-image-program2 ov-team-image-program"></a>
 
 					</div>
 					<div>
-						<a class="ov-program-btn ov-program-flow-btn" data-name="flow" data-learn-link="#" data-learn-txt="COMING SOON" data-description="Take a break with FLOW - our recovery and regeneration classes that rejuvenate your body and soul." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/flowLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-yoga.jpg" class=" ov-team-image-program1 ov-team-image-program"></a>
+						<a class="ov-program-btn ov-program-flow-btn" data-name="flow" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="Take a break with FLOW - our recovery and regeneration classes that rejuvenate your body and soul." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/flowLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-yoga.jpg" class=" ov-team-image-program1 ov-team-image-program"></a>
 
-						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="#" data-learn-txt="COMING SOON" data-description=" Who says it can't be all fun and games? Get your heart pumping and body moving through fun, movement-based classes. " data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/moreLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-cardio.jpg" class="ov-team-image-program3 ov-team-image-program"></a>
+						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description=" Who says it can't be all fun and games? Get your heart pumping and body moving through fun, movement-based classes. " data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/moreLogo.png"><img src="./img/New_move_image.jpg"></a>
 
 					</div>
 				</div>
@@ -434,25 +430,28 @@
 						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/flowLogo.png"/>
 						<p>Take a break with FLOW - our recovery and regeneration classes that rejuvenate your body and soul. </p>
 						<div class="ov-btn-container">
-							<a href="#" class="ov-fit-btn">COMING SOON</a>
+                            <span class="ov-coming-soon">LAUNCHING SOON</span>
+							<!--<a href="#" class="ov-fit-btn">COMING SOON</a>-->
 						</div>
 						<!--<a href="#" class="ov-fit-book-btn ov-program-offereing-book">> BOOK YOUR CLASS</a>-->
 					</div>
 					<div class="ov-program-offerings-mobile-item">
 						<img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-lift.jpg">
-						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/liftLogo.png"/>
-						<p>LIFT improves athletic movement and performance with heart rate monitored training.</p>
+						<img class="ov-ride-logo" src="./img/2018_Athletic_Logo_white.png"/>
+						<p>Find your inner athlete. ATHLETIC delivers heart rate based training concentrating on movement and performance</p>
 						<div class="ov-btn-container">
-                            <a href="#" class="ov-fit-btn">COMING SOON</a>
+                            <span class="ov-coming-soon">LAUNCHING SOON</span>
+                           <!-- <a href="#" class="ov-fit-btn">COMING SOON</a>-->
 						</div>
 						<!--<a href="#" class="ov-fit-book-btn ov-program-offereing-book">> BOOK YOUR CLASS</a>-->
 					</div>
 					<div class="ov-program-offerings-mobile-item">
-						<img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-cardio.jpg">
+						<img src="./img/New_move_image.jpg">
 						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/moreLogo.png"/>
 						<p>Who says it can't be all fun and games? Get your heart pumping and body moving through fun, movement-based classes. </p>
 						<div class="ov-btn-container">
-                            <a href="#" class="ov-fit-btn">COMING SOON</a>
+                            <span class="ov-coming-soon">LAUNCHING SOON</span>
+                            <!--<a href="#" class="ov-fit-btn">COMING SOON</a>-->
 						</div>
 						<!--<a href="#" class="ov-fit-book-btn ov-program-offereing-book">> BOOK YOUR CLASS</a>-->
 					</div>
@@ -470,7 +469,7 @@
 				</div>
 				<div class="ov-fit-results-members">
 					<img src="http://richmondoval.ca/wp-content/uploads/2018/08/team1.png" class="ov-team-image ov-team-image-1"/>
-					<img src="http://richmondoval.ca/wp-content/uploads/2018/08/team2.png" class="ov-team-image ov-team-image-2"/>
+					<img src="./img/New_trainer_Pat.jpg" class="ov-team-image ov-team-image-2"/>
 					<img src="http://richmondoval.ca/wp-content/uploads/2018/08/team3.png" class="ov-team-image ov-team-image-3"/>
 					<img src="http://richmondoval.ca/wp-content/uploads/2018/08/team4.png" class="ov-team-image ov-team-image-4"/>
 				</div>

@@ -1,6 +1,14 @@
 /*shared*/
+body, html {
+    font-size: 14px;
+}
+
 a{
     text-decoration: none;
+}
+a:hover, a:focus {
+    color: inherit;
+    text-decoration: underline;
 }
 
 h1, h2, h3, h4, p{
@@ -133,6 +141,11 @@ li {
     margin: 0 auto;
     padding: 0 15px;
     clear: both;
+}
+
+.ov-coming-soon {
+    font-weight: 600;
+    color: #FF9E18;
 }
 
 
@@ -294,7 +307,7 @@ body.menuOpen {
     display: block;
     text-align: right;
     position: absolute;
-    right: 1px;
+    right: 15px;
     top: 12px;
     z-index: 100;
 }
@@ -486,6 +499,51 @@ body.menuOpen {
     opacity: 1;
     transition: none;
 }
+
+
+span.subToggler {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 34px;
+    text-align: center;
+    font: 32px/1 Prometo;
+    color: #fff;
+    padding: 10px 0;
+    z-index: 1;
+}
+.dl-submenu span.subToggler {
+    font-size: 24px;
+    padding: 8px 0;
+}
+
+span.subToggler:before {
+    content: '+';
+    display: inline-block;
+}
+
+span.subToggler.on:before {
+    content:"-";
+}
+span.subToggler:hover {
+    color: #008cd2;
+}
+
+.mainMenu ul li > span.subToggler {
+    z-index: 1;
+}
+
+.mainMenu ul ul li > span.subToggler {
+    z-index: 2;
+}
+.mainMenu ul ul ul li > span.subToggler {
+    z-index: 3;
+}
+
+
+
 @media (max-width: 1024px) {
     .mainMenu ul li a {
         font-size: 18px;
@@ -495,7 +553,6 @@ body.menuOpen {
     }
 
 }
-
 
 .logoHolder {
     text-align: center;
