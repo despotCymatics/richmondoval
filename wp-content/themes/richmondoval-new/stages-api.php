@@ -308,17 +308,18 @@ function forgotPassword($username) {
 
 			$subject = "Forgot Password";
 
-			$txt = "It seems that you have forgot you password with Oval Fit.\r\n<br>".
-			       "Your password has been reset, follow the url bellow to set a new one:\r\n<br>\r\n<br>".
-			       "<a href='http://richmondoval.ca/oval-fit-user-registration/?new-password-user=$username'>Oval Fit New Password</a>\r\n<br>".
+			$txt = "Hi there, \r\n<br>\r\n<br>".
+					"You recently submitted a password reset request to the OVALfit team. \r\n<br>".
+			       "To reset your password, just click on the link! \r\n<br>\r\n<br>".
+			       "<a href='http://richmondoval.ca/oval-fit-user-registration/?new-password-user=$username'>Reset your password for $username</a>\r\n<br>".
 			       "\r\n<br>".
 			       "\r\n<br>".
-			       "Regards,\r\n<br>".
-			       "richmondoval.ca\r\n";
+			       "Thank You,\r\n<br>".
+			       "OVALfit Team\r\n";
 
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			$headers .= 'From: Oval Fit <no-reply@richmondoval.ca>' . "\r\n";
+			$headers .= 'From: OVALfit <no-reply@richmondoval.ca>' . "\r\n";
 			$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
 
 			if(wp_mail($to,$subject,$txt,$headers)){

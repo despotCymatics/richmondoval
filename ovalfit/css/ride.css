@@ -254,7 +254,7 @@
         }
 
         .ov-fit-training-ground-text{
-            max-width: 450px;
+
             padding: 40px 100px;
         }
 
@@ -265,7 +265,7 @@
         }
 
         .ov-fit-training-ground-section h2{
-            font-size: 36px;
+            font-size: 100px;
             color: #FF9E18;
             margin: 0 0 20px 0;
         }
@@ -531,7 +531,9 @@
         }
 
 
-
+ #thumbnail-slider .thumb {
+     border-radius: 9px;
+ }
 
 .pulse-button {
   display: block;

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/png" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
     <link rel="stylesheet" href="https://use.typekit.net/arc0dlo.css">
     <link rel="stylesheet" href="https://use.typekit.net/svd3qkc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" id="richmondoval-bootstrap-css" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/css/bootstrap.css?ver=4.9.8" type="text/css" media="screen, projection">
     <link href="../css/shared.css" rel="stylesheet">
@@ -18,10 +19,9 @@
     <link href="../js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
     <script src="../js/thumbnail-slider.js" type="text/javascript"></script>
 
-
      <style>
         @import url("https://use.typekit.net/svd3qkc.css");
-    </style>
+     </style>
 
      <script src="../js/script.js"></script>
      <script>
@@ -34,8 +34,6 @@
     h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
   })(document);
 </script>
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -238,15 +236,14 @@
 
                             </div>
 
-
-
                         </div>
                     </div>
                 </div>
 
                 <div class="ov-fit-banner">
                     <div class="ov-fit-banner-inner">
-                        <h1>RIDE. PUSH.<br/>
+
+                        <h1><img width="100px" src="../img/ride-logo-white.png"><br> RIDE. PUSH.<br/>
                             REPEAT
                         </h1>
                         <p>Strengthen your ride with greater power.</p>
@@ -300,7 +297,7 @@
                                     <h2>THE STUDIO</h2>
                                     <p>The brand new RIDE studio is designed to deliver a captivating indoor cycle experience with your performance data laser projected onto a 24 foot screen. Stay engaged and informed with your ride during and after your workout. Information enables improvement. 
                                     </p>
-                                        <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A RIDE</a>
+                                        <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A BIKE</a>
                                 </div>
                                 <div class="ov-sectioner-container">
                                     <img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-2.png"/>
@@ -419,13 +416,10 @@
                  <div class="ov-results-team">
                     <div class="ov-hide-on-mobile">
                         <div class="ov-results-team-1-info">
-                            <h2>MEET YOUR COACHES</h2>
+                            <h2>YOUR RIDE COACHES</h2>
 
                             <h3 class="ov-coach-name">JODI STOKES</h3>
-                            <p class="ov-coach-description">Our team of highly educated, passionate, and diverse trainers inspire and energize you to
-                                help you transform your fitness goals into reality. We're focused on building a supportive
-                                culture with an overarching goal of improving your health, wellness, mobility, and strength.
-                                You may be surprised at the new adventures you'll be able to experience as a result!
+                            <p class="ov-coach-description">Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!
                             </p>
                             <a href="#" class="ov-fit-book-btn ov-show-on-mobile ov-program-offereing-book">> READ MORE</a>
                         </div>
@@ -434,7 +428,7 @@
 
 
                     <div class="ov-show-on-mobile">
-                        <h2>MEET YOUR COACHES</h2>
+                        <h2>OUR RIDE COACHES</h2>
                     </div>
 
                     <div id="thumbnail-slider">
@@ -442,22 +436,22 @@
                             <ul>
                                 <li>
                                     <a class="thumb ov-coach-slider ov-results-team-0"
-                                       href="../img/jodiStokes.jpg" data-name="JODI STOKES" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to
+                                       href="../img/Jodi.jpg" data-name="Jodi" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to
                                 help you transform your fitness goals into reality. We're focused on building a supportive
                                 culture with an overarching goal of improving your health, wellness, mobility, and strength.
                                 You may be surprised at the new adventures you’ll be able to experience as a result!"></a>
                                 </li>
                                 <li>
-                                    <a class="thumb ov-coach-slider ov-results-team-1" href="http://richmondoval.ca/wp-content/uploads/2018/08/jodiStokes.png" data-name="PERSON 5" data-description="Person 5"></a>
+                                    <a class="thumb ov-coach-slider ov-results-team-1" href="../img/Ashley.jpg" data-name="Ashley" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!"></a>
                                 </li>
                                 <li>
-                                    <a class="thumb ov-coach-slider ov-results-team-2" href="http://richmondoval.ca/wp-content/uploads/2018/08/jodiStokes.png" data-name="PERSON 4" data-description="Person 4"></a>
+                                    <a class="thumb ov-coach-slider ov-results-team-2" href="../img/Caitlin.jpg" data-name="Caitlin" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!"></a>
                                 </li>
                                 <li>
-                                    <a class="thumb ov-coach-slider ov-results-team-3" href="http://richmondoval.ca/wp-content/uploads/2018/08/jodiStokes.png" data-name="PERSON 3" data-description="Person 3"></a>
+                                    <a class="thumb ov-coach-slider ov-results-team-3" href="../img/Melina.jpg" data-name="Melina" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!"></a>
                                 </li>
                                 <li>
-                                    <a class="thumb ov-coach-slider ov-results-team-4" href="http://richmondoval.ca/wp-content/uploads/2018/08/jodiStokes.png" data-name="PERSON 2" data-description="Person 2"></a>
+                                    <a class="thumb ov-coach-slider ov-results-team-4" href="../img/Sheldon.jpg" data-name="Sheldon" data-description="Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!"></a>
                                 </li>
                             </ul>
                         </div>
@@ -465,10 +459,7 @@
 
                     <div class="ov-show-on-mobile ov-coaches-mobile">
                         <h3 class="ov-coach-name">JODI STOKES</h3>
-                        <p class="ov-coach-description">Our team of highly educated, passionate, and diverse trainers inspire and energize you to
-                            help you transform your fitness goals into reality. We're focused on building a supportive
-                            culture with an overarching goal of improving your health, wellness, mobility, and strength.
-                            You may be surprised at the new adventures you'll be able to experience as a result!
+                        <p class="ov-coach-description">Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!
                         </p>
                     </div>
 
@@ -536,7 +527,7 @@
                         <h2>WANT RESULTS?<br>
                         GET RESULTS
                         </h2>
-                        <p>Getting a membership is easy! Schedule a tour with our member care team. It's time to see your fitness goals come to life.</p>
+                        <p>Experience Stages and OVALfit difference. Schedule a tour with our member care team. It’s time to see your fitness goals come to life</p>
                         <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
                     </div>
                 </div>
