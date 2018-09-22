@@ -19,6 +19,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             <?php
             if ( ! isset( $authCode->Message ) ) {
 
+
+
                 $userEmail = $_SESSION['logged'];
                 $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
@@ -43,6 +45,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 //Bikes
                 //$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 
+
+
                 //Sessions
                 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
                 if(count($sessions) > 1) {
@@ -55,9 +59,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
 
                 //User Bookings
-                $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' ); ?>
+                $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
                 ?>
+
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="title">
