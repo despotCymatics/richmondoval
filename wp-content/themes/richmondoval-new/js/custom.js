@@ -177,7 +177,7 @@ $( document ).ready(function() {
          //disableFadeOut: false
          });
     };
-    console.log(document.documentElement.clientWidth);
+    //console.log(document.documentElement.clientWidth);
 
 
 });

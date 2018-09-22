@@ -357,6 +357,23 @@ function setPassword($username, $password) {
 
 		}else {
 
+			$to = $username;
+
+			$subject = "Password Reset";
+
+			$txt = "The password for your OVALfit account - ".$username."  - has been successfully changed. ".
+			       "\r\n<br>".
+			       "\r\n<br>".
+			       "Thank You,\r\n<br>".
+			       "OVALfit Team\r\n";
+
+			$headers = "MIME-Version: 1.0" . "\r\n";
+			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+			$headers .= 'From: OVALfit <no-reply@richmondoval.ca>' . "\r\n";
+			$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
+
+			wp_mail($to,$subject,$txt,$headers);
+
 			header('Location: /oval-fit-login/');
 
 		}

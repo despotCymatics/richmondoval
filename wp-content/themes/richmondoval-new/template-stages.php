@@ -31,10 +31,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     exit;
                 }
 
-                //Bikes
-                $bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
-
-                //Sessions
 	            $dateFrom    = date( 'Y-m-d' );
 	            $dateTo   = strtotime( '+1 week' );
 	            $dateTo   = date( 'Y-m-d', $dateTo );
@@ -44,6 +40,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $dateTo = $_POST['dateTo'];
                 }
 
+                //Bikes
+                //$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
+
+                //Sessions
                 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
                 if(count($sessions) > 1) {
 	                usort($sessions,function($a, $b){
@@ -51,9 +51,11 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                });
                 }
 
-
                 //USER
                 $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
+
+                //User Bookings
+                $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' ); ?>
 
                 ?>
                 <div class="row">
@@ -176,9 +178,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Schedules</h4>
                             <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Reservations</h4>
                         </div>
-                        <?php
-                        //User Bookings
-                        $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' ); ?>
+
                         <!-- Bookings -->
                         <div id="bookings" class="tabcontent">
                             <?php
@@ -257,22 +257,22 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <?php
                             if ( count( $sessions ) > 0 ) {
                             foreach ( $sessions as $session ) {
+	                            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
+	                            $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
                                 //var_dump($session);
-                                $instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $session->InstructorId );
                                 ?>
-                            <script>console.log("<?php echo $authCode;?>")</script>
-
-                                <div class="showMoreToggler">
+                                <div class="showMoreToggler"
+                                     data-user-id="<?=$userId; ?>"
+                                     data-session-id="<?=$session->Id; ?>"
+                                     data-session-name="<?=$session->Name; ?>"
+                                     data-session-date="<?=$sessionDate; ?>"
+                                     data-session-time="<?=$sessionTime; ?>"
+                                     data-session-instructor-id="<?=$session->InstructorId; ?>"
+                                >
                                     <div class="row">
                                         <div class="col-sm-8 col-xs-6">
                                             <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
                                             <h4><?= $session->Name ?></h4>
-
-                                            <?php
-                                                $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
-                                                $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
-
-                                            ?>
                                             <span class="date"><?= $sessionDate; ?></span><br>
                                             <span><?=$sessionTime; ?></span>
 
@@ -284,77 +284,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     </div>
                                 </div>
                                 <div class="moreText">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                             <p>Instructor: <br>
-                                                 <strong><?= $instructor->FirstName . ' ' . $instructor->LastName; ?></strong>
-                                             </p>
-
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet velit non dolor finibus euismod aliquam eget metus. Nullam facilisis nisi eget lacus consequat, venenatis lacinia tellus ullamcorper. Mauris vitae enim urna. Curabitur gravida, sem in cursus luctus, nulla sapien blandit nunc, sed efficitur diam mi id dui.
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/fans.png">
-                                            <div class="first-row">
-                                                <div class="bike coach">
-                                                    <div class="bike-num" style="background-color: "></div>
-                                                    <span>Coach</span>
-                                                </div>
-                                                <div class="projector">
-                                                    <span>Screen</span>
-                                                </div>
-
-                                            </div>
-                                            <div class="row seven-cols">
-                                                <?php
-                                                //$sessionBikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bikes' );
-                                                $sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $session->Id . '/bookings' );
-                                                $bikesBooked = array();
-                                                foreach ( $sessionBookings as $sessionBooking ) {
-                                                    array_push( $bikesBooked, $sessionBooking->Bike->Id );
-
-                                                }
-                                                //if ( count( $sessionBikes ) > 0 ) {
-                                                //foreach ( $sessionBikes as $bike ) {
-                                                foreach ( $bikes as $bike ) {
-                                                    $disabledBike = '';
-                                                    if ( in_array( $bike->Id, $bikesBooked ) ) {
-                                                        $disabledBike = 'disabled';
-                                                    }
-                                                    ?>
-
-                                                    <div class="col-sm-1">
-                                                        <div class="bike <?= $disabledBike; ?>">
-                                                            <?php
-                                                            $isPower = 'yes';
-                                                            if ( ! $bike->IsPower ) {
-                                                                $isPower = 'no';
-                                                            } ?>
-                                                            <!-- <span class="is-power <?/*= $isPower */ ?>"></span>-->
-                                                            <div class="bike-num" onclick="bookBike(
-                                                                '<?= $authCode; ?>',
-                                                                <?= $userId; ?>,
-                                                                <?= $session->Id; ?>,
-                                                                <?= $bike->Id; ?>,
-                                                                <?= $bike->Number; ?>,
-                                                                '<?= $session->Name; ?>',
-                                                                '<?= $sessionDate; ?>',
-                                                                '<?= $sessionTime; ?>')">
-                                                                <?= $bike->Number; ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <?php
-                                                }
-                                                //}
-                                                ?>
-                                            </div>
-                                            <br>
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/fans.png">
-                                        </div>
-                                    </div>
-
+                                    <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
+                                    <p style="text-align: center">Please wait</p>
                                 </div>
+
                                 <?php
                             }
 
@@ -380,10 +313,44 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
     </div>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#sessions .showMoreToggler").click(function(){
+                var self = $(this);
 
+
+                if(!self.hasClass('on') && !self.hasClass('loaded')) {
+
+                    $(".showMoreToggler").addClass('disabled');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/wp-content/themes/richmondoval-new/stages-single-session.php',
+                        data: {
+                            userId: self.attr('data-user-id'),
+                            sessionId: self.attr('data-session-id'),
+                            sessionName: self.attr('data-session-name'),
+                            sessionDate: self.attr('data-session-date'),
+                            sessionTime: self.attr('data-session-time'),
+                            instructorId: self.attr('data-session-instructor-id'),
+                        },
+                        success: function(data) {
+                            $(".showMoreToggler").removeClass('disabled');
+                            self.next('.moreText').html(data);
+                            self.next('.moreText').addClass('loaded');
+                            self.addClass('loaded');
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
 
 	<?php
-} //login check
+}
+
+//login check
 else {
 	header( 'Location: http://richmondoval.ca/oval-fit-login/?login=false' );
 	exit;

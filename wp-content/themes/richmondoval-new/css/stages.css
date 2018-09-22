@@ -309,6 +309,10 @@ select option {
     background-color: #fff;
     transition: all 400ms ease;
     border-bottom: 1px solid #d8d8d8;
+}
+
+.page-template-template-stages .ovalfit-body .showMoreToggler.disabled {
+    pointer-events: none;
 
 }
 
@@ -387,9 +391,18 @@ select option {
     margin: 0;
     border-bottom: 1px solid #d8d8d8;
 }
+.page-template-template-stages .moreText img.loader-img {
+    width: 200px !important;
+    margin: 0 auto;
+    display: block;
+}
+
+.page-template-template-stages .moreText.loaded img.loader-img {
+    display: none;
+}
 
 
-/* Bikes */
+    /* Bikes */
 
 .page-template-template-stages .ovalfit-body .bike {
     text-align: center;
@@ -400,6 +413,7 @@ select option {
 .page-template-template-stages .bike.disabled {
     opacity: 0.5;
     cursor: not-allowed !important;
+    pointer-events: none;
 }
 
 .page-template-template-stages .ovalfit-body .bike.disabled .bike-num {
@@ -544,6 +558,7 @@ select option {
     padding: 15px 30px;
     margin-top: 30px;
     background: #FF9E18;
+    font-weight: 500;
     font-family: NeoSansStdMedium;
 }
 

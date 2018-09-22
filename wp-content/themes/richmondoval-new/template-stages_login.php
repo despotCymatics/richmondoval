@@ -68,8 +68,10 @@ if(isset($_SESSION['logged'])) {
 
                                 <?php if(isset($_GET['password-reset']) && $_GET['password-reset'] == true)  { ?>
 
-                                    <p style="text-align: center; margin-bottom: 0;">Your password has been reset. Email with the reset link has been sent to your email address.<br>
-                                        Please check your email and spam/junk folder.</p>
+                                    <p style="text-align: center; margin-bottom: 0;">Your password has been reset. <br>
+                                        Email with the reset link has been sent to your email address.<br>
+                                        Please check your email and spam/junk folder.
+                                    </p>
 
                                 <?php } ?>
                                 <fieldset>

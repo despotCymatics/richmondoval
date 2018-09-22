@@ -86,8 +86,6 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                     <div class="col-md-offset-3 col-md-6">
                         <div class="title">
                             <br>
-                            <!--<img width="320px" class="stages-logo"
-								 src="/wp-content/uploads/2018/07/oval-fit-logo-black.png">-->
                             <br>
                             <h3 style="text-align: center; color: #fff">NEW PASSWORD</h3>
                             <p style="text-align: center"><?=$username;?></p>
@@ -100,8 +98,8 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                                 <input type='hidden' name='email' id='email' autocomplete="off" value="<?=$username;?>" placeholder="User Email"/>
 
-                                <input type='password' name='new-password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="New Password"/>
-                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long</p>
+                                <input type='password' name='new-password' id='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required maxlength="50" autocomplete="off" placeholder="New Password"/>
+                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
 
                                 <p style="text-align: center; margin-bottom: 0;">
                                     <button type='submit' class="btn">Submit</button>
@@ -144,7 +142,6 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                         <div class="title">
                             <br>
-                            <br>
                             <h3 style="text-align: center; color: #fff">CREATE YOUR PROFILE</h3>
 
                         </div>
@@ -153,7 +150,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                             <fieldset>
 
-                                <p>Hi, setting up your profile is simple. We’ll need your info for you to see your metrics and track your performance.</p>
+                                <p style="text-align: center;">Hi, setting up your profile is simple. We’ll need your info for you to see your metrics and track your performance.</p>
                                 <input type='hidden' name='submitted-reg' id='submitted' value='1'/>
 
 
@@ -175,7 +172,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                                     <option value="Female">Female</option>
                                 </select>
 
-                                <input type='password' name='password' id='password' pattern=".{8,}" required maxlength="50" autocomplete="off" placeholder="Create a password"/>
+                                <input type='password' name='password' id='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required maxlength="50" autocomplete="off" placeholder="Create a password"/>
                                 <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
 
                                 <p style="text-align: center; margin-bottom: 0;">
