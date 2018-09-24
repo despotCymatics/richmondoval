@@ -271,7 +271,7 @@
 
                      <div class="ov-fit-training-ground-section">
                         <div>
-                            <img alt="" title="trainingGround" src="../img/image.jpg">
+                            <img alt="" title="trainingGround" src="../img/Stage_flight_3_desktop.jpg">
                         </div>
                         <div class="ov-fit-training-ground-text-wrapper">
                             <div class="ov-fit-training-ground-text">
@@ -418,7 +418,7 @@
                         <div class="ov-results-team-1-info">
                             <h2>YOUR RIDE COACHES</h2>
 
-                            <h3 class="ov-coach-name">JODI STOKES</h3>
+                            <h3 class="ov-coach-name">JODI</h3>
                             <p class="ov-coach-description">Our team of highly educated, passionate, and diverse trainers inspire and energize you to help you transform your fitness goals into reality. We're focused on building a supportive culture with an overarching goal of improving your health, wellness, mobility, and strength. You may be surprised at the new adventures you'll be able to experience as a result!
                             </p>
                             <a href="#" class="ov-fit-book-btn ov-show-on-mobile ov-program-offereing-book">> READ MORE</a>
