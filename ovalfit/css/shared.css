@@ -145,7 +145,7 @@ li {
 
 .ov-coming-soon {
     font-weight: 600;
-    color: #FF9E18;
+    color: #008BD1;
 }
 
 
@@ -550,6 +550,10 @@ span.subToggler:hover {
     }
     .mainMenu nav {
         width: 100%;
+    }
+
+    .ov-coming-soon {
+        margin: 50px 0;
     }
 
 }

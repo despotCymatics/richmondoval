@@ -339,7 +339,7 @@
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text ov-fit-training-ground-ride-studio">
 							<div>
-								<h2>RIDE STUDIO</h2>
+								<h2>RIDE <br>STUDIO</h2>
 								<p>Immerse yourself in our newly renovated studio designed to deliver a boundary-pushing performance based indoor cycling experience.</p>
 								<div class='ov-ride-btn-container'>
 									<a href="/oval-fit-login/" class="ov-fit-btn-nochange">LEARN MORE</a>
@@ -402,13 +402,12 @@
 						<a class="ov-program-btn ov-program-ride-btn" data-name="ride" data-learn-link="/oval-fit-login/" data-learn-txt="LEARN MORE" data-description="Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-ride.jpg" class="ov-team-image-program0"></a>
 
 						<a class="ov-program-btn ov-program-lift-btn" data-name="lift" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="Find your inner athlete. ATHLETIC delivers heart rate based training concentrating on movement and performance" data-logo="./img/2018_Athletic_Logo_white.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-lift.jpg" class="ov-team-image-program2 ov-team-image-program"></a>
-
 					</div>
+
 					<div>
-						<a class="ov-program-btn ov-program-flow-btn" data-name="flow" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="Take a break with FLOW - our recovery and regeneration classes that rejuvenate your body and soul." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/flowLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-yoga.jpg" class=" ov-team-image-program1 ov-team-image-program"></a>
+						<a class="ov-program-btn ov-program-flow-btn" data-name="flow" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="Take a break with FLOW - our recovery and regeneration classes that rejuvenate your body and soul." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/flowLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-yoga.jpg" class="ov-team-image-program1 ov-team-image-program"></a>
 
-						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description=" Who says it can't be all fun and games? Get your heart pumping and body moving through fun, movement-based classes. " data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/moreLogo.png"><img src="./img/New_move_image.jpg"></a>
-
+						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description=" Who says it can't be all fun and games? Get your heart pumping and body moving through fun, movement-based classes. " data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/moreLogo.png"><img src="./img/New_move_image.jpg" class="ov-team-image-program1 ov-team-image-program"></a>
 					</div>
 				</div>
 			</div>

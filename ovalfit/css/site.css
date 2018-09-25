@@ -237,7 +237,7 @@ html, body {
     color: #FF9E18;
     display: flex;
     width: 950px;
-    margin: 80px auto 160px auto;
+    margin: 80px auto 260px auto;
     justify-content: space-evenly;
     font-size: 20px;
     font-weight: bold;
@@ -274,7 +274,7 @@ html, body {
 }
 
 .ov-fit-training-ground-text {
-    /*max-width: 500px;*/
+    max-width: 720px;
     padding: 120px;
     align-self: center;
     display: flex;
@@ -331,7 +331,7 @@ html, body {
 
 .ov-program-offerings-mobile-items {
     display: flex;
-    overflow: scroll;
+    overflow-x: auto;
 }
 
 .ov-program-offerings-mobile-item {
@@ -339,6 +339,7 @@ html, body {
     padding: 25px;
     border: solid #2A2A2A 1px;
     margin-right: 34px;
+    margin-bottom: 15px;
 }
 
 .ov-program-offerings-mobile-item img {
@@ -683,6 +684,7 @@ html, body {
         max-width: 100%;
         max-height: 390px;
         object-fit: cover;
+        object-position: top;
     }
 
     .ov-fit-training-ground-wrapper {
@@ -888,7 +890,7 @@ html, body {
     }
 
     .ov-program-offerings-mobile-item {
-        min-width: 164px;
+        /*min-width: 164px;*/
         position: relative;
     }
 
