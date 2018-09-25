@@ -280,7 +280,7 @@
 					<img alt="" title="legacyBanner" src="//richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png" srcset="http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png 1192w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-300x104.png 300w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-768x267.png 768w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-1024x357.png 1024w" sizes="(max-width: 1192px) 100vw, 1192px">
 
 					<div class="ov-discover-champion-info">
-						<h3>26,000 SQfT FULLY EQUIPPED FITNESS CENTRE</h3>
+						<h3>26,000 SQfT FULLY EQUIPPED TRAINING SPACE</h3>
 						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
@@ -342,7 +342,7 @@
 								<h2>RIDE <br>STUDIO</h2>
 								<p>Immerse yourself in our newly renovated studio designed to deliver a boundary-pushing performance based indoor cycling experience.</p>
 								<div class='ov-ride-btn-container'>
-									<a href="/oval-fit-login/" class="ov-fit-btn-nochange">LEARN MORE</a>
+									<a href="/ovalfit/ride/" class="ov-fit-btn-nochange">LEARN MORE</a>
 								</div>
 							</div>
 							<div class="ov-sectioner-container">
@@ -360,7 +360,7 @@
 						<div class="ov-fit-training-ground-text">
 							<div>
 								<h2>FITNESS CENTER</h2>
-								<p>Our 12,000 SQFT fitness mezzanine is where individuals aspiring to push their limits train. The fitness mezzanine is strategically laid out in pods; functional training, strength training, Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
+								<p>Our 26,000 SQFT fitness mezzanine is where individuals aspiring to push their limits train. The fitness mezzanine is strategically laid out in pods; functional training, strength training, Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
 								</p>
 							</div>
 							<div class="ov-sectioner-container">
@@ -396,7 +396,7 @@
 						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"/>
 						<p>Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience.</p>
                         <span class="ov-coming-soon"></span>
-						<a href="/oval-fit-login/" class="ov-fit-btn-lg">LEARN MORE</a>
+						<a href="/ovalfit/ride/" class="ov-fit-btn-lg">LEARN MORE</a>
 					</div>
 					<div>
 						<a class="ov-program-btn ov-program-ride-btn" data-name="ride" data-learn-link="/oval-fit-login/" data-learn-txt="LEARN MORE" data-description="Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience." data-logo="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"><img src="http://richmondoval.ca/wp-content/uploads/2018/09/753-ride.jpg" class="ov-team-image-program0"></a>
@@ -420,7 +420,7 @@
 						<img class="ov-ride-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/rideLogo.png"/>
 						<p>Get your heart pumping to pulsating beats as you immerse yourself in a multimedia, power-based indoor cycling experience.</p>
 						<div class="ov-btn-container">
-							<a href="#" class="ov-fit-btn">LEARN MORE</a>
+							<a href="/ovalfit/ride/" class="ov-fit-btn">LEARN MORE</a>
 						</div>
 						<!--<a href="#" class="ov-fit-book-btn ov-program-offereing-book">> BOOK YOUR CLASS</a>-->
 					</div>
