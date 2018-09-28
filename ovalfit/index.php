@@ -280,7 +280,7 @@
 					<img alt="" title="legacyBanner" src="//richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png" srcset="http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner.png 1192w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-300x104.png 300w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-768x267.png 768w, http://richmondoval.ca/wp-content/uploads/2018/07/legacyBanner-1024x357.png 1024w" sizes="(max-width: 1192px) 100vw, 1192px">
 
 					<div class="ov-discover-champion-info">
-						<h3>26,000 SQfT FULLY EQUIPPED TRAINING SPACE</h3>
+						<h3>26,000 SQFT FULLY EQUIPPED TRAINING SPACE</h3>
 						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
@@ -360,7 +360,7 @@
 						<div class="ov-fit-training-ground-text">
 							<div>
 								<h2>FITNESS CENTER</h2>
-								<p>Our 26,000 SQFT fitness mezzanine is where individuals aspiring to push their limits train. The fitness mezzanine is strategically laid out in pods; functional training, strength training, Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
+								<p>Our 12,000 SQFT fitness mezzanine is where individuals aspiring to push their limits train. The fitness mezzanine is strategically arranged in pods; functional training, strength training, Olympic lifting and adaptive equipment with endless cardiovascular machines to meet everyone's exercise needs.
 								</p>
 							</div>
 							<div class="ov-sectioner-container">
@@ -372,7 +372,7 @@
 
 				<div class="ov-fit-training-ground-section" id="oval-team">
 					<div class="ov-no-line-height">
-						<img alt="" title="trainingGround" src="./img/Ovalfit_team_desktop.jpg">
+						<img alt="" title="trainingGround" src="./img/Ovalteam_Jodi.jpg">
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text">

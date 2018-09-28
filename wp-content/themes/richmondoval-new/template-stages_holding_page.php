@@ -22,7 +22,7 @@ get_header();
 
             <div class="row header">
                 <div class="col-md-7">
-                    <h5>LAUNCHING 2018 FALL</h5>
+                    <!--<h5>LAUNCHING 2018 FALL</h5>-->
                     <h1>RIDE. PUSH. <br>REPEAT.</h1>
                 </div>
                 <div class="col-md-5">
