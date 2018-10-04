@@ -153,18 +153,17 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                                 <p style="text-align: center;">Hi, setting up your profile is simple. We’ll need your info for you to see your metrics and track your performance.</p>
                                 <input type='hidden' name='submitted-reg' id='submitted' value='1'/>
 
+                                <input type='text' name='firstname' id='firstname' required maxlength="50" placeholder="First Name" value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : ''; ?>"/>
 
-                                <input type='text' name='firstname' id='firstname' required maxlength="50" placeholder="First Name"/>
+                                <input type='text' name='lastname' id='lastname' required maxlength="50"  placeholder="Last Name" value="<?php echo isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"/>
 
-                                <input type='text' name='lastname' id='lastname' required maxlength="50"  placeholder="Last Name"/>
+                                <input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"/>
 
-                                <input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="Email"/>
+                                <input type='text' name='phone' id='phone' required maxlength="50" autocomplete="off" pattern="\d*" placeholder="Phone (xxxxxxxxxx)" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : ''; ?>"/>
 
-                                <input type='text' name='phone' id='phone' required maxlength="50" autocomplete="off" placeholder="Phone"/>
+                                <input type="text" class="birthdate" name="birthdate" required readonly="true" placeholder="Date of birth" value="<?php echo isset($_POST['birthdate']) ? $_POST['birthdate'] : ''; ?>"/>
 
-                                <input type="text" class="birthdate" name="birthdate" value="" required readonly="true" placeholder="Date of birth"/>
-
-                                <input type="number" class="weight" id="weight" name="weight" min="30" required placeholder="Weight(lbs)"/>
+                                <input type="number" class="weight" id="weight" name="weight" min="30" required placeholder="Weight(lbs)" value="<?php echo isset($_POST['weight']) ? $_POST['weight'] : ''; ?>"/>
 
                                 <select name="gender" required>
                                     <option value="" selected disabled>Gender</option>
