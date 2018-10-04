@@ -177,11 +177,10 @@ jQuery(document).ready(function($) {
             singleDatePicker: true,
             showDropdowns: true,
             minYear: 1901,
+            maxYear: 2008,
             autoUpdateInput: false,
             locale: {
                 format: 'MMMM D Y',
-                //minYear: 2018,
-                //maxYear:parseInt(moment().add('years', 1).format('YYYY'),1),
             },
 
         });

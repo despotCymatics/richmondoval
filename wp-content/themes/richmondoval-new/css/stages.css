@@ -145,6 +145,7 @@ select option {
 .checkbox label {
     display: inline-block;
     padding-left: 30px;
+    position: relative;
 }
 
 .checkbox .wpcf7-list-item-label:before, .checkbox label:before {

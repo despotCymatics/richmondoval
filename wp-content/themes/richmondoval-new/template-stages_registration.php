@@ -167,12 +167,19 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                                 <select name="gender" required>
                                     <option value="" selected disabled>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option value="Male" <?php echo (isset($_POST['gender']) && $_POST['gender'] == 'Male') ? 'selected' : ''; ?>>Male</option>
+                                    <option value="Female" <?php echo (isset($_POST['gender']) && $_POST['gender'] == 'Female') ? 'selected' : ''; ?>>Female</option>
                                 </select>
 
                                 <input type='password' name='password' id='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required maxlength="50" autocomplete="off" placeholder="Create a password"/>
                                 <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="agree" value="agree" required>
+                                        <span class="wpcf7-list-item-label" style="color: #fff;">I agree with Ovalfit's <a href="#">Terms & Conditions.</a></span>
+                                    </label>
+                                </div>
 
                                 <p style="text-align: center; margin-bottom: 0;">
                                     <button type='submit' class="btn" name='Register'>Register</button>
