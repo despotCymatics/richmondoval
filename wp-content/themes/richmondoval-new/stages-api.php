@@ -315,7 +315,8 @@ function forgotPassword($username) {
 			       "\r\n<br>".
 			       "\r\n<br>".
 			       "Thank You,\r\n<br>".
-			       "OVALfit Team\r\n";
+			       "OVALfit Team \r\n<br>".
+					"<img width='120px;' style='margin-top: 10px;' src='http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/oval-fit-logo-black.png'> \r\n";
 
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -365,7 +366,8 @@ function setPassword($username, $password) {
 			       "\r\n<br>".
 			       "\r\n<br>".
 			       "Thank You,\r\n<br>".
-			       "OVALfit Team\r\n";
+			       "OVALfit Team \r\n<br>".
+					"<img width='120px;'  style='margin-top: 10px;' src='http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/oval-fit-logo-black.png'> \r\n";
 
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -469,17 +471,19 @@ function SendUserConfirmationEmail($formvars) {
 
 	$to = $formvars['email'];
 
-	$subject = "Your registration with Oval Fit";
+	$subject = "Your registration with OVALFit";
 
-	$txt = "Thanks for your registration with Oval Fit.\r\n<br>".
+	$txt = "Thank you for your registration with OVALfit.\r\n<br>".
+	       "You are now a part of a community that works harder together to achieve your fitness goals.\r\n<br>\r\n<br>".
 	       "Please find the link below to login into your account:\r\n<br>\r\n<br>".
 	       "<a href='http://richmondoval.ca/oval-fit-login/'>Oval Fit Login</a>\r\n<br>\r\n<br>".
 	       "Username: ".$formvars['email']."\r\n<br>".
 	       "Password: ".$formvars['password']."\r\n<br>".
 	       "\r\n<br>".
 	       "\r\n<br>".
-	       "Regards,\r\n<br>".
-	       "richmondoval.ca\r\n";
+	       "Lets ride,\r\n<br>".
+	       "OVALfit Team \r\n<br>".
+	       "<img width='120px;'  style='margin-top: 10px;' src='http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/oval-fit-logo-black.png'> \r\n";
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

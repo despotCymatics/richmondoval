@@ -8,7 +8,8 @@ get_header();
 
 
 ?>
-
+    <!-- Pixel -->
+    <img src="//p3.eyereturn.com/seg/?r=13988:4838400" height="1" width="1"  style="position: absolute"/>
 
     <div class="within inner">
         <div class="content">
