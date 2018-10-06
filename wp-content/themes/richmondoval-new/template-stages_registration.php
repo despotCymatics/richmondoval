@@ -132,7 +132,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                         ?>
 
                         <h3 style="text-align: center; color: #fff">YOUR PROFILE HAS BEEN CREATED</h3>
-                        <p style="text-align: center;">Sign up to classes and begin tracking your performance</p>
+                        <p style="text-align: center;">Sign up for classes and begin tracking your performance</p>
 
                         <p style="text-align: center; margin-bottom: 0;">
                             <a href="/oval-fit-login"  class="btn" name='letsride'>LET'S RIDE</a>

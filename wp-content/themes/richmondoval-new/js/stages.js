@@ -2,7 +2,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 
     swal({
         html: "<h2>Your RIDE is waiting</h2>"+
-        "<p>Confirm your bike number</p>"+
+        "<p>Please confirm your bike selection.</p>"+
         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
         allowOutsideClick: false,
         showCancelButton: true,
@@ -38,7 +38,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                                 "<h4 class='session-name'>"+sessionName+"</h4>"+
                                 "<span class='session-date'>"+sessionDate+"</span><br>"+
                                 "<span class='session-time'>"+sessionTime+"</span>"+
-                                "<p>Please confirm attendance in the lobby. If you can’t make it, please cancel you reservation online</p>",
+                                "<p>Membership will be validated in the lobby to confirm your attendance. If you can’t make it please cancel your reservation online.</p>",
                                 allowOutsideClick: false
                             }).then((result) => {
                                 loaderIn()

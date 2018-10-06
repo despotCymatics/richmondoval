@@ -807,6 +807,18 @@ form#changeDates:before {
     height: 20px;
 }
 
+.daterangepicker.show-calendar .ranges {
+    float: none;
+    text-align: center;
+    padding: 8px;
+
+}
+
+.daterangepicker.show-calendar .ranges:before {
+    content: 'Select single date or range';
+    display: block;
+}
+
 
 /********** MOBILE **********/
 

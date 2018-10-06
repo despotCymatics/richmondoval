@@ -150,7 +150,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
                                 <span>
                                     <span class="num"><?= round($avgHR / $numWorkouts, 0); ?></span>
-                                    <span class="name">Average heartrate</span>
+                                    <span class="name">Average heart rate</span>
                                 </span>
                             </div>
                             <div class="stat">
