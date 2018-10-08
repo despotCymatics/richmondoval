@@ -34,7 +34,6 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.11.2.min.js', array(), false, false );
     //wp_enqueue_script('richmondoval-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'richmondoval-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
-	//wp_enqueue_script( 'richmondoval-jquery.dlmenu', get_template_directory_uri() . '/js/jquery.dlmenu.js', array(), false, false );
 	wp_enqueue_script('richmondoval-slimscroll', (get_template_directory_uri() . '/js/jquery.slimscroll.min.js'), array(), false, true );
 	wp_enqueue_script( 'richmondoval-custom', get_template_directory_uri() . '/js/custom.js', array(), false, true );
 

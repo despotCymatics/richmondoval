@@ -8,6 +8,9 @@ $sessionName = isset($_POST['sessionName']) ? $_POST['sessionName'] : NULL;
 $sessionDate = isset($_POST['sessionDate']) ? $_POST['sessionDate'] : NULL;
 $sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
 $sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
+$bikes = '';
+
+$authCode = authorize();
 
 if($authCode && $sessionId && $sessionInstructorId ){
 	$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );

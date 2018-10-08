@@ -31,48 +31,61 @@ body {
 
 /* FONT OVERRIDE */
 
-.page-template-template-stages_holding_page p,
-.page-template-template-stages_holding_page span,
-.page-template-template-stages_holding_page h1,
-.page-template-template-stages_holding_page h2,
-.page-template-template-stages_holding_page h3,
-.page-template-template-stages_holding_page h4,
-.page-template-template-stages_holding_page h5,
-.page-template-template-stages_holding_page input,
-.page-template-template-stages_holding_page button,
+.page-template-template-stages_holding_page .pageWrap p,
+.page-template-template-stages_holding_page .pageWrap span,
+.page-template-template-stages_holding_page .pageWrap h1,
+.page-template-template-stages_holding_page .pageWrap h2,
+.page-template-template-stages_holding_page .pageWrap h3,
+.page-template-template-stages_holding_page .pageWrap h4,
+.page-template-template-stages_holding_page .pageWrap h5,
+.page-template-template-stages_holding_page .pageWrap input,
+.page-template-template-stages_holding_page .pageWrap button,
+.page-template-template-stages_holding_page .pageWrap a,
 
-.page-template-template-stages_login p,
-.page-template-template-stages_login span,
-.page-template-template-stages_login h1,
-.page-template-template-stages_login h2,
-.page-template-template-stages_login h3,
-.page-template-template-stages_login h4,
-.page-template-template-stages_login h5,
-.page-template-template-stages_login input,
-.page-template-template-stages_login button,
-.page-template-template-stages_login a,
+.page-template-template-stages_login .pageWrap p,
+.page-template-template-stages_login .pageWrap span,
+.page-template-template-stages_login .pageWrap h1,
+.page-template-template-stages_login .pageWrap h2,
+.page-template-template-stages_login .pageWrap h3,
+.page-template-template-stages_login .pageWrap h4,
+.page-template-template-stages_login .pageWrap h5,
+.page-template-template-stages_login .pageWrap input,
+.page-template-template-stages_login .pageWrap button,
+.page-template-template-stages_login .pageWrap a,
 
-.page-template-template-stages p,
-.page-template-template-stages span,
-.page-template-template-stages h1,
-.page-template-template-stages h2,
-.page-template-template-stages h3,
-.page-template-template-stages h4,
-.page-template-template-stages h5,
-.page-template-template-stages input,
-.page-template-template-stages button,
-.page-template-template-stages a,
+.page-template-template-stages .pageWrap p,
+.page-template-template-stages .pageWrap span,
+.page-template-template-stages .pageWrap h1,
+.page-template-template-stages .pageWrap h2,
+.page-template-template-stages .pageWrap h3,
+.page-template-template-stages .pageWrap h4,
+.page-template-template-stages .pageWrap h5,
+.page-template-template-stages .pageWrap input,
+.page-template-template-stages .pageWrap button,
+.page-template-template-stages .pageWrap a,
 
-.page-template-template-stages_registration p,
-.page-template-template-stages_registration span,
-.page-template-template-stages_registration h1,
-.page-template-template-stages_registration h2,
-.page-template-template-stages_registration h3,
-.page-template-template-stages_registration h4,
-.page-template-template-stages_registration h5,
-.page-template-template-stages_registration input,
-.page-template-template-stages_registration button
-.page-template-template-stages_registration a
+
+.page-template-template-stages .swal2-container p,
+.page-template-template-stages .swal2-container span,
+.page-template-template-stages .swal2-container h1,
+.page-template-template-stages .swal2-container h2,
+.page-template-template-stages .swal2-container h3,
+.page-template-template-stages .swal2-container h4,
+.page-template-template-stages .swal2-container h5,
+.page-template-template-stages .swal2-container input,
+.page-template-template-stages .swal2-container button,
+.page-template-template-stages .swal2-container a,
+
+.page-template-template-stages_registration .pageWrap p,
+.page-template-template-stages_registration .pageWrap span,
+.page-template-template-stages_registration .pageWrap h1,
+.page-template-template-stages_registration .pageWrap h2,
+.page-template-template-stages_registration .pageWrap h3,
+.page-template-template-stages_registration .pageWrap h4,
+.page-template-template-stages_registration .pageWrap h5,
+.page-template-template-stages_registration .pageWrap input,
+.page-template-template-stages_registration .pageWrap button,
+.page-template-template-stages_registration .pageWrap a
 
 
 {
@@ -807,16 +820,17 @@ form#changeDates:before {
     height: 20px;
 }
 
-.daterangepicker.show-calendar .ranges {
+.page-template-template-stages .daterangepicker.show-calendar .ranges {
     float: none;
     text-align: center;
     padding: 8px;
 
 }
 
-.daterangepicker.show-calendar .ranges:before {
+.page-template-template-stages .daterangepicker.show-calendar .ranges:before {
     content: 'Select single date or range';
     display: block;
+    font-family: prometo;
 }
 
 

@@ -11,6 +11,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 	get_header();
 
+	$authCode = authorize();
+
 	?>
     <div class="ovalfit-header">
         <div class="within inner">
@@ -18,8 +20,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
             <?php
             if ( ! isset( $authCode->Message ) ) {
-
-
 
                 $userEmail = $_SESSION['logged'];
                 $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );

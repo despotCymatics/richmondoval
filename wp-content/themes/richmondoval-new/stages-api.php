@@ -2,10 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
-$authCode = authorize();
 
 //BOOK A BIKE FOR SESSION
 if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId'])) {
+
+	$authCode = authorize();
+
 	$userId = $_POST['userId'];
 	$sessionId = $_POST['sessionId'];
 	$bikeId = $_POST['bikeId'];
@@ -30,6 +32,9 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 
 //CANCEL BOOKING
 if(isset($_POST['bookingId'])) {
+
+	$authCode = authorize();
+
 	$bookingId = $_POST['bookingId'];
 
 	//$authCode = $_POST['authCode'];
@@ -147,11 +152,6 @@ function deleteCurl($authCode, $url) {
 	//curl_setopt($ch, CURLOPT_POSTFIELDS,    $request );
 
 	return json_decode(curl_exec($ch));
-}
-
-
-function getSessions($from, $to) {
-
 }
 
 
