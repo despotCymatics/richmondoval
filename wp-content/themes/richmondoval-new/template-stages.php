@@ -66,7 +66,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="title">
-                            <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                            <a title="Oval Fit" href="/oval-fit/">
+                                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                            </a>
                         </div>
                         <!--<p><?/*= $user->Email; */?> | <?/*= $user->Gender; */?> | <?/*= $user->Weight; */?>kg</p>-->
                     </div>
@@ -221,7 +223,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                         <div>
                                                             <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
                                                             <span>Row: <?=$userBooking->Bike->Row ?></span><br>
-                                                            <span>Column: <?=$userBooking->Bike->Column ?></span>
+                                                            <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
                                                         </div>
                                                     </div>
                                                 </div>

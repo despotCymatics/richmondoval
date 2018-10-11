@@ -21,7 +21,9 @@ if(isset($_SESSION['logged'])) {
         <div class="content">
             <div class="title">
                 <br>
-                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                <a title="Oval Fit" href="/oval-fit/">
+                    <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                </a>
                 <br>
                 <br>
                 <div class="ride-logo">

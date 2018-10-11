@@ -58,7 +58,9 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 		<div class="content">
             <div class="title">
                 <br>
-                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                <a title="Oval Fit" href="/oval-fit/">
+                    <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
+                </a>
                 <br>
                 <br>
                 <div class="ride-logo">
@@ -177,7 +179,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="agree" value="agree" required>
-                                        <span class="wpcf7-list-item-label" style="color: #fff;">I agree with Ovalfit's <a href="#">Terms & Conditions.</a></span>
+                                        <span class="wpcf7-list-item-label" style="color: #fff;">I agree with Ovalfit's <a target="_blank" href="/ovalfit-terms-of-service/">Terms & Conditions.</a></span>
                                     </label>
                                 </div>
 
