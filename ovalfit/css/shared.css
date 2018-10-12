@@ -542,7 +542,11 @@ span.subToggler:hover {
     z-index: 3;
 }
 
-
+.footer-ovalfit-tc {
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
 
 @media (max-width: 1024px) {
     .mainMenu ul li a {

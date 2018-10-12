@@ -620,7 +620,10 @@
         <div class="footerBottom ">
             <div class="within">
                 <div class="copyrightHolder">
-                    <p class="copyright">Copyright 2018 Richmond Olympic Oval</p>
+                    <p class="copyright">Copyright 2018 Richmond Olympic Oval
+                        <a href="/ovalfit-terms-of-service/">Terms Of Service</a> |
+                        <a href="/ovalfit-privacy-policy/">Privacy Policy</a>
+                    </p>
                 </div>
             </div>
         </div>

@@ -33,6 +33,13 @@ body {
     text-decoration: none;
 }
 
+.footer-ovalfit-tc {
+    background: #0C0D0D;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
+
 /* FONT OVERRIDE */
 
 .page-template-template-stages_holding_page .pageWrap p,

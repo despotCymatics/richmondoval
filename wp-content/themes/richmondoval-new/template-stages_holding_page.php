@@ -113,4 +113,10 @@ get_header();
 
 <?php
 
+get_template_part('content-ovalfit-tc','ovalfit-tc');
+
 get_footer();
+
+
+
+
