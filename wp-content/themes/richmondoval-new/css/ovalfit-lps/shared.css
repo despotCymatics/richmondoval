@@ -62,7 +62,7 @@ li {
 
 .ov-fit-btn-lg{
     background: #ff9e18;
-    padding: 14px 100px;
+    padding: 14px 75px;
     font-weight: bold;
     border-radius: 3px;
     color: #fff;
@@ -102,6 +102,9 @@ li {
 
     .ov-fit-btn-blue{
         padding: 11px 22px;
+    }
+    .copyrightHolder span {
+        display: block;
     }
 }
 
@@ -253,7 +256,6 @@ footer {
 }
 
 .copyrightHolder {
-    height: 36px;
     text-align: center;
 }
 

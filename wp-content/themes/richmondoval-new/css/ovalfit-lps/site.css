@@ -265,7 +265,7 @@ html, body {
 
 .ov-fit-training-ground-section {
     display: flex;
-    height: 100vh;
+    /*height: 100vh;*/
     position: relative;
 }
 
@@ -494,6 +494,7 @@ html, body {
 .ov-fit-results-inner h2 {
     font-size: 70px;
     margin: 0;
+    max-width: 580px;
 }
 
 .ov-fit-results-inner p {
@@ -578,12 +579,9 @@ html, body {
     }
 
     .ov-fit-banner {
-        justify-content: flex-start;
-    }
-
-    .ov-fit-banner {
         background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/ovalFitBannerTall.jpg);
         background-position: center;
+        justify-content: flex-start;
     }
 
     .ov-fit-banner-inner {
@@ -780,7 +778,7 @@ html, body {
     }
 
     .ov-fit-banner-inner {
-        top: 80px;
+        top: 130px;
     }
 
     .ov-fit-logo img {
@@ -789,6 +787,7 @@ html, body {
 
     .ov-fit-banner {
         min-height: 0;
+        background-position-x: 80%;
     }
 
     .ov-fit-banner p {
