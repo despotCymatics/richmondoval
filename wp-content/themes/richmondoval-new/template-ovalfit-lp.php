@@ -178,8 +178,8 @@
 				</div>
 
 				<div class="ov-fit-training-ground-section" id="ride-studio">
-					<div>
-						<img alt="" title="trainingGround" src="<?=get_field('ground_section1_image');?>">
+					<div style="background-image: url('<?=get_field('ground_section1_image');?>')">
+						<img alt="" title="trainingGround" src="<?=get_field('ground_section1_image');?>" >
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text ov-fit-training-ground-ride-studio">
