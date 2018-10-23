@@ -68,9 +68,9 @@
 
         .ov-fit-banner-inner{
             margin: auto;
-            max-width: 1400px;
+            max-width: 1360px;
             padding: 60px;
-            right: 15%;
+            left: 0;
             position: relative;
             color: #fff;
         }
