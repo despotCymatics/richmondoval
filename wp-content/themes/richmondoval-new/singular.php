@@ -75,8 +75,7 @@ if ( has_post_thumbnail() ) : ?>
                         <?php echo $pages; ?>
                     </ul>
                 </div>
-                <?php if(get_field('qlinks') != '') { //var_dump(get_field('qlinks'));?>
-
+                <?php if(get_field('qlinks') != '' && !strpos(get_field('qlinks'), '<style') < 1) { ?>
                     <div class="quick-links">
                         <h4><i class="fa fa-link"></i> Quick links</h4>
                         <ul>
@@ -86,7 +85,9 @@ if ( has_post_thumbnail() ) : ?>
                             ?>
                         </ul>
                     </div>
-                <?php } ?>
+                <?php } else {
+	                get_field('qlinks');
+                } ?>
             </div><!-- /sideBar -->
 
         <?php }
