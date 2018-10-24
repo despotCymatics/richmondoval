@@ -266,7 +266,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             foreach ( $sessions as $session ) {
 	                            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
 	                            $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
-                                //var_dump($session);
                                 ?>
                                 <div class="showMoreToggler"
                                      data-user-id="<?=$userId; ?>"
@@ -301,7 +300,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         } else { ?>
                                 <br>
                                 <p>No Sessions on these dates.</p>
-
                             <?php } ?>
                         </div>
 

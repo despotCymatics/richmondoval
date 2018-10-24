@@ -7,9 +7,10 @@ a{
     text-decoration: none;
 }
 a:hover, a:focus {
-    color: inherit;
+    color: #fff;
     text-decoration: underline;
 }
+
 
 h1, h2, h3, h4, p{
     line-height: .9;
@@ -21,6 +22,15 @@ p{
 
 li {
     list-style: none;
+}
+
+[class^="ov-fit-btn"] {
+    transition: all 0.3s ease;
+}
+
+[class^="ov-fit-btn"]:hover {
+    box-shadow: 0 1px 4px #474747;
+    transform: translateY(-2px);
 }
 
 .ov-fit-btn{

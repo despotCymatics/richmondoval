@@ -2,6 +2,19 @@
 /**
  * Template Name: Oval Fit Ride LP
  */
+
+require "stages-api.php";
+$authCode = authorize();
+$dateFrom    = date( 'Y-m-d' );
+$dateTo   = strtotime( '+3 days' );
+$dateTo   = date( 'Y-m-d', $dateTo );
+$sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
+if(count($sessions) > 1) {
+	usort($sessions,function($a, $b){
+		return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
+	});
+}
+
 ?>
 
 
@@ -20,7 +33,11 @@
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/shared.css" rel="stylesheet">
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/ride.css" rel="stylesheet">
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/style.css" rel="stylesheet">
+    <link href="<?=get_template_directory_uri()?>/js/ovalfit-lps/thumbnail-slider.css" rel="stylesheet">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="<?=get_template_directory_uri()?>/js/ovalfit-lps//PicCarousel.js"></script>
+    <script src="<?=get_template_directory_uri()?>/js/ovalfit-lps//thumbnail-slider.js" type="text/javascript"></script>
 
 	<style>
 		@import url("https://use.typekit.net/svd3qkc.css");
@@ -168,10 +185,10 @@
 				<div class="ov-ride-machine-wrapper-inner">
 					<div class="ov-ride-machine-header">
 						<div style="flex: 1;">
-							<h3><?=get_field('ride_machine_title');?></h3>
+							<h3><?=get_field('program_title');?></h3>
 						</div>
 						<div>
-							<h4><?=get_field('programs_subtitle');?></h4>
+							<h4><?=get_field('program_subtitle');?></h4>
 							<img class="ov-ride-machine-stages-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>
 						</div>
 					</div>
@@ -319,65 +336,47 @@
                     <h3 class="ov-coach-name">JODI STOKES</h3>
                     <p class="ov-coach-description"><?=get_field('team_text');?></p>
                 </div>
-
             </div>
 
-            <!-- <div class="ov-ride-schedule">
-				 <img class="ov-ride-schedule-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
+			<?php
+			if ( count( $sessions ) > 0 ) {
+			?>
+            <div class="ov-ride-schedule">
+                <img class="ov-ride-schedule-logo"
+                     src="http://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
 
-				 <div class="ov-class-container">
+                <div class="ov-class-container">
+                    <?php
+                        foreach ( $sessions as $session ) {
+                            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
+	                        $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
+                    ?>
 
-					 <div class="ov-class">
-						 <div class="ov-class-info">
-							 <img class="ov-hide-on-mobile" src="http://richmondoval.ca/wp-content/uploads/2018/08/Oval.png" height="40" width="40"/>
-							 <div class="ov-class-info-text">
-								 <h5>RIDE FOUNDATIONS</h5>
-								 <p>
-									 <span class="ov-schedule-date">Tues, Aug 14th</span> <span>9:15am - 10:00am</span>
-								 </p>
-							 </div>
-						 </div>
-						 <div>
-							 <a href="#" class="ov-fit-btn-blue">BOOK YOUR BIKE</a>
-						 </div>
-					 </div>
+                    <div class="ov-class">
+                        <div class="ov-class-info">
+                            <div class="ov-class-info-text">
+                                <h5><?=$session->Name?></h5>
+                                <p>
+                                    <span class="ov-schedule-date"><?=$sessionDate?></span> <span><?=$sessionTime?></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="/oval-fit-login/" class="ov-fit-btn-blue">BOOK YOUR BIKE</a>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    ?>
+                </div>
 
-					 <div class="ov-class">
-						 <div class="ov-class-info">
-							 <img class="ov-hide-on-mobile"  src="http://richmondoval.ca/wp-content/uploads/2018/08/Oval.png" height="40" width="40"/>
-							 <div class="ov-class-info-text">
-								 <h5>RIDE FOUNDATIONS</h5>
-								 <p>
-									 <span class="ov-schedule-date">Tues, Aug 14th</span> <span>9:15am - 10:00am</span>
-								 </p>
-							 </div>
-						 </div>
-						 <div>
-							 <a href="#" class="ov-fit-btn-blue">BOOK YOUR BIKE</a>
-						 </div>
-					 </div>
-
-					 <div class="ov-class">
-						 <div class="ov-class-info">
-							 <img class="ov-hide-on-mobile"  src="http://richmondoval.ca/wp-content/uploads/2018/08/Oval.png" height="40" width="40"/>
-							 <div class="ov-class-info-text">
-								 <h5>RIDE FOUNDATIONS</h5>
-								 <p>
-									 <span class="ov-schedule-date">Tues, Aug 14th</span> <span>9:15am - 10:00am</span>
-								 </p>
-							 </div>
-						 </div>
-						 <div>
-							 <a href="#" class="ov-fit-btn-blue">BOOK YOUR BIKE</a>
-						 </div>
-					 </div>
-
-				 </div>
-
-				 <div class="ov-align-center">
-					 <a href="#" class="ov-fit-btn-lg">MORE CLASSES</a>
-				 </div>
-			 </div>-->
+                <div class="ov-align-center">
+                    <a href="/oval-fit-login/" class="ov-fit-btn-lg">MORE CLASSES</a>
+                </div>
+            </div>
+			<?php
+			}
+			?>
 
             <div class="ov-fit-results">
                 <div class="ov-fit-results-inner">

@@ -123,7 +123,7 @@ html, body {
 .ov-discover-champion h1 {
     margin: 60px auto 0 auto;
     font-size: 120px;
-    max-width: 1530px;
+    max-width: 1360px;
     width: 100%;
     font-weight: bold;
     color: #FF9E18;
@@ -212,14 +212,14 @@ html, body {
 
 .ov-fit-training-ground-section-header {
     display: block;
-    margin-top: 224px;
+    /*margin-top: 224px;*/
+    margin-top: 160px;
 }
 
 .ov-fit-training-ground-section-header h2 {
     font-size: 120px !important;
     color: #FF9E18;
-    margin: 0;
-    margin: auto;
+    margin: 0 auto;
     max-width: 600px;
 }
 
@@ -238,7 +238,7 @@ html, body {
     color: #FF9E18;
     display: flex;
     width: 950px;
-    margin: 80px auto 260px auto;
+    margin: 80px auto 160px auto;
     justify-content: space-evenly;
     font-size: 20px;
     font-weight: bold;

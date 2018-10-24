@@ -132,7 +132,7 @@
         .ov-discover-champion h1{
             margin: 0 auto 0 auto;
             font-size: 70px;
-            max-width: 1530px;
+            max-width: 840px;
             width: 100%;
             font-weight: bold;
             color: #FF9E18;
@@ -303,11 +303,13 @@
         .ov-ride-machine-header{
             display: flex;
             align-items: center;
+            padding: 0 15px;
         }
 
         .ov-ride-machine-wrapper h3{
             font-size: 59px;
             margin: 60px 0 40px 0;
+            max-width: 520px;
         }
 
         .ov-ride-machine-wrapper h4{
@@ -431,7 +433,7 @@
         }
 
         /*results team*/
-        .ov-results-team{
+        .ov-results-team {
             max-width: 1200px;
             margin: 100px auto;
             display: flex;
@@ -979,7 +981,7 @@
     }
 
     .ov-fit-training-ground-section img{
-        max-height: 236px;
+        /*max-height: 236px;*/
     }
 
     .ov-results-team h2{
@@ -1008,8 +1010,8 @@
     }
 
     .ov-ride-machine-header{
-            flex-direction: column;
-    text-align: center;
+        flex-direction: column;
+        text-align: center;
         padding: 40px 0 24px 0;
     }
 
@@ -1113,7 +1115,7 @@ top: -100px;
         margin-right: 10px;
     }
 
-    .ov-results-team{
+    .ov-results-team {
         flex-direction: column;
         padding: 20px;
     }
