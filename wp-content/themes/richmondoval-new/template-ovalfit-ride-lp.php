@@ -295,14 +295,14 @@ if(count($sessions) > 1) {
                 <div class="ov-hide-on-mobile">
                     <div class="ov-results-team-1-info">
                         <h2><?=get_field('team_title');?></h2>
-                        <h3 class="ov-coach-name">JODI</h3>
+                        <h3 class="ov-coach-name"><?=get_field('team1_photo')['title'];?></h3>
                         <p class="ov-coach-description"><?=get_field('team_text');?></p>
-                        <a href="#" class="ov-fit-book-btn ov-show-on-mobile ov-program-offereing-book">> READ MORE</a>
+                        <!--<a href="#" class="ov-fit-book-btn ov-show-on-mobile ov-program-offereing-book">> READ MORE</a>-->
                     </div>
                 </div>
 
                 <div class="ov-show-on-mobile">
-                    <h2>OUR RIDE COACHES</h2>
+                    <h2><?=get_field('team_title');?></h2>
                 </div>
 
                 <div id="thumbnail-slider">
@@ -310,30 +310,40 @@ if(count($sessions) > 1) {
                         <ul>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-0"
-                                   href="<?=get_field('team1_photo');?>" data-name="Jodi" data-description="<?=get_field('team_text');?>"></a>
+                                   href="<?=get_field('team1_photo')['url'];?>"
+                                   data-name="<?=get_field('team1_photo')['title'];?>"
+                                   data-description="<?=get_field('team_text');?>"></a>
                             </li>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-1"
-                                   href="<?=get_field('team2_photo');?>" data-name="Ashley" data-description="<?=get_field('team_text');?>"></a>
+                                   href="<?=get_field('team_photo')['url'];?>"
+                                   data-name="<?=get_field('team2_photo')['title'];?>"
+                                   data-description="<?=get_field('team_text');?>"></a>
                             </li>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-2"
-                                   href="<?=get_field('team3_photo');?>" data-name="Caitlin" data-description="<?=get_field('team_text');?>"></a>
+                                   href="<?=get_field('team3_photo')['url'];?>"
+                                   data-name="<?=get_field('team3_photo')['title'];?>"
+                                   data-description="<?=get_field('team_text');?>"></a>
                             </li>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-3"
-                                   href="<?=get_field('team4_photo');?>" data-name="Melina" data-description="<?=get_field('team_text');?>"></a>
+                                   href="<?=get_field('team4_photo')['url'];?>"
+                                   data-name="<?=get_field('team4_photo')['title'];?>"
+                                   data-description="<?=get_field('team_text');?>"></a>
                             </li>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-4"
-                                   href="<?=get_field('team5_photo');?>" data-name="Sheldon" data-description="<?=get_field('team_text');?>"></a>
+                                   href="<?=get_field('team5_photo')['url'];?>"
+                                   data-name="<?=get_field('team5_photo')['title'];?>"
+                                   data-description="<?=get_field('team_text');?>"></a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="ov-show-on-mobile ov-coaches-mobile">
-                    <h3 class="ov-coach-name">JODI STOKES</h3>
+                    <h3 class="ov-coach-name"><?=get_field('team1_photo')['title'];?></h3>
                     <p class="ov-coach-description"><?=get_field('team_text');?></p>
                 </div>
             </div>
@@ -380,10 +390,8 @@ if(count($sessions) > 1) {
 
             <div class="ov-fit-results">
                 <div class="ov-fit-results-inner">
-                    <h2>WANT RESULTS?<br>
-                        GET RESULTS
-                    </h2>
-                    <p>Experience Stages and OVALfit difference. Schedule a tour with our member care team. It’s time to see your fitness goals come to life</p>
+                    <h2><?=get_field('results_title');?></h2>
+                    <p><?=get_field('results_text');?></p>
                     <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
                 </div>
             </div>
