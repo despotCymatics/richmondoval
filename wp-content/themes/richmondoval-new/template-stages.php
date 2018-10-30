@@ -267,8 +267,13 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             if ( count( $sessions ) > 0 ) {
 	                            $disableClass= '';
                                 foreach ( $sessions as $session ) {
+                                    $now = date_create();
+                                    $sessionDateTime = date_create($session->StartDateTime);
+	                                $diff  	= date_diff( $now, $sessionDateTime);
+	                                //var_dump($diff->days);
 	                                //var_dump(strtotime($session->StartDateTime) - strtotime(date("D, M jS - H:m")));
 	                                //var_dump($session->StartDateTime->diff(date("D, M jS - H:m")));
+
                                     $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
                                     $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
 
