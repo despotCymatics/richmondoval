@@ -174,12 +174,12 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                                 </select>
 
                                 <input type='password' name='password' id='password' pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required maxlength="50" autocomplete="off" placeholder="Create a password"/>
-                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must contain letters and digits</p>
+                                <p style="text-align: center; font-size: 12px;">minimum 8 characters long, must only contain letters and digits</p>
 
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="agree" value="agree" required>
-                                        <span class="wpcf7-list-item-label" style="color: #fff;">I agree with Ovalfit's <a target="_blank" href="https://stagesflight.com/Home/TermsOfService">Terms & Conditions.</a></span>
+                                        <span class="wpcf7-list-item-label" style="color: #fff;">I agree with Ovalfit <a target="_blank" href="https://stagesflight.com/Home/TermsOfService">Terms & Conditions.</a></span>
                                     </label>
                                 </div>
 

@@ -33,6 +33,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     exit;
                 }
 
+                date_default_timezone_set('America/Vancouver');
+
 	            $dateFrom    = date( 'Y-m-d' );
 	            $dateTo   = strtotime( '+1 week' );
 	            $dateTo   = date( 'Y-m-d', $dateTo );
@@ -263,44 +265,49 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             </form>
                             <?php
                             if ( count( $sessions ) > 0 ) {
-                            foreach ( $sessions as $session ) {
-	                            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
-	                            $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
-                                ?>
-                                <div class="showMoreToggler"
-                                     data-user-id="<?=$userId; ?>"
-                                     data-session-id="<?=$session->Id; ?>"
-                                     data-session-name="<?=$session->Name; ?>"
-                                     data-session-date="<?=$sessionDate; ?>"
-                                     data-session-time="<?=$sessionTime; ?>"
-                                     data-session-instructor-id="<?=$session->InstructorId; ?>"
-                                >
-                                    <div class="row">
-                                        <div class="col-sm-8 col-xs-6">
-                                            <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
-                                            <h4><?= $session->Name ?></h4>
-                                            <span class="date"><?= $sessionDate; ?></span><br>
-                                            <span><?=$sessionTime; ?></span>
+	                            $disableClass= '';
+                                foreach ( $sessions as $session ) {
+	                                //var_dump(strtotime($session->StartDateTime) - strtotime(date("D, M jS - H:m")));
+	                                //var_dump($session->StartDateTime->diff(date("D, M jS - H:m")));
+                                    $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
+                                    $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
 
-                                        </div>
-                                        <div class="col-sm-4 col-xs-6 alignRight">
-                                            <button class="btn blue regular">Reserve your bike</button>
-                                            <h4 class="close-toggle">X Close</h4>
+
+                                    ?>
+                                    <div class="showMoreToggler"
+                                         data-user-id="<?=$userId; ?>"
+                                         data-session-id="<?=$session->Id; ?>"
+                                         data-session-name="<?=$session->Name; ?>"
+                                         data-session-date="<?=$sessionDate; ?>"
+                                         data-session-time="<?=$sessionTime; ?>"
+                                         data-session-instructor-id="<?=$session->InstructorId; ?>"
+                                    >
+                                        <div class="row">
+                                            <div class="col-sm-8 col-xs-6">
+                                                <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
+                                                <h4><?= $session->Name ?></h4>
+                                                <span class="date"><?= $sessionDate; ?></span><br>
+                                                <span><?=$sessionTime; ?></span>
+
+                                            </div>
+                                            <div class="col-sm-4 col-xs-6 alignRight">
+                                                <button class="btn blue regular">Reserve your bike</button>
+                                                <h4 class="close-toggle">X Close</h4>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="moreText">
-                                    <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
-                                    <p style="text-align: center">Please wait</p>
-                                </div>
+                                    <div class="moreText">
+                                        <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
+                                        <p style="text-align: center">Please wait</p>
+                                    </div>
 
-                                <?php
-                            }
+                                    <?php
+                                }
 
-                        } else { ?>
-                                <br>
-                                <p>No Sessions on these dates.</p>
-                            <?php } ?>
+                            } else { ?>
+                                    <br>
+                                    <p>No Sessions on these dates.</p>
+                                <?php } ?>
                         </div>
 
                     </div>
