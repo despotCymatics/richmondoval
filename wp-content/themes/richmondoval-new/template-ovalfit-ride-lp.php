@@ -316,7 +316,7 @@ if(count($sessions) > 1) {
                             </li>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-1"
-                                   href="<?=get_field('team_photo')['url'];?>"
+                                   href="<?=get_field('team2_photo')['url'];?>"
                                    data-name="<?=get_field('team2_photo')['title'];?>"
                                    data-description="<?=get_field('team_text');?>"></a>
                             </li>
@@ -388,7 +388,7 @@ if(count($sessions) > 1) {
 			}
 			?>
 
-            <div class="ov-fit-results">
+            <div class="ov-fit-results" style="background-image: url(<?=get_field('results_image')?>)">
                 <div class="ov-fit-results-inner">
                     <h2><?=get_field('results_title');?></h2>
                     <p><?=get_field('results_text');?></p>

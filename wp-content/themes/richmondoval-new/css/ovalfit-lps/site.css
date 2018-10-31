@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     margin: 0;
     line-height: 1;
+    overflow: auto;
 }
 
 /*@font-face {
@@ -887,6 +888,9 @@ html, body {
 
     .ov-fit-training-ground-text {
         padding: 40px 20px 70px 20px;
+    }
+    .ov-fit-training-ground-section img {
+        max-height: 235px;
     }
 
     .ov-program-offerings-mobile-item {

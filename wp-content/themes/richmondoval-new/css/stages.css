@@ -338,7 +338,12 @@ select option {
 
 .page-template-template-stages .ovalfit-body .showMoreToggler.disabled {
     pointer-events: none;
-
+}
+.page-template-template-stages .ovalfit-body .showMoreToggler.disableBook {
+    pointer-events: none;
+}
+.page-template-template-stages .ovalfit-body .showMoreToggler.disableBook .btn.blue {
+    background: #ccc;
 }
 
 .page-template-template-stages .ovalfit-body .showMoreToggler:hover {

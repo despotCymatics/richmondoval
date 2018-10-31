@@ -5,6 +5,7 @@ body {
     padding: 0;
     margin: 0;
     line-height: 1;
+    overflow: auto;
 }
 
 p {
@@ -68,7 +69,7 @@ p {
 
 .ov-fit-banner-inner {
     margin: auto;
-    max-width: 1360px;
+    max-width: 1320px;
     padding: 60px;
     left: 0;
     position: relative;
@@ -273,7 +274,7 @@ p {
 
 .ov-fit-training-ground-section img {
     width: 100%;
-    max-height: 100%;: 100 %;
+    max-height: 100%;
     object-fit: cover;
 }
 
@@ -816,7 +817,10 @@ p {
 
     .ov-discover-champion {
         padding: 20px 40px;
-        background-position: center;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        height: 660px;
     }
 
     .ov-discover-champion h1 {
@@ -940,10 +944,12 @@ p {
     }
 
     .ov-fit-results {
-        max-height: 372px;
-        background-position-x: right;
-        background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);
+        max-height: 420px;
+        background-position-x: 70%;
+        /*background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);*/
         background-size: cover;
+        background-repeat: no-repeat;
+
     }
 
     .ov-fit-results-inner {
@@ -997,7 +1003,7 @@ p {
     }
 
     .ov-fit-banner {
-        background-position: center;
+        background-position: 66%;
     }
 
     .ov-fit-banner-btn {
@@ -1040,11 +1046,11 @@ p {
     }
 
     .ov-fit-training-ground-text .ov-fit-btn-lg {
-        padding: 14px 70px;
+        padding: 14px 50px;
     }
 
     .ov-fit-training-ground-section img {
-        /*max-height: 236px;*/
+        max-height: 236px;
     }
 
     .ov-results-team h2 {
@@ -1085,6 +1091,7 @@ p {
     .ov-ride-machine-bike {
         width: 375px;
         margin: auto;
+        max-width: 100%;
     }
 
     .ov-ride-machine-mobile {
@@ -1219,9 +1226,10 @@ p {
     }
 
     .ov-fit-results {
-        max-height: 384px;
-        background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);
+        max-height: 400px;
+        /*background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);*/
         background-size: cover;
+        background-position-x: 66%;
     }
 
     .ov-fit-results-members img {

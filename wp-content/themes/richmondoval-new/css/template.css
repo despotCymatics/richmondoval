@@ -2546,11 +2546,11 @@ img.not-full {
 
 /* PM widgets */
 
-#bookMe4Widget {
+.pageWrap #bookMe4Widget {
     margin: 10px 0;
 }
 
-#bookMe4Widget object, #bookMe4Widget iframe, object, iframe {
+.pageWrap #bookMe4Widget object, .pageWrap #bookMe4Widget iframe, .pageWrap object, .pageWrap iframe {
     display: block;
     overflow-y: scroll;
     width: 100%;
@@ -2558,19 +2558,6 @@ img.not-full {
     min-height: 800px;
     border: 1px solid #eee;
 }
-
-/*
-#bookMe4Widget.long object, #bookMe4Widget.long iframe {
-   height: 1450px !important;
-}
-
-#bookMe4Widget.short object, #bookMe4Widget.short iframe {
-   height: 400px !important;
-}
-
-#bookMe4Widget.medium object, #bookMe4Widget.medium iframe {
-    height: 900px !important;
-}*/
 
 /* Blog */
 

@@ -35,7 +35,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 date_default_timezone_set('America/Vancouver');
 
-	            $dateFrom    = date( 'Y-m-d' );
+	            $dateFrom    = date( 'Y-m-d\TH:i' );
 	            $dateTo   = strtotime( '+1 week' );
 	            $dateTo   = date( 'Y-m-d', $dateTo );
 
@@ -48,9 +48,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 //$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 
 
-
                 //Sessions
-                $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
+                $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '&dateTimeTo=' . $dateTo );
                 if(count($sessions) > 1) {
 	                usort($sessions,function($a, $b){
 		                return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
@@ -218,9 +217,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                                 <div class="col-sm-8 col-xs-6">
                                                     <div class="flexed">
                                                         <div>
-                                                            <img
-                                                                    style="width: 45px; margin-right: 15px;"
-                                                                    src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
+                                                            <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
                                                         </div>
                                                         <div>
                                                             <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
@@ -248,7 +245,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             <?php } ?>
                         </div>
 
-
                         <!-- Sessions -->
                         <div id="sessions" class="tabcontent">
                             <form id="changeDates" method="post" action="/oval-fit/">
@@ -265,21 +261,22 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             </form>
                             <?php
                             if ( count( $sessions ) > 0 ) {
-	                            $disableClass= '';
                                 foreach ( $sessions as $session ) {
+	                                $disableClass= '';
                                     $now = date_create();
                                     $sessionDateTime = date_create($session->StartDateTime);
-	                                $diff  	= date_diff( $now, $sessionDateTime);
-	                                //var_dump($diff->days);
-	                                //var_dump(strtotime($session->StartDateTime) - strtotime(date("D, M jS - H:m")));
-	                                //var_dump($session->StartDateTime->diff(date("D, M jS - H:m")));
+	                                $diff = date_diff( $now, $sessionDateTime);
+	                                $diffHours = $diff->h+$diff->days*24;
+
+	                                //echo $diffHours."<br>";
+
+	                                if( $diffHours > 26) $disableClass = 'disableBook';
 
                                     $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
                                     $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
 
-
                                     ?>
-                                    <div class="showMoreToggler"
+                                    <div class="showMoreToggler <?=$disableClass;?>"
                                          data-user-id="<?=$userId; ?>"
                                          data-session-id="<?=$session->Id; ?>"
                                          data-session-name="<?=$session->Name; ?>"
