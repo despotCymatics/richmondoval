@@ -49,13 +49,13 @@ $(window).on("load",function() {
             
         }); 
 
-        $('.ov-ride-section').each( function(i){
+        /*$('.ov-ride-section').each( function(i){
             
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height() + 400;
             //console.log(bottom_of_object + ' ' + bottom_of_window);
             
-            /* If the object is completely visible in the window, fade it it */
+            /!* If the object is completely visible in the window, fade it it *!/
             if( bottom_of_window > bottom_of_object ){
             	var ovRideSection1 = $('.ov-ride-display-section');
             	var ovRideSection2 = $('.ov-ride-sprintshift-section');
@@ -68,7 +68,7 @@ $(window).on("load",function() {
                 ovRideSection4.delay(1500).animate({'opacity':'5'},1500);
             }
             
-        }); 
+        }); */
 
 	}); //end scroll listenn
 

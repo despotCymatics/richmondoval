@@ -4,7 +4,6 @@ html, body {
     padding: 0;
     margin: 0;
     line-height: 1;
-    overflow: auto;
 }
 
 /*@font-face {
@@ -480,7 +479,6 @@ html, body {
     max-height: 600px;
     background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Want_results_x2.jpg);
     background-size: cover;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -748,9 +746,10 @@ html, body {
 
     .ov-fit-results {
         max-height: 372px;
-        background-position-x: right;
-        background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);
+        background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);
         background-size: cover;
+        background-position: right;
+        background-repeat: no-repeat;
     }
 
     .ov-fit-results-inner {
@@ -931,8 +930,10 @@ html, body {
 
     .ov-fit-results {
         max-height: 384px;
-        background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);
+        background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);
+        background-position-x: 70%;
         background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .ov-fit-results-members img {
