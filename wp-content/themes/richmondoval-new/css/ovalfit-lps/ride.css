@@ -957,6 +957,7 @@ p {
 
     .ov-fit-results h2 {
         font-size: 50px;
+        max-width: 410px;
     }
 
     .ov-fit-results-inner p {
@@ -1228,7 +1229,7 @@ p {
         max-height: 400px;
         /*background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);*/
         background-size: cover;
-        background-position-x: 66%;
+        background-position-x: 71%;
     }
 
     .ov-fit-results-members img {
@@ -1236,8 +1237,12 @@ p {
     }
 
     .ov-fit-results-inner {
-        margin: 60px 0 0 40px;
+        margin: 40px 0 0 15px;
         width: 265px;
+    }
+    .ov-fit-results-inner h2 {
+        font-size: 40px;
+        max-width: 220px;
     }
 
     .ov-fit-results-inner p {

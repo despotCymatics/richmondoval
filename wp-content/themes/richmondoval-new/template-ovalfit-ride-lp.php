@@ -291,11 +291,17 @@ if(count($sessions) > 1) {
 				</div>
 			</div>
 
+			<?php
+			$photos = get_field('team_member_photos');
+
+			// check if the repeater field has rows of data
+			if( have_rows('team_member_photos') ): ?>
+
             <div class="ov-results-team">
                 <div class="ov-hide-on-mobile">
                     <div class="ov-results-team-1-info">
                         <h2><?=get_field('team_title');?></h2>
-                        <h3 class="ov-coach-name"><?=get_field('team1_photo')['title'];?></h3>
+                        <h3 class="ov-coach-name"><?=$photos[0]['team_member_name'];?></h3>
                         <p class="ov-coach-description"><?=get_field('team_text');?></p>
                         <!--<a href="#" class="ov-fit-book-btn ov-show-on-mobile ov-program-offereing-book">> READ MORE</a>-->
                     </div>
@@ -308,45 +314,32 @@ if(count($sessions) > 1) {
                 <div id="thumbnail-slider">
                     <div class="inner">
                         <ul>
+                        <?php
+                        // loop through the rows of data
+                        while ( have_rows('team_member_photos') ) : the_row();
+                        ?>
                             <li>
                                 <a class="thumb ov-coach-slider ov-results-team-0"
-                                   href="<?=get_field('team1_photo')['url'];?>"
-                                   data-name="<?=get_field('team1_photo')['title'];?>"
+                                   href="<?=get_sub_field('team_member_photo')['url'];?>"
+                                   data-name="<?=get_sub_field('team_member_name');?>"
                                    data-description="<?=get_field('team_text');?>"></a>
                             </li>
-                            <li>
-                                <a class="thumb ov-coach-slider ov-results-team-1"
-                                   href="<?=get_field('team2_photo')['url'];?>"
-                                   data-name="<?=get_field('team2_photo')['title'];?>"
-                                   data-description="<?=get_field('team_text');?>"></a>
-                            </li>
-                            <li>
-                                <a class="thumb ov-coach-slider ov-results-team-2"
-                                   href="<?=get_field('team3_photo')['url'];?>"
-                                   data-name="<?=get_field('team3_photo')['title'];?>"
-                                   data-description="<?=get_field('team_text');?>"></a>
-                            </li>
-                            <li>
-                                <a class="thumb ov-coach-slider ov-results-team-3"
-                                   href="<?=get_field('team4_photo')['url'];?>"
-                                   data-name="<?=get_field('team4_photo')['title'];?>"
-                                   data-description="<?=get_field('team_text');?>"></a>
-                            </li>
-                            <li>
-                                <a class="thumb ov-coach-slider ov-results-team-4"
-                                   href="<?=get_field('team5_photo')['url'];?>"
-                                   data-name="<?=get_field('team5_photo')['title'];?>"
-                                   data-description="<?=get_field('team_text');?>"></a>
-                            </li>
-                        </ul>
+                        <?php
+                        endwhile;
+                        ?>
+	                    </ul>
                     </div>
                 </div>
 
                 <div class="ov-show-on-mobile ov-coaches-mobile">
-                    <h3 class="ov-coach-name"><?=get_field('team1_photo')['title'];?></h3>
+                    <h3 class="ov-coach-name"><?=$photos[0]['team_member_name'];?></h3>
                     <p class="ov-coach-description"><?=get_field('team_text');?></p>
                 </div>
             </div>
+
+			<?php
+			endif;
+			?>
 
 			<?php
 			if ( count( $sessions ) > 0 ) {
