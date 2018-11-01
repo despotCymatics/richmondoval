@@ -105,8 +105,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 $avgSpeed          += $workout->AvgSpeed;
                                 $avgHR             += $workout->AvgHeartRate;
                                 array_push($maxSpeedArray, $workout->MaxSpeed);
-
-
                             }
 
                             if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
