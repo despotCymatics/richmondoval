@@ -139,13 +139,32 @@ if(count($sessions) > 1) {
 					<h1><?=get_field('discover_title');?></h1>
 					<h2><?=get_field('discover_text');?></h2>
 					<div>
-						<a href="/oval-fit-login/" class="ov-fit-btn ov-hide-on-mobile ov-hide-on-tablet" draggable="false">BOOK A TEST DRIVE</a>
+						<a href="/letsride/" class="ov-fit-btn ov-hide-on-mobile ov-hide-on-tablet" draggable="false">BOOK A TEST DRIVE</a>
 					</div>
 				</div>
 			</div>
 
 			<div class="ov-fit-training-ground-wrapper">
 				<div class="ov-fit-training-ground-section">
+                    <!--FAQ's-->
+                    <div class="ovalfit-faqs" style="display: none;">
+                        <ul>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+                            <li>What is Stages Flight?</li>
+
+                        </ul>
+                        <div class="ovalfit-faq-single">
+                            Stages Flight is a web-based data analysis tool, with big screen display, integrated spot-reservation and
+                            mobile applications Its functions include dynamic FTP testing, custom intensity rides, GPS rides, and
+                            competition modes. Video integration and coaches cueing top off the experience for a true power-based
+                            indoor cycling solution. http://stagesflight.com
+                        </div>
+                    </div>
 					<div>
 						<img alt="" title="trainingGround" src="<?=get_field('tab1_image');?>">
 					</div>
@@ -365,7 +384,7 @@ if(count($sessions) > 1) {
                             </div>
                         </div>
                         <div>
-                            <a href="/oval-fit-login/" class="ov-fit-btn-blue">BOOK YOUR BIKE</a>
+                            <a href="/oval-fit-login/" class="ov-fit-btn-blue">RESERVE A BIKE</a>
                         </div>
                     </div>
                     <?php

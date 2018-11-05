@@ -339,9 +339,7 @@ select option {
 .page-template-template-stages .ovalfit-body .showMoreToggler.disabled {
     pointer-events: none;
 }
-.page-template-template-stages .ovalfit-body .showMoreToggler.disableBook {
-    pointer-events: none;
-}
+
 .page-template-template-stages .ovalfit-body .showMoreToggler.disableBook .btn.blue {
     background: #ccc;
 }
@@ -421,6 +419,23 @@ select option {
     margin: 0;
     border-bottom: 1px solid #d8d8d8;
 }
+.page-template-template-stages .moreText .ride-on-info {
+    display: none;
+}
+
+.page-template-template-stages .moreText.disableBook .row {
+    display: none;
+}
+.page-template-template-stages .moreText.disableBook .ride-on-info {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+.page-template-template-stages .moreText.disableBook img.loader-img, .page-template-template-stages .moreText.disableBook > p  {
+    display: none !important;
+}
+
 .page-template-template-stages .moreText img.loader-img {
     width: 200px !important;
     margin: 0 auto;

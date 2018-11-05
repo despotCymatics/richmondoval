@@ -266,8 +266,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                                $diff = date_diff( $now, $sessionDateTime);
 	                                $diffHours = $diff->h+$diff->days*24;
 
-	                                //echo $diffHours."<br>";
-
 	                                if( $diffHours > 26) $disableClass = 'disableBook';
 
                                     $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
@@ -296,9 +294,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="moreText">
+                                    <div class="moreText <?=$disableClass;?>">
                                         <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
                                         <p style="text-align: center">Please wait</p>
+                                        <div class="ride-on-info">RIDE ON. Check back 26hr hours in advance of class time to book your next RIDE!</div>
                                     </div>
 
                                     <?php
@@ -327,7 +326,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#sessions .showMoreToggler").click(function(){
+            $("#sessions .showMoreToggler:not(.disableBook)").click(function(){
                 var self = $(this);
 
 
