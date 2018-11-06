@@ -429,8 +429,8 @@ select option {
 .page-template-template-stages .moreText.disableBook .ride-on-info {
     display: block;
     text-align: center;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 14px;
+    color: #FF9E18;
 }
 .page-template-template-stages .moreText.disableBook img.loader-img, .page-template-template-stages .moreText.disableBook > p  {
     display: none !important;

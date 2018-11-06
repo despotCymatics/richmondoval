@@ -297,7 +297,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     <div class="moreText <?=$disableClass;?>">
                                         <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
                                         <p style="text-align: center">Please wait</p>
-                                        <div class="ride-on-info">RIDE ON. Check back 26hr hours in advance of class time to book your next RIDE!</div>
+                                        <div class="ride-on-info">RIDE ON. Check back 26hrs in advance of class time to reserve a bike</div>
                                     </div>
 
                                     <?php
