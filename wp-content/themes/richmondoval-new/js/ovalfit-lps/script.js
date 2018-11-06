@@ -326,6 +326,22 @@ $(window).on("load",function() {
     });
 
 
+    // FAQ's
+    $('.ovalfit-faq-trigger').click(function(e){
+        $('.ovalfit-faqs').fadeIn(200);
+	});
+
+	$('.ovalfit-faqs .ovalfit-qa a').click(function(e){
+		var qaContent = $(this).parent().html();
+        $('.ovalfit-qa-single').html('').hide();
+		$('.ovalfit-qa-single').html(qaContent).slideDown(200);
+	});
+
+    $('.ovalfit-faqs .close').click(function(e){
+		$(this).parent().fadeOut(200);
+	});
+
+    $('.ovalfit-faqs .ovalfit-qa:first-child > a').click();
 
 });
 

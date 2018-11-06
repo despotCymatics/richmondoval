@@ -198,6 +198,58 @@
 				</div>
 
 				<div class="ov-fit-training-ground-section" id="fitness-center">
+                    <!--FAQ's-->
+                    <div class="ovalfit-faqs" style="display: none;">
+                        <span class="close">X</span>
+                        <h3>OVALFIT Q AND A</h3>
+                        <div class="ovalfit-qas">
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">What is Stages Flight?</a>
+                                <p><span style="color: #008BD1;">Stages Flight</span> is a web-based data analysis tool, with big screen display, integrated spot-reservation and mobile applications Its functions include dynamic FTP testing, custom intensity rides, GPS rides, and competition modes. Video integration and coaches cueing top off the experience for a true power-based indoor cycling solution. <a href="http://stagesflight.com" target="_blank">http://stagesflight.com</a>
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">Do I have to create an OVALfit profile?</a>
+                                <p>In order to receive a record of your performance metrics and be able to book your spot and bike in
+                                    advance, an Ovalfit profile is necessary. Otherwise, you are welcome to register for class in person at
+                                    the front desk a half hour prior to the class start time.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">Can I only register online?</a>
+                                <p>Online registration will enable you to select your bike and track your performance. If you prefer you can
+                                    register in person at the front desk.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">How can I view my performance metrics?</a>
+                                <p>OVALfit will display a summary of your performance metrics. For a more in-depth view of your Ride statistics, please login here: <a  href="http://stagesflight.com" target="_blank">http://stagesflight.com</a>.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">Do I still need to use my Stages App?</a>
+                                <p>Your OVALfit profile provides you with greater convenience and ease of use. You will no longer be required to connect your app to the power meter of your bike. Instead, your OVALfit profile will automatically sync with the power meter and log your workout data.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">I already have a Stages Flight account. Will the previous data carry over to my OVALfit profile?</a>
+                                <p>Your OVALfit profile provides you with greater convenience and ease of use. You will no longer be required to connect your app to the power meter of your bike. Instead, your OVALfit profile will automatically sync with the power meter and log your workout data.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">What if class is full?</a>
+                                <p>Keep checking back online to see if a spot has opened up. Class participants now have the ability to withdraw themselves from class so the attendance lists are constantly changing.
+                                </p>
+                            </div>
+                            <div class="ovalfit-qa">
+                                <a href="javascript:void(0);">What if I am not a Richmond Olympic Oval member?</a>
+                                <p>In order to register in advance for a class, you must have a valid pass or membership with the Oval. To view rates, click here <a href="http://richmondoval.ca/drop-in/rates/" target="_blank">http://richmondoval.ca/drop-in/rates/</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ovalfit-qa-single"></div>
+                    </div>
 					<div>
 						<img alt="" title="fitnessCenter" src="<?=get_field('ground_section2_image');?>">
 					</div>
@@ -206,6 +258,7 @@
 							<div>
 								<h2><?=get_field('ground_section2_title');?></h2>
 								<p><?=get_field('ground_section2_text');?></p>
+                                <a class="ovalfit-faq-trigger" href="javascript:void(0)">&gt; OVALfit QUESTIONS</a>
 							</div>
 							<div class="ov-sectioner-container">
 								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-2.png"/>
