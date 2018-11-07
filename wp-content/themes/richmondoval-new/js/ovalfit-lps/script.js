@@ -326,25 +326,30 @@ $(window).on("load",function() {
     });
 
 
+});
+
+jQuery(document).ready(function($) {
+
     // FAQ's
     $('.ovalfit-faq-trigger').click(function(e){
         $('.ovalfit-faqs').fadeIn(200);
-	});
+        if($('body').width() < 1025) $('body').css('overflow', 'hidden');
+    });
 
-	$('.ovalfit-faqs .ovalfit-qa a').click(function(e){
-		var qaContent = $(this).parent().html();
+    $('.ovalfit-faqs .ovalfit-qa a').click(function(e){
+        var qaContent = $(this).parent().html();
         $('.ovalfit-qa-single').html('').hide();
-		$('.ovalfit-qa-single').html(qaContent).slideDown(200);
-	});
+        $('.ovalfit-qa-single').html(qaContent).slideDown(200);
+    });
 
     $('.ovalfit-faqs .close').click(function(e){
-		$(this).parent().fadeOut(200);
-	});
+        $(this).parent().fadeOut(200);
+        $('body').css('overflow', 'auto');
+    });
 
     $('.ovalfit-faqs .ovalfit-qa:first-child > a').click();
 
 });
-
 
 
 

@@ -129,6 +129,7 @@ if(document.getElementById("sessionsTab")) document.getElementById("sessionsTab"
 
 
 jQuery(document).ready(function($) {
+
     $('.stats').click(function(){
         $(this).toggleClass('expanded');
     });
@@ -214,6 +215,25 @@ jQuery(document).ready(function($) {
     }
 
 
+    // FAQ's
+    $(document).on('click','.ovalfit-faq-trigger', function(e){
 
+        $(this).parentsUntil('.row').next().find('.ovalfit-faqs').fadeIn(200);
+        $(this).parentsUntil('.row').next().find('.bike-schedule').hide();
+        //if($('body').width() < 1025) $('body').css('overflow', 'hidden');
+    });
+
+    $(document).on('click','.ovalfit-faqs .ovalfit-qa a',function(e){
+        var qaContent = $(this).parent().html();
+        $('.ovalfit-qa-single').html('').hide();
+        $('.ovalfit-qa-single').html(qaContent).slideDown(200);
+    });
+
+    $(document).on('click','.ovalfit-faqs .close', function(e){
+        console.log($(this).parentsUntil('.row').prev());
+        $(this).parentsUntil('.row').find('.ovalfit-faqs').hide();
+        $(this).parentsUntil('.row').find('.bike-schedule').fadeIn(200);
+        //if($('body').width() < 1025) $('body').css('overflow', 'auto');
+    });
 
 });
