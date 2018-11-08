@@ -321,7 +321,7 @@ function forgotPassword($username) {
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 			$headers .= 'From: OVALfit <no-reply@richmondoval.ca>' . "\r\n";
-			$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
+			//$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
 
 			if(wp_mail($to,$subject,$txt,$headers)){
 
@@ -372,7 +372,7 @@ function setPassword($username, $password) {
 			$headers = "MIME-Version: 1.0" . "\r\n";
 			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 			$headers .= 'From: OVALfit <no-reply@richmondoval.ca>' . "\r\n";
-			$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
+			//$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
 
 			wp_mail($to,$subject,$txt,$headers);
 
@@ -488,7 +488,7 @@ function SendUserConfirmationEmail($formvars) {
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= 'From: Oval Fit <no-reply@richmondoval.ca>' . "\r\n";
-	$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
+	//$headers .= 'Bcc: despot.cymatics@gmail.com' . "\r\n";
 
 	if(wp_mail($to,$subject,$txt,$headers)){
 		return true;
