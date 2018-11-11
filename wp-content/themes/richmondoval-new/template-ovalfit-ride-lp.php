@@ -6,7 +6,7 @@
 require "stages-api.php";
 $authCode = authorize();
 $dateFrom    = date( 'Y-m-d' );
-$dateTo   = strtotime( '+3 days' );
+$dateTo   = strtotime( '+10 days' );
 $dateTo   = date( 'Y-m-d', $dateTo );
 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
 if(count($sessions) > 1) {
@@ -350,7 +350,9 @@ if(count($sessions) > 1) {
 
                 <div class="ov-class-container">
                     <?php
+                    $sessionCount = 0;
                         foreach ( $sessions as $session ) {
+                            if($sessionCount > 5 ) break;
                             $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
 	                        $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
                     ?>
@@ -369,6 +371,7 @@ if(count($sessions) > 1) {
                         </div>
                     </div>
                     <?php
+                        $sessionCount++;
                         }
                     ?>
                 </div>

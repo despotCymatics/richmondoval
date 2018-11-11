@@ -233,17 +233,71 @@ select option {
     font-size: 15px;
 }
 
-.page-template-template-stages .ovalfit-header a.logout {
+.page-template-template-stages .ovalfit-header a.my-account {
     color: #FF9E18;
     display: block;
     margin-bottom: 30px;
     float: right;
     font-family: NeoSansStdMedium;
 }
-.page-template-template-stages .ovalfit-header a.logout:hover {
+.page-template-template-stages .ovalfit-header a.my-account:hover  {
     color: #FF9E18;
     opacity: 0.8;
 }
+
+.account-menu
+{
+    right: 0;
+    max-width: 320px;
+    background: #fff;
+    position: absolute;
+    padding: 8px 0;
+    float: right;
+    top: 32px;
+    z-index: 1;
+    border: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .account-menu {
+        left: -100%;
+        max-width: none;
+    }
+
+}
+
+.account-menu > * {
+    display: block;
+    padding: 8px 16px;
+
+
+}
+.account-menu a {
+    color: #0C0C0D;
+    position: relative;
+}
+.account-menu a:hover {
+    background-color: #eee;
+    text-decoration: none;
+}
+
+.account-menu a img {
+    position: absolute;
+    right: 16px;
+    top: 7px;
+    width: 22px !important;
+}
+
+.account-menu span {
+    color: #FF9E18 !important;
+    font-size: 11px;
+}
+
+.account-menu button {
+    margin-top: 8px;
+    display: none;
+}
+
 
 /* stats */
 
