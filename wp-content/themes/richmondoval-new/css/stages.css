@@ -239,7 +239,21 @@ select option {
     margin-bottom: 30px;
     float: right;
     font-family: NeoSansStdMedium;
+    position: relative;
+    padding-right: 16px;
 }
+
+.page-template-template-stages .ovalfit-header a.my-account:after {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    display: block;
+    content: "\f078";
+    font-family: 'FontAwesome';
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
 .page-template-template-stages .ovalfit-header a.my-account:hover  {
     color: #FF9E18;
     opacity: 0.8;
