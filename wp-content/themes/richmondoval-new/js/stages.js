@@ -235,14 +235,21 @@ jQuery(document).ready(function($) {
         $(this).parentsUntil('.row').find('.bike-schedule').fadeIn(200);
         //if($('body').width() < 1025) $('body').css('overflow', 'auto');
     });
-  $(document).on('click','a.my-account', function(e){
-      e.stopPropagation();
-      $('.account-menu').slideToggle(200).addClass('open');
 
-  });
-  $(document).on('click','body', function(e){
-    $('.account-menu.open').slideUp(200);
-  });
+
+    // MY Account
+    $(document).on('click','a.my-account', function(e){
+        e.stopPropagation();
+        $('.account-menu').slideToggle(200).addClass('open');
+    });
+    $(document).on('click','body', function(e){
+        $('.account-menu.open').slideUp(200);
+    });
+
+    $('.account-menu a.redirect').hover(function(e){
+        $('.account-menu.open span.redirect-info').slideToggle(100);
+    });
+
 
 
 });

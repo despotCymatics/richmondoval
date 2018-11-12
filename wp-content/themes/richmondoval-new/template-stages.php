@@ -76,10 +76,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     <div class="col-xs-6">
                         <a class="my-account" href="javascript:void(0);">My Account</a>
                       <div class="account-menu" style="display: none;">
-                        <a href=" https://stagesflight.com/mytraning/stats">Performance Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
-                        <a href="https://stagesflight.com/Account/ProfileSettings">Profile settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
+                        <a class="redirect" href=" https://stagesflight.com/mytraning/stats">Performance Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
+                        <a class="redirect" href="https://stagesflight.com/Account/ProfileSettings">Profile settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
                         <a class="logout" href="/oval-fit-logout/">Log Out</a>
-                        <span>You will be redirected to STAGES website</span>
+                        <span class="redirect-info">You will be redirected to STAGES website</span>
                         <button class="ov-fit-btn-blue">GOT IT</button>
                       </div>
                     </div>
