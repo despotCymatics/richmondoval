@@ -79,7 +79,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         <a href=" https://stagesflight.com/mytraning/stats">Performance Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
                         <a href="https://stagesflight.com/Account/ProfileSettings">Profile settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
                         <a class="logout" href="/oval-fit-logout/">Log Out</a>
-                        <span>You will Be redirected to STAGES website</span>
+                        <span>You will be redirected to STAGES website</span>
                         <button class="ov-fit-btn-blue">GOT IT</button>
                       </div>
                     </div>
