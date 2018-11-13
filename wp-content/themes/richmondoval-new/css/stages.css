@@ -258,6 +258,9 @@ select option {
     color: #FF9E18;
     opacity: 0.8;
 }
+.page-template-template-stages .ovalfit-header a.my-account.active:after {
+    transform: rotate(180deg);
+}
 
 .account-menu {
     right: 0;

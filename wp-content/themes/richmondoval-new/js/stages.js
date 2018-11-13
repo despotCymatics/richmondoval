@@ -240,13 +240,15 @@ jQuery(document).ready(function($) {
     // MY Account
     $(document).on('click','a.my-account', function(e){
         e.stopPropagation();
+        $(this).toggleClass('active');
         $('.account-menu').slideToggle(200).addClass('open');
     });
     $(document).on('click','body', function(e){
         $('.account-menu.open').slideUp(200);
+        $('a.my-account').removeClass('active');
     });
 
-    $('.account-menu a.redirect').hover(function(e){
+    $('.account-menu .redirect').hover(function(e){
         $('.account-menu.open span.redirect-info').slideToggle(100);
     });
 
