@@ -71,17 +71,22 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo.png">
                             </a>
                         </div>
-                        <!--<p><?/*= $user->Email; */?> | <?/*= $user->Gender; */?> | <?/*= $user->Weight; */?>kg</p>-->
                     </div>
                     <div class="col-xs-6">
                         <a class="my-account" href="javascript:void(0);">My Account</a>
-                      <div class="account-menu" style="display: none;">
-                        <a class="redirect" href=" https://stagesflight.com/mytraning/stats">Performance Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
-                        <a class="redirect" href="https://stagesflight.com/Account/ProfileSettings">Profile settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
-                        <a class="logout" href="/oval-fit-logout/">Log Out</a>
-                        <span class="redirect-info">You will be redirected to STAGES website</span>
-                        <button class="ov-fit-btn-blue">GOT IT</button>
-                      </div>
+                        <div class="account-menu" style="display: none;">
+                            <a class="redirect" target="_blank" href=" https://stagesflight.com/mytraning/stats">
+                                Performance Dashboard
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg">
+                            </a>
+                            <a class="redirect" target="_blank" href="https://stagesflight.com/Account/ProfileSettings">
+                                Profile settings
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
+                            </a>
+                            <a class="logout" href="/oval-fit-logout/">Log Out</a>
+                            <span class="redirect-info">You will be redirected to STAGES website</span>
+                            <button class="ov-fit-btn-blue">GOT IT</button>
+                        </div>
                     </div>
                 </div>
 
@@ -101,17 +106,19 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             $maxSpeedArray      = array();
 
                             $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
-                            foreach ( $workouts as $workout ) {
 
-                                //var_dump($workout);
-                                $numWorkouts ++;
-                                $durationInSeconds += $workout->DurationInSeconds;
-                                $distanceInKm      += $workout->DistanceInKm;
-                                $kiloCalories      += $workout->KiloCalories;
-                                $avgWatt           += $workout->AvgWatt;
-                                $avgSpeed          += $workout->AvgSpeed;
-                                $avgHR             += $workout->AvgHeartRate;
-                                array_push($maxSpeedArray, $workout->MaxSpeed);
+                            if(count($workouts) > 0) {
+                                foreach ( $workouts as $workout ) {
+
+                                    $numWorkouts ++;
+                                    $durationInSeconds += $workout->DurationInSeconds;
+                                    $distanceInKm      += $workout->DistanceInKm;
+                                    $kiloCalories      += $workout->KiloCalories;
+                                    $avgWatt           += $workout->AvgWatt;
+                                    $avgSpeed          += $workout->AvgSpeed;
+                                    $avgHR             += $workout->AvgHeartRate;
+                                    array_push($maxSpeedArray, $workout->MaxSpeed);
+                                }
                             }
 
                             if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
