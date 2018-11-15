@@ -153,7 +153,7 @@ An educational, challenging workout that will leave you wanting more!
 }
 
 else {
-	$returnHTML = '<p>Could not fetch session data.</p>'.json_encode($sessionBookings)." ".json_encode($instructor);
+	$returnHTML = '<p>Could not fetch session data. Please reload the page.</p>';
 }
 
 
