@@ -341,9 +341,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
     <script type="text/javascript">
         $(document).ready(function(){
             $("#sessions .showMoreToggler:not(.disableBook)").click(function(){
+
                 var self = $(this);
-
-
                 if(!self.hasClass('on') && !self.hasClass('loaded')) {
 
                     $(".showMoreToggler").addClass('disabled');
@@ -364,6 +363,13 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             self.next('.moreText').html(data);
                             self.next('.moreText').addClass('loaded');
                             self.addClass('loaded');
+                        },
+                        error: function(){
+                            $(".showMoreToggler").removeClass('disabled');
+                            self.next('.moreText').html('<div class="ajax-error">Could not fetch class data. Please reload the page.</div>');
+                            self.next('.moreText').addClass('loaded');
+                            self.addClass('loaded');
+
                         }
                     });
                 }

@@ -30,7 +30,7 @@
   margin:0;
   text-align: center;
   width: 100%;
-  min-height: 600px;
+  min-height: 708px;
 }
 .stMain div.tabContent img {
   width: 100%;
@@ -38,6 +38,8 @@
 
 .stMain div.tabContent img.desktop {
   display: block;
+  object-fit: cover;
+  min-height: 708px;
 }
 
 .stMain div.tabContent img.tablet {
