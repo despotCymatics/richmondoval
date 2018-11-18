@@ -342,7 +342,7 @@ if(count($sessions) > 1) {
 			?>
 
 			<?php
-			if ( count( $sessions ) > 0 ) {
+			if ( count( $sessions ) > 0 && isset($sessions[0]->StartDateTime)) {
 			?>
             <div class="ov-ride-schedule">
                 <img class="ov-ride-schedule-logo"
@@ -351,6 +351,7 @@ if(count($sessions) > 1) {
                 <div class="ov-class-container">
                     <?php
                     $sessionCount = 0;
+
                         foreach ( $sessions as $session ) {
                             if($sessionCount > 5 ) break;
                             $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
