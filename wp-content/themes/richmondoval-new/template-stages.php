@@ -58,6 +58,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 //USER
                 $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
+                if(!isset($user->Id))  {
+                    session_destroy();
+                    echo '<script>window.location="http://richmondoval.ca/oval-fit-login/"</script>';
+                }
 
                 //User Bookings
                 $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
