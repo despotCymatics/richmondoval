@@ -113,34 +113,36 @@ An educational, challenging workout that will leave you wanting more!
 				$bikesBooked = array();
 				foreach ( $sessionBookings as $sessionBooking ) {
 					array_push( $bikesBooked, $sessionBooking->Bike->Id );
-
 				}
 
-				foreach ( $bikes as $bike ) {
-					$disabledBike = '';
-					if ( in_array( $bike->Id, $bikesBooked ) ) {
-						$disabledBike = 'disabled';
-					}
-					$returnHTML .='
-					<div class="col-sm-1">
-						<div class="bike '.$disabledBike.'">
-							<div class="bike-num" 
-							onclick="bookBike(
-							\''.$authCode.'\',
-							'.$userId.',
-							'.$sessionId.',
-							'.$bike->Id.', 
-							'.$bike->Number.',
-							\''.$sessionName.'\',
-							\''.$sessionDate.'\',
-							\''.$sessionTime.'\')">
-								'.$bike->Number.'
-							</div>
-						</div>
-					</div>
-					';
-				}
-
+				if(count($bikes) > 1) {
+                    foreach ( $bikes as $bike ) {
+                        $disabledBike = '';
+                        if ( in_array( $bike->Id, $bikesBooked ) ) {
+                            $disabledBike = 'disabled';
+                        }
+                        $returnHTML .='
+                        <div class="col-sm-1">
+                            <div class="bike '.$disabledBike.'">
+                                <div class="bike-num" 
+                                onclick="bookBike(
+                                \''.$authCode.'\',
+                                '.$userId.',
+                                '.$sessionId.',
+                                '.$bike->Id.', 
+                                '.$bike->Number.',
+                                \''.$sessionName.'\',
+                                \''.$sessionDate.'\',
+                                \''.$sessionTime.'\')">
+                                    '.$bike->Number.'
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                    }
+                } else {
+                    $returnHTML .= 'Could not fetch bikes. Please reload the page.';
+                }
 		$returnHTML .= '
 				</div>
 			
@@ -156,9 +158,4 @@ else {
 	$returnHTML = '<p>Could not fetch session data. Please reload the page.</p>';
 }
 
-
 echo $returnHTML;
-
-
-
-
