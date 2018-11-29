@@ -22,11 +22,11 @@ if(isset($instructor->Id) && count($bikes) >= 1) {
 	$returnHTML = '
 	<div class="row">
 		<div class="col-md-6">
-			<p>Instructor: <br>
+			<p>Coach: <br>
 				<strong>'.$instructor->FirstName.' '. $instructor->LastName.'</strong>
 			</p>
 		
-			<a class="ovalfit-faq-trigger" href="javascript:void(0);">About the class</a>
+			<a class="ovalfit-faq-trigger" href="javascript:void(0);">Know your ride</a>
 	
 		</div>
 		<div class="col-md-6">
