@@ -9,7 +9,7 @@
 
 <head>
 	<title>Oval Fit</title>
-	<link rel="shortcut icon" type="image/png" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
+	<link rel="shortcut icon" type="image/png" href="https://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://use.typekit.net/arc0dlo.css">
@@ -47,10 +47,10 @@
 			<div class="ov-fit-nav">
 				<div class="ov-fit-nav-inner">
 					<a href="#" class="ov-fit-logo">
-						<img alt="" title="ovalFitLogo" src="http://richmondoval.ca/wp-content/uploads/2018/08/ovalFitLogo.png" width="120">
+						<img alt="" title="ovalFitLogo" src="https://richmondoval.ca/wp-content/uploads/2018/08/ovalFitLogo.png" width="120">
 					</a>
 					<div class="ov-nav-btn-container">
-						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-bold">
+						<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-bold">
 							BOOK A TOUR
 						</a>
 
@@ -63,8 +63,8 @@
 								<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 757px;">
 									<div class="scrollable" style="overflow-y: auto; width: auto;">
 										<div class="logoHolder">
-											<a title="Richmond Olympic Oval" href="http://richmondoval.ca">
-												<img width="120px" src="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/logo.png" alt="Site name">
+											<a title="Richmond Olympic Oval" href="https://richmondoval.ca">
+												<img width="120px" src="https://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/logo.png" alt="Site name">
 											</a>
 										</div>
 										<nav>
@@ -133,7 +133,7 @@
 
 					<div class="ov-discover-champion-info">
 						<h3><?=get_field('tab1_text');?></h3>
-						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
+						<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
 				<div class="ov-discover-champion-interactive-inner ov-hide ov-legacy-section2">
@@ -145,7 +145,7 @@
 					<img alt="" title="legacyBanner" src="<?=get_field('tab2_image');?>">
 					<div class="ov-discover-champion-info">
 						<h3><?=get_field('tab2_text');?></h3>
-						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
+						<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
 				<div class="ov-discover-champion-interactive-inner ov-hide ov-legacy-section3">
@@ -157,7 +157,7 @@
 					<img alt="" title="legacyBanner" src="<?=get_field('tab3_image');?>">
 					<div class="ov-discover-champion-info">
 						<h3><?=get_field('tab3_text');?></h3>
-						<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
+						<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg">BOOK A TOUR</a>
 					</div>
 				</div>
 			</div>
@@ -236,7 +236,7 @@
                             </div>
                             <div class="ovalfit-qa">
                                 <a href="javascript:void(0);">What if I am not a Richmond Olympic Oval member?</a>
-                                <p>In order to register in advance for a class, you must have a valid pass or membership with the Oval. To view rates, click here <a href="http://richmondoval.ca/drop-in/rates/" target="_blank">http://richmondoval.ca/drop-in/rates/</a>
+                                <p>In order to register in advance for a class, you must have a valid pass or membership with the Oval. To view rates, click here <a href="https://richmondoval.ca/drop-in/rates/" target="_blank">https://richmondoval.ca/drop-in/rates/</a>
                                 </p>
                             </div>-->
                         </div>
@@ -257,7 +257,7 @@
                                 </div>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-1.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-1.png"/>
 							</div>
 						</div>
 					</div>
@@ -275,7 +275,7 @@
                                 <!--<a class="ovalfit-faq-trigger" href="javascript:void(0)">&gt; OVALfit QUESTIONS</a>-->
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-2.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-2.png"/>
 							</div>
 						</div>
 					</div>
@@ -292,7 +292,7 @@
 								<p><?=get_field('ground_section3_text');?></p>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
 							</div>
 						</div>
 					</div>
@@ -392,12 +392,12 @@
 				<div class="ov-fit-results-inner">
 					<h2><?=get_field('results_title');?></h2>
 					<p><?=get_field('results_text');?></p>
-					<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
+					<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
 				</div>
 			</div>
 
 			<div class="ov-align-center">
-				<a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
+				<a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
 			</div>
 		</div>
 	</div>

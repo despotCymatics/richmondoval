@@ -46,7 +46,7 @@ html, body {
 }
 
 .ov-fit-hamburger-nav {
-    background: url(http://richmondoval.ca/wp-content/uploads/2018/07/Hamburger_desktop.png) no-repeat;
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/Hamburger_desktop.png) no-repeat;
     display: inline-block;
     height: 26px;
     width: 35px;
@@ -94,7 +94,7 @@ html, body {
     display: block;
     margin-top: 0.625rem;
 
-    background: url(http://richmondoval.ca/wp-content/uploads/2018/07/chevron-down.png) no-repeat;
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/chevron-down.png) no-repeat;
     position: absolute;
     padding-bottom: 50px;
     bottom: 0;
@@ -182,7 +182,7 @@ html, body {
 
 .ov-discover-numbers-active:after {
     content: '';
-    background: url(http://richmondoval.ca/wp-content/uploads/2018/07/blue-down-arrow.png) no-repeat;
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/blue-down-arrow.png) no-repeat;
     position: absolute;
     bottom: -25px;
     width: 26px;
@@ -254,7 +254,7 @@ html, body {
     display: inline-block;
     position: relative;
     top: -6px;
-    background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Vector-2-1.png);
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/08/Vector-2-1.png);
 }
 
 .ov-sectioner-container {
@@ -477,7 +477,7 @@ html, body {
 
 .ov-fit-results {
     max-height: 600px;
-    background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Want_results_x2.jpg);
+    background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Want_results_x2.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -683,7 +683,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     }
 
     .ov-fit-banner {
-        background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/ovalFitBannerTall.jpg);
+        background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/ovalFitBannerTall.jpg);
         background-position: center;
         justify-content: flex-start;
     }
@@ -851,7 +851,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 
     .ov-fit-results {
         max-height: 372px;
-        background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);
+        background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);
         background-size: cover;
         background-position: right;
         background-repeat: no-repeat;
@@ -978,7 +978,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
         display: inline-block;
         position: relative;
         top: -6px;*/
-        background: url(http://richmondoval.ca/wp-content/uploads/2018/08/Vector-1.png);
+        background: url(https://richmondoval.ca/wp-content/uploads/2018/08/Vector-1.png);
     }
 
     .ov-fit-training-ground-section-header h2 {
@@ -1035,7 +1035,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 
     .ov-fit-results {
         max-height: 384px;
-        background-image: url(http://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);
+        background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);
         background-position-x: 70%;
         background-size: cover;
         background-repeat: no-repeat;

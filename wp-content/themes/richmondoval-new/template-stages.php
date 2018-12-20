@@ -28,8 +28,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     $userId = $userQuery[0]->Id;
                 } else {
                     session_destroy();
-                    echo '<script>window.location="http://richmondoval.ca/oval-fit-login/?user=none"</script>';
-                    //header('Location: http://richmondoval.ca/oval-fit-login/?user=none');
+                    echo '<script>window.location="https://richmondoval.ca/oval-fit-login/?user=none"</script>';
+                    //header('Location: https://richmondoval.ca/oval-fit-login/?user=none');
                     exit;
                 }
 
@@ -60,7 +60,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
                 if(!isset($user->Id))  {
                     session_destroy();
-                    echo '<script>window.location="http://richmondoval.ca/oval-fit-login/"</script>';
+                    echo '<script>window.location="https://richmondoval.ca/oval-fit-login/"</script>';
                 }
 
                 //User Bookings
@@ -388,7 +388,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 //login check
 else {
-	header( 'Location: http://richmondoval.ca/oval-fit-login/?login=false' );
+	header( 'Location: https://richmondoval.ca/oval-fit-login/?login=false' );
 	exit;
 }
 

@@ -24,7 +24,7 @@ if(count($sessions) > 1) {
 <head>
 	<title>Oval Fit - Ride</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
+	<link rel="shortcut icon" type="image/png" href="https://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/favicon.gif">
 
 	<link rel="stylesheet" href="https://use.typekit.net/arc0dlo.css">
 	<link rel="stylesheet" href="https://use.typekit.net/svd3qkc.css">
@@ -65,7 +65,7 @@ if(count($sessions) > 1) {
 			<div class="ov-fit-nav">
 				<div class="ov-fit-nav-inner">
 					<a href="/ovalfit-staging" class="ov-fit-logo">
-						<img alt="" title="ovalFitLogo" src="http://richmondoval.ca/wp-content/uploads/2018/08/ovalFitLogo.png" width="120">
+						<img alt="" title="ovalFitLogo" src="https://richmondoval.ca/wp-content/uploads/2018/08/ovalFitLogo.png" width="120">
 					</a>
 					<div class="ov-nav-ride-container">
 						<a href="/oval-fit-login/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
@@ -81,8 +81,8 @@ if(count($sessions) > 1) {
 								<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 757px;">
 									<div class="scrollable" style="overflow-y: auto; width: auto;">
 										<div class="logoHolder">
-											<a title="Richmond Olympic Oval" href="http://richmondoval.ca">
-												<img width="120px" src="http://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/logo.png" alt="Site name">
+											<a title="Richmond Olympic Oval" href="https://richmondoval.ca">
+												<img width="120px" src="https://richmondoval.ca/wp-content/themes/richmondoval-new/images/basic/logo.png" alt="Site name">
 											</a>
 										</div>
 										<nav>
@@ -156,7 +156,7 @@ if(count($sessions) > 1) {
 								<p><?=get_field('tab1_text');?></p>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-1.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-1.png"/>
 							</div>
 						</div>
 					</div>
@@ -174,7 +174,7 @@ if(count($sessions) > 1) {
 								<a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A BIKE</a>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="http://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-2.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-2.png"/>
 							</div>
 						</div>
 					</div>
@@ -189,7 +189,7 @@ if(count($sessions) > 1) {
 						</div>
 						<div>
 							<h4><?=get_field('program_subtitle');?></h4>
-							<img class="ov-ride-machine-stages-logo" src="http://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>
+							<img class="ov-ride-machine-stages-logo" src="https://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>
 						</div>
 					</div>
 					<div class="ov-ride-machine-container">
@@ -198,9 +198,9 @@ if(count($sessions) > 1) {
 
 						<div class="ov-ride-section ov-ride-display-section">
 							<a href="javascript:void(0)" class="ov-ride-display pulse-button">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                             </a>
-							<img class="ov-ride-display-arm" src="http://richmondoval.ca/wp-content/uploads/2018/09/eco.png" width="316"/>
+							<img class="ov-ride-display-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/eco.png" width="316"/>
 							<div class="ov-ride-display-content">
 								<h5><?=get_field('program1_title');?></h5>
 								<p><?=get_field('program1_text');?></p>
@@ -209,10 +209,10 @@ if(count($sessions) > 1) {
 
 						<div class="ov-ride-section ov-ride-sprintshift-section">
 							<a href="javascript:void(0)" class="ov-ride-sprintshift pulse-button">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                             </a>
 
-							<img class="ov-ride-sprintshift-arm" src="http://richmondoval.ca/wp-content/uploads/2018/09/sprintshift.png" width="556"/>
+							<img class="ov-ride-sprintshift-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/sprintshift.png" width="556"/>
 
 							<div class="ov-ride-sprintshift-content">
                                 <h5><?=get_field('program2_title');?></h5>
@@ -222,9 +222,9 @@ if(count($sessions) > 1) {
 
 						<div class="ov-ride-section ov-ride-powermeter-section">
 							<a href="javascript:void(0)" class="ov-ride-powermeter pulse-button">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                             </a>
-							<img class="ov-ride-powermeter-arm" src="http://richmondoval.ca/wp-content/uploads/2018/09/powermeter.png" width="388"/>
+							<img class="ov-ride-powermeter-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/powermeter.png" width="388"/>
 							<div class="ov-ride-powermeter-content">
                                 <h5><?=get_field('program3_title');?></h5>
                                 <p><?=get_field('program3_text');?></p>
@@ -234,11 +234,11 @@ if(count($sessions) > 1) {
 
 						<div class="ov-ride-section ov-ride-carbonglide-section">
 							<a href="javascript:void(0)" class="ov-ride-carbonglide pulse-button">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                             </a>
 
-							<img class="ov-ride-carbonglide-arm" src="http://richmondoval.ca/wp-content/uploads/2018/09/carbonglide.png" width="316"/>
-							<img class="ov-ride-carbonglide-arm-small" src="http://richmondoval.ca/wp-content/uploads/2018/09/carbonglide-arm-small.jpg" width="316"/>
+							<img class="ov-ride-carbonglide-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/carbonglide.png" width="316"/>
+							<img class="ov-ride-carbonglide-arm-small" src="https://richmondoval.ca/wp-content/uploads/2018/09/carbonglide-arm-small.jpg" width="316"/>
 							<div class="ov-ride-carbonglide-content">
                                 <h5><?=get_field('program4_title');?></h5>
                                 <p><?=get_field('program4_text');?></p>
@@ -248,16 +248,16 @@ if(count($sessions) > 1) {
 
 					<div class="ov-ride-machine-mobile ov-show-on-mobile">
 						<a class="ov-ride-display-mobile pulse-button">
-                            <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                            <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                         </a>
 						<a class="ov-ride-sprintshift-mobile pulse-button">
-                            <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                            <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                         </a>
 						<a class="ov-ride-powermeter-mobile pulse-button">
-                            <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                            <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                         </a>
 						<a class="ov-ride-carbonglide-mobile pulse-button">
-                            <img src="http://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
+                            <img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
                         </a>
 					</div>
 
@@ -281,10 +281,10 @@ if(count($sessions) > 1) {
 
 						<div class="ov-ride-mobile-nav ov-hide">
 							<a class="ov-ride-mobile-prev-btn">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/09/Group-1-1.png" class="ov-ride-mobile-prev" width="9"/>
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/09/Group-1-1.png" class="ov-ride-mobile-prev" width="9"/>
                             </a>
 							<a class="ov-ride-mobile-next-btn">
-                                <img src="http://richmondoval.ca/wp-content/uploads/2018/09/Group-2.png" class="ov-ride-mobile-next" width="9"/>
+                                <img src="https://richmondoval.ca/wp-content/uploads/2018/09/Group-2.png" class="ov-ride-mobile-next" width="9"/>
                             </a>
 						</div>
 					</div>
@@ -346,7 +346,7 @@ if(count($sessions) > 1) {
 			?>
             <div class="ov-ride-schedule">
                 <img class="ov-ride-schedule-logo"
-                     src="http://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
+                     src="https://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
 
                 <div class="ov-class-container">
                     <?php
@@ -389,12 +389,12 @@ if(count($sessions) > 1) {
                 <div class="ov-fit-results-inner">
                     <h2><?=get_field('results_title');?></h2>
                     <p><?=get_field('results_text');?></p>
-                    <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
+                    <a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
                 </div>
             </div>
 
             <div class="ov-align-center">
-                <a href="http://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
+                <a href="https://richmondoval.ca/membership-admissions/become-a-member/" class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
             </div>
 		</div>
 	</div>

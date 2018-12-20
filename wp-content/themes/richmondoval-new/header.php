@@ -116,8 +116,8 @@
                             ?>
                             <a class="ser" title="Search" href="#"></a>
                             <div class="barSearch"><?php get_search_form( true ); ?></div>
-                            <!--<a class="rox" title="Richmond Oval Experience" href="http://richmondoval.ca/therox"><span>Olympic Museum</span></a>
-                            <a class="hp" title="High Performance" href="http://richmondoval.ca/ovalhp"><span>High Performance</span></a>
+                            <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>
+                            <a class="hp" title="High Performance" href="https://richmondoval.ca/ovalhp"><span>High Performance</span></a>
                             <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
                             <a class="onsite" title="On site services" href="#">On Site Services</a>-->
 

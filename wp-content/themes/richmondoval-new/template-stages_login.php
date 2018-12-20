@@ -9,7 +9,7 @@ session_start();
 
 if(isset($_SESSION['logged'])) {
 
-	header('Location: http://richmondoval.ca/oval-fit/');
+	header('Location: https://richmondoval.ca/oval-fit/');
 	exit;
 
 }else {
