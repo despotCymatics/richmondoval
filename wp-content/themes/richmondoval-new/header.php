@@ -162,10 +162,10 @@
                         </div>
                      </div>
                 </div>
-                <div class="blueStripe"></div>
+                <!--<div class="blueStripe"></div>-->
                 <div class="mega-menu">
                     <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
-                    ?>
+
                 </div>
             </div>
     </header>
