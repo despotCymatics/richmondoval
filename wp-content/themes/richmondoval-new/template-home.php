@@ -26,6 +26,14 @@ get_header(); ?>
         </div>
     </section>
 
+    <section>
+        <div class="within">
+            <div class="row">
+                <?php echo do_shortcode('[wcp-carousel id="48408"]'); ?>
+            </div>
+        </div>
+    </section>
+
     <?php if(is_active_sidebar( 'homepage-link-boxes' )){ ?>
     <section class="homepageLinkBoxes">
         <div class="within">
