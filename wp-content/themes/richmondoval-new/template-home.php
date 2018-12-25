@@ -5,6 +5,7 @@
 
 get_header(); ?>
 
+    <!-- Hero -->
     <section class="photo">
         <div class="photoBox">
             <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
@@ -26,10 +27,35 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Upcoming Events -->
     <section>
         <div class="within">
             <div class="row">
-                <?php echo do_shortcode('[wcp-carousel id="48408"]'); ?>
+                <div class="event-carousel">
+                    <?php
+                    $events = tribe_get_events( array(
+                        'posts_per_page' => 5,
+                        'start_date' => date( 'Y-m-d H:i:s' )
+                    ) );
+                    foreach ($events as $event) { //var_dump($event); ?>
+                        <div class="article">
+                            <div class="articleImg">
+                                <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+                                if($eventImg != "") echo $eventImg;
+                                else { ?>
+                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                                <?php } ?>
+
+                            </div>
+                            <div class="articleTitle">
+                                <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
+                                <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </section>

@@ -31,38 +31,6 @@ $( document ).ready(function() {
 
     loaderOut();
 
-    //$('body').css('overflow','hidden');
-
-    /* if(document.getElementsByTagName('object').length > 0){
-       window.onbeforeunload = function() {
-
-          window.location.href = 'http://google.com';
-           console.log('aaa');
-       };
-       //history.replaceState({},document.referrer, document.referrer);
-       //console.log(document.referrer);
-
-
-   }*/
-
-   /* $('#pimaryMenu li.has-sub>a').on('click', function(){
-		//$(this).removeAttr('href');
-		var element = $(this).parent('li');
-		if (element.hasClass('open')) {
-			element.removeClass('open');
-			element.find('li').removeClass('open');
-			element.find('ul').slideUp();
-		}
-		else {
-			element.addClass('open');
-			element.children('ul').slideDown();
-			element.siblings('li').children('ul').slideUp();
-			element.siblings('li').removeClass('open');
-			element.siblings('li').find('li').removeClass('open');
-			element.siblings('li').find('ul').slideUp();
-		}
-	});*/
-
     // FAQ Toggler
     $('.questionNtoggler').click(function(){
         if($(this).hasClass('on')) {
@@ -176,9 +144,7 @@ $( document ).ready(function() {
          //allowPageScroll: false,
          //disableFadeOut: false
          });
-    };
-    //console.log(document.documentElement.clientWidth);
-
+    }
 
 });
 } )( jQuery );
