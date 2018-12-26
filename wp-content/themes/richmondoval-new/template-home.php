@@ -28,35 +28,130 @@ get_header(); ?>
     </section>
 
     <!-- Upcoming Events -->
-    <section>
+    <section class="events">
+
         <div class="within">
-            <div class="row">
-                <div class="event-carousel">
+            <h2>Upcoming Events</h2>
+        </div>
+
+        <div class="event-carousel">
+            <?php
+            $events = tribe_get_events( array(
+                'posts_per_page' => 30,
+                'start_date' => date( 'Y-m-d H:i:s' )
+            ) );
+            foreach ($events as $event) { //var_dump($event); ?>
+                <div class="article">
+                    <div class="articleImg">
+                        <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+                        if($eventImg != "") echo $eventImg;
+                        else { ?>
+                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                        <?php } ?>
+
+                    </div>
+                    <div class="articleTitle">
+                        <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
+                        <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
+                        <p class="excerpt"><?php echo $event->post_content; ?></p>
+                    </div>
+                    <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+    </section>
+
+
+    <!-- Explore Oval -->
+    <section class="explore">
+
+        <div class="within">
+            <h2>Explore The Oval</h2>
+        </div>
+
+        <div class="within">
+
+            <div class="explore-wrap">
+
+	            <?php
+	            $events = tribe_get_events( array(
+		            'posts_per_page' => 3,
+		            'start_date' => date( 'Y-m-d H:i:s' )
+	            ) );
+
+	            ?>
+
+                <div class="explore-carousel-nav">
+                    <div class="explore-icons-nav">
                     <?php
-                    $events = tribe_get_events( array(
-                        'posts_per_page' => 5,
-                        'start_date' => date( 'Y-m-d H:i:s' )
-                    ) );
-                    foreach ($events as $event) { //var_dump($event); ?>
-                        <div class="article">
+                        foreach ($events as $event) { //var_dump($event); ?>
+                            <img src="http://via.placeholder.com/80x80/ccc/fff/" data-id="<?=$event->ID;?>">
+                    <?php
+                        }
+                    ?>
+                    </div>
+                </div>
+
+                <div class="explore-carousel">
+		            <?php
+		            foreach ($events as $event) { //var_dump($event); ?>
+                        <div class="article" data-id="<?=$event->ID;?>">
                             <div class="articleImg">
-                                <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
-                                if($eventImg != "") echo $eventImg;
-                                else { ?>
+					            <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+					            if($eventImg != "") echo $eventImg;
+					            else { ?>
                                     <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-                                <?php } ?>
+					            <?php } ?>
 
                             </div>
                             <div class="articleTitle">
                                 <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
                                 <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
+                                <p class="excerpt"><?php echo $event->post_content; ?></p>
                             </div>
+                            <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
                         </div>
-                        <?php
-                    }
-                    ?>
+			            <?php
+		            }
+		            ?>
                 </div>
             </div>
+
+            <script>
+                $( document ).ready(function() {
+                    $('.explore-carousel').slick({
+                        dots: true,
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        appendDots: $('.explore-carousel-nav'),
+                        draggable:false,
+                        customPaging : function(slider, i) {
+                            var slideId = $(slider.$slides[i]).data('id');
+                            return '<a data-id="'+slideId+'"><img src="http://via.placeholder.com/40x40/000/fff/"></a>';
+                        },
+                    });
+
+                    $('.explore-icons-nav img:first-child').addClass('active');
+
+                    $('.explore-icons-nav img').click(function (e) {
+                        $('.explore-icons-nav img').removeClass('active');
+                        $(this).addClass('active');
+                        var thumbId = $(this).attr('data-id');
+                        $('.slick-dots a[data-id='+thumbId+']').click();
+                    });
+
+                    $('.slick-dots a').click(function(){
+                        var thumbId = $(this).attr('data-id');
+                        $('.explore-icons-nav img').removeClass('active');
+                        $('.explore-icons-nav img[data-id='+thumbId+']').addClass('active');
+                    });
+
+                });
+            </script>
+
         </div>
     </section>
 
@@ -69,6 +164,7 @@ get_header(); ?>
         </div>
     </section>
     <?php } ?>
+
     <section class="homepageNews">
         <div class="within">
             <div class="row">

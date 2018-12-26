@@ -86,21 +86,14 @@ $( document ).ready(function() {
     });
 
 
-
     // Set menu
-    //$('.mainMenu').prependTo('body');
-
     $('.menuToggler').click(function (){
         $('body').toggleClass('menuOpen');
         $(this).toggleClass('on');
-        //setTimeout(function(){$('body').toggleClass('overflowHidden')}, 10);
-
-
     });
     $('.mainMenu .close').click(function () {
         $('body').toggleClass('menuOpen');
         $('.menuToggler').toggleClass('on');
-        //setTimeout(function(){$('body').toggleClass('overflowHidden')}, 10);
     });
 
     //$('.subToggler').remove();
@@ -111,18 +104,9 @@ $( document ).ready(function() {
     });
 
     if($('.alerts').length){
-    ticker();
-    setInterval(ticker,5000);
+        ticker();
+        setInterval(ticker,5000);
     }
-    //$('.mainMenu ul ul ul').parent().prepend('<span class="subToggler"></span>');
-    /*$('.mainMenu').addClass('original').clone().insertAfter('.mainMenu').addClass('cloned').removeClass('original').hide();
-    $('.mainMenu.original').find('.logoHolder img').attr('src', '/wp-content/themes/richmondoval/images/basic/logo-org.png');*/
-
-    //$('.mainMenu ul#menu-programs-menu').prepend('<li class="close"><a href="#"><i class="fa fa-times"></i></a></li>');
-
-    //$('.content > *:first-child img').wrap('<div class="head-img"></div>');
-
-	  //$('#cssmenu>ul>li.has-sub>a').append('<span class="holder"></span>');
 
     $('table').wrap("<div class='table-wrap'></div>");
 
@@ -146,8 +130,46 @@ $( document ).ready(function() {
          });
     }
 
+    //Slick
+    $('.event-carousel').slick({
+        dots: true,
+        infinite: true,
+        //centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        //prevArrow:'<button class="PrevArrow"> <span class="Thumbnail"></span></button>',
+        //nextArrow:'<button class="NextArrow"> <span class="Thumbnail"></span></button>',
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+
+    });
+
 });
-} )( jQuery );
+
+})( jQuery );
 
 
 var ticker = function(){

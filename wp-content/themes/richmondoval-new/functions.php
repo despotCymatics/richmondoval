@@ -34,12 +34,15 @@ function richmondoval_scripts_styles() {
     //wp_enqueue_script('richmondoval-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'richmondoval-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
 	wp_enqueue_script('richmondoval-slimscroll', (get_template_directory_uri() . '/js/jquery.slimscroll.min.js'), array(), false, true );
+	wp_enqueue_script('richmondoval-slick', (get_template_directory_uri() . '/js/slick.min.js'), array(), false, true );
 	wp_enqueue_script( 'richmondoval-custom', get_template_directory_uri() . '/js/custom.js', array(), false, true );
 
 	//Stylesheets
     //wp_enqueue_style( 'richmondoval-default', get_template_directory_uri() . '/css/default.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-fonts', get_template_directory_uri() . '/css/fonts.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-general', get_template_directory_uri() . '/css/general.css', array(), false, "screen, projection" );
+    wp_enqueue_style( 'richmondoval-slick', get_template_directory_uri() . '/css/slick.css', array(), false, "screen, projection" );
+    wp_enqueue_style( 'richmondoval-slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), false, "screen, projection" );
 	wp_enqueue_style( 'richmondoval-template', get_template_directory_uri() . '/css/template.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-helper', get_template_directory_uri() . '/css/helper.css', array(), false, "screen, projection" );
 	wp_enqueue_style( 'richmondoval-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), false, "screen, projection" );
