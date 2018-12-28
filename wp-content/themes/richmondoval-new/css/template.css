@@ -2813,7 +2813,7 @@ h3#comments {
     background-size: cover;
 }
 
-/*events*/
+/*Hoem Events*/
 
 section.events {
     margin-top: 45px;
@@ -2862,7 +2862,7 @@ section.events h2 {
 
 
 
-/*explore*/
+/*Home Explore*/
 
 section.explore {
     margin-top: 45px;
@@ -2922,6 +2922,30 @@ section.explore h2 {
     bottom: 20px;
     left: 15px;
 }
+
+/* Home Latest News */
+
+section.news {
+    margin-top: 45px;
+}
+.news-wrap {
+    display: flex;
+}
+
+.news-carousel-nav {
+    width: 32%;
+    position: relative;
+}
+
+.news-carousel {
+    width: 68%;
+    margin-bottom: 0 !important;
+}
+
+.news-carousel-nav .slick-dots {
+    bottom: 0;
+}
+
 
 /*Programs LP*/
 

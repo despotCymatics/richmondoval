@@ -155,7 +155,79 @@ get_header(); ?>
         </div>
     </section>
 
-    <?php if(is_active_sidebar( 'homepage-link-boxes' )){ ?>
+
+    <!-- Latest News -->
+    <section class="news">
+
+        <div class="within">
+            <h2>Latest News</h2>
+        </div>
+
+        <div class="within">
+            <div class="news-wrap">
+                <?php
+                query_posts(array(
+                    'post_type' => 'news',
+                    'showposts' => 3
+                ));
+                ?>
+
+                <div class="news-carousel-nav">
+                    <div class="news-nav">
+                        <?php while (have_posts()) : the_post(); ?>
+                            <div class="article">
+                                <div class="articleImg">
+                                    <?php the_post_thumbnail( array(200, 150) ); ?>
+                                </div>
+                                <div class="articleTitle">
+                                    <h2><?php the_title(); ?></h2>
+                                </div>
+                            </div>
+
+                        <?php endwhile;?>
+                    </div>
+                </div>
+
+                <div class="news-carousel">
+
+                    <?php while (have_posts()) : the_post(); ?>
+                        <div class="article">
+                            <div class="articleDate">
+                                <?php the_date(); ?>
+                            </div>
+                            <div class="articleTitle">
+                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                                <p><?php echo get_the_excerpt(); ?></p>
+                            </div>
+                        </div>
+
+                    <?php endwhile;?>
+
+                </div>
+            </div>
+
+            <script>
+                $( document ).ready(function() {
+                    $('.news-carousel').slick({
+                        dots: true,
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        appendDots: $('.news-carousel-nav'),
+                        draggable:false,
+
+                    });
+
+                });
+            </script>
+
+        </div>
+    </section>
+
+
+
+    <!-- removing this -->
+    <?php if(is_active_sidebar( 'homepage-link-boxes' ) && 1==2){ ?>
     <section class="homepageLinkBoxes">
         <div class="within">
             <div class="row">
@@ -165,6 +237,7 @@ get_header(); ?>
     </section>
     <?php } ?>
 
+    <!-- removing this -->
     <section class="homepageNews">
         <div class="within">
             <div class="row">
