@@ -74,6 +74,16 @@ add_action( 'wp_enqueue_scripts', 'richmondoval_scripts_styles' );
 
 
 /**
+ * Register menu locations
+ *
+ */
+add_action( 'after_setup_theme', 'register_location' );
+function register_location() {
+  register_nav_menu( 'primary_mega', __( 'Primary Mega Menu', 'richmondoval' ) );
+}
+
+
+/**
  * Register sidebars and widgetized areas.
  *
  */
@@ -427,7 +437,6 @@ add_action('admin_init', 'imagelink_setup', 10);
 
 
 
-
 //FILTERS
 
 add_filter( 'the_content', 'attachment_image_link_remove_filter' ); //remove image link
@@ -449,31 +458,5 @@ function remove_width_attribute( $html ) {
    return $html;
 }
 
-// Facebook Open Graph
-/*add_action('wp_head', 'add_fb_open_graph_tags');
-function add_fb_open_graph_tags() {
-	if (is_single()) {
-		global $post;
-		if(get_the_post_thumbnail($post->ID, 'thumbnail')) {
-			$thumbnail_id = get_post_thumbnail_id($post->ID);
-			$thumbnail_object = get_post($thumbnail_id);
-			$image = $thumbnail_object->guid;
-		} else {	
-			$image = ''; // Change this to the URL of the logo you want beside your links shown on Facebook
-		}
-		//$description = get_bloginfo('description');
-		$description = my_excerpt( $post->post_content, $post->post_excerpt );
-		$description = strip_tags($description);
-		$description = str_replace("\"", "'", $description);
-?>
-<meta property="og:title" content="<?php the_title(); ?>" />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="<?php echo $image; ?>" />
-<meta property="og:url" content="<?php the_permalink(); ?>" />
-<meta property="og:description" content="<?php echo $description ?>" />
-<meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
-
-<?php 	}
-}*/
 
 

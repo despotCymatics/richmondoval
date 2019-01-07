@@ -27,6 +27,26 @@ $( document ).ready(function() {
         }, 300);
 
 
+        var lastScrollTop =  $(window).scrollTop();
+
+        $(window).scroll(function() {
+            var scrollTop = $(this).scrollTop();
+
+            if(lastScrollTop > scrollTop) {
+                $('header').removeClass('collapse');
+            }
+            else if (scrollTop > 100) { // this refers to window
+                if(!$('header').hasClass('collapse')) {
+                    $('header').addClass('collapse');
+                }
+            }
+            else {
+                $('header').removeClass('collapse');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
     });
 
     loaderOut();
@@ -132,7 +152,7 @@ $( document ).ready(function() {
 
     //Slick
     $('.event-carousel').slick({
-        dots: true,
+        dots: false,
         infinite: true,
         //centerMode: true,
         slidesToShow: 5,
@@ -167,6 +187,42 @@ $( document ).ready(function() {
 
     });
 
+
+    $('.slide-boxes').slick({
+        dots: true,
+        infinite: true,
+        //centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        //prevArrow:'<button class="PrevArrow"> <span class="Thumbnail"></span></button>',
+        //nextArrow:'<button class="NextArrow"> <span class="Thumbnail"></span></button>',
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+
+    });
 });
 
 })( jQuery );

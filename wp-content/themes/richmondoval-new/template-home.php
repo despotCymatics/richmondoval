@@ -6,24 +6,35 @@
 get_header(); ?>
 
     <!-- Hero -->
-    <section class="photo">
-        <div class="photoBox">
-            <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
-            <div class="within">
-                <!--<div class="topSearch">
-                    <?php /*get_search_form( true ); */?>
-                    <?php /*$allProgramsLink = get_field('all_programs_page');
-                    if($allProgramsLink){ */?>
-                        <p class="all"><a href="<?php /*echo $allProgramsLink; */?>"><i class="fa fa-search"></i> Review all programs</a></p>
-                    <?php /*} */?>
-                </div>-->
+    <section class="hero">
+        <div class="within">
+            <div class="row" style="background: url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover; height: 400px;">
             </div>
-            <?php $infoMsg = get_field('info_message');
-                if($infoMsg){ ?>
-            <div class="galley">
-                <p><?php echo $infoMsg; ?></p>
+        </div>
+    </section>
+
+    <!-- Slide Boxes -->
+    <section class="slides">
+        <div class="within">
+            <div class="row">
+                <div class="slide-boxes">
+
+                    <?php
+                    while ( have_rows('slide_box') ) : the_row();
+                        ?>
+                        <div class="slide-box"
+                             style="background:linear-gradient(259.63deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
+                                     url(<?=get_sub_field('slide_box_background');?>) no-repeat center / cover">
+                            <h3><?=get_sub_field('slide_box_title');?></h3>
+                            <p><?=get_sub_field('slide_box_text');?></p>
+                            <a class="read-more" href="<?=get_sub_field('slide_box_url');?>">Read More</a>
+                        </div>
+                    <?php
+                    endwhile;
+                    ?>
+
+                </div>
             </div>
-            <?php }  ?>
         </div>
     </section>
 
@@ -31,7 +42,11 @@ get_header(); ?>
     <section class="events">
 
         <div class="within">
-            <h2>Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-6"><h2 class="sectionTitle">Upcoming Events</h2></div>
+                <div class="col-md-6"><a class="view-all-events" href="/events/">View all Events</a></div>
+            </div>
+
         </div>
 
         <div class="event-carousel">
@@ -43,19 +58,32 @@ get_header(); ?>
             foreach ($events as $event) { //var_dump($event); ?>
                 <div class="article">
                     <div class="articleImg">
-                        <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
-                        if($eventImg != "") echo $eventImg;
-                        else { ?>
-                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-                        <?php } ?>
+                        <a href="<?php echo get_permalink($event->ID); ?>">
+                            <?php
+                            $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+                            if($eventImg != "") echo $eventImg;
+                            else { ?>
+                                <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                            <?php } ?>
+                        </a>
 
                     </div>
                     <div class="articleTitle">
-                        <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
-                        <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
-                        <p class="excerpt"><?php echo $event->post_content; ?></p>
+                        <p class="eventDate">
+                            <span class="month">
+                                <?php echo date("M", strtotime($event->EventStartDate)); ?>
+                            </span>
+                            <span class="day">
+                                <?php echo date("d", strtotime($event->EventStartDate)); ?>
+                            </span>
+                        </p>
+                        <div class="eventMeta">
+                            <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
+                            <p class="excerpt"><?php echo $event->post_content; ?></p>
+                            <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                        </div>
                     </div>
-                    <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+
                 </div>
                 <?php
             }
@@ -68,7 +96,7 @@ get_header(); ?>
     <section class="explore">
 
         <div class="within">
-            <h2>Explore The Oval</h2>
+            <h2 class="sectionTitle">Explore The Oval</h2>
         </div>
 
         <div class="within">
@@ -160,7 +188,7 @@ get_header(); ?>
     <section class="news">
 
         <div class="within">
-            <h2>Latest News</h2>
+            <h2 class="sectionTitle">Latest News</h2>
         </div>
 
         <div class="within">

@@ -70,12 +70,12 @@
 
         <header>
             <div class="topBar">
-                 <div class="within">
+                 <div class="within" style="position: relative">
                     <div class="row">
                         <div class="col-lg-7">
                              <div class="logoHolder">
                                 <a title="Richmond Olympic Oval" href="<?php echo get_home_url(); ?>">
-                                    <img src="<?=get_template_directory_uri()?>/images/basic/logo.png" alt="Site name">
+                                    <img src="<?=get_template_directory_uri()?>/images/basic/logo-new.svg" alt="Site name">
                                 </a>
                              </div>
                          </div>
@@ -107,65 +107,68 @@
                             ?>
                         <div class="col-lg-5"></div>
                     </div>
-                </div>
-                <div class="topLeft">
-                     <div class="combinedMenu">
-                            <?php if ( is_active_sidebar( 'top_bar' ) ) {
-                                dynamic_sidebar('top_bar' );
-                            }
-                            ?>
-                            <a class="ser" title="Search" href="#"></a>
-                            <div class="barSearch"><?php get_search_form( true ); ?></div>
-                            <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>
-                            <a class="hp" title="High Performance" href="https://richmondoval.ca/ovalhp"><span>High Performance</span></a>
-                            <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
-                            <a class="onsite" title="On site services" href="#">On Site Services</a>-->
 
-                     </div>
+                     <div class="topLeft">
+                         <div class="combinedMenu">
+                             <?php if ( is_active_sidebar( 'top_bar' ) ) {
+                                 dynamic_sidebar('top_bar' );
+                             }
+                             ?>
+                             <a class="ser" title="Search" href="#"></a>
+                             <div class="barSearch"><?php get_search_form( true ); ?></div>
+                             <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>
+                             <a class="hp" title="High Performance" href="https://richmondoval.ca/ovalhp"><span>High Performance</span></a>
+                             <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
+                             <a class="onsite" title="On site services" href="#">On Site Services</a>-->
 
-                     <div class="menuWrap">
-                        <span class="menuToggler"></span>
-                        <div class="mainMenu">
-                            <div class="close"><a href="#"><i class="fa fa-times"></i></a></div>
-                            <div class="within">
-                                 <div class="topSearch">
-                                    <?php get_search_form( true ); ?>
+                         </div>
+
+                         <div class="menuWrap">
+                             <span class="menuToggler"></span>
+                             <div class="mainMenu">
+                                 <div class="close"><a href="#"><i class="fa fa-times"></i></a></div>
+                                 <div class="within">
+                                     <div class="topSearch">
+                                         <?php get_search_form( true ); ?>
+                                     </div>
+                                     <div class="scrollable">
+                                         <nav>
+                                             <?php
+                                             $defaults = array(
+                                                 'theme_location'  => '',
+                                                 'menu'            => 'Programs Menu',
+                                                 'container'       => '',
+                                                 'container_class' => '',
+                                                 'container_id'    => '',
+                                                 'menu_class'      => 'dl-menu',
+                                                 'menu_id'         => '',
+                                                 'echo'            => true,
+                                                 'fallback_cb'     => 'wp_page_menu',
+                                                 'before'          => '',
+                                                 'after'           => '',
+                                                 'link_before'     => '',
+                                                 'link_after'      => '',
+                                                 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                                 'depth'           => 3,
+                                                 'walker'          => new sub_class_menu()
+                                             );
+
+                                             wp_nav_menu( $defaults );
+                                             ?>
+                                         </nav>
+                                     </div>
                                  </div>
-                                <div class="scrollable">
-                                <nav>
-                                    <?php
-                                    $defaults = array(
-                                        'theme_location'  => '',
-                                        'menu'            => 'Programs Menu',
-                                        'container'       => '',
-                                        'container_class' => '',
-                                        'container_id'    => '',
-                                        'menu_class'      => 'dl-menu',
-                                        'menu_id'         => '',
-                                        'echo'            => true,
-                                        'fallback_cb'     => 'wp_page_menu',
-                                        'before'          => '',
-                                        'after'           => '',
-                                        'link_before'     => '',
-                                        'link_after'      => '',
-                                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                        'depth'           => 3,
-                                        'walker'          => new sub_class_menu()
-                                    );
-
-                                    wp_nav_menu( $defaults );
-                                    ?>
-                                </nav>
-                                </div>
-                            </div>
-
-                        </div>
+                             </div>
+                         </div>
                      </div>
                 </div>
-                <!--<div class="blueStripe"></div>-->
-                <div class="mega-menu">
-                    <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
+            </div>
 
+            <div class="topMega">
+                <div class="within">
+                    <div class="mega-menu row">
+                        <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
+                    </div>
                 </div>
             </div>
     </header>
