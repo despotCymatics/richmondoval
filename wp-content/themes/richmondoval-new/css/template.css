@@ -3088,9 +3088,55 @@ section.events .view-all-events:before {
     margin: 40px auto;
 }
 
+/* Working Hours */
+.working-hours {
+    margin-top: 100px;
+}
+
+.working-hours .work-box, .working-hours .info-box {
+    border: 1px solid #DADADA;
+    padding: 40px 40px 40px 120px;
+    position: relative;
+}
+
+.working-hours .work-box:before, .working-hours .info-box:before {
+    content: "\f017";
+    font-family: FontAwesome;
+    font-size: 40px;
+    text-align: center;
+    line-height: 90px;
+    color: #fff;
+    width: 90px;
+    height: 90px;
+    background: #85C440;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.working-hours .work-box h4, .working-hours .info-box h4 {
+    margin-bottom: 40px;
+}
+
+.working-hours .work-box ul, .working-hours .info-box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.working-hours .work-box li, .working-hours .info-box li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    list-style: none;
+}
+
+.working-hours .work-box li span, .working-hours .info-box li span {
+    float: right;
+}
 
 
-/*Home Explore*/
+
+    /*Home Explore*/
 
 section.explore {
     margin-top: 75px;

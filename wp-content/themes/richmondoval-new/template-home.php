@@ -91,6 +91,38 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Working Hours-->
+    <section class="working-hours">
+        <div class="within">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="work-box">
+                        <h4>Today's working hours</h4>
+                        <ul>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h4>Today's working hours</h4>
+                        <ul>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                            <li>Oval Facility <span>8am-11pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 
     <!-- Explore Oval -->
     <section class="explore">
