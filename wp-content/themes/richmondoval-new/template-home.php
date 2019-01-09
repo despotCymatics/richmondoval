@@ -94,7 +94,7 @@ get_header(); ?>
     <!-- Working Hours-->
     <section class="working-hours">
         <div class="within">
-            <div class="row">
+            <div class="row flex">
                 <div class="col-md-6">
                     <div class="work-box">
                         <h4>Today's working hours</h4>
@@ -104,18 +104,17 @@ get_header(); ?>
                             <li>Oval Facility <span>8am-11pm</span></li>
                             <li>Oval Facility <span>8am-11pm</span></li>
                         </ul>
+                        <a href="#" class="read-more">See Full Hours</a>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="info-box">
-                        <h4>Today's working hours</h4>
-                        <ul>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                        </ul>
+                        <h4>Visiting the Oval? Here’s what you need to know</h4>
+                        <div class="alerts">
+                            <p>There are currently no visitor alerts in place.</p>
+                        </div>
+                        <a href="/facility/hours-location#parking" class="read-more">Parking Maps and More</a>
                     </div>
                 </div>
             </div>
@@ -146,7 +145,7 @@ get_header(); ?>
                 <div class="explore-carousel-nav">
                     <div class="explore-icons-nav">
                     <?php
-                        foreach ($events as $event) { //var_dump($event); ?>
+                        foreach ($events as $event) {  ?>
                             <img src="http://via.placeholder.com/80x80/ccc/fff/" data-id="<?=$event->ID;?>">
                     <?php
                         }
@@ -156,22 +155,22 @@ get_header(); ?>
 
                 <div class="explore-carousel">
 		            <?php
-		            foreach ($events as $event) { //var_dump($event); ?>
+		            foreach ($events as $event) {  ?>
                         <div class="article" data-id="<?=$event->ID;?>">
+                            <div class="articleTitle">
+                                <h2><?php echo $event->post_title; ?></h2>
+                                <p class="excerpt"><?php echo $event->post_content; ?></p>
+                                <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                            </div>
                             <div class="articleImg">
-					            <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+					            <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
 					            if($eventImg != "") echo $eventImg;
 					            else { ?>
                                     <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
 					            <?php } ?>
 
                             </div>
-                            <div class="articleTitle">
-                                <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
-                                <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
-                                <p class="excerpt"><?php echo $event->post_content; ?></p>
-                            </div>
-                            <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+
                         </div>
 			            <?php
 		            }
@@ -183,6 +182,7 @@ get_header(); ?>
                 $( document ).ready(function() {
                     $('.explore-carousel').slick({
                         dots: true,
+                        arrows:false,
                         infinite: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,

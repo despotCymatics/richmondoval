@@ -1509,7 +1509,7 @@ section.photo {
     text-decoration: none;
 }
 
-    /* Homepage Alerts */
+/* Sponsors Shuffle -  Homepage Alerts */
 .home .homepage-alerts {
     background: #005088;
     padding: 0 45px !important;
@@ -1543,6 +1543,8 @@ section.photo {
 .newsBox .homepage-alerts .promoBox a.side-box:hover {
     background-color: transparent;
 }
+
+
 section.homepageLinkBoxes {
     padding: 15px 0;
 }
@@ -2616,35 +2618,6 @@ span.wpcf7-list-item {
     background: url("/wp-content/uploads/2017/07/FIVB.jpg") no-repeat center / cover ;
 }
 
-    /* Alerts */
-.alerts {
-    /*display: inline-block;*/
-    padding: 8px 10px 8px 30px;
-    position: relative;
-    max-height: 72px;
-    overflow: hidden;
-
-}
-
-.alerts:before {
-    font-family: "FontAwesome";
-    left: 7px;
-    position: absolute;
-    top: 8px;
-    font-size: 1.5em;
-    content: '\f071';
-    color: #4e4e4e;
-}
-
-.alerts p.alert {
-    display: none;
-    margin-bottom: 0;
-    color: #fff;
-}
-
-img.not-full {
-    width: auto !important;
-}
 
 /* PM widgets */
 
@@ -3095,12 +3068,12 @@ section.events .view-all-events:before {
 
 .working-hours .work-box, .working-hours .info-box {
     border: 1px solid #DADADA;
-    padding: 40px 40px 40px 120px;
+    padding: 35px 40px 35px 120px;
     position: relative;
+    height: 100%;
 }
 
 .working-hours .work-box:before, .working-hours .info-box:before {
-    content: "\f017";
     font-family: FontAwesome;
     font-size: 40px;
     text-align: center;
@@ -3113,13 +3086,20 @@ section.events .view-all-events:before {
     top: 0;
     left: 0;
 }
+.working-hours .work-box:before {
+    content: "\f017";
+}
+
+.working-hours .info-box:before {
+    content: "\f05a";
+}
 
 .working-hours .work-box h4, .working-hours .info-box h4 {
     margin-bottom: 40px;
 }
 
 .working-hours .work-box ul, .working-hours .info-box ul {
-    padding: 0;
+    padding: 0 0 20px;
     margin: 0;
     list-style: none;
 }
@@ -3134,9 +3114,31 @@ section.events .view-all-events:before {
     float: right;
 }
 
+.working-hours a.read-more {
+    position: absolute;
+    bottom: 40px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.working-hours a.read-more:before {
+    display: inline-block;
+    content: '\f105';
+    font-family: FontAwesome;
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: inherit;
+    color: #85C440;
+
+}
+
+.working-hours .info-box .alerts p {
+    color: #D13200;
+}
 
 
-    /*Home Explore*/
+
+/*Home Explore*/
 
 section.explore {
     margin-top: 75px;
@@ -3148,12 +3150,23 @@ section.explore {
 }
 
 .explore-carousel-nav {
-    width: 32%;
+    width: 25%;
     position: relative;
+    background: #EAEAEA;
+    padding: 40px;
+}
+.explore-icons-nav {
+    text-align: center;
+}
+
+.explore-icons-nav img {
+    margin: 15px;
+    cursor: pointer;
 }
 
 .explore-carousel-nav .slick-dots {
-    bottom: 0;
+    bottom: 20px;
+    left: 0px;
 }
 
 .explore-carousel-nav .active {
@@ -3161,7 +3174,7 @@ section.explore {
 }
 
 .explore-carousel {
-    width: 68%;
+    width: 75%;
     margin-bottom: 0 !important;
 }
 
@@ -3169,29 +3182,37 @@ section.explore {
     background: #EAEAEA;
     height: auto;
     position: relative;
+    display: flex;
 }
 
 .explore-carousel .article .articleTitle {
-    padding: 15px;
-    background: #EAEAEA;
-    transition: all 0.3s;
+    padding: 60px 40px;
+    background: #005088;
+    position: relative;
+    width: 30%;
 }
 
-.explore-carousel .article:hover .articleTitle {
-    transform: translateY(-15px);
+.explore-carousel .articleTitle h2, .explore-carousel .articleTitle p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.explore-carousel .article .articleImg {
+    width: 70%;
+    height: 500px;
 }
 
 
 .explore-carousel .article .articleImg img {
     object-fit: cover;
+    object-position: center;
     width: 100%;
-    height: 260px;
 }
 
 .explore-carousel .article a.read-more {
     position: absolute;
-    bottom: 20px;
-    left: 15px;
+    bottom: 40px;
+    left: auto;
 }
 
 /* Home Latest News */

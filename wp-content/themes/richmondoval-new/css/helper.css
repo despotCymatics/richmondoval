@@ -189,3 +189,14 @@
 [class^="pe-7s-"], [class*=" pe-7s-"] {
   display: inline-block;
 }
+
+/*flex*/
+.flex {
+  display: flex;
+}
+
+@media screen and (max-width:1024) {
+  .flex {
+    display: block;
+  }
+}
