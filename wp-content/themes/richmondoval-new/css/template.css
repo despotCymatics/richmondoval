@@ -1009,6 +1009,19 @@ header.collapse .topMega {
     padding: 30px;
 }
 
+.mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.promo .textwidget p {
+    margin: 20px 0;
+}
+
+.mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.promo .textwidget a.contactUs-btn {
+    font-size: 12px;
+    background: #85C440;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
 /* 3rd col */
 
 .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.background {
