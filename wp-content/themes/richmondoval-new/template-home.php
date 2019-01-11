@@ -8,7 +8,10 @@ get_header(); ?>
     <!-- Hero -->
     <section class="hero">
         <div class="within">
-            <div class="row" style="background: url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover; height: 400px;">
+            <div class="row flex" style="background:  linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%), url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover; height: 400px;">
+                <div class="hero-title-wrap col-md-4">
+                    <h1 class="hero-title">MORE THAN MEETS THE ICE</h1>
+                </div>
             </div>
         </div>
     </section>
@@ -22,13 +25,13 @@ get_header(); ?>
                     <?php
                     while ( have_rows('slide_box') ) : the_row();
                         ?>
-                        <div class="slide-box"
-                             style="background:linear-gradient(259.63deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
-                                     url(<?=get_sub_field('slide_box_background');?>) no-repeat center / cover">
+                        <a href="<?=get_sub_field('slide_box_url');?>" class="slide-box"
+                             style="background-image:linear-gradient(259.63deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
+                                     url(<?=get_sub_field('slide_box_background');?>)">
                             <h3><?=get_sub_field('slide_box_title');?></h3>
                             <p><?=get_sub_field('slide_box_text');?></p>
-                            <a class="read-more" href="<?=get_sub_field('slide_box_url');?>">Read More</a>
-                        </div>
+                            <span class="read-more">Read More</span>
+                        </a>
                     <?php
                     endwhile;
                     ?>
@@ -168,7 +171,7 @@ get_header(); ?>
 
 	            <?php
 	            $events = tribe_get_events( array(
-		            'posts_per_page' => 3,
+		            'posts_per_page' => 4,
 		            'start_date' => date( 'Y-m-d H:i:s' )
 	            ) );
 
@@ -178,7 +181,7 @@ get_header(); ?>
                     <div class="explore-icons-nav">
                     <?php
                         foreach ($events as $event) {  ?>
-                            <img src="http://via.placeholder.com/80x80/ccc/fff/" data-id="<?=$event->ID;?>">
+                            <img src="http://via.placeholder.com/100x100/111/ccc/" data-id="<?=$event->ID;?>">
                     <?php
                         }
                     ?>
@@ -214,7 +217,7 @@ get_header(); ?>
                 $( document ).ready(function() {
                     $('.explore-carousel').slick({
                         dots: true,
-                        arrows:false,
+                        arrows:true,
                         infinite: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
@@ -222,7 +225,7 @@ get_header(); ?>
                         draggable:false,
                         customPaging : function(slider, i) {
                             var slideId = $(slider.$slides[i]).data('id');
-                            return '<a data-id="'+slideId+'"><img src="http://via.placeholder.com/40x40/000/fff/"></a>';
+                            return '<a data-id="'+slideId+'"><span></span></a>';
                         },
                     });
 
@@ -272,11 +275,13 @@ get_header(); ?>
                                     <?php the_post_thumbnail( array(200, 150) ); ?>
                                 </div>
                                 <div class="articleTitle">
+                                    <p><?php echo date("M d", strtotime(get_the_date())); ?></p>
                                     <h2><?php the_title(); ?></h2>
                                 </div>
                             </div>
 
                         <?php endwhile;?>
+                        <a class="read-more" href="/news">More News</a>
                     </div>
                 </div>
 
@@ -285,11 +290,13 @@ get_header(); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <div class="article">
                             <div class="articleDate">
-                                <?php the_date(); ?>
+	                            <span><?php echo date("M",  strtotime(get_the_date())); ?></span>
+	                            <span><?php echo date("d",  strtotime(get_the_date())); ?></span>
                             </div>
                             <div class="articleTitle">
                                 <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
                                 <p><?php echo get_the_excerpt(); ?></p>
+                                <a class="read-more" href="<?=get_permalink(); ?>">Read More</a>
                             </div>
                         </div>
 
@@ -301,11 +308,11 @@ get_header(); ?>
             <script>
                 $( document ).ready(function() {
                     $('.news-carousel').slick({
-                        dots: true,
+                        dots: false,
+                        arrows:false,
                         infinite: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        appendDots: $('.news-carousel-nav'),
                         draggable:false,
 
                     });
@@ -320,85 +327,14 @@ get_header(); ?>
 
     <!-- removing this -->
     <?php if(is_active_sidebar( 'homepage-link-boxes' ) && 1==2){ ?>
-    <section class="homepageLinkBoxes">
-        <div class="within">
-            <div class="row">
-                <?php dynamic_sidebar('homepage-link-boxes' );?>
-            </div>
-        </div>
-    </section>
+
     <?php } ?>
 
-    <!-- removing this -->
-    <section class="homepageNews">
-        <div class="within">
-            <div class="row">
-                <div class="col-sm-12">
-                <?php if ( is_active_sidebar( 'home-cta' ) ){ ?>
-                    <?php dynamic_sidebar('home-cta' ); ?>
-                <?php } ?>
-                    <!--<a href="#" class="parkingMaps-btn">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <i class="fa fa-car" aria-hidden="true"></i>
-                        PARKING MAPS
-                    </a>-->
-                </div>
-                <div class="col-sm-6">
-                    <h2 class="sectionTitle"><span>Latest News</span></h2>
-                <?php
-                query_posts(array(
-                    'post_type' => 'news',
-                    'showposts' => 3
-                ));
-                ?>
-                    <?php while (have_posts()) : the_post(); ?>
-                        <div class="article">
-                            <div class="articleImg">
-                                <?php the_post_thumbnail( array(200, 150) ); ?>
-                            </div>
-                            <div class="articleTitle">
-                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                                <p><?php echo get_the_excerpt(); ?></p>
-                            </div>
-                        </div>
 
-                    <?php endwhile;?>
-                    <a class="allArticlesBtn" href="/all-news/">View all News </a>
-                </div>
-                <div class="col-sm-6">
-                    <h2 class="sectionTitle"><span>Upcoming Events</span></h2>
-                    <?php
-                    $events = tribe_get_events( array(
-                        'posts_per_page' => 3,
-                        'start_date' => date( 'Y-m-d H:i:s' )
-                    ) );
-                    foreach ($events as $event) { //var_dump($event); ?>
-                        <div class="article">
-                            <div class="articleImg">
-                                <?php $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
-                                    if($eventImg != "") echo $eventImg;
-                                    else { ?>
-                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-                                <?php } ?>
+    <?php
 
-                            </div>
-                            <div class="articleTitle">
-                                <p class="eventDate"><?php echo date("F j Y", strtotime($event->EventStartDate)); ?></p>
-                                <h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h2>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-                    <a class="allArticlesBtn" href="/events/">View all Events </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <?php if ( is_active_sidebar( 'footer-homepage-left' ) || is_active_sidebar( 'footer-homepage-right' ) ){ ?>
+    if(1 == 2) {
+    //if ( is_active_sidebar( 'footer-homepage-left' ) || is_active_sidebar( 'footer-homepage-right' ) ){ ?>
     <section class="wallBox">
         <div class="within">
             <?php if ( is_active_sidebar( 'footer-homepage-left' ) ){ ?>
