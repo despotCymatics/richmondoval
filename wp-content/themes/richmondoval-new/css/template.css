@@ -199,6 +199,19 @@ header.collapse .topBar {
     font-size: 12px;
     text-decoration: none;
 }
+.topBar .combinedMenu a.btn-flat {
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0px 30px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.topBar .combinedMenu a.btn-flat.btn-green-border {
+    color: #85C440;
+}
+
 
 .topBar .combinedMenu a.login {
     background-color: #F28011;
@@ -2383,15 +2396,40 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     text-transform: uppercase;
     color: #fff;
     font-size: 16px;
-    padding: 19px 34px;
+    padding: 15px 30px;
     cursor: pointer;
     display: inline-block;
     transform: rotate(0.01deg);
     margin-bottom: 10px;
 }
+
+.btn-flat {
+    font-family: NeoSansStdBold, arial, helvetica, sans-serif;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 30px;
+    cursor: pointer;
+    display: inline-block;
+    transform: rotate(0.01deg);
+}
 .btn-orange {
     background-color: #e14916;
 }
+
+.btn-green {
+    border: 2px solid #85C440;
+    background-color: #85C440;
+}
+
+.btn-green-border {
+    background-color: #fff;
+    border: 2px solid #85C440;
+    color: #85C440;
+}
+
 div.wpcf7 img.ajax-loader {
     width: auto;
 }
@@ -3081,7 +3119,7 @@ section.events .view-all-events:before {
 
 .working-hours .work-box, .working-hours .info-box {
     border: 1px solid #DADADA;
-    padding: 35px 40px 35px 120px;
+    padding: 35px 60px 35px 120px;
     position: relative;
     height: 100%;
 }
@@ -3112,7 +3150,7 @@ section.events .view-all-events:before {
 }
 
 .working-hours .work-box ul, .working-hours .info-box ul {
-    padding: 0 0 20px;
+    padding: 0 0 30px;
     margin: 0;
     list-style: none;
 }

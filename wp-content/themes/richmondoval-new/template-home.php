@@ -112,7 +112,39 @@ get_header(); ?>
                     <div class="info-box">
                         <h4>Visiting the Oval? Here’s what you need to know</h4>
                         <div class="alerts">
-                            <p>There are currently no visitor alerts in place.</p>
+
+                            <?php
+
+                            $args=array(
+                               'post_type' => 'alerts',
+                               'post_status' => 'publish',
+                               'posts_per_page' => -1,
+                               'ignore_sticky_posts'=> 1,
+                            );
+
+                            $query = null;
+                            $query = new WP_Query($args);
+                            if( $query->have_posts() ) { ?>
+
+                               <?php
+                               $i = 1;
+                               while ($query->have_posts()) : $query->the_post(); ?>
+                                   <p class="alert">
+                                       <?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_content()); ?>
+                                   </p>
+                                   <?php
+                                   $i++;
+                               endwhile;
+                               ?>
+
+                            <?php
+                            }else { ?>
+                                <p>There are currently no visitor alerts in place.</p>
+                            <?php
+                            }
+                            wp_reset_query();
+                            ?>
+
                         </div>
                         <a href="/facility/hours-location#parking" class="read-more">Parking Maps and More</a>
                     </div>

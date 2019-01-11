@@ -124,8 +124,8 @@ $( document ).ready(function() {
     });
 
     if($('.alerts').length){
-        ticker();
-        setInterval(ticker,5000);
+        //ticker();
+        //setInterval(ticker,5000);
     }
 
     $('table').wrap("<div class='table-wrap'></div>");

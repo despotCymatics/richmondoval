@@ -79,32 +79,6 @@
                                 </a>
                              </div>
                          </div>
-                            <?php
-                            /*$args=array(
-                                'post_type' => 'alerts',
-                                'post_status' => 'publish',
-                                'posts_per_page' => -1,
-                                'ignore_sticky_posts'=> 1,
-                            );
-
-                            $query = null;
-                            $query = new WP_Query($args);
-                            if( $query->have_posts() ) { ?>
-                                <div class="alerts">
-                                    <?php
-                                    $i = 1;
-                                    while ($query->have_posts()) : $query->the_post(); ?>
-                                        <p id="alert-<?php echo $i; ?>" class="alert"><?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_content()); ?></p>
-                                        <?php
-                                        $i++;
-                                    endwhile;
-                                    ?>
-                                </div>
-                            <?php
-                            }
-                            wp_reset_query();  // Restore global post data stomped by the_post().
-        */
-                            ?>
                         <div class="col-lg-5"></div>
                     </div>
 
@@ -114,6 +88,8 @@
                                  dynamic_sidebar('top_bar' );
                              }
                              ?>
+                             <a class="btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
+                             <a class="btn-flat btn-green" title="Become a member" href="/contact">Become a member</a>
                              <a class="ser" title="Search" href="#"></a>
                              <div class="barSearch"><?php get_search_form( true ); ?></div>
                              <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>
