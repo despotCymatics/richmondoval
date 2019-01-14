@@ -276,7 +276,7 @@ get_header(); ?>
                                 </div>
                                 <div class="articleTitle">
                                     <p><?php echo date("M d", strtotime(get_the_date())); ?></p>
-                                    <h2><?php the_title(); ?></h2>
+                                    <h4><?php the_title(); ?></h4>
                                 </div>
                             </div>
 
@@ -290,8 +290,8 @@ get_header(); ?>
                     <?php while (have_posts()) : the_post(); ?>
                         <div class="article">
                             <div class="articleDate">
-	                            <span><?php echo date("M",  strtotime(get_the_date())); ?></span>
-	                            <span><?php echo date("d",  strtotime(get_the_date())); ?></span>
+	                            <span class="month"><?php echo date("M",  strtotime(get_the_date())); ?></span>
+	                            <span class="day"><?php echo date("d",  strtotime(get_the_date())); ?></span>
                             </div>
                             <div class="articleTitle">
                                 <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
@@ -323,6 +323,9 @@ get_header(); ?>
         </div>
     </section>
 
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
 
 
     <!-- removing this -->

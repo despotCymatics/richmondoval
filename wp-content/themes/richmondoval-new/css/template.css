@@ -1239,10 +1239,7 @@ section.photo {
 
 /* ----- NEWS BOX -----*/
 
-.newsBox {
-    padding: 65px 0 65px 0;
-    background: url(../images/basic/hockey.png) no-repeat 5% 50%;
-}
+
 
 .sectionTitle {
     color: #E04915;
@@ -1254,18 +1251,6 @@ section.photo {
 
 .content .sectionTitle {
     font-size: 22px;
-}
-
-.newsBox .newsHolder {
-    /*float:left;*/
-}
-
-.newsHolder.w-4 {
-    /*width:224px; margin-right:20px;*/
-}
-
-.newsHolder.w-6 {
-    width: 468px;
 }
 
 .newsHolder a {
@@ -3228,7 +3213,7 @@ section.news {
     padding: 40px;
 }
 
-.news-carousel-nav .article{
+.news-carousel-nav .article {
     display: flex;
     margin-bottom: 20px;
 }
@@ -3244,6 +3229,21 @@ section.news {
     object-position: center;
 }
 
+.news-carousel-nav .article .articleTitle p {
+    color: #005088;
+}
+
+.news-carousel-nav .article .articleTitle p {
+    color: #005088;
+    font-size: 16px;
+}
+
+
+.news-carousel-nav .article .articleTitle h4 {
+    color: #212121;
+    font-size: 14px;
+}
+
 .news-carousel {
     display: flex;
     align-items: center;
@@ -3252,6 +3252,45 @@ section.news {
     margin-bottom: 0 !important;
 }
 
+.news-carousel .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.news-carousel .article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 60px;
+}
+
+.news-carousel .article .articleDate {
+
+}
+
+.news-carousel .article .articleDate span {
+    display: block;
+    text-align: center;
+}
+
+.news-carousel .article .articleDate span.month {
+    font-size: 30px;
+    color: #737373;
+}
+
+.news-carousel .article .articleDate span.day {
+    color: #005088;
+    font-size: 100px;
+}
+
+.news-carousel .article .articleTitle {
+    padding: 30px;
+    max-width: 550px;
+}
+
+.news-carousel .article .articleTitle .read-more {
+    position: static;
+}
 
 
 /*Programs LP*/
