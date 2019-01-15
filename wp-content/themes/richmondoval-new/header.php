@@ -88,8 +88,8 @@
                                  dynamic_sidebar('top_bar' );
                              }
                              ?>
-                             <a class="btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
-                             <a class="btn-flat btn-green" title="Become a member" href="/contact">Become a member</a>
+                             <a class="hideOnMob btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
+                             <a class="hideOnMob btn-flat btn-green" title="Become a member" href="/contact">Become a member</a>
                              <a class="ser" title="Search" href="#"></a>
                              <div class="barSearch"><?php get_search_form( true ); ?></div>
                              <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>

@@ -8,11 +8,17 @@ get_header(); ?>
     <!-- Hero -->
     <section class="hero">
         <div class="within">
-            <div class="row flex" style="background:  linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%), url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover; height: 400px;">
-                <div class="hero-title-wrap col-md-4">
+            <div class="row" style="background:  linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%), url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover;">
+                <div class="hero-title-wrap col-md-5">
                     <h1 class="hero-title">MORE THAN MEETS THE ICE</h1>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="mobileMega">
+        <div class="mega-menu">
+            <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
         </div>
     </section>
 
@@ -113,7 +119,7 @@ get_header(); ?>
 
                 <div class="col-md-6">
                     <div class="info-box">
-                        <h4>Visiting the Oval? Here’s what you need to know</h4>
+                        <h4>Visiting the Oval? </h4>
                         <div class="alerts">
 
                             <?php

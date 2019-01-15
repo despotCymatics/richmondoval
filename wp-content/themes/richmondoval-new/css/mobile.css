@@ -67,6 +67,18 @@ body.menuOpen {
 
 @media screen and (max-width: 1024px) {
 
+    .topMega {
+        display: none !important;
+    }
+
+    .mobileMega {
+        display: block;
+    }
+
+    .pageWrap {
+        margin-top: 54px;
+    }
+
     .slide-boxes .slide-box {
         background-size: cover;
     }
@@ -148,10 +160,7 @@ body.menuOpen {
         width: 180px;
         margin-top: 32%;
     }
-    .alerts {
-        height: 72px;
-        display: none;
-    }
+
     img {
         max-width: 100%;
         height: auto;
@@ -219,10 +228,6 @@ body.menuOpen {
     .wallBox .sectionTitle {
         margin-top: 20px;
     }
-
-    /*.no-padd { padding:0 !important}
-    .no-padd-left { padding:0 !important}
-    .no-padd-right { padding:0 !important}*/
 
     .wallBox {
         background-position: center top;
@@ -391,16 +396,30 @@ body.menuOpen {
 	.menuHeader ul li a{font-size: 12px;}
 	.eventBox p a { font-size:16px;}
 
-	/*.footerSponsors { float: none; display:table; margin:0 auto;}*/
 }
 
 @media screen and (max-width: 480px) {
+
+    .working-hours .work-box, .working-hours .info-box {
+        padding: 15px 30px 15px 65px;
+    }
+
+    .working-hours .work-box h4, .working-hours .info-box h4 {
+        font-size: 16px;
+    }
+
+    .working-hours .work-box:before, .working-hours .info-box:before {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
 
     .inner .mainCol {
         padding: 0 15px;
     }
     .hideOnMob {
-        display: none;
+        display: none !important;
     }
 
     .hideOnDesk {
