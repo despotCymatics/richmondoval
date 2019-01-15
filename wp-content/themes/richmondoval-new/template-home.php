@@ -46,8 +46,8 @@ get_header(); ?>
 
         <div class="within">
             <div class="row">
-                <div class="col-md-6"><h2 class="sectionTitle">Upcoming Events</h2></div>
-                <div class="col-md-6"><a class="view-all-events" href="/events/">View all Events</a></div>
+                <div class="col-sm-8"><h2 class="sectionTitle">Upcoming Events</h2></div>
+                <div class="col-sm-4"><a class="view-all-events" href="/events/">View all Events</a></div>
             </div>
 
         </div>

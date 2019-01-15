@@ -66,10 +66,26 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 1024px) {
+
+    .slide-boxes .slide-box {
+        background-size: cover;
+    }
+
+    .working-hours .flex {
+        display: block;
+    }
+
+    .working-hours .flex > div{
+        margin: 15px 0;
+    }
+
+    .topBar .combinedMenu .textwidget {
+        display: none;
+    }
+
     .mainMenu {
         height: 100%;
     }
-
     .newsBox {
         background: none;
     }
@@ -284,32 +300,8 @@ body.menuOpen {
         font-size: 10px;
         margin-bottom: 20px;
     }
-    .topBar .combinedMenu a span {
-        display: none;
-    }
-    .topBar .combinedMenu a:before {
-        width: 30px;
-        height: 20px;
-    }
 
-    .topBar .combinedMenu a {
-        padding: 0 5px;
-        font-size: 30px;
-        width: 36px;
-        height: 36px;
-        overflow: hidden;
-        display: inline-block;
-    }
-    .topBar .combinedMenu a.onsite {
-        font-size: 10px;
-        display: none;
-    }
 
-    .topBar .combinedMenu a.login {
-        padding: 0 10px;
-    }
-    .topBar .combinedMenu a.no-mob { display:none}
-    .topBar .combinedMenu a.mob { display:block}
 
     .mainMenu:not(.fixed) ul {
         margin: inherit;
@@ -338,6 +330,11 @@ body.menuOpen {
     }
     .newsBox .promoBox .promo-img-wrap {
         height: auto;
+    }
+
+    section.events .view-all-events {
+        display: inline-block;
+        text-align: left;
     }
 
     hr {

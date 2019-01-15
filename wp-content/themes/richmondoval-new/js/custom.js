@@ -165,6 +165,16 @@ $( document ).ready(function() {
 
         responsive: [
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                    infinite: true,
+                }
+            },
+
+
+            {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
@@ -173,7 +183,7 @@ $( document ).ready(function() {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -210,7 +220,7 @@ $( document ).ready(function() {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
