@@ -2795,7 +2795,7 @@ h3#comments {
     top: 0;
     bottom: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100000;
 }
 
 #loading-wrap img.logo-animate {
@@ -3156,7 +3156,7 @@ section.explore {
     text-decoration: underline;
 }
 
-.explore-carousel .articleTitle h2, .explore-carousel .articleTitle p {
+.explore-carousel .articleTitle h2, .explore-carousel .articleTitle p, explore-carousel .articleTitle div {
     color: #fff;
     margin-bottom: 20px;
 }
@@ -3215,7 +3215,20 @@ section.news {
 
 .news-carousel-nav .article {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.news-carousel-nav .slick-dots {
+    visibility: hidden;
+    height: 0;
+    left: -30000px;
+}
+
+.news-carousel-nav .article.active {
+    opacity: 1;
 }
 
 .news-carousel-nav .article .articleImg {
@@ -3242,6 +3255,22 @@ section.news {
 .news-carousel-nav .article .articleTitle h4 {
     color: #212121;
     font-size: 14px;
+}
+
+.news-carousel-nav .all-news {
+    position: static;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.news-carousel-nav .all-news:before {
+    display: inline-block;
+    content: '\f105';
+    font-family: FontAwesome;
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: inherit;
+    color: #85C440;
 }
 
 .news-carousel {
@@ -3284,8 +3313,13 @@ section.news {
 }
 
 .news-carousel .article .articleTitle {
-    padding: 30px;
+    padding: 30px 40px;
     max-width: 550px;
+}
+
+.news-carousel .article .articleTitle h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
 .news-carousel .article .articleTitle .read-more {

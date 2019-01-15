@@ -181,7 +181,7 @@ get_header(); ?>
                     <div class="explore-icons-nav">
                     <?php
                         foreach ($events as $event) {  ?>
-                            <img src="http://via.placeholder.com/100x100/111/ccc/" data-id="<?=$event->ID;?>">
+                            <img src="http://via.placeholder.com/100x100/85C440/fff/" data-id="<?=$event->ID;?>">
                     <?php
                         }
                     ?>
@@ -229,19 +229,18 @@ get_header(); ?>
                         },
                     });
 
-                    $('.explore-icons-nav img:first-child').addClass('active');
+                    var currentExploreSlide = 0;
+                    $('.explore-icons-nav img').eq(currentExploreSlide).addClass('active');
 
-                    $('.explore-icons-nav img').click(function (e) {
+                    $('.explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                        currentExploreSlide = currentSlide;
                         $('.explore-icons-nav img').removeClass('active');
-                        $(this).addClass('active');
-                        var thumbId = $(this).attr('data-id');
-                        $('.slick-dots a[data-id='+thumbId+']').click();
+                        $('.explore-icons-nav img').eq(currentExploreSlide).addClass('active');
                     });
 
-                    $('.slick-dots a').click(function(){
+                    $('.explore-icons-nav img').click(function (e) {
                         var thumbId = $(this).attr('data-id');
-                        $('.explore-icons-nav img').removeClass('active');
-                        $('.explore-icons-nav img[data-id='+thumbId+']').addClass('active');
+                        $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
                     });
 
                 });
@@ -269,8 +268,10 @@ get_header(); ?>
 
                 <div class="news-carousel-nav">
                     <div class="news-nav">
-                        <?php while (have_posts()) : the_post(); ?>
-                            <div class="article">
+                        <?php
+                        $newsCount = 0;
+                        while (have_posts()) : the_post(); ?>
+                            <div class="article" data-num="<?=$newsCount;?>">
                                 <div class="articleImg">
                                     <?php the_post_thumbnail( array(200, 150) ); ?>
                                 </div>
@@ -280,8 +281,10 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                        <?php endwhile;?>
-                        <a class="read-more" href="/news">More News</a>
+                        <?php
+	                        $newsCount++;
+                        endwhile;?>
+                        <a class="all-news" href="/all-news">More News</a>
                     </div>
                 </div>
 
@@ -301,6 +304,7 @@ get_header(); ?>
                         </div>
 
                     <?php endwhile;?>
+                    <?php wp_reset_query();?>
 
                 </div>
             </div>
@@ -308,16 +312,32 @@ get_header(); ?>
             <script>
                 $( document ).ready(function() {
                     $('.news-carousel').slick({
-                        dots: false,
+                        dots: true,
                         arrows:false,
                         infinite: true,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         draggable:false,
-
+                        appendDots: $('.news-carousel-nav'),
                     });
-
                 });
+
+                var currentNewsSlide = 0;
+                var nextNewsSlide = 1;
+                $('.news-carousel-nav .article').eq(currentNewsSlide).addClass('active');
+
+                $('.news-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                    currentNewsSlide = currentSlide;
+                    nextNewsSlide = nextSlide;
+                    $('.news-carousel-nav .article').removeClass('active');
+                    $('.news-carousel-nav .article').eq(currentNewsSlide).addClass('active');
+                });
+
+                $('.news-carousel-nav .article').click(function (e) {
+                    var newsNum = $(this).attr('data-num');
+                    $('.news-carousel-nav .slick-dots li').eq(newsNum).click();
+                });
+
             </script>
 
         </div>

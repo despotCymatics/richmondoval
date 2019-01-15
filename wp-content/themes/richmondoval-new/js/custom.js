@@ -5,6 +5,9 @@
 
         $('#loading-wrap').fadeOut(400);
         setTimeout(function(){$('body').css('overflow','auto')}, 400);
+        setTimeout(function () {
+            $('.eapps-widget-toolbar').next().hide();
+        }, 1500);
     });
 
 
