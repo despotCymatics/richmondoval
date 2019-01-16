@@ -151,7 +151,16 @@ body.menuOpen {
 
 @media screen and (max-width: 992px) {
 
-    .amazingslider-nav-1 {
+/*    #mega-menu-wrap-max_mega_menu_1 .mega-menu-toggle {
+        display: none;
+    }
+
+
+    #mega-menu-wrap-max_mega_menu_1 .mega-menu-toggle + #mega-menu-max_mega_menu_1 {
+        display: block;
+    }*/
+
+        .amazingslider-nav-1 {
         display: none !important;
         /*bottom: 80% !important;*/
     }
@@ -273,10 +282,10 @@ body.menuOpen {
 
 @media (max-width: 780px) {
     .admin-bar header {
-        top: 0px;
+        top: 46px;
     }
     .admin-bar .pageWrap {
-        margin-top: 0px;
+        margin-top: 46px;
     }
 
 

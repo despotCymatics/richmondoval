@@ -119,7 +119,7 @@ get_header(); ?>
 
                 <div class="col-md-6">
                     <div class="info-box">
-                        <h4>Visiting the Oval? </h4>
+                        <h4>Visiting the Oval?</h4>
                         <div class="alerts">
 
                             <?php
