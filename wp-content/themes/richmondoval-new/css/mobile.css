@@ -67,14 +67,6 @@ body.menuOpen {
 
 @media screen and (max-width: 1024px) {
 
-    .topMega {
-        display: none !important;
-    }
-
-    .mobileMega {
-        display: block;
-    }
-
     .pageWrap {
         margin-top: 54px;
     }
@@ -142,25 +134,24 @@ body.menuOpen {
 
     .navBox li.separator { margin: 0; border: none}
     .navBox li.separator:before{float: none; color: white; margin: 0 0 0 10px; position: relative;}
-    /*.quick-links ul li a {
-        font-size: 18px;
-        line-height: 22px;
-    }*/
-
 }
 
 @media screen and (max-width: 992px) {
 
-/*    #mega-menu-wrap-max_mega_menu_1 .mega-menu-toggle {
-        display: none;
+
+    .topMega {
+        display: none !important;
     }
 
-
-    #mega-menu-wrap-max_mega_menu_1 .mega-menu-toggle + #mega-menu-max_mega_menu_1 {
+    .mobileMega {
         display: block;
-    }*/
+    }
 
-        .amazingslider-nav-1 {
+    .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-item > a.mega-menu-link {
+        border-bottom: 1px solid #efefef;
+    }
+
+    .amazingslider-nav-1 {
         display: none !important;
         /*bottom: 80% !important;*/
     }
@@ -287,7 +278,6 @@ body.menuOpen {
     .admin-bar .pageWrap {
         margin-top: 46px;
     }
-
 
     .post-box .date {
         text-align: left;
