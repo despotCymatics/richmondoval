@@ -62,10 +62,20 @@ body.menuOpen {
         width: 100%;
     }
 
-
 }
 
 @media screen and (max-width: 1024px) {
+
+    .hero h1.hero-title {
+        margin-top: 40px;
+        margin-bottom: 150px;
+        max-width: 300px;
+        font-size: 36px;
+    }
+
+    header.drop-shadow .topBar{
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    }
 
     .pageWrap {
         margin-top: 54px;
@@ -272,6 +282,12 @@ body.menuOpen {
 }
 
 @media (max-width: 780px) {
+
+    .alignRight {
+        float: none;
+        text-align: left;
+    }
+
     .admin-bar header {
         top: 46px;
     }
@@ -391,6 +407,11 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 600px) {
+
+    .footerMenu .flex {
+        display: block;
+    }
+
 	.userMessage { display:none}
 	.menuHeader ul li a{font-size: 12px;}
 	.eventBox p a { font-size:16px;}

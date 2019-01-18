@@ -350,87 +350,11 @@ get_header(); ?>
     </section>
 
 
+    <!-- Insta Feed -->
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-    <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
-
-
-    <!-- removing this -->
-    <?php if(is_active_sidebar( 'homepage-link-boxes' ) && 1==2){ ?>
-
-    <?php } ?>
-
-
-    <?php
-
-    if(1 == 2) {
-    //if ( is_active_sidebar( 'footer-homepage-left' ) || is_active_sidebar( 'footer-homepage-right' ) ){ ?>
-    <section class="wallBox">
-        <div class="within">
-            <?php if ( is_active_sidebar( 'footer-homepage-left' ) ){ ?>
-                <div class=" col-md-4">
-                    <?php dynamic_sidebar('footer-homepage-left' ); ?>
-                </div>
-            <?php }?>
-            <?php if ( is_active_sidebar( 'footer-homepage-right' ) ){ ?>
-                <div class=" col-md-4">
-                    <?php dynamic_sidebar('footer-homepage-right' ); ?>
-                </div>
-            <?php } ?>
-
-            <?php
-            //Sponsors
-            if ( is_active_sidebar( 'homepage-sponsors' ) ){ ?>
-                <div class="col-md-4 homepage-alerts">
-                    <div class="row">
-                        <h2 class="sectionTitle">Legacy Partners</h2>
-                        <div class="col-sm-6">
-                            <img src="<?=get_template_directory_uri()?>/images/basic/ro-logo-white.png">
-                        </div>
-                        <div id="shuffle">
-                            <?php
-                            $the_sidebars = wp_get_sidebars_widgets();
-                            $alert_sidebar = $the_sidebars['homepage-sponsors'];
-                            $widget_count = count($alert_sidebar);
-
-                            dynamic_sidebar('homepage-sponsors');
-
-                            ?>
-                            <script type="text/javascript">
-                                jQuery(document).ready(function($) {
-
-                                    $('.homepage-alerts .row .newsHolder').each(function(index, value){
-                                        $(this).addClass('ad '+ 'num_'+index);
-                                    });
-
-                                    var maxdivs = <?php echo $widget_count; ?>;
-
-                                    var currentIndex = Math.floor(Math.random() * (maxdivs - 1 + 1));
-
-                                    $(".homepage-alerts .row .newsHolder.ad:not(:eq(" + currentIndex + "))").hide();
-                                    //$(".homepage-alerts .row .newsHolder.ad").hide();
-                                    //$(".homepage-alerts .row .newsHolder.ad:first-child").show(10);
-
-                                    var totalDiv = $(".homepage-alerts .row .newsHolder.ad").length;
-
-                                    setInterval(function () {
-                                        currentIndex = (currentIndex + 1) % totalDiv;
-
-                                        $(".homepage-alerts .row .newsHolder.ad:not(:eq(" + currentIndex + "))").hide();
-                                        $(".homepage-alerts .row .newsHolder.ad").eq(currentIndex).fadeIn(600);
-
-                                    }, 6000);
-                                });
-                            </script>
-
-                        </div>
-                    </div>
-                </div>
-            <?php }?>
-
-
-        </div>
+    <section id="insta-feed">
+        <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
     </section>
 
-    <?php } ?>
 
 <?php get_footer(); ?>

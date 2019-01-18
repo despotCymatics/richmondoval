@@ -1517,27 +1517,100 @@ a.contactUs-btn:hover {
 /* ----- FOOTER -----*/
 
 footer {
-    padding-top: 40px;
     border-top: 1px solid #dadada;
-    /*box-shadow: inset 0px 1px 200px 0px rgba(0,0,0,0.1);*/
     background: #eeeeee;
 }
 
 .footerTop {
-    display: table;
-    height: 130px;
-    padding: 0 10px 30px;
     width: 100%;
 }
 
-.footerMenu {
-    /* float: left;*/
+footer .green {
+    background-color: #85C440;
+    padding: 40px 0;
 }
 
-.footerMenu .navHolder {
+footer .green * {
+    color: #fff;
+}
+
+footer .logo {
+    display: block;
+    margin-bottom: 30px;
+}
+
+footer a.soc {
+    font-size: 28px;
+    color: #fff;
+    margin: 0 5px;
+}
+
+footer a.soc:hover {
+    text-decoration: none;
+    color: #efefef;
+}
+footer h3 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+footer .contact-info span {
+    margin-right: 30px;
+    margin-bottom: 15px;
     display: inline-block;
-    float: left;
-    margin: 0 2px 0 0;
+}
+
+footer .contact-info span i {
+    font-size: 20px;
+    margin-right: 5px;
+    vertical-align: sub;
+}
+
+footer .blue {
+    background-color: #005088;
+    padding: 40px 0;
+}
+
+footer .blue .footerSponsors img {
+    filter: brightness(0) invert(1);
+}
+footer .blue * {
+    color: #fff;
+}
+.footerSponsors h3.label {
+    display: none;
+}
+
+footer .blue .legacy-partners {
+    display: flex;
+}
+
+footer .blue .legacy-partners .newsHolder {
+    margin-right: 30px;
+}
+
+footer .blue .legacy-partners .newsHolder img {
+    max-width: 150px;
+}
+footer .blue .legacy-partners .newsHolder .titleHolder {
+    display: none;
+}
+footer .blue .newsHolder a.side-box {
+    min-height: auto;
+}
+
+.footerMenu {
+    padding: 40px 0;
+}
+
+.footerMenu .flex {
+    justify-content: space-between;
+}
+
+
+.footerMenu .navHolder {
+    margin: 0 5px 0 5px;
 }
 
 .footerMenu .navHolder:last-child {
@@ -1546,22 +1619,19 @@ footer {
 
 .footerMenu .navHolder ul#navSec {
     list-style: none;
-    width: 162px;
-    margin: 0;
+    margin: 0 0 30px;
 }
 
 .footerMenu .navHolder ul#navSec h3 {
-    color: #818285;
-    font-family: 'NeoSansStdLight';
-    font-size: 16px;
+    color: #005088;
+    font-size: 20px;
     font-weight: normal;
     padding: 5px 0;
     margin-bottom: 10px;
-    text-transform: uppercase;
 }
 
 .footerMenu .navHolder ul#navSec li {
-    color: #595959;
+    color: #212121;
     float: none;
     line-height: 150%;
     margin-bottom: 5px;
@@ -1576,7 +1646,7 @@ footer {
 }
 
 .footerMenu .navHolder ul#navSec li a {
-    color: #008cd3;
+    color: #212121;
     font-size: 12px;
     /*text-decoration: underline;*/
     text-transform: none;
@@ -1584,8 +1654,6 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.footerSponsors {
-}
 
 .footerSponsors h3 {
     color: #161616;
@@ -1596,15 +1664,6 @@ footer {
     margin-bottom: 10px;
     margin-top: 10px;
     text-transform: uppercase;
-}
-.footerSponsors a.soc {
-    font-size: 28px;
-    color: #818285;
-}
-
-.footerSponsors a.soc:hover {
-    text-decoration: none;
-    color: #008cd3;
 }
 
 .footerSponsors img {
@@ -2234,7 +2293,7 @@ span.mapAspect {
 input[type="text"], input[type="email"], input[type="date"], input[type="password"], input[type="number"], textarea {
     display: block;
     width: 100%;
-    height: 50px;
+    height: 47px;
     border: 1px solid #ddd;
     color: #161616;
     font-size: 14px;
@@ -2260,7 +2319,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     border-radius: 3px;
     text-transform: uppercase;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     padding: 15px 30px;
     cursor: pointer;
     display: inline-block;
@@ -2896,9 +2955,8 @@ section.events .view-all-events:before {
     font-size: 18px;
     line-height: 1;
     vertical-align: middle;
-
+    color: #85C440;
 }
-
 
 .event-carousel .slick-track {
     display: flex;
@@ -2991,10 +3049,10 @@ section.events .view-all-events:before {
 }
 
 .event-carousel .slick-next {
-    right: 60px;
+    right: 20px;
 }
 .event-carousel .slick-prev {
-    right: 95px;
+    right: 55px;
 }
 
 #tribe-events-pg-template {
@@ -3126,8 +3184,8 @@ section.explore {
 
 .explore-carousel-nav .slick-dots li a span {
     display: inline-block;
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background: #000;
 }
@@ -3160,7 +3218,7 @@ section.explore {
     text-decoration: underline;
 }
 
-.explore-carousel .articleTitle h2, .explore-carousel .articleTitle p, explore-carousel .articleTitle div {
+.explore-carousel .articleTitle h2, .explore-carousel .articleTitle p, .explore-carousel .articleTitle div {
     color: #fff;
     margin-bottom: 20px;
 }
@@ -3182,6 +3240,8 @@ section.explore {
     bottom: 40px;
     left: auto;
     color: #fff;
+    opacity: 1;
+    text-decoration: none;
 }
 
 

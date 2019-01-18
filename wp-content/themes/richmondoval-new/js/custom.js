@@ -5,11 +5,18 @@
 
         $('#loading-wrap').fadeOut(400);
         setTimeout(function(){$('body').css('overflow','auto')}, 400);
+
         setTimeout(function () {
             $('.eapps-widget-toolbar').next().hide();
-        }, 1500);
+        }, 2500);
+
     });
 
+    container = document.getElementById ("insta-feed");
+    if (container.addEventListener) {
+        container.addEventListener ('DOMSubtreeModified', instaFeedLoaded, false);
+    }
+    
 
 $( document ).ready(function() {
 
@@ -38,8 +45,8 @@ $( document ).ready(function() {
             if(lastScrollTop > scrollTop) {
                 $('header').removeClass('collapse');
             }
-            else if (scrollTop > 100) { // this refers to window
-                if(!$('header').hasClass('collapse')) {
+            else if (scrollTop > 100) {
+                if (!$('header').hasClass('collapse')) {
                     $('header').addClass('collapse');
                 }
             }
@@ -48,6 +55,14 @@ $( document ).ready(function() {
             }
 
             lastScrollTop = scrollTop;
+
+            //for mobile
+            if (scrollTop > 100) {
+                $('header').addClass('drop-shadow');
+            }else {
+                $('header').removeClass('drop-shadow');
+            }
+
         });
 
     });
@@ -262,3 +277,6 @@ function loaderIn() {
 
 }
 
+function instaFeedLoaded() {
+    $('#insta-feed > div > a').hide();
+}

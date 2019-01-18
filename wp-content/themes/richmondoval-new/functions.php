@@ -14,8 +14,6 @@ function richmondoval_setup_theme() {
 add_action( 'after_setup_theme', 'richmondoval_setup_theme' );
 
 
-//add_theme_support( 'html5', array( 'searchform' ) );
-
 
 /**
  * Enqueue scripts and styles for front-end.
@@ -99,15 +97,6 @@ function richmondoval_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	register_sidebar( array(
-		'name' => __( 'Home Call To Action', 'richmondoval' ),
-		'id' => 'home-cta',
-		'description' => __( 'Red Button on homepage', 'richmondoval' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
-	) );
 
     register_sidebar( array(
         'name' => __( 'Blog Sidebar', 'richmondoval' ),
@@ -120,7 +109,7 @@ function richmondoval_widgets_init() {
     ) );
 
 
-    register_sidebar(array(
+   /* register_sidebar(array(
         'name' => __( 'Homepage Link Boxes', 'richmondoval' ),
         'id' => 'homepage-link-boxes',
         'description' => __('Appears on homepage below slider', 'richmondoval'),
@@ -128,7 +117,7 @@ function richmondoval_widgets_init() {
         'after_widget' => '',
         'before_title'  => '<h2 class="sectionTitle">',
         'after_title'   => '</h2>',
-    ));
+    ));*/
 
 
     register_sidebar(array(
@@ -136,7 +125,7 @@ function richmondoval_widgets_init() {
         'id' => 'homepage-sponsors',
         'description'   => '',
         'class'         => '',
-        'description' => __('Appears on homepage', 'richmondoval'),
+        'description' => __('Appears on homepage bottom', 'richmondoval'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title'  => '<h2 class="sectionTitle">',
@@ -145,7 +134,7 @@ function richmondoval_widgets_init() {
 
 
     register_sidebar( array(
-        'name' => __( 'Footer Right Logos', 'richmondoval' ),
+        'name' => __( 'Footer  Logos', 'richmondoval' ),
         'id' => 'footer-right',
         'description' => __( 'Widgets in this area will be shown in footer area.', 'richmondoval' ),
         'before_widget' => '',
@@ -154,25 +143,6 @@ function richmondoval_widgets_init() {
         'after_title'   => '</h3>',
     ) );
 
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Left', 'richmondoval' ),
-        'id' => 'footer-homepage-left',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="sectionTitle">',
-        'after_title'   => '</h2>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Right', 'richmondoval' ),
-        'id' => 'footer-homepage-right',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="sectionTitle">',
-        'after_title'   => '</h2>',
-    ) );
 
     register_sidebar(array(
         'name' => __( 'Inner Promo', 'richmondoval' ),
@@ -184,7 +154,7 @@ function richmondoval_widgets_init() {
         'after_title' => '</h2>',
     ));
 
-    register_sidebar(array(
+   /* register_sidebar(array(
         'name' => __( 'Inner Promo 2', 'richmondoval' ),
         'id' => 'inner-promo-right2',
         'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
@@ -192,7 +162,7 @@ function richmondoval_widgets_init() {
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widgettitle">',
         'after_title' => '</h2>',
-    ));
+    ));*/
 }
 add_action( 'widgets_init', 'richmondoval_widgets_init' );
 
