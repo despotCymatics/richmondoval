@@ -3285,6 +3285,10 @@ section.news {
     cursor: pointer;
 }
 
+.news-carousel-nav .article:hover {
+    opacity: 1;
+}
+
 .news-carousel-nav .slick-dots {
     visibility: hidden;
     height: 0;
