@@ -111,7 +111,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                             $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
 
-                            if(count($workouts) > 0) {
+                            if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
                                 foreach ( $workouts as $workout ) {
 
                                     $numWorkouts ++;
