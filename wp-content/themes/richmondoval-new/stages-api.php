@@ -25,7 +25,7 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 		if(isset($booking->ModelState->{'booking.SessionId'}[0])) echo "<p>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
 	}else if(isset($booking->Id)) {
 		echo "<p>Thank You for Booking with OvalFit!</p>";
-        mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
+        //mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
 	}else  {
 		echo "<h2>Error!</h2>";
 	}
