@@ -30,6 +30,22 @@ function faq_shortcode( $atts, $content ){
 add_shortcode( 'faq', 'faq_shortcode' );
 
 
+//[button title="Reade More" url="wwww.google.com"]
+function button_shortcode( $atts, $content ){
+
+    extract( shortcode_atts( array(
+        'title' => 'Read More',
+        'url' => '#',
+
+    ), $atts, 'button' ) );
+
+    $result = '<a href="'.$url.'" class="btn">'.$title.'</a>';
+
+    return $result;
+
+}
+add_shortcode( 'button', 'button_shortcode' );
+
 //SHOW MORE
 function show_more_shortcode( $atts, $content ){
 
