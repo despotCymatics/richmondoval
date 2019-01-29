@@ -20,18 +20,21 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	//var_dump($booking);
 	//var_dump($booking->ModelState->{'booking.SessionId'});
 
-    require_once "../../../wp-load.php";
-    wp_mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
-
 	if(isset($booking->Message)) {
+
 		if(isset($booking->ModelState->{'booking.UserId'}[0])) echo "<p>".$booking->ModelState->{'booking.UserId'}[0]."</p>";
 		if(isset($booking->ModelState->{'booking.SessionId'}[0])) echo "<p>".$booking->ModelState->{'booking.SessionId'}[0]."</p>";
+
 	}else if(isset($booking->Id)) {
+
 		echo "<p>Thank You for Booking with OvalFit!</p>";
 
 	}else  {
 		echo "<h2>Error!</h2>";
 	}
+    require_once "../../../wp-load.php";
+    wp_mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
+
 }
 
 //CANCEL BOOKING

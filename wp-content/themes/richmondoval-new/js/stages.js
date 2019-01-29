@@ -41,7 +41,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                                 "<p>Membership will be validated in the lobby to confirm your attendance. If you can’t make it please cancel your reservation online.</p>",
                                 allowOutsideClick: false
                             }).then((result) => {
-                                loaderIn()
+                                loaderIn();
                                 window.location="https://richmondoval.ca/oval-fit/";
                             })
                         }else {
