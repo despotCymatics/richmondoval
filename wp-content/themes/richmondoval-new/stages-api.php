@@ -32,8 +32,9 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	}else  {
 		echo "<h2>Error!</h2>";
 	}
-    require_once "../../../wp-load.php";
-    wp_mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
+
+	//require_once "../../../wp-load.php";
+    //wp_mail('despot.cymatics@gmail.com', 'Ride Session Booked','booked bike#: '.$bikeId);
 
 }
 
@@ -45,14 +46,9 @@ if(isset($_POST['bookingId'])) {
 	$bookingId = $_POST['bookingId'];
 
 	//$authCode = $_POST['authCode'];
-
 	//$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
 	$booking = deleteCurl($authCode, 'https://stagesflight.com/locapi/v1/bookings/'.$bookingId);
-
-	//var_dump('https://stagesflight.com/locapi/v1/bookings/'.$bookingId);
-	//var_dump($booking->ModelState->{'booking.UserId'});
-	//var_dump($booking);
 
 	if($booking) {
 		echo "<h2>Your Booking has been canceled!</h2>";
