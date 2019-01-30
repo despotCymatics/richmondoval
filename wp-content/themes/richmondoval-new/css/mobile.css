@@ -66,6 +66,26 @@ body.menuOpen {
 
 @media screen and (max-width: 1024px) {
 
+    .explore-carousel-nav {
+
+    }
+
+    .slick-dotted.slick-slider {
+
+    }
+
+    .explore-carousel .article {
+        display: block;
+    }
+
+    .explore-carousel .article .articleTitle {
+        width: 100%;
+    }
+    .explore-carousel .article .articleImg {
+        width: 100%;
+        /*height: auto;*/
+    }
+
     .hero h1.hero-title {
         margin-top: 40px;
         margin-bottom: 150px;
@@ -147,6 +167,7 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 992px) {
+
 
 
     .topMega {

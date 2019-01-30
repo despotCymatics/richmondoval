@@ -3144,13 +3144,12 @@ section.explore {
     padding-bottom: 60px;
 }
 
-
 .explore-wrap {
     display: flex;
 }
 
 .explore-carousel-nav {
-    width: 25%;
+    width: 28%;
     position: relative;
     background: #EAEAEA;
     padding: 40px 15px;
@@ -3195,7 +3194,7 @@ section.explore {
 }
 
 .explore-carousel {
-    width: 75%;
+    width: 72%;
     margin-bottom: 0 !important;
 }
 
@@ -3233,6 +3232,7 @@ section.explore {
     object-fit: cover;
     object-position: center;
     width: 100%;
+    height: 100%;
 }
 
 .explore-carousel .article a.read-more {
