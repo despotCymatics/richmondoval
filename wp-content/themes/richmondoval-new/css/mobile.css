@@ -26,56 +26,38 @@ body.menuOpen {
     }
 }
 
-@media (max-width: 768px) {
-    .mainMenu nav {
-        width: auto;
-    }
-    .mainMenu ul li a {
-        font-size: 18px;
-    }
-    .mainMenu ul ul li a {
-        font-size: 16px;
-    }
-    .mainMenu ul ul ul li a {
-        font-size: 14px;
-    }
-    .logoHolder img {
-        max-height: 42px;
-    }
-    .logoHolder a {
-        padding: 7px;
-
-
-    }
-    span.subToggler:before {
-        content: '\f107';
-        display: inline-block;
-    }
-
-    span.subToggler.on:before {
-        content: '\f106';
-    }
-
-    .homepage-alerts .newsHolder img {
-
-        max-height: 100%;
-        width: 100%;
-    }
-
-}
-
 @media screen and (max-width: 1024px) {
 
-    .explore-carousel-nav {
-
+    .news-carousel-nav {
+        width: 40%;
     }
 
-    .slick-dotted.slick-slider {
+    .news-carousel {
+        width: 60%;
+    }
+    .news-carousel .article {
+        padding: 30px;
+    }
 
+    .explore-carousel-nav {
+        width: 35%
+    }
+
+    .explore-carousel-nav {
+        width: 65%;
+    }
+
+    .explore-icons-nav .explore-icon {
+        margin: 0 5px 10px;
+    }
+
+    .explore-carousel .slick-track {
+        display: flex;
     }
 
     .explore-carousel .article {
         display: block;
+        height: inherit;
     }
 
     .explore-carousel .article .articleTitle {
@@ -83,7 +65,7 @@ body.menuOpen {
     }
     .explore-carousel .article .articleImg {
         width: 100%;
-        /*height: auto;*/
+        height: 100%;
     }
 
     .hero h1.hero-title {
@@ -168,8 +150,6 @@ body.menuOpen {
 
 @media screen and (max-width: 992px) {
 
-
-
     .topMega {
         display: none !important;
     }
@@ -180,6 +160,14 @@ body.menuOpen {
 
     .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-item > a.mega-menu-link {
         border-bottom: 1px solid #efefef;
+    }
+
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-row > .mega-sub-menu {
+        display: block;
+    }
+
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.background {
+        display: none;
     }
 
     .amazingslider-nav-1 {
@@ -196,10 +184,6 @@ body.menuOpen {
         max-width: 100%;
         height: auto;
         width: auto\9; /* ie8 */
-    }
-
-    .logoHolder {
-
     }
 
     .mainMenu.fixed .logoHolder {
@@ -302,7 +286,49 @@ body.menuOpen {
 
 }
 
-@media (max-width: 780px) {
+@media (max-width: 768px) {
+
+    .news-carousel {
+        width: 52%;
+    }
+    .news-carousel-nav {
+        width: 48%;
+        padding: 30px;
+    }
+
+    .news-carousel .article {
+        display: block;
+        padding: 30px;
+    }
+
+    .news-carousel .article .articleTitle {
+        padding: 15px 0;
+    }
+
+    .explore-wrap {
+        display: block;
+    }
+
+    .explore-carousel-nav {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .explore-carousel-nav .slick-dots {
+        display: none !important;
+    }
+
+    .explore-carousel {
+        width: 100%;
+    }
+
+    .explore-icons-nav {
+        max-width: none;
+    }
+    .explore-icons-nav .explore-icon {
+        width: auto;
+        margin: 10px;
+    }
 
     .alignRight {
         float: none;
@@ -425,9 +451,55 @@ body.menuOpen {
     footer h3 {
         margin-top: 10px;
     }
+
+    .mainMenu nav {
+        width: auto;
+    }
+    .mainMenu ul li a {
+        font-size: 18px;
+    }
+    .mainMenu ul ul li a {
+        font-size: 16px;
+    }
+    .mainMenu ul ul ul li a {
+        font-size: 14px;
+    }
+    .logoHolder img {
+        max-height: 42px;
+    }
+    .logoHolder a {
+        padding: 7px;
+    }
+
+    span.subToggler:before {
+        content: '\f107';
+        display: inline-block;
+    }
+
+    span.subToggler.on:before {
+        content: '\f106';
+    }
+
+    .homepage-alerts .newsHolder img {
+
+        max-height: 100%;
+        width: 100%;
+    }
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
+
+    .news-wrap {
+        display: block;
+    }
+    .news-carousel-nav {
+        width: 100%;
+    }
+
+    .news-carousel {
+        width: 100%;
+    }
 
     .footerMenu .flex {
         display: block;

@@ -89,8 +89,10 @@ get_header(); ?>
                         <div class="eventMeta">
                             <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
                             <p class="excerpt"><?php echo $event->post_content; ?></p>
-                            <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
                         </div>
+
+                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+
                     </div>
 
                 </div>
@@ -186,8 +188,11 @@ get_header(); ?>
                 <div class="explore-carousel-nav">
                     <div class="explore-icons-nav">
                     <?php
-                        foreach ($events as $event) {  ?>
-                            <img src="http://via.placeholder.com/100x100/85C440/fff/" data-id="<?=$event->ID;?>">
+                        foreach ($events as $event) { ?>
+                            <a class="explore-icon" data-id="<?=$event->ID;?>">
+                                <img src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
+                                <span>Summer Camps</span>
+                            </a>
                     <?php
                         }
                     ?>
@@ -236,15 +241,15 @@ get_header(); ?>
                     });
 
                     var currentExploreSlide = 0;
-                    $('.explore-icons-nav img').eq(currentExploreSlide).addClass('active');
+                    $('.explore-icons-nav a').eq(currentExploreSlide).addClass('active');
 
                     $('.explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
                         currentExploreSlide = currentSlide;
-                        $('.explore-icons-nav img').removeClass('active');
-                        $('.explore-icons-nav img').eq(currentExploreSlide).addClass('active');
+                        $('.explore-icons-nav a').removeClass('active');
+                        $('.explore-icons-nav a').eq(currentExploreSlide).addClass('active');
                     });
 
-                    $('.explore-icons-nav img').click(function (e) {
+                    $('.explore-icons-nav a').click(function (e) {
                         var thumbId = $(this).attr('data-id');
                         $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
                     });
