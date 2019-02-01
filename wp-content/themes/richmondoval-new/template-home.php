@@ -139,10 +139,10 @@ get_header(); ?>
         <div class="within">
 
 
-            <div class="tab-buttons">
+           <!-- <div class="tab-buttons">
                 <h4 class="tablink  active-tab" onclick="openTab('for-kids', this)" id="for-kids-tab">For Kids</h4>
                 <h4 class="tablink" onclick="openTab('rox', this)" id="rox-tab">ROX Museum</h4>
-            </div>
+            </div>-->
 
             <!-- Explore Tabs -->
             <div id="for-kids" class="tabcontent" style="display: block">
