@@ -781,6 +781,8 @@ span.subToggler:hover {
 .topMega {
     background: #005088;
     transition: all 0.3s ease-in-out;
+    width: 100%;
+    position: absolute;
 }
 
 header.collapse .topMega {
@@ -2970,7 +2972,7 @@ section.events .view-all-events:before {
 }
 
 .event-carousel .article .articleTitle {
-    padding: 20px 15px;
+    padding: 20px 15px 40px;
     display: flex;
     align-items: start;
     justify-content: right;
@@ -3028,7 +3030,7 @@ section.events .view-all-events:before {
 
 .article a.read-more {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     left: 0px;
     font-size: 14px;
     font-weight: 600;
@@ -3071,7 +3073,7 @@ section.events .view-all-events:before {
 
 .working-hours .work-box, .working-hours .info-box {
     border: 1px solid #DADADA;
-    padding: 35px 60px 35px 120px;
+    padding: 35px 60px 50px 120px;
     position: relative;
     height: 100%;
 }
@@ -3114,15 +3116,17 @@ section.events .view-all-events:before {
     list-style: none;
 }
 
-.working-hours .work-box li span, .working-hours .info-box li span {
+.working-hours .work-box li span, .working-hours .work-box li strong, .working-hours .info-box li span {
     float: right;
+    font-weight: 400;
 }
 
 .working-hours a.read-more {
-   /* position: absolute;
-    bottom: 40px;*/
+   position: absolute;
+    bottom: 30px;
     font-size: 14px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .working-hours a.read-more:before {
@@ -3136,7 +3140,7 @@ section.events .view-all-events:before {
 
 }
 
-.working-hours .info-box .alerts p {
+.working-hours .info-box .alerts, .working-hours .info-box .alerts p {
     color: #D13200;
 }
 

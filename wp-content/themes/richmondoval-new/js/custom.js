@@ -280,3 +280,22 @@ function loaderIn() {
 function instaFeedLoaded() {
     $('#insta-feed > div > a').hide();
 }
+
+function openTab(tabName,elmnt) {
+    //console.log(elmnt);
+    jQuery('.tablink').removeClass("active-tab");
+    jQuery(elmnt).addClass("active-tab");
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(tabName).style.display = "block";
+
+}
+// Get the element with id="defaultOpen" and click on it
+//if(document.getElementById("sessionsTab")) document.getElementById("sessionsTab").click();

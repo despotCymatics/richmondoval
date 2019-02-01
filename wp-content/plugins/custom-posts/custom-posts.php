@@ -9,21 +9,21 @@
 
 //custom post type function
 
-function create_alerts() {
+function create_explores() {
 
     // CPT Labels
     $labels = array(
-        'name'              => __( 'Alerts' ),
-        'singular_name'     => __( 'Alert' ),
-        'menu_name'         => __( 'Alerts' ),
-        'parent_item_colon'   => __( 'Parent Alert' ),
-        'all_items'           => __( 'All Alerts' ),
-        'view_item'           => __( 'View Alert' ),
-        'add_new_item'        => __( 'Add New Alert' ),
+        'name'              => __( 'Explores' ),
+        'singular_name'     => __( 'Explore' ),
+        'menu_name'         => __( 'Explores' ),
+        'parent_item_colon'   => __( 'Parent Explore' ),
+        'all_items'           => __( 'All Explores' ),
+        'view_item'           => __( 'View Explores' ),
+        'add_new_item'        => __( 'Add New Explore' ),
         'add_new'             => __( 'Add New' ),
-        'edit_item'           => __( 'Edit Alert' ),
-        'update_item'         => __( 'Update Alert' ),
-        'search_items'        => __( 'Search Alert' ),
+        'edit_item'           => __( 'Edit Explore' ),
+        'update_item'         => __( 'Update Explore' ),
+        'search_items'        => __( 'Search Explore' ),
         'not_found'           => __( 'Not Found' ),
         'not_found_in_trash'  => __( 'Not found in Trash' ),
     );
@@ -32,9 +32,11 @@ function create_alerts() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'description'         => __( 'Messages that appear in the alert bar' ),
-        'rewrite' => array('slug' => 'alerts'),
+        'description'         => __( 'Explore Oval pages' ),
+        'rewrite' => array('slug' => 'explore'),
         'hierarchical'        => false,
+        'taxonomies'          => array( 'explore-category' ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions' ),
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
@@ -44,11 +46,41 @@ function create_alerts() {
         'exclude_from_search' => true,
 
     );
-    register_post_type('Alerts', $args);
+    register_post_type('Explores', $args);
 }
 
 // Hooking up our function to theme setup
-add_action( 'init', 'create_alerts' );
+add_action( 'init', 'create_explores' );
+
+function create_explore_taxonomies() {
+    // Add new taxonomy, make it hierarchical (like categories)
+    $labels = array(
+        'name'              => _x( 'Category', 'taxonomy general name', 'richmondoval' ),
+        'singular_name'     => _x( 'Category', 'taxonomy singular name', 'richmondoval' ),
+        'search_items'      => __( 'Search Categories', 'richmondoval' ),
+        'all_items'         => __( 'All Categories', 'richmondoval' ),
+        'parent_item'       => __( 'Parent Category', 'richmondoval' ),
+        'parent_item_colon' => __( 'Parent Category:', 'richmondoval' ),
+        'edit_item'         => __( 'Edit Category', 'richmondoval' ),
+        'update_item'       => __( 'Update Category', 'richmondoval' ),
+        'add_new_item'      => __( 'Add New Category', 'richmondoval' ),
+        'new_item_name'     => __( 'New Category Name', 'richmondoval' ),
+        'menu_name'         => __( 'Category', 'richmondoval' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'explore-category' ),
+    );
+
+    register_taxonomy( 'explore-category', array( 'explores' ), $args );
+
+}
+add_action( 'init', 'create_explore_taxonomies', 0 );
 
 
 function create_news() {
@@ -98,17 +130,17 @@ add_action( 'init', 'create_news' );
 function create_news_taxonomies() {
 	// Add new taxonomy, make it hierarchical (like categories)
 	$labels = array(
-		'name'              => _x( 'Category', 'taxonomy general name', 'textdomain' ),
-		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'textdomain' ),
-		'search_items'      => __( 'Search Categories', 'textdomain' ),
-		'all_items'         => __( 'All Categories', 'textdomain' ),
-		'parent_item'       => __( 'Parent Category', 'textdomain' ),
-		'parent_item_colon' => __( 'Parent Category:', 'textdomain' ),
-		'edit_item'         => __( 'Edit Category', 'textdomain' ),
-		'update_item'       => __( 'Update Category', 'textdomain' ),
-		'add_new_item'      => __( 'Add New Category', 'textdomain' ),
-		'new_item_name'     => __( 'New Category Name', 'textdomain' ),
-		'menu_name'         => __( 'Category', 'textdomain' ),
+		'name'              => _x( 'Category', 'taxonomy general name', 'richmondoval' ),
+		'singular_name'     => _x( 'Category', 'taxonomy singular name', 'richmondoval' ),
+		'search_items'      => __( 'Search Categories', 'richmondoval' ),
+		'all_items'         => __( 'All Categories', 'richmondoval' ),
+		'parent_item'       => __( 'Parent Category', 'richmondoval' ),
+		'parent_item_colon' => __( 'Parent Category:', 'richmondoval' ),
+		'edit_item'         => __( 'Edit Category', 'richmondoval' ),
+		'update_item'       => __( 'Update Category', 'richmondoval' ),
+		'add_new_item'      => __( 'Add New Category', 'richmondoval' ),
+		'new_item_name'     => __( 'New Category Name', 'richmondoval' ),
+		'menu_name'         => __( 'Category', 'richmondoval' ),
 	);
 
 	$args = array(

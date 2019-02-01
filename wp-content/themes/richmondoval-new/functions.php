@@ -109,17 +109,6 @@ function richmondoval_widgets_init() {
     ) );
 
 
-   /* register_sidebar(array(
-        'name' => __( 'Homepage Link Boxes', 'richmondoval' ),
-        'id' => 'homepage-link-boxes',
-        'description' => __('Appears on homepage below slider', 'richmondoval'),
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title'  => '<h2 class="sectionTitle">',
-        'after_title'   => '</h2>',
-    ));*/
-
-
     register_sidebar(array(
         'name' => __( 'Homepage Sponsor Banners', 'richmondoval' ),
         'id' => 'homepage-sponsors',
@@ -154,15 +143,6 @@ function richmondoval_widgets_init() {
         'after_title' => '</h2>',
     ));
 
-   /* register_sidebar(array(
-        'name' => __( 'Inner Promo 2', 'richmondoval' ),
-        'id' => 'inner-promo-right2',
-        'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ));*/
 }
 add_action( 'widgets_init', 'richmondoval_widgets_init' );
 

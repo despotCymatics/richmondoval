@@ -109,13 +109,8 @@ get_header(); ?>
                 <div class="col-md-6">
                     <div class="work-box">
                         <h4>Today's working hours</h4>
-                        <ul>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                            <li>Oval Facility <span>8am-11pm</span></li>
-                        </ul>
-                        <a href="#" class="read-more">See Full Hours</a>
+                        <?=get_field('working_hours');?>
+                        <a href="/facility/hours-location/" class="read-more">See Full Hours</a>
                     </div>
                 </div>
 
@@ -123,39 +118,7 @@ get_header(); ?>
                     <div class="info-box">
                         <h4>Visiting the Oval?</h4>
                         <div class="alerts">
-
-                            <?php
-
-                            $args=array(
-                               'post_type' => 'alerts',
-                               'post_status' => 'publish',
-                               'posts_per_page' => -1,
-                               'ignore_sticky_posts'=> 1,
-                            );
-
-                            $query = null;
-                            $query = new WP_Query($args);
-                            if( $query->have_posts() ) { ?>
-
-                               <?php
-                               $i = 1;
-                               while ($query->have_posts()) : $query->the_post(); ?>
-                                   <p class="alert">
-                                       <?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_content()); ?>
-                                   </p>
-                                   <?php
-                                   $i++;
-                               endwhile;
-                               ?>
-
-                            <?php
-                            }else { ?>
-                                <p>There are currently no visitor alerts in place.</p>
-                            <?php
-                            }
-                            wp_reset_query();
-                            ?>
-
+                            <?=get_field('alert_message');?>
                         </div>
                         <a href="/facility/hours-location#parking" class="read-more">Parking Maps and More</a>
                     </div>
@@ -175,54 +138,70 @@ get_header(); ?>
 
         <div class="within">
 
-            <div class="explore-wrap">
 
-	            <?php
-	            $events = tribe_get_events( array(
-		            'posts_per_page' => 4,
-		            'start_date' => date( 'Y-m-d H:i:s' )
-	            ) );
+            <div class="tab-buttons">
+                <h4 class="tablink  active-tab" onclick="openTab('for-kids', this)" id="for-kids-tab">For Kids</h4>
+                <h4 class="tablink" onclick="openTab('rox', this)" id="rox-tab">ROX Museum</h4>
+            </div>
 
-	            ?>
+            <!-- Explore Tabs -->
+            <div id="for-kids" class="tabcontent" style="display: block">
 
-                <div class="explore-carousel-nav">
-                    <div class="explore-icons-nav">
+                <div class="explore-wrap">
+
                     <?php
-                        foreach ($events as $event) { ?>
-                            <a class="explore-icon" data-id="<?=$event->ID;?>">
-                                <img src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
-                                <span>Summer Camps</span>
-                            </a>
-                    <?php
-                        }
+                    $events = tribe_get_events( array(
+                        'posts_per_page' => 4,
+                        'start_date' => date( 'Y-m-d H:i:s' )
+                    ) );
+
                     ?>
+
+                    <div class="explore-carousel-nav">
+                        <div class="explore-icons-nav">
+                        <?php
+                            foreach ($events as $event) { ?>
+                                <a class="explore-icon" data-id="<?=$event->ID;?>">
+                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
+                                    <span>Summer Camps</span>
+                                </a>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+
+                    <div class="explore-carousel">
+                        <?php
+                        foreach ($events as $event) {  ?>
+                            <div class="article" data-id="<?=$event->ID;?>">
+                                <div class="articleTitle">
+                                    <h2>Summer Camps</h2>
+                                    <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
+                                    <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                                </div>
+                                <div class="articleImg">
+                                    <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
+                                    if($eventImg != "") echo $eventImg;
+                                    else { ?>
+                                        <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                                    <?php } ?>
+
+                                </div>
+
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
 
-                <div class="explore-carousel">
-		            <?php
-		            foreach ($events as $event) {  ?>
-                        <div class="article" data-id="<?=$event->ID;?>">
-                            <div class="articleTitle">
-                                <h2><?php echo $event->post_title; ?></h2>
-                                <p class="excerpt"><?php echo $event->post_content; ?></p>
-                                <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-                            </div>
-                            <div class="articleImg">
-					            <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
-					            if($eventImg != "") echo $eventImg;
-					            else { ?>
-                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-					            <?php } ?>
-
-                            </div>
-
-                        </div>
-			            <?php
-		            }
-		            ?>
-                </div>
             </div>
+
+            <div id="rox" class="tabcontent">
+
+            </div>
+
 
             <script>
                 $( document ).ready(function() {
