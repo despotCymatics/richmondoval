@@ -1,3 +1,6 @@
+@import url("https://use.typekit.net/svd3qkc.js");
+@import url("https://use.typekit.net/arc0dlo.css");
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +18,7 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
     color: #161616;
     background-color: #FFF;
     font-size: 12px;
@@ -75,7 +78,7 @@ p {
     display: inline-block;
 }
 
-a, a:visited {color: #0088ce;}
+a, a:visited {color: #005088;}
 a, a img {
     border: none;
 }
@@ -327,23 +330,21 @@ header.collapse .topBar {
 
 .topBar .barSearch input[type="text"] {
     background-color: #fff;
-    border: 1px solid #d9d9d9;
-    /*box-shadow: 0 0 5px #888;*/
+    border: none;
     color: #000;
-    font-family: 'NeoSansStdRegular';
-    font-size: 16px;
+    font-family: 'prometo';
+    font-size: 14px;
     font-weight: 300;
-    height: 42px;
+    height: 50px;
     margin: 0;
     padding: 5px 50px 5px 25px;
-    text-transform: uppercase;
 }
 
 .topBar .barSearch {
     position: absolute;
     right: 54px;
     top: 56px;
-    width: 100%;
+    width: 70%;
 }
 
 .topBar .barSearch button[type="submit"] {
@@ -357,20 +358,19 @@ header.collapse .topBar {
     border: none;
     border-radius: 0px;
     transition: all 200ms linear 0s;
-    background-color: #dfdfdf;
+    background-color: #fff;
     padding: 10px 15px;
 }
 
 .topBar .barSearch button[type="submit"]::after {
-    color: #0088ce;
+    color: #85C440;
     display: block;
     font-family: "FontAwesome";
     font-size: 16px;
-    /* height: 22px; */
     margin-right: 0px;
     margin-top: -3px;
     width: 22px;
-    content: "\f061 ";
+    content: '\f105';
 }
 
 .topBar .barSearch button[type="submit"]:hover {
@@ -543,7 +543,7 @@ header.collapse .topBar {
 .mainMenu ul li a {
     color: #fff;
     display: block;
-    font-family: NeoSansStdLight, arial, sans-serif;
+    font-family: 'prometo', arial, sans-serif;
     font-size: 26px;
     font-weight: 600;
     line-height: 50px;
@@ -742,7 +742,7 @@ span.subToggler:hover {
 }
 
 .menuHeader ul li a {
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
     color: #E04915;
     font-size: 18px;
     display: block;
@@ -1010,7 +1010,7 @@ section.photo {
 #pimaryMenu ul.primHolder li a {
     padding: 6px 0px;
     color: #fff;
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
     font-size: 22px;
     line-height: 1.4;
     display: block;
@@ -1030,7 +1030,7 @@ section.photo {
 }
 
 #pimaryMenu ul.primHolder ul li a {
-    font-family: 'NeoSansStdLight';
+    font-family: 'prometo';
     font-size: 15px;
     color: #A4A4A4;
     padding: 4px 10px 4px 0;
@@ -1062,7 +1062,7 @@ section.photo {
 #pimaryMenu ul a.parent {
     padding: 10px 20px 10px 10px;
     color: #b7b7b7;;
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
     font-size: 14px;
     line-height: 1.4;
     display: flex;
@@ -1153,7 +1153,7 @@ section.photo {
     box-shadow: 0 0 5px #888;
     color: #fff;
     display: block;
-    font-family: 'NeoSansStdLight';
+    font-family: 'prometo';
     font-size: 26px;
     font-weight: 300;
     height: 66px;
@@ -1233,7 +1233,7 @@ section.photo {
     margin: 0;
     line-height: 40px;
     color: #FFF;
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
     font-size: 12px;
     text-transform: uppercase;
 }
@@ -1248,7 +1248,7 @@ section.photo {
 
 .sectionTitle {
     color: #E04915;
-    font-family: 'NeoSansStdMedium';
+    font-family: 'prometo';
     padding-bottom: 10px;
     border-bottom: 3px solid #E6E6E6;
     margin-bottom: 20px;
@@ -1271,7 +1271,7 @@ section.photo {
 
 .newsHolder .title {
     color: #fff;
-    font-family: 'NeoSansStdLight';
+    font-family: 'prometo';
     line-height: 120%;
 }
 
@@ -1287,7 +1287,7 @@ section.photo {
 
 .newsHolder .download {
     color: #00486d !important;
-    font-family: 'NeoSansStdBold' !important;
+    font-family: 'prometo' !important;
     transform: rotate(0.01deg);
     position: absolute;
     bottom: 15px;
@@ -1339,7 +1339,7 @@ section.photo {
 .homepageNews .sectionTitle  {
     margin-bottom: 15px;
     margin-top: 15px;
-    font-family: 'NeoSansStdLight';
+    font-family: 'prometo';
     font-size: 18px;
     border-bottom: none;
     text-transform: uppercase;
@@ -1659,7 +1659,7 @@ footer .blue .newsHolder a.side-box {
 
 .footerSponsors h3 {
     color: #161616;
-    font-family: 'NeoSansStdLight';
+    font-family: 'prometo';
     font-size: 16px;
     font-weight: normal;
     padding: 5px 0;
@@ -1726,7 +1726,7 @@ footer .blue .newsHolder a.side-box {
 
 .inner h1 {
     font-size: 40px;
-    font-family: NeoSansStdLight, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     line-height: 1.2;
     margin: 0 0 30px;
     padding: 0 0 10px;
@@ -1789,7 +1789,7 @@ footer .blue .newsHolder a.side-box {
 
 .quick-links ul li {
     color: red;
-    font-family: "NeoSansStdRegular";
+    font-family: "'prometo'";
     margin-bottom: 3px;
 
 }
@@ -1846,7 +1846,7 @@ footer .blue .newsHolder a.side-box {
 }
 
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-    font-family: 'NeoSansStdRegular', arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     line-height: 1.25;
     margin: 0 0 26px;
     transform: rotate(0.01deg);
@@ -1889,7 +1889,7 @@ footer .blue .newsHolder a.side-box {
 }
 
 .content h4.showMoreToggler {
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
     cursor: pointer;
     color: #337ab7;
     font-size: 20px;
@@ -2315,7 +2315,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
 }
 
 .btn, input[type="submit"] {
-    font-family: NeoSansStdBold, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     background-color: #005088;
     border: none;
     border-radius: 3px;
@@ -2330,7 +2330,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
 }
 
 .btn-flat {
-    font-family: NeoSansStdBold, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     border: none;
     border-radius: 3px;
     text-transform: uppercase;
@@ -2434,7 +2434,7 @@ label {
 }
 
 h4.questionNtoggler {
-    font-family: NeoSansStdRegular;
+    font-family: 'prometo';
     cursor: pointer;
     display: block;
     padding: 12px 55px 12px 20px;
@@ -2557,13 +2557,13 @@ span.wpcf7-list-item {
     white-space:nowrap;
     font-size: 40px;
     font-weight:bold;
-    font-family: NeoSansStdLight, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
 }
 #wonderpluginslider-container-1 .amazingslider-description-1 {
     display:block;
     font-size:40px;
     font-weight:bold;
-    font-family: NeoSansStdLight, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     color:#fff;
     background-color:#008cd3;
     margin-top:0px;
@@ -2577,7 +2577,7 @@ span.wpcf7-list-item {
 
 }
 #wonderpluginslider-container-1 .as-btn-blue-medium {
-    font-family: NeoSansStdLight, arial, helvetica, sans-serif;
+    font-family: 'prometo', arial, helvetica, sans-serif;
     font-weight: 600;
     border-radius: 0;
     /*margin-left: 50px;*/
@@ -2893,6 +2893,10 @@ section.slides {
     background-repeat: no-repeat;
 }
 
+.slide-boxes .slide-box .slick-track {
+    display: flex;
+}
+
 .slide-boxes .slide-box:hover {
     transition: all 0.3s ease;
     background-size: 110%;
@@ -2903,6 +2907,7 @@ section.slides {
     color: #fff;
     margin-bottom: 20px;
     max-width: 300px;
+    font-weight: 500;
 }
 
 .slide-boxes .slide-box p {
@@ -2914,7 +2919,6 @@ section.slides {
     position: absolute;
     bottom: 50px;
     font-size: 14px;
-    font-weight: 600;
 }
 
 .slide-boxes .slide-box .read-more:before {
@@ -2922,8 +2926,9 @@ section.slides {
     content: '\f105';
     font-family: FontAwesome;
     margin-right: 10px;
-    font-size: 18px;
-    line-height: inherit;
+    vertical-align: text-bottom;
+    font-size: 22px;
+    line-height: 1;
     color: #85C440;
 }
 
@@ -2947,7 +2952,6 @@ section.events .view-all-events {
     display: block;
     text-align: right;
     font-size: 16px;
-    font-weight: 600;
 }
 
 section.events .view-all-events:before {
@@ -2985,10 +2989,8 @@ section.events .view-all-events:before {
 }
 
 .event-carousel .article .articleTitle .eventDate {
-
     padding: 0 5px;
     margin-right: 20px;
-    font-weight: 600;
     text-align: center;
     color: #005088;
 
@@ -3015,6 +3017,7 @@ section.events .view-all-events:before {
     color: #212121;
     font-size: 18px;
     margin-bottom: 30px;
+    font-weight: 400;
 }
 
 .event-carousel .article .articleTitle .read-more {
@@ -3033,7 +3036,6 @@ section.events .view-all-events:before {
     bottom: 30px;
     left: 0px;
     font-size: 14px;
-    font-weight: 600;
 }
 
 .article a.read-more:before {
@@ -3041,18 +3043,21 @@ section.events .view-all-events:before {
     content: '\f105';
     font-family: FontAwesome;
     margin-right: 10px;
-    font-size: 18px;
-    line-height: inherit;
+    vertical-align: text-bottom;
+    font-size: 22px;
+    line-height: 1;
     color: #85C440;
 
 }
 
 .event-carousel .slick-prev, .event-carousel .slick-next {
     position: absolute;
-    bottom: -40px;
+    bottom: -65px;
     top: auto;
     right: auto;
     left: auto;
+    height: 40px;
+    width: 25px;
 }
 
 .event-carousel .slick-next {
@@ -3102,6 +3107,7 @@ section.events .view-all-events:before {
 .working-hours .work-box h4, .working-hours .info-box h4 {
     margin-bottom: 40px;
     color: #005088;
+    font-weight: 400;
 }
 
 .working-hours .work-box ul, .working-hours .info-box ul {
@@ -3122,11 +3128,9 @@ section.events .view-all-events:before {
 }
 
 .working-hours a.read-more {
-   position: absolute;
+    position: absolute;
     bottom: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 16px;
 }
 
 .working-hours a.read-more:before {
@@ -3134,8 +3138,9 @@ section.events .view-all-events:before {
     content: '\f105';
     font-family: FontAwesome;
     margin-right: 10px;
-    font-size: 18px;
-    line-height: inherit;
+    vertical-align: text-bottom;
+    font-size: 22px;
+    line-height: 1;
     color: #85C440;
 
 }
@@ -3240,6 +3245,10 @@ section.explore {
     text-decoration: underline;
 }
 
+.explore-carousel .articleTitle h2 {
+    font-weight: 400;
+}
+
 .explore-carousel .articleTitle h2, .explore-carousel .articleTitle p, .explore-carousel .articleTitle div {
     color: #fff;
     margin-bottom: 20px;
@@ -3270,10 +3279,12 @@ section.explore {
 
 .explore-carousel .slick-prev, .explore-carousel .slick-next {
     position: absolute;
-    bottom: -40px;
+    bottom: -65px;
     top: auto;
     right: auto;
     left: auto;
+    height: 40px;
+    width: 25px;
 }
 
 .explore-carousel .slick-next {
@@ -3286,7 +3297,6 @@ section.explore {
 /* Home Latest News */
 
 section.news {
-    margin-top: 45px;
     margin-bottom: 40px;
 }
 .news-wrap {
@@ -3346,6 +3356,7 @@ section.news {
 .news-carousel-nav .article .articleTitle h4 {
     color: #212121;
     font-size: 14px;
+    font-weight: 400;
 }
 
 .news-carousel-nav .all-news {
@@ -3411,6 +3422,15 @@ section.news {
 .news-carousel .article .articleTitle h2 {
     margin-bottom: 30px;
     font-size: 30px;
+    font-weight: 400;
+}
+
+.news-carousel .article .articleTitle h2 a {
+    color: #005088;
+}
+
+.news-carousel .article .articleTitle p {
+    margin-bottom: 32px;
 }
 
 .news-carousel .article .articleTitle .read-more {
@@ -3516,21 +3536,26 @@ section.news {
     border-bottom: 1px solid #d8d8d8;
 }
 .tab-buttons .tablink {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
     display: inline-block;
     cursor: pointer;
-    margin-right: 0;
     margin-bottom: 0;
-    padding: 15px;
-    border-right: 1px solid #ccc;
-    background: #eaeaea;
-    opacity: 0.7;
+    padding: 8px 15px;
+    background: #DCDCDC;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-right: 10px;
+    opacity: 1;
 }
 
 .tab-buttons .tablink:hover {
     opacity: 1;
+    background: #005088;
 }
 .tab-buttons .tablink.active-tab {
-    background: #d8d8d8;
+    background: #005088;
     opacity: 1;
 }
 

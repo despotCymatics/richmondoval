@@ -238,7 +238,7 @@ select option {
     display: block;
     margin-bottom: 30px;
     float: right;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
     position: relative;
     padding-right: 16px;
 }
@@ -386,7 +386,7 @@ select option {
     background: none;
     border-bottom: 4px solid transparent;
     font-size: 14px;
-    font-family: 'NeoSansStdMedium';
+    font-family: 'prometo';
     text-transform: uppercase;
     color: #0C0C0D;
     padding: 15px 60px;
@@ -402,7 +402,7 @@ select option {
 }
 
 .page-template-template-stages .ovalfit-body .showMoreToggler {
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
     cursor: pointer;
     color: #000;
     font-size: 14px;
@@ -438,7 +438,7 @@ select option {
 
 .page-template-template-stages .ovalfit-body .showMoreToggler h4 {
     font-size: 14px;
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
     color: #008BD1;
     margin: 0;
     text-transform: uppercase;
@@ -459,7 +459,7 @@ select option {
 }
 .page-template-template-stages .btn {
     font-size: 14px;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
     text-transform: uppercase;
     margin: 0;
 }
@@ -555,7 +555,7 @@ select option {
     border-radius: 40%;
     padding: 5px;
     overflow: hidden;
-    font-family: 'NeoSansStdRegular';
+    font-family: 'prometo';
 }
 
 
@@ -594,7 +594,7 @@ select option {
     border-radius: 15px;
     cursor: default;
     background-color: #ECECEF;
-    font-family: 'NeoSansStdMedium';
+    font-family: 'prometo';
 }
 
 .page-template-template-stages .first-row .coach:hover .bike-num {
@@ -608,7 +608,7 @@ select option {
     text-align: center;
     margin: 15px 0;
     width: 100%;
-    font-family: 'NeoSansStdMedium';
+    font-family: 'prometo';
 }
 .page-template-template-stages .first-row .projector:before {
     width: 100%;
@@ -763,7 +763,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     margin-top: 30px;
     background: #FF9E18;
     font-weight: 500;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
 }
 
 .page-template-template-stages_login .btn:hover, .page-template-template-stages_registration .btn:hover {
@@ -805,14 +805,14 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     line-height: 1.5;
 }
 .swal2-content h2 {
-    font-family: 'NeoSansStdMedium';
+    font-family: 'prometo';
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
 .swal2-content .session-name {
     font-size: 14px;
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
     color: #008BD1;
     margin: 0;
     text-transform: uppercase;
@@ -827,13 +827,13 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 .swal2-content .session-time {
     font-size: 14px;
     margin-bottom: 30px;
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
     display: block;
 }
 
 .swal2-content .bike-num {
     font-size: 14px;
-    font-family: "NeoSansStdMedium";
+    font-family: "prometo";
 }
 
 .swal2-content img {
@@ -858,7 +858,7 @@ form#changeDates input {
     cursor: pointer;
     margin: 0;
     padding: 0 15px;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
 
 }
 form#changeDates input:focus {
@@ -907,14 +907,14 @@ form#changeDates:before {
     color: #fff;
     font-size: 56px;
     line-height: 60px;
-    font-family: NeoSansStdBold;
+    font-family: 'prometo';
     margin-bottom: 0;
 
 }
 
 .page-template-template-stages_holding_page .header h5 {
     color: #FF9E18;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
 
 }
 .page-template-template-stages_holding_page .header p {
@@ -948,7 +948,7 @@ form#changeDates:before {
 
 .page-template-template-stages_holding_page .ovalfit-form h5 {
     color: #FF9E18;
-    font-family: NeoSansStdMedium;
+    font-family: 'prometo';
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -986,7 +986,7 @@ form#changeDates:before {
     line-height: 55px;
     margin: 0;
     padding: 0 0 160px;
-    font-family: NeoSansStdBold;
+    font-family: 'prometo';
     text-transform: uppercase;
 }
 
@@ -996,7 +996,7 @@ form#changeDates:before {
     font-size: 14px;
     font-weight: normal;
     text-transform: none;
-    font-family: NeoSansStdRegular;
+    font-family: 'prometo';
     line-height: 24px;
 }
 

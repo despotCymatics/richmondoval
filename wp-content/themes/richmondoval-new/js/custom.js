@@ -172,7 +172,7 @@ $( document ).ready(function() {
     $('.event-carousel').slick({
         dots: false,
         infinite: true,
-        //centerMode: true,
+        centerMode: true,
         slidesToShow: 5,
         slidesToScroll: 3,
         //prevArrow:'<button class="PrevArrow"> <span class="Thumbnail"></span></button>',
@@ -298,4 +298,4 @@ function openTab(tabName,elmnt) {
 
 }
 // Get the element with id="defaultOpen" and click on it
-//if(document.getElementById("sessionsTab")) document.getElementById("sessionsTab").click();
+if(document.getElementById("sessionsTab")) document.getElementById("for-kids-tab").click();
