@@ -210,6 +210,8 @@ header.collapse .topBar {
     cursor: pointer;
     display: inline-block;
     margin-right: 10px;
+    min-width: 190px;
+    text-align: center;
 }
 
 .topBar .combinedMenu a.btn-flat:hover {
@@ -784,6 +786,20 @@ span.subToggler:hover {
     position: absolute;
 }
 
+
+.topMega .background .column-image span.close {
+    background:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMi44NDQ5MSAwLjMzODg2N0w0LjAzNDkxIDIuMzgyODdMNS4yNjY5MSAwLjMzODg2N0g3LjYxODkxTDUuMjI0OTEgMy44MTA4N0w3Ljg3MDkxIDcuNjYwODdINS4zNzg5MUwzLjk1MDkxIDUuMzc4ODdMMi41MDg5MSA3LjY2MDg3SDAuMTI4OTA2TDIuNzMyOTEgMy44ODA4N0wwLjM1MjkwNiAwLjMzODg2N0gyLjg0NDkxWiIgZmlsbD0iIzAwNTA4NyIvPgo8L3N2Zz4K") no-repeat center center, #EAEAEA;
+    width: 28px;
+    height: 28px !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
 header.collapse .topMega {
     transform: translateY(-60px);
 }
@@ -817,6 +833,7 @@ header.collapse .topMega {
 .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.mega-title h2 {
     color: #85C440;
     font-size: 20px;
+    font-weight: normal;
 }
 
 /* 1st col */

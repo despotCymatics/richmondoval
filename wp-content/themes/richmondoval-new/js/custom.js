@@ -12,13 +12,19 @@
 
     });
 
-    container = document.getElementById ("insta-feed");
+    /*container = document.getElementById ("insta-feed");
     if (container.addEventListener) {
         container.addEventListener ('DOMSubtreeModified', instaFeedLoaded, false);
-    }
+    }*/
     
 
 $( document ).ready(function() {
+
+    $('.topMega .background .column-image').append('<span class="close"></span>');
+
+    $('.topMega .background .column-image .close').click(function () {
+       $('body').click();
+    });
 
     $( window ).load(function() {
         Modernizr.load([
@@ -222,6 +228,7 @@ $( document ).ready(function() {
         //centerMode: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        arrows:false,
         //prevArrow:'<button class="PrevArrow"> <span class="Thumbnail"></span></button>',
         //nextArrow:'<button class="NextArrow"> <span class="Thumbnail"></span></button>',
 

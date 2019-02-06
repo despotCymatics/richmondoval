@@ -335,10 +335,10 @@ get_header(); ?>
 
 
     <!-- Insta Feed -->
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<!--    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <section id="insta-feed">
         <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
-    </section>
+    </section>-->
 
 
 <?php get_footer(); ?>
