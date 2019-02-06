@@ -93,9 +93,8 @@ body.overflowHidden {
     overflow: hidden !important;
 }
 .within {
-    /*max-width: 1220px;*/
-    max-width: 1600px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0 150px;
     padding: 0 15px;
     clear: both;
 }

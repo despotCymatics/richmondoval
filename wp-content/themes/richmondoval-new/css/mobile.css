@@ -8,10 +8,10 @@ body.menuOpen {
 .bannerHolder { text-align:center}
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
 
     .within {
-        width: auto !important;
+        margin: 0 50px;
     }
     .navBox ul li a { font-size:14px}
 
