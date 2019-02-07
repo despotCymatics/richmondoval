@@ -7,7 +7,7 @@ get_header(); ?>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="within">
+        <div class="within1920">
             <div class="row" style="background:  linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%), url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover;">
                 <div class="hero-title-wrap col-md-5">
                     <h1 class="hero-title">MORE THAN MEETS THE ICE</h1>
@@ -24,7 +24,7 @@ get_header(); ?>
 
     <!-- Slide Boxes -->
     <section class="slides">
-        <div class="within">
+        <div class="within1920">
             <div class="row">
                 <div class="slide-boxes">
 
@@ -108,7 +108,7 @@ get_header(); ?>
             <div class="row flex">
                 <div class="col-md-6">
                     <div class="work-box">
-                        <h4>Today's working hours</h4>
+                        <h4>Today’s hours of Operations</h4>
                         <?=get_field('working_hours');?>
                         <a href="/facility/hours-location/" class="read-more">See Full Hours</a>
                     </div>
@@ -116,7 +116,7 @@ get_header(); ?>
 
                 <div class="col-md-6">
                     <div class="info-box">
-                        <h4>Visiting the Oval?</h4>
+                        <h4>Visiting the Oval? Here’s what you need to know</h4>
                         <div class="alerts">
                             <?=get_field('alert_message');?>
                         </div>
@@ -162,7 +162,7 @@ get_header(); ?>
                         <?php
                             foreach ($events as $event) { ?>
                                 <a class="explore-icon" data-id="<?=$event->ID;?>">
-                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
+                                    <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
                                     <span>Summer Camps</span>
                                 </a>
                         <?php
@@ -208,11 +208,12 @@ get_header(); ?>
                     $('.explore-carousel').slick({
                         dots: true,
                         arrows:true,
-                        infinite: true,
+                        infinite: false,
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         appendDots: $('.explore-carousel-nav'),
                         draggable:false,
+                        fade: true,
                         customPaging : function(slider, i) {
                             var slideId = $(slider.$slides[i]).data('id');
                             return '<a data-id="'+slideId+'"><span></span></a>';

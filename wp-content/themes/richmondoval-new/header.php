@@ -70,7 +70,7 @@
 
         <header>
             <div class="topBar">
-                 <div class="within" style="position: relative">
+                 <div class="within1920" style="position: relative">
                     <div class="row">
                         <div class="col-lg-7">
                              <div class="logoHolder">
@@ -141,7 +141,7 @@
             </div>
 
             <div class="topMega">
-                <div class="within">
+                <div class="within1920">
                     <div class="mega-menu row">
                         <?php wp_nav_menu( array( 'theme_location' => 'max_mega_menu_1' ) ); ?>
                     </div>

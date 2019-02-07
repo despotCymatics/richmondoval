@@ -92,8 +92,15 @@ a:hover {
 body.overflowHidden {
     overflow: hidden !important;
 }
+.within1920 {
+    max-width: 1920px;
+    margin: 0;
+    padding: 0 15px;
+    clear: both;
+}
+
 .within {
-    max-width: 100%;
+    max-width: 1920px;
     margin: 0 150px;
     padding: 0 15px;
     clear: both;
@@ -2971,13 +2978,15 @@ section.events .view-all-events {
 }
 
 section.events .view-all-events:before {
-    content: '\f073';
-    font-family: FontAwesome;
+    content: "";
     margin-right: 10px;
-    font-size: 18px;
     line-height: 1;
+    width: 18px;
+    height: 18px;
     vertical-align: middle;
     color: #85C440;
+    background: url(../images/basic/calendar-icon.svg) no-repeat center;
+    display: inline-block;
 }
 
 .event-carousel .slick-track {
@@ -3052,6 +3061,7 @@ section.events .view-all-events:before {
     bottom: 30px;
     left: 0px;
     font-size: 14px;
+    color: #005087;
 }
 
 .article a.read-more:before {
@@ -3100,24 +3110,20 @@ section.events .view-all-events:before {
 }
 
 .working-hours .work-box:before, .working-hours .info-box:before {
-    font-family: FontAwesome;
-    font-size: 40px;
-    text-align: center;
-    line-height: 90px;
-    color: #fff;
     width: 90px;
     height: 90px;
-    background: #85C440;
     position: absolute;
     top: 0;
     left: 0;
+    content: "";
+    display: inline-block;
 }
 .working-hours .work-box:before {
-    content: "\f017";
+    background: url(../images/basic/hours-icon.svg) no-repeat center, #85C440;
 }
 
 .working-hours .info-box:before {
-    content: "\f05a";
+    background: url(../images/basic/info-icon.svg) no-repeat center, #85C440;
 }
 
 .working-hours .work-box h4, .working-hours .info-box h4 {
@@ -3147,6 +3153,7 @@ section.events .view-all-events:before {
     position: absolute;
     bottom: 30px;
     font-size: 16px;
+    color: #005087;
 }
 
 .working-hours a.read-more:before {
@@ -3198,9 +3205,8 @@ section.explore {
     width: 40%;
     cursor: pointer;
     text-align: center;
-    background-color: #85C440;
-    color: #fff;
-    opacity: 0.7;
+    background-color: #fff;
+    color: rgba(33, 33, 33, 0.8);
 }
 
 .explore-icons-nav .explore-icon img, .explore-icons-nav .explore-icon svg {
@@ -3209,11 +3215,19 @@ section.explore {
     width: 40px;
 }
 
-.explore-icons-nav .explore-icon.active, .explore-icons-nav .explore-icon:hover {
-    opacity: 1;
-    text-decoration: none;
+.explore-icons-nav .explore-icon svg path{
+    fill: rgba(33, 33, 33, 0.8);
 }
 
+.explore-icons-nav .explore-icon.active, .explore-icons-nav .explore-icon:hover {
+    text-decoration: none;
+    background-color: #85C440;
+    color: #fff;
+}
+
+.explore-icons-nav .explore-icon.active svg path, .explore-icons-nav .explore-icon:hover svg path {
+    fill: #fff;
+}
 .explore-carousel-nav .slick-dots {
     bottom: 30px;
     left: 0px;
