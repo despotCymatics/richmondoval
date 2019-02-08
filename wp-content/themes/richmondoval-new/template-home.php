@@ -8,9 +8,11 @@ get_header(); ?>
     <!-- Hero -->
     <section class="hero">
         <div class="within1920">
-            <div class="row" style="background:  linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%), url(<?=get_stylesheet_directory_uri();?>/images/basic/hero.jpg) no-repeat center / cover;">
-                <div class="hero-title-wrap col-md-5">
-                    <h1 class="hero-title">MORE THAN MEETS THE ICE</h1>
+            <div class="row" style="background:
+                    linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
+                    url(<?=get_field('hero_image')?>) no-repeat center / cover;">
+                <div class="hero-title-wrap">
+                    <h1 class="hero-title"><?=get_field('hero_title')?></h1>
                 </div>
             </div>
         </div>
@@ -90,10 +92,9 @@ get_header(); ?>
                             <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
                             <p class="excerpt"><?php echo $event->post_content; ?></p>
                         </div>
-
-                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-
                     </div>
+
+                    <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
 
                 </div>
                 <?php
@@ -138,104 +139,204 @@ get_header(); ?>
 
         <div class="within">
 
-
-            <div class="tab-buttons">
-                <h4 class="tablink  active-tab" onclick="openTab('for-kids', this)" id="for-kids-tab">For Kids</h4>
-                <h4 class="tablink" onclick="openTab('rox', this)" id="rox-tab">ROX Museum</h4>
-            </div>
-
             <!-- Explore Tabs -->
-            <div id="for-kids" class="tabcontent" style="display: block">
+            <div id="responsiveTabs">
+                <ul class="tab-buttons">
+                    <li><a href="#for-kids" class="tablink">For Kids</a></li>
+                    <li><a href="#featured-programs" class="tablink">Featured Programs</a></li>
+                </ul>
 
-                <div class="explore-wrap">
 
-                    <?php
-                    $events = tribe_get_events( array(
-                        'posts_per_page' => 4,
-                        'start_date' => date( 'Y-m-d H:i:s' )
-                    ) );
+                <div id="for-kids" class="tabcontent1">
+                    <div class="explore-wrap">
 
-                    ?>
+			            <?php
+			            $events = tribe_get_events( array(
+				            'posts_per_page' => 4,
+				            'start_date' => date( 'Y-m-d H:i:s' )
+			            ) );
 
-                    <div class="explore-carousel-nav">
-                        <div class="explore-icons-nav">
-                        <?php
-                            foreach ($events as $event) { ?>
-                                <a class="explore-icon" data-id="<?=$event->ID;?>">
-                                    <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
-                                    <span>Summer Camps</span>
-                                </a>
-                        <?php
-                            }
-                        ?>
+			            ?>
+
+                        <div class="explore-carousel-nav">
+                            <div class="explore-icons-nav">
+					            <?php
+					            foreach ($events as $event) { ?>
+                                    <a class="explore-icon" data-id="<?=$event->ID;?>">
+                                        <div>
+                                            <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
+                                            <span>Summer Camps</span>
+                                        </div>
+                                    </a>
+						            <?php
+					            }
+					            ?>
+                            </div>
+                        </div>
+
+                        <div class="explore-carousel">
+				            <?php
+				            foreach ($events as $event) {  ?>
+                                <div class="article" data-id="<?=$event->ID;?>">
+                                    <div class="articleImg">
+		                                <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
+		                                if($eventImg != "") echo $eventImg;
+		                                else { ?>
+                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+		                                <?php } ?>
+
+                                    </div>
+
+                                    <div class="articleTitle">
+                                        <h2>Summer Camps</h2>
+                                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
+                                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                                    </div>
+
+                                </div>
+					            <?php
+				            }
+				            ?>
                         </div>
                     </div>
 
-                    <div class="explore-carousel">
-                        <?php
-                        foreach ($events as $event) {  ?>
-                            <div class="article" data-id="<?=$event->ID;?>">
-                                <div class="articleTitle">
-                                    <h2>Summer Camps</h2>
-                                    <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
-                                    <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-                                </div>
-                                <div class="articleImg">
-                                    <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
-                                    if($eventImg != "") echo $eventImg;
-                                    else { ?>
-                                        <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-                                    <?php } ?>
+                    <script>
+                        $( document ).ready(function() {
 
-                                </div>
+                            $('.tabcontent1 .explore-carousel').slick({
+                                dots: true,
+                                arrows:true,
+                                infinite: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                appendDots: $('.explore-carousel-nav'),
+                                draggable:false,
+                                fade: true,
+                                customPaging : function(slider, i) {
+                                    var slideId = $(slider.$slides[i]).data('id');
+                                    return '<a data-id="'+slideId+'"><span></span></a>';
+                                },
+                            });
 
+                            var currentExploreSlide = 0;
+                            $('.tabcontent1 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+
+                            $('.tabcontent1 .explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                                currentExploreSlide = currentSlide;
+                                $('.tabcontent1 .explore-icons-nav a').removeClass('active');
+                                $('.tabcontent1 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+                            });
+
+                            $('.tabcontent1 .explore-icons-nav a').click(function (e) {
+                                var thumbId = $(this).attr('data-id');
+                                $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
+                            });
+
+                            $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
+                                $('.tabcontent1 .explore-carousel').slick('reinit');
+                            });
+
+                        });
+                    </script>
+
+                </div>
+
+                <div id="featured-programs" class="tabcontent2">
+
+                    <div class="explore-wrap">
+
+		                <?php
+		                $events = tribe_get_events( array(
+			                'posts_per_page' => 4,
+			                'start_date' => date( 'Y-m-d H:i:s' )
+		                ) );
+
+		                ?>
+
+                        <div class="explore-carousel-nav">
+                            <div class="explore-icons-nav">
+				                <?php
+				                foreach ($events as $event) { ?>
+                                    <a class="explore-icon" data-id="<?=$event->ID;?>">
+                                        <div>
+                                            <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
+                                            <span>Summer Camps</span>
+                                        </div>
+                                    </a>
+					                <?php
+				                }
+				                ?>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        </div>
+
+                        <div class="explore-carousel">
+			                <?php
+			                foreach ($events as $event) {  ?>
+                                <div class="article" data-id="<?=$event->ID;?>">
+
+                                    <div class="articleImg">
+						                <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
+						                if($eventImg != "") echo $eventImg;
+						                else { ?>
+                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+						                <?php } ?>
+
+                                    </div>
+
+                                    <div class="articleTitle">
+                                        <h2>Summer Camps</h2>
+                                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
+                                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+                                    </div>
+
+                                </div>
+				                <?php
+			                }
+			                ?>
+                        </div>
                     </div>
+
+                    <script>
+                        $( document ).ready(function() {
+                            $('.tabcontent2 .explore-carousel').slick({
+                                dots: true,
+                                arrows:true,
+                                infinite: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                appendDots: $('.explore-carousel-nav'),
+                                draggable:false,
+                                fade: true,
+                                customPaging : function(slider, i) {
+                                    var slideId = $(slider.$slides[i]).data('id');
+                                    return '<a data-id="'+slideId+'"><span></span></a>';
+                                },
+                            });
+
+                            var currentExploreSlide = 0;
+                            $('.tabcontent2 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+
+                            $('.tabcontent2 .explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                                currentExploreSlide = currentSlide;
+                                $('.tabcontent2 .explore-icons-nav a').removeClass('active');
+                                $('.tabcontent2 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+                            });
+
+                            $('.tabcontent2 .explore-icons-nav a').click(function (e) {
+                                var thumbId = $(this).attr('data-id');
+                                $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
+                            });
+
+                            $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
+                                $('.tabcontent2 .explore-carousel').slick('reinit');
+                            });
+
+                        });
+                    </script>
+
                 </div>
 
             </div>
-
-            <div id="rox" class="tabcontent">
-
-            </div>
-
-
-            <script>
-                $( document ).ready(function() {
-                    $('.explore-carousel').slick({
-                        dots: true,
-                        arrows:true,
-                        infinite: false,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        appendDots: $('.explore-carousel-nav'),
-                        draggable:false,
-                        fade: true,
-                        customPaging : function(slider, i) {
-                            var slideId = $(slider.$slides[i]).data('id');
-                            return '<a data-id="'+slideId+'"><span></span></a>';
-                        },
-                    });
-
-                    var currentExploreSlide = 0;
-                    $('.explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-
-                    $('.explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
-                        currentExploreSlide = currentSlide;
-                        $('.explore-icons-nav a').removeClass('active');
-                        $('.explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-                    });
-
-                    $('.explore-icons-nav a').click(function (e) {
-                        var thumbId = $(this).attr('data-id');
-                        $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
-                    });
-
-                });
-            </script>
 
         </div>
     </section>
@@ -336,10 +437,10 @@ get_header(); ?>
 
 
     <!-- Insta Feed -->
-<!--    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <section id="insta-feed">
         <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
-    </section>-->
+    </section>
 
 
 <?php get_footer(); ?>

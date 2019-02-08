@@ -20,12 +20,13 @@
 
         <div class="clear"></div>
 
-        <?php if (have_posts()) : while (have_posts()) : the_post();
-            the_content();
-        endwhile; endif; ?>
-
         <div class="contactBox">
             <div class="contactData">
+
+	            <?php if (have_posts()) : while (have_posts()) : the_post();
+		            the_content();
+	            endwhile; endif; ?>
+
                 <div class="contactMeta">
                     <p class="cmLocation"><?php the_field('address'); ?></p>
 
@@ -49,37 +50,7 @@
             <!-- /contactData -->
             <div class="contactMap">
                 <div class="mapHolder">
-
-                    <?php $map = get_field('google_map'); ?>
-                    <span class="mapAspect" role="presentation" aria-hidden="true"></span>
-                    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-                    <div id="gmap_canvas" style="height:500px;width:600px;"></div>
-                    <style>
-                        #gmap_canvas img {
-                            max-width: none !important;
-                            background: none !important
-                        }
-                    </style>
-                    <script type="text/javascript">
-                        function init_map() {
-                            var myOptions = {
-                                zoom: 14,
-                                center: new google.maps.LatLng(<?=$map['lat']?>, <?=$map['lng']?>),
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            };
-                            map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                            marker = new google.maps.Marker({
-                                map: map,
-                                position: new google.maps.LatLng(<?=$map['lat']?>, <?=$map['lng']?>)
-                            });
-                            infowindow = new google.maps.InfoWindow({content: "<?=$map['address']?>"});
-                            google.maps.event.addListener(marker, "click", function () {
-                                infowindow.open(map, marker);
-                            });
-                        }
-                        google.maps.event.addDomListener(window, 'load', init_map);
-                    </script>
-
+                    <?= get_field('google_map'); ?>
                 </div>
                 <!-- /mapHolder -->
 

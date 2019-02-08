@@ -94,16 +94,22 @@ body.overflowHidden {
 }
 .within1920 {
     max-width: 1920px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0 15px;
     clear: both;
 }
 
 .within {
-    max-width: 1920px;
-    margin: 0 150px;
+    max-width: 1600px;
+    margin: 0 135px;
     padding: 0 15px;
     clear: both;
+}
+
+@media screen and (min-width: 1920px) {
+    .within {
+        margin: 0 auto;
+    }
 }
 
 .no-padd {
@@ -793,6 +799,10 @@ span.subToggler:hover {
     position: absolute;
 }
 
+.topMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1.mega-menu {
+    padding-left: 40px;
+}
+
 
 .topMega .background .column-image span.close {
     background:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMi44NDQ5MSAwLjMzODg2N0w0LjAzNDkxIDIuMzgyODdMNS4yNjY5MSAwLjMzODg2N0g3LjYxODkxTDUuMjI0OTEgMy44MTA4N0w3Ljg3MDkxIDcuNjYwODdINS4zNzg5MUwzLjk1MDkxIDUuMzc4ODdMMi41MDg5MSA3LjY2MDg3SDAuMTI4OTA2TDIuNzMyOTEgMy44ODA4N0wwLjM1MjkwNiAwLjMzODg2N0gyLjg0NDkxWiIgZmlsbD0iIzAwNTA4NyIvPgo8L3N2Zz4K") no-repeat center center, #EAEAEA;
@@ -963,7 +973,7 @@ section.hero .flex{
     font-size: 68px;
     margin-top: 240px;
     margin-left: 30px;
-
+    max-width: 580px;
 }
 
 section h2.sectionTitle {
@@ -2942,6 +2952,7 @@ section.slides {
     position: absolute;
     bottom: 50px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .slide-boxes .slide-box .read-more:before {
@@ -3045,16 +3056,16 @@ section.events .view-all-events:before {
     font-weight: 400;
 }
 
-.event-carousel .article .articleTitle .read-more {
-    left: 70px;
-}
-
-
 .event-carousel .article .articleImg img {
     object-fit: cover;
     width: 100%;
     height: 200px;
 }
+
+.event-carousel .article a.read-more {
+    left: 70px;
+}
+
 
 .article a.read-more {
     position: absolute;
@@ -3062,6 +3073,7 @@ section.events .view-all-events:before {
     left: 0px;
     font-size: 14px;
     color: #005087;
+    font-weight: 600;
 }
 
 .article a.read-more:before {
@@ -3154,6 +3166,7 @@ section.events .view-all-events:before {
     bottom: 30px;
     font-size: 16px;
     color: #005087;
+    font-weight: 600;
 }
 
 .working-hours a.read-more:before {
@@ -3186,7 +3199,7 @@ section.explore {
 }
 
 .explore-carousel-nav {
-    width: 28%;
+    width: 30%;
     position: relative;
     background: #EAEAEA;
     padding: 40px 15px;
@@ -3200,19 +3213,26 @@ section.explore {
 .explore-icons-nav .explore-icon {
     display: inline-block;
     vertical-align: top;
-    padding: 20px 10px;
+    padding: 15px 10px;
     margin: 0 10px 20px;
-    width: 40%;
+    width: 110px;
     cursor: pointer;
     text-align: center;
     background-color: #fff;
     color: rgba(33, 33, 33, 0.8);
 }
 
+
+.explore-icons-nav .explore-icon span {
+    word-break: normal;
+    max-width: 80px;
+    display: inline-block;
+}
+
 .explore-icons-nav .explore-icon img, .explore-icons-nav .explore-icon svg {
     display: block;
-    margin: 0 auto 10px;
-    width: 40px;
+    margin: 0 auto 6px;
+    height: 35px;
 }
 
 .explore-icons-nav .explore-icon svg path{
@@ -3252,22 +3272,27 @@ section.explore {
 }
 
 .explore-carousel {
-    width: 72%;
+    width: 70%;
     margin-bottom: 0 !important;
+}
+
+.explore-carousel .slick-list, .explore-carousel .slick-track {
+    height: 100%;
 }
 
 .explore-carousel .article {
     background: #EAEAEA;
-    height: auto;
+    height: 100%;
     position: relative;
     display: flex;
 }
 
 .explore-carousel .article .articleTitle {
+    order: 1;
     padding: 60px 40px;
     background: #005088;
     position: relative;
-    width: 30%;
+    width: 35%;
 }
 .explore-carousel .articleTitle a {
     color: #fff;
@@ -3285,8 +3310,9 @@ section.explore {
 }
 
 .explore-carousel .article .articleImg {
-    width: 70%;
-    height: 500px;
+    order: 2;
+    width: 65%;
+    min-height: 500px;
 }
 
 
@@ -3304,6 +3330,7 @@ section.explore {
     color: #fff;
     opacity: 1;
     text-decoration: none;
+    font-weight: 600;
 }
 
 
@@ -3318,7 +3345,7 @@ section.explore {
 }
 
 .explore-carousel .slick-next {
-    right: 0px;
+    right: 0;
 }
 .explore-carousel .slick-prev {
     right: 35px;
@@ -3562,13 +3589,62 @@ section.news {
 .hideOnDesk {
     display: none;
 }
-.tab-buttons {
-    border-bottom: 1px solid #d8d8d8;
+
+
+/* Tabs */
+
+.r-tabs .r-tabs-nav {
+    margin: 0;
+    padding: 0;
 }
+
+.r-tabs .r-tabs-tab {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+}
+
+.r-tabs .r-tabs-panel {
+    display: none;
+}
+
+.r-tabs .r-tabs-accordion-title {
+    display: none;
+}
+
+.r-tabs .r-tabs-panel.r-tabs-state-active {
+    display: block;
+}
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 767px) {
+    .r-tabs .r-tabs-nav {
+        display: none;
+    }
+
+    .r-tabs .r-tabs-accordion-title {
+        display: block;
+    }
+
+    .r-tabs-anchor {
+        background-color: #00B5DF;
+        line-height: 20px;
+        font-size: 20px;
+        color: #fff;
+        width: 100%;
+        display: block;
+        padding: 20px;
+    }
+
+}
+
+
 .tab-buttons .tablink {
     color: #fff;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
     display: inline-block;
     cursor: pointer;
     margin-bottom: 0;
@@ -3577,19 +3653,20 @@ section.news {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     margin-right: 10px;
-    opacity: 1;
+    transition: all 0.3s ease;
+    width: 140px;
 }
 
 .tab-buttons .tablink:hover {
-    opacity: 1;
     background: #005088;
+    text-decoration: none;
 }
-.tab-buttons .tablink.active-tab {
+.tab-buttons .r-tabs-state-active .tablink {
     background: #005088;
-    opacity: 1;
 }
 
 .tabcontent {
-    display: none;
     margin-bottom: 48px;
 }
+
+

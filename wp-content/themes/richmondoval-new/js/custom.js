@@ -12,10 +12,10 @@
 
     });
 
-    /*container = document.getElementById ("insta-feed");
+    container = document.getElementById ("insta-feed");
     if (container.addEventListener) {
         container.addEventListener ('DOMSubtreeModified', instaFeedLoaded, false);
-    }*/
+    }
     
 
 $( document ).ready(function() {
@@ -214,7 +214,7 @@ $( document ).ready(function() {
 
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1281,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 3,
@@ -232,7 +232,7 @@ $( document ).ready(function() {
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -272,7 +272,7 @@ $( document ).ready(function() {
                 }
             },
             {
-                breakpoint: 768,
+                breakpoint: 769,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -288,6 +288,14 @@ $( document ).ready(function() {
         ]
 
     });
+
+    //Tabs
+
+    $('#responsiveTabs').responsiveTabs({
+        //startCollapsed: 'accordion'
+        startCollapsed: false
+    });
+
 });
 
 })( jQuery );
@@ -309,22 +317,3 @@ function loaderIn() {
 function instaFeedLoaded() {
     $('#insta-feed > div > a').hide();
 }
-
-function openTab(tabName,elmnt) {
-    //console.log(elmnt);
-    jQuery('.tablink').removeClass("active-tab");
-    jQuery(elmnt).addClass("active-tab");
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-    }
-    document.getElementById(tabName).style.display = "block";
-
-}
-// Get the element with id="defaultOpen" and click on it
-if(document.getElementById("sessionsTab")) document.getElementById("for-kids-tab").click();

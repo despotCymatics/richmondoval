@@ -33,12 +33,14 @@ function richmondoval_scripts_styles() {
 	wp_enqueue_script( 'richmondoval-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
 	wp_enqueue_script('richmondoval-slimscroll', (get_template_directory_uri() . '/js/jquery.slimscroll.min.js'), array(), false, true );
 	wp_enqueue_script('richmondoval-slick', (get_template_directory_uri() . '/js/slick.min.js'), array(), false, true );
+	wp_enqueue_script('richmondoval-responsive-tabs', (get_template_directory_uri() . '/js/jquery.responsiveTabs.min.js'), array(), false, true );
 	wp_enqueue_script( 'richmondoval-custom', get_template_directory_uri() . '/js/custom.js', array(), false, true );
 
 	//Stylesheets
     //wp_enqueue_style( 'richmondoval-default', get_template_directory_uri() . '/css/default.css', array(), false, "screen, projection" );
     //wp_enqueue_style( 'richmondoval-fonts', get_template_directory_uri() . '/css/fonts.css', array(), false, "screen, projection" );
     //wp_enqueue_style( 'richmondoval-pe-icon-7-stroke', get_template_directory_uri() . '/css/pe-icon-7-stroke.css', array(), false, "screen, projection" );
+	wp_enqueue_style( 'richmondoval-component', get_template_directory_uri() . '/css/component.css', array(), false, "only screen and (max-width: 1024px)" );
     wp_enqueue_style( 'richmondoval-general', get_template_directory_uri() . '/css/general.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-slick', get_template_directory_uri() . '/css/slick.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-slick-theme', get_template_directory_uri() . '/css/slick-theme.css', array(), false, "screen, projection" );
@@ -46,8 +48,8 @@ function richmondoval_scripts_styles() {
     wp_enqueue_style( 'richmondoval-helper', get_template_directory_uri() . '/css/helper.css', array(), false, "screen, projection" );
     wp_enqueue_style( 'richmondoval-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), false, "screen, projection" );
 	wp_enqueue_style( 'richmondoval-bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), false, "screen, projection" );
-	wp_enqueue_style( 'richmondoval-mobile', get_template_directory_uri() . '/css/mobile.css', array(), false, "only screen and (max-width: 1200px)" );
-	wp_enqueue_style( 'richmondoval-component', get_template_directory_uri() . '/css/component.css', array(), false, "only screen and (max-width: 1024px)" );
+	wp_enqueue_style( 'richmondoval-mobile', get_template_directory_uri() . '/css/mobile.css', array(), false, "only screen and (max-width: 1280px)" );
+
 	wp_enqueue_style( 'richmondoval-custom-style', get_template_directory_uri() . '/custom-style.css', array(), false, "screen, projection)" );
 
 	//STAGES
