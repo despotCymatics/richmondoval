@@ -207,8 +207,8 @@ $( document ).ready(function() {
     //Slick
     $('.event-carousel').slick({
         dots: false,
-        infinite: true,
-        centerMode: true,
+        infinite: false,
+        centerMode: false,
         slidesToShow: 5,
         slidesToScroll: 3,
 
@@ -233,6 +233,8 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 769,
+                infinite: true,
+                centerMode: true,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2
@@ -240,6 +242,8 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 480,
+                infinite: true,
+                centerMode: true,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1

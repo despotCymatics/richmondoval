@@ -173,7 +173,7 @@ body.menuOpen {
     .navBox li.separator:before{float: none; color: white; margin: 0 0 0 10px; position: relative;}
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 980px) {
 
     .topMega {
         display: none !important;
@@ -213,6 +213,18 @@ body.menuOpen {
 
     section.slides {
         margin-top: 0;
+    }
+
+    .news-carousel .article {
+        align-items: flex-start;
+    }
+
+    .news-carousel .article .articleDate span.day {
+        font-size: 60px;
+    }
+
+    .news-carousel .article .articleDate span.month {
+        font-size: 25px;
     }
 
     .amazingslider-nav-1 {
@@ -335,10 +347,6 @@ body.menuOpen {
 
     .within {
         margin: 0 10px;
-    }
-
-    .topBar .combinedMenu a.member {
-        display: none;
     }
 
     .hero h1.hero-title {
@@ -529,6 +537,10 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 767px) {
+
+    .topBar .combinedMenu a.member {
+        display: none;
+    }
 
     .explore-wrap {
         display: block;

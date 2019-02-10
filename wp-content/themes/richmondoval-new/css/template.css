@@ -3000,6 +3000,10 @@ section.events .view-all-events:before {
     display: inline-block;
 }
 
+.event-carousel {
+    margin: 0 -15px;
+}
+
 .event-carousel .slick-track {
     display: flex;
 }
@@ -3472,7 +3476,7 @@ section.news {
 }
 
 .news-carousel .article .articleTitle {
-    padding: 30px 40px;
+    padding: 0 40px;
     max-width: 550px;
 }
 
