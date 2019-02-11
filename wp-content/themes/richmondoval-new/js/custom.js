@@ -261,8 +261,10 @@ $( document ).ready(function() {
         autoplaySpeed:3000,
         //centerMode: true,
         slidesToShow: 3,
+        slidesPerRow: 3,
         slidesToScroll: 1,
         arrows:false,
+        rows:1,
         //prevArrow:'<button class="PrevArrow"> <span class="Thumbnail"></span></button>',
         //nextArrow:'<button class="NextArrow"> <span class="Thumbnail"></span></button>',
 
@@ -278,13 +280,15 @@ $( document ).ready(function() {
             {
                 breakpoint: 769,
                 settings: {
+                    rows: 1,
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesPerRow: 2,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
+                    rows:1,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
