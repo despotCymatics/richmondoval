@@ -208,11 +208,18 @@ body.menuOpen {
         color: #fff;
     }
 
-    .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 .mega-menu-column.expandable ul ul.mega-sub-menu {
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 .mega-menu-column.expandable ul.mega-sub-menu li ul.mega-sub-menu{
         position: initial;
         left:0;
-        z-index: 0
-
+        z-index: 0;
+        display: none;
+    }
+    .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 ul ul li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator {
+       /* display: inline-block;
+        transform: rotate(180deg);*/
+    }
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-column.expandable > ul > li.mega-menu-item-has-children > a::after {
+        /*display: none;*/
     }
 
     .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 .mega-menu-column.expandable ul ul.mega-sub-menu li a {
@@ -450,9 +457,6 @@ body.menuOpen {
     .admin-bar header {
         top: 46px;
     }
-    .admin-bar .pageWrap {
-
-    }
 
     .post-box .date {
         text-align: left;
@@ -601,7 +605,11 @@ body.menuOpen {
 
 @media screen and (max-width: 767px) {
 
-    .topBar .combinedMenu a.member {
+    .topBar .barSearch {
+        width: 100%;
+    }
+
+    .topBar .combinedMenu.desktop a.member {
         display: none;
     }
 
@@ -674,6 +682,40 @@ body.menuOpen {
 
 @media screen and (max-width: 480px) {
 
+    .pageWrap {
+        margin-top: 114px;
+    }
+
+    .within {
+        margin: 0 5px;
+    }
+
+    .topBar .barSearch {
+        width: calc(100% + 30px);
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0px -15px;
+
+    }
+
+    .topBar .combinedMenu.desktop a.contact {
+        display: none;
+    }
+    .topBar .combinedMenu.mobile {
+        display: block;
+        background: #fff;
+        margin: 0 -15px;
+        text-align: center;
+    }
+
+    .topBar .combinedMenu.mobile a {
+        padding: 0 20px;
+        margin: 14px 7px;
+        min-width: 120px;
+    }
+
     .inner .mainCol {
         padding: 0 15px;
     }
@@ -694,10 +736,7 @@ body.menuOpen {
         text-align: center;
         font-size: 28px;
     }
-    .mainMenu .scrollable {
-       /* height: 250px;*/
 
-    }
     .mainMenu ul li a {
         font-size: 16px;
         line-height: 45px;
@@ -731,21 +770,10 @@ body.menuOpen {
         height: auto;
 
     }
-}
 
-
-@media (max-width: 480px) {
-
-    .topBar .combinedMenu a.contact {
-        display: none;
-    }
 }
 
 @media (max-width: 400px) {
-
-    .topBar .combinedMenu a.contact {
-        display: none;
-    }
 
 
     .content .bannerHolder, .content .newsHolder {

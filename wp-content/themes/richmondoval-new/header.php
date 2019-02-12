@@ -71,19 +71,19 @@
         <header>
             <div class="topBar">
                  <div class="within1920" style="position: relative">
-                    <div class="row">
-                        <div class="col-lg-7">
-                             <div class="logoHolder">
-                                <a title="Richmond Olympic Oval" href="<?php echo get_home_url(); ?>">
-                                    <img src="<?=get_template_directory_uri()?>/images/basic/logo-new.svg" alt="Site name">
-                                </a>
-                             </div>
-                         </div>
-                        <div class="col-lg-5"></div>
-                    </div>
+                      <div class="row">
+                          <div class="col-lg-7">
+                              <div class="logoHolder">
+                                   <a title="Richmond Olympic Oval" href="<?php echo get_home_url(); ?>">
+                                      <img src="<?=get_template_directory_uri()?>/images/basic/logo-new.svg" alt="Site name">
+                                   </a>
+                              </div>
+                          </div>
+                            <div class="col-lg-5"></div>
+                      </div>
 
                      <div class="topLeft">
-                         <div class="combinedMenu">
+                         <div class="combinedMenu desktop">
                              <?php if ( is_active_sidebar( 'top_bar' ) ) {
                                  dynamic_sidebar('top_bar' );
                              }
@@ -91,11 +91,6 @@
                              <a class="contact btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
                              <a class="member btn-flat btn-green" title="Become a member" href="/contact">Member Login</a>
                              <a class="ser" title="Search" href="#"></a>
-                             <div class="barSearch"><?php get_search_form( true ); ?></div>
-                             <!--<a class="rox" title="Richmond Oval Experience" href="https://richmondoval.ca/therox"><span>Olympic Museum</span></a>
-                             <a class="hp" title="High Performance" href="https://richmondoval.ca/ovalhp"><span>High Performance</span></a>
-                             <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
-                             <a class="onsite" title="On site services" href="#">On Site Services</a>-->
 
                          </div>
 
@@ -137,6 +132,12 @@
                              </div>
                          </div>
                      </div>
+                     <div class="barSearch"><?php get_search_form( true ); ?></div>
+                     <div class="combinedMenu mobile">
+                         <a class="contact btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
+                         <a class="member btn-flat btn-green" title="Become a member" href="/contact">Member Login</a>
+                     </div>
+
                 </div>
             </div>
 

@@ -12,10 +12,10 @@
 
     });
 
-    container = document.getElementById ("insta-feed");
+   /* container = document.getElementById ("insta-feed");
     if (container.addEventListener) {
         container.addEventListener ('DOMSubtreeModified', instaFeedLoaded, false);
-    }
+    }*/
     
 
 $( document ).ready(function() {
@@ -303,6 +303,15 @@ $( document ).ready(function() {
         //startCollapsed: 'accordion'
         startCollapsed: false
     });
+
+
+    //Mega menu actions
+    $(document).on('click','.mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 ul ul li.mega-menu-item-has-children > a.mega-menu-link', function(e) {
+        console.log("aaaaa");
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).next('ul').slideToggle(200);
+    })
 
 });
 
