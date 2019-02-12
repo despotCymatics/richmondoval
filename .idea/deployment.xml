@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="RichmondOvalLinux2">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="RO-Dev">
     <serverData>
       <paths name="4dreamers">
         <serverdata>
@@ -30,7 +30,14 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="RichmondOvalLinux2">
+      <paths name="RO-Dev">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="RO-Live">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -59,13 +66,6 @@
         </serverdata>
       </paths>
       <paths name="bcdrives.omdev.space">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="devRichmondoval">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

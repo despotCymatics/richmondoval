@@ -256,7 +256,7 @@ $( document ).ready(function() {
 
     $('.slide-boxes').slick({
         dots: true,
-        infinite: true,
+        //infinite: true,
         autoplay:true,
         autoplaySpeed:3000,
         //centerMode: true,
