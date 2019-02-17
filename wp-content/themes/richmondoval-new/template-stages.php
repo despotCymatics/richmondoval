@@ -44,9 +44,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $dateTo = $_POST['dateTo'];
                 }
 
-                //Bikes
-                //$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
-
 
                 //Sessions
                 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '&dateTimeTo=' . $dateTo );
