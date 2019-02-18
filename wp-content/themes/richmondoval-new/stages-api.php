@@ -96,6 +96,8 @@ function authorize() {
 	$authCode = curl_exec($ch);
 	$authCode = json_decode($authCode);
 
+	curl_close($ch);
+
 	return $authCode;
 
 }
