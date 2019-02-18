@@ -8,11 +8,13 @@ $sessionName = isset($_POST['sessionName']) ? $_POST['sessionName'] : NULL;
 $sessionDate = isset($_POST['sessionDate']) ? $_POST['sessionDate'] : NULL;
 $sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
 $sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
-$bikes = '';
 
-$authCode = authorize();
+//$authCode = authorize();
+$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
+$bikes ='';
 
-if($authCode && $sessionId && $sessionInstructorId ){
+
+if($authCode && $sessionId && $sessionInstructorId ) {
 	$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
 	$instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $sessionInstructorId );
 	$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );

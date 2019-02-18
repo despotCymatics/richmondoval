@@ -295,6 +295,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                          data-session-date="<?=$sessionDate; ?>"
                                          data-session-time="<?=$sessionTime; ?>"
                                          data-session-instructor-id="<?=$session->InstructorId; ?>"
+                                         data-auth-code="<?=$authCode?>"
                                     >
                                         <div class="row">
                                             <div class="col-sm-8 col-xs-6">
@@ -359,6 +360,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             sessionDate: self.attr('data-session-date'),
                             sessionTime: self.attr('data-session-time'),
                             instructorId: self.attr('data-session-instructor-id'),
+                            authCode:self.attr('data-auth-code')
                         },
                         success: function(data) {
                             $(".showMoreToggler").removeClass('disabled');

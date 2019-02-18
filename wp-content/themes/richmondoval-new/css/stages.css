@@ -15,6 +15,13 @@ body {
     visibility: hidden;
 }
 
+.page-template-template-stages .within , .page-template-template-stages_login .within,  .page-template-template-stages_registration .within {
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 15px;
+    clear: both;
+}
+
 .page-template-template-stages .pageWrap {
     margin-top: 0;
 }
@@ -370,6 +377,26 @@ select option {
 
 /******** OVAL FIT BODY *********/
 
+.page-template-template-stages .tab-buttons {
+    border-bottom: 1px solid #d8d8d8;
+}
+.page-template-template-stages .tab-buttons .tablink {
+
+}
+
+.page-template-template-stages .tab-buttons .tablink:hover {
+    opacity: 1;
+}
+.page-template-template-stages .tab-buttons .tablink.active-tab {
+    background: #d8d8d8;
+    opacity: 1;
+}
+
+.page-template-template-stages .tabcontent {
+    display: none;
+    margin-bottom: 48px;
+}
+
 .page-template-template-stages .ovalfit-body .within {
     padding: 8px 15px 30px;
 }
@@ -390,6 +417,18 @@ select option {
     text-transform: uppercase;
     color: #0C0C0D;
     padding: 15px 60px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 0;
+    margin-bottom: 0;
+    border-right: 0;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transition: all 0.3s ease;
+    width: auto;
 }
 
 .page-template-template-stages .ovalfit-body .tab-buttons .tablink.active-tab {
@@ -1170,9 +1209,8 @@ form#changeDates:before {
     }
 }
 
-@media (max-width: 360px){
+@media (max-width: 780px){
     .page-template-template-stages .alignRight {
-
+        text-align: right;
     }
 }
-
