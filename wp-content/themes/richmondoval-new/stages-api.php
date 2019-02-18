@@ -115,7 +115,11 @@ function getCurl($authCode, $url) {
 	curl_setopt($ch, CURLOPT_HTTPHEADER,    $header);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-	return json_decode(curl_exec($ch));
+	$ret = json_decode(curl_exec($ch));
+
+	curl_close($ch);
+
+	return $ret ;
 }
 
 //POST CURL
@@ -134,7 +138,11 @@ function postCurl($authCode, $url, $request) {
 	curl_setopt($ch, CURLOPT_POST,           1 );
 	curl_setopt($ch, CURLOPT_POSTFIELDS,    $request );
 
-	return json_decode(curl_exec($ch));
+    $ret = json_decode(curl_exec($ch));
+
+    curl_close($ch);
+
+    return $ret ;
 }
 
 
@@ -154,7 +162,11 @@ function deleteCurl($authCode, $url) {
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 	//curl_setopt($ch, CURLOPT_POSTFIELDS,    $request );
 
-	return json_decode(curl_exec($ch));
+    $ret = json_decode(curl_exec($ch));
+
+    curl_close($ch);
+
+    return $ret ;
 }
 
 
