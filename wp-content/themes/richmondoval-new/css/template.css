@@ -1,5 +1,6 @@
-@import url("https://use.typekit.net/svd3qkc.js");
-@import url("https://use.typekit.net/arc0dlo.css");
+/*@import url("https://use.typekit.net/svd3qkc.js");
+@import url("https://use.typekit.net/arc0dlo.css");*/
+@import url("https://use.typekit.net/zie3som.css");
 
 * {
     margin: 0;
@@ -573,7 +574,7 @@ header.collapse .topBar {
     display: block;
     font-family: 'prometo', arial, sans-serif;
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 50px;
     padding: 0 15px;
     vertical-align: middle;
@@ -1119,7 +1120,7 @@ section.photo {
 #pimaryMenu ul a.parent span:first-child {
     color: #0088ce;
     margin-right: 5px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 #pimaryMenu ul a.parent:hover {
@@ -1430,7 +1431,7 @@ section.photo {
 .homepageNews .article .articleTitle p.eventDate {
     margin-bottom: 5px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 
 }
 .homepageNews .allArticlesBtn {
@@ -2112,7 +2113,7 @@ footer .blue .newsHolder a.side-box {
     margin: 0 0 30px;
     font-family: Montserrat, arial, sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.65;
     font-style: normal;
 }
@@ -2136,7 +2137,7 @@ footer .blue .newsHolder a.side-box {
     border-bottom: 1px solid #ada15c;
     color: #fff;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.15;
     padding: 12px 10px;
     text-align: center;
@@ -2183,7 +2184,7 @@ footer .blue .newsHolder a.side-box {
 }
 
 .content dt {
-    font-weight: 600;
+    font-weight: 500;
     display: block;
     margin: 0 0 5px;
 }
@@ -2202,7 +2203,7 @@ footer .blue .newsHolder a.side-box {
 }
 
 .content .allProgramsList li {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 120%;
     transform: rotate(0.01deg);
 }
@@ -2625,7 +2626,7 @@ span.wpcf7-list-item {
 }
 #wonderpluginslider-container-1 .as-btn-blue-medium {
     font-family: 'prometo', arial, helvetica, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 0;
     /*margin-left: 50px;*/
     background: #005088;
@@ -2779,7 +2780,7 @@ span.wpcf7-list-item {
 .nav-links * {
     padding: 5px;
     background-color: #ccc;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .nav-links .current {
@@ -2816,7 +2817,7 @@ h3#comments {
 }
 
 .vcard cite {
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -2966,7 +2967,7 @@ section.slides {
     position: absolute;
     bottom: 50px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .slide-boxes .slide-box .read-more:before {
@@ -3092,7 +3093,7 @@ section.events .view-all-events:before {
     left: 0px;
     font-size: 14px;
     color: #005087;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .article a.read-more:before {
@@ -3185,7 +3186,7 @@ section.events .view-all-events:before {
     bottom: 30px;
     font-size: 16px;
     color: #005087;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .working-hours a.read-more:before {
@@ -3349,7 +3350,7 @@ section.explore {
     color: #fff;
     opacity: 1;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 
@@ -3438,7 +3439,7 @@ section.news {
 .news-carousel-nav .all-news {
     position: static;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .news-carousel-nav .all-news:before {
