@@ -61,7 +61,8 @@
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
 {
-    opacity: .25;
+    opacity: .5;
+    color: #C4C4C4;
 }
 
 .slick-prev:before,
@@ -72,8 +73,8 @@
     font-size: 40px;
     line-height: 1;
 
-    opacity: .75;
-    color: #C4C4C4;;
+    opacity: 1;
+    color: #008BD1;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

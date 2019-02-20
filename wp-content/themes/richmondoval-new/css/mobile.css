@@ -10,6 +10,13 @@ body.menuOpen {
 
 @media screen and (max-width: 1280px) {
 
+    .explore-carousel-nav {
+        width: 320px;
+    }
+    .explore-carousel {
+        width: calc(100% - 320px);
+    }
+
     .within {
         margin: 0 35px;
     }

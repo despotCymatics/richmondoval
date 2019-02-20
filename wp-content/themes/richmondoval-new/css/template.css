@@ -101,14 +101,15 @@ body.overflowHidden {
 }
 
 .within {
-    max-width: 1600px;
+    width: auto;
     margin: 0 135px;
     padding: 0 15px;
     clear: both;
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1921px) {
     .within {
+        max-width: 1920px;
         margin: 0 auto;
     }
 }
@@ -416,6 +417,7 @@ header.collapse .topBar {
     height: auto;
     padding: 16px 0;
     vertical-align: middle;
+
 }
 .logoHolder a {
     background: #fff;
@@ -2966,7 +2968,7 @@ section.slides {
     color: #fff;
     position: absolute;
     bottom: 50px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -2975,7 +2977,7 @@ section.slides {
     content: '\f105';
     font-family: FontAwesome;
     margin-right: 10px;
-    vertical-align: text-bottom;
+    vertical-align: sub;
     font-size: 22px;
     line-height: 1;
     color: #85C440;
@@ -3000,7 +3002,9 @@ section.events .view-all-events {
     margin: 15px 0;
     display: block;
     text-align: right;
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #005087;
 }
 
 section.events .view-all-events:before {
@@ -3016,7 +3020,7 @@ section.events .view-all-events:before {
 }
 
 .event-carousel {
-    margin: 0 -15px;
+  /*  margin: 0 -15px;*/
 }
 
 .event-carousel .slick-track {
@@ -3028,6 +3032,7 @@ section.events .view-all-events:before {
     background: #EAEAEA;
     height: auto;
     position: relative;
+    max-width: 287px;
 }
 
 .event-carousel .article .articleTitle {
@@ -3091,7 +3096,7 @@ section.events .view-all-events:before {
     position: absolute;
     bottom: 30px;
     left: 0px;
-    font-size: 14px;
+    font-size: 16px;
     color: #005087;
     font-weight: 500;
 }
@@ -3101,7 +3106,7 @@ section.events .view-all-events:before {
     content: '\f105';
     font-family: FontAwesome;
     margin-right: 10px;
-    vertical-align: text-bottom;
+    vertical-align: sub;
     font-size: 22px;
     line-height: 1;
     color: #85C440;
@@ -3119,10 +3124,10 @@ section.events .view-all-events:before {
 }
 
 .event-carousel .slick-next {
-    right: 20px;
+    right: 15px;
 }
 .event-carousel .slick-prev {
-    right: 55px;
+    right: 50px;
 }
 
 #tribe-events-pg-template {
@@ -3203,6 +3208,7 @@ section.events .view-all-events:before {
 
 .working-hours .info-box .alerts, .working-hours .info-box .alerts p {
     color: #D13200;
+    font-size: 16px;
 }
 
 
@@ -3219,7 +3225,7 @@ section.explore {
 }
 
 .explore-carousel-nav {
-    width: 30%;
+    width: 387px;
     position: relative;
     background: #EAEAEA;
     padding: 40px 15px;
@@ -3284,15 +3290,15 @@ section.explore {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #000;
+    background: #C4C4C4;
 }
 
 .explore-carousel-nav .slick-dots li.slick-active a span {
-    opacity: 0.4;
+    background: #212121;
 }
 
 .explore-carousel {
-    width: 70%;
+    width: calc(100% - 387px);
     margin-bottom: 0 !important;
 }
 
@@ -3312,7 +3318,7 @@ section.explore {
     padding: 60px 40px;
     background: #005088;
     position: relative;
-    width: 35%;
+    width: 39%;
 }
 .explore-carousel .articleTitle a {
     color: #fff;
@@ -3331,7 +3337,7 @@ section.explore {
 
 .explore-carousel .article .articleImg {
     order: 2;
-    width: 65%;
+    width: 61%;
     min-height: 500px;
 }
 
@@ -3350,6 +3356,7 @@ section.explore {
     color: #fff;
     opacity: 1;
     text-decoration: none;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -3468,7 +3475,7 @@ section.news {
 .news-carousel .article {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 30px 60px;
 }
 

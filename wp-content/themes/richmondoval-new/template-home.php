@@ -61,46 +61,48 @@ get_header(); ?>
         </div>
 
         <div class="within">
-            <div class="event-carousel">
-                <?php
-                $events = tribe_get_events( array(
-                    'posts_per_page' => 30,
-                    'start_date' => date( 'Y-m-d H:i:s' )
-                ) );
-                foreach ($events as $event) { //var_dump($event); ?>
-                    <div class="article">
-                        <div class="articleImg">
-                            <a href="<?php echo get_permalink($event->ID); ?>">
-                                <?php
-                                $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
-                                if($eventImg != "") echo $eventImg;
-                                else { ?>
-                                    <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-                                <?php } ?>
-                            </a>
-
-                        </div>
-                        <div class="articleTitle">
-                            <p class="eventDate">
-                                <span class="month">
-                                    <?php echo date("M", strtotime($event->EventStartDate)); ?>
-                                </span>
-                                <span class="day">
-                                    <?php echo date("d", strtotime($event->EventStartDate)); ?>
-                                </span>
-                            </p>
-                            <div class="eventMeta">
-                                <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
-                                <p class="excerpt"><?php echo $event->post_content; ?></p>
-                            </div>
-                        </div>
-
-                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-
-                    </div>
+            <div class="row">
+                <div class="event-carousel">
                     <?php
-                }
-                ?>
+                    $events = tribe_get_events( array(
+                        'posts_per_page' => 30,
+                        'start_date' => date( 'Y-m-d H:i:s' )
+                    ) );
+                    foreach ($events as $event) { //var_dump($event); ?>
+                        <div class="article">
+                            <div class="articleImg">
+                                <a href="<?php echo get_permalink($event->ID); ?>">
+                                    <?php
+                                    $eventImg = get_the_post_thumbnail( $event->ID, array(240, 180) );
+                                    if($eventImg != "") echo $eventImg;
+                                    else { ?>
+                                        <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                                    <?php } ?>
+                                </a>
+
+                            </div>
+                            <div class="articleTitle">
+                                <p class="eventDate">
+                                    <span class="month">
+                                        <?php echo date("M", strtotime($event->EventStartDate)); ?>
+                                    </span>
+                                    <span class="day">
+                                        <?php echo date("d", strtotime($event->EventStartDate)); ?>
+                                    </span>
+                                </p>
+                                <div class="eventMeta">
+                                    <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
+                                    <p class="excerpt"><?php echo $event->post_content; ?></p>
+                                </div>
+                            </div>
+
+                            <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
+
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </section>

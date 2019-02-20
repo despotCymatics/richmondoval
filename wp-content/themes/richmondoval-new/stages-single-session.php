@@ -109,7 +109,7 @@ An educational, challenging workout that will leave you wanting more!
 					</div>
 		
 				</div>
-				<div class="row seven-cols">';
+				<div class="row">';
 
         $bikesBooked = array();
         foreach ( $sessionBookings as $sessionBooking ) {
@@ -123,7 +123,7 @@ An educational, challenging workout that will leave you wanting more!
                     $disabledBike = 'disabled';
                 }
                 $returnHTML .='
-                        <div class="col-sm-1">
+                        <div class="col-xs-1-10">
                             <div class="bike '.$disabledBike.'">
                                 <div class="bike-num" 
                                 onclick="bookBike(
