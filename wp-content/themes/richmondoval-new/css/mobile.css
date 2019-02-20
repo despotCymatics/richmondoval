@@ -689,6 +689,9 @@ body.menuOpen {
 
 @media screen and (max-width: 480px) {
 
+    .event-carousel .article {
+        max-width: none;
+    }
     .pageWrap {
         margin-top: 114px;
     }
