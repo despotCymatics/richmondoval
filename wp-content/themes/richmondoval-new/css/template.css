@@ -417,6 +417,7 @@ header.collapse .topBar {
     height: auto;
     padding: 16px 0;
     vertical-align: middle;
+    margin-left: 40px;
 
 }
 .logoHolder a {
@@ -988,8 +989,8 @@ section.hero .flex{
     color: #fff;
     line-height: 1;
     font-size: 68px;
-    margin-top: 240px;
-    margin-left: 30px;
+    margin-top: 200px;
+    margin-left: 40px;
     max-width: 580px;
 }
 
@@ -1611,6 +1612,7 @@ footer .contact-info span {
     margin-right: 30px;
     margin-bottom: 15px;
     display: inline-block;
+    font-size: 14px;
 }
 
 footer .contact-info span i {
@@ -2377,6 +2379,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     display: inline-block;
     transform: rotate(0.01deg);
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .btn-flat {
@@ -2934,7 +2937,7 @@ section.slides {
 
 
 .slide-boxes .slide-box {
-    padding: 50px;
+    padding: 50px 40px;
     min-height: 250px;
     position: relative;
     transition: all 0.3s ease;
@@ -3032,7 +3035,7 @@ section.events .view-all-events:before {
     background: #EAEAEA;
     height: auto;
     position: relative;
-    max-width: 287px;
+    /*max-width: 287px;*/
 }
 
 .event-carousel .article .articleTitle {

@@ -216,12 +216,11 @@ $( document ).ready(function() {
             {
                 breakpoint: 1281,
                 settings: {
+                    infinite:false,
                     slidesToShow: 4,
                     slidesToScroll: 3,
-                    infinite: true,
                 }
             },
-
 
             {
                 breakpoint: 1024,
@@ -233,7 +232,7 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 769,
-                infinite: true,
+                infinite: false,
                 centerMode: true,
                 settings: {
                     slidesToShow: 2,
@@ -242,7 +241,7 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 480,
-                infinite: true,
+                infinite: false,
                 centerMode: true,
                 settings: {
                     slidesToShow: 1,
