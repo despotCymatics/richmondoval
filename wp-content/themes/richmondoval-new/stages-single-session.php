@@ -1,26 +1,33 @@
 
 <?php
+
 require "stages-api.php";
 
-$userId = isset($_POST['userId']) ? $_POST['userId'] : NULL;
-$sessionId = isset($_POST['sessionId']) ? $_POST['sessionId'] : NULL;
-$sessionName = isset($_POST['sessionName']) ? $_POST['sessionName'] : NULL;
-$sessionDate = isset($_POST['sessionDate']) ? $_POST['sessionDate'] : NULL;
-$sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
-$sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
+session_start();
 
-//$authCode = authorize();
-$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
-$bikes ='';
+if (!isset( $_SESSION['logged'] ))  {
+	$returnHTML = '<script>window.location="/oval-fit-logout"</script>';
+
+} else {
+	$userId = isset($_POST['userId']) ? $_POST['userId'] : NULL;
+	$sessionId = isset($_POST['sessionId']) ? $_POST['sessionId'] : NULL;
+	$sessionName = isset($_POST['sessionName']) ? $_POST['sessionName'] : NULL;
+	$sessionDate = isset($_POST['sessionDate']) ? $_POST['sessionDate'] : NULL;
+	$sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
+	$sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
+
+	//$authCode = authorize();
+	$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
+	$bikes ='';
 
 
-if($authCode && $sessionId && $sessionInstructorId ) {
-	$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
-	$instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $sessionInstructorId );
-	$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
+	if($authCode && $sessionId && $sessionInstructorId ) {
+		$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
+		$instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $sessionInstructorId );
+		$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 
-    if(isset($instructor->Id) && count($bikes) >= 1) {
-        $returnHTML = '
+		if(isset($instructor->Id) && count($bikes) >= 1) {
+			$returnHTML = '
 	<div class="row">
 		<div class="col-md-6">
 			<p>Coach: <br>
@@ -111,18 +118,18 @@ An educational, challenging workout that will leave you wanting more!
 				</div>
 				<div class="row">';
 
-        $bikesBooked = array();
-        foreach ( $sessionBookings as $sessionBooking ) {
-            array_push( $bikesBooked, $sessionBooking->Bike->Id );
-        }
+			$bikesBooked = array();
+			foreach ( $sessionBookings as $sessionBooking ) {
+				array_push( $bikesBooked, $sessionBooking->Bike->Id );
+			}
 
-        if(count($bikes) > 1) {
-            foreach ( $bikes as $bike ) {
-                $disabledBike = '';
-                if ( in_array( $bike->Id, $bikesBooked ) ) {
-                    $disabledBike = 'disabled';
-                }
-                $returnHTML .='
+			if(count($bikes) > 1) {
+				foreach ( $bikes as $bike ) {
+					$disabledBike = '';
+					if ( in_array( $bike->Id, $bikesBooked ) ) {
+						$disabledBike = 'disabled';
+					}
+					$returnHTML .='
                         <div class="col-xs-1-10">
                             <div class="bike '.$disabledBike.'">
                                 <div class="bike-num" 
@@ -140,11 +147,11 @@ An educational, challenging workout that will leave you wanting more!
                             </div>
                         </div>
                         ';
-            }
-        } else {
-            $returnHTML .= 'Could not fetch bikes. Please reload the page.';
-        }
-        $returnHTML .= '
+				}
+			} else {
+				$returnHTML .= 'Could not fetch bikes. Please reload the page.';
+			}
+			$returnHTML .= '
 				</div>
 			
 				<br>
@@ -153,15 +160,15 @@ An educational, challenging workout that will leave you wanting more!
 		</div>
 	</div>
 	';
-    }
+		}
 
-    else {
-        $returnHTML = '<p>Could not fetch session data. Please reload the page.</p>';
-    }
+		else {
+			$returnHTML = '<p>Could not fetch session data. Please reload the page.</p>';
+		}
 
-} else {
-    $returnHTML = '<p>Wrong Data passed. Please reload the page</p>';
+	} else {
+		$returnHTML = '<p>Wrong Data passed. Please reload the page</p>';
+	}
 }
-
 
 echo $returnHTML;
