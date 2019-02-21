@@ -673,15 +673,13 @@ body.menuOpen {
         width: 100%;
     }
 
-   .working-hours .flex {
+    .working-hours .flex {
         display: block;
     }
 
     .working-hours .flex > div{
         margin: 15px 0;
     }
-
-
 
     .footerMenu .flex {
         display: block;
