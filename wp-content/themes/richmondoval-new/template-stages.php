@@ -21,19 +21,38 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             <?php
             if ( ! isset( $authCode->Message ) ) {
 
+                //USER
+                //USER
+                //USER
                 $userEmail = $_SESSION['logged'];
                 $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
-                if ( count( $userQuery ) == 1 ) {
-                    $userId = $userQuery[0]->Id;
-                    var_dump($userQuery);
+                if ( count( $userQuery ) == 1 && $userQuery[0]->Email == $userEmail ) {
+                    $user = $userQuery[0];
+                    $userId = $user->Id;
                 } else {
                     session_destroy();
-                    echo '<script>window.location="https://richmondoval.ca/oval-fit-login/?user=none"</script>';
-                    //header('Location: https://richmondoval.ca/oval-fit-login/?user=none');
+                    echo '<script>window.location="/oval-fit-login/?user=none"</script>';
                     exit;
                 }
 
+                //Workouts
+                //Workouts
+                //Workouts
+                $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
+                if(!isset($workouts[0]->Id) ) {
+
+	                $logFile = dirname(dirname(__FILE__))."../../stagesAPILog-main.txt";
+	                $current = file_get_contents($logFile);
+	                $contents = "USER: ".$userEmail."-------------------------------------------------------------------------\r\n";
+	                $contents .= 'Workouts: '.json_encode($workouts);
+	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
+                }
+                echo "<script>console.log('Workouts: ".json_encode($workouts)."')</script>";
+
+                //Sessions
+                //Sessions
+                //Sessions
                 date_default_timezone_set('America/Vancouver');
 
 	            $dateFrom    = date( 'Y-m-d\TH:i' );
@@ -45,24 +64,28 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $dateTo = $_POST['dateTo'];
                 }
 
-
-                //Sessions
                 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '&dateTimeTo=' . $dateTo );
                 if(count($sessions) > 1) {
 	                usort($sessions,function($a, $b){
 		                return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
 	                });
-                }
+                }else {
 
-                //USER
-                $user = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $userId );
-                if(!isset($user->Id))  {
-                    session_destroy();
-                    echo '<script>window.location="https://richmondoval.ca/oval-fit-login/"</script>';
+	                $logFile = dirname(dirname(__FILE__))."../../stagesAPILog-main.txt";
+	                $current = file_get_contents($logFile);
+	                $contents = "USER: ".$userEmail."-------------------------------------------------------------------------\r\n";
+	                $contents .= 'Sessions: '.json_encode($sessions);
+	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
                 }
+                echo "<script>console.log('Sessions: ".json_encode($sessions)."')</script>";
 
                 //User Bookings
+                //User Bookings
+                //User Bookings
                 $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
+
+
+                echo "<script>console.log('UserBookings: ".json_encode($userBookings)."')</script>";
 
                 ?>
 
@@ -107,7 +130,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             $numWorkouts       = 0;
                             $maxSpeedArray      = array();
 
-                            $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
 
                             if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
                                 foreach ( $workouts as $workout ) {
@@ -371,7 +393,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         },
                         error: function(){
                             $(".showMoreToggler").removeClass('disabled');
-                            self.next('.moreText').html('<div class="ajax-error">Could not fetch class data. Please reload the page.</div>');
+                            self.next('.moreText').html('<div class="ajax-error">Ajax Error. Could not fetch class data. Please reload the page.</div>');
                             self.next('.moreText').addClass('loaded');
                             self.addClass('loaded');
 

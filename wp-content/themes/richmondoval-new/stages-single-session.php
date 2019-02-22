@@ -5,8 +5,10 @@ require "stages-api.php";
 
 session_start();
 
+$returnHTML ='';
+
 if (!isset( $_SESSION['logged'] ))  {
-	$returnHTML = '<script>window.location="/oval-fit-logout"</script>';
+	$returnHTML = '<p>Session Expired. Please Log in.</p><script>window.location="/oval-fit-logout"</script>';
 
 } else {
 	$userId = isset($_POST['userId']) ? $_POST['userId'] : NULL;
@@ -16,10 +18,19 @@ if (!isset( $_SESSION['logged'] ))  {
 	$sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
 	$sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
 
-	//$authCode = authorize();
 	$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
 	$bikes ='';
 
+	//try to get session bookings with the sam auth code from POST
+	$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
+
+	if(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
+
+		//authorize again
+		$authCode = authorize();
+		$returnHTML = "<span style='display: none;'>Need authorization again</span>";
+
+	}
 
 	if($authCode && $sessionId && $sessionInstructorId ) {
 		$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
@@ -27,15 +38,13 @@ if (!isset( $_SESSION['logged'] ))  {
 		$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 
 		if(isset($instructor->Id) && count($bikes) >= 1) {
-			$returnHTML = '
+			$returnHTML .= '
 	<div class="row">
 		<div class="col-md-6">
 			<p>Coach: <br>
 				<strong>'.$instructor->FirstName.' '. $instructor->LastName.'</strong>
 			</p>
-		
 			<a class="ovalfit-faq-trigger" href="javascript:void(0);">Know your ride</a>
-	
 		</div>
 		<div class="col-md-6">
 
@@ -108,7 +117,7 @@ An educational, challenging workout that will leave you wanting more!
 				<img src="/wp-content/themes/richmondoval-new/images/stages/fans.png">
 				<div class="first-row">
 					<div class="bike coach">
-						<div class="bike-num" style="background-color: "></div>
+						<div class="bike-num"></div>
 						<span>Coach</span>
 					</div>
 					<div class="projector">
@@ -160,19 +169,25 @@ An educational, challenging workout that will leave you wanting more!
 		</div>
 	</div>
 	';
-		}
+		} else {
 
-		elseif(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
-			//$returnHTML = '<p>Unauthorized</p>';
+            $returnHTML = "<p>Could not fetch session data. Please reload the page.</p>";
+			$logFile = dirname(dirname(__FILE__))."../../stagesAPILog-sessions.txt";
+			$current = file_get_contents($logFile);
+			$contents = "USER: ".$userId."-------------------------------------------------------------------------\r\n";
+			$contents .= 'SessionBookings: '.json_encode($sessionBookings).' ------ Bikes: '.json_encode($bikes).' ----- Instructor: '.json_encode($instructor);
+			file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
 
-		}else {
-            $returnHTML = '<p>Could not fetch session data. Please reload the page.</p>
-<br>'.json_encode($sessionBookings).'<br>'.json_encode($bikes).'<br>'.json_encode($instructor);
         }
 
 	} else {
 		$returnHTML = '<p>Wrong Data passed. Please reload the page</p>';
 	}
 }
+
+$returnHTML .= "<script>console.log('SessionBookings: ".json_encode($sessionBookings)."')</script>
+            <script>console.log('Bikes: ".json_encode($bikes)."')</script>
+            <script>console.log('Instructor: ".json_encode($instructor)."')</script>";
+
 
 echo $returnHTML;
