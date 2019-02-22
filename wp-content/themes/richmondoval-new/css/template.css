@@ -167,6 +167,11 @@ header.collapse .topBar {
     z-index: 11;
     /*height: 56px;*/
 }
+
+.topBar .row {
+    background-color: #fff;
+    border-bottom: 1px solid #DCDCDC;
+}
 .topBar .blueStripe {
     height: 20px;
     background: rgba(0, 140, 210, 0.95);
@@ -233,6 +238,7 @@ header.collapse .topBar {
     margin-right: 10px;
     min-width: 190px;
     text-align: center;
+    font-weight: 600;
 }
 
 .topBar .combinedMenu a.btn-flat:hover {
@@ -368,6 +374,7 @@ header.collapse .topBar {
 }
 .topBar .barSearch input[type="text"]::placeholder {
     color: #005088;
+    font-weight: 500;
 }
 
 .topBar .barSearch {
@@ -989,9 +996,11 @@ section.hero .flex{
     color: #fff;
     line-height: 1;
     font-size: 68px;
-    margin-top: 200px;
-    margin-left: 40px;
+    padding-top: 180px;
+    padding-left: 40px;
+    padding-bottom: 80px;
     max-width: 580px;
+    margin: 0;
 }
 
 section h2.sectionTitle {
@@ -1603,7 +1612,7 @@ footer a.soc:hover {
     color: #efefef;
 }
 footer h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: normal;
     margin-bottom: 20px;
 }
@@ -1612,7 +1621,7 @@ footer .contact-info span {
     margin-right: 30px;
     margin-bottom: 15px;
     display: inline-block;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 footer .contact-info span i {
@@ -3392,6 +3401,7 @@ section.news {
 }
 
 .news-carousel-nav {
+    order:1;
     width: 32%;
     position: relative;
     padding: 40px;
@@ -3463,6 +3473,7 @@ section.news {
 }
 
 .news-carousel {
+    order:2;
     display: flex;
     align-items: center;
     background: #EAEAEA;
@@ -3502,7 +3513,7 @@ section.news {
 }
 
 .news-carousel .article .articleTitle {
-    padding: 0 40px;
+    padding: 0 0 0 40px;
     max-width: 550px;
 }
 
@@ -3680,6 +3691,19 @@ section.news {
     .r-tabs-anchor:hover, .r-tabs-anchor:focus {
         color: #fff;
         text-decoration: none;
+    }
+    .r-tabs-anchor:after {
+        color: #fff;
+        display: block;
+        font-family: "FontAwesome";
+        font-size: 28px;
+        margin-right: 0px;
+        width: 22px;
+        content: '\f107';
+        float: right;
+    }
+    .r-tabs-state-active  .r-tabs-anchor:after {
+        content: '\f106';
     }
 
     #responsiveTabs {

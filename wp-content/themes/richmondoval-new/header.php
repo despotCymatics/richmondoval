@@ -135,7 +135,7 @@
                      <div class="barSearch"><?php get_search_form( true ); ?></div>
                      <div class="combinedMenu mobile">
                          <a class="contact btn-flat btn-green-border" title="Contact" href="/contact">Contact Us</a>
-                         <a class="member btn-flat btn-green" title="Become a member" href="/contact">Member Login</a>
+                         <a class="member btn-flat btn-green" title="Become a member" href="http://richmondoval.perfectmind.com/">Member Login</a>
                      </div>
 
                 </div>

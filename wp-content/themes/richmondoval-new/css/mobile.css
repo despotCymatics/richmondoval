@@ -10,6 +10,14 @@ body.menuOpen {
 
 @media screen and (max-width: 1280px) {
 
+    .hero h1.hero-title {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    section.slides {
+        margin-top: 0;
+    }
+
     .explore-carousel-nav {
         width: 320px;
     }
@@ -29,11 +37,6 @@ body.menuOpen {
         display: block;
     }
 
-    .slide-boxes .slide-box {
-        min-height: 220px;
-        padding: 30px;
-    }
-
     .explore-carousel .article .articleImg {
         min-height: 415px;
     }
@@ -45,9 +48,18 @@ body.menuOpen {
     .slide-boxes .slide-box .read-more {
         bottom: 30px;
     }
+    .slide-boxes .slide-box {
+        min-height: 190px;
+        padding: 30px 40px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
+
+    .hero h1.hero-title {
+        font-size: 36px;
+        max-width: 360px;
+    }
 
     .slide-boxes .slide-box {
         background-size: cover;
@@ -62,9 +74,23 @@ body.menuOpen {
 
     .news-carousel {
         width: 60%;
+        align-items: flex-start;
     }
     .news-carousel .article {
         padding: 30px;
+        align-items: flex-start;
+    }
+    .news-carousel .article .articleTitle {
+        padding-left: 40px;
+    }
+
+    .news-carousel .article .articleDate span.day {
+        font-size: 60px;
+        line-height: 1;
+    }
+
+    .news-carousel .article .articleDate span.month {
+        font-size: 25px;
     }
 
     .explore-carousel-nav {
@@ -93,37 +119,27 @@ body.menuOpen {
 
     .explore-carousel .article .articleTitle {
         width: 100%;
+        padding: 30px;
     }
     .explore-carousel .article .articleImg {
         width: 100%;
         /*height: 100%;*/
         min-height: auto;
+        max-height: 240px;
     }
 
-    .explore-carousel .article .articleTitle {
-        padding: 40px;
-    }
     .explore-carousel .article a.read-more {
         bottom: 30px;
     }
-    .hero h1.hero-title {
-        margin-top: 40px;
-        margin-bottom: 150px;
-        max-width: 300px;
-        font-size: 36px;
-    }
+
 
     header.drop-shadow .topBar{
         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .pageWrap {
-        margin-top: 54px;
-    }
 
-    .slide-boxes .slide-box {
-        background-size: cover;
-    }
+
+
 
     .topBar .combinedMenu .textwidget {
         display: none;
@@ -180,8 +196,16 @@ body.menuOpen {
 
 @media screen and (max-width: 980px) {
 
+    .pageWrap {
+        margin-top: 54px;
+    }
+
     .topMega {
         display: none !important;
+    }
+
+    .hero h1.hero-title {
+        font-size: 36px;
     }
 
     .mobileMega {
@@ -192,10 +216,19 @@ body.menuOpen {
         display: none !important;
     }*/
 
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu {
+        box-shadow: none;
+    }
+
     .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-item > a.mega-menu-link {
         border-bottom: 1px solid #efefef;
         font-weight: 600;
         padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 li.mega-menu-item-has-children a.mega-menu-link:after {
+        color: #85C440;
     }
 
     .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-megamenu > ul.mega-sub-menu .mega-menu-row > .mega-sub-menu {
@@ -275,21 +308,6 @@ body.menuOpen {
         padding: 0 20px 0 20px;
     }
 
-    section.slides {
-        margin-top: 0;
-    }
-
-    .news-carousel .article {
-        align-items: flex-start;
-    }
-
-    .news-carousel .article .articleDate span.day {
-        font-size: 60px;
-    }
-
-    .news-carousel .article .articleDate span.month {
-        font-size: 25px;
-    }
 
     .working-hours .work-box, .working-hours .info-box {
         padding: 25px 30px 70px 90px;
@@ -306,7 +324,9 @@ body.menuOpen {
         background-size: 30px;
     }
 
-
+    .subscribe-form input {
+        margin-bottom: 20px;
+    }
 
 
 
@@ -428,13 +448,25 @@ body.menuOpen {
 
 @media (max-width: 768px) {
 
+    .logoHolder {
+        margin-left: 0;
+    }
+
     .within {
         margin: 0 10px;
     }
 
     .hero h1.hero-title {
-        margin-top: 20px;
-        margin-left: 20px;
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .hero-image {
+        background: none !important;
+    }
+
+    .slide-boxes .slide-box {
+        padding: 30px 20px;
     }
 
     .news-carousel {
@@ -460,6 +492,7 @@ body.menuOpen {
 
     .news-carousel .article .articleDate span.day {
         font-size: 60px;
+        line-height: 1;
     }
 
     .alignRight {
@@ -654,14 +687,6 @@ body.menuOpen {
         margin: 10px;
     }
 
-    .news-carousel .article .articleDate span.month {
-        font-size: 20px;
-    }
-
-    .news-carousel .article .articleDate span.day {
-        font-size: 40px;
-    }
-
     .news-wrap {
         display: block;
     }
@@ -692,6 +717,18 @@ body.menuOpen {
 }
 
 @media screen and (max-width: 480px) {
+
+    header.collapse .combinedMenu.mobile {
+        transition: all 0.3s ease;
+        transform: translateY(-56px);
+        position: relative;
+        z-index: -1;
+
+    }
+    header.collapse .topBar {
+        transition: all 0.3s ease;
+        height: 56px;
+    }
 
     .event-carousel .article {
         max-width: none;
@@ -726,9 +763,10 @@ body.menuOpen {
 
     .topBar .combinedMenu.mobile a {
         padding: 0 20px;
-        margin: 14px 7px;
-        min-width: 120px;
+        margin: 12px 7px;
+        min-width: 135px;
     }
+
 
     .inner .mainCol {
         padding: 0 15px;

@@ -8,12 +8,18 @@ get_header(); ?>
     <!-- Hero -->
     <section class="hero">
         <div class="within1920">
-            <div class="row" style="background:
-                    linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
-                    url(<?=get_field('hero_image')?>) no-repeat center / cover;">
-                <div class="hero-title-wrap">
-                    <h1 class="hero-title"><?=get_field('hero_title')?></h1>
+            <div class="row mobile-hero-image" style="background:
+                    linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #121e40 110%),
+                    url(<?=get_field('hero_mobile_image')?>) no-repeat center / cover;">
+                <div class="hero-image"
+                     style="background:
+                             linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #121e40 110%),
+                             url(<?=get_field('hero_image')?>) no-repeat center / cover;">
+                    <div class="hero-title-wrap">
+                        <h1 class="hero-title"><?=get_field('hero_title')?></h1>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -34,7 +40,7 @@ get_header(); ?>
                     while ( have_rows('slide_box') ) : the_row();
                         ?>
                         <a href="<?=get_sub_field('slide_box_url');?>" class="slide-box"
-                             style="background-image:linear-gradient(259.63deg, rgba(21, 107, 237, 0.18) 46.27%, #000000 109.66%),
+                             style="background-image:linear-gradient(260deg, rgba(21, 107, 237, 0.18) 25%, #121e40 110%),
                                      url(<?=get_sub_field('slide_box_background');?>)">
                             <h3><?=get_sub_field('slide_box_title');?></h3>
                             <p><?=get_sub_field('slide_box_text');?></p>
@@ -213,7 +219,7 @@ get_header(); ?>
                                 infinite: false,
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
-                                appendDots: $('.explore-carousel-nav'),
+                                appendDots: $('.tabcontent1 .explore-carousel-nav'),
                                 draggable:false,
                                 fade: true,
                                 customPaging : function(slider, i) {
@@ -233,7 +239,7 @@ get_header(); ?>
 
                             $('.tabcontent1 .explore-icons-nav a').click(function (e) {
                                 var thumbId = $(this).attr('data-id');
-                                $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
+                                $('.tabcontent1 .explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
                             });
 
                             $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
@@ -308,7 +314,7 @@ get_header(); ?>
                                 infinite: false,
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
-                                appendDots: $('.explore-carousel-nav'),
+                                appendDots: $('.tabcontent2 .explore-carousel-nav'),
                                 draggable:false,
                                 fade: true,
                                 customPaging : function(slider, i) {
@@ -328,7 +334,7 @@ get_header(); ?>
 
                             $('.tabcontent2 .explore-icons-nav a').click(function (e) {
                                 var thumbId = $(this).attr('data-id');
-                                $('.explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
+                                $('.tabcontent2 .explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
                             });
 
                             $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
@@ -362,6 +368,25 @@ get_header(); ?>
                 ));
                 ?>
 
+                <div class="news-carousel">
+
+		            <?php while (have_posts()) : the_post(); ?>
+                        <div class="article">
+                            <div class="articleDate">
+                                <span class="month"><?php echo date("M",  strtotime(get_the_date())); ?></span>
+                                <span class="day"><?php echo date("d",  strtotime(get_the_date())); ?></span>
+                            </div>
+                            <div class="articleTitle">
+                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+                                <p><?php echo get_the_excerpt(); ?></p>
+                                <a class="read-more" href="<?=get_permalink(); ?>">Read More</a>
+                            </div>
+                        </div>
+
+		            <?php endwhile;?>
+
+                </div>
+
                 <div class="news-carousel-nav">
                     <div class="news-nav">
                         <?php
@@ -384,27 +409,10 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="news-carousel">
 
-                    <?php while (have_posts()) : the_post(); ?>
-                        <div class="article">
-                            <div class="articleDate">
-	                            <span class="month"><?php echo date("M",  strtotime(get_the_date())); ?></span>
-	                            <span class="day"><?php echo date("d",  strtotime(get_the_date())); ?></span>
-                            </div>
-                            <div class="articleTitle">
-                                <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-                                <p><?php echo get_the_excerpt(); ?></p>
-                                <a class="read-more" href="<?=get_permalink(); ?>">Read More</a>
-                            </div>
-                        </div>
-
-                    <?php endwhile;?>
-                    <?php wp_reset_query();?>
-
-                </div>
             </div>
 
+	        <?php wp_reset_query();?>
             <script>
                 $( document ).ready(function() {
                     $('.news-carousel').slick({

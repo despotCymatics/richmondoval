@@ -216,23 +216,20 @@ $( document ).ready(function() {
             {
                 breakpoint: 1281,
                 settings: {
-                    infinite:false,
                     slidesToShow: 4,
                     slidesToScroll: 3,
                 }
             },
 
             {
-                breakpoint: 1024,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    infinite: true,
                 }
             },
             {
                 breakpoint: 769,
-                infinite: false,
                 centerMode: true,
                 settings: {
                     slidesToShow: 2,
@@ -241,7 +238,6 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 480,
-                infinite: false,
                 centerMode: true,
                 settings: {
                     slidesToShow: 1,
@@ -310,7 +306,18 @@ $( document ).ready(function() {
         e.preventDefault();
         e.stopPropagation();
         $(this).next('ul').slideToggle(200);
-    })
+        $('html, body').animate({
+            scrollTop: $(this).offset().top -56
+        }, 300);
+    });
+    $(document).on('click','.mobileMega .mega-menu-link', function(){
+        $('html, body').animate({
+            scrollTop: $(this).offset().top - 56
+        }, 300);
+    });
+
+
+
 
 });
 
