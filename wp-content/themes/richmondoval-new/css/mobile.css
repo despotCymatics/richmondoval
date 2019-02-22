@@ -478,23 +478,29 @@ body.menuOpen {
     }
 
     .news-carousel .article {
-        /*display: block;*/
+        display: block;
         align-items: flex-start;
         padding: 30px;
     }
     .news-carousel .article .articleTitle {
-        padding: 0 15px;
+
+        padding: 0;
     }
 
     .news-carousel .article .articleDate span.month {
         font-size: 24px;
+        text-align: left;
     }
 
     .news-carousel .article .articleDate span.day {
         font-size: 60px;
         line-height: 1;
+        text-align: left;
     }
 
+    .news-carousel .article .articleDate {
+        margin-bottom: 20px;
+    }
     .alignRight {
         float: none;
         text-align: left;
