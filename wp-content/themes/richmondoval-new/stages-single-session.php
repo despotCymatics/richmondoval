@@ -162,9 +162,13 @@ An educational, challenging workout that will leave you wanting more!
 	';
 		}
 
-		else {
-			$returnHTML = '<p>Could not fetch session data. Please reload the page.</p>';
-		}
+		elseif(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
+			//$returnHTML = '<p>Unauthorized</p>';
+
+		}else {
+            $returnHTML = '<p>Could not fetch session data. Please reload the page.</p>
+<br>'.json_encode($sessionBookings).'<br>'.json_encode($bikes).'<br>'.json_encode($instructor);
+        }
 
 	} else {
 		$returnHTML = '<p>Wrong Data passed. Please reload the page</p>';

@@ -26,6 +26,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                 if ( count( $userQuery ) == 1 ) {
                     $userId = $userQuery[0]->Id;
+                    var_dump($userQuery);
                 } else {
                     session_destroy();
                     echo '<script>window.location="https://richmondoval.ca/oval-fit-login/?user=none"</script>';
