@@ -17,25 +17,26 @@ if (!isset( $_SESSION['logged'] ))  {
 	$sessionDate = isset($_POST['sessionDate']) ? $_POST['sessionDate'] : NULL;
 	$sessionTime = isset($_POST['sessionTime']) ? $_POST['sessionTime'] : NULL;
 	$sessionInstructorId = isset($_POST['instructorId']) ? $_POST['instructorId'] : NULL;
-
-	$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
 	$bikes ='';
 
-	//try to get session bookings with the sam auth code from POST
-	$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
 
-	if(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
+	//$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
+	$authCode = authorize();
 
+
+	/*if(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
 		//authorize again
-		$authCode = authorize();
 		$returnHTML = "<span style='display: none;'>Need authorization again</span>";
-
-	}
+	}*/
 
 	if($authCode && $sessionId && $sessionInstructorId ) {
 		$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
 		$instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $sessionInstructorId );
-		$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
+		//$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
+		$bikes = file_get_contents(dirname(__FILE__)."/stagesBikes.json");
+		$bikes = json_decode($bikes);
+
+		//var_dump($bikes);
 
 		if(isset($instructor->Id) && count($bikes) >= 1) {
 			$returnHTML .= '
@@ -169,13 +170,14 @@ An educational, challenging workout that will leave you wanting more!
 		</div>
 	</div>
 	';
+
 		} else {
 
             $returnHTML = "<p>Could not fetch session data. Please reload the page.</p>";
 			$logFile = dirname(dirname(__FILE__))."../../stagesAPILog-sessions.txt";
 			$current = file_get_contents($logFile);
-			$contents = "USER: ".$userId."-------------------------------------------------------------------------\r\n";
-			$contents .= 'SessionBookings: '.json_encode($sessionBookings).' ------ Bikes: '.json_encode($bikes).' ----- Instructor: '.json_encode($instructor);
+			$contents = "\r\n".date('Y-m-d H:m:s')." USER: ".$userId."-------------------------------------------------------------------------\r\n";
+			$contents .= "SessionBookings: ".json_encode($sessionBookings)."\r\n------ Bikes: ".json_encode($bikes)."\r\n ----- Instructor: ".json_encode($instructor);
 			file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
 
         }
