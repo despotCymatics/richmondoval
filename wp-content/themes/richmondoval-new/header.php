@@ -45,6 +45,17 @@
     })(window,document,'script','dataLayer','GTM-KW4BQQK');</script>
     <!-- End Google Tag Manager -->
 
+	<?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php")) { ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134995895-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-134995895-1');
+        </script>
+	<?php } ?>
+
 </head>
 
 <body <?php body_class(); ?> style="overflow: hidden;">
