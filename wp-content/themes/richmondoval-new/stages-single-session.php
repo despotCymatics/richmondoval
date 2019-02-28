@@ -30,8 +30,14 @@ if (!isset( $_SESSION['logged'] ))  {
 	}*/
 
 	if($authCode && $sessionId && $sessionInstructorId ) {
+		$timeStart = time();
 		$sessionBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions/' . $sessionId . '/bookings' );
+		$timeDiffBookings = time() -$timeStart;
+
+		$timeStart = time();
 		$instructor = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/instructors/' . $sessionInstructorId );
+		$timeDiffInstructor = time() -$timeStart;
+
 		//$bikes = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/bikes' );
 		$bikes = file_get_contents(dirname(__FILE__)."/stagesBikes.json");
 		$bikes = json_decode($bikes);
@@ -177,7 +183,7 @@ An educational, challenging workout that will leave you wanting more!
 			$logFile = dirname(dirname(__FILE__))."../../stagesAPILog-sessions.txt";
 			$current = file_get_contents($logFile);
 			$contents = "\r\n".date('Y-m-d H:m:s')." USER: ".$userId."-------------------------------------------------------------------------\r\n";
-			$contents .= "SessionBookings: ".json_encode($sessionBookings)."\r\n------ Bikes: ".json_encode($bikes)."\r\n ----- Instructor: ".json_encode($instructor);
+			$contents .= "SessionBookings: ".json_encode($sessionBookings)." Time(sec): ".$timeDiffBookings. "\r\n------ Bikes: ".json_encode($bikes)."\r\n ----- Instructor: ".json_encode($instructor)." Time(sec): ".$timeDiffInstructor;
 			file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
 
         }
