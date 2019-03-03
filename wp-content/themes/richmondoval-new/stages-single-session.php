@@ -20,8 +20,8 @@ if (!isset( $_SESSION['logged'] ))  {
 	$bikes ='';
 
 
-	//$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
-	$authCode = authorize();
+	$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
+	//$authCode = authorize();
 
 
 	/*if(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {

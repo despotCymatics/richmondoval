@@ -4,7 +4,7 @@
  */
 
 require "stages-api.php";
-$authCode = authorize();
+
 $dateFrom    = date( 'Y-m-d' );
 $dateTo   = strtotime( '+10 days' );
 $dateTo   = date( 'Y-m-d', $dateTo );

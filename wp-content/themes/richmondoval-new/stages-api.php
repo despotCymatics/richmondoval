@@ -2,11 +2,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
+//$authCode = authorize();
+
+$authCode = "1uJUlygNj0qSY+rsCKXoag==";
+
 
 //BOOK A BIKE FOR SESSION
 if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId'])) {
-
-	$authCode = authorize();
 
 	$userId = $_POST['userId'];
 	$sessionId = $_POST['sessionId'];
@@ -41,7 +43,6 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 //CANCEL BOOKING
 if(isset($_POST['bookingId'])) {
 
-	$authCode = authorize();
 
 	$bookingId = $_POST['bookingId'];
 
@@ -209,7 +210,7 @@ function InsertIntoDB($formvars) {
 	return true;
 }
 
-function RegisterUser() {
+function RegisterUser($authCode) {
 
 	if(!isset($_POST['submitted-reg']))
 	{
@@ -245,7 +246,6 @@ function RegisterUser() {
 		'Password' => $formvars['password']
 	));
 
-	$authCode = authorize();
 
 	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/users', $postFields);
 

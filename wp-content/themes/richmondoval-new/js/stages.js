@@ -42,7 +42,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                                 allowOutsideClick: false
                             }).then((result) => {
                                 loaderIn();
-                                window.location="https://richmondoval.ca/oval-fit/";
+                                window.location="/oval-fit/";
                             })
                         }else {
                             swal({
@@ -98,7 +98,7 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
 
                     }).then((result) => {
                         loaderIn()
-                        window.location="https://richmondoval.ca/oval-fit/";
+                        window.location="/oval-fit/";
                     });
                 }
 

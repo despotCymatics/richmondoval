@@ -11,7 +11,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 	get_header();
 
-	$authCode = authorize();
 
 	?>
     <div class="ovalfit-header">
@@ -26,6 +25,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 //USER
                 $userEmail = $_SESSION['logged'];
                 $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
+
 
                 if ( count( $userQuery ) == 1 && $userQuery[0]->Email == $userEmail ) {
                     $user = $userQuery[0];
@@ -48,7 +48,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $contents .= 'Workouts: '.json_encode($workouts);
 	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
                 }
-                echo "<script>console.log('Workouts: ".json_encode($workouts)."')</script>";
+                //echo "<script>console.log('Workouts: ".json_encode($workouts)."')</script>";
 
                 //Sessions
                 //Sessions
@@ -77,15 +77,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $contents .= 'Sessions: '.json_encode($sessions);
 	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
                 }
-                echo "<script>console.log('Sessions: ".json_encode($sessions)."')</script>";
+                //echo "<script>console.log('Sessions: ".json_encode($sessions)."')</script>";
 
                 //User Bookings
                 //User Bookings
                 //User Bookings
                 $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
-
-                echo "<script>console.log('UserBookings: ".json_encode($userBookings)."')</script>";
+                //echo "<script>console.log('UserBookings: ".json_encode($userBookings)."')</script>";
 
                 ?>
 
