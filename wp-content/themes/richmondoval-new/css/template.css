@@ -1064,7 +1064,7 @@ section.photo {
 }
 
 #pimaryMenu ul.primHolder li {
-    padding: 7px 10px;
+    padding: 10px 15px;
     border-top: 1px solid #525252;
 }
 
@@ -1164,7 +1164,7 @@ section.photo {
 .sideBar #pimaryMenu h4 {
     border-bottom: 1px solid #606060;
     color: #fff;
-    padding: 15px 18px 15px 40px;
+    padding: 15px 18px 15px 50px;
     position: relative;
     /*margin-bottom: 5px;
     margin-right: 10px;*/
@@ -1174,7 +1174,7 @@ section.photo {
     font-family: "FontAwesome";
     left: 16px;
     position: absolute;
-    top: 15px;
+    top: 18px;
     content: "\f016";
 }
 
@@ -1340,7 +1340,7 @@ section.photo {
     color: #fff;
     margin: 0;
     line-height: 120%;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .newsHolder a:hover {
@@ -1360,6 +1360,7 @@ section.photo {
 
 .newsHolder p.additionalText {
     margin-bottom: 10px;
+    line-height: 16px;
 }
 
 .newsBox .bannerHolder a {
@@ -1835,11 +1836,13 @@ footer .blue .newsHolder a.side-box {
 }
 
 .quick-links h4 {
-    /*color: #e04915;
-    border-bottom: 1px solid #606060;*/
     color: #fff;
-    padding: 10px 18px 10px;
+    padding: 15px 18px 10px;
     margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.quick-links h4 {
     margin-right: 10px;
 }
 
