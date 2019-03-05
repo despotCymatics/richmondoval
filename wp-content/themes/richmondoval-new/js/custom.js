@@ -213,6 +213,15 @@ $( document ).ready(function() {
         slidesToScroll: 3,
 
         responsive: [
+
+            {
+                breakpoint: 1680,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 3,
+                }
+            },
+
             {
                 breakpoint: 1281,
                 settings: {
@@ -230,18 +239,20 @@ $( document ).ready(function() {
             },
             {
                 breakpoint: 769,
-                centerMode: true,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 2,
+                    centerMode: true,
+                    infinite: true,
                 }
             },
             {
                 breakpoint: 480,
-                centerMode: true,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    infinite: false,
                 }
             }
         ]
@@ -304,15 +315,16 @@ $( document ).ready(function() {
     $(document).on('click','.mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 ul ul li.mega-menu-item-has-children > a.mega-menu-link', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        $('.mobileMega ul ul li.mega-menu-item-has-children ul').slideUp(0);
         $(this).next('ul').slideToggle(200);
-        $('html, body').animate({
+       /* $('html, body').animate({
             scrollTop: $(this).offset().top -56
-        }, 300);
+        }, 200);*/
     });
-    $(document).on('click','.mobileMega .mega-menu-link', function(){
+    $(document).on('click','.mobileMega .mega-menu-link, .r-tabs-accordion-title .r-tabs-anchor', function(){
         $('html, body').animate({
             scrollTop: $(this).offset().top - 56
-        }, 300);
+        }, 200);
     });
 
 

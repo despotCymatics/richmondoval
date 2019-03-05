@@ -3232,6 +3232,10 @@ section.explore {
     padding-bottom: 60px;
 }
 
+.explore .explore-section-img {
+    display: none;
+}
+
 .explore-wrap {
     display: flex;
 }

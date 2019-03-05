@@ -147,6 +147,8 @@ get_header(); ?>
             <h2 class="sectionTitle">Explore The Oval</h2>
         </div>
 
+        <img class="explore-section-img" src="<?=get_stylesheet_directory_uri();?>/images/basic/explore-section.png">
+        
         <div class="within">
 
             <!-- Explore Tabs -->
