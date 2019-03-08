@@ -2,9 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
+//AUTHORIZATION CODE
 //$authCode = authorize();
-
-$authCode = "1uJUlygNj0qSY+rsCKXoag==";
+$authCode = "lFKkiRqWYECXUHPTmsmfWQ==";
 
 
 //BOOK A BIKE FOR SESSION

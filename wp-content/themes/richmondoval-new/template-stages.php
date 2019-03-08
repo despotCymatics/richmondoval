@@ -26,8 +26,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 $userEmail = $_SESSION['logged'];
                 $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
-
-                if ( count( $userQuery ) == 1 && $userQuery[0]->Email == $userEmail ) {
+                if ( count( $userQuery ) == 1 && isset($userQuery[0]->Email)) {
                     $user = $userQuery[0];
                     $userId = $user->Id;
                 } else {
@@ -40,15 +39,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 //Workouts
                 //Workouts
                 $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
-                if(!isset($workouts[0]->Id) ) {
 
-	                $logFile = dirname(dirname(__FILE__))."../../stagesAPILog-main.txt";
-	                $current = file_get_contents($logFile);
-	                $contents = "USER: ".$userEmail."-------------------------------------------------------------------------\r\n";
-	                $contents .= 'Workouts: '.json_encode($workouts);
-	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
-                }
-                //echo "<script>console.log('Workouts: ".json_encode($workouts)."')</script>";
 
                 //Sessions
                 //Sessions
@@ -77,7 +68,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	                $contents .= 'Sessions: '.json_encode($sessions);
 	                file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
                 }
-                //echo "<script>console.log('Sessions: ".json_encode($sessions)."')</script>";
 
                 //User Bookings
                 //User Bookings
@@ -409,7 +399,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 //login check
 else {
-	header( 'Location: https://richmondoval.ca/oval-fit-login/?login=false' );
+	header( 'Location: /oval-fit-login/?login=false' );
 	exit;
 }
 

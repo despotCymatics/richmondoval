@@ -21,13 +21,6 @@ if (!isset( $_SESSION['logged'] ))  {
 
 
 	$authCode = isset($_POST['authCode']) ? $_POST['authCode'] : NULL;
-	//$authCode = authorize();
-
-
-	/*if(isset($sessionBookings->Message) && $sessionBookings->Message == "Unauthorized") {
-		//authorize again
-		$returnHTML = "<span style='display: none;'>Need authorization again</span>";
-	}*/
 
 	if($authCode && $sessionId && $sessionInstructorId ) {
 		$timeStart = time();
@@ -193,9 +186,6 @@ An educational, challenging workout that will leave you wanting more!
 	}
 }
 
-$returnHTML .= "<script>console.log('SessionBookings: ".json_encode($sessionBookings)."')</script>
-            <script>console.log('Bikes: ".json_encode($bikes)."')</script>
-            <script>console.log('Instructor: ".json_encode($instructor)."')</script>";
 
 
 echo $returnHTML;
