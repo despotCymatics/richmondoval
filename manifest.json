@@ -1,0 +1,15 @@
+{
+  "name": "OvalFit Ride",
+  "short_name": "OvalFit Ride",
+  "theme_color": "#0C0D0D",
+  "background_color": "#0C0D0D",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/wp-content/themes/richmondoval-new/images/ovalfit-favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://richmondoval.ca/oval-fit-login/"
+}
