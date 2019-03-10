@@ -336,7 +336,11 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     <br>
                                     <p>No Sessions on these dates.</p>
                                 <?php } ?>
+
+                            <p style="text-align: center; margin: 20px 20px 0; opacity: 0.5;">OvalFit Ride</p>
                         </div>
+
+
 
                     </div>
 
@@ -348,6 +352,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             }
 
             ?>
+
             </div><!-- content -->
         </div><!-- within inner -->
 
@@ -402,5 +407,8 @@ else {
 	header( 'Location: /oval-fit-login/?login=false' );
 	exit;
 }
+?>
 
+
+<?php
 get_footer();

@@ -11,6 +11,21 @@
 	<link rel="shortcut icon" type="image/png" href="<?=get_stylesheet_directory_uri();?>/images/basic/favicon.gif"/>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
+    <?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php")) { ?>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="<?=get_stylesheet_directory_uri();?>/images/ovalfit-favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?=get_stylesheet_directory_uri();?>/images/ovalfit-favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?=get_stylesheet_directory_uri();?>/images/ovalfit-favicons/favicon-16x16.png">
+        <link rel="manifest" href="<?=get_stylesheet_directory_uri();?>/images/ovalfit-favicons/manifest.json">
+        <link rel="mask-icon" href="<?=get_stylesheet_directory_uri();?>/images/ovalfit-favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="apple-mobile-web-app-title" content="OvalFit">
+        <meta name="application-name" content="OvalFit">
+        <meta name="msapplication-TileColor" content="#0c0d0d">
+        <meta name="theme-color" content="#0C0D0D" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <?php } ?>
+
 	<?php wp_head();?>
 
     <script>
