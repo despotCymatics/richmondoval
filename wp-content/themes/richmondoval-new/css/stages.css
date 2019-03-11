@@ -785,7 +785,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 
 .page-template-template-stages_login .ride-logo, .page-template-template-stages_registration .ride-logo {
     max-width: 240px;
-    margin: 30px auto;
+    margin: 20px auto;
     opacity: 0.2;
     text-align: center;
 }
@@ -1066,6 +1066,59 @@ form#changeDates:before {
     content: 'Select single date or range';
     display: block;
     font-family: prometo;
+}
+
+
+
+
+
+#add-to-homescreen-ios-popup {
+    position: absolute;
+    bottom: -400px;
+    left: 50%;
+    width: 300px;
+    padding: 10px;
+    background-color: #fe9e26;
+    border: 2px solid #00234C;
+    -webkit-border-radius: 4px;
+    z-index: 9999;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+#add-to-homescreen-ios-popup:after {
+     position: absolute;
+     content: '';
+     height: 0px;
+     width: 0px;
+     left: 43%;
+     bottom: -20px;
+     border-left: 20px solid transparent;
+     border-right: 20px solid transparent;
+     border-top: 20px solid #fe9e26;
+     z-index: 9999;
+ }
+
+#add-to-homescreen-ios-popup p {
+    margin-bottom: 0;
+}
+
+.popup-close-icon {
+    position: absolute;
+    width: 0px;
+    right: 20px;
+    top: 0px;
+    font-size: 24px;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0px -1px 1px #00234C;
+    cursor: pointer;
+}
+
+.bottom-bar {
+    position: absolute;
+    bottom: 8%;
+    left: 8px;
 }
 
 

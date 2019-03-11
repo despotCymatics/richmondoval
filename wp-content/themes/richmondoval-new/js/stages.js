@@ -277,10 +277,33 @@ jQuery(document).ready(function($) {
         deferredPrompt = e;
 
         // btnAdd.style.display = 'block';
-
-        console.log(e);
+        //console.log(e);
 
     });
+
+    // Detects if device is on iOS
+    const isIos = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iphone|ipad|ipod/.test( userAgent );
+    };
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode()) {
+
+        $(function() {
+            $('.profile-opt').css('margin-bottom', '110px');
+            $('#add-to-homescreen-ios-popup').animate({'bottom': '25px'}, 1000);
+            $('.popup-close-icon').on('click', function(){
+                $('#add-to-homescreen-ios-popup').animate({'bottom': '-500px'}, 500, function() {
+                    $(this).remove();
+                });
+            });
+        });
+    }
+
+
 
 
 

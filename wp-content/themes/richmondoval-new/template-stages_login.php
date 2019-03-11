@@ -99,9 +99,8 @@ if(isset($_SESSION['logged'])) {
 
                                 </fieldset>
                             </form>
-                            <div style="text-align: center">
+                            <div class="profile-opt" style="text-align: center">
                                 <p>Forgot your password? <a href="/oval-fit-login/?lost-password=true">Click Here</a> </p>
-                                <br>
                                 <br>
                                 <br>
                                 <p>
@@ -113,6 +112,12 @@ if(isset($_SESSION['logged'])) {
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="add-to-homescreen-ios-popup">
+        <div class="popup-close-icon">&times;</div>
+        <h4>Add Ride App?</h4>
+        <p>Tap below to add an icon to your home screen for quick access!</p>
     </div>
 	<?php
 }
