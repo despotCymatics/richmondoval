@@ -117,7 +117,7 @@ if(isset($_SESSION['logged'])) {
     <div id="add-to-homescreen-ios-popup">
         <div class="popup-close-icon">&times;</div>
         <h4>Add Ride App?</h4>
-        <p>Tap below to add an icon to your home screen for quick access!</p>
+        <p>Tap below and select Add to home screen for quick access!</p>
     </div>
 	<?php
 }
