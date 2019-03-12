@@ -3268,6 +3268,8 @@ section.explore {
 .explore-icons-nav .explore-icon span {
     word-break: normal;
     max-width: 80px;
+    height: 30px;
+    overflow: hidden;
     display: inline-block;
 }
 

@@ -36,13 +36,13 @@ function create_explores() {
         'rewrite' => array('slug' => 'explore'),
         'hierarchical'        => false,
         'taxonomies'          => array( 'explore-category' ),
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions' ),
+        'supports'            => array( 'title', 'excerpt', 'author', 'thumbnail', 'revisions' ),
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
         'menu_position'       => 5,
         'can_export'          => true,
-        'publicly_queryable'  => true,
+        'publicly_queryable'  => false,
         'exclude_from_search' => true,
 
     );

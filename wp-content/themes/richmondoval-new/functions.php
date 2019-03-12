@@ -14,7 +14,6 @@ function richmondoval_setup_theme() {
 add_action( 'after_setup_theme', 'richmondoval_setup_theme' );
 
 
-
 /**
  * Enqueue scripts and styles for front-end.
  */

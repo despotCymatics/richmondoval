@@ -698,7 +698,7 @@ body.menuOpen {
         text-align: left;
     }
     .explore-icons-nav .explore-icon {
-        width: 90px;
+        /*width: 90px;*/
         margin: 10px;
     }
 

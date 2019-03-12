@@ -141,6 +141,7 @@ get_header(); ?>
 
 
     <!-- Explore Oval -->
+    <?php if(false) { ?>
     <section class="explore">
 
         <div class="within">
@@ -352,6 +353,158 @@ get_header(); ?>
 
         </div>
     </section>
+    <?php } ?>
+
+    <!-- Explore Oval -->
+    <section class="explore">
+
+        <div class="within">
+            <h2 class="sectionTitle">Explore The Oval</h2>
+        </div>
+
+        <img class="explore-section-img" src="<?=get_stylesheet_directory_uri();?>/images/basic/explore-section.png">
+
+        <div class="within">
+
+            <!-- Explore Tabs -->
+            <div id="responsiveTabs">
+                <ul class="tab-buttons">
+                <?php
+                    $args = array(
+                    'taxonomy' => 'explore-category',
+                    'orderby' => 'name',
+                    'order'   => 'ASC'
+                    );
+
+                    $cats = get_categories($args);
+
+                    foreach($cats as $cat) { ?>
+
+                    <li><a href="#<?=strtolower(str_replace(" ", '-', $cat->name))?>" class="tablink"><?=$cat->name;?></a></li>
+
+                   <?php } ?>
+                </ul>
+
+
+                <?php
+                $countCats = 1;
+
+                foreach($cats as $cat) { ?>
+
+                <div id="<?=strtolower(str_replace(" ", '-', $cat->name))?>" class="tabcontent<?=$countCats;?>">
+                    <div class="explore-wrap">
+
+						<?php
+						$args = array(
+							'post_type' => 'explores',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'explore-category',
+									'field'    => 'slug',
+									'terms'    => $cat->slug,
+								),
+							),
+						);
+						$exploreQuery = new WP_Query( $args ); ?>
+
+                        <div class="explore-carousel-nav">
+                            <div class="explore-icons-nav">
+                                <?php
+                                if ( $exploreQuery->have_posts() ) :
+                                    while ( $exploreQuery->have_posts() ) : $exploreQuery->the_post(); ?>
+                                    <a class="explore-icon" data-id="<?=get_the_ID();?>">
+                                        <div>
+                                            <img alt="Explore Icon" class="svg" src="<?=get_field('explore_icon');?>" data-id="<?=get_the_ID();?>">
+                                            <span><?=get_the_title();?></span>
+                                        </div>
+                                    </a>
+                                    <?php endwhile; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="explore-carousel">
+							<?php
+							if ( $exploreQuery->have_posts() ) :
+								while ( $exploreQuery->have_posts() ) : $exploreQuery->the_post(); ?>
+                                <div class="article" data-id="<?=get_the_ID();?>">
+                                    <div class="articleImg">
+										<?php $eventImg = get_the_post_thumbnail( get_the_ID(), 'large' );
+										if($eventImg != "") echo $eventImg;
+										else { ?>
+                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+										<?php } ?>
+
+                                    </div>
+
+                                    <div class="articleTitle">
+                                        <h2><?=get_the_title();?></h2>
+                                        <p class="excerpt"><?=get_the_excerpt();?></p>
+                                        <a class="read-more" href="<<?=get_field('explore_url');?>">Read More</a>
+                                    </div>
+
+                                </div>
+								<?php endwhile; ?>
+							<?php endif; ?>
+
+                        </div>
+                    </div>
+
+                    <script>
+                        $( document ).ready(function() {
+
+                            var tabcontent = '.tabcontent<?=$countCats;?>';
+
+                            $(tabcontent +' .explore-carousel').slick({
+                                dots: true,
+                                arrows:true,
+                                infinite: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1,
+                                appendDots: $(tabcontent +' .explore-carousel-nav'),
+                                draggable:false,
+                                fade: true,
+                                customPaging : function(slider, i) {
+                                    var slideId = $(slider.$slides[i]).data('id');
+                                    return '<a data-id="'+slideId+'"><span></span></a>';
+                                },
+                            });
+
+                            var currentExploreSlide = 0;
+                            $(tabcontent +' .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+
+                            $(tabcontent +' .explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+                                currentExploreSlide = currentSlide;
+                                $(tabcontent +' .explore-icons-nav a').removeClass('active');
+                                $(tabcontent +' .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
+                            });
+
+                            $(tabcontent +' .explore-icons-nav a').click(function (e) {
+                                var thumbId = $(this).attr('data-id');
+                                $(tabcontent +' .explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
+                            });
+
+                            $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
+                                $(tabcontent +' .explore-carousel').slick('reinit');
+                            });
+
+                        });
+                    </script>
+
+                </div>
+
+                <?php
+	                $countCats++;
+                } ?>
+
+                <?php wp_reset_postdata(); ?>
+
+            </div>
+
+        </div>
+    </section>
+
+
 
 
     <!-- Latest News -->
@@ -364,15 +517,18 @@ get_header(); ?>
         <div class="within">
             <div class="news-wrap">
                 <?php
-                query_posts(array(
-                    'post_type' => 'news',
-                    'showposts' => 3
-                ));
-                ?>
+
+                $args = array(
+	                'post_type' => 'news',
+	                'showposts' => 3
+                );
+                $newsQuery = new WP_Query( $args ); ?>
 
                 <div class="news-carousel">
 
-		            <?php while (have_posts()) : the_post(); ?>
+                    <?php
+                    if ( $newsQuery->have_posts() ) :
+		                while ( $newsQuery->have_posts()) : $newsQuery->the_post(); ?>
                         <div class="article">
                             <div class="articleDate">
                                 <span class="month"><?php echo date("M",  strtotime(get_the_date())); ?></span>
@@ -385,7 +541,8 @@ get_header(); ?>
                             </div>
                         </div>
 
-		            <?php endwhile;?>
+		                <?php endwhile;?>
+                    <?php endif; ?>
 
                 </div>
 
@@ -393,7 +550,8 @@ get_header(); ?>
                     <div class="news-nav">
                         <?php
                         $newsCount = 0;
-                        while (have_posts()) : the_post(); ?>
+                        if ( $newsQuery->have_posts() ) :
+                            while ( $newsQuery->have_posts()) : $newsQuery->the_post(); ?>
                             <div class="article" data-num="<?=$newsCount;?>">
                                 <div class="articleImg">
                                     <?php the_post_thumbnail( array(200, 150) ); ?>
@@ -404,9 +562,12 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                        <?php
-	                        $newsCount++;
-                        endwhile;?>
+                            <?php $newsCount++; ?>
+	                        <?php endwhile;?>
+                        <?php endif; ?>
+
+	                    <?php wp_reset_postdata(); ?>
+
                         <a class="all-news" href="/all-news">More News</a>
                     </div>
                 </div>
