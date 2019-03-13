@@ -38,7 +38,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 //Workouts
                 //Workouts
                 //Workouts
-                $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts' );
+                $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
 
                 //Sessions
