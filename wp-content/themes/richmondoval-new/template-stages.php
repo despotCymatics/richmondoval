@@ -71,11 +71,13 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
     <div class="ovalfit-wrapper">
 
-        <div class="ovalfit-side-menu" style="width: 280px; top: 0; bottom: 0;">
-
+        <div class="ovalfit-side-menu">
+            <div class="ovalfit-logo">
+                <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo-black.png">
+            </div>
         </div>
 
-        <div class="" style="margin-left: 280px;">
+        <div class="ovalfit-main">
             <div class="ovalfit-header" style="padding: 30px 60px 0">
                 <div class="">
                     <div class="content">

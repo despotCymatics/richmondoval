@@ -1122,6 +1122,25 @@ form#changeDates:before {
 }
 
 
+.ovalfit-wrapper .ovalfit-side-menu {
+    width: 280px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #C2C1C0;
+}
+
+.ovalfit-wrapper .ovalfit-main {
+    margin-left: 280px;
+}
+
+.ovalfit-wrapper .ovalfit-logo {
+    padding: 30px 30px 30px 50px;
+}
+
+
+
+
 /********** MOBILE **********/
 
 
