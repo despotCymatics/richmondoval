@@ -79,7 +79,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 <?php if($user->NickName !== '') { ?>
                     <h3><?= $user->NickName ?></h3>
                 <?php } ?>
-                <p><?= $user->FirstName ?> <?= $user->LastName ?></p>
+                <span><?= $user->FirstName ?> <?= $user->LastName ?></span><br>
                 <?php if(count($workouts) > 0 ) { ?>
                 <span>Latest Activity: <?=$workouts[0]->Time; ?></span>
                 <?php }?>
@@ -87,14 +87,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             </div>
 
             <div class="side-menu-items">
-                <ul>
-                    <li><a href="#dashboard" data-go="dashboard">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a></li>
-                    <li><a href="#">Class Schedules</a></li>
-                    <li><a href="#ride" data-go="ride">Ride</a></li>
-                    <li><a href="#athletic" data-go="athletic">Athletic</a></li>
-                    <li><a href="https://stagesflight.com/Account/ProfileSettings" target="_blank">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a></li>
-                    <li><a href="/oval-fit-logout/">Logout</a></li>
-                </ul>
+
+                    <a href="#dashboard" data-go="dashboard">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
+                    <a href="#">Class Schedules</a>
+                    <a href="#ride" data-go="ride">Ride</a>
+                    <a href="#athletic" data-go="athletic">Athletic</a>
+                    <a href="https://stagesflight.com/Account/ProfileSettings" target="_blank">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
+                    <a href="/oval-fit-logout/">Logout</a>
+
             </div>
         </div>
 
@@ -104,17 +104,21 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         <div class="ovalfit-main">
 
             <div id="dashboard" class="ovalfit-dashboard">
-                <div class="">
-                    <h4>Wlcome back, <?= $user->FirstName ?></h4>
+                <div class="latest-activity">
+                    <span>Latest Activity</span>
+
+                </div>
+                <div class="welcome">
+                    <h4>Welcome back, <?= $user->FirstName ?></h4>
                     <p>Check out your OVALfit dashboard</p>
                 </div>
                 <div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="http://via.placeholder.com/1200x755/ccc/fff/">
+                            <img src="http://via.placeholder.com/1000x400/ccc/fff/">
                         </div>
                         <div class="col-sm-6">
-                            <img src="http://via.placeholder.com/1200x755/ccc/fff/">
+                            <img src="http://via.placeholder.com/1000x400/ccc/fff/">
                         </div>
                     </div>
                 </div>
@@ -312,7 +316,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 							            } else {
 								            ?>
                                             <br>
-                                            <p>You have no reservations.</p>
+                                            <p style="padding:0 30px;">You have no reservations.</p>
 							            <?php } ?>
                                     </div>
 
