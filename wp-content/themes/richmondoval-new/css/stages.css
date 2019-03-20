@@ -1124,7 +1124,7 @@ form#changeDates:before {
 
 .ovalfit-wrapper .ovalfit-side-menu {
     width: 280px;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     border-right: 1px solid #C2C1C0;
@@ -1132,6 +1132,7 @@ form#changeDates:before {
 
 .ovalfit-wrapper .ovalfit-main {
     margin-left: 280px;
+    min-height: 100vh;
 }
 
 .ovalfit-wrapper .ovalfit-logo {
