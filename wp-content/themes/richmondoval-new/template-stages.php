@@ -79,20 +79,20 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 <?php if($user->NickName !== '') { ?>
                     <h3><?= $user->NickName ?></h3>
                 <?php } ?>
-                <span><?= $user->FirstName ?> <?= $user->LastName ?></span><br>
+                <span><?= $user->FirstName ?> <?= $user->LastName ?></span><br><br>
                 <?php if(count($workouts) > 0 ) { ?>
-                <span>Latest Activity: <?=$workouts[0]->Time; ?></span>
+                <span>Latest Activity: <?=$workouts[0]->Time; ?></span><br><br>
                 <?php }?>
 
             </div>
 
             <div class="side-menu-items">
 
-                    <a href="#dashboard" data-go="dashboard">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
+                    <a href="#dashboard" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
                     <a href="#">Class Schedules</a>
-                    <a href="#ride" data-go="ride">Ride</a>
-                    <a href="#athletic" data-go="athletic">Athletic</a>
-                    <a href="https://stagesflight.com/Account/ProfileSettings" target="_blank">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
+                    <a href="#ride" data-go="ride" class="athletic-menu-item" >Ride</a>
+                    <a href="#athletic" data-go="athletic" class="athletic-menu-item">Athletic</a>
+                    <a href="https://stagesflight.com/Account/ProfileSettings" target="_blank" class="profile-menu-item">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
                     <a href="/oval-fit-logout/">Logout</a>
 
             </div>
