@@ -1,0 +1,1272 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url('../fonts/segoeuil.ttf');
+}
+
+.main-container {
+    font-family: "Prometo";
+}
+
+.ov-fit-nav {
+    position: fixed;
+    width: 100%;
+    transition: .5s linear all;
+    z-index: 2;
+}
+
+.ov-fit-background-dark {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: .5s linear all;
+}
+
+.ov-fit-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    align-items: center;
+}
+
+.ov-fit-btn-nav {
+}
+
+.ov-fit-hamburger-nav {
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/Hamburger_desktop.png) no-repeat;
+    display: inline-block;
+    height: 26px;
+    width: 35px;
+    position: relative;
+    top: 7px;
+    margin-left: 20px;
+}
+
+.ov-fit-banner {
+    min-height: 640px;
+    height: 100vh;
+    background-image: url(../img/testRideHero.jpg);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ov-fit-banner-inner {
+    margin: auto;
+    max-width: 1320px;
+    padding: 60px;
+    left: 0;
+    position: relative;
+    color: #fff;
+}
+
+.ov-fit-banner-inner h1 {
+    line-height: 1;
+}
+
+.ov-chevron-down-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ov-chevron-down {
+    animation-iteration-count: infinite;
+    transform-origin: center bottom;
+    animation-name: bounce-sm;
+    animation-duration: 1.8s;
+    display: block;
+    margin-top: 0.625rem;
+
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/chevron-down.png) no-repeat;
+    position: absolute;
+    padding-bottom: 50px;
+    bottom: 0;
+    width: 41px;
+    height: 24px;
+}
+
+.ov-fit-banner h1 {
+    font-size: 130px;
+    margin-bottom: 0px;
+}
+
+.ov-fit-banner p {
+    font-size: 30px;
+    font-weight: 100;
+    margin: 30px 0 40px 0;
+}
+
+/*discover the champion*/
+.ov-discover-champion {
+    background: #000;
+    min-height: 600px;
+    height: 740px;
+    background-image: url(../img/testTrainHero.jpg);
+    background-position: right;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ov-discover-champion-inner {
+    margin-top: -200px;
+}
+
+.ov-discover-champion h1 {
+    margin: 0 auto 0 auto;
+    font-size: 70px;
+    max-width: 840px;
+    width: 100%;
+    font-weight: bold;
+    color: #FF9E18;
+
+}
+
+.ov-discover-champion h2 {
+    margin: 40px auto;
+    font-size: 16px;
+    max-width: 620px;
+    width: 100%;
+    color: #fff;
+    font-weight: 100;
+    line-height: 24px;
+}
+
+.ov-discover-champion h3 {
+    margin: 100px auto 0px;
+    font-size: 30px;
+    font-weight: bold;
+    max-width: 700px;
+    width: 100%;
+    color: #fff;
+    line-height: 34px;
+}
+
+.ov-discover-champion img {
+    max-width: 1200px;
+}
+
+/*discover the champion interactive section*/
+.ov-discover-numbers {
+    display: flex;
+    justify-content: space-around;
+    font-size: 100px;
+    color: #fff;
+}
+
+.ov-discover-numbers a {
+    color: #1E1E1E;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.ov-discover-numbers-active {
+    color: #fff !important;
+    border-bottom: 10px solid #008BD1;
+    width: 100%;
+}
+
+.ov-discover-numbers-active:after {
+    content: '';
+    background: url(https://richmondoval.ca/wp-content/uploads/2018/07/blue-down-arrow.png) no-repeat;
+    position: absolute;
+    bottom: -25px;
+    width: 26px;
+    height: 15px;
+    z-index: 1;
+}
+
+.ov-discover-champion-interactive {
+    background: #000;
+}
+
+.ov-discover-champion-interactive-inner {
+    background: #000;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.ov-discover-champion-interactive img {
+    width: 100%;
+}
+
+/*training grounds*/
+.ov-fit-training-ground-wrapper {
+
+}
+
+.ov-fit-training-ground-section-header {
+    display: block;
+}
+
+.ov-fit-training-ground-section-header h2 {
+    font-size: 120px !important;
+    color: #FF9E18;
+    margin: 0;
+    margin: auto;
+    max-width: 600px;
+}
+
+.ov-fit-training-ground-section-header p {
+    max-width: 700px;
+    padding-top: 50px;
+    font-size: 24px !important;
+    margin: auto;
+}
+
+.ov-fit-training-ground-section {
+    display: flex;
+    /*height: 100vh;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.ov-sectioner-container {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+}
+
+.ov-fit-training-ground-section div {
+    flex: 1;
+    align-self: center;
+}
+
+.ov-fit-training-ground-text {
+
+    padding: 40px 100px;
+}
+
+.ov-fit-training-ground-section p {
+    margin: 36px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.ov-fit-training-ground-section h2 {
+    font-size: 100px;
+    color: #FF9E18;
+    margin: 0 0 20px 0;
+}
+
+.ov-fit-training-ground-section img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.ov-discover-champion-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.ov-discover-champion-info h3 {
+    font-size: 20px;
+}
+
+/*ride machine*/
+.ov-ride-machine-wrapper {
+    background: #000;
+}
+
+.ov-ride-machine-wrapper-inner {
+    max-width: 1260px;
+    margin: auto;
+    padding-bottom: 110px;
+    color: #fff;
+}
+
+.ov-ride-machine-header {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.ov-ride-machine-wrapper h3 {
+    font-size: 59px;
+    margin: 60px 0 40px 0;
+    max-width: 520px;
+}
+
+.ov-ride-machine-wrapper h4 {
+    font-size: 22px;
+    max-width: 445px;
+    font-weight: 100;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+.ov-ride-machine-wrapper h5 {
+    font-size: 20px;
+    font-weight: 100;
+    margin: 20px 0px;
+}
+
+.ov-ride-machine-wrapper p {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 100;
+}
+
+.ov-ride-machine-stages-logo {
+    float: right;
+}
+
+/*ride machine image*/
+.ov-ride-machine-container {
+    max-width: 940px;
+    margin: auto;
+    position: relative;
+}
+
+.ov-ride-machine-bike {
+    width: 100%;
+}
+
+/*uncomment!*/
+.ov-ride-section {
+    opacity: 1;
+}
+
+.ov-ride-display {
+    position: absolute;
+    top: 87px;
+    left: 350px;
+}
+
+.ov-ride-display-arm {
+    position: absolute;
+    top: 97px;
+    left: 44px;
+}
+
+.ov-ride-sprintshift {
+    position: absolute;
+    top: 212px;
+    left: 380px;
+}
+
+.ov-ride-sprintshift-arm {
+    position: absolute;
+    top: 225px;
+    left: -164px;
+}
+
+.ov-ride-powermeter {
+    position: absolute;
+    top: 396px;
+    left: 469px;
+}
+
+.ov-ride-powermeter-arm {
+    position: absolute;
+    top: 245px;
+    left: 479px;
+}
+
+.ov-ride-carbonglide {
+    position: absolute;
+    top: 455px;
+    left: 539px;
+}
+
+.ov-ride-carbonglide-arm {
+    position: absolute;
+    top: 465px;
+    left: 551px;
+}
+
+.ov-ride-carbonglide-arm-small {
+    display: none;
+}
+
+.ov-ride-display-content {
+    position: absolute;
+    left: -157px;
+    top: 68px;
+    width: 272px;
+}
+
+.ov-ride-sprintshift-content {
+    position: absolute;
+    top: 400px;
+    left: -165px;
+    width: 272px;
+}
+
+.ov-ride-powermeter-content {
+    position: absolute;
+    top: 217px;
+    right: -211px;
+    width: 272px;
+}
+
+.ov-ride-carbonglide-content {
+    position: absolute;
+    top: 436px;
+    right: -213px;
+    width: 272px;
+}
+
+/*results team*/
+.ov-results-team {
+    max-width: 1200px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ov-results-team h2 {
+    font-size: 100px;
+    color: #FF9E18;
+    max-width: 600px;
+}
+
+.ov-results-team h3 {
+    font-size: 30px;
+    color: #393939;
+}
+
+.ov-results-team p {
+    max-width: 500px;
+    color: #535453;
+    min-height: 200px;
+}
+
+/*ride schedule*/
+.ov-ride-schedule {
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.ov-class-container {
+    margin: 50px 0;
+}
+
+.ov-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: #ccc 1px solid;
+    padding: 20px;
+}
+
+/*hovers*/
+.ov-class:hover {
+    background: #FF9E18;
+}
+
+.ov-class-info {
+    display: flex;
+}
+
+.ov-class-info-text h5 {
+    margin: 0;
+    color: #008fcd;
+    font-size: 14px;
+}
+
+.ov-class-info-text p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.ov-class-info-text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 15px;
+}
+
+.ov-fit-results {
+    max-height: 600px;
+    background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Want_results_x2.jpg);
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ov-fit-results-inner {
+    height: 600px;
+    margin: 100px 0 0 100px;
+    color: #fff;
+}
+
+.ov-fit-results-inner h2 {
+    font-size: 70px;
+    margin: 0;
+    max-width: 580px;
+}
+
+.ov-fit-results-inner p {
+    font-size: 18px;
+    margin: 40px 0;
+    font-weight: 100;
+    max-width: 420px;
+}
+
+#thumbnail-slider .thumb {
+    border-radius: 9px;
+}
+
+.pulse-button {
+    display: block;
+    width: 22px;
+    height: 22px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+    -webkit-animation: none;
+}
+
+.pulse-button-transparent {
+    opacity: .4;
+}
+
+/*pulse keyframes
+*/
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+/*bounce keyframes*/
+@-webkit-keyframes bounce-sm {
+    from, 20%, 53%, 80%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    40%, 43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+    90% {
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0)
+    }
+}
+
+@keyframes bounce-sm {
+    from, 20%, 53%, 80%, to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    40%, 43% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -10px, 0);
+        transform: translate3d(0, -10px, 0)
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+    90% {
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0)
+    }
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom
+}
+
+.bounce-sm {
+    -webkit-animation-duration: 1.8s;
+    animation-duration: 1.8s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-name: bounce-sm;
+    animation-name: bounce-sm;
+}
+
+@media (max-width: 1390px) {
+
+    .ov-ride-display {
+        position: absolute;
+        top: 87px;
+        left: 350px;
+    }
+
+    .ov-ride-display-arm {
+        position: absolute;
+        top: 97px;
+        left: 208px;
+        width: 157px;
+    }
+
+    .ov-ride-sprintshift {
+        position: absolute;
+        top: 212px;
+        left: 380px;
+    }
+
+    .ov-ride-sprintshift-arm {
+        position: absolute;
+        top: 225px;
+        left: 64px;
+        width: 327px;
+    }
+
+    .ov-ride-powermeter {
+        position: absolute;
+        top: 396px;
+        left: 469px;
+    }
+
+    .ov-ride-powermeter-arm {
+        position: absolute;
+        top: 327px;
+        left: 479px;
+        width: 185px;
+    }
+
+    .ov-ride-carbonglide {
+        position: absolute;
+        top: 455px;
+        left: 539px;
+    }
+
+    .ov-ride-carbonglide-arm {
+        display: none;
+        position: absolute;
+        top: 465px;
+        left: 551px;
+        width: 154px;
+    }
+
+    .ov-ride-carbonglide-arm-small {
+        display: block;
+        position: absolute;
+        top: 465px;
+        left: 551px;
+        width: 109px;
+    }
+
+    .ov-ride-display-content {
+        position: absolute;
+        left: 12px;
+        top: 68px;
+        width: 272px;
+    }
+
+    .ov-ride-sprintshift-content {
+        position: absolute;
+        top: 324px;
+        left: 12px;
+        width: 282px;
+    }
+
+    .ov-ride-powermeter-content {
+        position: absolute;
+        top: 299px;
+        right: -8px;
+        width: 272px;
+    }
+
+    .ov-ride-carbonglide-content {
+        position: absolute;
+        top: 436px;
+        right: -3px;
+        width: 272px;
+    }
+
+}
+
+@media (max-width: 940px) {
+
+    .ov-ride-section {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .ov-fit-nav-inner {
+        padding: 20px;
+    }
+
+    .ov-fit-banner {
+        justify-content: flex-start;
+    }
+
+    .ov-fit-btn-nav {
+    }
+
+    .ov-fit-banner {
+        min-height: 640px;
+        height: 100vh;
+        background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-26.png);
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ov-fit-banner-inner {
+        bottom: 0;
+        top: unset;
+    }
+
+    .ov-fit-banner-inner h1 {
+        margin: 0;
+    }
+
+    .ov-fit-banner p {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .ov-fit-banner-inner p {
+        text-align: left;
+        padding-right: 90px;
+    }
+
+    .ov-fit-banner-btn {
+        position: absolute;
+        bottom: 160px;
+        margin: 0 auto;
+        left: 0;
+        width: max-content;
+        right: 0;
+    }
+
+    .ov-chevron-down-container {
+        display: none;
+    }
+
+    .ov-discover-champion {
+        padding: 20px 40px;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        height: 660px;
+    }
+
+    .ov-discover-champion h1 {
+        max-width: 520px;
+    }
+
+    .ov-discover-champion h2 {
+        color: #fff;
+        font-weight: 100;
+        max-width: 480px;
+    }
+
+    .ov-discover-champion h3 {
+        font-size: 25px;
+        font-weight: 100;
+    }
+
+    .ov-discover-numbers a {
+        font-size: 50px;
+        padding-bottom: 20px;
+    }
+
+    .ov-discover-champion-interactive-inner {
+        padding-bottom: 40px;
+    }
+
+    .ov-discover-champion-info {
+        padding: 0 20px;
+    }
+
+    .ov-discover-champion-info h3 {
+        line-height: 25px;
+    }
+
+    .ov-fit-training-ground-section {
+        flex-direction: column-reverse;
+        margin: 20px auto 0 auto;
+        height: 100%;
+    }
+
+    .ov-fit-training-ground-section-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .ov-fit-training-ground-section-header h2 {
+        font-size: 80px !important;
+        max-width: 100%;
+    }
+
+    .ov-fit-training-ground-section-header p {
+        max-width: 500px;
+        padding: 40px;
+        font-size: 15px !important;
+    }
+
+    .ov-fit-training-ground-text {
+        padding: 80px 80px 110px;
+
+    }
+
+    .ov-fit-training-ground-section p {
+        margin: 0 0 40px;
+    }
+
+    .ov-fit-training-ground-section h2 {
+        margin: 0 0 30px 0;
+    }
+
+    .ov-fit-training-ground-section img {
+        max-width: 100%;
+    }
+
+    .ov-fit-training-ground-wrapper {
+        margin: 100px 0 0 0;
+    }
+
+    .ov-fit-training-ground-text {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .ov-fit-training-ground-section div {
+        flex: auto;
+    }
+
+    .ov-sectioner {
+        display: block !important;
+    }
+
+    .ov-ride-machine-wrapper {
+
+    }
+
+    .ov-results-team h2 {
+        font-size: 50px;
+    }
+
+    .ov-results-team h3 {
+        font-weight: bold;
+    }
+
+    .ov-results-team {
+        padding: 40px;
+        margin: 0;
+        align-items: flex-end;
+    }
+
+    .ov-results-team .poster-main {
+        width: 200px !important;
+        height: 400px !important;
+    }
+
+    .ov-results-team img {
+        height: 357px;
+        width: 250px;
+    }
+
+    .ov-ride-schedule {
+        padding: 40px;
+    }
+
+    .ov-fit-results {
+        max-height: 420px;
+        /*background: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23.png);*/
+        background-position-x: 70%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .ov-fit-results-inner {
+        margin: 70px 0 0 60px;
+    }
+
+    .ov-fit-results h2 {
+        font-size: 50px;
+        max-width: 410px;
+    }
+
+    .ov-fit-results-inner p {
+        font-size: 16px;
+        max-width: 346px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .ov-nav-ride-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .ov-fit-logo img {
+        width: 88px;
+    }
+
+    .ov-fit-hamburger-nav {
+        margin-left: 15px;
+        position: inherit;
+    }
+
+    .ov-fit-banner-inner {
+        padding: 20px;
+        right: 0;
+    }
+
+    .ov-fit-lets-ride-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ov-fit-banner-inner h1 {
+        font-size: 60px;
+        max-width: 300px;
+    }
+
+    .ov-fit-banner-inner p {
+        line-height: 30px;
+    }
+
+    .ov-fit-banner {
+        background-position: 66%;
+    }
+
+    .ov-fit-banner-btn {
+    }
+
+    .ov-discover-champion h1 {
+        font-size: 40px;
+    }
+
+    .ov-discover-champion-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .ov-discover-champion-info .ov-fit-btn {
+        margin: 30px 0 0 0;
+    }
+
+    .ov-fit-training-ground-wrapper {
+        margin: 30px 0 0 0;
+    }
+
+    .ov-fit-training-ground-section {
+        height: 100%;
+    }
+
+    .ov-fit-studio-mobile {
+        position: relative;
+        top: 3px;
+    }
+
+    .ov-fit-training-ground-section-header h2 {
+        font-size: 50px !important;
+        padding: 0 20px;
+    }
+
+    .ov-fit-training-ground-text {
+        padding: 20px 20px 60px 20px;
+    }
+
+    .ov-fit-training-ground-text .ov-fit-btn-lg {
+        padding: 14px 50px;
+    }
+
+    .ov-fit-training-ground-section img {
+        max-height: 236px;
+    }
+
+    .ov-results-team h2 {
+        text-align: center;
+    }
+
+    .ov-ride-machine-wrapper-inner {
+        padding: 0;
+        display: grid;
+    }
+
+    .ov-ride-machine-wrapper h3 {
+        font-size: 40px;
+        margin: 13px 0 0 0;
+    }
+
+    .ov-ride-machine-wrapper h4 {
+        font-size: 15px;
+        max-width: 267px;
+        line-height: 18px;
+        margin: 20px 0 10px 0;
+    }
+
+    .ov-ride-machine-stages-logo {
+        display: none;
+    }
+
+    .ov-ride-machine-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0 24px 0;
+    }
+
+    .ov-ride-machine-container {
+        text-align: center;
+    }
+
+    .ov-ride-machine-bike {
+        width: 375px;
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .ov-ride-machine-mobile {
+        position: relative;
+    }
+
+    .ov-ride-content-mobile {
+        padding: 20px 50px 30px;
+    }
+
+    .ov-ride-machine-mobile-content {
+        position: relative;
+    }
+
+    .ov-ride-machine-mobile-content h5 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .ov-ride-machine-mobile-content h5, p {
+        font-size: 20px;
+    }
+
+    .ov-ride-display-mobile {
+        position: absolute;
+        top: -221px;
+        left: 119px;
+    }
+
+    .ov-ride-sprintshift-mobile {
+        position: absolute;
+        top: -171px;
+        left: 139px;
+    }
+
+    .ov-ride-powermeter-mobile {
+        position: absolute;
+        top: -110px;
+        left: 176px;
+    }
+
+    .ov-ride-carbonglide-mobile {
+        position: absolute;
+        top: -100px;
+        left: 208px;
+    }
+
+    .ov-ride-mobile-prev {
+        position: absolute;
+        top: 49%;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .ov-ride-mobile-next {
+        position: absolute;
+        top: 49%;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    /*ride schedule*/
+    .ov-ride-schedule {
+        padding: 0;
+        padding-bottom: 40px;
+        margin: 10px auto;
+    }
+
+    .ov-ride-schedule .ov-class {
+        padding: 20px 20px 20px 0;
+    }
+
+    .ov-ride-schedule-logo {
+        padding-left: 20px;
+    }
+
+    .ov-ride-schedule .ov-ride-schedule-logo {
+        width: 244px;
+    }
+
+    .ov-class-container {
+        margin: 30px 0;
+    }
+
+    .ov-fit-training-ground-section h2 {
+        font-size: 30px;
+    }
+
+    .ov-sectioner-container {
+        position: inherit;
+        margin-right: 10px;
+    }
+
+    .ov-results-team {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .ov-results-team p {
+        font-size: 15px;
+        color: #535453;
+        line-height: 23px;
+    }
+
+    .ov-class {
+        padding: 20px 0px;
+    }
+
+    .ov-class-info-text p {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        line-height: 18px;
+        margin-top: 5px;
+    }
+
+    .ov-coaches-mobile {
+        width: 100%;
+    }
+
+    .ov-results-team h3 {
+        font-size: 27px;
+    }
+
+    #thumbnail-slider {
+        top: 0px !important;
+        max-height: 280px;
+    }
+
+    .ov-schedule-date {
+        color: #008BD1;
+    }
+
+    .ov-fit-results {
+        max-height: 400px;
+        /*background: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-23-mobile.png);*/
+        background-size: cover;
+        background-position-x: 71%;
+    }
+
+    .ov-fit-results-members img {
+        max-height: 130px;
+    }
+
+    .ov-fit-results-inner {
+        margin: 40px 0 0 15px;
+        width: 265px;
+    }
+    .ov-fit-results-inner h2 {
+        font-size: 40px;
+        max-width: 220px;
+    }
+
+    .ov-fit-results-inner p {
+        margin: 16px 0 0 0;
+    }
+
+    .ov-fit-btn-footer {
+        margin: 40px;
+        padding: 14px 75px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
