@@ -305,7 +305,7 @@ jQuery(document).ready(function($) {
 
 
     //Side menu clicks
-    $(document).on('click', '.ovalfit-side-menu .side-menu-items a', function(e){
+    $(document).on('click', '.ovalfit-side-menu .side-menu-items a, .athletic-menu-item', function(e){
         $('.ovalfit-side-menu .side-menu-items a').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');

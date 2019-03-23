@@ -29,10 +29,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 			exit;
 		}
 
-		//Workouts
-		//Workouts
-		//Workouts
-		$workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
 		//Sessions
 		//Sessions
@@ -67,6 +63,38 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 		//User Bookings
 		$userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
+
+        //Workouts
+        //Workouts
+        //Workouts
+        $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
+
+        $durationInSeconds = 0;
+        $distanceInKm      = 0;
+        $kiloCalories      = 0;
+        $avgWatt           = 0;
+        $avgSpeed          = 0;
+        $avgHR             = 0;
+        $maxSpeed          = 0;
+        $numWorkouts       = 0;
+        $maxSpeedArray      = array();
+
+        if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
+            foreach ( $workouts as $workout ) {
+                $numWorkouts ++;
+                $durationInSeconds += $workout->DurationInSeconds;
+                $distanceInKm      += $workout->DistanceInKm;
+                $kiloCalories      += $workout->KiloCalories;
+                $avgWatt           += $workout->AvgWatt;
+                $avgSpeed          += $workout->AvgSpeed;
+                $avgHR             += $workout->AvgHeartRate;
+                array_push($maxSpeedArray, $workout->MaxSpeed);
+            }
+        }
+
+        if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
+
+
 		?>
 
     <div class="ovalfit-wrapper">
@@ -88,10 +116,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
             <div class="side-menu-items">
 
-                    <a href="#dashboard" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
-                    <a href="#">Class Schedules</a>
-                    <a href="#ride" data-go="ride" class="athletic-menu-item" >Ride</a>
-                    <a href="#athletic" data-go="athletic" class="athletic-menu-item">Athletic</a>
+                    <a href="javascript:void(0);" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
+                    <a href="javascript:void(0);">Class Schedules</a>
+                    <a href="javascript:void(0);" data-go="ride" class="athletic-menu-item" ><img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg"></a>
+                    <a href="javascript:void(0);" data-go="athletic" class="athletic-menu-item"><img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg"></a>
                     <a href="https://stagesflight.com/Account/ProfileSettings" target="_blank" class="profile-menu-item">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
                     <a href="/oval-fit-logout/">Logout</a>
 
@@ -115,17 +143,145 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 <div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="http://via.placeholder.com/1000x400/ccc/fff/">
+                            <a href="javascript:void(0);" data-go="ride"  class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/Ride_hero_1_sm.jpg)" >
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-white.png"><br>
+                                <span class="see-schedule">See Schedule</span>
+                            </a>
                         </div>
                         <div class="col-sm-6">
-                            <img src="http://via.placeholder.com/1000x400/ccc/fff/">
+                            <a href="javascript:void(0);" data-go="athletic" class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/athletic_hero_1_sm.jpg)" >
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"><br>
+                                <span class="see-schedule">See Schedule</span>
+                            </a>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="next-activity">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <?php
+                                if ( count( $userBookings ) > 0 ) { ?>
+                                    <h4>Next Activity</h4>
+                                    <?php foreach ( $userBookings as $userBooking ) { ?>
+                                        <div class="bookings" data-id="<?= $userBooking->Id; ?>">
+                                            <div class="showMoreToggler">
+                                                <div class="row">
+                                                    <div class="col-sm-8 col-xs-6">
+                                                        <h4><?= $userBooking->Session->Name; ?></h4>
+                                                        <?php
+                                                        $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+                                                        $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+                                                        ?>
+                                                        <span class="date"><?= $sessionDate; ?></span><br>
+                                                        <span><?= $sessionTime; ?></span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6 alignRight">
+                                                        <button class="btn blue regular">Cancel Reservation</button>
+                                                        <h4 class="close-toggle">X Close</h4>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="moreText">
+                                                <div class="row flexed">
+                                                    <div class="col-sm-8 col-xs-6">
+                                                        <div class="flexed">
+                                                            <div>
+                                                                <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
+                                                            </div>
+                                                            <div>
+                                                                <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
+                                                                <span>Row: <?=$userBooking->Bike->Row ?></span><br>
+                                                                <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-6 alignRight">
+                                                        <button class="btn blue regular cancel"
+                                                                onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
+                                                            Cancel Reservation
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                }?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h4>Your Stats</h4>
+                        </div>
+                    </div>
+
+                    <div class="stats-tabs">
+
+                        <div class="stats-tab">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Number of workouts</p>
+                                    <div class="big-number">
+                                        <?=$numWorkouts?>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Total callories</p>
+                                    <div class="big-number">
+                                        <?=$kiloCalories?>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <p>Distance</p>
+                                    <div class="big-number">
+                                        <?=round($distanceInKm,0); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-tab">
+                            <?php
+                            $position = round(500 - $avgWatt / $numWorkouts) / 100;
+                            ?>
+
+                            <div class="chats">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="power-stats">
+                                            <div>
+                                                <div class="num">
+                                                    <?=round($avgWatt / $numWorkouts);?>
+                                                </div>
+                                            </div>
+                                            <div class="bar">
+                                                <div class="filled" style="width:<?=$position?>%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="stats-tab"></div>
+                    </div>
+
+                </div>
+
+
             </div>
 
+
             <div id="ride" class="oval-fit-ride" style="display: none;">
-                <div class="ovalfit-header" style="padding: 30px 60px 0">
+                <div class="ovalfit-header">
                     <div class="">
                         <div class="content">
 
@@ -158,35 +314,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 <div class="col-md-12">
                                     <!--<p>Hi <?/*= $user->FirstName */?>, check out your performance metrics.</p>-->
                                     <div class="stats">
-							            <?php
-							            $durationInSeconds = 0;
-							            $distanceInKm      = 0;
-							            $kiloCalories      = 0;
-							            $avgWatt           = 0;
-							            $avgSpeed          = 0;
-							            $avgHR             = 0;
-							            $maxSpeed          = 0;
-							            $numWorkouts       = 0;
-							            $maxSpeedArray      = array();
-
-
-							            if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
-								            foreach ( $workouts as $workout ) {
-
-									            $numWorkouts ++;
-									            $durationInSeconds += $workout->DurationInSeconds;
-									            $distanceInKm      += $workout->DistanceInKm;
-									            $kiloCalories      += $workout->KiloCalories;
-									            $avgWatt           += $workout->AvgWatt;
-									            $avgSpeed          += $workout->AvgSpeed;
-									            $avgHR             += $workout->AvgHeartRate;
-									            array_push($maxSpeedArray, $workout->MaxSpeed);
-								            }
-							            }
-
-							            if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
-
-							            ?>
                                         <div class="stat">
                                             <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
                                             <span>
