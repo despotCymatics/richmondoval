@@ -1178,6 +1178,10 @@ form#changeDates:before {
 .ovalfit-wrapper .ovalfit-side-menu a.dashboard-menu-item {
 
 }
+.ovalfit-wrapper .ovalfit-logo {
+     padding: 30px 30px 50px 50px;
+ }
+
 
 
 .ovalfit-wrapper .ovalfit-main {
@@ -1185,9 +1189,46 @@ form#changeDates:before {
     min-height: 100vh;
 }
 
-.ovalfit-wrapper .ovalfit-logo {
-    padding: 30px 30px 50px 50px;
+.ovalfit-wrapper .ovalfit-mobile-header {
+    background: #0C0D0D;
+    padding: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.ovalfit-wrapper .ovalfit-mobile-header img {
+    width: 100px;
+}
+
+.ovalfit-wrapper .ovalfit-mobile-header .menu-burger {
+    width: 32px;
+    cursor: pointer;
+}
+
+.ovalfit-wrapper .ovalfit-mobile-header .menu-burger > div {
+    background: #fff;
+    height: 3px;
+    margin-bottom: 7px;
+}
+
+
+body.ovalfit-side-menu-open {
+    overflow-y:hidden !important;
+}
+body.ovalfit-side-menu-open:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.6);
+    height: 100%;
+    width: 100%;
+}
+
+
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
     padding: 30px 60px;
@@ -1228,11 +1269,12 @@ form#changeDates:before {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    margin-bottom: 20px;
 
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner img{
-    height: 50px;
+    height: 40px;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats {
@@ -1255,10 +1297,20 @@ form#changeDates:before {
 }
 
 
+
+
 /********** MOBILE **********/
 
 
 @media (max-width: 1024px){
+
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
+        min-height: 150px;
+    }
+
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner img{
+        height: 20px;
+    }
 
     .page-template-template-stages .ovalfit-header .stats {
         max-height: 52px;
@@ -1306,6 +1358,14 @@ form#changeDates:before {
 
 @media (max-width: 768px){
 
+
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
+        padding: 30px 30px;
+    }
+
+    .ovalfit-wrapper .ovalfit-mobile-header {
+        display: flex;
+    }
 
     .ovalfit-wrapper .ovalfit-side-menu {
         transition: all 0.3s ease;

@@ -312,7 +312,21 @@ jQuery(document).ready(function($) {
         $('.ovalfit-main > div').hide();
         $('.ovalfit-main > div#'+sectionId).fadeIn(100);
 
+    });
 
+    $(document).on('click', '.ovalfit-mobile-header .ovalfit-side-menu', function(e){
+        e.stopPropagation();
+    });
+
+    $(document).on('click', '.ovalfit-mobile-header .menu-burger', function(e){
+
+        $('.ovalfit-side-menu').addClass('active');
+        $('body').addClass('ovalfit-side-menu-open');
+    });
+
+    $(document).on('click', 'body.ovalfit-side-menu-open', function(e){
+        $('.ovalfit-side-menu').removeClass('active');
+        $('body').removeClass('ovalfit-side-menu-open');
     });
 
 
