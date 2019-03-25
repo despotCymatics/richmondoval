@@ -40,13 +40,13 @@ if (!isset( $_SESSION['logged'] ))  {
 		if(isset($instructor->Id) && count($bikes) >= 1) {
 			$returnHTML .= '
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-lg-6">
 			<p>Coach: <br>
 				<strong>'.$instructor->FirstName.' '. $instructor->LastName.'</strong>
 			</p>
 			<a class="ovalfit-faq-trigger" href="javascript:void(0);">Know your ride</a>
 		</div>
-		<div class="col-md-6">
+		<div class="col-lg-6">
 
 			<!--FAQ\'s-->
             <div class="ovalfit-faqs" style="display: none;">

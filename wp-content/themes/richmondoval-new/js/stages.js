@@ -311,24 +311,27 @@ jQuery(document).ready(function($) {
         var sectionId = $(this).attr('data-go');
         $('.ovalfit-main > div').hide();
         $('.ovalfit-main > div#'+sectionId).fadeIn(100);
-
     });
 
-    $(document).on('click', '.ovalfit-mobile-header .ovalfit-side-menu', function(e){
-        e.stopPropagation();
-    });
 
+    //Burger
     $(document).on('click', '.ovalfit-mobile-header .menu-burger', function(e){
-
         $('.ovalfit-side-menu').addClass('active');
         $('body').addClass('ovalfit-side-menu-open');
     });
-
-    $(document).on('click', 'body.ovalfit-side-menu-open', function(e){
+    $(document).on('click', 'body.ovalfit-side-menu-open .ovalfit-side-menu-overlay', function(e){
         $('.ovalfit-side-menu').removeClass('active');
         $('body').removeClass('ovalfit-side-menu-open');
     });
 
+    //Dashboard Tabs
+    $(document).on('click', '.dahboard-tabs > div', function(e){
+        $('.dahboard-tabs > div').removeClass('active');
+        $(this).addClass('active');
+        var sectionId = $(this).attr('data-go');
+        $('.stats-tab').hide();
+        $('.stats-tab#'+sectionId).fadeIn(100);
+    });
 
 
 

@@ -1216,7 +1216,7 @@ form#changeDates:before {
 body.ovalfit-side-menu-open {
     overflow-y:hidden !important;
 }
-body.ovalfit-side-menu-open:after{
+body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     content: "";
     display: block;
     position: absolute;
@@ -1226,6 +1226,11 @@ body.ovalfit-side-menu-open:after{
     background: rgba(0,0,0,.6);
     height: 100%;
     width: 100%;
+    z-index: 1;
+}
+
+.ovalfit-side-menu-overlay {
+    display: none;
 }
 
 
@@ -1278,7 +1283,31 @@ body.ovalfit-side-menu-open:after{
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats {
+    margin-top: 20px;
+}
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 31px;
+    opacity: 0.5;
+    border-bottom: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div:hover {
+    opacity: 1;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div.active {
+    opacity: 1;
+    border-bottom-color: #FF9E18;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stats-tab {
+    display: none;
 }
 
 
@@ -1295,6 +1324,16 @@ body.ovalfit-side-menu-open:after{
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap:last-child {
     border-right: none;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap p {
+    color: #FF9E18;;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap p img {
+    margin-right: 8px;
+    width: 24px;
+    max-height: 24px;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .big-number {
@@ -1321,6 +1360,15 @@ body.ovalfit-side-menu-open:after{
 
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .dash-cta {
+    background: url(../images/stages/stages-cta-bg.svg) no-repeat center / cover;
+    padding: 30px;
+    border: 1px solid rgba(42, 42, 42, 0.45);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
 
 
 

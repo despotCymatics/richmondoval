@@ -99,6 +99,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
     <div class="ovalfit-wrapper">
 
+        <div class="ovalfit-side-menu-overlay"></div>
         <div class="ovalfit-side-menu">
             <div class="ovalfit-logo">
                 <img width="120" class="stages-logo" src="<?= get_stylesheet_directory_uri() ?>/images/basic/oval-fit-logo-black.png">
@@ -237,15 +238,23 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         <div class="col-sm-6">
                             <h4>Your Stats</h4>
                         </div>
+
+                        <div class="col-sm-6 alignRight">
+                            <div class="dahboard-tabs">
+                                <div class="active" data-go="dash-collective">Collective</div>
+                                <div data-go="dash-ride">Ride</div>
+                                <div data-go="dash-athletic">Athletic</div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="stats-tabs">
 
-                        <div class="stats-tab">
+                        <div class="stats-tab" id="dash-collective" style="display: block;">
                             <div class="row grayed">
                                 <div class="stat-wrap col-sm-4">
                                     <div>
-                                        <p>Number of workouts</p>
+                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
                                         <div class="big-number">
 		                                    <?=$numWorkouts?>
                                         </div>
@@ -253,7 +262,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 </div>
                                 <div class="stat-wrap col-sm-4">
                                     <div>
-                                        <p>Total callories</p>
+                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total callories</p>
                                         <div class="big-number">
                                             <?=$kiloCalories?>
                                         </div>
@@ -261,18 +270,20 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                 </div>
                                 <div class="stat-wrap col-sm-4">
                                     <div>
-                                        <p>Distance</p>
+                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
                                         <div class="big-number">
-                                            <?=round($distanceInKm,0); ?>
+                                            <?=round($durationInSeconds/60,0); ?> mins
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="stats-tab">
+                        <div class="stats-tab" id="dash-ride">
                             <?php
-                            $position = round(500 - $avgWatt / $numWorkouts) / 100;
+
+
+                            $position = round( $avgWatt / $numWorkouts * 100 / 500);
                             ?>
 
                             <div class="chats">
@@ -293,7 +304,20 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                             </div>
 
                         </div>
-                        <div class="stats-tab"></div>
+                        <div class="stats-tab" id="dash-athletic">
+
+
+                        </div>
+                    </div>
+
+                    <div class="dash-cta">
+                        <div>
+                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/stages-logo-white.svg">
+                            Get your full performance metrics on STAGES
+                        </div>
+                        <div>
+                            <a href="#" class="btn orange regular">GET IT NOW</a>
+                        </div>
                     </div>
 
                 </div>
