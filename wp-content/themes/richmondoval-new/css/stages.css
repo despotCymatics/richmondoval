@@ -1281,6 +1281,31 @@ body.ovalfit-side-menu-open:after{
 
 }
 
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .grayed {
+    background: #151515;
+    border: 1px solid #2A2A2A;
+    margin: 30px 0;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap {
+    padding: 15px;
+    border-right: 1px solid #2A2A2A;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap:last-child {
+    border-right: none;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .big-number {
+    text-align: center;
+    font-size: 60px;
+    line-height: 74px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .bar {
     height: 20px;
     width: 100%;

@@ -242,23 +242,29 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     <div class="stats-tabs">
 
                         <div class="stats-tab">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Number of workouts</p>
-                                    <div class="big-number">
-                                        <?=$numWorkouts?>
+                            <div class="row grayed">
+                                <div class="stat-wrap col-sm-4">
+                                    <div>
+                                        <p>Number of workouts</p>
+                                        <div class="big-number">
+		                                    <?=$numWorkouts?>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <p>Total callories</p>
-                                    <div class="big-number">
-                                        <?=$kiloCalories?>
+                                <div class="stat-wrap col-sm-4">
+                                    <div>
+                                        <p>Total callories</p>
+                                        <div class="big-number">
+                                            <?=$kiloCalories?>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <p>Distance</p>
-                                    <div class="big-number">
-                                        <?=round($distanceInKm,0); ?>
+                                <div class="stat-wrap col-sm-4">
+                                    <div>
+                                        <p>Distance</p>
+                                        <div class="big-number">
+                                            <?=round($distanceInKm,0); ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
