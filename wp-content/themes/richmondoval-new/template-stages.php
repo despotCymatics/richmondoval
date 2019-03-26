@@ -125,6 +125,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                     <a href="/oval-fit-logout/">Logout</a>
 
             </div>
+            <div class="side-menu-info">
+                You’ll be directed to STAGES website
+            </div>
         </div>
 
 
@@ -272,7 +275,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     <div>
                                         <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
                                         <div class="big-number">
-                                            <?=round($durationInSeconds/60,0); ?> mins
+                                            <?=round($durationInSeconds/60,0); ?><span>mins</span>
                                         </div>
                                     </div>
                                 </div>
@@ -282,28 +285,68 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                         <div class="stats-tab" id="dash-ride">
                             <?php
 
-
-                            $position = round( $avgWatt / $numWorkouts * 100 / 500);
+                            $ftpPosition = round( $avgWatt / $numWorkouts * 100 / 500);
                             ?>
 
                             <div class="chats">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <div class="power-stats">
-                                            <div>
-                                                <div class="num">
-                                                    <?=round($avgWatt / $numWorkouts);?>
+                                        <div class="grayed">
+                                            <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
+                                            <div class="power-stats">
+                                                <div>
+                                                    <span>FTP</span>
+                                                </div>
+                                                <div class="bar">
+                                                    <div class="num" style="left: <?=$ftpPosition?>%">
+			                                            <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
+                                                    </div>
+                                                    <div class="filled" style="width:<?=$ftpPosition?>%"></div>
+                                                </div>
+                                                <div>
+                                                    MAX
+                                                    500
                                                 </div>
                                             </div>
-                                            <div class="bar">
-                                                <div class="filled" style="width:<?=$position?>%"></div>
+
+                                            <div class="power-stats">
+                                                <div>
+                                                    <span>Average Power</span>
+                                                </div>
+                                                <div class="bar">
+                                                    <div class="num" style="left: <?=$ftpPosition?>%">
+				                                        <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
+                                                    </div>
+                                                    <div class="filled" style="width:<?=$ftpPosition?>%"></div>
+                                                </div>
+                                                <div>
+                                                    MAX
+                                                    500
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grayed">
+                                            <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                            <div class="power-stats">
+                                                <div class="pie">
+                                                   <?=$avgSpeed;?><br>
+                                                    <span>km/h</span>
+                                                </div>
+
+                                                <div class="pie">
+		                                            <?=$maxSpeed;?><br>
+                                                    <span>km/h</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
+
+
                         <div class="stats-tab" id="dash-athletic">
 
 

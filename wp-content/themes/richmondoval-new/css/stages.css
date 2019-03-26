@@ -1179,9 +1179,15 @@ form#changeDates:before {
 
 }
 .ovalfit-wrapper .ovalfit-logo {
-     padding: 30px 30px 50px 50px;
+     padding: 30px 30px 46px 50px;
  }
 
+.ovalfit-wrapper .ovalfit-side-menu .side-menu-info {
+    font-size: 12px;
+    color: #FF9E18;
+    padding: 30px 0 30px 50px;
+    display: none;
+}
 
 
 .ovalfit-wrapper .ovalfit-main {
@@ -1286,6 +1292,11 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     margin-top: 20px;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats h4{
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div {
     display: inline-block;
     vertical-align: middle;
@@ -1345,19 +1356,84 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     font-weight: 400;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .big-number span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #FF9E18;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 10px;
+    position: relative;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats img.stat-icon {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats > div {
+    margin: 0 10px 30px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats > div:first-child {
+    min-width: 90px;
+}
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie {
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    background: #0C0C0D;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie span {
+    line-height: 1;
+    color: #FF9E18;
+    font-size: 16px;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .bar {
     height: 20px;
     width: 100%;
     background: #fff;
     border-radius: 4px;
     margin: 20px 0;
+    position: relative;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .filled {
     height: 20px;
     background: #FF9E18;
     border-radius: 4px 0 0 4px;
+}
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .filled:after {
+    content: "";
+    width: 1px;
+    height: 180%;
+    background: #fff;
+    display: inline-block;
+    float: right;
+    margin-top: -9px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .bar .num {
+    position: absolute;
+    top:-40px;
+    font-weight: 400;
+    font-size: 24px;
+    transform: translateX(-25%);
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .bar .num span {
+    font-size: 12px;
+    color:#FF9E18;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .dash-cta {

@@ -313,6 +313,13 @@ jQuery(document).ready(function($) {
         $('.ovalfit-main > div#'+sectionId).fadeIn(100);
     });
 
+    $(document).on('mouseenter', '.ovalfit-side-menu .side-menu-items a.profile-menu-item', function(e){
+        $('.ovalfit-wrapper .ovalfit-side-menu .side-menu-info').fadeIn(300);
+    });
+    $(document).on('mouseleave', '.ovalfit-side-menu .side-menu-items a.profile-menu-item', function(e){
+        $('.ovalfit-wrapper .ovalfit-side-menu .side-menu-info').fadeOut(100);
+    });
+
 
     //Burger
     $(document).on('click', '.ovalfit-mobile-header .menu-burger', function(e){
