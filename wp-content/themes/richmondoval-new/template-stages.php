@@ -330,6 +330,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                             <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                             <div class="power-stats">
                                                 <div class="pie">
+                                                    <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+                                                        <g>
+                                                            <title>Layer 1</title>
+                                                            <circle
+                                                                    style="stroke-dashoffset: 600; stroke-dasharray: 380;"
+                                                                    class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
+                                                        </g>
+                                                    </svg>
                                                    <?=$avgSpeed;?><br>
                                                     <span>km/h</span>
                                                 </div>

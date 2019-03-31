@@ -1385,11 +1385,24 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 }
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie {
     text-align: center;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     background: #0C0C0D;
     border-radius: 50%;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    border: 8px solid #ccc;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie svg {
+    position: absolute;
+    top: -8px;
+    bottom: 0;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie span {
