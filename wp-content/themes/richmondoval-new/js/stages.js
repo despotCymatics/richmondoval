@@ -305,12 +305,24 @@ jQuery(document).ready(function($) {
 
 
     //Side menu clicks
-    $(document).on('click', '.ovalfit-side-menu .side-menu-items a, .athletic-menu-item', function(e){
+    $(document).on('click', '.ovalfit-side-menu .side-menu-items a', function(e){
         $('.ovalfit-side-menu .side-menu-items a').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.ovalfit-main > div').hide();
         $('.ovalfit-main > div#'+sectionId).fadeIn(100);
+
+        $('.ovalfit-side-menu').removeClass('active');
+        $('body').removeClass('ovalfit-side-menu-open');
+
+    });
+
+    $(document).on('click', '.banner.ride-banner', function(e){
+        $('.ovalfit-side-menu .side-menu-items a.ride-menu-item').click();
+    });
+
+    $(document).on('click', '.banner.athletic-banner', function(e){
+        $('.ovalfit-side-menu .side-menu-items a.athletic-menu-item').click();
     });
 
     $(document).on('mouseenter', '.ovalfit-side-menu .side-menu-items a.profile-menu-item', function(e){

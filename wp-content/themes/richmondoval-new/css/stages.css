@@ -1295,6 +1295,10 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     height: 40px;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .dashboard-tabs {
+    text-align: right;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats {
     margin-top: 20px;
 }
@@ -1340,6 +1344,15 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     border-right: 1px solid #2A2A2A;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap, .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap {
+    border-right: none;
+    border-bottom: 1px solid #2A2A2A;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap:last-child, .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap:last-child {
+    border-bottom: none;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap:last-child {
     border-right: none;
 }
@@ -1372,6 +1385,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 20px 20px 10px;
     position: relative;
 }
@@ -1390,6 +1404,13 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats > div:first-child {
     min-width: 90px;
 }
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats p {
+    text-align: center;
+    margin-top: 15px;
+    color: #FF9E18;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie {
     text-align: center;
     height: 180px;
@@ -1410,6 +1431,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     position: absolute;
     top: -8px;
     bottom: 0;
+    transform: rotateZ(-90deg);
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie span {
@@ -1477,6 +1499,34 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 @media (max-width: 1024px){
 
+
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
+        padding: 30px 30px;
+    }
+
+    .ovalfit-wrapper .ovalfit-mobile-header {
+        display: flex;
+    }
+
+    .ovalfit-wrapper .ovalfit-side-menu {
+        transition: all 0.3s ease;
+        transform: translateX(100%);
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+    .ovalfit-wrapper .ovalfit-side-menu.active {
+        transform: translateX(0);
+    }
+
+
+    .ovalfit-wrapper .ovalfit-main {
+        margin-left: 0;
+    }
+
+
     .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
         min-height: 150px;
     }
@@ -1532,31 +1582,6 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 @media (max-width: 768px){
 
 
-    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
-        padding: 30px 30px;
-    }
-
-    .ovalfit-wrapper .ovalfit-mobile-header {
-        display: flex;
-    }
-
-    .ovalfit-wrapper .ovalfit-side-menu {
-        transition: all 0.3s ease;
-        transform: translateX(100%);
-        right: 0;
-        bottom: 0;
-        overflow-y: auto;
-        height: 100%;
-    }
-
-    .ovalfit-wrapper .ovalfit-side-menu.active {
-        transform: translateX(0);
-    }
-
-
-    .ovalfit-wrapper .ovalfit-main {
-        margin-left: 0;
-    }
     .tab-buttons {
         text-align: center;
     }
