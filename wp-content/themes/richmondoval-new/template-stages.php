@@ -152,48 +152,49 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         <div class="ovalfit-main">
 
             <div id="dashboard" class="ovalfit-dashboard">
-                <div class="latest-activity">
-                    <span>Latest Activity</span>
+                <div class="ovalfit-inner">
+                    <div class="latest-activity">
+                        <span>Latest Activity</span>
 
-                </div>
-                <div class="welcome">
-                    <h4>Welcome back, <?= $user->FirstName ?></h4>
-                    <p>Check out your OVALfit dashboard</p>
-                </div>
-                <div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a href="javascript:void(0);" data-go="ride"  class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/Ride_hero_1_sm.jpg)" >
-                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-white.png"><br>
-                                <span class="see-schedule">See Schedule</span>
-                            </a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="javascript:void(0);" data-go="athletic" class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/athletic_hero_1_sm.jpg)" >
-                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"><br>
-                                <span class="see-schedule">See Schedule</span>
-                            </a>
+                    </div>
+                    <div class="welcome">
+                        <h4>Welcome back, <?= $user->FirstName ?></h4>
+                        <p>Check out your OVALfit dashboard</p>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="javascript:void(0);" data-go="ride"  class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/Ride_hero_1_sm.jpg)" >
+                                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-white.png"><br>
+                                    <span class="see-schedule">See Schedule</span>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="javascript:void(0);" data-go="athletic" class="banner athletic-menu-item" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/athletic_hero_1_sm.jpg)" >
+                                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"><br>
+                                    <span class="see-schedule">See Schedule</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <div class="next-activity">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <?php
-                                if ( count( $userBookings ) > 0 ) { ?>
+                    <div class="next-activity">
+                        <div class="row">
+                            <div class="col-sm-12">
+				                <?php
+				                if ( count( $userBookings ) > 0 ) { ?>
                                     <h4>Next Activity</h4>
-                                    <?php foreach ( $userBookings as $userBooking ) { ?>
+					                <?php foreach ( $userBookings as $userBooking ) { ?>
                                         <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                                             <div class="showMoreToggler">
                                                 <div class="row">
                                                     <div class="col-sm-8 col-xs-6">
                                                         <h4><?= $userBooking->Session->Name; ?></h4>
-                                                        <?php
-                                                        $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
-                                                        $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
-                                                        ?>
+										                <?php
+										                $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+										                $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+										                ?>
                                                         <span class="date"><?= $sessionDate; ?></span><br>
                                                         <span><?= $sessionTime; ?></span>
                                                     </div>
@@ -229,168 +230,168 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
                                             </div>
                                         </div>
-                                        <?php
-                                    }
-                                }?>
+						                <?php
+					                }
+				                }?>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="stats">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4>Your Stats</h4>
+                            </div>
+
+                            <div class="col-sm-6 alignRight">
+                                <div class="dahboard-tabs">
+                                    <div class="active" data-go="dash-collective">Collective</div>
+                                    <div data-go="dash-ride">Ride</div>
+                                    <div data-go="dash-athletic">Athletic</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stats-tabs">
+
+                            <div class="stats-tab" id="dash-collective" style="display: block;">
+                                <div class="row grayed">
+                                    <div class="stat-wrap col-sm-4">
+                                        <div>
+                                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
+                                            <div class="big-number">
+								                <?=$numWorkouts?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-wrap col-sm-4">
+                                        <div>
+                                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total callories</p>
+                                            <div class="big-number">
+								                <?=$kiloCalories?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-wrap col-sm-4">
+                                        <div>
+                                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
+                                            <div class="big-number">
+								                <?=round($durationInSeconds/60,0); ?><span>mins</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stats-tab" id="dash-ride">
+				                <?php
+
+				                $ftpPosition = round( $avgWatt / $numWorkouts * 100 / 500);
+				                ?>
+
+                                <div class="chats">
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="grayed">
+                                                <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
+                                                <div class="power-stats">
+                                                    <div>
+                                                        <span>FTP</span>
+                                                    </div>
+                                                    <div class="bar">
+                                                        <div class="num" style="left: <?=$ftpPosition?>%">
+											                <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
+                                                        </div>
+                                                        <div class="filled" style="width:<?=$ftpPosition?>%"></div>
+                                                    </div>
+                                                    <div>
+                                                        MAX
+                                                        500
+                                                    </div>
+                                                </div>
+
+                                                <div class="power-stats">
+                                                    <div>
+                                                        <span>Average Power</span>
+                                                    </div>
+                                                    <div class="bar">
+                                                        <div class="num" style="left: <?=$ftpPosition?>%">
+											                <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
+                                                        </div>
+                                                        <div class="filled" style="width:<?=$ftpPosition?>%"></div>
+                                                    </div>
+                                                    <div>
+                                                        MAX
+                                                        500
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="grayed">
+                                                <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                                <div class="power-stats">
+                                                    <div class="pie">
+                                                        <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+                                                            <g>
+                                                                <title>Layer 1</title>
+                                                                <circle
+                                                                        style="stroke-dashoffset: 600; stroke-dasharray: 380;"
+                                                                        class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
+                                                            </g>
+                                                        </svg>
+										                <?=$avgSpeed;?><br>
+                                                        <span>km/h</span>
+                                                    </div>
+
+                                                    <div class="pie">
+										                <?=$maxSpeed;?><br>
+                                                        <span>km/h</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="stats-tab" id="dash-athletic">
+
+
+                            </div>
+                        </div>
+
+                        <div class="dash-cta">
+                            <div>
+                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/stages-logo-white.svg">
+                                Get your full performance metrics on STAGES
+                            </div>
+                            <div>
+                                <a href="#" class="btn orange regular">GET IT NOW</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                <div class="stats">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h4>Your Stats</h4>
-                        </div>
-
-                        <div class="col-sm-6 alignRight">
-                            <div class="dahboard-tabs">
-                                <div class="active" data-go="dash-collective">Collective</div>
-                                <div data-go="dash-ride">Ride</div>
-                                <div data-go="dash-athletic">Athletic</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="stats-tabs">
-
-                        <div class="stats-tab" id="dash-collective" style="display: block;">
-                            <div class="row grayed">
-                                <div class="stat-wrap col-sm-4">
-                                    <div>
-                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
-                                        <div class="big-number">
-		                                    <?=$numWorkouts?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="stat-wrap col-sm-4">
-                                    <div>
-                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total callories</p>
-                                        <div class="big-number">
-                                            <?=$kiloCalories?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="stat-wrap col-sm-4">
-                                    <div>
-                                        <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
-                                        <div class="big-number">
-                                            <?=round($durationInSeconds/60,0); ?><span>mins</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="stats-tab" id="dash-ride">
-                            <?php
-
-                            $ftpPosition = round( $avgWatt / $numWorkouts * 100 / 500);
-                            ?>
-
-                            <div class="chats">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <div class="grayed">
-                                            <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
-                                            <div class="power-stats">
-                                                <div>
-                                                    <span>FTP</span>
-                                                </div>
-                                                <div class="bar">
-                                                    <div class="num" style="left: <?=$ftpPosition?>%">
-			                                            <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
-                                                    </div>
-                                                    <div class="filled" style="width:<?=$ftpPosition?>%"></div>
-                                                </div>
-                                                <div>
-                                                    MAX
-                                                    500
-                                                </div>
-                                            </div>
-
-                                            <div class="power-stats">
-                                                <div>
-                                                    <span>Average Power</span>
-                                                </div>
-                                                <div class="bar">
-                                                    <div class="num" style="left: <?=$ftpPosition?>%">
-				                                        <?=round($avgWatt / $numWorkouts);?> <span>watt</span>
-                                                    </div>
-                                                    <div class="filled" style="width:<?=$ftpPosition?>%"></div>
-                                                </div>
-                                                <div>
-                                                    MAX
-                                                    500
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="grayed">
-                                            <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
-                                            <div class="power-stats">
-                                                <div class="pie">
-                                                    <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
-                                                        <g>
-                                                            <title>Layer 1</title>
-                                                            <circle
-                                                                    style="stroke-dashoffset: 600; stroke-dasharray: 380;"
-                                                                    class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
-                                                        </g>
-                                                    </svg>
-                                                   <?=$avgSpeed;?><br>
-                                                    <span>km/h</span>
-                                                </div>
-
-                                                <div class="pie">
-		                                            <?=$maxSpeed;?><br>
-                                                    <span>km/h</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="stats-tab" id="dash-athletic">
-
-
-                        </div>
-                    </div>
-
-                    <div class="dash-cta">
-                        <div>
-                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/stages-logo-white.svg">
-                            Get your full performance metrics on STAGES
-                        </div>
-                        <div>
-                            <a href="#" class="btn orange regular">GET IT NOW</a>
-                        </div>
-                    </div>
-
-                </div>
-
-
             </div>
 
 
-            <div id="ride" class="oval-fit-ride" style="display: none;">
-                <div class="ovalfit-header">
-                    <div class="">
-                        <div class="content">
+            <div id="ride" class="ovalfit-ride" style="display: none;">
+                <div class="ovalfit-inner">
+                    <div class="ovalfit-header">
+                        <div class="">
+                            <div class="content">
 
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <div class="title">
-                                        <h3>Ride. Push. Repeat</h3>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="title">
+                                            <h3>Ride. Push. Repeat</h3>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xs-6">
+                                    <div class="col-xs-6">
 
-                                    <!--<a class="my-account" href="javascript:void(0);">My Account</a>
+                                        <!--<a class="my-account" href="javascript:void(0);">My Account</a>
                                 <div class="account-menu" style="display: none;">
                                     <a class="redirect" target="_blank" href=" https://stagesflight.com/mytraning/stats">
                                         Performance Dashboard
@@ -404,232 +405,234 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                                     <span class="redirect-info">You will be redirected to STAGES website</span>
                                     <button class="ov-fit-btn-blue">GOT IT</button>
                                 </div>-->
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <!--<p>Hi <?/*= $user->FirstName */?>, check out your performance metrics.</p>-->
-                                    <div class="stats">
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
-                                            <span>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!--<p>Hi <?/*= $user->FirstName */?>, check out your performance metrics.</p>-->
+                                        <div class="stats">
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
+                                                <span>
                                     <span class="num"><?= $numWorkouts; ?></span>
                                     <span class="name">Number of workouts</span>
                                 </span>
-                                        </div>
+                                            </div>
 
-							            <?php if($numWorkouts == 0) $numWorkouts = 1; ?>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
-                                            <span>
+							                <?php if($numWorkouts == 0) $numWorkouts = 1; ?>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
+                                                <span>
                                     <span class="num"><?= round($durationInSeconds/60); ?> <span>min</span></span>
                                     <span class="name">Total time</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
+                                                <span>
                                     <span class="num"><?= round($avgWatt / $numWorkouts) ; ?> <span>watt</span></span>
                                     <span class="name">Average Power</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
+                                                <span>
                                     <span class="num"><?= $kiloCalories; ?></span>
                                     <span class="name">Calories burned</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
+                                                <span>
                                     <span class="num"><?= round($distanceInKm,0); ?> <span>km</span></span>
                                     <span class="name">Total distance</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
+                                                <span>
                                     <span class="num"><?= round($avgHR / $numWorkouts, 0); ?></span>
                                     <span class="name">Average heart rate</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                                <span>
                                     <span class="num"><?= round($avgSpeed / $numWorkouts, 1); ?> <span>km/h</span></span>
                                     <span class="name">Average speed</span>
                                 </span>
-                                        </div>
-                                        <div class="stat">
-                                            <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
-                                            <span>
+                                            </div>
+                                            <div class="stat">
+                                                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+                                                <span>
                                     <span class="num"><?= max($maxSpeedArray); ?> <span>km/h</span></span>
                                     <span class="name">Max.speed</span>
                                 </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="ovalfit-body">
-                    <div class="">
-                        <div class="content">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="tab-buttons">
-                                        <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Schedules</h4>
-                                        <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Reservations</h4>
-                                    </div>
+                    <div class="ovalfit-body">
+                        <div class="">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="tab-buttons">
+                                            <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Schedules</h4>
+                                            <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Reservations</h4>
+                                        </div>
 
-                                    <!-- Bookings -->
-                                    <div id="bookings" class="tabcontent">
-							            <?php
-							            if ( count( $userBookings ) > 0 ) { ?>
-								            <?php foreach ( $userBookings as $userBooking ) { ?>
-                                                <div class="bookings" data-id="<?= $userBooking->Id; ?>">
-                                                    <div class="showMoreToggler">
+                                        <!-- Bookings -->
+                                        <div id="bookings" class="tabcontent">
+							                <?php
+							                if ( count( $userBookings ) > 0 ) { ?>
+								                <?php foreach ( $userBookings as $userBooking ) { ?>
+                                                    <div class="bookings" data-id="<?= $userBooking->Id; ?>">
+                                                        <div class="showMoreToggler">
+                                                            <div class="row">
+                                                                <div class="col-sm-8 col-xs-6">
+                                                                    <h4><?= $userBooking->Session->Name; ?></h4>
+													                <?php
+													                $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+													                $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+													                ?>
+                                                                    <span class="date"><?= $sessionDate; ?></span><br>
+                                                                    <span><?= $sessionTime; ?></span>
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-6 alignRight">
+                                                                    <button class="btn blue regular">Cancel Reservation</button>
+                                                                    <h4 class="close-toggle">X Close</h4>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="moreText">
+                                                            <div class="row flexed">
+                                                                <div class="col-sm-8 col-xs-6">
+                                                                    <div class="flexed">
+                                                                        <div>
+                                                                            <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
+                                                                        </div>
+                                                                        <div>
+                                                                            <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
+                                                                            <span>Row: <?=$userBooking->Bike->Row ?></span><br>
+                                                                            <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 col-xs-6 alignRight">
+                                                                    <button class="btn blue regular cancel"
+                                                                            onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
+                                                                        Cancel Reservation
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+									                <?php
+								                }
+							                } else {
+								                ?>
+                                                <br>
+                                                <p style="padding:0 30px;">You have no reservations.</p>
+							                <?php } ?>
+                                        </div>
+
+                                        <!-- Sessions -->
+                                        <div id="sessions" class="tabcontent">
+                                            <form id="changeDates" method="post" action="/oval-fit/">
+                                                <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
+                                                <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
+                                                <input
+                                                        type="text"
+                                                        class="daterange"
+                                                        name="daterange"
+                                                        value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
+                                                        autocomplete="off"
+                                                        readonly="true"
+                                                />
+                                            </form>
+							                <?php
+							                if ( count( $sessions ) > 0 ) {
+								                foreach ( $sessions as $session ) {
+									                $disableClass= '';
+									                $now = date_create();
+									                $sessionDateTime = date_create($session->StartDateTime);
+									                $diff = date_diff( $now, $sessionDateTime);
+									                $diffHours = $diff->h+$diff->days*24;
+
+									                if( $diffHours >= 26) $disableClass = 'disableBook';
+
+									                $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
+									                $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
+
+									                ?>
+
+                                                    <div class="showMoreToggler <?=$disableClass;?>"
+                                                         data-user-id="<?=$userId; ?>"
+                                                         data-session-id="<?=$session->Id; ?>"
+                                                         data-session-name="<?=$session->Name; ?>"
+                                                         data-session-date="<?=$sessionDate; ?>"
+                                                         data-session-time="<?=$sessionTime; ?>"
+                                                         data-session-instructor-id="<?=$session->InstructorId; ?>"
+                                                         data-auth-code="<?=$authCode?>"
+                                                    >
                                                         <div class="row">
                                                             <div class="col-sm-8 col-xs-6">
-                                                                <h4><?= $userBooking->Session->Name; ?></h4>
-													            <?php
-													            $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
-													            $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
-													            ?>
+                                                                <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
+                                                                <h4><?= $session->Name ?></h4>
                                                                 <span class="date"><?= $sessionDate; ?></span><br>
-                                                                <span><?= $sessionTime; ?></span>
+                                                                <span><?=$sessionTime; ?></span>
+
                                                             </div>
                                                             <div class="col-sm-4 col-xs-6 alignRight">
-                                                                <button class="btn blue regular">Cancel Reservation</button>
+                                                                <button class="btn blue regular">Reserve your bike</button>
                                                                 <h4 class="close-toggle">X Close</h4>
                                                             </div>
                                                         </div>
-
+                                                    </div>
+                                                    <div class="moreText <?=$disableClass;?>">
+                                                        <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
+                                                        <p style="text-align: center">Please wait</p>
+                                                        <div class="ride-on-info">RIDE ON. Check back 26hrs in advance of class time to reserve a bike</div>
                                                     </div>
 
-                                                    <div class="moreText">
-                                                        <div class="row flexed">
-                                                            <div class="col-sm-8 col-xs-6">
-                                                                <div class="flexed">
-                                                                    <div>
-                                                                        <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
-                                                                    </div>
-                                                                    <div>
-                                                                        <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
-                                                                        <span>Row: <?=$userBooking->Bike->Row ?></span><br>
-                                                                        <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-4 col-xs-6 alignRight">
-                                                                <button class="btn blue regular cancel"
-                                                                        onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
-                                                                    Cancel Reservation
-                                                                </button>
-                                                            </div>
-                                                        </div>
+									                <?php
+								                }
 
-                                                    </div>
-                                                </div>
-									            <?php
-								            }
-							            } else {
-								            ?>
-                                            <br>
-                                            <p style="padding:0 30px;">You have no reservations.</p>
-							            <?php } ?>
-                                    </div>
+							                } else { ?>
+                                                <br>
+                                                <p>No Sessions on these dates.</p>
+							                <?php } ?>
 
-                                    <!-- Sessions -->
-                                    <div id="sessions" class="tabcontent">
-                                        <form id="changeDates" method="post" action="/oval-fit/">
-                                            <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
-                                            <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
-                                            <input
-                                                    type="text"
-                                                    class="daterange"
-                                                    name="daterange"
-                                                    value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
-                                                    autocomplete="off"
-                                                    readonly="true"
-                                            />
-                                        </form>
-							            <?php
-							            if ( count( $sessions ) > 0 ) {
-								            foreach ( $sessions as $session ) {
-									            $disableClass= '';
-									            $now = date_create();
-									            $sessionDateTime = date_create($session->StartDateTime);
-									            $diff = date_diff( $now, $sessionDateTime);
-									            $diffHours = $diff->h+$diff->days*24;
-
-									            if( $diffHours >= 26) $disableClass = 'disableBook';
-
-									            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
-									            $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
-
-									            ?>
-
-                                                <div class="showMoreToggler <?=$disableClass;?>"
-                                                     data-user-id="<?=$userId; ?>"
-                                                     data-session-id="<?=$session->Id; ?>"
-                                                     data-session-name="<?=$session->Name; ?>"
-                                                     data-session-date="<?=$sessionDate; ?>"
-                                                     data-session-time="<?=$sessionTime; ?>"
-                                                     data-session-instructor-id="<?=$session->InstructorId; ?>"
-                                                     data-auth-code="<?=$authCode?>"
-                                                >
-                                                    <div class="row">
-                                                        <div class="col-sm-8 col-xs-6">
-                                                            <!--<span class="type" style="background: <?/*= $session->Type; */?>"></span>-->
-                                                            <h4><?= $session->Name ?></h4>
-                                                            <span class="date"><?= $sessionDate; ?></span><br>
-                                                            <span><?=$sessionTime; ?></span>
-
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-6 alignRight">
-                                                            <button class="btn blue regular">Reserve your bike</button>
-                                                            <h4 class="close-toggle">X Close</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="moreText <?=$disableClass;?>">
-                                                    <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
-                                                    <p style="text-align: center">Please wait</p>
-                                                    <div class="ride-on-info">RIDE ON. Check back 26hrs in advance of class time to reserve a bike</div>
-                                                </div>
-
-									            <?php
-								            }
-
-							            } else { ?>
-                                            <br>
-                                            <p>No Sessions on these dates.</p>
-							            <?php } ?>
-
-                                        <p style="text-align: center; margin: 20px 20px 0; opacity: 0.5;">OvalFit Ride</p>
+                                            <p style="text-align: center; margin: 20px 20px 0; opacity: 0.5;">OvalFit Ride</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><!-- content -->
-                    </div><!-- within inner -->
+                            </div><!-- content -->
+                        </div><!-- within inner -->
+                    </div>
                 </div>
             </div>
 
             <div id="athletic" class="ovalfit-athletic" style="display: none;">
-                <div class="ovalfit-header" style="padding: 30px 60px 0">
-                    <h3>Athletic</h3>
+                <div class="ovalfit-inner">
+                    <div class="ovalfit-header" style="padding: 30px 60px 0">
+                        <h3>Athletic</h3>
+                    </div>
                 </div>
             </div>
 
         </div>
 
     </div>
-
 
 
     <script type="text/javascript">

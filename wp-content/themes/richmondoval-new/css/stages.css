@@ -387,6 +387,7 @@ select option {
 
 .page-template-template-stages .tab-buttons {
     border-bottom: 1px solid #d8d8d8;
+    background: #fff;
 }
 .page-template-template-stages .tab-buttons .tablink {
 
@@ -1145,7 +1146,6 @@ form#changeDates:before {
     font-size: 12px;
 }
 
-
 .ovalfit-wrapper .ovalfit-side-menu a {
     display: block;
     padding: 30px 50px;
@@ -1239,6 +1239,13 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     display: none;
 }
 
+.ovalfit-wrapper .ovalfit-main > div {
+
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-inner {
+    max-width: 1440px;
+}
 
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
@@ -1459,6 +1466,10 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     font-size: 18px;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-ride .ovalfit-inner,
+ .ovalfit-wrapper .ovalfit-main .ovalfit-athletic .ovalfit-inner {
+    border-right: 1px solid #d8d8d8;
+}
 
 
 /********** MOBILE **********/
