@@ -1,7 +1,24 @@
 <div class="ovalfit-inner">
     <div class="latest-activity">
         <span>Latest Activity</span>
-
+        <div class="latest-activity-stats">
+            <div>
+                <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
+                <?=round($latestActivity->DurationInSeconds/60, 0); ?> mins
+            </div>
+            <div>
+                <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
+		        <?=$latestActivity->AvgWatt; ?> watt
+            </div>
+            <div>
+                <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
+	            <?=$latestActivity->DistanceInKm; ?> km
+            </div>
+            <div>
+                <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
+	            <?=$latestActivity->AvgSpeed; ?> km/h
+            </div>
+        </div>
     </div>
     <div class="welcome">
         <h4>Welcome back, <?= $user->FirstName ?></h4>
@@ -122,7 +139,7 @@
                         <div>
                             <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
                             <div class="big-number">
-                                <?=round($durationInSeconds/60,0); ?><span>mins</span>
+	                            <?=$hours?> <span>hrs</span> <?=$minutes?> <span>mins</span>
                             </div>
                         </div>
                     </div>
@@ -238,7 +255,7 @@
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Total time</p>
                                     <div class="big-number">
-                                        <?=round($durationInSeconds/60)?><span>mins</span>
+                                        <?=$hours?> <span>hrs</span> <?=$minutes?> <span>mins</span>
                                     </div>
                                 </div>
                                 <div class="stat-wrap">

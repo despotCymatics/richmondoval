@@ -1280,6 +1280,24 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     color: #ECECEF;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats{
+    float: right;
+    text-align: right;
+}
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div {
+    margin-left: 50px;
+    display: inline-block;
+    font-size: 14px;
+}
+ .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg {
+    margin-right: 4px;
+    vertical-align: bottom;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg path {
+    fill: #FF9E18;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
     display: flex;
     min-height: 300px;
