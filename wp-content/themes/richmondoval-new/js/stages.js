@@ -344,8 +344,8 @@ jQuery(document).ready(function($) {
     });
 
     //Dashboard Tabs
-    $(document).on('click', '.dahboard-tabs > div', function(e){
-        $('.dahboard-tabs > div').removeClass('active');
+    $(document).on('click', '.dashboard-tabs > div', function(e){
+        $('.dashboard-tabs > div').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.stats-tab').hide();

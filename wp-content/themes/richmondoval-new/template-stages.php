@@ -123,7 +123,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
             <div class="side-menu-items">
 
-                    <a href="javascript:void(0);" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard.svg"></a>
+                    <a href="javascript:void(0);" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg"></a>
                     <a href="javascript:void(0);">Class Schedules</a>
                     <a href="javascript:void(0);" data-go="ride" class="ride-menu-item" ><img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg"></a>
                     <a href="javascript:void(0);" data-go="athletic" class="athletic-menu-item"><img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg"></a>

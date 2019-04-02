@@ -1163,6 +1163,11 @@ form#changeDates:before {
 }
 
 .ovalfit-wrapper .ovalfit-side-menu a.active {
+    background: rgba(255, 158, 24, 0.5);
+    color: #fff;
+}
+
+.ovalfit-wrapper .ovalfit-side-menu a.dashboard-menu-item {
     background: #FF9E18;
     color: #fff;
 }
@@ -1308,7 +1313,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     text-transform: uppercase;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dashboard-tabs > div {
     display: inline-block;
     vertical-align: middle;
     margin: 0 0 0 31px;
@@ -1319,11 +1324,11 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     border-bottom: 3px solid transparent;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div:hover {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dashboard-tabs > div:hover {
     opacity: 1;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dahboard-tabs > div.active {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dashboard-tabs > div.active {
     opacity: 1;
     border-bottom-color: #FF9E18;
 }
@@ -1429,9 +1434,9 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie svg {
     position: absolute;
-    top: -8px;
+    top: -16px;
     bottom: 0;
-    transform: rotateZ(-90deg);
+    /*transform: rotateZ(-90deg);*/
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .pie span {

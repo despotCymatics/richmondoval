@@ -179,14 +179,26 @@
                                 <div class="power-stats">
                                     <div>
                                         <div class="pie">
-                                            <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="196" height="196" viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle"
+                                                      stroke="#FF9E18"
+                                                      stroke-dasharray="40, 100"
+                                                      stroke-width="1.5"
+                                                      fill="none"
+                                                      d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                ></path>
+                                            </svg>
+
+                                           <!-- <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
                                                 <g>
                                                     <title>Layer 1</title>
                                                     <circle
                                                         style="stroke-dashoffset: 70; stroke-dasharray: 300;"
                                                         class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
                                                 </g>
-                                            </svg>
+                                            </svg>-->
                                             <?=$avgSpeed;?><br>
                                             <span>km/h</span>
                                         </div>
@@ -195,13 +207,16 @@
 
                                     <div>
                                         <div class="pie">
-                                            <svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <circle
-                                                        style="stroke-dashoffset: 70; stroke-dasharray: 300;"
-                                                        class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
-                                                </g>
+                                            <svg width="196" height="196" viewBox="0 0 36 36" class="circular-chart">
+                                                <path class="circle"
+                                                      stroke="#FF9E18"
+                                                      stroke-dasharray="40, 100"
+                                                      stroke-width="1.5"
+                                                      fill="none"
+                                                      d="M18 2.0845
+                                                     a 15.9155 15.9155 0 0 1 0 31.831
+                                                     a 15.9155 15.9155 0 0 1 0 -31.831"
+                                                ></path>
                                             </svg>
                                             <?=$maxSpeed;?><br>
                                             <span>km/h</span>
