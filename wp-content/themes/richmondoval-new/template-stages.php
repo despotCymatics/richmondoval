@@ -90,7 +90,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 $avgHR             += $workout->AvgHeartRate;
                 array_push($maxSpeedArray, $workout->MaxSpeed);
             }
-            $latestActivity = $workouts[count($workouts)-1];
+            $latestActivity = $workouts[0];
 
         }
 
@@ -102,8 +102,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         $avgHR = round($avgHR / $numWorkouts, 0);
         $maxSpeed = max($maxSpeedArray);
 
-		$hours = floor($durationInSeconds / 3600);
-		$minutes = floor(($durationInSeconds / 60) % 60);
+		    $hours = floor($durationInSeconds / 3600);
+		    $minutes = floor(($durationInSeconds / 60) % 60);
 
 		?>
 

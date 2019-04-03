@@ -12,11 +12,11 @@
             </div>
             <div>
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
-	            <?=$latestActivity->DistanceInKm; ?> km
+	            <?=round($latestActivity->DistanceInKm, 1); ?> km
             </div>
             <div>
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
-	            <?=$latestActivity->AvgSpeed; ?> km/h
+	            <?=round($latestActivity->AvgSpeed, 0); ?> km/h
             </div>
         </div>
     </div>
@@ -139,7 +139,7 @@
                         <div>
                             <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
                             <div class="big-number">
-	                            <?=$hours?> <span>hrs</span> <?=$minutes?> <span>mins</span>
+	                            <?=$hours?><span>hrs</span> <?=$minutes?><span>mins</span>
                             </div>
                         </div>
                     </div>

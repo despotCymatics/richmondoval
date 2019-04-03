@@ -3280,7 +3280,7 @@ section.explore {
 }
 
 .explore-icons-nav .explore-icon svg path{
-    fill: rgba(33, 33, 33, 0.8);
+    stroke: rgba(33, 33, 33, 0.8);
 }
 
 .explore-icons-nav .explore-icon.active, .explore-icons-nav .explore-icon:hover {
@@ -3289,8 +3289,8 @@ section.explore {
     color: #fff;
 }
 
-.explore-icons-nav .explore-icon.active svg path, .explore-icons-nav .explore-icon:hover svg path {
-    fill: #fff;
+.explore-icons-nav .explore-icon.active svg *, .explore-icons-nav .explore-icon:hover svg * {
+    stroke: #fff;
 }
 .explore-carousel-nav .slick-dots {
     bottom: 30px;
