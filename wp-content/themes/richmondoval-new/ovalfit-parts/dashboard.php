@@ -193,7 +193,7 @@
 
                             <div class="grayed">
                                 <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
-                                <div class="power-stats">
+                                <div class="power-stats circles">
                                     <div>
                                         <div class="pie">
                                             <svg width="196" height="196" viewBox="0 0 36 36" class="circular-chart">
@@ -287,7 +287,7 @@
         <div class="dash-cta">
             <div>
                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/stages-logo-white.svg">
-                Get your full performance metrics on STAGES
+                <span>Get your full performance metrics on STAGES</span>
             </div>
             <div>
                 <a href="#" class="btn orange regular">GET IT NOW</a>
