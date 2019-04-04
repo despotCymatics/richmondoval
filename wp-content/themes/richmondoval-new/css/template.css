@@ -885,6 +885,7 @@ header.collapse .topMega {
     position: absolute;
     top: 0;
     bottom: 0;
+    max-height: 100%;
     left: 0;
     background: #fff;
     width: 100%;
@@ -3006,7 +3007,7 @@ section.slides {
 /*Home Events*/
 
 section.events {
-    margin-top: 45px;
+    margin-top: 20px;
 }
 
 

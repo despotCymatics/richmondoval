@@ -50,7 +50,7 @@
 
                     </div>
                     <div class="col-sm-5">
-                        <h3>Subscribe to Oval Newsletter</h3>
+<!--                        <h3>Subscribe to Oval Newsletter</h3>
                         <div class="subscribe-form">
                             <form>
                                 <div class="row">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
