@@ -98,7 +98,7 @@ get_header(); ?>
                                 </p>
                                 <div class="eventMeta">
                                     <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
-                                    <p class="excerpt"><?php echo $event->post_content; ?></p>
+                                    <div class="excerpt"><?php echo $event->post_content; ?></div>
                                 </div>
                             </div>
 

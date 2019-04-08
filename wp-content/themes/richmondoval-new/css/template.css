@@ -3092,6 +3092,7 @@ section.events .view-all-events:before {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: 400;
+    min-width: 45px;
 }
 
 .event-carousel .article .articleImg img {
@@ -3720,9 +3721,7 @@ section.news {
         margin: 0 -20px;
     }
 
-
 }
-
 
 .tab-buttons .tablink {
     color: #fff;

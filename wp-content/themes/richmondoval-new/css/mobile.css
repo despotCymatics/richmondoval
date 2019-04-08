@@ -733,6 +733,16 @@ body.menuOpen {
 
 @media screen and (max-width: 480px) {
 
+    .event-carousel .article .articleTitle .eventDate {
+        margin-right: 10px;
+    }
+    .event-carousel .article .articleTitle .excerpt {
+        margin-left: -40px;
+    }
+    .event-carousel .article a.read-more {
+        left: 20px;
+    }
+
     .hero h1.hero-title {
         padding-bottom: 120px;
     }
