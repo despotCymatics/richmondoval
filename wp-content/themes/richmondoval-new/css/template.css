@@ -3281,7 +3281,7 @@ section.explore {
 }
 
 .explore-icons-nav .explore-icon svg path{
-    stroke: rgba(33, 33, 33, 0.8);
+    stroke: rgba(33, 33, 33, 1);
 }
 
 .explore-icons-nav .explore-icon.active, .explore-icons-nav .explore-icon:hover {
@@ -3686,6 +3686,9 @@ section.news {
         background-color: #85C441;
     }
 
+    .r-tabs .r-tabs-accordion-title:nth-child(8) {
+        background-color: #00B5DF;
+    }
 
     .r-tabs-anchor {
         line-height: 20px;
