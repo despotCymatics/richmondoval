@@ -5,6 +5,8 @@ ini_set('display_errors', TRUE);
 //AUTHORIZATION CODE
 //$authCode = authorize();
 $authCode = "lFKkiRqWYECXUHPTmsmfWQ==";
+$authCodeAthletic = authorizeAthletic();
+//var_dump($authCodeAthletic);
 
 
 //BOOK A BIKE FOR SESSION
@@ -102,6 +104,37 @@ function authorize() {
 	return $authCode;
 
 }
+
+function authorizeAthletic() {
+
+	$credentials = '{
+		"ClientId":"Ovalfit",
+		"ClientSecret":"NTAwYmY0ZmMtOTM2NS00ZWFjLWI5ZWYtNGNmMDQxOTMxMDBj"
+		}';
+	$url = 'https://stagesflight.com/locapi/v1/auth/1400' ;
+
+
+	$header = array(
+		'Accept: application/json',
+		'Content-Type: application/json',
+	);
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,            $url );
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+	curl_setopt($ch, CURLOPT_POST,           1 );
+	curl_setopt($ch, CURLOPT_POSTFIELDS,    $credentials );
+	curl_setopt($ch, CURLOPT_HTTPHEADER,    $header);
+
+	$authCode = curl_exec($ch);
+	$authCode = json_decode($authCode);
+
+	curl_close($ch);
+
+	return $authCode;
+
+}
+
 
 
 //GET CURL
