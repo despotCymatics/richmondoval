@@ -1612,6 +1612,9 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     .page-template-template-stages .ovalfit-body .showMoreToggler {
         padding: 20px 30px;
     }
+    .page-template-template-stages .moreText {
+        padding: 20px 30px;
+    }
 
 }
 
@@ -1645,10 +1648,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         width: 20px;
         height: 20px;
     }
-
-    .page-template-template-stages .moreText {
-        padding: 20px 0;
-    }
+    
     .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
         padding: 10px 30px;
     }
@@ -1760,16 +1760,22 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         flex-direction: column;
     }
     .ovalfit-wrapper .ovalfit-mobile-header {
-        padding: 15px;
+        padding: 20px;
     }
     .page-template-template-stages .ovalfit-header {
-        padding: 15px;
+        padding: 20px;
     }
     .page-template-template-stages .ovalfit-body .showMoreToggler {
-        padding: 15px;
+        padding: 20px;
     }
     form#changeDates {
-        padding-left: 15px;
+        padding-left: 20px;
+    }
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {
+        padding: 20px;
+    }
+    .page-template-template-stages .moreText {
+        padding: 20px;
     }
 
 }
