@@ -102,12 +102,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tab-buttons">
-                            <h4 class="tablink" onclick="openTab('sessions', this)" id="sessionsTab">Schedules</h4>
-                            <h4 class="tablink" onclick="openTab('bookings', this)" id="bookingsTab">Reservations</h4>
+                            <h4 class="tablink active-tab" data-tab="sessionsRide">Schedules</h4>
+                            <h4 class="tablink" data-tab="bookingsRide">Reservations</h4>
                         </div>
 
                         <!-- Bookings -->
-                        <div id="bookings" class="tabcontent">
+                        <div id="bookingsRide" class="tabcontent">
                             <?php
                             if ( count( $userBookings ) > 0 ) { ?>
                                 <?php foreach ( $userBookings as $userBooking ) { ?>
@@ -165,7 +165,7 @@
                         </div>
 
                         <!-- Sessions -->
-                        <div id="sessions" class="tabcontent">
+                        <div id="sessionsRide" class="tabcontent">
                             <form id="changeDates" method="post" action="/oval-fit/">
                                 <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
                                 <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
@@ -228,7 +228,7 @@
 
                             } else { ?>
                                 <br>
-                                <p>No Sessions on these dates.</p>
+                                <p style="padding:0 30px;">No Sessions on these dates.</p>
                             <?php } ?>
 
                             <p style="text-align: center; margin: 20px 20px 0; opacity: 0.5;">OvalFit Ride</p>

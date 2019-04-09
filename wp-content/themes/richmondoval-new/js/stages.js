@@ -108,27 +108,19 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
     })
 }
 
-function openTab(tabName,elmnt) {
-    //console.log(elmnt);
-    jQuery('.tablink').removeClass("active-tab");
-    jQuery(elmnt).addClass("active-tab");
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-    }
-    document.getElementById(tabName).style.display = "block";
-
-}
-// Get the element with id="defaultOpen" and click on it
-if(document.getElementById("sessionsTab")) document.getElementById("sessionsTab").click();
-
-
 jQuery(document).ready(function($) {
+
+
+    //Session/Bookings Tabs
+    $(document).on('click', '.tablink', function(e){
+        $(this).siblings().removeClass('active-tab');
+        $(this).addClass('active-tab');
+        var tabContentId = $(this).data('tab');
+        $(this).parent().parent().find('.tabcontent').hide();
+        $('#'+tabContentId).fadeIn(200);
+    });
+    $('.tablink.active-tab').click();
+
 
     $('.stats').click(function(){
         $(this).toggleClass('expanded');

@@ -389,17 +389,6 @@ select option {
     border-bottom: 1px solid #d8d8d8;
     background: #fff;
 }
-.page-template-template-stages .tab-buttons .tablink {
-
-}
-
-.page-template-template-stages .tab-buttons .tablink:hover {
-    opacity: 1;
-}
-.page-template-template-stages .tab-buttons .tablink.active-tab {
-    background: #d8d8d8;
-    opacity: 1;
-}
 
 .page-template-template-stages .tabcontent {
     display: none;
@@ -419,7 +408,7 @@ select option {
 .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
     opacity: 0.4;
     border-right: 0;
-    background: none;
+    background: #fff;
     border-bottom: 4px solid transparent;
     font-size: 14px;
     font-family: 'prometo';
@@ -1515,6 +1504,9 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 .ovalfit-wrapper .ovalfit-main .ovalfit-ride .ovalfit-inner,
  .ovalfit-wrapper .ovalfit-main .ovalfit-athletic .ovalfit-inner {
     border-right: 1px solid #d8d8d8;
+    /*border-bottom: 1px solid #d8d8d8;*/
+    height: 100vh;
+
 }
 
 
@@ -1602,6 +1594,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     }
     .ovalfit-wrapper .ovalfit-main .ovalfit-ride .ovalfit-inner, .ovalfit-wrapper .ovalfit-main .ovalfit-athletic .ovalfit-inner {
         border-right: none;
+        border-bottom: none;
     }
     .ovalfit-wrapper .ovalfit-mobile-header {
         padding: 30px;

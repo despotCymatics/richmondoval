@@ -5,8 +5,9 @@ ini_set('display_errors', TRUE);
 //AUTHORIZATION CODE
 //$authCode = authorize();
 $authCode = "lFKkiRqWYECXUHPTmsmfWQ==";
-$authCodeAthletic = authorizeAthletic();
-//var_dump($authCodeAthletic);
+
+//$authCodeAthletic = authorizeAthletic();
+$authCodeAthletic = "9UJHkKBqOUumU+z2svIJxQ==";
 
 
 //BOOK A BIKE FOR SESSION
@@ -111,7 +112,7 @@ function authorizeAthletic() {
 		"ClientId":"Ovalfit",
 		"ClientSecret":"NTAwYmY0ZmMtOTM2NS00ZWFjLWI5ZWYtNGNmMDQxOTMxMDBj"
 		}';
-	$url = 'https://stagesflight.com/locapi/v1/auth/1400' ;
+	$url = 'https://stagesflight.com/locapi/v1/auth/1794' ;
 
 
 	$header = array(

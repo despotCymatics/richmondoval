@@ -11,7 +11,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 	get_header();
 
-	if ( ! isset( $authCode->Message ) ) {
+	if ( !isset( $authCode->Message) && !isset( $authCode->Message ) ) {
 
 
 		//USER
@@ -58,16 +58,25 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 			file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
 		}
 
+		$sessionsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '&dateTimeTo=' . $dateTo );
+		if(count($sessions) > 1) {
+			usort($sessions,function($a, $b){
+				return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
+			});
+		}
+
 		//User Bookings
 		//User Bookings
 		//User Bookings
 		$userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
+		$userBookingsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
 
 
         //Workouts
         //Workouts
         //Workouts
         $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
+        $workoutsAth = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
         $durationInSeconds = 0;
         $distanceInKm      = 0;
@@ -178,7 +187,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#sessions .showMoreToggler:not(.disableBook)").click(function(){
+
+            //Ride Session Click
+            $("#ride #sessions .showMoreToggler:not(.disableBook)").click(function(){
 
                 var self = $(this);
                 if(!self.hasClass('on') && !self.hasClass('loaded')) {
@@ -214,6 +225,45 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 }
 
             });
+
+            //Athletic Session Click
+            $("#athletic #sessions .showMoreToggler:not(.disableBook)").click(function(){
+
+                var self = $(this);
+                if(!self.hasClass('on') && !self.hasClass('loaded')) {
+
+                    $(".showMoreToggler").addClass('disabled');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/wp-content/themes/richmondoval-new/stages-single-session-ath.php',
+                        data: {
+                            userId: self.attr('data-user-id'),
+                            sessionId: self.attr('data-session-id'),
+                            sessionName: self.attr('data-session-name'),
+                            sessionDate: self.attr('data-session-date'),
+                            sessionTime: self.attr('data-session-time'),
+                            instructorId: self.attr('data-session-instructor-id'),
+                            authCode:self.attr('data-auth-code')
+                        },
+                        success: function(data) {
+                            $(".showMoreToggler").removeClass('disabled');
+                            self.next('.moreText').html(data);
+                            self.next('.moreText').addClass('loaded');
+                            self.addClass('loaded');
+                        },
+                        error: function(){
+                            $(".showMoreToggler").removeClass('disabled');
+                            self.next('.moreText').html('<div class="ajax-error">Ajax Error. Could not fetch class data. Please reload the page.</div>');
+                            self.next('.moreText').addClass('loaded');
+                            self.addClass('loaded');
+
+                        }
+                    });
+                }
+
+            });
+
         });
     </script>
 
