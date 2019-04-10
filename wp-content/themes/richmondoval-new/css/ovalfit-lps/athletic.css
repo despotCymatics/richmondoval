@@ -67,9 +67,9 @@ p {
 }
 
 .ov-fit-banner-inner {
-    margin: auto;
-    max-width: 1320px;
-    padding: 60px;
+    margin: auto 0 ;
+    max-width: 1100px;
+    padding: 190px;
     left: 0;
     position: relative;
     color: #fff;
@@ -77,6 +77,9 @@ p {
 
 .ov-fit-banner-inner h1 {
     line-height: 1;
+    margin-top: 0;
+    font-size: 100px;
+    margin-bottom: 0;
 }
 
 .ov-chevron-down-container {
@@ -100,13 +103,8 @@ p {
     height: 24px;
 }
 
-.ov-fit-banner h1 {
-    font-size: 130px;
-    margin-bottom: 0px;
-}
-
 .ov-fit-banner p {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 100;
     margin: 30px 0 40px 0;
 }
@@ -114,19 +112,18 @@ p {
 /*discover the champion*/
 .ov-discover-champion {
     background: #000;
-    min-height: 600px;
+    min-height: 1000px;
     height: 740px;
     background-image: url(../img/testTrainHero.jpg);
     background-position: right;
     background-size: cover;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .ov-discover-champion-inner {
-    margin-top: -200px;
+    margin-top: 100px;
 }
 
 .ov-discover-champion h1 {
@@ -255,8 +252,8 @@ p {
 }
 
 .ov-fit-training-ground-text {
-
     padding: 40px 100px;
+    max-width: 750px;
 }
 
 .ov-fit-training-ground-section p {
@@ -266,7 +263,7 @@ p {
 }
 
 .ov-fit-training-ground-section h2 {
-    font-size: 100px;
+    font-size: 60px;
     color: #FF9E18;
     margin: 0 0 20px 0;
 }
@@ -291,7 +288,7 @@ p {
 
 /*ride machine*/
 .ov-ride-machine-wrapper {
-    background: #000;
+    background:  #000 url("../../images/stages/equipment-bg.jpg") no-repeat top / cover;
 }
 
 .ov-ride-machine-wrapper-inner {
@@ -310,7 +307,7 @@ p {
 .ov-ride-machine-wrapper h3 {
     font-size: 59px;
     margin: 60px 0 40px 0;
-    max-width: 520px;
+   /* max-width: 520px;*/
 }
 
 .ov-ride-machine-wrapper h4 {
@@ -908,10 +905,6 @@ p {
 
     .ov-sectioner {
         display: block !important;
-    }
-
-    .ov-ride-machine-wrapper {
-
     }
 
     .ov-results-team h2 {

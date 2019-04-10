@@ -69,7 +69,7 @@ if(count($sessions) > 1) {
 					</a>
 					<div class="ov-nav-ride-container">
 						<a href="/oval-fit-login/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
-							RESERVE A BIKE
+							BOOK A SESSION
 						</a>
 
 						<a href="javascript:void(0)" class="ov-fit-hamburger-nav menuToggler"></a>
@@ -121,12 +121,12 @@ if(count($sessions) > 1) {
 
 			<div class="ov-fit-banner" style="background-image: url(<?=get_field('hero_image');?>)">
 				<div class="ov-fit-banner-inner">
-					<h1><img width="100px" src="<?=get_template_directory_uri()?>/images/stages/ride-logo-white.png"><br>
+					<h1><img width="180px" src="<?=get_template_directory_uri()?>/images/stages/athletic-logo-white.svg"><br>
 						<?=get_field('hero_title');?>
 					</h1>
 					<p><?=get_field('hero_text');?></p>
 					<div class="ov-fit-lets-ride-container">
-						<a href="#train" class="ov-fit-btn-lg" draggable="false">LET'S RIDE</a>
+						<a href="#train" class="ov-fit-btn-lg" draggable="false">LEARN MORE</a>
 					</div>
 				</div>
 				<div class="ov-chevron-down-container">
@@ -139,7 +139,7 @@ if(count($sessions) > 1) {
 					<h1><?=get_field('discover_title');?></h1>
 					<h2><?=get_field('discover_text');?></h2>
 					<div>
-						<a href="/letsride/" class="ov-fit-btn ov-hide-on-mobile ov-hide-on-tablet" draggable="false">BOOK A TEST DRIVE</a>
+
 					</div>
 				</div>
 			</div>
@@ -154,9 +154,10 @@ if(count($sessions) > 1) {
 							<div>
 								<h2><?=get_field('tab1_title');?></h2>
 								<p><?=get_field('tab1_text');?></p>
+                                <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-1.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-1.png"/>
 							</div>
 						</div>
 					</div>
@@ -171,14 +172,30 @@ if(count($sessions) > 1) {
 							<div>
 								<h2><?=get_field('tab2_title');?></h2>
 								<p><?=get_field('tab2_text');?></p>
-								<a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A BIKE</a>
 							</div>
 							<div class="ov-sectioner-container">
-								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/08/Section_indicator-2.png"/>
+								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-2.png"/>
 							</div>
 						</div>
 					</div>
 				</div>
+
+                <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
+                    <div>
+                        <img alt="" title="fitnessCenter" src="<?=get_field('tab2_image');?>">
+                    </div>
+                    <div class="ov-fit-training-ground-text-wrapper">
+                        <div class="ov-fit-training-ground-text">
+                            <div>
+                                <h2><?=get_field('tab2_title');?></h2>
+                                <p><?=get_field('tab2_text');?></p>
+                            </div>
+                            <div class="ov-sectioner-container">
+                                <img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 
 			<div class="ov-ride-machine-wrapper">
@@ -188,105 +205,15 @@ if(count($sessions) > 1) {
 							<h3><?=get_field('program_title');?></h3>
 						</div>
 						<div>
-							<h4><?=get_field('program_subtitle');?></h4>
-							<img class="ov-ride-machine-stages-logo" src="https://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>
+							<!--<h4><?/*=get_field('program_subtitle');*/?></h4>
+							<img class="ov-ride-machine-stages-logo" src="https://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>-->
 						</div>
 					</div>
 					<div class="ov-ride-machine-container">
+                        <div class="ov-ride-machine-slider">
+                            <img src="">
+                        </div>
 
-						<img class="ov-ride-machine-bike" src="<?=get_field('program_image');?>"/>
-
-						<div class="ov-ride-section ov-ride-display-section">
-							<a href="javascript:void(0)" class="ov-ride-display pulse-button">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-							</a>
-							<img class="ov-ride-display-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/eco.png" width="316"/>
-							<div class="ov-ride-display-content">
-								<h5><?=get_field('program1_title');?></h5>
-								<p><?=get_field('program1_text');?></p>
-							</div>
-						</div>
-
-						<div class="ov-ride-section ov-ride-sprintshift-section">
-							<a href="javascript:void(0)" class="ov-ride-sprintshift pulse-button">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-							</a>
-
-							<img class="ov-ride-sprintshift-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/sprintshift.png" width="556"/>
-
-							<div class="ov-ride-sprintshift-content">
-								<h5><?=get_field('program2_title');?></h5>
-								<p><?=get_field('program2_text');?></p>
-							</div>
-						</div>
-
-						<div class="ov-ride-section ov-ride-powermeter-section">
-							<a href="javascript:void(0)" class="ov-ride-powermeter pulse-button">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-							</a>
-							<img class="ov-ride-powermeter-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/powermeter.png" width="388"/>
-							<div class="ov-ride-powermeter-content">
-								<h5><?=get_field('program3_title');?></h5>
-								<p><?=get_field('program3_text');?></p>
-							</div>
-
-						</div>
-
-						<div class="ov-ride-section ov-ride-carbonglide-section">
-							<a href="javascript:void(0)" class="ov-ride-carbonglide pulse-button">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-							</a>
-
-							<img class="ov-ride-carbonglide-arm" src="https://richmondoval.ca/wp-content/uploads/2018/09/carbonglide.png" width="316"/>
-							<img class="ov-ride-carbonglide-arm-small" src="https://richmondoval.ca/wp-content/uploads/2018/09/carbonglide-arm-small.jpg" width="316"/>
-							<div class="ov-ride-carbonglide-content">
-								<h5><?=get_field('program4_title');?></h5>
-								<p><?=get_field('program4_text');?></p>
-							</div>
-						</div>
-					</div>
-
-					<div class="ov-ride-machine-mobile ov-show-on-mobile">
-						<a class="ov-ride-display-mobile pulse-button">
-							<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-						</a>
-						<a class="ov-ride-sprintshift-mobile pulse-button">
-							<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-						</a>
-						<a class="ov-ride-powermeter-mobile pulse-button">
-							<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-						</a>
-						<a class="ov-ride-carbonglide-mobile pulse-button">
-							<img src="https://richmondoval.ca/wp-content/uploads/2018/08/rideMachineHotspot.png" width="22">
-						</a>
-					</div>
-
-					<div class="ov-ride-machine-mobile-content ov-show-on-mobile">
-						<div class="ov-ride-display-content-mobile ov-ride-content-mobile ov-hide">
-							<h5><?=get_field('program1_title');?></h5>
-							<p><?=get_field('program1_text');?></p>
-						</div>
-						<div class="ov-ride-sprintshift-content-mobile ov-ride-content-mobile ov-hide">
-							<h5><?=get_field('program2_title');?></h5>
-							<p><?=get_field('program2_text');?></p>
-						</div>
-						<div class="ov-ride-powermeter-content-mobile ov-ride-content-mobile ov-hide">
-							<h5><?=get_field('program3_title');?></h5>
-							<p><?=get_field('program3_text');?></p>
-						</div>
-						<div class="ov-ride-carbonglide-content-mobile ov-ride-content-mobile ov-hide">
-							<h5><?=get_field('program4_title');?></h5>
-							<p><?=get_field('program4_text');?></p>
-						</div>
-
-						<div class="ov-ride-mobile-nav ov-hide">
-							<a class="ov-ride-mobile-prev-btn">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/09/Group-1-1.png" class="ov-ride-mobile-prev" width="9"/>
-							</a>
-							<a class="ov-ride-mobile-next-btn">
-								<img src="https://richmondoval.ca/wp-content/uploads/2018/09/Group-2.png" class="ov-ride-mobile-next" width="9"/>
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>
