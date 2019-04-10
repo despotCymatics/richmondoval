@@ -136,224 +136,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-
     </section>
-
-
-    <!-- Explore Oval -->
-    <?php if(false) { ?>
-    <section class="explore">
-
-        <div class="within">
-            <h2 class="sectionTitle">Explore The Oval</h2>
-        </div>
-
-        <img class="explore-section-img" src="<?=get_stylesheet_directory_uri();?>/images/basic/explore-section.png">
-        
-        <div class="within">
-
-            <!-- Explore Tabs -->
-            <div id="responsiveTabs">
-                <ul class="tab-buttons">
-                    <li><a href="#for-kids" class="tablink">For Kids</a></li>
-                    <li><a href="#featured-programs" class="tablink">Featured Programs</a></li>
-                </ul>
-
-
-                <div id="for-kids" class="tabcontent1">
-                    <div class="explore-wrap">
-
-			            <?php
-			            $events = tribe_get_events( array(
-				            'posts_per_page' => 4,
-				            'start_date' => date( 'Y-m-d H:i:s' )
-			            ) );
-
-			            ?>
-
-                        <div class="explore-carousel-nav">
-                            <div class="explore-icons-nav">
-					            <?php
-					            foreach ($events as $event) { ?>
-                                    <a class="explore-icon" data-id="<?=$event->ID;?>">
-                                        <div>
-                                            <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
-                                            <span>Summer Camps</span>
-                                        </div>
-                                    </a>
-						            <?php
-					            }
-					            ?>
-                            </div>
-                        </div>
-
-                        <div class="explore-carousel">
-				            <?php
-				            foreach ($events as $event) {  ?>
-                                <div class="article" data-id="<?=$event->ID;?>">
-                                    <div class="articleImg">
-		                                <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
-		                                if($eventImg != "") echo $eventImg;
-		                                else { ?>
-                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-		                                <?php } ?>
-
-                                    </div>
-
-                                    <div class="articleTitle">
-                                        <h2>Summer Camps</h2>
-                                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
-                                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-                                    </div>
-
-                                </div>
-					            <?php
-				            }
-				            ?>
-                        </div>
-                    </div>
-
-                    <script>
-                        $( document ).ready(function() {
-
-                            $('.tabcontent1 .explore-carousel').slick({
-                                dots: true,
-                                arrows:true,
-                                infinite: false,
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                appendDots: $('.tabcontent1 .explore-carousel-nav'),
-                                draggable:false,
-                                fade: true,
-                                customPaging : function(slider, i) {
-                                    var slideId = $(slider.$slides[i]).data('id');
-                                    return '<a data-id="'+slideId+'"><span></span></a>';
-                                },
-                            });
-
-                            var currentExploreSlide = 0;
-                            $('.tabcontent1 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-
-                            $('.tabcontent1 .explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
-                                currentExploreSlide = currentSlide;
-                                $('.tabcontent1 .explore-icons-nav a').removeClass('active');
-                                $('.tabcontent1 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-                            });
-
-                            $('.tabcontent1 .explore-icons-nav a').click(function (e) {
-                                var thumbId = $(this).attr('data-id');
-                                $('.tabcontent1 .explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
-                            });
-
-                            $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
-                                $('.tabcontent1 .explore-carousel').slick('reinit');
-                            });
-
-                        });
-                    </script>
-
-                </div>
-
-                <div id="featured-programs" class="tabcontent2">
-
-                    <div class="explore-wrap">
-
-		                <?php
-		                $events = tribe_get_events( array(
-			                'posts_per_page' => 4,
-			                'start_date' => date( 'Y-m-d H:i:s' )
-		                ) );
-
-		                ?>
-
-                        <div class="explore-carousel-nav">
-                            <div class="explore-icons-nav">
-				                <?php
-				                foreach ($events as $event) { ?>
-                                    <a class="explore-icon" data-id="<?=$event->ID;?>">
-                                        <div>
-                                            <img class="svg" src="<?=get_stylesheet_directory_uri();?>/images/basic/rox-icon.svg" data-id="<?=$event->ID;?>">
-                                            <span>Summer Camps</span>
-                                        </div>
-                                    </a>
-					                <?php
-				                }
-				                ?>
-                            </div>
-                        </div>
-
-                        <div class="explore-carousel">
-			                <?php
-			                foreach ($events as $event) {  ?>
-                                <div class="article" data-id="<?=$event->ID;?>">
-
-                                    <div class="articleImg">
-						                <?php $eventImg = get_the_post_thumbnail( $event->ID, 'large' );
-						                if($eventImg != "") echo $eventImg;
-						                else { ?>
-                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-						                <?php } ?>
-
-                                    </div>
-
-                                    <div class="articleTitle">
-                                        <h2>Summer Camps</h2>
-                                        <p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque mattis nec eros a rutrum. </p>
-                                        <a class="read-more" href="<?php echo get_permalink($event->ID); ?>">Read More</a>
-                                    </div>
-
-                                </div>
-				                <?php
-			                }
-			                ?>
-                        </div>
-                    </div>
-
-                    <script>
-                        $( document ).ready(function() {
-                            $('.tabcontent2 .explore-carousel').slick({
-                                dots: true,
-                                arrows:true,
-                                infinite: false,
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                appendDots: $('.tabcontent2 .explore-carousel-nav'),
-                                draggable:false,
-                                fade: true,
-                                customPaging : function(slider, i) {
-                                    var slideId = $(slider.$slides[i]).data('id');
-                                    return '<a data-id="'+slideId+'"><span></span></a>';
-                                },
-                            });
-
-                            var currentExploreSlide = 0;
-                            $('.tabcontent2 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-
-                            $('.tabcontent2 .explore-carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
-                                currentExploreSlide = currentSlide;
-                                $('.tabcontent2 .explore-icons-nav a').removeClass('active');
-                                $('.tabcontent2 .explore-icons-nav a').eq(currentExploreSlide).addClass('active');
-                            });
-
-                            $('.tabcontent2 .explore-icons-nav a').click(function (e) {
-                                var thumbId = $(this).attr('data-id');
-                                $('.tabcontent2 .explore-carousel-nav .slick-dots a[data-id='+thumbId+']').click();
-                            });
-
-                            $(document).on('click', '.tab-buttons .tablink, .r-tabs-anchor', function(){
-                                $('.tabcontent2 .explore-carousel').slick('reinit');
-                            });
-
-                        });
-                    </script>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <?php } ?>
 
     <!-- Explore Oval -->
     <section class="explore">
@@ -440,7 +223,7 @@ get_header(); ?>
                                     <div class="articleTitle">
                                         <h2><?=get_the_title();?></h2>
                                         <p class="excerpt"><?=get_the_excerpt();?></p>
-                                        <a class="read-more" href="<<?=get_field('explore_url');?>">Read More</a>
+                                        <a class="read-more" href="<?=get_field('explore_url');?>">Read More</a>
                                     </div>
 
                                 </div>
@@ -500,11 +283,8 @@ get_header(); ?>
                 <?php wp_reset_postdata(); ?>
 
             </div>
-
         </div>
     </section>
-
-
 
 
     <!-- Latest News -->
@@ -571,8 +351,6 @@ get_header(); ?>
                         <a class="all-news" href="/all-news">More News</a>
                     </div>
                 </div>
-
-
             </div>
 
 	        <?php wp_reset_query();?>
