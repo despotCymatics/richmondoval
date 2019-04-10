@@ -20,7 +20,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 		$userEmail = $_SESSION['logged'];
 		$userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
-		if ( count( $userQuery ) == 1 && isset($userQuery[0]->Email)) {
+		var_dump($userQuery);
+		exit;
+		if ( !isset( $userQuery->Message) && count( $userQuery ) == 1 && isset($userQuery[0]->Email)) {
 			$user = $userQuery[0];
 			$userId = $user->Id;
 		} else {
