@@ -13,15 +13,12 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
 	if ( !isset( $authCode->Message) && !isset( $authCode->Message ) ) {
 
-
 		//USER
 		//USER
 		//USER
 		$userEmail = $_SESSION['logged'];
 		$userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
 
-		var_dump($userQuery);
-		exit;
 		if ( !isset( $userQuery->Message) && count( $userQuery ) == 1 && isset($userQuery[0]->Email)) {
 			$user = $userQuery[0];
 			$userId = $user->Id;
@@ -30,7 +27,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 			echo '<script>window.location="/oval-fit-login/?user=none"</script>';
 			exit;
 		}
-
 
 		//Sessions
 		//Sessions
