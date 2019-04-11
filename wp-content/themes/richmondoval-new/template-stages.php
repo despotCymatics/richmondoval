@@ -134,11 +134,26 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 
             <div class="side-menu-items">
 
-                    <a href="javascript:void(0);" data-go="dashboard" class="dashboard-menu-item active">Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg"></a>
+                    <a href="javascript:void(0);"
+                       data-go="dashboard"
+                       class="dashboard-menu-item active">
+                      Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg">
+                    </a>
                     <a href="javascript:void(0);">Class Schedules</a>
-                    <a href="javascript:void(0);" data-go="ride" class="ride-menu-item" ><img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg"></a>
-                    <a href="javascript:void(0);" data-go="athletic" class="athletic-menu-item"><img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg"></a>
-                    <a href="https://stagesflight.com/Account/ProfileSettings" target="_blank" class="profile-menu-item">Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg"></a>
+                    <a href="javascript:void(0);"
+                       data-go="ride"
+                       class="ride-menu-item" >
+                      <img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg">
+                    </a>
+                    <a href="javascript:void(0);"
+                       data-go="athletic"
+                       class="athletic-menu-item">
+                      <img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg">
+                    </a>
+                    <a href="https://stagesflight.com/Account/ProfileSettings"
+                       target="_blank" class="profile-menu-item">
+                      Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
+                    </a>
                     <a href="/oval-fit-logout/">Logout</a>
 
             </div>
@@ -187,7 +202,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         $(document).ready(function(){
 
             //Ride Session Click
-            $("#ride #sessions .showMoreToggler:not(.disableBook)").click(function(){
+            $("#ride #sessionsRide .showMoreToggler:not(.disableBook)").click(function(){
 
                 var self = $(this);
                 if(!self.hasClass('on') && !self.hasClass('loaded')) {
@@ -225,7 +240,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             });
 
             //Athletic Session Click
-            $("#athletic #sessions .showMoreToggler:not(.disableBook)").click(function(){
+            $("#athletic #sessionsAth .showMoreToggler:not(.disableBook)").click(function(){
 
                 var self = $(this);
                 if(!self.hasClass('on') && !self.hasClass('loaded')) {
@@ -269,7 +284,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 	} else {
 		echo "Error! API Offline or Invalid Credentials";
 	}
-
 }
 
 //login check

@@ -1346,6 +1346,39 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     height: 40px;
 }
 
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity {
+    margin-top: 20px;
+}
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity .bookings {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity .bookings .row {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity .bookings h4 {
+    color: #FF9E18;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity .span {
+    font-size: 14px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .next-activity .date {
+    color: #FF9E18;
+    opacity: 0.9;
+}
+
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .dashboard-tabs {
     text-align: right;
 }
@@ -1354,7 +1387,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     margin-top: 20px;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats h4{
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats h4 {
     font-weight: 400;
     text-transform: uppercase;
 }

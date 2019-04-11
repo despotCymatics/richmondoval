@@ -47,10 +47,10 @@
             <div class="col-sm-12">
                 <?php
                 if ( count( $userBookings ) > 0 ) { ?>
-                    <h4>Next Activity</h4>
+                    <h4>YOUR NEXT ACTIVITY</h4>
                     <?php foreach ( $userBookings as $userBooking ) { ?>
                         <div class="bookings" data-id="<?= $userBooking->Id; ?>">
-                            <div class="showMoreToggler">
+                            <div class="">
                                 <div class="row">
                                     <div class="col-sm-8 col-xs-6">
                                         <h4><?= $userBooking->Session->Name; ?></h4>
@@ -62,13 +62,13 @@
                                         <span><?= $sessionTime; ?></span>
                                     </div>
                                     <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn blue regular">Cancel Reservation</button>
-                                        <h4 class="close-toggle">X Close</h4>
+                                        <button class="btn orange regular">Cancel Reservation</button>
+                                        <!--<h4 class="close-toggle">X Close</h4>-->
                                     </div>
                                 </div>
-
                             </div>
 
+                            <?php if(false) { ?>
                             <div class="moreText">
                                 <div class="row flexed">
                                     <div class="col-sm-8 col-xs-6">
@@ -90,8 +90,8 @@
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
+                            <?php } ?>
                         </div>
                         <?php
                     }

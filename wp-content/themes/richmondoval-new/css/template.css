@@ -2385,6 +2385,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, t
     border: none;
     border-radius: 3px;
     text-transform: uppercase;
+    text-align: center;
     color: #fff;
     font-size: 14px;
     padding: 15px 30px;

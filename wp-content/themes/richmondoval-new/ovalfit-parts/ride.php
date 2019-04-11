@@ -11,20 +11,6 @@
                     </div>
                     <div class="col-xs-6">
 
-                        <!--<a class="my-account" href="javascript:void(0);">My Account</a>
-                                <div class="account-menu" style="display: none;">
-                                    <a class="redirect" target="_blank" href=" https://stagesflight.com/mytraning/stats">
-                                        Performance Dashboard
-                                        <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/dashboard.svg">
-                                    </a>
-                                    <a class="redirect" target="_blank" href="https://stagesflight.com/Account/ProfileSettings">
-                                        Profile settings
-                                        <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/settings.svg">
-                                    </a>
-                                    <a class="logout" href="/oval-fit-logout/">Log Out</a>
-                                    <span class="redirect-info">You will be redirected to STAGES website</span>
-                                    <button class="ov-fit-btn-blue">GOT IT</button>
-                                </div>-->
                     </div>
                 </div>
 
@@ -110,7 +96,9 @@
                         <div id="bookingsRide" class="tabcontent">
                             <?php
                             if ( count( $userBookings ) > 0 ) { ?>
+
                                 <?php foreach ( $userBookings as $userBooking ) { ?>
+
                                     <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                                         <div class="showMoreToggler">
                                             <div class="row">
@@ -128,7 +116,6 @@
                                                     <h4 class="close-toggle">X Close</h4>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         <div class="moreText">
