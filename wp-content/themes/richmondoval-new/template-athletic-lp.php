@@ -8,7 +8,7 @@ require "stages-api.php";
 $dateFrom    = date( 'Y-m-d' );
 $dateTo   = strtotime( '+10 days' );
 $dateTo   = date( 'Y-m-d', $dateTo );
-$sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
+$sessions = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
 if(count($sessions) > 1) {
 	usort($sessions,function($a, $b){
 		return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
@@ -154,7 +154,7 @@ if(count($sessions) > 1) {
 							<div>
 								<h2><?=get_field('tab1_title');?></h2>
 								<p><?=get_field('tab1_text');?></p>
-                                <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>
+                <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>
 							</div>
 							<div class="ov-sectioner-container">
 								<img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-1.png"/>
@@ -180,22 +180,22 @@ if(count($sessions) > 1) {
 					</div>
 				</div>
 
-                <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
+        <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
+            <div>
+                <img alt="" title="fitnessCenter" src="<?=get_field('tab3_image');?>">
+            </div>
+            <div class="ov-fit-training-ground-text-wrapper">
+                <div class="ov-fit-training-ground-text">
                     <div>
-                        <img alt="" title="fitnessCenter" src="<?=get_field('tab2_image');?>">
+                        <h2><?=get_field('tab3_title');?></h2>
+                        <p><?=get_field('tab3_text');?></p>
                     </div>
-                    <div class="ov-fit-training-ground-text-wrapper">
-                        <div class="ov-fit-training-ground-text">
-                            <div>
-                                <h2><?=get_field('tab2_title');?></h2>
-                                <p><?=get_field('tab2_text');?></p>
-                            </div>
-                            <div class="ov-sectioner-container">
-                                <img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
-                            </div>
-                        </div>
+                    <div class="ov-sectioner-container">
+                        <img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
                     </div>
                 </div>
+            </div>
+        </div>
 			</div>
 
 			<div class="ov-ride-machine-wrapper">
@@ -273,7 +273,7 @@ if(count($sessions) > 1) {
 				?>
 				<div class="ov-ride-schedule">
 					<img class="ov-ride-schedule-logo"
-					     src="https://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
+					     src="/wp-content/uploads/2019/04/athleticSchedule.png" width="520"/>
 
 					<div class="ov-class-container">
 						<?php
@@ -295,7 +295,7 @@ if(count($sessions) > 1) {
 									</div>
 								</div>
 								<div>
-									<a href="/oval-fit-login/" class="ov-fit-btn-blue">RESERVE A BIKE</a>
+									<a href="/oval-fit-login/" class="ov-fit-btn-blue">BOOK YOUR CLASS</a>
 								</div>
 							</div>
 							<?php
