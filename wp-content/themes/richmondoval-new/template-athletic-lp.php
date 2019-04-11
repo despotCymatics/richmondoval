@@ -138,8 +138,13 @@ if(count($sessions) > 1) {
 				<div class="ov-discover-champion-inner">
 					<h1><?=get_field('discover_title');?></h1>
 					<h2><?=get_field('discover_text');?></h2>
-					<div>
-
+					<div class="ov-discover-cta">
+            <div>
+              <img src="<?=get_template_directory_uri()?>/images/basic/ro-logo-horizontal.svg">">
+            </div>
+            <div>
+              <p>ATHLETIC Programs are included in your Richmond Oval Membership  <a href="#">BECOME A MEMBER</a></p>
+            </div>
 					</div>
 				</div>
 			</div>

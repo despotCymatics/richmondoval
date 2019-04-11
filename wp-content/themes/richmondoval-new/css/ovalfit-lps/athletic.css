@@ -137,7 +137,7 @@ p {
 }
 
 .ov-discover-champion h2 {
-    margin: 40px auto;
+    margin: 40px auto 15px;
     font-size: 16px;
     max-width: 620px;
     width: 100%;
@@ -208,8 +208,31 @@ p {
 .ov-discover-champion-interactive img {
     width: 100%;
 }
+.ov-discover-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.ov-discover-cta div {
+    padding: 10px 30px;
+}
+.ov-discover-cta div:first-child {
+    border-right: 1px solid #fff ;
+}
+.ov-discover-cta div p {
+    color: #fff;
+    text-align: left;
+    font-size: 14px;
+}
 
-/*training grounds*/
+.ov-discover-cta div a, .ov-discover-cta div a:hover {
+    color: #FF9E18;
+}
+
+
+    /*training grounds*/
 .ov-fit-training-ground-wrapper {
 
 }
@@ -815,8 +838,14 @@ p {
         padding: 20px 40px;
         background-position: center bottom;
         background-repeat: no-repeat;
-        background-size: 200%;
         height: 660px;
+    }
+
+    .ov-discover-cta {
+        display: block;
+    }
+    .ov-discover-cta div:first-child {
+        border: none;
     }
 
     .ov-discover-champion h1 {
