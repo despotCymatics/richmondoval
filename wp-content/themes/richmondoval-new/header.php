@@ -81,7 +81,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div id="loading-wrap">
-	    <?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php") || is_page_template("template-stages_holding_page.php")) { ?>
+	    <?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php") || is_page_template("template-stages_holding_page.php") || is_page_template("template-stages_ath_holding_page.php")) { ?>
 
             <img class="logo-animate" title="logo-animate" src="<?=get_template_directory_uri()?>/images/basic/oval-fit-logo-black.png"><br>
             <img class="dots" src="<?=get_template_directory_uri()?>/images/basic/oval-fit-loading-dots.gif">

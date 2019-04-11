@@ -51,7 +51,7 @@ function richmondoval_scripts_styles() {
 
 	//STAGES
 	//Scripts
-	if(get_page_template_slug() == 'template-stages.php' || get_page_template_slug() == 'template-stages_login.php' || get_page_template_slug() == 'template-stages_registration.php' || get_page_template_slug() == 'template-stages_holding_page.php') {
+	if(get_page_template_slug() == 'template-stages.php' || get_page_template_slug() == 'template-stages_login.php' || get_page_template_slug() == 'template-stages_registration.php' || get_page_template_slug() == 'template-stages_holding_page.php' || get_page_template_slug() == 'template-stages_ath_holding_page.php') {
 
 		wp_enqueue_script( 'richmondoval-sweetalert', get_template_directory_uri() . '/js/sweetalert2.js', array(), false, true );
 		wp_enqueue_script( 'richmondoval-moment', 'https://cdn.jsdelivr.net/momentjs/latest/moment.min.js', array(), false, true );
@@ -64,6 +64,8 @@ function richmondoval_scripts_styles() {
 		wp_enqueue_style( 'richmondoval-daterange', get_template_directory_uri() .'/css/daterangepicker.css', array(), false, "screen, projection)" );
 		wp_enqueue_style( 'richmondoval-tabs', get_template_directory_uri() .'/css/smart_tab.css', array(), false, "screen, projection)" );
 		wp_enqueue_style( 'richmondoval-stages', get_template_directory_uri() . '/css/stages.css', array(), $rand, "screen, projection)" );
+
+		wp_enqueue_style( 'richmondoval-stages-holding', get_template_directory_uri() . '/css/stages-holding.css', array(), $rand, "screen, projection)" );
 	}
 
 }

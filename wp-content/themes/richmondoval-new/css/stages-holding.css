@@ -1,0 +1,371 @@
+@import url("https://use.typekit.net/svd3qkc.js");
+@import url("https://use.typekit.net/arc0dlo.css");
+
+body {
+    font-size: 16px;
+}
+
+#loading-wrap img.dots {
+    margin-top: -50px;
+    position: relative;
+    z-index: -1;
+}
+
+.btn {
+    font-weight: 500;
+}
+
+.title a:hover {
+    text-decoration: none;
+}
+
+.footer-ovalfit-tc {
+    background: #0C0D0D;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+}
+
+select {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    outline: none;
+    padding: 0 20px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+    -webkit-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -ms-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: 0.2s border cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+
+    background-image:
+            linear-gradient(45deg, transparent 50%, #FF9E18 50%),
+            linear-gradient(135deg, #FF9E18 50%, transparent 50%);
+    background-position:
+            calc(100% - 20px) calc(50% + 1px),
+            calc(100% - 15px) calc(50% + 1px);
+
+    background-size:
+            5px 5px,
+            5px 5px,
+            1px 1.5em;
+    background-repeat: no-repeat;
+
+}
+select option {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.checkbox {
+    position: relative;
+    display: block;
+    min-height: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.checkbox input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+}
+
+.checkbox label {
+    display: inline-block;
+    padding-left: 30px;
+    position: relative;
+}
+
+.checkbox .wpcf7-list-item-label:before, .checkbox label:before {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    content: "";
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.checkbox .wpcf7-list-item-label:after, .checkbox label:after {
+    position: absolute;
+    top: 9px;
+    left: 4px;
+    display: block;
+    width: 7px;
+    height: 7px;
+    content: "";
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.checkbox input:checked~label:before, .checkbox input:checked~.wpcf7-list-item-label:before {
+
+}
+
+.checkbox input:checked~label:after, .checkbox input:checked~.wpcf7-list-item-label:after {
+    background-color: #FF9E18;
+}
+
+/* FONT OVERRIDE */
+
+.page-template-template-stages_holding_page .pageWrap p,
+.page-template-template-stages_holding_page .pageWrap span,
+.page-template-template-stages_holding_page .pageWrap h1,
+.page-template-template-stages_holding_page .pageWrap h2,
+.page-template-template-stages_holding_page .pageWrap h3,
+.page-template-template-stages_holding_page .pageWrap h4,
+.page-template-template-stages_holding_page .pageWrap h5,
+.page-template-template-stages_holding_page .pageWrap input,
+.page-template-template-stages_holding_page .pageWrap button,
+.page-template-template-stages_holding_page .pageWrap a,
+
+.page-template-template-stages_ath_holding_page .pageWrap p,
+.page-template-template-stages_ath_holding_page .pageWrap span,
+.page-template-template-stages_ath_holding_page .pageWrap h1,
+.page-template-template-stages_ath_holding_page .pageWrap h2,
+.page-template-template-stages_ath_holding_page .pageWrap h3,
+.page-template-template-stages_ath_holding_page .pageWrap h4,
+.page-template-template-stages_ath_holding_page .pageWrap h5,
+.page-template-template-stages_ath_holding_page .pageWrap input,
+.page-template-template-stages_ath_holding_page .pageWrap button,
+.page-template-template-stages_ath_holding_page .pageWrap a
+{
+    font-family:"prometo" !important;
+}
+
+.page-template-template-stages_holding_page input,
+.page-template-template-stages_ath_holding_page input {
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: #fff;
+    color: #161616;
+}
+
+
+
+/********** Holding Page **********/
+
+.page-template-template-stages_holding_page header,
+.page-template-template-stages_ath_holding_page header {
+    display: none;
+    visibility: hidden;
+}
+
+.page-template-template-stages_holding_page .pageWrap,
+.page-template-template-stages_ath_holding_page .pageWrap {
+    margin-top: 0;
+    background-color: #0C0D0D;
+    min-height: 100vh;
+}
+.page-template-template-stages_holding_page .pageWrap .within.inner,
+.page-template-template-stages_ath_holding_page .pageWrap .within.inner {
+    min-height: auto;
+}
+
+.page-template-template-stages_holding_page .stages-logo,
+.page-template-template-stages_ath_holding_page .stages-logo {
+    width: 120px !important;
+}
+
+.page-template-template-stages_holding_page .header,
+.page-template-template-stages_ath_holding_page .header {
+    margin: 30px 40px;
+    padding-bottom: 0;
+}
+
+.page-template-template-stages_holding_page .header h1,
+.page-template-template-stages_ath_holding_page .header h1 {
+    color: #fff;
+    font-size: 56px;
+    line-height: 60px;
+    font-family: 'prometo';
+    margin-bottom: 0;
+
+}
+
+.page-template-template-stages_holding_page .header h5,
+.page-template-template-stages_ath_holding_page .header h5 {
+    color: #FF9E18;
+    font-family: 'prometo';
+
+}
+.page-template-template-stages_holding_page .header p,
+.page-template-template-stages_ath_holding_page .header p {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.page-template-template-stages_holding_page .ovalfit-holding-body,
+.page-template-template-stages_ath_holding_page .ovalfit-holding-body {
+    position: relative;
+    overflow: hidden;
+}
+.page-template-template-stages_holding_page .ovalfit-form,
+.page-template-template-stages_ath_holding_page .ovalfit-form {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    color: #fff;
+    margin: 60px 40px 40px;
+}
+
+.page-template-template-stages_holding_page .ovalfit-form input,
+.page-template-template-stages_ath_holding_page .ovalfit-form input,
+.page-template-template-stages_holding_page .ovalfit-form select,
+.page-template-template-stages_ath_holding_page .ovalfit-form select {
+    margin-bottom: 0;
+    margin-top: 0;
+    /*margin-bottom: 20px;*/
+}
+.page-template-template-stages_holding_page .ovalfit-form input[type=checkbox],
+.page-template-template-stages_ath_holding_page .ovalfit-form input[type=checkbox] {
+    margin: 0 10px 0 0;
+}
+.wpcf7-checkbox span.wpcf7-list-item {
+    margin-left: 0;
+}
+
+.page-template-template-stages_holding_page .ovalfit-form h5,
+.page-template-template-stages_ath_holding_page .ovalfit-form h5 {
+    color: #FF9E18;
+    font-family: 'prometo';
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.page-template-template-stages_holding_page .ovalfit-form span,
+.page-template-template-stages_ath_holding_page .ovalfit-form span {
+    font-size: 14px;
+}
+
+
+.page-template-template-stages_holding_page .btn.orange,
+.page-template-template-stages_ath_holding_page .btn.orange {
+    background-color: #FF9E18;
+    color: #fff;
+}
+.page-template-template-stages_holding_page .btn:hover,
+.page-template-template-stages_ath_holding_page .btn:hover {
+    background: #B23409;
+}
+
+.page-template-template-stages_holding_page #ovalfit-tabs,
+.page-template-template-stages_ath_holding_page #ovalfit-tabs {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/*wpcf7*/
+
+.page-template-template-stages_holding_page .wpcf7-form.sent .inputs-wrapper,
+.page-template-template-stages_ath_holding_page .wpcf7-form.sent .inputs-wrapper {
+    display: none;
+}
+
+.page-template-template-stages_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok,
+.page-template-template-stages_ath_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok {
+    border: none;
+    font-size: 50px;
+    line-height: 55px;
+    margin: 0;
+    padding: 0 0 160px;
+    font-family: 'prometo';
+    text-transform: uppercase;
+}
+
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok::after {
+    content: "Stay tuned for more in your inbox soon.";
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+    font-family: 'prometo';
+    line-height: 24px;
+}
+
+.page-template-template-stages_holding_page div.wpcf7 .ajax-loader,
+.page-template-template-stages_ath_holding_page div.wpcf7 .ajax-loader {
+    background-size: cover;
+    background-image: url("../images/stages/loading_basic.gif");
+    margin-left: 10px;
+    vertical-align: middle;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Holding Page end */
+
+
+/********** MOBILE **********/
+
+
+@media (max-width: 1024px){
+
+    .page-template-template-stages_holding_page .ovalfit-form,
+    .page-template-template-stages_ath_holding_page .ovalfit-form {
+        margin-top: 100px;
+        width: 50%;
+    }
+
+    .page-template-template-stages_holding_page .title,
+    .page-template-template-stages_ath_holding_page .title {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .page-template-template-stages_holding_page .header,
+    .page-template-template-stages_ath_holding_page .header {
+        margin: 30px 0;
+    }
+
+    .page-template-template-stages_holding_page .header h1,
+    .page-template-template-stages_ath_holding_page .header h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .page-template-template-stages_holding_page .ovalfit-form,
+    .page-template-template-stages_ath_holding_page .ovalfit-form {
+        margin: 0 15px 30px;
+        width: auto;
+    }
+    .page-template-template-stages_holding_page #ovalfit-tabs,
+    .page-template-template-stages_ath_holding_page #ovalfit-tabs {
+        position: static;
+    }
+
+    .page-template-template-stages_holding_page .pageWrap .within.inner,
+    .page-template-template-stages_ath_holding_page .pageWrap .within.inner {
+        padding-bottom: 0;
+        /*padding-top: 10px;*/
+    }
+    .page-template-template-stages_holding_page .title,
+    .page-template-template-stages_ath_holding_page .title {
+        padding: 0 15px;
+    }
+}

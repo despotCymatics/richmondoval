@@ -60,6 +60,17 @@ body {
 .page-template-template-stages_holding_page .pageWrap button,
 .page-template-template-stages_holding_page .pageWrap a,
 
+.page-template-template-stages_ath_holding_page .pageWrap p,
+.page-template-template-stages_ath_holding_page .pageWrap span,
+.page-template-template-stages_ath_holding_page .pageWrap h1,
+.page-template-template-stages_ath_holding_page .pageWrap h2,
+.page-template-template-stages_ath_holding_page .pageWrap h3,
+.page-template-template-stages_ath_holding_page .pageWrap h4,
+.page-template-template-stages_ath_holding_page .pageWrap h5,
+.page-template-template-stages_ath_holding_page .pageWrap input,
+.page-template-template-stages_ath_holding_page .pageWrap button,
+.page-template-template-stages_ath_holding_page .pageWrap a,
+
 .page-template-template-stages_login .pageWrap p,
 .page-template-template-stages_login .pageWrap span,
 .page-template-template-stages_login .pageWrap h1,
@@ -793,7 +804,10 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     max-width: 420px;
     margin: 0 auto;
 }
-.page-template-template-stages_login input, .page-template-template-stages_registration input, .page-template-template-stages_holding_page input {
+.page-template-template-stages_login input,
+.page-template-template-stages_registration input,
+.page-template-template-stages_holding_page input,
+.page-template-template-stages_ath_holding_page input {
     border-radius: 6px;
     margin-bottom: 15px;
     background: #fff;
@@ -924,30 +938,36 @@ form#changeDates:before {
 
 /********** Holding Page **********/
 
-.page-template-template-stages_holding_page header {
+.page-template-template-stages_holding_page header,
+.page-template-template-stages_ath_holding_page header {
     display: none;
     visibility: hidden;
 }
 
-.page-template-template-stages_holding_page .pageWrap {
+.page-template-template-stages_holding_page .pageWrap,
+.page-template-template-stages_ath_holding_page .pageWrap {
     margin-top: 0;
     background-color: #0C0D0D;
     min-height: 100vh;
 }
-.page-template-template-stages_holding_page .pageWrap .within.inner {
+.page-template-template-stages_holding_page .pageWrap .within.inner,
+.page-template-template-stages_ath_holding_page .pageWrap .within.inner {
     min-height: auto;
 }
 
-.page-template-template-stages_holding_page .stages-logo {
+.page-template-template-stages_holding_page .stages-logo,
+.page-template-template-stages_ath_holding_page .stages-logo {
     width: 120px !important;
 }
 
-.page-template-template-stages_holding_page .header {
+.page-template-template-stages_holding_page .header,
+.page-template-template-stages_ath_holding_page .header {
     margin: 30px 40px;
     padding-bottom: 0;
 }
 
-.page-template-template-stages_holding_page .header h1 {
+.page-template-template-stages_holding_page .header h1,
+.page-template-template-stages_ath_holding_page .header h1 {
     color: #fff;
     font-size: 56px;
     line-height: 60px;
@@ -956,21 +976,25 @@ form#changeDates:before {
 
 }
 
-.page-template-template-stages_holding_page .header h5 {
+.page-template-template-stages_holding_page .header h5,
+.page-template-template-stages_ath_holding_page .header h5 {
     color: #FF9E18;
     font-family: 'prometo';
 
 }
-.page-template-template-stages_holding_page .header p {
+.page-template-template-stages_holding_page .header p,
+.page-template-template-stages_ath_holding_page .header p {
     color: #fff;
     margin-bottom: 0;
 }
 
-.page-template-template-stages_holding_page .ovalfit-holding-body {
+.page-template-template-stages_holding_page .ovalfit-holding-body,
+.page-template-template-stages_ath_holding_page .ovalfit-holding-body {
     position: relative;
     overflow: hidden;
 }
-.page-template-template-stages_holding_page .ovalfit-form {
+.page-template-template-stages_holding_page .ovalfit-form,
+.page-template-template-stages_ath_holding_page .ovalfit-form {
     position: relative;
     z-index: 2;
     width: 40%;
@@ -978,38 +1002,47 @@ form#changeDates:before {
     margin: 60px 40px 40px;
 }
 
-.page-template-template-stages_holding_page .ovalfit-form input, .page-template-template-stages_holding_page .ovalfit-form select {
+.page-template-template-stages_holding_page .ovalfit-form input,
+.page-template-template-stages_ath_holding_page .ovalfit-form input,
+.page-template-template-stages_holding_page .ovalfit-form select,
+.page-template-template-stages_ath_holding_page .ovalfit-form select {
     margin-bottom: 0;
     margin-top: 0;
     /*margin-bottom: 20px;*/
 }
-.page-template-template-stages_holding_page .ovalfit-form input[type=checkbox] {
+.page-template-template-stages_holding_page .ovalfit-form input[type=checkbox],
+.page-template-template-stages_ath_holding_page .ovalfit-form input[type=checkbox] {
     margin: 0 10px 0 0;
 }
 .wpcf7-checkbox span.wpcf7-list-item {
     margin-left: 0;
 }
 
-.page-template-template-stages_holding_page .ovalfit-form h5 {
+.page-template-template-stages_holding_page .ovalfit-form h5,
+.page-template-template-stages_ath_holding_page .ovalfit-form h5 {
     color: #FF9E18;
     font-family: 'prometo';
     text-transform: uppercase;
     margin-bottom: 20px;
 }
-.page-template-template-stages_holding_page .ovalfit-form span {
+.page-template-template-stages_holding_page .ovalfit-form span,
+.page-template-template-stages_ath_holding_page .ovalfit-form span {
     font-size: 14px;
 }
 
 
-.page-template-template-stages_holding_page .btn.orange {
+.page-template-template-stages_holding_page .btn.orange,
+.page-template-template-stages_ath_holding_page .btn.orange {
     background-color: #FF9E18;
     color: #fff;
 }
-.page-template-template-stages_holding_page .btn:hover {
+.page-template-template-stages_holding_page .btn:hover,
+.page-template-template-stages_ath_holding_page .btn:hover {
     background: #B23409;
 }
 
-.page-template-template-stages_holding_page #ovalfit-tabs {
+.page-template-template-stages_holding_page #ovalfit-tabs,
+.page-template-template-stages_ath_holding_page #ovalfit-tabs {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -1020,11 +1053,13 @@ form#changeDates:before {
 
 /*wpcf7*/
 
-.page-template-template-stages_holding_page .wpcf7-form.sent .inputs-wrapper {
+.page-template-template-stages_holding_page .wpcf7-form.sent .inputs-wrapper,
+.page-template-template-stages_ath_holding_page .wpcf7-form.sent .inputs-wrapper {
     display: none;
 }
 
-.page-template-template-stages_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok {
+.page-template-template-stages_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok,
+.page-template-template-stages_ath_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok {
     border: none;
     font-size: 50px;
     line-height: 55px;
@@ -1044,7 +1079,8 @@ form#changeDates:before {
     line-height: 24px;
 }
 
-.page-template-template-stages_holding_page div.wpcf7 .ajax-loader {
+.page-template-template-stages_holding_page div.wpcf7 .ajax-loader,
+.page-template-template-stages_ath_holding_page div.wpcf7 .ajax-loader {
     background-size: cover;
     background-image: url("../images/stages/loading_basic.gif");
     margin-left: 10px;
@@ -1053,6 +1089,8 @@ form#changeDates:before {
     width: 20px;
     height: 20px;
 }
+
+/* Holding Page end */
 
 .page-template-template-stages .daterangepicker.show-calendar .ranges {
     float: none;
@@ -1584,12 +1622,14 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     .stMain ul.tabAnchor li a span {
         font-size: 12px;
     }
-    .page-template-template-stages_holding_page .ovalfit-form {
+    .page-template-template-stages_holding_page .ovalfit-form,
+    .page-template-template-stages_ath_holding_page .ovalfit-form {
         margin-top: 100px;
         width: 50%;
     }
 
-    .page-template-template-stages_holding_page .title {
+    .page-template-template-stages_holding_page .title,
+    .page-template-template-stages_ath_holding_page .title {
         padding: 0 50px;
     }
     .ovalfit-wrapper .ovalfit-main .ovalfit-ride .ovalfit-inner, .ovalfit-wrapper .ovalfit-main .ovalfit-athletic .ovalfit-inner {
@@ -1675,27 +1715,33 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         margin-top: 10px;
     }
 
-    .page-template-template-stages_holding_page .header {
+    .page-template-template-stages_holding_page .header,
+    .page-template-template-stages_ath_holding_page .header {
         margin: 30px 0;
     }
 
-    .page-template-template-stages_holding_page .header h1 {
+    .page-template-template-stages_holding_page .header h1,
+    .page-template-template-stages_ath_holding_page .header h1 {
         font-size: 34px;
         line-height: 40px;
     }
-    .page-template-template-stages_holding_page .ovalfit-form {
+    .page-template-template-stages_holding_page .ovalfit-form,
+    .page-template-template-stages_ath_holding_page .ovalfit-form {
         margin: 0 15px 30px;
         width: auto;
     }
-    .page-template-template-stages_holding_page #ovalfit-tabs {
+    .page-template-template-stages_holding_page #ovalfit-tabs,
+    .page-template-template-stages_ath_holding_page #ovalfit-tabs {
         position: static;
     }
 
-    .page-template-template-stages_holding_page .pageWrap .within.inner {
+    .page-template-template-stages_holding_page .pageWrap .within.inner,
+    .page-template-template-stages_ath_holding_page .pageWrap .within.inner {
         padding-bottom: 0;
         /*padding-top: 10px;*/
     }
-    .page-template-template-stages_holding_page .title {
+    .page-template-template-stages_holding_page .title,
+    .page-template-template-stages_ath_holding_page .title {
         padding: 0 15px;
     }
     .page-template-template-stages .alignRight {
