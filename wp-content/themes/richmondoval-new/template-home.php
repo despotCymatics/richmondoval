@@ -120,7 +120,7 @@ get_header(); ?>
                 <div class="col-sm-6">
                     <div class="work-box">
                         <h4>Today’s Hours of Operations</h4>
-                        <?=get_field('working_hours');?>
+                        <?=get_field('monday');?>
                         <a href="/facility/hours-location/" class="read-more">See Full Hours</a>
                     </div>
                 </div>
