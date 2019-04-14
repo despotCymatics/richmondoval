@@ -39,7 +39,7 @@
 
     </script>
 
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
     (function(d, s, id) {
       window.Wishpond = window.Wishpond || {};
       Wishpond.merchantId = '1298220';
@@ -50,7 +50,7 @@
       js.src = "//cdn.wishpond.net/connect.js";
       wpjs.parentNode.insertBefore(js, wpjs);
     }(document, 'script', 'wishpond-connect'));
-    </script>
+    </script>-->
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

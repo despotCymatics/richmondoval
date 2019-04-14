@@ -121,6 +121,7 @@ body.menuOpen {
     .explore-carousel .article .articleTitle {
         width: 100%;
         padding: 30px;
+        min-height: 230px;
     }
     .explore-carousel .article .articleImg {
         width: 100%;
