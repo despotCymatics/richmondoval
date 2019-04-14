@@ -98,7 +98,7 @@ get_header(); ?>
                                 </p>
                                 <div class="eventMeta">
                                     <h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></h3>
-                                    <div class="excerpt"><?php echo $event->post_content; ?></div>
+                                    <div class="excerpt"><?php //echo $event->excerpt; ?></div>
                                 </div>
                             </div>
 
@@ -334,7 +334,12 @@ get_header(); ?>
                             while ( $newsQuery->have_posts()) : $newsQuery->the_post(); ?>
                             <div class="article" data-num="<?=$newsCount;?>">
                                 <div class="articleImg">
-                                    <?php the_post_thumbnail( array(200, 150) ); ?>
+                                    <?php $newsImg = get_the_post_thumbnail( get_the_ID(), array(200, 150) );
+                                    if($newsImg != "") echo $newsImg;
+                                    else { ?>
+                                        <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                                    <?php } ?>
+                                    <?php //the_post_thumbnail( array(200, 150) ); ?>
                                 </div>
                                 <div class="articleTitle">
                                     <p><?php echo date("M d", strtotime(get_the_date())); ?></p>
