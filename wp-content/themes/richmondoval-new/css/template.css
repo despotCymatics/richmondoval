@@ -3096,6 +3096,12 @@ section.events .view-all-events:before {
     min-width: 45px;
 }
 
+.event-carousel .article .articleTitle .eventMeta .excerpt {
+    text-overflow: ellipsis;
+    max-height: 125px;
+    overflow: hidden;
+}
+
 .event-carousel .article .articleImg img {
     object-fit: cover;
     width: 100%;
