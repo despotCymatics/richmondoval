@@ -349,6 +349,31 @@ jQuery(document).ready(function($) {
 
     $('.ovalfit-faqs .ovalfit-qa:first-child > a').click();
 
+
+    //Machine slides
+    var machineSlider1Current = 1;
+    var slides1 = $('.ov-machine-slider.first .ov-machine-slides > div').length;
+    console.log(slides1);
+	$('.ov-machine-slider.first .ov-machine-slider-nav span').click(function(e){
+		console.log('click');
+		if($(this).is('.right, .active') && slides1 > machineSlider1Current) {
+			var nexSlide = machineSlider1Current+1;
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide();
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ nexSlide +']').fadeIn(300);
+			machineSlider1Current++;
+			$('.ov-machine-slider.first .ov-machine-slider-nav span').addClass('active');
+			if(machineSlider1Current == slides1) $(this).removeClass('active');
+		} else if($(this).is('.left, .active') &&  machineSlider1Current <= 2) {
+			var prevSlide = machineSlider1Current-1;
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide();
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ prevSlide +']').fadeIn(300);
+			machineSlider1Current--;
+			$('.ov-machine-slider.first .ov-machine-slider-nav span').addClass('active');
+			if(machineSlider1Current == 1) $(this).removeClass('active');
+		}
+
+	});
+
 });
 
 

@@ -213,7 +213,7 @@ p {
     align-items: center;
     justify-content: center;
     max-width: 640px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 .ov-discover-cta div {
     padding: 10px 30px;
@@ -269,9 +269,16 @@ p {
     right: 50px;
 }
 
-.ov-fit-training-ground-section div {
-    flex: 1;
-    align-self: center;
+.ov-fit-training-ground-section > div {
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.ov-fit-training-ground-section > div:first-child {
+    min-height: 500px;
+    height: 100vh;
 }
 
 .ov-fit-training-ground-text {
@@ -310,30 +317,30 @@ p {
 }
 
 /*ride machine*/
-.ov-ride-machine-wrapper {
+.ov-machine-wrapper {
     background:  #000 url("../../images/stages/equipment-bg.jpg") no-repeat top / cover;
 }
 
-.ov-ride-machine-wrapper-inner {
+.ov-machine-wrapper-inner {
     max-width: 1260px;
     margin: auto;
     padding-bottom: 110px;
     color: #fff;
 }
 
-.ov-ride-machine-header {
+.ov-machine-header {
     display: flex;
     align-items: center;
     padding: 0 15px;
 }
 
-.ov-ride-machine-wrapper h3 {
+.ov-machine-wrapper h3 {
     font-size: 59px;
     margin: 60px 0 40px 0;
    /* max-width: 520px;*/
 }
 
-.ov-ride-machine-wrapper h4 {
+.ov-machine-wrapper h4 {
     font-size: 22px;
     max-width: 445px;
     font-weight: 100;
@@ -341,119 +348,88 @@ p {
     text-transform: uppercase;
 }
 
-.ov-ride-machine-wrapper h5 {
+.ov-machine-wrapper h5 {
     font-size: 20px;
     font-weight: 100;
     margin: 20px 0px;
 }
 
-.ov-ride-machine-wrapper p {
+.ov-machine-wrapper p {
     font-size: 14px;
     line-height: 21px;
     font-weight: 100;
 }
 
-.ov-ride-machine-stages-logo {
+.ov-machine-stages-logo {
     float: right;
 }
 
-/*ride machine image*/
-.ov-ride-machine-container {
-    max-width: 940px;
-    margin: auto;
+.ov-machine-slider {
     position: relative;
 }
-
-.ov-ride-machine-bike {
-    width: 100%;
-}
-
-/*uncomment!*/
-.ov-ride-section {
-    opacity: 1;
-}
-
-.ov-ride-display {
-    position: absolute;
-    top: 87px;
-    left: 350px;
-}
-
-.ov-ride-display-arm {
-    position: absolute;
-    top: 97px;
-    left: 44px;
-}
-
-.ov-ride-sprintshift {
-    position: absolute;
-    top: 212px;
-    left: 380px;
-}
-
-.ov-ride-sprintshift-arm {
-    position: absolute;
-    top: 225px;
-    left: -164px;
-}
-
-.ov-ride-powermeter {
-    position: absolute;
-    top: 396px;
-    left: 469px;
-}
-
-.ov-ride-powermeter-arm {
-    position: absolute;
-    top: 245px;
-    left: 479px;
-}
-
-.ov-ride-carbonglide {
-    position: absolute;
-    top: 455px;
-    left: 539px;
-}
-
-.ov-ride-carbonglide-arm {
-    position: absolute;
-    top: 465px;
-    left: 551px;
-}
-
-.ov-ride-carbonglide-arm-small {
+.ov-machine-slide {
     display: none;
+    position: relative;
+    text-align: right;
 }
 
-.ov-ride-display-content {
+.ov-machine-slide.active {
+    display: block;
+}
+
+.ov-machine-slide img {
+    width: 65%;
+}
+
+.ov-machine-side-text {
+    background: #FF9E18;
     position: absolute;
-    left: -157px;
-    top: 68px;
-    width: 272px;
+    right: 62%;
+    top: 50%;
+    text-align: left;
+    transform: translateY(-50%);
+    padding: 40px;
 }
 
-.ov-ride-sprintshift-content {
+.ov-machine-side-text h4 {
+    margin-top: 0;
+    font-size: 26px;
+    line-height: 27px;
+    font-weight: 600;
+}
+.ov-machine-side-text > div {
+    margin-bottom: 40px;
+}
+
+.ov-machine-slider-nav {
     position: absolute;
-    top: 400px;
-    left: -165px;
-    width: 272px;
+    z-index: 100;
+    right: 0;
+    bottom: 0;
 }
 
-.ov-ride-powermeter-content {
-    position: absolute;
-    top: 217px;
-    right: -211px;
-    width: 272px;
+.ov-machine-slider-nav span {
+    background: #535453;
+    color: #787878;
+    padding: 8px 15px;
+    text-align: center;
+    display: block;
+    float: left;
+    cursor: pointer;
+    font-size: 22px;
 }
 
-.ov-ride-carbonglide-content {
-    position: absolute;
-    top: 436px;
-    right: -213px;
-    width: 272px;
+.ov-machine-slider-nav span.active {
+    background: #fff;
+    color: #787878;
 }
 
-/*results team*/
+.ov-machine-slider-nav span.active:hover {
+    background: #EAEAEA;
+}
+
+
+    /*results team*/
 .ov-results-team {
     max-width: 1200px;
     margin: 100px auto;
@@ -529,7 +505,6 @@ p {
     max-height: 600px;
     background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Want_results_x2.jpg);
     background-size: cover;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -675,7 +650,11 @@ p {
     animation-name: bounce-sm;
 }
 
-@media (max-width: 1390px) {
+@media (max-width: 1440px) {
+
+    .ov-discover-champion h1 {
+        font-size: 40px;
+    }
 
     .ov-ride-display {
         position: absolute;
@@ -768,13 +747,7 @@ p {
 
 }
 
-@media (max-width: 940px) {
 
-    .ov-ride-section {
-        display: none;
-    }
-
-}
 
 @media (max-width: 1024px) {
 
@@ -786,14 +759,11 @@ p {
         justify-content: flex-start;
     }
 
-    .ov-fit-btn-nav {
-    }
-
     .ov-fit-banner {
         min-height: 640px;
-        height: 100vh;
+        height: 80vh;
         background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-26.png);
-        background-position: right;
+        background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
 
@@ -805,10 +775,13 @@ p {
     .ov-fit-banner-inner {
         bottom: 0;
         top: unset;
+        padding: 100px;
+        max-width: 768px;
     }
 
     .ov-fit-banner-inner h1 {
         margin: 0;
+        font-size: 80px;
     }
 
     .ov-fit-banner p {
@@ -834,6 +807,9 @@ p {
         display: none;
     }
 
+    .ov-discover-champion-inner {
+        margin-top: 50px;
+    }
     .ov-discover-champion {
         padding: 20px 40px;
         background-position: center bottom;
@@ -841,21 +817,16 @@ p {
         height: 660px;
     }
 
-    .ov-discover-cta {
-        display: block;
-    }
-    .ov-discover-cta div:first-child {
-        border: none;
-    }
-
     .ov-discover-champion h1 {
         max-width: 520px;
+        font-size: 30px;
+
     }
 
     .ov-discover-champion h2 {
         color: #fff;
         font-weight: 100;
-        max-width: 480px;
+        max-width: 580px;
     }
 
     .ov-discover-champion h3 {
@@ -881,9 +852,12 @@ p {
     }
 
     .ov-fit-training-ground-section {
-        flex-direction: column-reverse;
+       /* flex-direction: column-reverse;
         margin: 20px auto 0 auto;
-        height: 100%;
+        height: 100%;*/
+    }
+    .ov-fit-training-ground-text {
+        padding: 100px 50px 40px;
     }
 
     .ov-fit-training-ground-section-reverse {
@@ -901,35 +875,21 @@ p {
         font-size: 15px !important;
     }
 
-    .ov-fit-training-ground-text {
-        padding: 80px 80px 110px;
-
-    }
-
     .ov-fit-training-ground-section p {
         margin: 0 0 40px;
     }
 
     .ov-fit-training-ground-section h2 {
         margin: 0 0 30px 0;
+        font-size: 50px;
     }
 
     .ov-fit-training-ground-section img {
         max-width: 100%;
     }
 
-    .ov-fit-training-ground-wrapper {
-        margin: 100px 0 0 0;
-    }
-
-    .ov-fit-training-ground-text {
-        display: flex;
-        align-items: center;
-        max-width: 100%;
-    }
-
-    .ov-fit-training-ground-section div {
-        flex: auto;
+    .ov-fit-training-ground-section > div:first-child {
+        height: auto;
     }
 
     .ov-sectioner {
@@ -989,7 +949,62 @@ p {
 
 }
 
+@media (max-width: 940px) {
+
+    .ov-ride-section {
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .ov-discover-cta {
+        display: block;
+    }
+    .ov-discover-cta div:first-child {
+        border: none;
+    }
+    .ov-discover-cta div p {
+        text-align: center;
+        margin: 0;
+    }
+
+    .ov-fit-training-ground-section > div:first-child {
+        width: 45%;
+    }
+
+    .ov-fit-training-ground-section > div{
+        width: 55%;
+    }
+    .ov-fit-training-ground-text {
+      padding: 80px 40px 30px;
+    }
+    .ov-fit-training-ground-section h2 {
+        font-size: 35px;
+    }
+
+    .ov-sectioner-container {
+        right: 30px;
+    }
+
+
+
+
+}
+
 @media (max-width: 500px) {
+
+    .ov-fit-training-ground-section {
+        flex-direction: column-reverse;
+    }
+
+    .ov-fit-training-ground-section > div {
+        width: 100%
+    }
+
+    .ov-fit-training-ground-section > div:first-child {
+        width: 100%;
+    }
 
     .ov-nav-ride-container {
         display: flex;
@@ -1010,11 +1025,6 @@ p {
         right: 0;
     }
 
-    .ov-fit-lets-ride-container {
-        width: 100%;
-        text-align: center;
-    }
-
     .ov-fit-banner-inner h1 {
         font-size: 60px;
         max-width: 300px;
@@ -1032,7 +1042,7 @@ p {
     }
 
     .ov-discover-champion h1 {
-        font-size: 40px;
+        font-size: 25px;
     }
 
     .ov-discover-champion-info {
@@ -1046,7 +1056,7 @@ p {
     }
 
     .ov-fit-training-ground-wrapper {
-        margin: 30px 0 0 0;
+       /* margin: 30px 0 0 0;*/
     }
 
     .ov-fit-training-ground-section {
@@ -1079,44 +1089,44 @@ p {
         text-align: center;
     }
 
-    .ov-ride-machine-wrapper-inner {
+    .ov-machine-wrapper-inner {
         padding: 0;
         display: grid;
     }
 
-    .ov-ride-machine-wrapper h3 {
+    .ov-machine-wrapper h3 {
         font-size: 40px;
         margin: 13px 0 0 0;
     }
 
-    .ov-ride-machine-wrapper h4 {
+    .ov-machine-wrapper h4 {
         font-size: 15px;
         max-width: 267px;
         line-height: 18px;
         margin: 20px 0 10px 0;
     }
 
-    .ov-ride-machine-stages-logo {
+    .ov-machine-stages-logo {
         display: none;
     }
 
-    .ov-ride-machine-header {
+    .ov-machine-header {
         flex-direction: column;
         text-align: center;
         padding: 40px 0 24px 0;
     }
 
-    .ov-ride-machine-container {
+    .ov-machine-container {
         text-align: center;
     }
 
-    .ov-ride-machine-bike {
+    .ov-machine-bike {
         width: 375px;
         margin: auto;
         max-width: 100%;
     }
 
-    .ov-ride-machine-mobile {
+    .ov-machine-mobile {
         position: relative;
     }
 
@@ -1124,16 +1134,16 @@ p {
         padding: 20px 50px 30px;
     }
 
-    .ov-ride-machine-mobile-content {
+    .ov-machine-mobile-content {
         position: relative;
     }
 
-    .ov-ride-machine-mobile-content h5 {
+    .ov-machine-mobile-content h5 {
         font-size: 15px;
         font-weight: bold;
     }
 
-    .ov-ride-machine-mobile-content h5, p {
+    .ov-machine-mobile-content h5, p {
         font-size: 20px;
     }
 
@@ -1205,6 +1215,7 @@ p {
     .ov-sectioner-container {
         position: inherit;
         margin-right: 10px;
+        display: none;
     }
 
     .ov-results-team {

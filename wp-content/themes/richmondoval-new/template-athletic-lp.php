@@ -34,6 +34,7 @@ if(count($sessions) > 1) {
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/athletic.css" rel="stylesheet">
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/style.css" rel="stylesheet">
 	<link href="<?=get_template_directory_uri()?>/js/ovalfit-lps/thumbnail-slider.css" rel="stylesheet">
+    <link href="<?=get_template_directory_uri()?>/css/font-awesome.min.css" rel="stylesheet">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="<?=get_template_directory_uri()?>/js/ovalfit-lps//PicCarousel.js"></script>
@@ -139,20 +140,23 @@ if(count($sessions) > 1) {
 					<h1><?=get_field('discover_title');?></h1>
 					<h2><?=get_field('discover_text');?></h2>
 					<div class="ov-discover-cta">
-            <div>
-              <img src="<?=get_template_directory_uri()?>/images/basic/ro-logo-horizontal.svg">">
-            </div>
-            <div>
-              <p>ATHLETIC Programs are included in your Richmond Oval Membership  <a href="#">BECOME A MEMBER</a></p>
-            </div>
+                        <div>
+                          <img src="<?=get_template_directory_uri()?>/images/basic/ro-logo-horizontal.svg">
+                        </div>
+                        <div>
+                          <p>ATHLETIC Programs are included in your Richmond Oval Membership <a href="#">BECOME A MEMBER</a></p>
+                        </div>
 					</div>
+                    <div class="ov-fit-lets-ride-container">
+                        <a href="/oval-fit-login" class="ov-fit-btn-lg" draggable="false">BOOK A SESSION</a>
+                    </div>
 				</div>
 			</div>
 
 			<div class="ov-fit-training-ground-wrapper">
 				<div class="ov-fit-training-ground-section">
-					<div>
-						<img alt="" title="trainingGround" src="<?=get_field('tab1_image');?>">
+                    <div style="background: url(<?=get_field('tab1_image');?>) no-repeat center / cover">
+						<!--<img alt="" title="trainingGround" src="<?/*=get_field('tab1_image');*/?>">-->
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text">
@@ -169,8 +173,8 @@ if(count($sessions) > 1) {
 				</div>
 
 				<div class="ov-fit-training-ground-section ov-fit-studio-mobile">
-					<div>
-						<img alt="" title="fitnessCenter" src="<?=get_field('tab2_image');?>">
+					<div style="background: url(<?=get_field('tab2_image');?>) no-repeat center / cover">
+						<!--<img alt="" title="fitnessCenter" src="<?/*=get_field('tab2_image');*/?>">-->
 					</div>
 					<div class="ov-fit-training-ground-text-wrapper">
 						<div class="ov-fit-training-ground-text">
@@ -185,38 +189,62 @@ if(count($sessions) > 1) {
 					</div>
 				</div>
 
-        <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
-            <div>
-                <img alt="" title="fitnessCenter" src="<?=get_field('tab3_image');?>">
-            </div>
-            <div class="ov-fit-training-ground-text-wrapper">
-                <div class="ov-fit-training-ground-text">
-                    <div>
-                        <h2><?=get_field('tab3_title');?></h2>
-                        <p><?=get_field('tab3_text');?></p>
+                <div class="ov-fit-training-ground-section ov-fit-studio-mobile">
+                    <div style="background: url(<?=get_field('tab3_image');?>) no-repeat center / cover">
+                       <!-- <img alt="" title="fitnessCenter" src="<?/*=get_field('tab3_image');*/?>">-->
                     </div>
-                    <div class="ov-sectioner-container">
-                        <img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
+                    <div class="ov-fit-training-ground-text-wrapper">
+                        <div class="ov-fit-training-ground-text">
+                            <div>
+                                <h2><?=get_field('tab3_title');?></h2>
+                                <p><?=get_field('tab3_text');?></p>
+                                <a href="/oval-fit-login/" class="ov-fit-btn-lg">DASHBOARD LOGIN</a>
+                            </div>
+                            <div class="ov-sectioner-container">
+                                <img class='ov-sectioner' src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 			</div>
 
-			<div class="ov-ride-machine-wrapper">
-				<div class="ov-ride-machine-wrapper-inner">
-					<div class="ov-ride-machine-header">
+			<div class="ov-machine-wrapper">
+				<div class="ov-machine-wrapper-inner">
+					<div class="ov-machine-header">
 						<div style="flex: 1;">
 							<h3><?=get_field('program_title');?></h3>
 						</div>
-						<div>
-							<!--<h4><?/*=get_field('program_subtitle');*/?></h4>
-							<img class="ov-ride-machine-stages-logo" src="https://richmondoval.ca/wp-content/uploads/2018/08/Stages_logo.png" width="150"/>-->
-						</div>
 					</div>
-					<div class="ov-ride-machine-container">
-                        <div class="ov-ride-machine-slider">
-                            <img src="">
+					<div class="ov-machine-container">
+                        <div class="ov-machine-slider first">
+                            <div class="ov-machine-slides">
+                                <div class="ov-machine-slide active" data-num="1">
+                                    <img src="<?=get_template_directory_uri()?>/images/stages/eq1.jpg">
+                                    <div class="ov-machine-side-text">
+                                        <h4>Freemotion Tread</h4>
+                                        <div>
+                                            <p>The rebound effect of the proprietary REFLEX™ cushioning turns non-runners into runners and helps those who love to run, run longer.</p>
+                                            <p>HIIT-friendly controls make this the ideal treadmill for functional training environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ov-machine-slide" data-num="2">
+                                    <img src="<?=get_template_directory_uri()?>/images/stages/eq1.jpg">
+                                    <div class="ov-machine-side-text">
+                                        <h4>Freemotion Tread2</h4>
+                                        <div>
+                                            <p>The rebound effect of the proprietary REFLEX™ cushioning turns non-runners into runners and helps those who love to run, run longer.</p>
+                                            <p>HIIT-friendly controls make this the ideal treadmill for functional training environments.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ov-machine-slider-nav">
+                                <span class="left"><i class="fa fa-angle-left"></i></span>
+                                <span class="right active"><i class="fa fa-angle-right"></i></span>
+                            </div>
                         </div>
 
 					</div>
