@@ -319,6 +319,7 @@ p {
 /*ride machine*/
 .ov-machine-wrapper {
     background:  #000 url("../../images/stages/equipment-bg.jpg") no-repeat top / cover;
+    padding: 40px 80px;
 }
 
 .ov-machine-wrapper-inner {
@@ -454,6 +455,8 @@ p {
     max-width: 500px;
     color: #535453;
     min-height: 200px;
+    font-size: 14px;
+    line-height: 28px;
 }
 
 /*ride schedule*/
