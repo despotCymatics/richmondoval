@@ -194,7 +194,7 @@ if ( count( $sessions ) > 1 ) {
               <div>
                 <h2><?= get_field( 'tab1_title' ); ?></h2>
                 <p><?= get_field( 'tab1_text' ); ?></p>
-                <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>
+                <!--<a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>-->
               </div>
               <div class="ov-sectioner-container">
                 <img class='ov-sectioner'
@@ -250,31 +250,32 @@ if ( count( $sessions ) > 1 ) {
             </div>
           </div>
           <div class="ov-machine-container">
-            <div class="ov-machine-slider first">
-              <div class="ov-machine-slides">
-                <div class="ov-machine-slide active" data-num="1">
-                  <img src="<?= get_template_directory_uri() ?>/images/stages/eq1.jpg">
-                  <div class="ov-machine-side-text">
-                    <h4>Freemotion Tread</h4>
-                    <div>
-                      <p>The rebound effect of the proprietary REFLEX™ cushioning turns non-runners into runners and
-                        helps those who love to run, run longer.</p>
-                      <p>HIIT-friendly controls make this the ideal treadmill for functional training environments.</p>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="ov-machine-slide" data-num="2">
-                  <img src="<?= get_template_directory_uri() ?>/images/stages/eq1.jpg">
+            <!-- SLIDER 1 -->
+            <?php if ( have_rows( 'slider1' ) ): ?>
+            <div class="ov-machine-slider first">
+                <div class="ov-machine-slides">
+	            <?php
+              $slideCount = 1;
+	            while ( have_rows( 'slider1' ) ) : the_row();
+	              if($slideCount == 1) $class = 'active';
+	              else $class = ''
+	            ?>
+
+                <div class="ov-machine-slide <?=$class?>" data-num="<?=$slideCount?>">
+                    <img class="slide-desktop" src="<?= get_sub_field( 'slide_image_desktop' )?>">
+                    <img class="slide-tablet" src="<?= get_sub_field( 'slide_image_tablet' )?>">
+                    <img class="slide-mobile" src="<?= get_sub_field( 'slide_image_mobile' )?>">
                   <div class="ov-machine-side-text">
-                    <h4>Freemotion Tread2</h4>
+                    <h4><?= get_sub_field( 'slide_title' )?></h4>
                     <div>
-                      <p>The rebound effect of the proprietary REFLEX™ cushioning turns non-runners into runners and
-                        helps those who love to run, run longer.</p>
-                      <p>HIIT-friendly controls make this the ideal treadmill for functional training environments.</p>
+	                    <?= get_sub_field( 'slide_text' )?>
                     </div>
                   </div>
                 </div>
+                <?php
+              $slideCount++;
+              endwhile; ?>
               </div>
 
               <div class="ov-machine-slider-nav">
@@ -283,6 +284,44 @@ if ( count( $sessions ) > 1 ) {
               </div>
             </div>
 
+            <?php endif; ?>
+
+            <!-- SLIDER 2 -->
+	          <?php if ( have_rows( 'slider2' ) ): ?>
+              <div class="ov-machine-slider second">
+                  <div class="ov-machine-slides">
+              <?php
+              $slideCount = 1;
+              while ( have_rows( 'slider2' ) ) : the_row();
+	              if($slideCount == 1) $class = 'active';
+	              else $class = ''
+                ?>
+                <div class="ov-machine-slide <?=$class?>" data-num="<?=$slideCount?>">
+
+                  <img class="slide-desktop" src="<?= get_sub_field( 'slide_image_desktop' )?>">
+                  <img class="slide-tablet" src="<?= get_sub_field( 'slide_image_tablet' )?>">
+                  <img class="slide-mobile" src="<?= get_sub_field( 'slide_image_mobile' )?>">
+
+                  <div class="ov-machine-side-text">
+                    <h4><?= get_sub_field( 'slide_title' )?></h4>
+                    <div>
+                      <?= get_sub_field( 'slide_text' )?>
+                    </div>
+                  </div>
+
+                </div>
+              <?php
+              $slideCount++;
+              endwhile; ?>
+              </div>
+
+              <div class="ov-machine-slider-nav">
+                <span class="left"><i class="fa fa-angle-left"></i></span>
+                <span class="right active"><i class="fa fa-angle-right"></i></span>
+              </div>
+            </div>
+
+	          <?php endif; ?>
           </div>
         </div>
       </div>

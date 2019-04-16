@@ -266,8 +266,9 @@ p {
 
 .ov-sectioner-container {
     position: absolute;
-    top: 30px;
-    right: 50px;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
 }
 
 .ov-fit-training-ground-section > div {
@@ -339,7 +340,7 @@ p {
 
 .ov-machine-wrapper h3 {
     font-size: 59px;
-    margin: 60px 0 40px 0;
+    margin: 60px 0 60px 0;
    /* max-width: 520px;*/
 }
 
@@ -369,11 +370,18 @@ p {
 
 .ov-machine-slider {
     position: relative;
+    margin-bottom: 50px;
 }
-.ov-machine-slide {
+.first .ov-machine-slide {
     display: none;
     position: relative;
     text-align: right;
+}
+
+.second .ov-machine-slide {
+    display: none;
+    position: relative;
+    text-align: left;
 }
 
 .ov-machine-slide.active {
@@ -384,10 +392,25 @@ p {
     width: 65%;
 }
 
-.ov-machine-side-text {
+.slide-tablet, .slide-mobile {
+    display: none;
+}
+
+.first .ov-machine-side-text {
     background: #FF9E18;
     position: absolute;
     right: 62%;
+    top: 50%;
+    text-align: left;
+    transform: translateY(-50%);
+    padding: 40px;
+}
+
+.second .ov-machine-side-text {
+    background: #FF9E18;
+    position: absolute;
+    left: 62%;
+    right: 0;
     top: 50%;
     text-align: left;
     transform: translateY(-50%);
@@ -409,6 +432,9 @@ p {
     z-index: 100;
     right: 0;
     bottom: 0;
+}
+.second .ov-machine-slider-nav {
+    left: 0;
 }
 
 .ov-machine-slider-nav span {
@@ -767,6 +793,13 @@ p {
 
 @media (max-width: 1024px) {
 
+    .slide-desktop, .slide-mobile {
+        display: none;
+    }
+    .slide-tablet {
+        display: inline-block;
+    }
+
     .ov-fit-nav-inner {
         padding: 20px;
     }
@@ -1007,13 +1040,27 @@ p {
         font-size: 35px;
     }
 
-    .ov-sectioner-container {
-        right: 30px;
+    .ov-machine-slide img {
+        width: 80%;
+    }
+    .first .ov-machine-side-text {
+        right: 47%;
+    }
+
+    .second .ov-machine-side-text {
+        left: 47%;
     }
 
 }
 
 @media (max-width: 767px) {
+
+    .slide-desktop, .slide-tablet {
+        display: none;
+    }
+    .slide-mobile {
+        display: inline-block;
+    }
 
     .ov-fit-training-ground-section {
         flex-direction: column-reverse;
@@ -1099,7 +1146,7 @@ p {
     }
 
     .ov-fit-training-ground-text {
-        padding: 20px 20px 60px 20px;
+        padding: 20px 40px 60px 20px;
     }
 
     .ov-fit-training-ground-text .ov-fit-btn-lg {
@@ -1174,7 +1221,7 @@ p {
         font-size: 20px;
     }
 
-    .ov-machine-side-text {
+    .first .ov-machine-side-text, .second .ov-machine-side-text {
         position: initial;
         transform: translateY(0);
     }
@@ -1254,20 +1301,21 @@ p {
     }
 
     .ov-sectioner-container {
-        position: inherit;
-        margin-right: 10px;
-        display: none;
+        top: 25%;
+        right: 20px;
     }
 
     .ov-results-team {
         flex-direction: column;
         padding: 20px;
+        align-items: center;
     }
 
     .ov-results-team p {
         font-size: 15px;
         color: #535453;
         line-height: 23px;
+        min-height: auto;
     }
 
     .ov-class {
