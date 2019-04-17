@@ -114,7 +114,8 @@ body.menuOpen {
     }
 
     .explore-carousel .article {
-        display: block;
+       /* display: block;*/
+        flex-direction: column-reverse;
         height: auto;
     }
 
