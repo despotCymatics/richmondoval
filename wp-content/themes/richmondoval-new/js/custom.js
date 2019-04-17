@@ -304,14 +304,13 @@ $( document ).ready(function() {
     });
 
     //Tabs
-
     $('#responsiveTabs').responsiveTabs({
         //startCollapsed: 'accordion'
         startCollapsed: false
     });
 
 
-    //Mega menu actions
+    //Mega menu submenu actions
     $(document).on('click','.mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 ul ul li.mega-menu-item-has-children > a.mega-menu-link', function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -321,6 +320,8 @@ $( document ).ready(function() {
             scrollTop: $(this).offset().top -56
         }, 200);*/
     });
+
+    //goto clicked
     $(document).on('click','.mobileMega .mega-menu-link, .r-tabs-accordion-title .r-tabs-anchor', function(){
         $('html, body').animate({
             scrollTop: $(this).offset().top - 56
