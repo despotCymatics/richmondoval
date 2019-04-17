@@ -17,7 +17,6 @@ if ( count( $sessions ) > 1 ) {
 
 ?>
 
-
 <!Doctype html>
 <html>
 

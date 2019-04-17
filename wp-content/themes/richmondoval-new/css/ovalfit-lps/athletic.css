@@ -1040,16 +1040,24 @@ p {
     .ov-sectioner-container {
         top:25%;
     }
-
     .ov-machine-slide img {
-        width: 80%;
+        width: 100%;
+    }
+    .ov-machine-wrapper {
+        padding: 40px 30px;
+    }
+    .ov-machine-slider {
+        margin-bottom: 200px;
     }
     .first .ov-machine-side-text {
         right: 47%;
+        top: 70%;
+        transform: translateY(0);
     }
-
     .second .ov-machine-side-text {
         left: 47%;
+        top: 70%;
+        transform: translateY(0);
     }
 
 }
@@ -1162,13 +1170,16 @@ p {
     }
 
     .ov-machine-wrapper h3 {
-        font-size: 40px;
-        margin: 0 0 30px;
+        margin: 10px 0 40px;
+        line-height: 44px;
     }
 
     .ov-machine-wrapper h4 {
         font-size: 20px;
         line-height: 28px;
+    }
+    .ov-machine-slider {
+        margin-bottom: 40px;
     }
 
     .ov-machine-stages-logo {
