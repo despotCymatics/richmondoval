@@ -177,18 +177,18 @@ get_header(); ?>
                 <div id="<?=strtolower(str_replace(" ", '-', $cat->name))?>" class="tabcontent<?=$countCats;?>">
                     <div class="explore-wrap">
 
-						<?php
-						$args = array(
-							'post_type' => 'explores',
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'explore-category',
-									'field'    => 'slug',
-									'terms'    => $cat->slug,
-								),
-							),
-						);
-						$exploreQuery = new WP_Query( $args ); ?>
+                    <?php
+                    $args = array(
+                      'post_type' => 'explores',
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'explore-category',
+                          'field'    => 'slug',
+                          'terms'    => $cat->slug,
+                        ),
+                      ),
+                    );
+                    $exploreQuery = new WP_Query( $args ); ?>
 
                         <div class="explore-carousel-nav">
                             <div class="explore-icons-nav">
@@ -207,29 +207,26 @@ get_header(); ?>
                         </div>
 
                         <div class="explore-carousel">
-							<?php
-							if ( $exploreQuery->have_posts() ) :
-								while ( $exploreQuery->have_posts() ) : $exploreQuery->the_post(); ?>
+                        <?php
+                        if ( $exploreQuery->have_posts() ) :
+                           while ( $exploreQuery->have_posts() ) : $exploreQuery->the_post(); ?>
                                 <div class="article" data-id="<?=get_the_ID();?>">
                                     <div class="articleImg">
-										<?php $eventImg = get_the_post_thumbnail( get_the_ID(), 'large' );
-										if($eventImg != "") echo $eventImg;
-										else { ?>
-                                            <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
-										<?php } ?>
+                                      <?php $eventImg = get_the_post_thumbnail( get_the_ID(), 'large' );
+                                      if($eventImg != "") echo $eventImg;
+                                      else { ?>
+                                        <img src="<?=get_stylesheet_directory_uri();?>/images/basic/thumb-default.jpg">
+                                      <?php } ?>
 
                                     </div>
-
                                     <div class="articleTitle">
                                         <h2><?=get_the_title();?></h2>
                                         <p class="excerpt"><?=get_the_excerpt();?></p>
                                         <a class="read-more" href="<?=get_field('explore_url');?>">Read More</a>
                                     </div>
-
                                 </div>
-								<?php endwhile; ?>
-							<?php endif; ?>
-
+                          <?php endwhile; ?>
+                        <?php endif; ?>
                         </div>
                     </div>
 
@@ -392,7 +389,6 @@ get_header(); ?>
 
         </div>
     </section>
-
 
     <!-- Insta Feed -->
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>

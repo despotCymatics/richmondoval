@@ -115,13 +115,14 @@ body.menuOpen {
 
     .explore-carousel .article {
         display: block;
-        height: inherit;
+        height: auto;
     }
 
     .explore-carousel .article .articleTitle {
         width: 100%;
         padding: 30px;
         min-height: 230px;
+        height: 100%;
     }
     .explore-carousel .article .articleImg {
         width: 100%;
@@ -900,6 +901,10 @@ body.menuOpen {
         float: none;
     }
 
+    .event-carousel .article {
+        margin: 0 10px;
+    }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -933,7 +938,17 @@ body.menuOpen {
     .dl-submenu span.subToggler {
         padding: 5px 0;
     }
+    .event-carousel .article .articleTitle .eventMeta {
+        word-break: break-all;
+    }
 
+    .working-hours .work-box, .working-hours .info-box {
+        padding: 65px 25px 70px 25px;
+    }
+    .working-hours .work-box:before, .working-hours .info-box:before {
+        width: 50px;
+        height: 50px;
+    }
 
 }
 
