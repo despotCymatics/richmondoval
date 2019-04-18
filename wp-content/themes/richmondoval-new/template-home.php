@@ -8,8 +8,8 @@ get_header(); ?>
     <!-- Hero -->
     <section class="hero">
         <div class="within1920">
-            <div class="row mobile-hero-image" style="background:
-                    linear-gradient(250.09deg, rgba(21, 107, 237, 0.18) 46.27%, #121e40 110%),
+            <div class="row mobile-hero-image"
+                 style="background: linear-gradient(280deg, rgba(21, 107, 237, 0.05) 45%, rgb(18, 30, 64) 120%),
                     url(<?=get_field('hero_mobile_image')?>) no-repeat center / cover;">
                 <div class="hero-image"
                      style="background:
@@ -40,7 +40,7 @@ get_header(); ?>
                     while ( have_rows('slide_box') ) : the_row();
                         ?>
                         <a href="<?=get_sub_field('slide_box_url');?>" class="slide-box"
-                             style="background-image:linear-gradient(260deg, rgba(21, 107, 237, 0.18) 25%, #121e40 110%),
+                           style="background-image:linear-gradient(280deg, rgba(21, 107, 237, 0.05) 45%, rgb(18, 30, 64) 120%),
                                      url(<?=get_sub_field('slide_box_background');?>)">
                             <h3><?=get_sub_field('slide_box_title');?></h3>
                             <p><?=get_sub_field('slide_box_text');?></p>
