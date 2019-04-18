@@ -16,7 +16,7 @@ if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId
 	$userId = $_POST['userId'];
 	$sessionId = $_POST['sessionId'];
 	$bikeId = $_POST['bikeId'];
-	//$authCode = $_POST['authCode'];
+	$authCode = $_POST['authCode'];
 
 	$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
@@ -49,7 +49,7 @@ if(isset($_POST['bookingId'])) {
 
 	$bookingId = $_POST['bookingId'];
 
-	//$authCode = $_POST['authCode'];
+	$authCode = $_POST['authCode'];
 	//$postFields = json_encode(Array( 'UserId' => intval($userId), 'SessionId' => intval($sessionId), 'BikeId' => intval($bikeId)));
 
 	$booking = deleteCurl($authCode, 'https://stagesflight.com/locapi/v1/bookings/'.$bookingId);
@@ -244,7 +244,7 @@ function InsertIntoDB($formvars) {
 	return true;
 }
 
-function RegisterUser($authCode) {
+function RegisterUser($authCode, $authCodeAthletic) {
 
 	if(!isset($_POST['submitted-reg']))
 	{
@@ -280,8 +280,9 @@ function RegisterUser($authCode) {
 		'Password' => $formvars['password']
 	));
 
-
 	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/users', $postFields);
+	//$bookingAth = postCurl($authCodeAthletic, 'https://stagesflight.com/locapi/v1/users', $postFields);
+
 
 	$ret = "API Error!";
 
@@ -293,13 +294,13 @@ function RegisterUser($authCode) {
 			if(!CheckIfUserExists($formvars['email'])) {
 				if(!InsertIntoDB($formvars)) {
 					$ret = false;
-				}else {
+				} else {
 					SendUserConfirmationEmail($formvars);
 					//SendAdminIntimationEmail($formvars);
 				}
 			}
 			else {
-				$ret =  "User exists in ovalfit";
+				$ret = "User exists in ovalfit";
 			}
 		} else $ret = $booking;
 	}

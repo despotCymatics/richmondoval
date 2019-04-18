@@ -76,6 +76,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
         $workoutsAth = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
+        //default values
         $durationInSeconds = 0;
         $distanceInKm      = 0;
         $kiloCalories      = 0;
@@ -84,7 +85,33 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         $avgHR             = 0;
         $maxSpeed          = 0;
         $numWorkouts       = 0;
-        $maxSpeedArray      = array();
+        $maxSpeedArray     = array();
+        $latestActivity =  json_decode('{
+                                    "Id": 0,
+                                    "Time": "2019-04-18T09:43:06.966Z",
+                                    "DurationInSeconds": 0,
+                                    "DistanceInKm": 0,
+                                    "KiloCalories": 0,
+                                    "HeartRate": 0,
+                                    "AvgWatt": 0,
+                                    "AvgSpeed": 0,
+                                    "MaxSpeed": 0,
+                                    "ActivityID": 0,
+                                    "AvgHeartRate": 0,
+                                    "Feeling": 0,
+                                    "Comment": "string",
+                                    "GraphId": 0,
+                                    "CompetitionTime": 0,
+                                    "CompetitionAvgWatt": 0,
+                                    "WorkoutType": 0,
+                                    "ActivityName": "string",
+                                    "IsPlanned": true,
+                                    "PlannedDuration": 0,
+                                    "Intensity": 0,
+                                    "SessionLoggedOn": "Mobile",
+                                    "Position": "string",
+                                    "Energy": 0
+        }');
 
         if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
             foreach ( $workouts as $workout ) {

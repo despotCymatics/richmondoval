@@ -233,6 +233,7 @@ select option {
 .page-template-template-stages .ovalfit-header {
     background: #0C0D0D;
     padding: 30px 60px;
+    margin-right: -1px;
 }
 
 .page-template-template-stages .ovalfit-header .within {
@@ -379,26 +380,40 @@ select option {
 
 
 .page-template-template-stages .ovalfit-header .title {
-    margin-bottom: 30px;
+
 }
 
 .page-template-template-stages .ovalfit-header .title h3 {
     color: #fff;
     font-weight: 400;
     font-size: 20px;
+    margin: 0;
+    line-height: 40px;
 }
 
 .page-template-template-stages .ovalfit-header .title img.stages-logo {
     width: 120px;
 }
 
+.page-template-template-stages .ovalfit-header .top {
+    border-bottom: 1px solid #2A2A2A;
+    margin-bottom: 40px;
+}
+.page-template-template-stages .ovalfit-header .top > div {
+
+}
 
 
-/******** OVAL FIT BODY *********/
+
+    /******** OVAL FIT BODY *********/
 
 .page-template-template-stages .tab-buttons {
     border-bottom: 1px solid #d8d8d8;
     background: #fff;
+}
+
+.page-template-template-stages .ovalfit-header .tab-buttons {
+    background: transparent;
 }
 
 .page-template-template-stages .tabcontent {
@@ -416,7 +431,8 @@ select option {
     line-height: 1.5;
 }
 
-.page-template-template-stages .ovalfit-body .tab-buttons .tablink {
+.page-template-template-stages .tab-buttons .tablink,
+.page-template-template-stages .switcher .switch {
     opacity: 0.4;
     border-right: 0;
     background: #fff;
@@ -439,13 +455,25 @@ select option {
     transition: all 0.3s ease;
     width: auto;
 }
+.page-template-template-stages .switcher .switch {
+    background: none !important;
+    padding: 10px;
+    width: 160px;
+    text-align: center;
+}
 
-.page-template-template-stages .ovalfit-body .tab-buttons .tablink.active-tab {
+.page-template-template-stages .switcher .switch img {
+    max-width: 160px;
+    max-height: 16px;
+}
+
+.page-template-template-stages .tab-buttons .tablink.active-tab,
+.page-template-template-stages .switcher .switch.active {
     opacity: 1;
     border-color:  #FF9E18;
 }
 
-.page-template-template-stages .ovalfit-body .tabcontent {
+.page-template-template-stages .tabcontent {
     position: relative;
 }
 
@@ -607,6 +635,10 @@ select option {
     font-family: 'prometo';
 }
 
+.page-template-template-stages .ovalfit-body .ath-col .bike .bike-num {
+    margin: 8px auto 16px;
+}
+
 
 .page-template-template-stages .ovalfit-body .bike:hover .bike-num {
     background: #008BD1;
@@ -761,6 +793,20 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     margin-bottom: 0;
     display: inline;
     color: #008BD1;
+}
+
+.bike-schedule.ath .row > div:first-child {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.bike-schedule.ath .row > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.bike-schedule.ath .row {
+    padding: 0 20px 20px;
 }
 
 
@@ -1423,21 +1469,23 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     margin: 30px 0;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap,
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap {
     padding: 15px;
     border-right: 1px solid #2A2A2A;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap, .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap {
     border-right: none;
     border-bottom: 1px solid #2A2A2A;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap:last-child, .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap:last-child {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-ride .stat-wrap:last-child {
     border-bottom: none;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap:last-child {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .stat-wrap:last-child,
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats #dash-athletic .stat-wrap:last-child{
     border-right: none;
 }
 
@@ -1576,7 +1624,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
  .ovalfit-wrapper .ovalfit-main .ovalfit-athletic .ovalfit-inner {
     border-right: 1px solid #d8d8d8;
     /*border-bottom: 1px solid #d8d8d8;*/
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -1670,7 +1718,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         border-bottom: none;
     }
     .ovalfit-wrapper .ovalfit-mobile-header {
-        padding: 30px;
+        padding: 30px 30px 0;
     }
     .page-template-template-stages .ovalfit-header {
         padding: 30px;
@@ -1686,7 +1734,10 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 @media (max-width: 768px) {
 
-    .tab-buttons {
+    .tab-buttons, .switcher {
+        text-align: center;
+    }
+    .alignRight .switcher  {
         text-align: center;
     }
 
@@ -1777,15 +1828,17 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     .page-template-template-stages_ath_holding_page .title {
         padding: 0 15px;
     }
-    .page-template-template-stages .alignRight {
-        text-align: right;
-    }
+
     .ovalfit-wrapper .ovalfit-side-menu .side-menu-info {
         display: none !important;
     }
 }
 
 @media (max-width: 767px) {
+
+    .page-template-template-stages .alignRight {
+        text-align: right;
+    }
     .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats {
         float: none;
         text-align: left;
@@ -1825,6 +1878,14 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         background-color: #fff;
         /*padding-left: 15px;*/
     }
+
+    .page-template-template-stages .switcher .switch {
+        margin-top: 20px;
+        max-width: 138px;
+    }
+    .page-template-template-stages .ovalfit-header .title h3 {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1832,7 +1893,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         flex-direction: column;
     }
     .ovalfit-wrapper .ovalfit-mobile-header {
-        padding: 20px;
+        padding: 20px 20px 0;
     }
     .page-template-template-stages .ovalfit-header {
         padding: 20px;
@@ -1849,6 +1910,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     .page-template-template-stages .moreText {
         padding: 20px;
     }
+
 
 }
 

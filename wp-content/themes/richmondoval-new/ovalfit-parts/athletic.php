@@ -2,15 +2,17 @@
     <div class="ovalfit-header">
         <div class="">
             <div class="content">
-
-                <div class="row">
-                    <div class="col-xs-6">
+                <div class="row top">
+                    <div class="col-sm-6">
                         <div class="title">
                             <h3>Performance. Intensity. Results.</h3>
                         </div>
                     </div>
-                    <div class="col-xs-6">
-
+                    <div class="col-sm-6 alignRight">
+                      <div class="switcher">
+                        <span class="switch ride-switch"><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-white.svg"></span>
+                        <span class="switch ath-switch active"><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"></span>
+                      </div>
 
                     </div>
                 </div>
@@ -189,7 +191,7 @@
 
                                     </div>
                                     <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn blue regular">Reserve your bike</button>
+                                        <button class="btn blue regular">Reserve your place</button>
                                         <h4 class="close-toggle">X Close</h4>
                                     </div>
                                 </div>
@@ -197,7 +199,7 @@
                             <div class="moreText <?=$disableClass;?>">
                                 <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
                                 <p style="text-align: center">Please wait</p>
-                                <div class="ride-on-info">RIDE ON. Check back 26hrs in advance of class time to reserve a bike</div>
+                                <div class="ride-on-info">PUSH ON. Check back 26hrs in advance of class time to reserve a bike</div>
                             </div>
 
                             <?php

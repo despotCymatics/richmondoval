@@ -309,11 +309,11 @@ jQuery(document).ready(function($) {
 
     });
 
-    $(document).on('click', '.banner.ride-banner', function(e){
+    $(document).on('click', '.banner.ride-banner, .switcher .ride-switch', function(e){
         $('.ovalfit-side-menu .side-menu-items a.ride-menu-item').click();
     });
 
-    $(document).on('click', '.banner.athletic-banner', function(e){
+    $(document).on('click', '.banner.athletic-banner, .switcher .ath-switch', function(e){
         $('.ovalfit-side-menu .side-menu-items a.athletic-menu-item').click();
     });
 

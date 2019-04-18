@@ -146,6 +146,7 @@
                 </div>
             </div>
 
+
             <div class="stats-tab" id="dash-ride">
                 <?php
 
@@ -277,11 +278,43 @@
             </div>
 
 
-
             <div class="stats-tab" id="dash-athletic">
-
-
+              <div class="row grayed">
+                <div class="stat-wrap col-md-6 col-lg-3">
+                  <div>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
+                    <div class="big-number">
+                      <?=$numWorkouts?>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-wrap col-md-6 col-lg-3">
+                  <div>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total calories</p>
+                    <div class="big-number">
+                      <?=$kiloCalories?>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-wrap col-md-6 col-lg-3">
+                  <div>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
+                    <div class="big-number">
+                      <?=$hours?><span>hrs</span> <?=$minutes?><span>mins</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="stat-wrap col-md-6 col-lg-3">
+                  <div>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average hart rate</p>
+                    <div class="big-number">
+                      <?=$avgHR?>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
         </div>
 
         <div class="dash-cta">

@@ -2,16 +2,19 @@
     <div class="ovalfit-header">
         <div class="">
             <div class="content">
-
-                <div class="row">
-                    <div class="col-xs-6">
+                <div class="row top">
+                    <div class="col-sm-6">
                         <div class="title">
                             <h3>Ride. Push. Repeat</h3>
                         </div>
                     </div>
-                    <div class="col-xs-6">
-
+                  <div class="col-sm-6 alignRight">
+                    <div class="switcher">
+                      <span class="switch ride-switch active"><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-white.svg"></span>
+                      <span class="switch ath-switch"><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"></span>
                     </div>
+
+                  </div>
                 </div>
 
                 <div class="row">

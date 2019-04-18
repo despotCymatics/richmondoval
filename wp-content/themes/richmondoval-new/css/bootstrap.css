@@ -1292,3 +1292,16 @@ hr {
     float: left;
   }
 }
+
+/* 8 cols */
+.col-xs-1-8,
+.col-sm-1-8 {
+  position: relative;
+  min-height: 1px;
+}
+
+.col-xs-1-8 {
+  width: 12.5%;
+  float: left;
+}
+

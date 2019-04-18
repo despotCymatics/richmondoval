@@ -113,18 +113,8 @@ An educational, challenging workout that will leave you wanting more!
                 </script>
             </div>
 
-			<div class="bike-schedule">
-				<img src="/wp-content/themes/richmondoval-new/images/stages/fans.png">
-				<div class="first-row">
-					<div class="bike coach">
-						<div class="bike-num"></div>
-						<span>Coach</span>
-					</div>
-					<div class="projector">
-						<span>Screen</span>
-					</div>
-		
-				</div>
+			<div class="bike-schedule ath">
+				<img src="/wp-content/themes/richmondoval-new/images/stages/tv.png">
 				<div class="row">';
 
 			$bikesBooked = array();
@@ -132,14 +122,41 @@ An educational, challenging workout that will leave you wanting more!
 				array_push( $bikesBooked, $sessionBooking->Bike->Id );
 			}
 
+
 			if(count($bikes) > 1) {
+				$bikeCounter = 1;
 				foreach ( $bikes as $bike ) {
 					$disabledBike = '';
 					if ( in_array( $bike->Id, $bikesBooked ) ) {
 						$disabledBike = 'disabled';
 					}
+
+					if($bikeCounter === 1 || $bikeCounter === 12) $returnHTML .='<div class="ath-col col-xs-1-8">';
+
+					if ($bikeCounter <= 5 || $bikeCounter >= 12)
 					$returnHTML .='
-                        <div class="col-xs-1-10">
+                            <div class="bike '.$disabledBike.'">
+                                <div class="bike-num" 
+                                onclick="bookBike(
+                                \''.$authCode.'\',
+                                '.$userId.',
+                                '.$sessionId.',
+                                '.$bike->Id.', 
+                                '.$bike->Number.',
+                                \''.$sessionName.'\',
+                                \''.$sessionDate.'\',
+                                \''.$sessionTime.'\')">
+                                    '.$bike->Number.'
+                                </div>
+                            </div> 
+                        ';
+
+					if ($bikeCounter === 5 || $bikeCounter === 16) $returnHTML .='</div>';
+
+					if($bikeCounter>5 && $bikeCounter < 12)
+						$returnHTML .='
+
+						<div class="col-xs-1-8">
                             <div class="bike '.$disabledBike.'">
                                 <div class="bike-num" 
                                 onclick="bookBike(
@@ -156,15 +173,16 @@ An educational, challenging workout that will leave you wanting more!
                             </div>
                         </div>
                         ';
+					$bikeCounter++;
 				}
 			} else {
-				$returnHTML .= 'Could not fetch bikes. Please reload the page.';
+				$returnHTML .= 'Could not fetch. Please reload the page.';
 			}
 			$returnHTML .= '
 				</div>
 			
 				<br>
-				<img src="/wp-content/themes/richmondoval-new/images/stages/fans.png">
+			
 			</div>
 		</div>
 	</div>
@@ -185,7 +203,6 @@ An educational, challenging workout that will leave you wanting more!
 		$returnHTML = '<p>Wrong Data passed. Please reload the page</p>';
 	}
 }
-
 
 
 echo $returnHTML;

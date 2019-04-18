@@ -15,7 +15,7 @@ $userReg = false;
 if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 {
 
-	$userReg = RegisterUser($authCode);
+	$userReg = RegisterUser($authCode, $authCodeAthletic);
 
 
 	if($userReg === true)
