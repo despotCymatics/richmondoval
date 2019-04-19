@@ -302,7 +302,7 @@ jQuery(document).ready(function($) {
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.ovalfit-main > div').hide();
-        $('.ovalfit-main > div#'+sectionId).fadeIn(100);
+        $('.ovalfit-main > div#'+sectionId).fadeIn(300);
 
         $('.ovalfit-side-menu').removeClass('active');
         $('body').removeClass('ovalfit-side-menu-open');
