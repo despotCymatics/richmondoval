@@ -24,7 +24,7 @@
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
                                 <span>
-                                    <span class="num"><?= $numWorkouts; ?></span>
+                                    <span class="num"><?= $numWorkoutsAth; ?></span>
                                     <span class="name">Number of workouts</span>
                                 </span>
                             </div>
@@ -32,7 +32,7 @@
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
                                 <span>
-                                    <span class="num"><?= round($durationInSeconds/60); ?> <span>min</span></span>
+                                    <span class="num"><?= round($durationInSecondsAth/60); ?> <span>min</span></span>
                                     <span class="name">Total time</span>
                                 </span>
                             </div>

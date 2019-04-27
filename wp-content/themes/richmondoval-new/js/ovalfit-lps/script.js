@@ -402,12 +402,12 @@ $(function () { // wait for document ready
 
   // define movement of panels
   var wipeAnimation = new TimelineMax()
-    .fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {opacity: 1}, {opacity: 1, ease: Linear.easeNone})
+    /*.fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {opacity: 1}, {opacity: 1, ease: Linear.easeNone})
     .fromTo(".ov-fit-training-ground-section.scroll-section2", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})
-    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})
-    /*.fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {y: "0%"}, {y: "0%", ease: Linear.easeNone})
+    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})*/
+    .fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {y: "0%"}, {y: "0%", ease: Linear.easeNone})
     .fromTo(".ov-fit-training-ground-section.scroll-section2", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone})
-    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone}); */
+    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone});
     ;
   // create scene to pin and link animation
   new ScrollMagic.Scene({

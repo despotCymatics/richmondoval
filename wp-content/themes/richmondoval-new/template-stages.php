@@ -74,7 +74,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         //Workouts
         //Workouts
         $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
-        $workoutsAth = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
+        $workoutsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
         //default values
         $durationInSeconds = 0;
@@ -125,8 +125,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 array_push($maxSpeedArray, $workout->MaxSpeed);
             }
             $latestActivity = $workouts[0];
-
         }
+
+        //var_dump($workouts);
 
         if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
         if($numWorkouts == 0) $numWorkouts = 1;
@@ -136,8 +137,75 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
         $avgHR = round($avgHR / $numWorkouts, 0);
         $maxSpeed = max($maxSpeedArray);
 
-		    $hours = floor($durationInSeconds / 3600);
-		    $minutes = floor(($durationInSeconds / 60) % 60);
+        $hours = floor($durationInSeconds / 3600);
+		$minutes = floor(($durationInSeconds / 60) % 60);
+
+
+
+
+		//Ath
+        //default values
+        $durationInSecondsAth = 0;
+        $distanceInKmAth      = 0;
+        $kiloCaloriesAth      = 0;
+        $avgWattAth           = 0;
+        $avgSpeedAth          = 0;
+        $avgHRAth             = 0;
+        $maxSpeedAth         = 0;
+        $numWorkoutsAth       = 0;
+        $maxSpeedArrayAth     = array();
+        $latestActivityAth =  json_decode('{
+                                    "Id": 0,
+                                    "Time": "2019-04-18T09:43:06.966Z",
+                                    "DurationInSeconds": 0,
+                                    "DistanceInKm": 0,
+                                    "KiloCalories": 0,
+                                    "HeartRate": 0,
+                                    "AvgWatt": 0,
+                                    "AvgSpeed": 0,
+                                    "MaxSpeed": 0,
+                                    "ActivityID": 0,
+                                    "AvgHeartRate": 0,
+                                    "Feeling": 0,
+                                    "Comment": "string",
+                                    "GraphId": 0,
+                                    "CompetitionTime": 0,
+                                    "CompetitionAvgWatt": 0,
+                                    "WorkoutType": 0,
+                                    "ActivityName": "string",
+                                    "IsPlanned": true,
+                                    "PlannedDuration": 0,
+                                    "Intensity": 0,
+                                    "SessionLoggedOn": "Mobile",
+                                    "Position": "string",
+                                    "Energy": 0
+        }');
+
+        if(count($workoutsAth) > 0 && isset($workoutsAth[0]->DurationInSeconds)) {
+            foreach ( $workoutsAth as $workoutAth ) {
+                $numWorkoutsAth ++;
+                $durationInSecondsAth += $workoutAth->DurationInSeconds;
+                $distanceInKmAth      += $workoutAth->DistanceInKm;
+                $kiloCaloriesAth      += $workoutAth->KiloCalories;
+                $avgWattAth           += $workoutAth->AvgWatt;
+                $avgSpeedAth          += $workoutAth->AvgSpeed;
+                $avgHRAth             += $workoutAth->AvgHeartRate;
+                array_push($maxSpeedArrayAth, $workoutAth->MaxSpeed);
+            }
+            $latestActivityAth = $workoutsAth[0];
+
+        }
+
+        if(count($maxSpeedArrayAth) < 1) array_push($maxSpeedArrayAth, 0);
+        if($numWorkoutsAth == 0) $numWorkoutsAth = 1;
+        $avgWattAth = round($avgWattAth / $numWorkoutsAth);
+        $avgSpeedAth = round($avgSpeedAth / $numWorkoutsAth);
+        $distanceInKmAth = round($distanceInKmAth,0);
+        $avgHRAth = round($avgHRAth / $numWorkoutsAth, 0);
+        $maxSpeedAth = max($maxSpeedArrayAth);
+
+        $hoursAth = floor($durationInSecondsAth / 3600);
+        $minutesAth = floor(($durationInSecondsAth / 60) % 60);
 
 		?>
 
