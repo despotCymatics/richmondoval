@@ -150,7 +150,7 @@
             <div class="stats-tab" id="dash-ride">
                 <?php
 
-                $ftpPosition = $avgWatt * 100 / 500;
+                $ftpPosition = $user->FTP * 100 / 500;
                 $avgPosition = $avgWatt * 100 / 500;
                 ?>
 
@@ -165,7 +165,7 @@
                                     </div>
                                     <div class="bar">
                                         <div class="num" style="left: <?=$ftpPosition?>%">
-                                            <?= $avgWatt ?> <span>watt</span>
+                                            <?= $user->FTP ?> <span>watt</span>
                                         </div>
                                         <div class="filled" style="width:<?=$ftpPosition?>%"></div>
                                     </div>
@@ -180,10 +180,10 @@
                                         <span>Average Power</span>
                                     </div>
                                     <div class="bar">
-                                        <div class="num" style="left: <?=$ftpPosition?>%">
+                                        <div class="num" style="left: <?=$avgPosition?>%">
                                             <?= $avgWatt ?> <span>watt</span>
                                         </div>
-                                        <div class="filled" style="width:<?=$ftpPosition?>%"></div>
+                                        <div class="filled" style="width:<?=$avgPosition?>%"></div>
                                     </div>
                                     <div>
                                         MAX

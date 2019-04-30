@@ -356,15 +356,15 @@ jQuery(document).ready(function($) {
 	$('.ov-machine-slider.first .ov-machine-slider-nav span').click(function(e){
 		if($(this).is('.right.active') && slides1 > machineSlider1Current) {
 			var nexSlide = machineSlider1Current+1;
-			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide();
-			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ nexSlide +']').fadeIn(300);
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide().removeClass('active');
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ nexSlide +']').fadeIn(0).addClass('active');
 			machineSlider1Current++;
 			$('.ov-machine-slider.first .ov-machine-slider-nav span').addClass('active');
 			if(machineSlider1Current == slides1) $(this).removeClass('active');
 		} else if($(this).is('.left.active') &&  machineSlider1Current <= 2) {
 			var prevSlide = machineSlider1Current-1;
-			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide();
-			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ prevSlide +']').fadeIn(300);
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ machineSlider1Current +']').hide().removeClass('active');
+			$('.ov-machine-slider.first .ov-machine-slide[data-num='+ prevSlide +']').fadeIn(0).addClass('active');
 			machineSlider1Current--;
 			$('.ov-machine-slider.first .ov-machine-slider-nav span').addClass('active');
 			if(machineSlider1Current == 1) $(this).removeClass('active');
@@ -377,15 +377,15 @@ jQuery(document).ready(function($) {
     $('.ov-machine-slider.second .ov-machine-slider-nav span').click(function(e){
         if($(this).is('.right.active') && slides2 > machineSlider2Current) {
             var nexSlide = machineSlider2Current+1;
-            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ machineSlider2Current +']').hide();
-            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ nexSlide +']').fadeIn(300);
+            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ machineSlider2Current +']').hide().removeClass('active');
+            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ nexSlide +']').fadeIn(0).addClass('active');
             machineSlider2Current++;
             $('.ov-machine-slider.second .ov-machine-slider-nav span').addClass('active');
             if(machineSlider2Current == slides2) $(this).removeClass('active');
         } else if($(this).is('.left.active') &&  machineSlider2Current <= 2) {
             var prevSlide = machineSlider2Current-1;
-            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ machineSlider2Current +']').hide();
-            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ prevSlide +']').fadeIn(300);
+            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ machineSlider2Current +']').hide().removeClass('active');
+            $('.ov-machine-slider.second .ov-machine-slide[data-num='+ prevSlide +']').fadeIn(0).addClass('active');
             machineSlider2Current--;
             $('.ov-machine-slider.second .ov-machine-slider-nav span').addClass('active');
             if(machineSlider2Current == 1) $(this).removeClass('active');
@@ -404,12 +404,13 @@ $(function () { // wait for document ready
   var wipeAnimation = new TimelineMax()
     /*.fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {opacity: 1}, {opacity: 1, ease: Linear.easeNone})
     .fromTo(".ov-fit-training-ground-section.scroll-section2", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})
-    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})*/
+    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeNone})
     .fromTo(".ov-fit-training-ground-section.scroll-section1", 1, {y: "0%"}, {y: "0%", ease: Linear.easeNone})
     .fromTo(".ov-fit-training-ground-section.scroll-section2", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone})
-    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone});
+    .fromTo(".ov-fit-training-ground-section.scroll-section3", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone});*/
     ;
   // create scene to pin and link animation
+  /*
   new ScrollMagic.Scene({
     triggerElement: ".ov-fit-training-ground-wrapper",
     triggerHook: "onLeave",
@@ -418,6 +419,8 @@ $(function () { // wait for document ready
     .setPin(".ov-fit-training-ground-wrapper")
     .setTween(wipeAnimation)
     .addTo(controller);
+
+   */
 });
 
 

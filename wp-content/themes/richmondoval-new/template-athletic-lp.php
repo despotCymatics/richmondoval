@@ -195,10 +195,12 @@ if ( count( $sessions ) > 1 ) {
                 <p><?= get_field( 'tab1_text' ); ?></p>
                 <!--<a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK A SESSION</a>-->
               </div>
-              <div class="ov-sectioner-container">
+
+              <!--<div class="ov-sectioner-container">
                 <img class='ov-sectioner'
                      src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-1.png"/>
-              </div>
+              </div>-->
+
             </div>
           </div>
         </div>
@@ -213,10 +215,10 @@ if ( count( $sessions ) > 1 ) {
                 <h2><?= get_field( 'tab2_title' ); ?></h2>
                 <p><?= get_field( 'tab2_text' ); ?></p>
               </div>
-              <div class="ov-sectioner-container">
+              <!--<div class="ov-sectioner-container">
                 <img class='ov-sectioner'
                      src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-2.png"/>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -232,10 +234,10 @@ if ( count( $sessions ) > 1 ) {
                 <p><?= get_field( 'tab3_text' ); ?></p>
                 <a href="/oval-fit-login/" class="ov-fit-btn-lg">DASHBOARD LOGIN</a>
               </div>
-              <div class="ov-sectioner-container">
+              <!--<div class="ov-sectioner-container">
                 <img class='ov-sectioner'
                      src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -277,10 +279,12 @@ if ( count( $sessions ) > 1 ) {
               endwhile; ?>
               </div>
 
+              <?php if($slideCount > 2) { ?>
               <div class="ov-machine-slider-nav">
                 <span class="left"><i class="fa fa-angle-left"></i></span>
                 <span class="right active"><i class="fa fa-angle-right"></i></span>
               </div>
+              <?php } ?>
             </div>
 
             <?php endif; ?>
@@ -314,10 +318,12 @@ if ( count( $sessions ) > 1 ) {
               endwhile; ?>
               </div>
 
-              <div class="ov-machine-slider-nav">
-                <span class="left"><i class="fa fa-angle-left"></i></span>
-                <span class="right active"><i class="fa fa-angle-right"></i></span>
-              </div>
+                <?php if($slideCount > 2) { ?>
+                <div class="ov-machine-slider-nav">
+                  <span class="left"><i class="fa fa-angle-left"></i></span>
+                  <span class="right active"><i class="fa fa-angle-right"></i></span>
+                </div>
+                <?php } ?>
             </div>
 
 	          <?php endif; ?>
