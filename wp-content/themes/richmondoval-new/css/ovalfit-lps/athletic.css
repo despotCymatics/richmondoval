@@ -105,6 +105,7 @@ p {
 
 .ov-fit-banner p {
     font-size: 20px;
+    line-height: 25px;
     font-weight: 100;
     margin: 30px 0 40px 0;
 }
@@ -282,7 +283,10 @@ p {
 
 .ov-fit-training-ground-section > div:first-child {
     min-height: 500px;
-    /*height: 100vh;*/
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .ov-fit-training-ground-text {
@@ -322,7 +326,7 @@ p {
 
 /*ride machine*/
 .ov-machine-wrapper {
-    background:  #000 url("../../images/stages/equipment-bg.jpg") no-repeat top / cover;
+    background:  #000 url("../../images/stages/equipment-bg.jpg") no-repeat top left / cover;
     padding: 40px 80px;
 }
 
@@ -404,7 +408,7 @@ p {
     top: 50%;
     text-align: left;
     transform: translateY(-50%);
-    padding: 40px;
+    padding: 30px;
 }
 
 .second .ov-machine-side-text {
@@ -415,7 +419,7 @@ p {
     top: 50%;
     text-align: left;
     transform: translateY(-50%);
-    padding: 40px;
+    padding: 30px;
 }
 
 .ov-machine-side-text * {
@@ -494,7 +498,7 @@ p {
     color: #535453;
     min-height: 200px;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 20px;
 }
 
 /*ride schedule*/
@@ -815,17 +819,12 @@ p {
     }
 
     .ov-fit-banner {
-        justify-content: flex-start;
-    }
-
-    .ov-fit-banner {
         min-height: 640px;
         /*height: 80vh;*/
         background-image: url(https://richmondoval.ca/wp-content/uploads/2018/08/Get-The-Shot-Studios-Photo-by-Mark-Whitehead-26.png);
-        background-position: center;
+        background-position: right;
         background-size: cover;
         background-repeat: no-repeat;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -878,7 +877,6 @@ p {
 
     .ov-discover-champion h1 {
         max-width: 520px;
-        font-size: 30px;
 
     }
 
@@ -1044,7 +1042,13 @@ p {
 
     .ov-fit-training-ground-section > div:first-child {
         width: 100%;
-        min-height: 400px;
+        min-height: 450px;
+        background-position: top;
+    }
+
+    .ov-fit-training-ground-text {
+        text-align: center;
+        padding: 60px 120px;
     }
     .ov-sectioner-container {
         top:25%;
@@ -1059,14 +1063,26 @@ p {
         margin-bottom: 200px;
     }
     .first .ov-machine-side-text {
-        right: 47%;
+        left: 30%;
+        right: 0;
         top: 70%;
         transform: translateY(0);
     }
     .second .ov-machine-side-text {
-        left: 47%;
+        left:0;
+        right: 30%;
         top: 70%;
         transform: translateY(0);
+    }
+
+    .first .ov-machine-slider-nav {
+        left: 0;
+        right: auto;
+    }
+
+    .second .ov-machine-slider-nav {
+        right: 0;
+        left: auto;
     }
 
 }
@@ -1106,10 +1122,6 @@ p {
 
     .ov-fit-banner-inner p {
         line-height: 30px;
-    }
-
-    .ov-fit-banner {
-        background-position: 66%;
     }
 
     .ov-fit-banner .ov-fit-btn-lg {
@@ -1160,7 +1172,8 @@ p {
     }
 
     .ov-fit-training-ground-text {
-        padding: 20px 20px 60px 20px;
+        text-align: left;
+        padding: 40px 30px 40px 20px;
     }
 
     .ov-fit-training-ground-text .ov-fit-btn-lg {
@@ -1173,10 +1186,16 @@ p {
 
     .ov-results-team h2 {
         text-align: center;
+        margin-bottom: 0;
+    }
+
+    #thumbnail-slider {
+
     }
 
     .ov-machine-wrapper {
         padding: 40px 30px;
+        background-position: top left -240px;
     }
 
     .ov-machine-wrapper-inner {
@@ -1246,6 +1265,24 @@ p {
     .ov-machine-slide img {
         width: 100%;
     }
+
+    .first .ov-machine-slider-nav, .second .ov-machine-slider-nav {
+        top:25%;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+
+    .ov-machine-slider-nav .left {
+        float: left;
+    }
+
+    .ov-machine-slider-nav .right {
+        float: right;
+    }
+
+
     .ov-results-team #thumbnail-slider {
         width: 100%;
     }
@@ -1330,9 +1367,9 @@ p {
     }
 
     .ov-results-team p {
-        font-size: 15px;
+        font-size: 14px;
         color: #535453;
-        line-height: 23px;
+        line-height: 20px;
         min-height: auto;
     }
 

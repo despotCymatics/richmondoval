@@ -1215,11 +1215,11 @@ form#changeDates:before {
 
 .ovalfit-wrapper .ovalfit-side-menu .username {
     padding: 0 30px 0 50px;
-}
-.ovalfit-wrapper .ovalfit-side-menu .username {
     font-size: 12px;
 }
-
+.ovalfit-wrapper .ovalfit-side-menu .username h3 {
+    font-weight: 400;
+}
 .ovalfit-wrapper .ovalfit-side-menu a {
     display: block;
     padding: 30px 50px;

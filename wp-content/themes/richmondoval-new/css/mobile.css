@@ -305,6 +305,11 @@ body.menuOpen {
         color:#fff;
     }
 
+    .mobileMega .mega-menu #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator {
+        pointer-events: none;
+        color: #85C440;
+    }
+
     .mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
         padding: 0 20px 0 20px;
     }
@@ -470,6 +475,10 @@ body.menuOpen {
 
     .slide-boxes .slide-box {
         padding: 30px 20px;
+    }
+
+    .slide-boxes .slide-box h3 {
+        margin-bottom: 12px;
     }
 
     .news-carousel {

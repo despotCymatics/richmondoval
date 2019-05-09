@@ -289,6 +289,7 @@ select option {
 .page-template-template-stages_ath_holding_page .wpcf7-response-output.wpcf7-mail-sent-ok {
     border: none;
     font-size: 50px;
+    font-weight: 500;
     line-height: 55px;
     margin: 0;
     padding: 0 0 160px;

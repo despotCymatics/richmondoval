@@ -166,7 +166,7 @@
                             $diff = date_diff( $now, $sessionDateTime);
                             $diffHours = $diff->h+$diff->days*24;
 
-                            if( $diffHours >= 26) $disableClass = 'disableBook';
+                            //if( $diffHours >= 26) $disableClass = 'disableBook';
 
                             $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
                             $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));

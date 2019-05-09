@@ -74,8 +74,11 @@ get_header(); ?>
                         'posts_per_page' => 30,
                         'start_date' => date( 'Y-m-d H:i:s' )
                     ) );
-                    foreach ($events as $event) { //var_dump($event); ?>
+                    foreach ($events as $event) { ?>
                         <div class="article">
+                          <div style="display: none">
+                            <?php //var_dump($event); ?>
+                          </div>
                             <div class="articleImg">
                                 <a href="<?php echo get_permalink($event->ID); ?>">
                                     <?php
@@ -90,10 +93,10 @@ get_header(); ?>
                             <div class="articleTitle">
                                 <p class="eventDate">
                                     <span class="month">
-                                        <?php echo date("M", strtotime($event->EventStartDate)); ?>
+                                        <?php echo date("M", strtotime($event->event_date)); ?>
                                     </span>
                                     <span class="day">
-                                        <?php echo date("d", strtotime($event->EventStartDate)); ?>
+                                        <?php echo date("d", strtotime($event->event_date)); ?>
                                     </span>
                                 </p>
                                 <div class="eventMeta">

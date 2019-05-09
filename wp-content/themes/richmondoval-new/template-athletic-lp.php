@@ -87,13 +87,13 @@ if ( count( $sessions ) > 1 ) {
 
       <div class="ov-fit-nav">
         <div class="ov-fit-nav-inner">
-          <a href="/ovalfit-staging" class="ov-fit-logo">
+          <a href="#" class="ov-fit-logo">
             <img alt="" title="ovalFitLogo" src="https://richmondoval.ca/wp-content/uploads/2018/08/ovalFitLogo.png"
                  width="120">
           </a>
           <div class="ov-nav-ride-container">
-            <a href="/oval-fit-login/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
-              BOOK A SESSION
+            <a href="/lets-run/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
+              LEARN MORE
             </a>
 
             <a href="javascript:void(0)" class="ov-fit-hamburger-nav menuToggler"></a>
@@ -148,7 +148,27 @@ if ( count( $sessions ) > 1 ) {
         </div>
       </div>
 
-      <div class="ov-fit-banner" style="background-image: url(<?= get_field( 'hero_image' ); ?>)">
+
+      <style>
+        .ov-fit-banner {
+          background-image: url(<?= get_field( 'hero_image' ); ?>);
+        }
+        @media (max-width: 1024px) {
+          .ov-fit-banner {
+            background-image: url(<?= get_field( 'hero_image_tablet' ); ?>);
+          }
+        }
+
+        @media (max-width: 767px) {
+          .ov-fit-banner {
+            background-image: url(<?= get_field( 'hero_image_mobile' ); ?>);
+          }
+        }
+
+      </style>
+
+
+      <div class="ov-fit-banner">
         <div class="ov-fit-banner-inner">
           <h1><img width="180px" src="<?= get_template_directory_uri() ?>/images/stages/athletic-logo-white.svg"><br>
 			  <?= get_field( 'hero_title' ); ?>
@@ -173,11 +193,11 @@ if ( count( $sessions ) > 1 ) {
               <img src="<?= get_template_directory_uri() ?>/images/basic/ro-logo-horizontal.svg">
             </div>
             <div>
-              <p>ATHLETIC Programs are included in your Richmond Oval Membership <a href="#">BECOME A MEMBER</a></p>
+              <p>ATHLETIC Programs are included in your Richmond Oval Membership <a href="/manage-my-membership/become-a-member/">BECOME A MEMBER</a></p>
             </div>
           </div>
           <div class="ov-fit-lets-ride-container">
-            <a href="/oval-fit-login" class="ov-fit-btn-lg" draggable="false">BOOK A SESSION</a>
+            <a href="/lets-run/" class="ov-fit-btn-lg" draggable="false">LEARN MORE</a>
           </div>
         </div>
       </div>
@@ -185,7 +205,7 @@ if ( count( $sessions ) > 1 ) {
       <div class="ov-fit-training-ground-wrapper">
 
         <div class="ov-fit-training-ground-section scroll-section1">
-          <div style="background: url(<?= get_field( 'tab1_image' ); ?>) no-repeat center / cover">
+          <div style="background-image: url(<?= get_field( 'tab1_image' ); ?>)">
             <!--<img alt="" title="trainingGround" src="<? /*=get_field('tab1_image');*/ ?>">-->
           </div>
           <div class="ov-fit-training-ground-text-wrapper">
@@ -206,7 +226,7 @@ if ( count( $sessions ) > 1 ) {
         </div>
 
         <div class="ov-fit-training-ground-section scroll-section2">
-          <div style="background: url(<?= get_field( 'tab2_image' ); ?>) no-repeat center / cover">
+          <div style="background-image: url(<?= get_field( 'tab2_image' ); ?>) ">
             <!--<img alt="" title="fitnessCenter" src="<? /*=get_field('tab2_image');*/ ?>">-->
           </div>
           <div class="ov-fit-training-ground-text-wrapper">
@@ -223,24 +243,6 @@ if ( count( $sessions ) > 1 ) {
           </div>
         </div>
 
-        <div class="ov-fit-training-ground-section scroll-section3">
-          <div style="background: url(<?= get_field( 'tab3_image' ); ?>) no-repeat center / cover">
-            <!-- <img alt="" title="fitnessCenter" src="<? /*=get_field('tab3_image');*/ ?>">-->
-          </div>
-          <div class="ov-fit-training-ground-text-wrapper">
-            <div class="ov-fit-training-ground-text">
-              <div>
-                <h2><?= get_field( 'tab3_title' ); ?></h2>
-                <p><?= get_field( 'tab3_text' ); ?></p>
-                <a href="/oval-fit-login/" class="ov-fit-btn-lg">DASHBOARD LOGIN</a>
-              </div>
-              <!--<div class="ov-sectioner-container">
-                <img class='ov-sectioner'
-                     src="https://richmondoval.ca/wp-content/uploads/2018/09/Section_indicator-3.png"/>
-              </div>-->
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="ov-machine-wrapper">
@@ -382,11 +384,12 @@ if ( count( $sessions ) > 1 ) {
 		?>
 
 		<?php
-		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) {
+    if ( false ) {
+		//if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) {
 			?>
           <div class="ov-ride-schedule">
             <img class="ov-ride-schedule-logo"
-                 src="/wp-content/uploads/2019/04/athleticSchedule.png" width="520"/>
+                 src="<?= get_template_directory_uri() ?>/images/stages/athleticSchedule.png" width="520"/>
 
             <div class="ov-class-container">
 				<?php
@@ -410,7 +413,7 @@ if ( count( $sessions ) > 1 ) {
                       </div>
                     </div>
                     <div>
-                      <a href="/oval-fit-login/" class="ov-fit-btn-blue">BOOK YOUR CLASS</a>
+                      <a href="/group-fitness/" class="ov-fit-btn-blue">BOOK YOUR CLASS</a>
                     </div>
                   </div>
 					<?php
@@ -431,13 +434,13 @@ if ( count( $sessions ) > 1 ) {
         <div class="ov-fit-results-inner">
           <h2><?= get_field( 'results_title' ); ?></h2>
           <p><?= get_field( 'results_text' ); ?></p>
-          <a href="https://richmondoval.ca/membership-admissions/become-a-member/"
+          <a href="/manage-my-membership/become-a-member/"
              class="ov-fit-btn-lg ov-hide-on-mobile" draggable="false">BOOK A TOUR</a>
         </div>
       </div>
 
       <div class="ov-align-center">
-        <a href="https://richmondoval.ca/membership-admissions/become-a-member/"
+        <a href="/manage-my-membership/become-a-member/"
            class="ov-fit-btn-lg ov-fit-btn-footer ov-align-center ov-show-on-mobile" draggable="false">BOOK A TOUR</a>
       </div>
     </div>

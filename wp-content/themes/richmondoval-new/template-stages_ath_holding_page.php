@@ -23,8 +23,7 @@ get_header();
 
 			<div class="row header">
 				<div class="col-md-7">
-					<h5>LAUNCHING 2019</h5>
-					<h1>PUSH PAST THE<br>I CAN'T</h1>
+					<?=get_field('hero_title') ?>
 				</div>
 				<div class="col-md-5">
 					<h5>
@@ -33,7 +32,7 @@ get_header();
 						<span style="vertical-align: sub;">NOT A FITNESS TREND- A LIFESTYLE</span>
 					</h5>
 					<p>
-						Achieve your fitness goals with our revolutionary RIDE classes. Train with the power and precision of elite cyclists on the Stages SC3 bikes and Stages Flight™ technology.
+						<?=get_field('hero_text') ?>
 					</p>
 				</div>
 			</div>
@@ -47,64 +46,63 @@ get_header();
 			<ul>
 				<li>
 					<a class="tab-btn1" href="#tabs-1">
-                        <span>
-                            Results based training
-                        </span>
+            <span>
+              <?=get_field('tab1_title')?>
+            </span>
 					</a>
 				</li>
 				<li>
 					<a class="tab-btn2" href="#tabs-2">
-                        <span>
-                            Immersive studio
-					</a>
-					</span>
+            <span>
+              <?=get_field('tab2_title')?>
+					  </span>
+          </a>
 				</li>
 				<li>
 					<a class="tab-btn3" href="#tabs-3">
-                        <span>
-                            Ultimate ride machine
-                        </span>
+            <span>
+              <?=get_field('tab3_title')?>
+            </span>
 					</a>
 				</li>
 				<li>
 					<a class="tab-btn4" href="#tabs-4">
-                        <span>
-                            <!--<img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/MOVE_logo.svg"> -->
-                            Ovalfit team
-                        </span>
+            <span>
+              <?=get_field('tab4_title')?>
+            </span>
 					</a>
 				</li>
 			</ul>
 
 			<div id="tabs-1">
-				<img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg.jpg">
-				<img  class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride_bg-tablet.jpg">
-				<span>Results based training</span>
+				<img class="desktop" src="<?=get_field('tab1_image') ?>">
+				<img  class="tablet" src="<?=get_field('tab1_image_tablet') ?>">
+				<span> <?=get_field('tab1_title')?></span>
 			</div>
 
 			<div id="tabs-2">
-				<img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/studio.jpg">
-				<img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/studio-tablet.jpg">
-				<span>Immersive studio</span>
+        <img class="desktop" src="<?=get_field('tab2_image') ?>">
+        <img  class="tablet" src="<?=get_field('tab2_image_tablet') ?>">
+        <span> <?=get_field('tab2_title')?></span>
 			</div>
 
 			<div id="tabs-3">
-				<img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.jpg">
-				<img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike-tablet.jpg">
-				<span>Ultimate ride machine</span>
+        <img class="desktop" src="<?=get_field('tab3_image') ?>">
+        <img  class="tablet" src="<?=get_field('tab3_image_tablet') ?>">
+        <span> <?=get_field('tab3_title')?></span>
 			</div>
 
 			<div id="tabs-4">
-				<img class="desktop" src="<?= get_stylesheet_directory_uri() ?>/images/stages/instructor.jpg">
-				<img class="tablet" src="<?= get_stylesheet_directory_uri() ?>/images/stages/instructor-tablet.jpg">
-				<span>Ovalfit team</span>
+        <img class="desktop" src="<?=get_field('tab4_image') ?>">
+        <img  class="tablet" src="<?=get_field('tab4_image_tablet') ?>">
+        <span> <?=get_field('tab4_title')?></span>
 			</div>
 		</div>
 
 		<div class="within inner">
 			<div class="ovalfit-form">
 
-				<?=do_shortcode('[contact-form-7 id="47266" title="OvalFit - First to know"]'); ?>
+				<?=do_shortcode('[contact-form-7 id="50230" title="OvalFit Athletic - First to know"]'); ?>
 
 			</div>
 		</div>

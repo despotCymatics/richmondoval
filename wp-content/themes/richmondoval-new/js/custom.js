@@ -322,7 +322,7 @@ $( document ).ready(function() {
     });
 
     //goto clicked
-    $(document).on('click','.mobileMega .mega-menu-link, .r-tabs-accordion-title .r-tabs-anchor', function(){
+    $(document).on('click','.mobileMega .mega-menu-link, .mobileMega .mega-menu-link span, .r-tabs-accordion-title .r-tabs-anchor', function() {
         $('html, body').animate({
             scrollTop: $(this).offset().top - 56
         }, 200);
