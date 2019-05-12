@@ -848,8 +848,9 @@ p {
     }
 
     .ov-fit-banner-inner p {
+        line-height: 28px;
         text-align: left;
-        padding-right: 90px;
+        padding-right: 160px;
     }
 
     .ov-fit-banner-btn {
@@ -1017,16 +1018,6 @@ p {
 }
 
 @media (max-width: 768px) {
-    .ov-discover-cta {
-        display: block;
-    }
-    .ov-discover-cta div:first-child {
-        border: none;
-    }
-    .ov-discover-cta div p {
-        text-align: center;
-        margin: 0;
-    }
 
     .ov-fit-training-ground-section {
         flex-direction: column-reverse;
@@ -1088,6 +1079,17 @@ p {
 }
 
 @media (max-width: 767px) {
+    .ov-discover-cta {
+        display: block;
+    }
+    .ov-discover-cta div:first-child {
+        border: none;
+    }
+    .ov-discover-cta div p {
+        text-align: center;
+        margin: 0;
+        line-height: 20px;
+    }
 
     .slide-desktop, .slide-tablet {
         display: none;
@@ -1122,6 +1124,7 @@ p {
 
     .ov-fit-banner-inner p {
         line-height: 30px;
+        padding-right: 60px;
     }
 
     .ov-fit-banner .ov-fit-btn-lg {
