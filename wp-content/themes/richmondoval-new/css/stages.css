@@ -1227,7 +1227,7 @@ form#changeDates:before {
     font-size: 16px;
     color: #000;
 }
-.ovalfit-wrapper .ovalfit-side-menu a:first-child {
+.ovalfit-wrapper .ovalfit-side-menu > a:first-child {
     border-top: 1px solid #FF9E18;
 }
 
@@ -1257,6 +1257,23 @@ form#changeDates:before {
 .ovalfit-wrapper .ovalfit-side-menu a.dashboard-menu-item {
 
 }
+.ovalfit-wrapper .ovalfit-side-menu .dashboard-menu-item-has-children {
+    border-bottom: 1px solid #FF9E18;
+}
+
+.ovalfit-wrapper .ovalfit-side-menu .dashboard-menu-item-has-children > a {
+    border-bottom: none;
+}
+
+.ovalfit-wrapper .ovalfit-side-menu .schedules-submenu {
+    display: none;
+}
+
+.ovalfit-wrapper .ovalfit-side-menu .schedules-submenu a {
+    border-bottom: none;
+    padding: 15px 50px;
+}
+
 .ovalfit-wrapper .ovalfit-logo {
      padding: 30px 30px 46px 50px;
  }
@@ -1374,7 +1391,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
     display: flex;
-    min-height: 300px;
+    min-height: 256px;
     font-size: 16px;
     color: #fff;
     width: 100%;
@@ -1385,7 +1402,6 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 20px;
-
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner img{
@@ -1440,6 +1456,8 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .dashboard-tabs > div {
     display: inline-block;
+    font-size: 14px;
+    letter-spacing: 0.08em;
     vertical-align: middle;
     margin: 0 0 0 31px;
     opacity: 0.5;
@@ -1505,7 +1523,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     line-height: 74px;
     padding-bottom: 40px;
     padding-top: 20px;
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .big-number span {
@@ -1520,6 +1538,10 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     justify-content: space-around;
     padding: 20px 20px 10px;
     position: relative;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .stat-label {
+    color: #FF9E18;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats img.stat-icon {
@@ -1626,6 +1648,19 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     /*border-bottom: 1px solid #d8d8d8;*/
     min-height: 100vh;
 
+}
+
+@media (max-width: 1440px) {
+
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
+        min-height: 210px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner {
+        min-height: 160px;
+    }
 }
 
 

@@ -297,7 +297,7 @@ jQuery(document).ready(function($) {
 
 
     //Side menu clicks
-    $(document).on('click', '.ovalfit-side-menu .side-menu-items a', function(e){
+    $(document).on('click', '.ovalfit-side-menu .side-menu-items a:not(.schedules-submenu-trigger)', function(e){
         $('.ovalfit-side-menu .side-menu-items a').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
@@ -322,6 +322,11 @@ jQuery(document).ready(function($) {
     });
     $(document).on('mouseleave', '.ovalfit-side-menu .side-menu-items a.profile-menu-item', function(e){
         $('.ovalfit-wrapper .ovalfit-side-menu .side-menu-info').fadeOut(100);
+    });
+
+    $(document).on('click', '.ovalfit-side-menu .schedules-submenu-trigger', function(e){
+
+        $(this).next('.schedules-submenu').slideToggle(200);
     });
 
 

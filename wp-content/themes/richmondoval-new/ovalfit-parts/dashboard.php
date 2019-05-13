@@ -121,7 +121,7 @@
                 <div class="row grayed">
                     <div class="stat-wrap col-sm-4">
                         <div>
-                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
+                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of Workouts</p>
                             <div class="big-number">
                                 <?=$numWorkouts?>
                             </div>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="stat-wrap col-sm-4">
                         <div>
-                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total calories</p>
+                            <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Calories Burned</p>
                             <div class="big-number">
                                 <?=$kiloCalories?>
                             </div>
@@ -160,7 +160,7 @@
                             <div class="grayed">
                                 <img class="stat-icon" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
                                 <div class="power-stats">
-                                    <div>
+                                    <div class="stat-label">
                                         <span>FTP</span>
                                     </div>
                                     <div class="bar">
@@ -176,7 +176,7 @@
                                 </div>
 
                                 <div class="power-stats">
-                                    <div>
+                                    <div class="stat-label">
                                         <span>Average Power</span>
                                     </div>
                                     <div class="bar">
@@ -254,7 +254,7 @@
                                     </div>
                                 </div>
                                 <div class="stat-wrap">
-                                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Total time</p>
+                                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Total Time</p>
                                     <div class="big-number">
                                         <?=$hours?> <span>hrs</span> <?=$minutes?> <span>mins</span>
                                     </div>
@@ -266,7 +266,7 @@
                                     </div>
                                 </div>
                                 <div class="stat-wrap">
-                                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total calories</p>
+                                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Calories Burned</p>
                                     <div class="big-number">
                                         <?=$kiloCalories?>
                                     </div>
@@ -290,7 +290,7 @@
                 </div>
                 <div class="stat-wrap col-md-6 col-lg-3">
                   <div>
-                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Total calories</p>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Calories Burned</p>
                     <div class="big-number">
                       <?=$kiloCalories?>
                     </div>
@@ -306,7 +306,7 @@
                 </div>
                 <div class="stat-wrap col-md-6 col-lg-3">
                   <div>
-                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average hart rate</p>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average Hart Rate</p>
                     <div class="big-number">
                       <?=$avgHR?>
                     </div>

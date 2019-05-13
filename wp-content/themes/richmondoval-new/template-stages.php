@@ -230,27 +230,30 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             </div>
 
             <div class="side-menu-items">
-
-                    <a href="javascript:void(0);"
-                       data-go="dashboard"
-                       class="dashboard-menu-item active">
-                      Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg">
-                    </a>
-                    <a href="javascript:void(0);">Class Schedules</a>
-                    <a href="javascript:void(0);"
-                       data-go="ride"
-                       class="ride-menu-item" >
-                      <img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg">
-                    </a>
-                    <a href="javascript:void(0);"
-                       data-go="athletic"
-                       class="athletic-menu-item">
-                      <img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg">
-                    </a>
-                    <a href="https://stagesflight.com/Account/ProfileSettings" class="profile-menu-item">
-                      Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
-                    </a>
-                    <a href="/oval-fit-logout/">Logout</a>
+              <a href="javascript:void(0);"
+                 data-go="dashboard"
+                 class="dashboard-menu-item active">
+                Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg">
+              </a>
+              <div class="dashboard-menu-item-has-children">
+                <a class="schedules-submenu-trigger" href="javascript:void(0);">Class Schedules</a>
+                <div class="schedules-submenu">
+                  <a href="javascript:void(0);"
+                     data-go="ride"
+                     class="ride-menu-item" >
+                    <img class="logo" alt="Ride" src="<?= get_stylesheet_directory_uri() ?>/images/stages/ride-logo-black.svg">
+                  </a>
+                  <a href="javascript:void(0);"
+                     data-go="athletic"
+                     class="athletic-menu-item">
+                    <img class="logo" alt="Athletic" src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-black.svg">
+                  </a>
+                </div>
+              </div>
+              <a href="https://stagesflight.com/Account/ProfileSettings" class="profile-menu-item">
+                Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
+              </a>
+              <a href="/oval-fit-logout/">Logout</a>
 
             </div>
             <div class="side-menu-info">
