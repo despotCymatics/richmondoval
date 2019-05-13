@@ -220,8 +220,6 @@
                                 <br>
                                 <p style="padding:0 30px;">No Sessions on these dates.</p>
                             <?php } ?>
-
-                            <p style="text-align: center; margin: 20px 20px 0; opacity: 0.5;">OvalFit Ride</p>
                         </div>
                     </div>
                 </div>
