@@ -1540,7 +1540,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     position: relative;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .stat-label {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .stats .power-stats .stat-label span {
     color: #FF9E18;
 }
 
