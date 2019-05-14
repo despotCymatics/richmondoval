@@ -60,7 +60,70 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 
         }
     });
+}
 
+function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, sessionDate, sessionTime) {
+
+    swal({
+        html: "<h2>PUSH BEYOND YOUR LIMIT</h2>"+
+            "<p>Please confirm your spot selection.</p>"+
+            "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
+        allowOutsideClick: false,
+        showCancelButton: true,
+        confirmButtonText: 'Reserve',
+        cancelButtonText: 'Cancel'
+    }).then((result) => {
+        if (result.value) {
+            swal({
+                imageUrl: '/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif',
+                imageWidth: 120,
+                html: '<p>Please wait</p>',
+                allowOutsideClick: false,
+                showConfirmButton: false
+                //timer:2000
+
+            });
+            jQuery(function($) {
+                $.ajax({
+                    url: '/wp-content/themes/richmondoval-new/stages-api.php',
+                    type: 'post',
+                    data: {
+                        userId: userId,
+                        sessionId: sessionId,
+                        bikeId: bikeId,
+                        authCode: authCode
+                    },
+                    success: function (response) {
+                        if(response =='<p>Thank You for Booking with OvalFit!</p>') {
+                            swal({
+                                html: "<h2>Your SPOT is ready</h2>"+
+                                    "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'>"+
+                                    "<p class='bike-num'>Bike #"+bikeNum+"</p><br>"+
+                                    "<h4 class='session-name'>"+sessionName+"</h4>"+
+                                    "<span class='session-date'>"+sessionDate+"</span><br>"+
+                                    "<span class='session-time'>"+sessionTime+"</span>"+
+                                    "<p>Membership will be validated in the lobby to confirm your attendance. If you can’t make it please cancel your reservation online.</p>",
+                                allowOutsideClick: false
+                            }).then((result) => {
+                                loaderIn();
+                                window.location="/oval-fit/";
+                            })
+                        }else {
+                            swal({
+                                type: 'warning',
+                                html: '<h2>Oups..</h2>'+response
+                            })
+                        }
+
+                        console.log(response);
+                    }
+                });
+            })
+        }
+        else {
+
+        }
+    });
 
 }
 
@@ -91,13 +154,57 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
                         html: "<h2>Your reservation has been cancelled!</h2>"+
                             "<p>See you on the next RIDE.</p>"+
                         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br>"+
-                        "<p class='bike-num'>#"+bikeNum+"</p><br>"+
+                        "<p class='bike-num'>Spot #"+bikeNum+"</p><br>"+
                         "<h4 class='session-name'>"+sessionName+"</h4>"+
                         "<span class='session-date'>"+sessionDate+"</span><br>"+
                         "<span class='session-time'>"+sessionTime+"</span>"
 
                     }).then((result) => {
-                        loaderIn()
+                        loaderIn();
+                        window.location="/oval-fit/";
+                    });
+                }
+
+                console.log(response);
+            }
+        });
+    })
+}
+
+
+function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, sessionTime) {
+
+    swal({
+        imageUrl: '/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif',
+        imageWidth: 120,
+        html: '<p>Please wait</p>',
+        allowOutsideClick: false,
+        showConfirmButton: false
+        //timer:2000
+
+    });
+    jQuery(function($) {
+        $.ajax({
+            url: '/wp-content/themes/richmondoval-new/stages-api.php',
+            type: 'post',
+            data: {
+                bookingId: bookingId,
+                authCode: authCode
+            },
+            success: function (response) {
+                if(response == '<h2>Your Booking has been canceled!</h2>') {
+                    $("div[data-id='"+bookingId+"']").hide(200);
+                    swal({
+                        html: "<h2>Your reservation has been cancelled!</h2>"+
+                            "<p>See you on the next RUN.</p>"+
+                            "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'><br>"+
+                            "<p class='bike-num'>#"+bikeNum+"</p><br>"+
+                            "<h4 class='session-name'>"+sessionName+"</h4>"+
+                            "<span class='session-date'>"+sessionDate+"</span><br>"+
+                            "<span class='session-time'>"+sessionTime+"</span>"
+
+                    }).then((result) => {
+                        loaderIn();
                         window.location="/oval-fit/";
                     });
                 }

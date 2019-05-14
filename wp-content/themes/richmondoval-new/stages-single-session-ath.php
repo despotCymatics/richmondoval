@@ -159,7 +159,7 @@ An educational, challenging workout that will leave you wanting more!
 						<div class="col-xs-1-8">
                             <div class="bike '.$disabledBike.'">
                                 <div class="bike-num" 
-                                onclick="bookBike(
+                                onclick="bookSpot(
                                 \''.$authCode.'\',
                                 '.$userId.',
                                 '.$sessionId.',

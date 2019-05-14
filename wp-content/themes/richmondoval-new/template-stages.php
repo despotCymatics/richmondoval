@@ -236,7 +236,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                 Dashboard <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/dashboard-white.svg">
               </a>
               <div class="dashboard-menu-item-has-children">
-                <a class="schedules-submenu-trigger" href="javascript:void(0);">Class Schedules</a>
+                <a class="schedules-submenu-trigger" href="javascript:void(0);">
+                  Class Schedules
+                  <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/schedule.svg">
+                </a>
                 <div class="schedules-submenu">
                   <a href="javascript:void(0);"
                      data-go="ride"
@@ -253,7 +256,10 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
               <a href="https://stagesflight.com/Account/ProfileSettings" class="profile-menu-item">
                 Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
               </a>
-              <a href="/oval-fit-logout/">Logout</a>
+              <a href="/oval-fit-logout/">
+                Logout
+                <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/logout.svg">
+              </a>
 
             </div>
             <div class="side-menu-info">

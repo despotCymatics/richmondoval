@@ -126,10 +126,10 @@
                                                 <div class="col-sm-8 col-xs-6">
                                                     <div class="flexed">
                                                         <div>
-                                                            <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
+                                                            <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/treadmill.svg'>
                                                         </div>
                                                         <div>
-                                                            <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
+                                                            <span>Spot: <?=$userBooking->Bike->Number ?></span><br>
                                                             <span>Row: <?=$userBooking->Bike->Row ?></span><br>
                                                             <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
                                                         </div>
@@ -137,7 +137,7 @@
                                                 </div>
                                                 <div class="col-sm-4 col-xs-6 alignRight">
                                                     <button class="btn blue regular cancel"
-                                                            onclick="cancelBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
+                                                            onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
                                                         Cancel Reservation
                                                     </button>
                                                 </div>
