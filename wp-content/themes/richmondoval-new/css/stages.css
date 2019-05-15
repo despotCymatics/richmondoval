@@ -833,9 +833,10 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     text-align: center;
 }
 
-.page-template-template-stages_login .stages-logo, .page-template-template-stages_registration .stages-logo{
-    width: 120px !important;
-    padding-top: 20px;
+.page-template-template-stages_login .stages-logo, .page-template-template-stages_registration .stages-logo {
+    max-width: 360px;
+    width: 80% !important;
+    padding-top: 40px;
 }
 
 .page-template-template-stages_login .ride-logo, .page-template-template-stages_registration .ride-logo {

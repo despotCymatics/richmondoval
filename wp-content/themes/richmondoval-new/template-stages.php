@@ -256,7 +256,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
               <a href="https://stagesflight.com/Account/ProfileSettings" class="profile-menu-item">
                 Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
               </a>
-              <a href="/oval-fit-logout/">
+              <a href="/oval-fit-logout/" class="logout-menu-item">
                 Logout
                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/logout.svg">
               </a>

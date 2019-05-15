@@ -26,9 +26,9 @@ if(isset($_SESSION['logged'])) {
                 </a>
                 <br>
                 <br>
-                <div class="ride-logo">
-                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg">
-                </div>
+                <!--<div class="ride-logo">
+                    <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/RIDE_logo.svg">
+                </div>-->
             </div>
 
             <div class="row">

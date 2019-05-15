@@ -404,7 +404,7 @@ jQuery(document).ready(function($) {
 
 
     //Side menu clicks
-    $(document).on('click', '.ovalfit-side-menu .side-menu-items a:not(.schedules-submenu-trigger)', function(e){
+    $(document).on('click', '.ovalfit-side-menu .side-menu-items a:not(.schedules-submenu-trigger):not(.logout-menu-item):not(.profile-menu-item)', function(e){
         $('.ovalfit-side-menu .side-menu-items a').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');

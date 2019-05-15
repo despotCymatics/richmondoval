@@ -63,9 +63,9 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                 </a>
                 <br>
                 <br>
-                <div class="ride-logo">
-                    <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/RIDE_logo.svg">
-                </div>
+               <!-- <div class="ride-logo">
+                    <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/RIDE_logo.svg">
+                </div>-->
             </div>
 
             <?php
