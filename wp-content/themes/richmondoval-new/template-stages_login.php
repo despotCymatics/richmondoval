@@ -12,7 +12,7 @@ if(isset($_SESSION['logged'])) {
 	header('Location: /oval-fit/');
 	exit;
 
-}else {
+} else {
 
 	get_header();
 
@@ -65,7 +65,7 @@ if(isset($_SESSION['logged'])) {
                             </form>
 
 
-                    <?php }else { ?>
+                    <?php } else { ?>
                             <form id='login' action='/oval-fit/' method='post' accept-charset='UTF-8'>
 
                                 <?php if(isset($_GET['password-reset']) && $_GET['password-reset'] == true)  { ?>
@@ -81,10 +81,12 @@ if(isset($_SESSION['logged'])) {
 					                    <?php
 					                    if(isset($_GET['user']) && $_GET['user'] == 'none'){
 						                    echo "User does not exist in Stages database!" ;
-					                    }else if(isset($_GET['login']) && $_GET['login'] == 'false') {
+					                    } else if(isset($_GET['login']) && $_GET['login'] == 'false') {
 						                    echo "Please login with correct Email and Password!" ;
-					                    }
-					                    ?>
+					                    } else if(isset($_GET['msg'])) {
+						                    echo "API Message: ".$_GET['msg'] ;
+                              }
+			                    ?>
                                     </p>
 
                                     <input type='hidden' name='submitted' id='submitted' value='1'/>

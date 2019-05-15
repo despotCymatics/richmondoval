@@ -3,12 +3,15 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 
 //AUTHORIZATION CODE
+
 //$authCode = authorize();
-$authCode = "lFKkiRqWYECXUHPTmsmfWQ==";
+$authCode = "mYREqTk8GEyt5Xsq5ptSvg==";
 
 //$authCodeAthletic = authorizeAthletic();
-$authCodeAthletic = "9UJHkKBqOUumU+z2svIJxQ==";
+$authCodeAthletic = "vvB014YLbka/39iWqcb/Tw==";
 
+//var_dump($authCode);
+//var_dump($authCodeAthletic);
 
 //BOOK A BIKE FOR SESSION
 if(isset($_POST['userId']) && isset($_POST['sessionId']) && isset($_POST['bikeId'])) {
