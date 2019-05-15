@@ -74,7 +74,7 @@
             <div class="within">
                 <div class="row">
 
-                    <div class="col-sm-7">
+                    <div class="col-sm-12">
                         <h3>Proud Sponsors</h3>
                         <div class="footerSponsors">
 		                    <?php if ( is_active_sidebar( 'footer-right' ) ){ ?>
@@ -82,14 +82,14 @@
 		                    <?php }?>
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <!--<div class="col-sm-5">
                         <h3>Legacy Partners</h3>
                         <div class="legacy-partners">
-	                        <?php if ( is_active_sidebar( 'homepage-sponsors' ) ){ ?>
-		                        <?php dynamic_sidebar('homepage-sponsors' ); ?>
-	                        <?php }?>
+	                        <?php /*if ( is_active_sidebar( 'homepage-sponsors' ) ){ */?>
+		                        <?php /*dynamic_sidebar('homepage-sponsors' ); */?>
+	                        <?php /*}*/?>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </section>
