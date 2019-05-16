@@ -112,19 +112,33 @@ p {
 
 /*discover the champion*/
 .ov-discover-champion {
-    background: #000;
     min-height: 1000px;
     height: 740px;
-    background-image: url(../img/testTrainHero.jpg);
+    background-color: #000;
     background-position: top center;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
 }
+.ov-discover-champion video {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    opacity: 0.5;
+    min-width: 100%;
+    transform: translateX(-50%);
+}
+
 
 .ov-discover-champion-inner {
     margin-top: 100px;
+    z-index: 1;
 }
 
 .ov-discover-champion h1 {
@@ -704,6 +718,10 @@ p {
     animation-delay: 1s;
     -webkit-animation-name: bounce-sm;
     animation-name: bounce-sm;
+}
+
+.hideOnDesk {
+    display: none !important;
 }
 
 @media (max-width: 1440px) {
@@ -1428,5 +1446,12 @@ p {
     .ov-fit-btn-footer {
         margin: 40px;
         padding: 14px 75px !important;
+    }
+
+    .hideOnMob {
+        display: none !important;
+    }
+    .hideOnDesk {
+        display: block !important;
     }
 }
