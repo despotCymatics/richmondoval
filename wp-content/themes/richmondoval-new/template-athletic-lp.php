@@ -183,16 +183,16 @@ if ( count( $sessions ) > 1 ) {
         </div>
       </div>
 
-      <div class="ov-discover-champion ov-align-center hideOnMob" id="train">
-        <video poster="<?= get_field( 'discover_image' ); ?>" id="bgvid" playsinline autoplay muted loop>
+<!--      <div class="ov-discover-champion ov-align-center hideOnMob" id="train">
+        <video poster="<?/*= get_field( 'discover_image' ); */?>" id="bgvid" playsinline autoplay muted loop>
           <source src="/wp-content/uploads/2019/05/athvideo.mp4" type="video/mp4">
         </video>
         <div class="ov-discover-champion-inner">
-          <h1><?= get_field( 'discover_title' ); ?></h1>
-          <h2><?= get_field( 'discover_text' ); ?></h2>
+          <h1><?/*= get_field( 'discover_title' ); */?></h1>
+          <h2><?/*= get_field( 'discover_text' ); */?></h2>
           <div class="ov-discover-cta">
             <div>
-              <img src="<?= get_template_directory_uri() ?>/images/basic/ro-logo-horizontal.svg">
+              <img src="<?/*= get_template_directory_uri() */?>/images/basic/ro-logo-horizontal.svg">
             </div>
             <div>
               <p>ATHLETIC Programs are included in your Richmond Oval Membership <a href="/manage-my-membership/become-a-member/">BECOME A MEMBER</a></p>
@@ -202,10 +202,10 @@ if ( count( $sessions ) > 1 ) {
             <a href="/lets-run/" class="ov-fit-btn-lg" draggable="false">LEARN MORE</a>
           </div>
         </div>
-      </div>
+      </div>-->
 
-      <div class="ov-discover-champion ov-align-center hideOnDesk"
-           style="display:none; background-image: url(<?= get_field( 'discover_image' ); ?>)">
+      <div class="ov-discover-champion ov-align-center"
+           style="background-image: url(<?= get_field( 'discover_image' ); ?>)">
         <div class="ov-discover-champion-inner">
           <h1><?= get_field( 'discover_title' ); ?></h1>
           <h2><?= get_field( 'discover_text' ); ?></h2>
