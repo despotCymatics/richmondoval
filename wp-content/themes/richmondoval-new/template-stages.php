@@ -78,7 +78,11 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   //Workouts
   //Workouts
   $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
-  $workoutsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
+  $workoutsRide = array();
+  $workoutsAth = array();
+  //$workoutsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
+
+  //var_dump($workouts);
 
   //default values
   $durationInSeconds = 0;
@@ -120,6 +124,12 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
       //var_dump(getCurl( $authCode, 'https://stagesflight.com/locapi/v1/workouts/'.$workouts[0]->Id.'/tcx/'));
       foreach ( $workouts as $workout ) {
+
+        if($workout->Location->Id === 1400) {
+          array_push($workoutsRide, $workout);
+        }else {
+          array_push($workoutsAth, $workout);
+        }
           $numWorkouts ++;
           $durationInSeconds += $workout->DurationInSeconds;
           $distanceInKm      += $workout->DistanceInKm;
