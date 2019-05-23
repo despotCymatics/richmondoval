@@ -1382,8 +1382,10 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     font-size: 14px;
 }
  .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg {
-    margin-right: 4px;
-    vertical-align: bottom;
+     margin-right: 4px;
+     vertical-align: bottom;
+     max-width: 20px;
+     max-height: 20px;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg path {

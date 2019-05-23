@@ -3,8 +3,17 @@
         <span>Latest Activity</span>
         <div class="latest-activity-stats">
             <div>
+              <?php if ($latestActivity->Location->Id === 1400) { ?>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg">
+              Indoor Cycling
+              <?php } else if ($latestActivity->Location->Id === 1794) { ?>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/treadmill.svg">
+              Treadmill
+              <?php } ?>
+            </div>
+            <div>
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
-                <?=round($latestActivity->DurationInSeconds/60, 0); ?> mins
+                <?=floor($latestActivity->DurationInSeconds/60); ?> mins
             </div>
             <div>
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
@@ -117,13 +126,14 @@
 
         <div class="stats-tabs">
 
+           <!-- Collective Stats -->
             <div class="stats-tab" id="dash-collective" style="display: block;">
                 <div class="row grayed">
                     <div class="stat-wrap col-sm-4">
                         <div>
                             <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of Workouts</p>
                             <div class="big-number">
-                                <?=$numWorkouts?>
+                                <?=$numWorkouts ?>
                             </div>
                         </div>
                     </div>
@@ -146,12 +156,11 @@
                 </div>
             </div>
 
-
+            <!-- Ride Stats -->
             <div class="stats-tab" id="dash-ride">
                 <?php
-
                 $ftpPosition = $user->FTP * 100 / 500;
-                $avgPosition = $avgWatt * 100 / 500;
+                $avgPosition = $avgWattRide * 100 / 500;
                 ?>
 
                 <div class="chats">
@@ -181,7 +190,7 @@
                                     </div>
                                     <div class="bar">
                                         <div class="num" style="left: <?=$avgPosition?>%">
-                                            <?= $avgWatt ?> <span>watt</span>
+                                            <?= $avgWattRide ?> <span>watt</span>
                                         </div>
                                         <div class="filled" style="width:<?=$avgPosition?>%"></div>
                                     </div>
@@ -217,7 +226,7 @@
                                                         class="circle" r="86" cy="90" cx="90" stroke-width="8" stroke="#FF9E18" fill="none"></circle>
                                                 </g>
                                             </svg>-->
-                                            <?=$avgSpeed;?><br>
+                                            <?=$avgSpeedRide;?><br>
                                             <span>km/h</span>
                                         </div>
                                         <p>Average Speed</p>
@@ -236,7 +245,7 @@
                                                      a 15.9155 15.9155 0 0 1 0 -31.831"
                                                 ></path>
                                             </svg>
-                                            <?=$maxSpeed;?><br>
+                                            <?=$maxSpeedRide;?><br>
                                             <span>km/h</span>
                                         </div>
                                         <p>Maximum Speed</p>
@@ -250,25 +259,25 @@
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg"> Total Distance </p>
                                     <div class="big-number">
-                                        <?=$distanceInKm?><span>km</span>
+                                        <?=$distanceInKmRide?><span>km</span>
                                     </div>
                                 </div>
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Total Time</p>
                                     <div class="big-number">
-                                        <?=$hours?> <span>hrs</span> <?=$minutes?> <span>mins</span>
+                                        <?=$hoursRide?> <span>hrs</span> <?=$minutesRide?> <span>mins</span>
                                     </div>
                                 </div>
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average heart rate</p>
                                     <div class="big-number">
-                                        <?=$avgHR?><span>bpm</span>
+                                        <?=$avgHRRide?><span>bpm</span>
                                     </div>
                                 </div>
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Calories Burned</p>
                                     <div class="big-number">
-                                        <?=$kiloCalories?>
+                                        <?=$kiloCaloriesRide?>
                                     </div>
                                 </div>
                             </div>
@@ -277,14 +286,14 @@
                 </div>
             </div>
 
-
+            <!-- Ath Stats -->
             <div class="stats-tab" id="dash-athletic">
               <div class="row grayed">
                 <div class="stat-wrap col-md-6 col-lg-3">
                   <div>
                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/workouts.svg"> Number of workouts</p>
                     <div class="big-number">
-                      <?=$numWorkouts?>
+                      <?=$numWorkoutsAth?>
                     </div>
                   </div>
                 </div>
@@ -292,7 +301,7 @@
                   <div>
                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg"> Calories Burned</p>
                     <div class="big-number">
-                      <?=$kiloCalories?>
+                      <?=$kiloCaloriesAth?>
                     </div>
                   </div>
                 </div>
@@ -300,7 +309,7 @@
                   <div>
                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg"> Time</p>
                     <div class="big-number">
-                      <?=$hours?><span>hrs</span> <?=$minutes?><span>mins</span>
+                      <?=$hoursAth?><span>hrs</span> <?=$minutesAth?><span>mins</span>
                     </div>
                   </div>
                 </div>
@@ -308,7 +317,7 @@
                   <div>
                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average Hart Rate</p>
                     <div class="big-number">
-                      <?=$avgHR?>
+                      <?=$avgHRAth?>
                     </div>
                   </div>
                 </div>

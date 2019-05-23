@@ -80,21 +80,9 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   $workouts = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
   $workoutsRide = array();
   $workoutsAth = array();
-  //$workoutsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/workouts?take=500' );
 
-  //var_dump($workouts);
-
-  //default values
-  $durationInSeconds = 0;
-  $distanceInKm      = 0;
-  $kiloCalories      = 0;
-  $avgWatt           = 0;
-  $avgSpeed          = 0;
-  $avgHR             = 0;
-  $maxSpeed          = 0;
-  $numWorkouts       = 0;
-  $maxSpeedArray     = array();
-  $latestActivity =  json_decode('{
+  //Collective workout values
+	$latestActivity = json_decode('{
                               "Id": 0,
                               "Time": "2019-04-18T09:43:06.966Z",
                               "DurationInSeconds": 0,
@@ -118,48 +106,80 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
                               "Intensity": 0,
                               "SessionLoggedOn": "Mobile",
                               "Position": "string",
-                              "Energy": 0
+                              "Energy": 0,
+                              "Location": {
+                                "Id": 1400
+                              }
   }');
 
-  if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
-      //var_dump(getCurl( $authCode, 'https://stagesflight.com/locapi/v1/workouts/'.$workouts[0]->Id.'/tcx/'));
-      foreach ( $workouts as $workout ) {
+	$numWorkouts = 0;
+	$kiloCalories = 0;
+	$durationInSeconds = 0;
 
-        if($workout->Location->Id === 1400) {
-          array_push($workoutsRide, $workout);
-        }else {
-          array_push($workoutsAth, $workout);
-        }
-          $numWorkouts ++;
-          $durationInSeconds += $workout->DurationInSeconds;
-          $distanceInKm      += $workout->DistanceInKm;
-          $kiloCalories      += $workout->KiloCalories;
-          $avgWatt           += $workout->AvgWatt;
-          $avgSpeed          += $workout->AvgSpeed;
-          $avgHR             += $workout->AvgHeartRate;
-          array_push($maxSpeedArray, $workout->MaxSpeed);
+	if(count($workouts) > 0 && isset($workouts[0]->DurationInSeconds)) {
 
-      }
-      $latestActivity = $workouts[0];
+		foreach ( $workouts as $workout ) {
+
+			if(isset($workout->Location->Id) && $workout->Location->Id === 1400) {
+				array_push($workoutsRide, $workout);
+			}else if(isset($workout->Location->Id) && $workout->Location->Id === 1794) {
+				array_push($workoutsAth, $workout);
+			} else {
+				array_push($workoutsRide, $workout);
+			}
+		$numWorkouts ++;
+		$durationInSeconds += $workout->DurationInSeconds;
+		$kiloCalories += $workout->KiloCalories;
+
+		}
+		$latestActivity = $workouts[0];
+
+	}
+
+	$hours = floor($durationInSeconds / 3600);
+	$minutes = floor(($durationInSeconds / 60) % 60);
+
+	//Ride workout values
+  $durationInSecondsRide = 0;
+  $distanceInKmRide      = 0;
+  $kiloCaloriesRide      = 0;
+  $avgWattRide           = 0;
+  $avgSpeedRide          = 0;
+  $avgHRRide             = 0;
+  $maxSpeedRide          = 0;
+  $numWorkoutsRide       = 0;
+  $maxSpeedArrayRide     = array();
+
+
+	if(count($workoutsRide) > 0 && isset($workoutsRide[0]->DurationInSeconds)) {
+
+	  foreach ( $workoutsRide as $workoutRide ) {
+		  $numWorkoutsRide ++;
+		  $durationInSecondsRide += $workoutRide->DurationInSeconds;
+		  $distanceInKmRide      += $workoutRide->DistanceInKm;
+		  $kiloCaloriesRide      += $workoutRide->KiloCalories;
+		  $avgWattRide           += $workoutRide->AvgWatt;
+		  $avgSpeedRide          += $workoutRide->AvgSpeed;
+		  $avgHRRide             += $workoutRide->AvgHeartRate;
+		  array_push($maxSpeedArrayRide, $workoutRide->MaxSpeed);
+
+	  }
+
   }
 
-  //var_dump($workouts);
-  //var_dump($workoutsAth);
+  if(count($maxSpeedArrayRide) < 1) array_push($maxSpeedArrayRide, 0);
+  if($numWorkoutsRide == 0) $numWorkoutsRide = 1;
+  $avgWattRide = round($avgWattRide / $numWorkoutsRide);
+  $avgSpeed = round($avgSpeedRide / $numWorkoutsRide);
+  $distanceInKm = round($distanceInKmRide,0);
+  $avgHRRide = round($avgHRRide / $numWorkoutsRide, 0);
+  $maxSpeedRide = max($maxSpeedArrayRide);
 
-  if(count($maxSpeedArray) < 1) array_push($maxSpeedArray, 0);
-  if($numWorkouts == 0) $numWorkouts = 1;
-  $avgWatt = round($avgWatt / $numWorkouts);
-  $avgSpeed = round($avgSpeed / $numWorkouts);
-  $distanceInKm = round($distanceInKm,0);
-  $avgHR = round($avgHR / $numWorkouts, 0);
-  $maxSpeed = max($maxSpeedArray);
-
-  $hours = floor($durationInSeconds / 3600);
-  $minutes = floor(($durationInSeconds / 60) % 60);
+  $hoursRide = floor($durationInSecondsRide / 3600);
+  $minutesRide = floor(($durationInSecondsRide / 60) % 60);
 
 
-  //Ath
-  //default values
+  //Ath workout values
   $durationInSecondsAth = 0;
   $distanceInKmAth      = 0;
   $kiloCaloriesAth      = 0;
@@ -169,32 +189,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   $maxSpeedAth         = 0;
   $numWorkoutsAth       = 0;
   $maxSpeedArrayAth     = array();
-  $latestActivityAth =  json_decode('{
-                              "Id": 0,
-                              "Time": "2019-04-18T09:43:06.966Z",
-                              "DurationInSeconds": 0,
-                              "DistanceInKm": 0,
-                              "KiloCalories": 0,
-                              "HeartRate": 0,
-                              "AvgWatt": 0,
-                              "AvgSpeed": 0,
-                              "MaxSpeed": 0,
-                              "ActivityID": 0,
-                              "AvgHeartRate": 0,
-                              "Feeling": 0,
-                              "Comment": "string",
-                              "GraphId": 0,
-                              "CompetitionTime": 0,
-                              "CompetitionAvgWatt": 0,
-                              "WorkoutType": 0,
-                              "ActivityName": "string",
-                              "IsPlanned": true,
-                              "PlannedDuration": 0,
-                              "Intensity": 0,
-                              "SessionLoggedOn": "Mobile",
-                              "Position": "string",
-                              "Energy": 0
-  }');
 
   if(count($workoutsAth) > 0 && isset($workoutsAth[0]->DurationInSeconds)) {
       foreach ( $workoutsAth as $workoutAth ) {
@@ -207,7 +201,6 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
           $avgHRAth             += $workoutAth->AvgHeartRate;
           array_push($maxSpeedArrayAth, $workoutAth->MaxSpeed);
       }
-      $latestActivityAth = $workoutsAth[0];
 
   }
 
