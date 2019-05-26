@@ -24,7 +24,7 @@
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike.svg">
                                 <span>
-                                    <span class="num"><?= $numWorkouts; ?></span>
+                                    <span class="num"><?= $numWorkoutsRide; ?></span>
                                     <span class="name">Number of workouts</span>
                                 </span>
                             </div>
@@ -32,49 +32,49 @@
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
                                 <span>
-                                    <span class="num"><?= round($durationInSeconds/60); ?> <span>min</span></span>
+                                    <span class="num"><?= round($durationInSecondsRide/60); ?> <span>min</span></span>
                                     <span class="name">Total time</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/power.svg">
                                 <span>
-                                    <span class="num"><?= $avgWatt ?> <span>watt</span></span>
+                                    <span class="num"><?= $avgWattRide ?> <span>watt</span></span>
                                     <span class="name">Average Power</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
                                 <span>
-                                    <span class="num"><?= $kiloCalories; ?></span>
+                                    <span class="num"><?= $kiloCaloriesRide; ?></span>
                                     <span class="name">Calories burned</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg">
                                 <span>
-                                    <span class="num"><?= $distanceInKm ?> <span>km</span></span>
+                                    <span class="num"><?= round($distanceInKmRide,0) ?> <span>km</span></span>
                                     <span class="name">Total distance</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
                                 <span>
-                                    <span class="num"><?= $avgHR ?></span>
+                                    <span class="num"><?= $avgHRRide ?></span>
                                     <span class="name">Average heart rate</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                 <span>
-                                    <span class="num"><?= $avgSpeed ?> <span>km/h</span></span>
+                                    <span class="num"><?= $avgSpeedRide ?> <span>km/h</span></span>
                                     <span class="name">Average speed</span>
                                 </span>
                             </div>
                             <div class="stat">
                                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
                                 <span>
-                                    <span class="num"><?= $maxSpeed ?> <span>km/h</span></span>
+                                    <span class="num"><?= $maxSpeedRide ?> <span>km/h</span></span>
                                     <span class="name">Max.speed</span>
                                 </span>
                             </div>

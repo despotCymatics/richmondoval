@@ -154,7 +154,7 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
                         html: "<h2>Your reservation has been cancelled!</h2>"+
                             "<p>See you on the next RIDE.</p>"+
                         "<img src='/wp-content/themes/richmondoval-new/images/stages/bike-grey.svg'><br>"+
-                        "<p class='bike-num'>Spot #"+bikeNum+"</p><br>"+
+                        "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                         "<h4 class='session-name'>"+sessionName+"</h4>"+
                         "<span class='session-date'>"+sessionDate+"</span><br>"+
                         "<span class='session-time'>"+sessionTime+"</span>"

@@ -1388,7 +1388,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
      max-height: 20px;
 }
 
-.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg path {
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg path, .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity .latest-activity-stats div .svg circle {
     fill: #FF9E18;
 }
 
@@ -1772,8 +1772,12 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 @media (max-width: 768px) {
 
+    .page-template-template-stages .ovalfit-header .top {
+        margin-bottom: 25px;
+    }
+
     .tab-buttons, .switcher {
-        text-align: center;
+        text-align: left;
     }
     .alignRight .switcher  {
         text-align: center;
@@ -1812,7 +1816,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         font-size: 12px;
     }
     .page-template-template-stages .ovalfit-header .stats .stat {
-        max-width: 98px;
+        max-width: 87px;
         margin-right: 6px;
         padding-top: 2px;
     }
@@ -1827,7 +1831,6 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     }
     .page-template-template-stages .ovalfit-header .stats .stat span.num {
         font-size: 16px;
-
     }
 
     .page-template-template-stages .ovalfit-header .stats .stat span.name {
@@ -1874,6 +1877,12 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
 @media (max-width: 767px) {
 
+    .tab-buttons, .switcher {
+        text-align: center;
+    }
+    .page-template-template-stages .ovalfit-body .tab-buttons .tablink {
+        width: 49%;
+    }
     .page-template-template-stages .alignRight {
         text-align: right;
     }
@@ -1919,7 +1928,8 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
 
     .page-template-template-stages .switcher .switch {
         margin-top: 20px;
-        max-width: 138px;
+        width: 49%;
+
     }
     .page-template-template-stages .ovalfit-header .title h3 {
         font-size: 16px;

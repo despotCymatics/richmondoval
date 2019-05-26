@@ -57,7 +57,8 @@
                 <?php
                 if ( count( $userBookings ) > 0 ) { ?>
                     <h4>YOUR NEXT ACTIVITY</h4>
-                    <?php foreach ( $userBookings as $userBooking ) { ?>
+                    <?php foreach ( $userBookings as $userBooking ) {  //var_dump($userBooking);?>
+
                         <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                             <div class="">
                                 <div class="row">
@@ -71,7 +72,7 @@
                                         <span><?= $sessionTime; ?></span>
                                     </div>
                                     <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn orange regular">Cancel Reservation</button>
+                                        <button class="btn orange regular" onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
                                         <!--<h4 class="close-toggle">X Close</h4>-->
                                     </div>
                                 </div>
@@ -259,7 +260,7 @@
                                 <div class="stat-wrap">
                                     <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/distance.svg"> Total Distance </p>
                                     <div class="big-number">
-                                        <?=$distanceInKmRide?><span>km</span>
+                                        <?=round($distanceInKmRide, 0)?><span>km</span>
                                     </div>
                                 </div>
                                 <div class="stat-wrap">

@@ -137,7 +137,7 @@ An educational, challenging workout that will leave you wanting more!
 					$returnHTML .='
                             <div class="bike '.$disabledBike.'">
                                 <div class="bike-num" 
-                                onclick="bookBike(
+                                onclick="bookSpot(
                                 \''.$authCode.'\',
                                 '.$userId.',
                                 '.$sessionId.',
