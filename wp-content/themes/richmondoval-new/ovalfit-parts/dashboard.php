@@ -55,9 +55,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <?php
-                if ( count( $userBookings ) > 0 ) { ?>
+                if ( count( $userBookingsRide ) > 0 ) { ?>
                     <h4>YOUR NEXT ACTIVITY</h4>
-                    <?php foreach ( $userBookings as $userBooking ) {  //var_dump($userBooking);?>
+                    <?php foreach ( $userBookingsRide as $userBooking ) { ?>
 
                         <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                             <div class="">
@@ -72,39 +72,37 @@
                                         <span><?= $sessionTime; ?></span>
                                     </div>
                                     <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn orange regular" onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
-                                        <!--<h4 class="close-toggle">X Close</h4>-->
+                                        <button class="btn orange regular" onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
                                     </div>
                                 </div>
                             </div>
-
-                            <?php if(false) { ?>
-                            <div class="moreText">
-                                <div class="row flexed">
-                                    <div class="col-sm-8 col-xs-6">
-                                        <div class="flexed">
-                                            <div>
-                                                <img style="width: 45px; margin-right: 15px;" src='<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg'>
-                                            </div>
-                                            <div>
-                                                <span>Bike: <?=$userBooking->Bike->Number ?></span><br>
-                                                <span>Row: <?=$userBooking->Bike->Row ?></span><br>
-                                                <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn blue regular cancel"
-                                                onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">
-                                            Cancel Reservation
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php } ?>
                         </div>
                         <?php
                     }
+                } else if ( count( $userBookingsAth ) > 0 ) { ?>
+                  <h4>YOUR NEXT ACTIVITY</h4>
+	                <?php foreach ( $userBookingsAth as $userBooking ) { ?>
+
+                    <div class="bookings" data-id="<?= $userBooking->Id; ?>">
+                      <div class="">
+                        <div class="row">
+                          <div class="col-sm-8 col-xs-6">
+                            <h4><?= $userBooking->Session->Name; ?></h4>
+						                <?php
+						                $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+						                $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+						                ?>
+                            <span class="date"><?= $sessionDate; ?></span><br>
+                            <span><?= $sessionTime; ?></span>
+                          </div>
+                          <div class="col-sm-4 col-xs-6 alignRight">
+                            <button class="btn orange regular" onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+		                <?php
+	                }
                 }?>
             </div>
         </div>

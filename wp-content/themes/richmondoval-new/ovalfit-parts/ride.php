@@ -98,9 +98,9 @@
                         <!-- Bookings -->
                         <div id="bookingsRide" class="tabcontent">
                             <?php
-                            if ( count( $userBookings ) > 0 ) { ?>
+                            if ( count( $userBookingsRide ) > 0 ) { ?>
 
-                                <?php foreach ( $userBookings as $userBooking ) { ?>
+                                <?php foreach ( $userBookingsRide as $userBooking ) { ?>
 
                                     <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                                         <div class="showMoreToggler">

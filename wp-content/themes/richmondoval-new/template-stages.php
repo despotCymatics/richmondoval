@@ -51,13 +51,12 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
     usort($sessions,function($a, $b){
       return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
     });
-  }else {
-
-    $logFile = dirname(dirname(__FILE__))."../../stagesAPILog-main.txt";
+  } else {
+/*    $logFile = dirname(dirname(__FILE__))."../../stagesAPILog-main.txt";
     $current = file_get_contents($logFile);
     $contents = "USER: ".$userEmail."-------------------------------------------------------------------------\r\n";
     $contents .= 'Sessions: '.json_encode($sessions);
-    file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);
+    file_put_contents($logFile, $contents.PHP_EOL , FILE_APPEND | LOCK_EX);*/
   }
 
   $sessionsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '&dateTimeTo=' . $dateTo );
@@ -71,8 +70,24 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   //User Bookings
   //User Bookings
   $userBookings = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
-  $userBookingsAth = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/users/' . $user->Id . '/bookings' );
+  $userBookingsRide = array();
+  $userBookingsAth = array();
 
+  //sorting ath and ride bookings
+	if ( count( $userBookings ) > 0 ) {
+		foreach ( $userBookings as $userBooking ) {
+			foreach ( $sessions as $session ) {
+        if ($userBooking->Session->Id == $session->Id) {
+          array_push($userBookingsRide, $userBooking);
+        }
+      }
+			foreach ( $sessionsAth as $session ) {
+				if ($userBooking->Session->Id == $session->Id) {
+					array_push($userBookingsAth, $userBooking);
+				}
+			}
+		}
+	}
 
   //Workouts
   //Workouts
