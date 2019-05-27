@@ -137,7 +137,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
                         <p style="text-align: center;">Sign up for classes and begin tracking your performance</p>
 
                         <p style="text-align: center; margin-bottom: 0;">
-                            <a href="/oval-fit-login"  class="btn" name='letsride'>LET'S RIDE</a>
+                            <a href="/oval-fit-login"  class="btn" name='letsride'>LET'S GO</a>
                         </p>
 
                         <?php } else { ?>
@@ -189,8 +189,6 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                             </fieldset>
                         </form>
-
-
 
                         <p style="color: darkred; text-align: center; margin-top: 15px;">
                             <strong>
