@@ -9,10 +9,10 @@
             <div>
               <?php if ($latestActivity->Location->Id === 1400) { ?>
               <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg">
-              Indoor Cycling
+              Ride
               <?php } else if ($latestActivity->Location->Id === 1794) { ?>
               <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/treadmill.svg">
-              Treadmill
+              Athletic
               <?php } ?>
             </div>
             <div>
@@ -162,8 +162,8 @@
             <!-- Ride Stats -->
             <div class="stats-tab" id="dash-ride">
                 <?php
-                $ftpPosition = $user->FTP * 100 / 500;
-                $avgPosition = $avgWattRide * 100 / 500;
+                $ftpPosition = $user->FTP * 100 / 750;
+                $avgPosition = $avgWattRide * 100 / 750;
                 ?>
 
                 <div class="chats">
@@ -183,7 +183,7 @@
                                     </div>
                                     <div>
                                         MAX
-                                        500
+                                        750
                                     </div>
                                 </div>
 
@@ -199,7 +199,7 @@
                                     </div>
                                     <div>
                                         MAX
-                                        500
+                                        750
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@
         <div class="dash-cta">
             <div>
                 <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/stages-logo-white.svg">
-                <span>Get your full performance metrics on STAGES</span>
+              <span>Get your full performance metrics on <i>STAGES FLIGHT</i></span>
             </div>
             <div>
                 <a href="#" class="btn orange regular">GET IT NOW</a>

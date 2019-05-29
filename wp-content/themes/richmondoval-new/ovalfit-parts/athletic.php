@@ -5,7 +5,7 @@
                 <div class="row top">
                     <div class="col-sm-6">
                         <div class="title">
-                            <h3>Performance. Intensity. Results.</h3>
+                            <h3>PUSH.YOUR.SELF</h3>
                         </div>
                     </div>
                     <div class="col-sm-6 alignRight">
@@ -130,8 +130,6 @@
                                                         </div>
                                                         <div>
                                                             <span>Spot: <?=$userBooking->Bike->Number ?></span><br>
-                                                            <span>Row: <?=$userBooking->Bike->Row ?></span><br>
-                                                            <!--<span>Column: <?/*=$userBooking->Bike->Column */?></span>-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,7 +189,7 @@
 
                                     </div>
                                     <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn blue regular">Reserve your place</button>
+                                        <button class="btn blue regular">Reserve</button>
                                         <h4 class="close-toggle">X Close</h4>
                                     </div>
                                 </div>

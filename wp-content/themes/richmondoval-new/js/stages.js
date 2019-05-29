@@ -65,8 +65,8 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, sessionDate, sessionTime) {
 
     swal({
-        html: "<h2>PUSH BEYOND YOUR LIMIT</h2>"+
-            "<p>Please confirm your spot selection.</p>"+
+        html: "<h2>YOUR WORKOUT IS WAITING</h2>"+
+            "<p>Please confirm your workout.</p>"+
             "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
         allowOutsideClick: false,
         showCancelButton: true,
@@ -96,7 +96,7 @@ function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                     success: function (response) {
                         if(response =='<p>Thank You for Booking with OvalFit!</p>') {
                             swal({
-                                html: "<h2>Your SPOT is ready</h2>"+
+                                html: "<h2>Your WORKOUT is ready</h2>"+
                                     "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'>"+
                                     "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                                     "<h4 class='session-name'>"+sessionName+"</h4>"+
@@ -196,7 +196,7 @@ function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDat
                     $("div[data-id='"+bookingId+"']").hide(200);
                     swal({
                         html: "<h2>Your reservation has been cancelled!</h2>"+
-                            "<p>See you on the next RUN.</p>"+
+                            "<p>We hope to see you soon.</p>"+
                             "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'><br>"+
                             "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                             "<h4 class='session-name'>"+sessionName+"</h4>"+
