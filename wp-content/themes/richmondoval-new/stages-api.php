@@ -139,8 +139,6 @@ function authorizeAthletic() {
 
 }
 
-
-
 //GET CURL
 function getCurl($authCode, $url) {
 
@@ -284,7 +282,7 @@ function RegisterUser($authCode, $authCodeAthletic) {
 	));
 
 	$booking = postCurl($authCode, 'https://stagesflight.com/locapi/v1/users', $postFields);
-	$bookingAth = postCurl($authCodeAthletic, 'https://stagesflight.com/locapi/v1/users', $postFields);
+	//$bookingAth = postCurl($authCodeAthletic, 'https://stagesflight.com/locapi/v1/users', $postFields);
 
 
 	$ret = "API Error!";

@@ -98,7 +98,7 @@ function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                             swal({
                                 html: "<h2>Your SPOT is ready</h2>"+
                                     "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'>"+
-                                    "<p class='bike-num'>Bike #"+bikeNum+"</p><br>"+
+                                    "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                                     "<h4 class='session-name'>"+sessionName+"</h4>"+
                                     "<span class='session-date'>"+sessionDate+"</span><br>"+
                                     "<span class='session-time'>"+sessionTime+"</span>"+
@@ -217,6 +217,10 @@ function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDat
 
 jQuery(document).ready(function($) {
 
+    //register button disable
+    $('#ovalfit-registration').submit(function() {
+        $(this).find('button').disable();
+    });
 
     //Session/Bookings Tabs
     $(document).on('click', '.tablink', function(e){

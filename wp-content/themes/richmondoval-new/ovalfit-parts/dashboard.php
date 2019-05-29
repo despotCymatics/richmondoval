@@ -1,4 +1,8 @@
 <div class="ovalfit-inner">
+    <div class="welcome hideOnDesk">
+      <h4>Welcome back, <?= $user->FirstName ?></h4>
+      <p>Check out your OVALfit dashboard</p>
+    </div>
     <div class="latest-activity">
         <span>Latest Activity</span>
         <div class="latest-activity-stats">
@@ -29,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="welcome">
+    <div class="welcome hideOnTablet">
         <h4>Welcome back, <?= $user->FirstName ?></h4>
         <p>Check out your OVALfit dashboard</p>
     </div>

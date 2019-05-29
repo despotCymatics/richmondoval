@@ -164,6 +164,8 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   $maxSpeedRide          = 0;
   $numWorkoutsRide       = 0;
   $maxSpeedArrayRide     = array();
+	$maxSpeedAth           = 0;
+
 
 
 	if(count($workoutsRide) > 0 && isset($workoutsRide[0]->DurationInSeconds)) {
@@ -179,16 +181,14 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 		  array_push($maxSpeedArrayRide, $workoutRide->MaxSpeed);
 
 	  }
-
+		if(count($maxSpeedArrayRide) < 1) array_push($maxSpeedArrayRide, 0);
+		if($numWorkoutsRide == 0) $numWorkoutsRide = 1;
+		$avgWattRide = round($avgWattRide / $numWorkoutsRide);
+		$avgSpeed = round($avgSpeedRide / $numWorkoutsRide);
+		$distanceInKm = round($distanceInKmRide,0);
+		$avgHRRide = round($avgHRRide / $numWorkoutsRide, 0);
+		$maxSpeedRide = max($maxSpeedArrayRide);
   }
-
-  if(count($maxSpeedArrayRide) < 1) array_push($maxSpeedArrayRide, 0);
-  if($numWorkoutsRide == 0) $numWorkoutsRide = 1;
-  $avgWattRide = round($avgWattRide / $numWorkoutsRide);
-  $avgSpeed = round($avgSpeedRide / $numWorkoutsRide);
-  $distanceInKm = round($distanceInKmRide,0);
-  $avgHRRide = round($avgHRRide / $numWorkoutsRide, 0);
-  $maxSpeedRide = max($maxSpeedArrayRide);
 
   $hoursRide = floor($durationInSecondsRide / 3600);
   $minutesRide = floor(($durationInSecondsRide / 60) % 60);
@@ -201,11 +201,13 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   $avgWattAth           = 0;
   $avgSpeedAth          = 0;
   $avgHRAth             = 0;
-  $maxSpeedAth         = 0;
+  $maxSpeedAth          = 0;
   $numWorkoutsAth       = 0;
   $maxSpeedArrayAth     = array();
+	$maxSpeedAth          = 0;
 
-  if(count($workoutsAth) > 0 && isset($workoutsAth[0]->DurationInSeconds)) {
+
+	if(count($workoutsAth) > 0 && isset($workoutsAth[0]->DurationInSeconds)) {
       foreach ( $workoutsAth as $workoutAth ) {
           $numWorkoutsAth ++;
           $durationInSecondsAth += $workoutAth->DurationInSeconds;
@@ -217,15 +219,15 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
           array_push($maxSpeedArrayAth, $workoutAth->MaxSpeed);
       }
 
+      if(count($maxSpeedArrayAth) < 1) array_push($maxSpeedArrayAth, 0);
+      if($numWorkoutsAth == 0) $numWorkoutsAth = 1;
+      $avgWattAth = round($avgWattAth / $numWorkoutsAth);
+      $avgSpeedAth = round($avgSpeedAth / $numWorkoutsAth);
+      $distanceInKmAth = round($distanceInKmAth,0);
+      $avgHRAth = round($avgHRAth / $numWorkoutsAth, 0);
+      $maxSpeedAth = max($maxSpeedArrayAth);
   }
 
-  if(count($maxSpeedArrayAth) < 1) array_push($maxSpeedArrayAth, 0);
-  if($numWorkoutsAth == 0) $numWorkoutsAth = 1;
-  $avgWattAth = round($avgWattAth / $numWorkoutsAth);
-  $avgSpeedAth = round($avgSpeedAth / $numWorkoutsAth);
-  $distanceInKmAth = round($distanceInKmAth,0);
-  $avgHRAth = round($avgHRAth / $numWorkoutsAth, 0);
-  $maxSpeedAth = max($maxSpeedArrayAth);
 
   $hoursAth = floor($durationInSecondsAth / 3600);
   $minutesAth = floor(($durationInSecondsAth / 60) % 60);
