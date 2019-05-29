@@ -394,8 +394,21 @@ get_header(); ?>
     </section>
 
     <!-- Insta Feed -->
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
     <section id="insta-feed">
+        <script>
+            // do not load unless in viewport
+            $(window).load(function() {
+                var scrollFromTop = $("#insta-feed").offset().top;
+                $(document).scroll(function () {
+                    if ($(this).scrollTop() + $(window).height() > scrollFromTop && !$('#insta-feed .eapps-instagram-feed').length) {
+                        var s = document.createElement('script');
+                        s.setAttribute('type', 'text/javascript');
+                        s.src = 'https://apps.elfsight.com/p/platform.js';
+                        document.getElementById('insta-feed').appendChild(s);
+                    }
+                })
+            })
+        </script>
         <div class="elfsight-app-68c04125-a35e-456f-8499-ee5f6be481c3"></div>
     </section>
 
