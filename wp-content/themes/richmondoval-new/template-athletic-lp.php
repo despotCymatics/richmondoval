@@ -405,8 +405,8 @@ if ( count( $sessions ) > 1 ) {
 		?>
 
 		<?php
-    if ( false ) {
-		//if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) {
+    //if ( false ) {
+		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) {
 			?>
           <div class="ov-ride-schedule">
             <img class="ov-ride-schedule-logo"
