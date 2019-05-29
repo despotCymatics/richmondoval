@@ -43,17 +43,17 @@ if (!isset( $_SESSION['logged'] ))  {
 			<p>Coach: <br>
 				<strong>'.$instructor->FirstName.' '. $instructor->LastName.'</strong>
 			</p>
-			<a class="ovalfit-faq-trigger" href="javascript:void(0);">Know your ride</a>
+			<!--<a class="ovalfit-faq-trigger" href="javascript:void(0);">Know your workout</a>-->
 		</div>
 		<div class="col-lg-6">
 
 			<!--FAQ\'s-->
             <div class="ovalfit-faqs" style="display: none;">
                 <span class="close">X</span>
-                <h3>KNOW YOUR RIDES</h3>
+                <h3>KNOW YOUR WORKOUT</h3>
                 <div class="ovalfit-qas">
                     <div class="ovalfit-qa">
-                        <a href="javascript:void(0);">RIDE ELEVATION</a>
+                        <a href="javascript:void(0);">FULL PULL</a>
                         <p>This class will focus on strengthening muscular systems that power hill climbs. Legs, glutes and	core will be challenged with lower cadence, higher resistance drills. This class will improve your ability to crush shorter climbs and improve your endurance above threshold. You will be challenged with drills including:<br><br>
 							Climbing Repeats<br>
 							Seated and Standing Power<br>
@@ -65,7 +65,7 @@ if (!isset( $_SESSION['logged'] ))  {
                         </p>
                     </div>
                     <div class="ovalfit-qa">
-                        <a href="javascript:void(0);">RIDE ENDURE</a>
+                        <a href="javascript:void(0);">SHOVE IT</a>
                         <p>This class will focus on accumulating plenty of time at high aerobic workloads. A great class to improve your aerobic endurance, speed and pedaling efficiency. Prepare yourself for higher speeds and faster recoveries! <br><br>
                         	Speed intervals<br>
 	                        Long tempo flats <br>
@@ -76,7 +76,7 @@ if (!isset( $_SESSION['logged'] ))  {
                         </p>
                     </div>
                     <div class="ovalfit-qa">
-                        <a href="javascript:void(0);">RIDE REVOLUTION</a>
+                        <a href="javascript:void(0);">ATHLETIC PRINCIPLES</a>
                         <p>The ultimate sampler class features a variety of challenging drills including: time trials, aerobic endurance, hill climbs and explosive max power intervals. You will train in all 7 intensity zones:<br><br>
                         
 							Neuromuscular Power<br>
@@ -90,21 +90,6 @@ if (!isset( $_SESSION['logged'] ))  {
                         </p>
                     </div>
                     
-                    <div class="ovalfit-qa">
-                        <a href="javascript:void(0);">RIDE FOUNDATIONS </a>
-                        <p>A 50-minute class that introduces power-based cycling and the 7 intensity zones. This class is great for beginners that are new to Stages bikes or indoor cycling. RIDE Foundations will cover: <br>
-                        
-							Bike set-up and fit <br>
-							Technique and form<br>
-							Console data<br>
-							Sprint shift lever<br>
-							Power meter<br>
-							7 intensity zones<br>
-							Gauge data and target percentages<br><br>
-
-An educational, challenging workout that will leave you wanting more! 
-                        </p>
-                    </div>
                 </div>
                 <div class="ovalfit-qa-single"></div>
                 <script>
