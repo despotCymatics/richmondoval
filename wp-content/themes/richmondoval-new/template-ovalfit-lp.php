@@ -329,10 +329,10 @@
 					</div>
 
 					<div>
-						<a class="ov-program-btn ov-program-ride-btn" data-name="ride" data-learn-link="/oval-fit-login/" data-learn-txt="LEARN MORE" data-description="<?=get_field('program1_text');?>" data-logo="<?=get_field('program1_logo');?>">
+						<a class="ov-program-btn ov-program-ride-btn" data-name="ride" data-learn-link="/ovalfit/ride/" data-learn-txt="LEARN MORE" data-description="<?=get_field('program1_text');?>" data-logo="<?=get_field('program1_logo');?>">
 							<img src="<?=get_field('program1_image');?>" class="ov-team-image-program0">
 						</a>
-						<a class="ov-program-btn ov-program-lift-btn" data-name="lift" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="<?=get_field('program2_text');?>" data-logo="<?=get_field('program2_logo');?>">
+						<a class="ov-program-btn ov-program-lift-btn" data-name="lift" data-learn-link="/ovalfit/athletic/" data-learn-txt="LEARN MORE" data-description="<?=get_field('program2_text');?>" data-logo="<?=get_field('program2_logo');?>">
 							<img src="<?=get_field('program2_image');?>" class="ov-team-image-program2 ov-team-image-program">
 						</a>
 					</div>
@@ -341,7 +341,7 @@
 						<a class="ov-program-btn ov-program-flow-btn" data-name="flow" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="<?=get_field('program3_text');?>" data-logo="<?=get_field('program3_logo');?>">
 							<img src="<?=get_field('program3_image');?>" class="ov-team-image-program1 ov-team-image-program">
 						</a>
-						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" 						   data-description="<?=get_field('program4_text');?>" data-logo="<?=get_field('program4_logo');?>">
+						<a class="ov-program-btn ov-program-cardio-btn" data-name="cardio" data-learn-link="" data-learn-txt="" data-coming-soon="LAUNCHING SOON" data-description="<?=get_field('program4_text');?>" data-logo="<?=get_field('program4_logo');?>">
 							<img src="<?=get_field('program4_image');?>" class="ov-team-image-program1 ov-team-image-program">
 						</a>
 					</div>
@@ -365,7 +365,7 @@
 						<img class="ov-ride-logo" src="<?=get_field('program2_logo');?>"/>
 						<p><?=get_field('program2_text');?></p>
 						<div class="ov-btn-container">
-							<span class="ov-coming-soon">LAUNCHING SOON</span>
+              <a href="/ovalfit/athletic/" class="ov-fit-btn">LEARN MORE</a>
 							<!--<a href="#" class="ov-fit-btn">COMING SOON</a>-->
 						</div>
 						<!--<a href="#" class="ov-fit-book-btn ov-program-offereing-book">> BOOK YOUR CLASS</a>-->
