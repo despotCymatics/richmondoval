@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="col-sm-6">
-                <a href="javascript:void(0);" data-go="athletic" class="banner athletic-banner" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/athletic_hero_1_sm.jpg)" >
+                <a href="javascript:void(0);" data-go="athletic" class="banner athletic-banner" style="background-image: url(<?= get_stylesheet_directory_uri() ?>/images/stages/athletic_hero_1_sm1.jpg)" >
                     <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/athletic-logo-white.svg"><br>
                     <span class="see-schedule">See Schedule</span>
                 </a>

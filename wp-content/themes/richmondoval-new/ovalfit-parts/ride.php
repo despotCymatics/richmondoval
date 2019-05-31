@@ -5,7 +5,7 @@
                 <div class="row top">
                     <div class="col-sm-6">
                         <div class="title">
-                            <h3>Ride. Push. Repeat</h3>
+                            <h3>Ride.Push.Repeat</h3>
                         </div>
                     </div>
                   <div class="col-sm-6 alignRight">

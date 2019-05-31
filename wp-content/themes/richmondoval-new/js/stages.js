@@ -65,7 +65,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
 function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, sessionDate, sessionTime) {
 
     swal({
-        html: "<h2>YOUR WORKOUT IS WAITING</h2>"+
+        html: "<h2>ONE STEP AWAY</h2>"+
             "<p>Please confirm your workout.</p>"+
             "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'><br><p class='bike-num'>#"+bikeNum+"</p>",
         allowOutsideClick: false,
@@ -96,7 +96,7 @@ function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                     success: function (response) {
                         if(response =='<p>Thank You for Booking with OvalFit!</p>') {
                             swal({
-                                html: "<h2>Your WORKOUT is ready</h2>"+
+                                html: "<h2>See you in the studio!</h2><p>Bring your towel and water bottle</p>"+
                                     "<img src='/wp-content/themes/richmondoval-new/images/stages/treadmill.svg'>"+
                                     "<p class='bike-num'>#"+bikeNum+"</p><br>"+
                                     "<h4 class='session-name'>"+sessionName+"</h4>"+

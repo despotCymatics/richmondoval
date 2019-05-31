@@ -5,7 +5,7 @@
                 <div class="row top">
                     <div class="col-sm-6">
                         <div class="title">
-                            <h3>PUSH.YOUR.SELF</h3>
+                            <h3>Push.Your.Self</h3>
                         </div>
                     </div>
                     <div class="col-sm-6 alignRight">
