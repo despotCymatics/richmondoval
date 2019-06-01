@@ -103,7 +103,7 @@
 
     <div class="pageWrap">
 
-        <?php if(!is_page_template("template-blank.php")) { ?>
+        <?php if(!is_page_template("template-blank.php") && !is_page_template("template-stages.php") && !is_page_template("template-stages_login.php") && !is_page_template("template-stages_registration.php")) { ?>
 
         <header>
             <div class="topBar">

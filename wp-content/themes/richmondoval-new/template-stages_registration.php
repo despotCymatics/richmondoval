@@ -39,7 +39,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 			if(isset($userReg->ModelState->{'user.Phone'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Phone'}[0]."</li>";
 			if(isset($userReg->ModelState->{'user.Weight'}[0])) $message .= "<li>".$userReg->ModelState->{'user.Weight'}[0]."</li>";
 			$message .= '</ul>';
-		    //var_dump($userReg);
+
 			//json_encode($userReg);
 		    //$message .= json_encode($userReg->ModelState);
         }
@@ -63,9 +63,6 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
             </a>
             <br>
             <br>
-           <!-- <div class="ride-logo">
-                <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/RIDE_logo.svg">
-            </div>-->
         </div>
 
         <?php
@@ -161,7 +158,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
 
                             <input type='email' name='email' id='email' required maxlength="50" autocomplete="off" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>"/>
 
-                            <input type='text' name='phone' id='phone' required maxlength="50" autocomplete="off" pattern="\d*" placeholder="Phone (xxxxxxxxxx)" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : ''; ?>"/>
+                            <input type='number' name='phone' id='phone' required maxlength="50" autocomplete="off" pattern="\d*" placeholder="Phone (xxxxxxxxxx)" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : ''; ?>"/>
 
                             <input type="text" class="birthdate" name="birthdate" required readonly="true" placeholder="Date of birth" value="<?php echo isset($_POST['birthdate']) ? $_POST['birthdate'] : ''; ?>"/>
 

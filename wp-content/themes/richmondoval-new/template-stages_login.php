@@ -26,9 +26,6 @@ if(isset($_SESSION['logged'])) {
                 </a>
                 <br>
                 <br>
-                <!--<div class="ride-logo">
-                    <img src="<?/*= get_stylesheet_directory_uri() */?>/images/stages/RIDE_logo.svg">
-                </div>-->
             </div>
 
             <div class="row">
@@ -36,7 +33,6 @@ if(isset($_SESSION['logged'])) {
 
                     <?php
 	                    if(isset($_GET['lost-password']) && $_GET['lost-password'] == true){ ?>
-
 
                             <form id='lost-pass' action='' method='get' accept-charset='UTF-8'>
                                 <fieldset>

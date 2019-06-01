@@ -3,17 +3,15 @@
       <h4>Welcome back, <?= $user->FirstName ?></h4>
       <p>Check out your OVALfit dashboard</p>
     </div>
+    <!-- Latest activity -->
+    <?php if(isset($latestActivity->Location->Id)) {?>
     <div class="latest-activity">
         <span>Latest Activity</span>
         <div class="latest-activity-stats">
+	        <?php if ($latestActivity->Location->Id === 1400) { ?>
             <div>
-              <?php if ($latestActivity->Location->Id === 1400) { ?>
               <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/bike-grey.svg">
-              Ride
-              <?php } else if ($latestActivity->Location->Id === 1794) { ?>
-              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/treadmill.svg">
-              Athletic
-              <?php } ?>
+              ride
             </div>
             <div>
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
@@ -31,8 +29,27 @@
                 <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/speed.svg">
 	            <?=round($latestActivity->AvgSpeed, 0); ?> km/h
             </div>
+	        <?php } else if ($latestActivity->Location->Id === 1794) { ?>
+            <div>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/treadmill.svg">
+              athletic
+            </div>
+            <div>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/time.svg">
+              <?=floor($latestActivity->DurationInSeconds/60); ?> mins
+            </div>
+            <div>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/burn.svg">
+              <?=$latestActivity->KiloCalories; ?> calories
+            </div>
+            <div>
+              <img class="svg" src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg">
+              <?=round($latestActivity->AvgHeartRate, 0); ?> bpm
+            </div>
+	        <?php } ?>
         </div>
     </div>
+    <?php } ?>
     <div class="welcome hideOnTablet">
         <h4>Welcome back, <?= $user->FirstName ?></h4>
         <p>Check out your OVALfit dashboard</p>
@@ -54,60 +71,69 @@
         </div>
     </div>
 
-
     <div class="next-activity">
         <div class="row">
             <div class="col-sm-12">
                 <?php
-                if ( count( $userBookingsRide ) > 0 ) { ?>
-                    <h4>YOUR NEXT ACTIVITY</h4>
-                    <?php foreach ( $userBookingsRide as $userBooking ) { ?>
-
-                        <div class="bookings" data-id="<?= $userBooking->Id; ?>">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-sm-8 col-xs-6">
-                                        <h4><?= $userBooking->Session->Name; ?></h4>
-                                        <?php
-                                        $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
-                                        $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
-                                        ?>
-                                        <span class="date"><?= $sessionDate; ?></span><br>
-                                        <span><?= $sessionTime; ?></span>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-6 alignRight">
-                                        <button class="btn orange regular" onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                } else if ( count( $userBookingsAth ) > 0 ) { ?>
+                if ( count( $userBookingsRide ) > 0 || count($userBookingsAth) > 0) { ?>
                   <h4>YOUR NEXT ACTIVITY</h4>
-	                <?php foreach ( $userBookingsAth as $userBooking ) { ?>
-
-                    <div class="bookings" data-id="<?= $userBooking->Id; ?>">
-                      <div class="">
-                        <div class="row">
-                          <div class="col-sm-8 col-xs-6">
-                            <h4><?= $userBooking->Session->Name; ?></h4>
-						                <?php
-						                $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
-						                $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
-						                ?>
-                            <span class="date"><?= $sessionDate; ?></span><br>
-                            <span><?= $sessionTime; ?></span>
+                  <div class="activities">
+                  <?php if ( count( $userBookingsRide ) > 0 ) {
+                      foreach ( $userBookingsRide as $key => $userBooking ) { ?>
+                          <?php if ($key > 0 ) { ?>
+                            <span class="show-more-activity">Show more</span>
+                          <?php } ?>
+                          <div class="bookings" data-id="<?= $userBooking->Id; ?>">
+                              <div class="">
+                                  <div class="row">
+                                      <div class="col-sm-8 col-xs-6">
+                                          <h4><?= $userBooking->Session->Name; ?></h4>
+                                          <?php
+                                          $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+                                          $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+                                          ?>
+                                          <span class="date"><?= $sessionDate; ?></span><br>
+                                          <span><?= $sessionTime; ?></span>
+                                      </div>
+                                      <div class="col-sm-4 col-xs-6 alignRight">
+                                          <button class="btn orange regular" onclick="cancelBooking('<?= $authCode; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
+                                      </div>
+                                  </div>
+                              </div>
                           </div>
-                          <div class="col-sm-4 col-xs-6 alignRight">
-                            <button class="btn orange regular" onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
+                          <?php
+                        }
+                    }
+
+                    if ( count( $userBookingsAth ) > 0 ) {
+	                    foreach ( $userBookingsRide as $key => $userBooking ) { ?>
+                      <?php if ($key > 0 ) { ?>
+                        <span class="show-more-activity">Show more</span>
+                      <?php } ?>
+                      <div class="bookings" data-id="<?= $userBooking->Id; ?>">
+                        <div class="">
+                          <div class="row">
+                            <div class="col-sm-8 col-xs-6">
+                              <h4><?= $userBooking->Session->Name; ?></h4>
+                              <?php
+                              $sessionDate = date("D, M jS", strtotime($userBooking->Session->StartDateTime));
+                              $sessionTime = date("g:ia", strtotime($userBooking->Session->StartDateTime))." - ".date("g:ia", strtotime('+'.$userBooking->Session->Duration.' minutes',strtotime($userBooking->Session->StartDateTime)));
+                              ?>
+                              <span class="date"><?= $sessionDate; ?></span><br>
+                              <span><?= $sessionTime; ?></span>
+                            </div>
+                            <div class="col-sm-4 col-xs-6 alignRight">
+                              <button class="btn orange regular" onclick="cancelSpotBooking('<?= $authCodeAthletic; ?>','<?= $userBooking->Id ?>',' <?=$userBooking->Bike->Number ?>', '<?= $userBooking->Session->Name; ?>', '<?=$sessionDate?>', '<?=$sessionTime?>')">Cancel Reservation</button>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-		                <?php
-	                }
-                }?>
+                        <?php
+                        }
+                      }
+                  ?>
+                  </div>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -318,7 +344,7 @@
                 </div>
                 <div class="stat-wrap col-md-6 col-lg-3">
                   <div>
-                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average Hart Rate</p>
+                    <p><img src="<?= get_stylesheet_directory_uri() ?>/images/stages/rate.svg"> Average Heart Rate</p>
                     <div class="big-number">
                       <?=$avgHRAth?>
                     </div>

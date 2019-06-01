@@ -834,7 +834,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 }
 
 .page-template-template-stages_login .stages-logo, .page-template-template-stages_registration .stages-logo {
-    max-width: 360px;
+    max-width: 260px;
     width: 80% !important;
     padding-top: 40px;
 }
@@ -1362,6 +1362,29 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     font-weight: 400;
     color: #FF9E18;
 }
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .activities {
+    transition: all 0.3s ease;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .activities.more {
+    max-height: 600px;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .show-more-activity {
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+    font-weight: 200;
+}
+
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .show-more-activity:hover {
+    color: #FF9E18;
+}
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .latest-activity {
     margin-bottom: 20px;
@@ -1406,12 +1429,17 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     color: #fff;
     width: 100%;
     padding: 30px;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+.ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner:hover {
+    opacity: 1;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .banner img{

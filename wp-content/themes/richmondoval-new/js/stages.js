@@ -217,6 +217,11 @@ function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDat
 
 jQuery(document).ready(function($) {
 
+    //show more activities
+    $(document).on('click', '.show-more-activity', function(e){
+        $('.activities').toggleClass('more');
+    });
+
     //register button disable
     $('#ovalfit-registration').submit(function() {
         $(this).find('button').disable();
@@ -413,7 +418,7 @@ jQuery(document).ready(function($) {
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.ovalfit-main > div').hide();
-        $('.ovalfit-main > div#'+sectionId).fadeIn(300);
+        $('.ovalfit-main > div#'+sectionId).fadeIn(0);
 
         $('.ovalfit-side-menu').removeClass('active');
         $('body').removeClass('ovalfit-side-menu-open');
@@ -457,7 +462,7 @@ jQuery(document).ready(function($) {
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.stats-tab').hide();
-        $('.stats-tab#'+sectionId).fadeIn(100);
+        $('.stats-tab#'+sectionId).fadeIn(0);
     });
 
 
