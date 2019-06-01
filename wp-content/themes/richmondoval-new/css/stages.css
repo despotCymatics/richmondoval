@@ -1378,8 +1378,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     right: 20px;
     cursor: pointer;
     font-size: 13px;
-    text-decoration: underline;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard .show-more-activity:hover {
