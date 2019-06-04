@@ -196,7 +196,7 @@
                             <div class="moreText <?=$disableClass;?>">
                                 <img width="200" class="loader-img" src="/wp-content/themes/richmondoval-new/images/basic/oval-fit-loading-dots.gif">
                                 <p style="text-align: center">Please wait</p>
-                                <div class="ride-on-info">PUSH ON. Check back 26hrs in advance of class time to reserve a bike</div>
+                                <div class="ride-on-info">PUSH ON. Check back 26hrs in advance of class time to reserve a workout</div>
                             </div>
 
                             <?php
