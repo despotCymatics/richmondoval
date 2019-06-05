@@ -279,18 +279,16 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
             </div>
             <a href="https://stagesflight.com/Account/ProfileSettings" class="profile-menu-item">
               Profile Settings <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/settings.svg">
+              <div class="side-menu-info">
+                You’ll be directed to STAGES website
+              </div>
             </a>
             <a href="/oval-fit-logout/" class="logout-menu-item">
               Logout
               <img src="<?= get_stylesheet_directory_uri() ?>/images/stages/logout.svg">
             </a>
-
-          </div>
-          <div class="side-menu-info">
-              You’ll be directed to STAGES website
           </div>
       </div>
-
 
       <!-- Mobile Header -->
       <div class="ovalfit-mobile-header">
