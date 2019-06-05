@@ -179,15 +179,16 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
 		  $avgSpeedRide          += $workoutRide->AvgSpeed;
 		  $avgHRRide             += $workoutRide->AvgHeartRate;
 		  array_push($maxSpeedArrayRide, $workoutRide->MaxSpeed);
-
 	  }
+
 		if(count($maxSpeedArrayRide) < 1) array_push($maxSpeedArrayRide, 0);
 		if($numWorkoutsRide == 0) $numWorkoutsRide = 1;
 		$avgWattRide = round($avgWattRide / $numWorkoutsRide);
-		$avgSpeed = round($avgSpeedRide / $numWorkoutsRide);
+		$avgSpeedRide = round($avgSpeedRide / $numWorkoutsRide);
 		$distanceInKm = round($distanceInKmRide,0);
 		$avgHRRide = round($avgHRRide / $numWorkoutsRide, 0);
 		$maxSpeedRide = max($maxSpeedArrayRide);
+
   }
 
   $hoursRide = floor($durationInSecondsRide / 3600);
