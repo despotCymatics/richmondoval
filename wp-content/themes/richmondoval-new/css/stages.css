@@ -947,7 +947,7 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
 
 /********** Change Dates ***********/
 
-form#changeDates {
+form#changeDatesRide, form#changeDatesAth {
     width: 320px;
     position: absolute;
     right: 0;
@@ -958,7 +958,7 @@ form#changeDates {
 
 }
 
-form#changeDates input {
+form#changeDatesRide input, form#changeDatesAth input {
     border: none;
     cursor: pointer;
     margin: 0;
@@ -966,13 +966,12 @@ form#changeDates input {
     font-family: 'prometo';
 
 }
-form#changeDates input:focus {
+form#changeDatesRide input:focus, form#changeDatesAth input:focus {
     outline: none;
-}
-form#changeDates input:focus {
     box-shadow: none;
 }
-form#changeDates:before {
+
+form#changeDatesRide:before, form#changeDatesAth:before {
     display: block;
     content: "\f073";
     font-family: FontAwesome;
@@ -1827,14 +1826,14 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
         text-align: center;
     }
 
-    form#changeDates {
+    form#changeDatesRide, form#changeDatesAth {
         width: 100%;
         position: static;
         border-bottom: 1px solid #d8d8d8;
         display: flex;
         justify-content: flex-start;
     }
-    form#changeDates input {
+    form#changeDatesRide input, form#changeDatesAth input {
         width: auto;
         min-width: 290px;
         padding: 0 10px;
@@ -1994,7 +1993,7 @@ body.ovalfit-side-menu-open .ovalfit-side-menu-overlay{
     .page-template-template-stages .ovalfit-body .showMoreToggler {
         padding: 20px;
     }
-    form#changeDates {
+    form#changeDatesRide, form#changeDatesAth {
         padding-left: 20px;
     }
     .ovalfit-wrapper .ovalfit-main .ovalfit-dashboard {

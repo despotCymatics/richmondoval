@@ -156,12 +156,12 @@
 
                         <!-- Sessions -->
                         <div id="sessionsRide" class="tabcontent">
-                            <form id="changeDates" method="post" action="/oval-fit/">
+                            <form id="changeDatesRide" method="post" action="/oval-fit/#ride">
                                 <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
                                 <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
                                 <input
                                     type="text"
-                                    class="daterange"
+                                    class="daterange daterange-ride"
                                     name="daterange"
                                     value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
                                     autocomplete="off"

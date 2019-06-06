@@ -153,6 +153,18 @@
 
                         <!-- Sessions -->
                         <div id="sessionsAth" class="tabcontent">
+                          <form id="changeDatesAth" method="post" action="/oval-fit/#athletic">
+                            <input type="hidden" name="dateFrom" class="dateFrom" value="<?= $dateFrom; ?>">
+                            <input type="hidden" name="dateTo" class="dateTo" value="<?= $dateTo; ?>">
+                            <input
+                              type="text"
+                              class="daterange daterange-ath"
+                              name="daterange"
+                              value="<?= date("M d Y", strtotime($dateFrom)); ?> - <?= date("M d Y", strtotime($dateTo)); ?>"
+                              autocomplete="off"
+                              readonly="true"
+                            />
+                          </form>
 
                         <?php
                         if ( count( $sessionsAth ) > 0 ) {

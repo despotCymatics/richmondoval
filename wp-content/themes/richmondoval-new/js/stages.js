@@ -272,7 +272,7 @@ jQuery(document).ready(function($) {
 
     //Daterange
     $(function() {
-        $('input[name="daterange"]').daterangepicker({
+        $('input[name="daterange"].daterange-ride').daterangepicker({
             opens: 'left',
             showDropdowns: true,
             buttonClasses: 'btn regular orange',
@@ -281,14 +281,9 @@ jQuery(document).ready(function($) {
             },
             locale: {
                 format: 'MMMM D Y',
-                //minYear: 2018,
-                //maxYear:parseInt(moment().add('years', 1).format('YYYY'),1),
             },
-
-
         }, function(start, end, label) {
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-
         }).on('apply.daterangepicker', function(ev, picker) {
             loaderIn();
             var start = picker.startDate;
@@ -297,12 +292,36 @@ jQuery(document).ready(function($) {
                 console.log("equal");
                 end = end.add(1, 'days');
             }
-            console.log(start.format('YYYY-MM-DD'));
-            console.log(end.format('YYYY-MM-DD'));
-
             $('input.dateFrom').val(start.format('YYYY-MM-DD'));
             $('input.dateTo').val(end.format('YYYY-MM-DD'));
-            document.getElementById('changeDates').submit();
+            document.getElementById('changeDatesRide').submit();
+        })
+    });
+
+    $(function() {
+        $('input[name="daterange"].daterange-ath').daterangepicker({
+            opens: 'left',
+            showDropdowns: true,
+            buttonClasses: 'btn regular orange',
+            maxSpan: {
+                "days": 7
+            },
+            locale: {
+                format: 'MMMM D Y',
+            },
+        }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        }).on('apply.daterangepicker', function(ev, picker) {
+            loaderIn();
+            var start = picker.startDate;
+            var end = picker.endDate;
+            if(start.format('YYYY-MM-DD') === end.format('YYYY-MM-DD')) {
+                console.log("equal");
+                end = end.add(1, 'days');
+            }
+            $('input.dateFrom').val(start.format('YYYY-MM-DD'));
+            $('input.dateTo').val(end.format('YYYY-MM-DD'));
+            document.getElementById('changeDatesAth').submit();
         })
     });
 
@@ -439,14 +458,19 @@ jQuery(document).ready(function($) {
         });
     }
 
-
     //Side menu clicks
     $(document).on('click', '.ovalfit-side-menu .side-menu-items a:not(.schedules-submenu-trigger):not(.logout-menu-item):not(.profile-menu-item)', function(e){
+        e.preventDefault();
         $('.ovalfit-side-menu .side-menu-items a').removeClass('active');
         $(this).addClass('active');
         var sectionId = $(this).attr('data-go');
         $('.ovalfit-main > div').hide();
         $('.ovalfit-main > div#'+sectionId).fadeIn(0);
+        if(history.pushState) {
+            history.pushState(null, null, '#'+sectionId);
+        } else {
+            window.location.hash = '#'+sectionId;
+        }
 
         $('.ovalfit-side-menu').removeClass('active');
         $('body').removeClass('ovalfit-side-menu-open');
@@ -493,12 +517,6 @@ jQuery(document).ready(function($) {
         $('.stats-tab#'+sectionId).fadeIn(0);
     });
 
-
-
-
-
-
-
     /* btnAdd.addEventListener('click', (e) => {
          // hide our user interface that shows our A2HS button
          btnAdd.style.display = 'none';
@@ -516,6 +534,15 @@ jQuery(document).ready(function($) {
              });
      });*/
 
+});
 
-
+//Hash check
+$(window).load(function () {
+    if (window.location.hash === '#dashboard') {
+        $('.ovalfit-side-menu .side-menu-items a.dashboard-menu-item').click();
+    } else if (window.location.hash === '#ride') {
+        $('.ovalfit-side-menu .side-menu-items a.ride-menu-item').click();
+    } else if (window.location.hash === '#athletic') {
+        $('.ovalfit-side-menu .side-menu-items a.athletic-menu-item').click();
+    }
 });
