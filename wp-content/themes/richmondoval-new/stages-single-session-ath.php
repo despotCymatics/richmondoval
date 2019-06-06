@@ -119,7 +119,7 @@ if (!isset( $_SESSION['logged'] ))  {
 
 					if ($bikeCounter <= 5 || $bikeCounter >= 12)
 					$returnHTML .='
-                            <div class="bike '.$disabledBike.'">
+                            <div class="bike '.$disabledBike.'" data-id="'.$bike->Id.$sessionId.'">
                                 <div class="bike-num" 
                                 onclick="bookSpot(
                                 \''.$authCode.'\',
@@ -141,7 +141,7 @@ if (!isset( $_SESSION['logged'] ))  {
 						$returnHTML .='
 
 						<div class="col-xs-1-8">
-                            <div class="bike '.$disabledBike.'">
+                            <div class="bike '.$disabledBike.'" data-id="'.$bike->Id.$sessionId.'">
                                 <div class="bike-num" 
                                 onclick="bookSpot(
                                 \''.$authCode.'\',

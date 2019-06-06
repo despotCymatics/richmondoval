@@ -41,6 +41,7 @@ function bookBike(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                                 "<p>Membership will be validated in the lobby to confirm your attendance. If you can’t make it please cancel your reservation online.</p>",
                                 allowOutsideClick: false
                             }).then((result) => {
+                                $(".bike[data-id='"+bikeId+sessionId+"']").addClass('disabled');
                                 loaderIn();
                                 window.location="/oval-fit/";
                             })
@@ -105,6 +106,7 @@ function bookSpot(authCode, userId, sessionId, bikeId, bikeNum, sessionName, ses
                                     "<p>Membership will be validated in the lobby to confirm your attendance. If you can’t make it please cancel your reservation online.</p>",
                                 allowOutsideClick: false
                             }).then((result) => {
+                                $(".bike[data-id='"+bikeId+sessionId+"']").addClass('disabled');
                                 loaderIn();
                                 window.location="/oval-fit/";
                             })
@@ -149,7 +151,19 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
             },
             success: function (response) {
                 if(response == '<h2>Your Booking has been canceled!</h2>') {
+
                     $("div[data-id='"+bookingId+"']").hide(200);
+                    setTimeout(function() {
+                        $("div[data-id='"+bookingId+"']").remove();
+                        console.log($('.next-activity .activities').length);
+                        if (!$('.next-activity .activities .bookings').length) {
+                            $('.next-activity-title').hide();
+                            $('.show-more-activity').hide();
+                        } else if ($('.next-activity .activities .bookings').length === 1) {
+                            $('.show-more-activity').hide();
+                        }
+                    }, 201);
+
                     swal({
                         html: "<h2>Your reservation has been cancelled!</h2>"+
                             "<p>See you on the next RIDE.</p>"+
@@ -160,8 +174,9 @@ function cancelBooking(authCode, bookingId, bikeNum, sessionName, sessionDate, s
                         "<span class='session-time'>"+sessionTime+"</span>"
 
                     }).then((result) => {
-                        loaderIn();
-                        window.location="/oval-fit/";
+                        $(".showMoreToggler.loaded").removeClass('loaded');
+                        //loaderIn();
+                        //window.location="/oval-fit/";
                     });
                 }
 
@@ -193,7 +208,19 @@ function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDat
             },
             success: function (response) {
                 if(response == '<h2>Your Booking has been canceled!</h2>') {
+
                     $("div[data-id='"+bookingId+"']").hide(200);
+                    setTimeout(function() {
+                        $("div[data-id='"+bookingId+"']").remove();
+                        console.log($('.next-activity .activities .bookings').length);
+                        if (!$('.next-activity .activities .bookings').length) {
+                            $('.next-activity-title').hide();
+                            $('.show-more-activity').hide();
+                        } else if ($('.next-activity .activities .bookings').length === 1) {
+                            $('.show-more-activity').hide();
+                        }
+                    }, 201);
+
                     swal({
                         html: "<h2>Your reservation has been cancelled!</h2>"+
                             "<p>We hope to see you soon.</p>"+
@@ -204,8 +231,9 @@ function cancelSpotBooking(authCode, bookingId, bikeNum, sessionName, sessionDat
                             "<span class='session-time'>"+sessionTime+"</span>"
 
                     }).then((result) => {
-                        loaderIn();
-                        window.location="/oval-fit/";
+                        $(".showMoreToggler.loaded").removeClass('loaded');
+                        //loaderIn();
+                        //window.location="/oval-fit/";
                     });
                 }
 

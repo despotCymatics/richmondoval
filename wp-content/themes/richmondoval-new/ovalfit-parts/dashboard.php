@@ -76,13 +76,13 @@
             <div class="col-sm-12">
                 <?php
                 if ( count( $userBookingsRide ) > 0 || count($userBookingsAth) > 0) { ?>
-                  <h4>YOUR NEXT ACTIVITY</h4>
+                  <h4 class="next-activity-title">YOUR NEXT ACTIVITY</h4>
                   <div class="activities">
+                    <?php if(count ($userBookings) > 1) { ?>
+                    <span class="show-more-activity">Show more</span>
+                    <?php } ?>
                   <?php if ( count( $userBookingsRide ) > 0 ) {
                       foreach ( $userBookingsRide as $key => $userBooking ) { ?>
-                          <?php if ($key > 0 ) { ?>
-                            <span class="show-more-activity">Show more</span>
-                          <?php } ?>
                           <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                               <div class="">
                                   <div class="row">
@@ -106,10 +106,7 @@
                     }
 
                     if ( count( $userBookingsAth ) > 0 ) {
-	                    foreach ( $userBookingsRide as $key => $userBooking ) { ?>
-                      <?php if ($key > 0 ) { ?>
-                        <span class="show-more-activity">Show more</span>
-                      <?php } ?>
+	                    foreach ( $userBookingsAth as $key => $userBooking ) { ?>
                       <div class="bookings" data-id="<?= $userBooking->Id; ?>">
                         <div class="">
                           <div class="row">

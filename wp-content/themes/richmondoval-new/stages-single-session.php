@@ -140,7 +140,7 @@ An educational, challenging workout that will leave you wanting more!
 					}
 					$returnHTML .='
                         <div class="col-xs-1-10">
-                            <div class="bike '.$disabledBike.'">
+                            <div class="bike '.$disabledBike.'" data-id="'.$bike->Id.$sessionId.'">
                                 <div class="bike-num" 
                                 onclick="bookBike(
                                 \''.$authCode.'\',
