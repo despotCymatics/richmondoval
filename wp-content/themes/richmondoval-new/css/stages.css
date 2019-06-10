@@ -874,6 +874,11 @@ ovalfit-faqs .ovalfit-qa-single a:hover {
     background: #B23409;
 }
 
+.page-template-template-stages_login .btn.disabled, .page-template-template-stages_registration .btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .page-template-template-stages_login p, .page-template-template-stages_registration p {
     color: #fff;
 }

@@ -252,7 +252,7 @@ jQuery(document).ready(function($) {
 
     //register button disable
     $('#ovalfit-registration').submit(function() {
-        $(this).find('button').disable();
+        $(this).find('button').prop('disabled', true).addClass('disabled').text('Please wait');
     });
 
     //Session/Bookings Tabs

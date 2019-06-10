@@ -69,7 +69,7 @@ if(isset($_POST['submitted-reg']) && $_POST['submitted-reg'] != NULL)
         if($message) { ?>
             <div class="row">
                 <div class="col-md-offset-3 col-md-6">
-                    <div style="background: <?=$color;?>; color: #fff; padding: 15px;"><?=$message;?></div>
+                    <div style="background: <?=$color;?>; color: #fff; padding: 15px; border-radius: 5px;"><?=$message;?></div>
                 </div>
             </div>
         <?php
