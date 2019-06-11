@@ -5,10 +5,10 @@ ini_set('display_errors', TRUE);
 //AUTHORIZATION CODE
 
 //$authCode = authorize();
-$authCode = "mYREqTk8GEyt5Xsq5ptSvg==";
+$authCode = "I8tZR7pIgkC4wFCrZCeQPg==";
 
 //$authCodeAthletic = authorizeAthletic();
-$authCodeAthletic = "vvB014YLbka/39iWqcb/Tw==";
+$authCodeAthletic = "ZC+zKqxCkk6uyCjRmmvueg==";
 
 //var_dump($authCode);
 //var_dump($authCodeAthletic);
