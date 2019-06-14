@@ -494,6 +494,7 @@ p {
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    padding: 0 15px;
 }
 
 .ov-results-team h2 {
@@ -513,51 +514,6 @@ p {
     min-height: 200px;
     font-size: 14px;
     line-height: 20px;
-}
-
-/*ride schedule*/
-.ov-ride-schedule {
-    max-width: 1200px;
-    margin: 100px auto;
-}
-
-.ov-class-container {
-    margin: 50px 0;
-}
-
-.ov-class {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: #ccc 1px solid;
-    padding: 20px;
-}
-
-/*hovers*/
-.ov-class:hover {
-    background: #FF9E18;
-}
-
-.ov-class-info {
-    display: flex;
-}
-
-.ov-class-info-text h5 {
-    margin: 0;
-    color: #008fcd;
-    font-size: 14px;
-}
-
-.ov-class-info-text p {
-    margin: 0;
-    font-size: 14px;
-}
-
-.ov-class-info-text {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    margin-left: 15px;
 }
 
 .ov-fit-results {
@@ -723,6 +679,66 @@ p {
 .hideOnDesk {
     display: none !important;
 }
+
+
+/*ride schedule*/
+.ov-ride-schedule {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 15px;
+}
+
+.ov-class-container {
+    margin: 50px 0;
+    overflow-x: auto;
+}
+
+.ov-class {
+    padding: 10px;
+    background: #ECECEF;
+    margin: 15px 7px;
+}
+
+.ov-class-info {
+    display: flex;
+}
+
+.ov-class-info-text h5 {
+    margin: 0;
+    color: #008fcd;
+    font-size: 14px;
+}
+
+.ov-class-info-text p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.ov-class-info-text {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+/* Week Calendar */
+.week-calendar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    min-width: 870px;
+}
+
+.week-calendar >  div {
+    min-width: 16.6666%;
+}
+
+.week-calendar >  div > h3 {
+    text-align: center;
+    color: #008fcd;
+    text-transform: uppercase;
+}
+
 
 @media (max-width: 1440px) {
 
@@ -1349,23 +1365,18 @@ p {
         cursor: pointer;
     }
 
-    /*ride schedule*/
+    .ov-results-team {
+        padding: 0 15px;
+    }
+
     .ov-ride-schedule {
-        padding: 0;
+        padding: 15px;
         padding-bottom: 40px;
         margin: 10px auto;
     }
 
-    .ov-ride-schedule .ov-class {
-        padding: 20px 20px 20px 0;
-    }
-
     .ov-ride-schedule-logo {
         padding-left: 20px;
-    }
-
-    .ov-ride-schedule .ov-ride-schedule-logo {
-        width: 244px;
     }
 
     .ov-class-container {
@@ -1392,10 +1403,6 @@ p {
         color: #535453;
         line-height: 20px;
         min-height: auto;
-    }
-
-    .ov-class {
-        padding: 20px 0px;
     }
 
     .ov-class-info-text p {

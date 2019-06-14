@@ -5,15 +5,19 @@
 
 require "stages-api.php";
 
-$dateFrom = date( 'Y-m-d' );
-$dateTo   = strtotime( '+10 days' );
-$dateTo   = date( 'Y-m-d', $dateTo );
+$monday = strtotime('monday this week');
+$sunday = strtotime('sunday this week');
+
+$dateFrom = date( 'Y-m-d', $monday );
+$dateTo   = date( 'Y-m-d', $sunday );
+
 $sessions = getCurl( $authCodeAthletic, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
 if ( count( $sessions ) > 1 ) {
 	usort( $sessions, function ( $a, $b ) {
 		return ( strtotime( $a->StartDateTime ) < strtotime( $b->StartDateTime ) ? - 1 : 1 );
 	} );
 }
+
 
 ?>
 
@@ -406,45 +410,72 @@ if ( count( $sessions ) > 1 ) {
 
 		<?php
     //if ( false ) {
-		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) {
-			?>
-          <div class="ov-ride-schedule">
-            <img class="ov-ride-schedule-logo"
-                 src="<?= get_template_directory_uri() ?>/images/stages/athleticSchedule.png" width="520"/>
+		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) { ?>
+      <div class="ov-ride-schedule">
+        <img class="ov-ride-schedule-logo"
+             src="<?= get_template_directory_uri() ?>/images/stages/athleticSchedule.png" width="520"/>
 
-            <div class="ov-class-container">
+        <div class="ov-class-container">
+          <div class="week-calendar">
+
+
+
 				<?php
 				$sessionCount = 0;
+		    $currentDay = 'Monday'; ?>
+		      <div>
+            <h3><?=$currentDay?></h3>
 
+        <?php
 				foreach ( $sessions as $session ) {
-					if ( $sessionCount > 5 ) {
-						break;
-					}
-					$sessionDate = date( "D, M jS", strtotime( $session->StartDateTime ) );
-					$sessionTime = date( "g:ia", strtotime( $session->StartDateTime ) ) . " - " . date( "g:ia", strtotime( '+' . $session->Duration . ' minutes', strtotime( $session->StartDateTime ) ) );
-					?>
 
-                  <div class="ov-class">
-                    <div class="ov-class-info">
-                      <div class="ov-class-info-text">
-                        <h5><?= $session->Name ?></h5>
-                        <p>
-                          <span class="ov-schedule-date"><?= $sessionDate ?></span> <span><?= $sessionTime ?></span>
-                        </p>
-                      </div>
-                    </div>
-                    <div>
-                      <a href="/group-fitness/" class="ov-fit-btn-blue">BOOK YOUR CLASS</a>
-                    </div>
+					$sessionDate = date( "D, M jS", strtotime( $session->StartDateTime ) );
+			    $dayOfWeek = date("l", strtotime( $session->StartDateTime ));
+
+					$sessionTime = date( "g:ia", strtotime( $session->StartDateTime ) ) . " - " . date( "g:ia", strtotime( '+' . $session->Duration . ' minutes', strtotime( $session->StartDateTime ) ) );
+
+					//next day of the week
+					if($currentDay === $dayOfWeek) { ?>
+
+            <div class="ov-class">
+              <div class="ov-class-info">
+                <div class="ov-class-info-text">
+                  <p><?= $sessionTime ?></p>
+                  <h5><?= $session->Name ?></h5>
+                  <p><?= $sessionDate ?></p>
+                </div>
+              </div>
+            </div>
+
+			  <?php
+
+		      } else {
+
+            $currentDay = $dayOfWeek;
+            $sessionCount ++;
+        ?>
+					  </div>
+            <div>
+              <h3><?=$currentDay?></h3>
+              <div class="ov-class">
+                <div class="ov-class-info">
+                  <div class="ov-class-info-text">
+                    <p><?= $sessionTime ?></p>
+                    <h5><?= $session->Name ?></h5>
+                    <p><?= $sessionDate ?></p>
                   </div>
-					<?php
-					$sessionCount ++;
-				}
-				?>
+                </div>
+              </div>
+          <?php
+					  }
+				  }
+				  ?>
+                </div>
+              </div>
             </div>
 
             <div class="ov-align-center">
-              <a href="/oval-fit-login/" class="ov-fit-btn-lg">MORE CLASSES</a>
+              <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK CLASSES</a>
             </div>
           </div>
 			<?php
