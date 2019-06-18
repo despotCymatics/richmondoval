@@ -486,7 +486,7 @@ p {
 }
 
 
-    /*results team*/
+/*results team*/
 .ov-results-team {
     max-width: 1200px;
     margin: 100px auto;
@@ -690,7 +690,6 @@ p {
 
 .ov-class-container {
     margin: 50px 0;
-    overflow-x: auto;
 }
 
 .ov-class {
@@ -727,16 +726,43 @@ p {
     justify-content: space-evenly;
     align-items: flex-start;
     min-width: 870px;
+    position: relative;
 }
 
 .week-calendar >  div {
     min-width: 16.6666%;
 }
 
+.week-calendar:before {
+    display: block;
+    content: " ";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 48px;
+    left: -30px;
+    background: url("../../images/stages/sun-icon.jpg") no-repeat center / cover;
+}
+
+.week-calendar:after {
+    display: block;
+    content: " ";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 403px;
+    left: -30px;
+    background: url("../../images/stages/moon-icon.jpg") no-repeat center / cover;
+}
+
 .week-calendar >  div > h3 {
     text-align: center;
     color: #008fcd;
     text-transform: uppercase;
+}
+
+.day-sessions {
+    height: 340px;
 }
 
 
@@ -1052,6 +1078,11 @@ p {
 }
 
 @media (max-width: 768px) {
+
+
+    .ov-class-container {
+        overflow-x: auto;
+    }
 
     .ov-fit-training-ground-section {
         flex-direction: column-reverse;
@@ -1377,6 +1408,7 @@ p {
 
     .ov-ride-schedule-logo {
         padding-left: 20px;
+        max-width: 100%;
     }
 
     .ov-class-container {

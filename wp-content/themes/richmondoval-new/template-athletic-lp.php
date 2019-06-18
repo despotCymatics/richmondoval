@@ -409,7 +409,6 @@ if ( count( $sessions ) > 1 ) {
 		?>
 
 		<?php
-    //if ( false ) {
 		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) { ?>
       <div class="ov-ride-schedule">
         <img class="ov-ride-schedule-logo"
@@ -418,14 +417,15 @@ if ( count( $sessions ) > 1 ) {
         <div class="ov-class-container">
           <div class="week-calendar">
 
-
-
 				<?php
 				$sessionCount = 0;
-		    $currentDay = 'Monday'; ?>
+		    $currentDay = 'Monday';
+		    $eveTime = '5:00pm';
+		    $dayOver = false;
+		    ?>
 		      <div>
             <h3><?=$currentDay?></h3>
-
+            <div class="day-sessions">
         <?php
 				foreach ( $sessions as $session ) {
 
@@ -434,8 +434,14 @@ if ( count( $sessions ) > 1 ) {
 
 					$sessionTime = date( "g:ia", strtotime( $session->StartDateTime ) ) . " - " . date( "g:ia", strtotime( '+' . $session->Duration . ' minutes', strtotime( $session->StartDateTime ) ) );
 
+					$sessionStartTime = date( "g:ia", strtotime( $session->StartDateTime ) );
+
 					//next day of the week
-					if($currentDay === $dayOfWeek) { ?>
+					if($currentDay === $dayOfWeek) {
+					  if(!$dayOver && strtotime($sessionStartTime) > strtotime($eveTime)) { ?>
+            </div>
+            <div class="eve-sessions">
+            <?php } ?>
 
             <div class="ov-class">
               <div class="ov-class-info">
@@ -454,9 +460,11 @@ if ( count( $sessions ) > 1 ) {
             $currentDay = $dayOfWeek;
             $sessionCount ++;
         ?>
+            </div>
 					  </div>
             <div>
               <h3><?=$currentDay?></h3>
+              <div class="day-sessions">
               <div class="ov-class">
                 <div class="ov-class-info">
                   <div class="ov-class-info-text">
@@ -470,6 +478,7 @@ if ( count( $sessions ) > 1 ) {
 					  }
 				  }
 				  ?>
+              </div>
                 </div>
               </div>
             </div>
