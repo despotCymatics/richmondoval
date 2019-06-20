@@ -698,6 +698,10 @@ p {
     margin: 15px 7px;
 }
 
+.ov-class.passed {
+    opacity: 0.4;
+}
+
 .ov-class-info {
     display: flex;
 }
@@ -729,8 +733,9 @@ p {
     position: relative;
 }
 
-.week-calendar >  div {
-    min-width: 16.6666%;
+.week-calendar > div {
+    /*min-width: 16.6666%;*/
+    flex: 1;
 }
 
 .week-calendar:before {

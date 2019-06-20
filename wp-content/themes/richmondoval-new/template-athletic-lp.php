@@ -6,7 +6,7 @@
 require "stages-api.php";
 
 $monday = strtotime('monday this week');
-$sunday = strtotime('sunday this week');
+$sunday = strtotime('monday next week');
 
 $dateFrom = date( 'Y-m-d', $monday );
 $dateTo   = date( 'Y-m-d', $sunday );
@@ -426,7 +426,9 @@ if ( count( $sessions ) > 1 ) {
 		      <div>
             <h3><?=$currentDay?></h3>
             <div class="day-sessions">
+
         <?php
+
 				foreach ( $sessions as $session ) {
 
 					$sessionDate = date( "D, M jS", strtotime( $session->StartDateTime ) );
@@ -436,14 +438,18 @@ if ( count( $sessions ) > 1 ) {
 
 					$sessionStartTime = date( "g:ia", strtotime( $session->StartDateTime ) );
 
+          $passed = '';
+          if(strtotime($session->StartDateTime) < strtotime(date("Y-m-d g:ia"))) $passed = 'passed';
+
 					//next day of the week
 					if($currentDay === $dayOfWeek) {
 					  if(!$dayOver && strtotime($sessionStartTime) > strtotime($eveTime)) { ?>
             </div>
             <div class="eve-sessions">
-            <?php } ?>
+            <?php }
+					  ?>
 
-            <div class="ov-class">
+            <div class="ov-class <?=$passed?>">
               <div class="ov-class-info">
                 <div class="ov-class-info-text">
                   <p><?= $sessionTime ?></p>
@@ -465,7 +471,7 @@ if ( count( $sessions ) > 1 ) {
             <div>
               <h3><?=$currentDay?></h3>
               <div class="day-sessions">
-              <div class="ov-class">
+              <div class="ov-class  <?=$passed?>">
                 <div class="ov-class-info">
                   <div class="ov-class-info-text">
                     <p><?= $sessionTime ?></p>

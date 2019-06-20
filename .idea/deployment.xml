@@ -37,7 +37,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="RO-Live">
+      <paths name="RO-live">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
