@@ -420,11 +420,11 @@ if ( count( $sessions ) > 1 ) {
 				<?php
 				$sessionCount = 0;
 		    $currentDay = 'Monday';
-		    $eveTime = '5:00pm';
+		    $eveTime = '2:00pm';
 		    $dayOver = false;
 		    ?>
 		      <div>
-            <h3><?=$currentDay?></h3>
+            <h3><span><?=date( "", strtotime( $dateFrom ) ) ?></span><?=$currentDay?></h3>
             <div class="day-sessions">
 
         <?php
