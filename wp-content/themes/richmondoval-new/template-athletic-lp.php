@@ -424,7 +424,7 @@ if ( count( $sessions ) > 1 ) {
 		    $dayOver = false;
 		    ?>
 		      <div>
-            <h3><span><?=date( "", strtotime( $dateFrom ) ) ?></span><?=$currentDay?></h3>
+            <h3><span><?=date( "j M", strtotime( $dateFrom ) ) ?></span><br><?=$currentDay?></h3>
             <div class="day-sessions">
 
         <?php
@@ -469,7 +469,7 @@ if ( count( $sessions ) > 1 ) {
             </div>
 					  </div>
             <div>
-              <h3><?=$currentDay?></h3>
+              <h3><span><?=date( "j M", strtotime( $session->StartDateTime ) ) ?></span><br><?=$currentDay?></h3>
               <div class="day-sessions">
               <div class="ov-class  <?=$passed?>">
                 <div class="ov-class-info">
