@@ -397,7 +397,9 @@ if(count($sessions) > 1) {
                 </div>
 
                 <div class="ov-align-center">
-                    <a href="/oval-fit-login/" class="ov-fit-btn-lg">MORE CLASSES</a>
+                  <a href="/manage-my-membership/7-day-intro-pass/ " class="ov-fit-btn-lg">ACTIVATE YOUR 7 DAY TRIAL</a>
+                  <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A BIKE</a>
+
                 </div>
             </div>
 			<?php

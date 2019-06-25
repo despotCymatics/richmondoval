@@ -179,7 +179,7 @@ if ( count( $sessions ) > 1 ) {
           </h1>
           <p><?= get_field( 'hero_text' ); ?></p>
           <div class="ov-fit-lets-ride-container">
-            <a href="#train" class="ov-fit-btn-lg" draggable="false">LEARN MORE</a>
+            <a href="/oval-fit-login" class="ov-fit-btn-lg" draggable="false">RESERVE A SPOT</a>
           </div>
         </div>
         <div class="ov-chevron-down-container">
@@ -424,7 +424,7 @@ if ( count( $sessions ) > 1 ) {
 		    $dayOver = false;
 		    ?>
 		      <div>
-            <h3><span><?=date( "j M", strtotime( $dateFrom ) ) ?></span><br><?=$currentDay?></h3>
+            <h3><span><?=date( "j M", strtotime( $dateFrom ) ) ?></span><?=$currentDay?></h3>
             <div class="day-sessions">
 
         <?php
@@ -469,7 +469,7 @@ if ( count( $sessions ) > 1 ) {
             </div>
 					  </div>
             <div>
-              <h3><span><?=date( "j M", strtotime( $session->StartDateTime ) ) ?></span><br><?=$currentDay?></h3>
+              <h3><span><?=date( "j M", strtotime( $session->StartDateTime ) ) ?></span><?=$currentDay?></h3>
               <div class="day-sessions">
               <div class="ov-class  <?=$passed?>">
                 <div class="ov-class-info">
@@ -490,7 +490,8 @@ if ( count( $sessions ) > 1 ) {
             </div>
 
             <div class="ov-align-center">
-              <a href="/oval-fit-login/" class="ov-fit-btn-lg">BOOK CLASSES</a>
+              <a href="/manage-my-membership/7-day-intro-pass/ " class="ov-fit-btn-lg">ACTIVATE YOUR 7 DAY TRIAL</a>
+              <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A SPOT</a>
             </div>
           </div>
 			<?php
