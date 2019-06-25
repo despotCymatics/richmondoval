@@ -18,6 +18,7 @@ if ( count( $sessions ) > 1 ) {
 	} );
 }
 
+$rand = rand( 0, 999999999999 );
 
 ?>
 
@@ -37,7 +38,7 @@ if ( count( $sessions ) > 1 ) {
         media="screen, projection">
 
   <link href="<?= get_template_directory_uri() ?>/css/ovalfit-lps/shared.css" rel="stylesheet">
-  <link href="<?= get_template_directory_uri() ?>/css/ovalfit-lps/athletic.css" rel="stylesheet">
+  <link href="<?= get_template_directory_uri() ?>/css/ovalfit-lps/athletic.css?<?=$rand?>" rel="stylesheet">
   <link href="<?= get_template_directory_uri() ?>/css/ovalfit-lps/style.css" rel="stylesheet">
   <link href="<?= get_template_directory_uri() ?>/js/ovalfit-lps/thumbnail-slider.css" rel="stylesheet">
   <link href="<?= get_template_directory_uri() ?>/css/font-awesome.min.css" rel="stylesheet">

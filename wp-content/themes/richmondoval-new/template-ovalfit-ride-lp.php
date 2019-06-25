@@ -15,8 +15,9 @@ if(count($sessions) > 1) {
 	});
 }
 
-?>
+$rand = rand( 0, 999999999999 );
 
+?>
 
 <!Doctype html>
 <html>
@@ -31,7 +32,7 @@ if(count($sessions) > 1) {
 	<link rel="stylesheet" id="richmondoval-bootstrap-css" href="<?=get_template_directory_uri()?>/css/bootstrap.css?ver=4.9.8" type="text/css" media="screen, projection">
 
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/shared.css" rel="stylesheet">
-	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/ride.css" rel="stylesheet">
+	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/ride.css?<?=$rand?>" rel="stylesheet">
 	<link href="<?=get_template_directory_uri()?>/css/ovalfit-lps/style.css" rel="stylesheet">
     <link href="<?=get_template_directory_uri()?>/js/ovalfit-lps/thumbnail-slider.css" rel="stylesheet">
 
