@@ -4,15 +4,17 @@
  */
 
 require "stages-api.php";
+$monday = strtotime('monday this week');
+$sunday = strtotime('monday next week');
 
-$dateFrom    = date( 'Y-m-d' );
-$dateTo   = strtotime( '+10 days' );
-$dateTo   = date( 'Y-m-d', $dateTo );
+$dateFrom = date( 'Y-m-d', $monday );
+$dateTo   = date( 'Y-m-d', $sunday );
+
 $sessions = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/sessions?dateTimeFrom=' . $dateFrom . '.&dateTimeTo=' . $dateTo );
-if(count($sessions) > 1) {
+if ( count($sessions) > 1 ) {
 	usort($sessions,function($a, $b){
 		return (strtotime($a->StartDateTime) < strtotime($b->StartDateTime)? -1 : 1);
-	});
+	} );
 }
 
 $rand = rand( 0, 999999999999 );
@@ -361,51 +363,95 @@ $rand = rand( 0, 999999999999 );
 			endif;
 			?>
 
-			<?php
-			if ( count( $sessions ) > 0 && isset($sessions[0]->StartDateTime)) {
-			?>
-            <div class="ov-ride-schedule">
-                <img class="ov-ride-schedule-logo"
-                     src="https://richmondoval.ca/wp-content/uploads/2018/08/rideSchedule.png" width="438"/>
+		<?php
+		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) { ?>
+          <div class="ov-ride-schedule">
+            <img class="ov-ride-schedule-logo"
+                 src="<?= get_template_directory_uri() ?>/images/stages/rideSchedule.png" width="520"/>
 
-                <div class="ov-class-container">
-                    <?php
-                    $sessionCount = 0;
+            <div class="ov-class-container">
+              <div class="week-calendar">
 
-                        foreach ( $sessions as $session ) {
-                            if($sessionCount > 5 ) break;
-                            $sessionDate = date("D, M jS", strtotime($session->StartDateTime));
-	                        $sessionTime = date("g:ia", strtotime($session->StartDateTime))." - ".date("g:ia", strtotime('+'.$session->Duration.' minutes',strtotime($session->StartDateTime)));
-                    ?>
+				  <?php
+				  $sessionCount = 0;
+				  $currentDay = 'Monday';
+				  $eveTime = '2:00pm';
+				  $dayOver = false;
+				  ?>
+                <div>
+                  <h3><span><?=date( "j M", strtotime( $dateFrom ) ) ?></span><?=$currentDay?></h3>
+                  <div class="day-sessions">
 
-                    <div class="ov-class">
-                        <div class="ov-class-info">
-                            <div class="ov-class-info-text">
-                                <h5><?=$session->Name?></h5>
-                                <p>
-                                    <span class="ov-schedule-date"><?=$sessionDate?></span> <span><?=$sessionTime?></span>
-                                </p>
-                            </div>
+					  <?php
+
+					  foreach ( $sessions as $session ) {
+
+					  $sessionDate = date( "D, M jS", strtotime( $session->StartDateTime ) );
+					  $dayOfWeek = date("l", strtotime( $session->StartDateTime ));
+
+					  $sessionTime = date( "g:ia", strtotime( $session->StartDateTime ) ) . " - " . date( "g:ia", strtotime( '+' . $session->Duration . ' minutes', strtotime( $session->StartDateTime ) ) );
+
+					  $sessionStartTime = date( "g:ia", strtotime( $session->StartDateTime ) );
+
+					  $passed = '';
+					  if(strtotime($session->StartDateTime) < strtotime(date("Y-m-d g:ia"))) $passed = 'passed';
+
+					  //next day of the week
+					  if($currentDay === $dayOfWeek) {
+					  if(!$dayOver && strtotime($sessionStartTime) > strtotime($eveTime)) { ?>
+                  </div>
+                  <div class="eve-sessions">
+					  <?php }
+					  ?>
+
+                    <div class="ov-class <?=$passed?>">
+                      <div class="ov-class-info">
+                        <div class="ov-class-info-text">
+                          <p><?= $sessionTime ?></p>
+                          <h5><?= $session->Name ?></h5>
+                          <p><?= $sessionDate ?></p>
                         </div>
-                        <div>
-                            <a href="/oval-fit-login/" class="ov-fit-btn-blue">RESERVE A BIKE</a>
-                        </div>
+                      </div>
                     </div>
-                    <?php
-                        $sessionCount++;
-                        }
-                    ?>
-                </div>
 
-                <div class="ov-align-center">
-                  <a href="/manage-my-membership/7-day-intro-pass/ " class="ov-fit-btn-lg">ACTIVATE YOUR 7 DAY TRIAL</a>
-                  <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A BIKE</a>
+					  <?php
 
+					  } else {
+
+					  $currentDay = $dayOfWeek;
+					  $sessionCount ++;
+					  ?>
+                  </div>
                 </div>
+                <div>
+                  <h3><span><?=date( "j M", strtotime( $session->StartDateTime ) ) ?></span><?=$currentDay?></h3>
+                  <div class="day-sessions">
+                    <div class="ov-class  <?=$passed?>">
+                      <div class="ov-class-info">
+                        <div class="ov-class-info-text">
+                          <p><?= $sessionTime ?></p>
+                          <h5><?= $session->Name ?></h5>
+                          <p><?= $sessionDate ?></p>
+                        </div>
+                      </div>
+                    </div>
+					  <?php
+					  }
+					  }
+					  ?>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div class="ov-align-center">
+              <a href="/manage-my-membership/7-day-intro-pass/ " class="ov-fit-btn-lg">ACTIVATE YOUR 7 DAY TRIAL</a>
+              <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A SPOT</a>
+            </div>
+          </div>
 			<?php
-			}
-			?>
+		}
+		?>
 
             <div class="ov-fit-results" style="background-image: url(<?=get_field('results_image')?>)">
                 <div class="ov-fit-results-inner">

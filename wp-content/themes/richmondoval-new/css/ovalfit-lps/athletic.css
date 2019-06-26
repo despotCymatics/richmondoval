@@ -681,13 +681,19 @@ p {
 }
 
 
-/*ride schedule*/
+/*schedule*/
 .ov-ride-schedule {
     max-width: 1200px;
     margin: 100px auto;
     padding: 0 15px;
     position: relative;
 }
+
+.ov-ride-schedule-logo {
+    max-width: 100%;
+    width: 360px;
+}
+
 
 .ov-ride-schedule .ov-fit-btn-lg {
     margin: 4px;
@@ -882,7 +888,6 @@ p {
     }
 
 }
-
 
 
 @media (max-width: 1024px) {
@@ -1170,6 +1175,11 @@ p {
 }
 
 @media (max-width: 767px) {
+
+    .ov-ride-schedule-logo {
+        width: 240px;
+    }
+
     .ov-discover-cta {
         display: block;
     }
@@ -1281,10 +1291,6 @@ p {
     .ov-results-team h2 {
         text-align: center;
         margin-bottom: 0;
-    }
-
-    #thumbnail-slider {
-
     }
 
     .ov-machine-wrapper {
@@ -1430,10 +1436,6 @@ p {
         padding: 15px;
         padding-bottom: 40px;
         margin: 10px auto;
-    }
-
-    .ov-ride-schedule-logo {
-        max-width: 100%;
     }
 
     .ov-class-container {

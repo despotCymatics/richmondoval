@@ -4,7 +4,6 @@
  */
 
 require "stages-api.php";
-
 $monday = strtotime('monday this week');
 $sunday = strtotime('monday next week');
 
