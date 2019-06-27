@@ -96,8 +96,8 @@ $rand = rand( 0, 999999999999 );
                  width="120">
           </a>
           <div class="ov-nav-ride-container">
-            <a href="/lets-run/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
-              LEARN MORE
+            <a href="/group-fitness/" class="ov-fit-btn ov-fit-btn-nav ov-fit-btn-nav ov-fit-btn-bold">
+              RESERVE A SPOT
             </a>
 
             <a href="javascript:void(0)" class="ov-fit-hamburger-nav menuToggler"></a>
@@ -179,7 +179,7 @@ $rand = rand( 0, 999999999999 );
           </h1>
           <p><?= get_field( 'hero_text' ); ?></p>
           <div class="ov-fit-lets-ride-container">
-            <a href="/oval-fit-login" class="ov-fit-btn-lg" draggable="false">RESERVE A SPOT</a>
+            <a href="#schedule" class="ov-fit-btn-lg" draggable="false">LEARN MORE</a>
           </div>
         </div>
         <div class="ov-chevron-down-container">
@@ -410,7 +410,7 @@ $rand = rand( 0, 999999999999 );
 
 		<?php
 		if ( count( $sessions ) > 0 && isset( $sessions[0]->StartDateTime ) ) { ?>
-      <div class="ov-ride-schedule">
+      <div id="schedule" class="ov-ride-schedule">
         <img class="ov-ride-schedule-logo"
              src="<?= get_template_directory_uri() ?>/images/stages/athleticSchedule.png" width="520"/>
 
@@ -454,7 +454,6 @@ $rand = rand( 0, 999999999999 );
                 <div class="ov-class-info-text">
                   <p><?= $sessionTime ?></p>
                   <h5><?= $session->Name ?></h5>
-                  <p><?= $sessionDate ?></p>
                 </div>
               </div>
             </div>
@@ -476,7 +475,6 @@ $rand = rand( 0, 999999999999 );
                   <div class="ov-class-info-text">
                     <p><?= $sessionTime ?></p>
                     <h5><?= $session->Name ?></h5>
-                    <p><?= $sessionDate ?></p>
                   </div>
                 </div>
               </div>
@@ -491,7 +489,7 @@ $rand = rand( 0, 999999999999 );
 
             <div class="ov-align-center">
               <a href="/manage-my-membership/7-day-intro-pass/ " class="ov-fit-btn-lg">ACTIVATE YOUR 7 DAY TRIAL</a>
-              <a href="/oval-fit-login/" class="ov-fit-btn-lg">RESERVE A SPOT</a>
+              <a href="/group-fitness/" class="ov-fit-btn-lg">RESERVE A SPOT</a>
             </div>
           </div>
 			<?php
