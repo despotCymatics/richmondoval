@@ -21,8 +21,6 @@ $rand = rand( 0, 999999999999 );
 
 ?>
 
-
-
 <!Doctype html>
 <html>
 
@@ -82,6 +80,15 @@ $rand = rand( 0, 999999999999 );
       };
       s.parentNode.insertBefore(tk, s)
     })(document);
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68610770-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-68610770-1');
   </script>
 
 </head>
