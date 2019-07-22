@@ -312,13 +312,18 @@ $( document ).ready(function() {
 
     //Mega menu submenu actions
     $(document).on('click','.mobileMega #mega-menu-wrap-max_mega_menu_1 #mega-menu-max_mega_menu_1 ul ul li.mega-menu-item-has-children > a.mega-menu-link', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $('.mobileMega ul ul li.mega-menu-item-has-children ul').slideUp(0);
-        $(this).next('ul').slideToggle(200);
-       /* $('html, body').animate({
-            scrollTop: $(this).offset().top -56
-        }, 200);*/
+        var clicks = $(this).data('clicks');
+        if (!clicks) {
+            //click 1
+            e.preventDefault();
+            e.stopPropagation();
+            $('.mobileMega ul ul li.mega-menu-item-has-children ul').slideUp(0);
+            $(this).next('ul').slideToggle(200);
+        } else {
+            //click 2
+        }
+        $(this).data("clicks", !clicks);
+
     });
 
     //goto clicked
