@@ -39,19 +39,6 @@
 
   </script>
 
-  <!--<script type="text/javascript">
-  (function(d, s, id) {
-    window.Wishpond = window.Wishpond || {};
-    Wishpond.merchantId = '1298220';
-    Wishpond.writeKey = '45a34a9a1d39';
-    var js, wpjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//cdn.wishpond.net/connect.js";
-    wpjs.parentNode.insertBefore(js, wpjs);
-  }(document, 'script', 'wishpond-connect'));
-  </script>-->
-
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -61,7 +48,7 @@
   <!-- End Google Tag Manager -->
 
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics DESPOT -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21048776-4"></script>
   <script>
       window.dataLayer = window.dataLayer || [];
@@ -70,6 +57,17 @@
 
       gtag('config', 'UA-21048776-4');
   </script>
+
+  <!-- Global site tag (gtag.js) - Google Ads: 739387001 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-739387001"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-739387001');
+  </script>
+
 
   <?php if(is_page_template("template-stages.php") || is_page_template("template-stages_login.php") || is_page_template("template-stages_registration.php")) { ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->

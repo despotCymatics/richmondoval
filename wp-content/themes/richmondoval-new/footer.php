@@ -47,10 +47,14 @@
                                 1 778-296-1400
                             </span>
                         </div>
-
+                      <script>
+                          gtag('config', 'AW-739387001/JLJPCKrLlKgBEPnMyOAC', {
+                              'phone_conversion_number': '778-296-1400'
+                          });
+                      </script>
                     </div>
                     <div class="col-sm-5">
-<!--                        <h3>Subscribe to Oval Newsletter</h3>
+                    <!--<h3>Subscribe to Oval Newsletter</h3>
                         <div class="subscribe-form">
                             <form>
                                 <div class="row">
