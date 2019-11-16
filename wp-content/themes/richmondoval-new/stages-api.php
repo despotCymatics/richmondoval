@@ -216,7 +216,7 @@ $connection = '';
 function DBLogin()
 {
 
-	$connection = new mysqli('localhost','richmond','kgVpeKz1cG!@Zm15$L%z', 'richmondoval');
+	$connection = new mysqli(DB_HOST,DB_USER,DB_PASSWORD, DB_NAME);
 	if ($connection->connect_error) {
 		die("Connection failed: " . $connection->connect_error);
 	}

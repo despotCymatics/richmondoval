@@ -16,6 +16,7 @@ if ( login() || isset( $_SESSION['logged'] ) ) {
   //USER
   $userEmail = $_SESSION['logged'];
   $userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=' . $userEmail );
+	//$userQuery = getCurl( $authCode, 'https://stagesflight.com/locapi/v1/users?query=thebullrunner@gmail.com');
 
   if ( !isset( $userQuery->Message) && count( $userQuery ) == 1 && isset($userQuery[0]->Email)) {
     $user = $userQuery[0];
